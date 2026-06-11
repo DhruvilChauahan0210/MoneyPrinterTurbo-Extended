@@ -21,9 +21,14 @@ from edge_tts import SubMaker
 try:
     from edge_tts.submaker import mktimestamp
 except ImportError:
-    # Fallback for newer edge_tts versions
-    def mktimestamp(offset):
-        return str(offset)
+    # Fallback for newer edge_tts versions (removed upstream).
+    # Offsets are in 100-nanosecond units; format as HH:MM:SS.mmm like the original.
+    def mktimestamp(time_unit):
+        seconds_total = time_unit / 10_000_000
+        hours = int(seconds_total // 3600)
+        minutes = int((seconds_total % 3600) // 60)
+        seconds = seconds_total % 60
+        return f"{hours:02d}:{minutes:02d}:{seconds:06.3f}"
 from loguru import logger
 from moviepy.video.tools import subtitles
 
@@ -1148,6 +1153,23 @@ def is_chatterbox_voice(voice_name: str):
     return voice_name.startswith("chatterbox:")
 
 
+def is_sarvam_voice(voice_name: str):
+    return voice_name.startswith("sarvam:")
+
+
+def get_sarvam_voices() -> list[str]:
+    # Only voices verified to work with Gujarati (gu-IN)
+    return [
+        "sarvam:anushka-Female",
+        "sarvam:manisha-Female",
+        "sarvam:vidya-Female",
+        "sarvam:arya-Female",
+        "sarvam:abhilash-Male",
+        "sarvam:karun-Male",
+        "sarvam:hitesh-Male",
+    ]
+
+
 def tts(
     text: str,
     voice_name: str,
@@ -1178,6 +1200,11 @@ def tts(
         # Chatterbox TTS with WhisperX timestamps
         # 格式: chatterbox:type:name-Gender
         return chatterbox_tts(text, voice_name, voice_rate, voice_file, voice_volume)
+    elif is_sarvam_voice(voice_name):
+        # 格式: sarvam:speaker-Gender
+        parts = voice_name.split(":")
+        speaker = parts[1].split("-")[0] if len(parts) >= 2 else "anushka"
+        return sarvam_tts(text, speaker, voice_rate, voice_file)
     return azure_tts_v1(text, voice_name, voice_rate, voice_file)
 
 
@@ -1202,7 +1229,9 @@ def azure_tts_v1(
             logger.info(f"start, voice name: {voice_name}, try: {i + 1}")
 
             async def _do() -> SubMaker:
-                communicate = edge_tts.Communicate(text, voice_name, rate=rate_str)
+                communicate = edge_tts.Communicate(
+                    text, voice_name, rate=rate_str, boundary="WordBoundary"
+                )
                 sub_maker = ensure_submaker_compatibility(edge_tts.SubMaker())
                 with open(voice_file, "wb") as file:
                     async for chunk in communicate.stream():
@@ -1358,6 +1387,95 @@ def siliconflow_tts(
                 )
         except Exception as e:
             logger.error(f"siliconflow tts failed: {str(e)}")
+
+    return None
+
+
+_GUJARATI_ONES = [
+    "શૂન્ય", "એક", "બે", "ત્રણ", "ચાર", "પાંચ", "છ", "સાત", "આઠ", "નવ",
+    "દસ", "અગિયાર", "બાર", "તેર", "ચૌદ", "પંદર", "સોળ", "સત્તર", "અઢાર", "ઓગણીસ",
+    "વીસ", "એકવીસ", "બાવીસ", "તેવીસ", "ચોવીસ", "પચ્ચીસ", "છવ્વીસ", "સત્તાવીસ", "અઠ્ઠાવીસ", "ઓગણત્રીસ",
+    "ત્રીસ", "એકત્રીસ", "બત્રીસ", "તેત્રીસ", "ચોત્રીસ", "પાંત્રીસ", "છત્રીસ", "સાડત્રીસ", "અડત્રીસ", "ઓગણચાળીસ",
+    "ચાળીસ", "એકતાળીસ", "બેતાળીસ", "ત્રેતાળીસ", "ચુંમાળીસ", "પિસ્તાળીસ", "છેતાળીસ", "સુડતાળીસ", "અડતાળીસ", "ઓગણપચાસ",
+    "પચાસ", "એક્યાવન", "બાવન", "ત્રેપન", "ચોપન", "પંચાવન", "છપ્પન", "સત્તાવન", "અઠ્ઠાવન", "ઓગણસાઠ",
+    "સાઈઠ", "એકસઠ", "બાસઠ", "ત્રેસઠ", "ચોસઠ", "પાંસઠ", "છાસઠ", "સડસઠ", "અડસઠ", "અગણોસિત્તેર",
+    "સિત્તેર", "એકોતેર", "બોતેર", "તોતેર", "ચુંમોતેર", "પંચોતેર", "છોતેર", "સિત્યોતેર", "અઠ્ઠોતેર", "ઓગણએંસી",
+    "એંસી", "એક્યાસી", "બ્યાસી", "ત્યાસી", "ચોર્યાસી", "પંચ્યાસી", "છ્યાસી", "સત્યાસી", "અઠ્ઠ્યાસી", "નેવ્યાસી",
+    "નેવું", "એકાણું", "બાણું", "ત્રાણું", "ચોરાણું", "પંચાણું", "છન્નું", "સત્તાણું", "અઠ્ઠ્યાણું", "નેવ્યાણું",
+]
+
+
+def _number_to_gujarati(n: int) -> str:
+    if 0 <= n <= 99:
+        return _GUJARATI_ONES[n]
+    if 100 <= n <= 999:
+        hundreds = n // 100
+        remainder = n % 100
+        h = ("એક " if hundreds == 1 else _GUJARATI_ONES[hundreds] + " ") + "સો"
+        return (h + " " + _GUJARATI_ONES[remainder]).strip() if remainder else h
+    return str(n)
+
+
+def _preprocess_gujarati_numbers(text: str) -> str:
+    import re
+    def replace_num(match):
+        return _number_to_gujarati(int(match.group()))
+    return re.sub(r'\b\d+\b', replace_num, text)
+
+
+def sarvam_tts(
+    text: str,
+    speaker: str,
+    voice_rate: float,
+    voice_file: str,
+) -> Union[SubMaker, None]:
+    api_key = config.sarvam.get("api_key", "")
+    if not api_key:
+        logger.error("Sarvam API key is not set")
+        return None
+
+    text = _preprocess_gujarati_numbers(text.strip())
+    url = "https://api.sarvam.ai/text-to-speech"
+    payload = {
+        "inputs": [text],
+        "target_language_code": "gu-IN",
+        "speaker": speaker,
+        "speech_sample_rate": 22050,
+        "enable_preprocessing": True,
+        "model": "bulbul:v2",
+        "pace": voice_rate,
+    }
+    headers = {"api-subscription-key": api_key, "Content-Type": "application/json"}
+
+    for i in range(3):
+        try:
+            response = requests.post(url, json=payload, headers=headers, timeout=30)
+            if response.status_code == 200:
+                data = response.json()
+                audio_b64 = data.get("audios", [None])[0]
+                if not audio_b64:
+                    logger.error("Sarvam TTS returned empty audio")
+                    return None
+                import base64, wave
+                audio_bytes = base64.b64decode(audio_b64)
+                with open(voice_file, "wb") as f:
+                    f.write(audio_bytes)
+                # compute duration from WAV header
+                try:
+                    with wave.open(voice_file, "rb") as wf:
+                        duration_seconds = wf.getnframes() / wf.getframerate()
+                except Exception:
+                    duration_seconds = 10.0
+                duration_100ns = int(duration_seconds * 10_000_000)
+                sub_maker = ensure_submaker_compatibility(SubMaker())
+                sub_maker.offset = [(0, duration_100ns)]
+                sub_maker.subs = [text]
+                logger.success(f"sarvam tts succeeded: {voice_file}")
+                return sub_maker
+            else:
+                logger.error(f"sarvam tts failed {response.status_code}: {response.text}")
+        except Exception as e:
+            logger.error(f"sarvam tts error: {str(e)}")
 
     return None
 

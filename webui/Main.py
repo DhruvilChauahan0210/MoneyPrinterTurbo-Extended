@@ -851,6 +851,7 @@ with middle_panel:
             ("azure-tts-v2", "Azure TTS V2"),
             ("siliconflow", "SiliconFlow TTS"),
             ("chatterbox", "Chatterbox TTS (Open Source)"),
+            ("sarvam", "Sarvam AI TTS (Indian Languages)"),
         ]
 
         # 获取保存的TTS服务器，默认为v1
@@ -877,6 +878,8 @@ with middle_panel:
         if selected_tts_server == "siliconflow":
             # 获取硅基流动的声音列表
             filtered_voices = voice.get_siliconflow_voices()
+        elif selected_tts_server == "sarvam":
+            filtered_voices = voice.get_sarvam_voices()
         elif selected_tts_server == "chatterbox":
             # 获取Chatterbox的声音列表
             filtered_voices = voice.get_chatterbox_voices()
@@ -1014,7 +1017,8 @@ with middle_panel:
                     )
 
                 if sub_maker and os.path.exists(audio_file):
-                    st.audio(audio_file, format="audio/mp3")
+                    audio_format = "audio/wav" if voice.is_sarvam_voice(voice_name) else "audio/mp3"
+                    st.audio(audio_file, format=audio_format)
                     if os.path.exists(audio_file):
                         os.remove(audio_file)
 
@@ -1063,6 +1067,24 @@ with middle_panel:
             )
 
             config.siliconflow["api_key"] = siliconflow_api_key
+
+        if selected_tts_server == "sarvam" or (
+            voice_name and voice.is_sarvam_voice(voice_name)
+        ):
+            saved_sarvam_api_key = config.sarvam.get("api_key", "")
+            sarvam_api_key = st.text_input(
+                "Sarvam AI API Key",
+                value=saved_sarvam_api_key,
+                type="password",
+                key="sarvam_api_key_input",
+            )
+            st.info(
+                "Sarvam AI TTS — Supports Gujarati, Hindi & 10 other Indian languages.\n"
+                "- All voices use Gujarati (gu-IN) by default\n"
+                "- Free tier: ₹1,000 credits, no credit card needed\n"
+                "- Get API key at dashboard.sarvam.ai"
+            )
+            config.sarvam["api_key"] = sarvam_api_key
 
         params.voice_volume = st.selectbox(
             tr("Speech Volume"),
