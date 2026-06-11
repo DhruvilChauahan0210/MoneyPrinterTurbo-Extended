@@ -1055,3 +1055,29 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4):
             material.url = video_file
             logger.success(f"image processed: {video_file}")
     return materials
+
+def merge_videos(video_paths: List[str], output_path: str) -> str:
+    """Concatenate multiple completed video files into one."""
+    logger.info(f"merging {len(video_paths)} videos into {output_path}")
+    clips = []
+    try:
+        for p in video_paths:
+            clips.append(VideoFileClip(p))
+        final = concatenate_videoclips(clips, method="compose")
+        final.write_videofile(
+            output_path,
+            codec="libx264",
+            audio_codec="aac",
+            logger=None,
+        )
+        logger.success(f"merge complete: {output_path}")
+        return output_path
+    except Exception as e:
+        logger.error(f"merge failed: {e}")
+        raise
+    finally:
+        for c in clips:
+            try:
+                c.close()
+            except Exception:
+                pass

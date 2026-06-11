@@ -1226,6 +1226,161 @@ with right_panel:
             params.max_chars_per_line = config.ui.get("max_chars_per_line", 40)
             params.max_lines_per_subtitle = config.ui.get("max_lines_per_subtitle", 2)
 
+# ── Long Video Mode ──────────────────────────────────────────────────────────
+with st.container(border=True):
+    st.write("🎬 Long Video Mode")
+    long_video_enabled = st.checkbox(
+        "Enable Long Video Mode (auto-split script, generate one chunk at a time)",
+        value=st.session_state.get("long_video_enabled", False),
+        key="long_video_enabled_cb",
+    )
+    st.session_state["long_video_enabled"] = long_video_enabled
+
+    if long_video_enabled:
+        col_a, col_b = st.columns(2)
+        chunk_minutes = col_a.selectbox(
+            "Minutes per chunk", options=[1, 2, 3, 5, 7, 10], index=3
+        )
+        words_per_chunk = chunk_minutes * 130
+
+        full_script = params.video_script or st.session_state.get("video_script", "")
+
+        def split_script_into_chunks(script, wpchunk):
+            import re
+            sentences = re.split(r'(?<=[.!?])\s+', script.strip())
+            chunks, current, count = [], [], 0
+            for s in sentences:
+                w = len(s.split())
+                if count + w > wpchunk and current:
+                    chunks.append(" ".join(current))
+                    current, count = [s], w
+                else:
+                    current.append(s)
+                    count += w
+            if current:
+                chunks.append(" ".join(current))
+            return chunks
+
+        chunks = split_script_into_chunks(full_script, words_per_chunk) if full_script else []
+        total_chunks = len(chunks)
+
+        if chunks:
+            col_b.metric("Total Chunks", total_chunks)
+            col_b.metric("Est. Duration", f"~{total_chunks * chunk_minutes} min")
+            with st.expander(f"Preview {total_chunks} chunks"):
+                for i, c in enumerate(chunks):
+                    st.markdown(f"**Chunk {i+1}** (~{len(c.split())} words)")
+                    st.caption(c[:200] + ("..." if len(c) > 200 else ""))
+
+        # ── Start button — stores chunks in session state, triggers rerun loop ──
+        if chunks and st.button("🚀 Generate All Chunks (one by one)", type="primary", use_container_width=True):
+            config.save_config()
+            st.session_state["lv_chunks"] = chunks
+            st.session_state["lv_chunk_idx"] = 0
+            st.session_state["lv_videos"] = []
+            st.session_state["lv_generating"] = True
+            st.session_state["lv_params_snapshot"] = {
+                "video_subject": params.video_subject,
+                "video_terms": getattr(params, "video_terms", "") or "",
+                "video_clip_duration": params.video_clip_duration,
+                "voice_name": params.voice_name,
+                "voice_rate": params.voice_rate,
+                "voice_volume": params.voice_volume,
+                "video_source": params.video_source,
+                "subtitle_enabled": params.subtitle_enabled,
+                "font_name": params.font_name,
+                "text_fore_color": params.text_fore_color,
+                "font_size": params.font_size,
+            }
+            st.rerun()
+
+        # ── Generation loop — one chunk per rerun ────────────────────────────
+        if st.session_state.get("lv_generating"):
+            lv_chunks   = st.session_state["lv_chunks"]
+            lv_idx      = st.session_state["lv_chunk_idx"]
+            lv_total    = len(lv_chunks)
+            lv_videos   = st.session_state["lv_videos"]
+            lv_snap     = st.session_state["lv_params_snapshot"]
+
+            # Show already-completed chunks with save buttons
+            for i, vpath in enumerate(lv_videos):
+                st.success(f"✅ Chunk {i+1} done!")
+                if os.path.exists(vpath):
+                    chunk_mb = os.path.getsize(vpath) / (1024 * 1024)
+                    col1, col2 = st.columns(2)
+                    desktop_chunk = os.path.join(os.path.expanduser("~"), "Desktop", f"chunk_{i+1}.mp4")
+                    if col1.button(f"📂 Save Chunk {i+1} to Desktop ({chunk_mb:.0f} MB)", key=f"lv_save_{i}"):
+                        import shutil
+                        shutil.copy2(vpath, desktop_chunk)
+                        st.success(f"✅ Chunk {i+1} saved to Desktop!")
+                    if col2.button(f"📁 Open Folder", key=f"lv_folder_{i}"):
+                        import subprocess
+                        subprocess.run(["open", os.path.dirname(vpath)])
+
+            if lv_idx < lv_total:
+                st.info(f"⏳ Generating chunk {lv_idx+1} of {lv_total}...")
+                st.progress(lv_idx / lv_total, text=f"Chunk {lv_idx+1} / {lv_total}")
+
+                chunk_task_id = str(uuid4())
+                chunk_params = params.model_copy()
+                chunk_params.video_script  = lv_chunks[lv_idx]
+                chunk_params.video_subject = lv_snap["video_subject"]
+                chunk_params.voice_name    = lv_snap["voice_name"]
+                chunk_params.voice_rate    = lv_snap["voice_rate"]
+                chunk_params.voice_volume  = lv_snap["voice_volume"]
+                chunk_params.video_source  = lv_snap["video_source"]
+                chunk_params.subtitle_enabled = lv_snap["subtitle_enabled"]
+                chunk_params.font_name     = lv_snap["font_name"]
+                chunk_params.text_fore_color = lv_snap["text_fore_color"]
+                chunk_params.font_size     = lv_snap["font_size"]
+
+                with st.spinner(f"Generating chunk {lv_idx+1}/{lv_total}..."):
+                    result = tm.start(task_id=chunk_task_id, params=chunk_params)
+
+                if result and result.get("videos"):
+                    st.session_state["lv_videos"].append(result["videos"][0])
+                    st.session_state["lv_chunk_idx"] += 1
+                    st.rerun()
+                else:
+                    st.error(f"❌ Chunk {lv_idx+1} failed — stopping.")
+                    st.session_state["lv_generating"] = False
+
+            else:
+                st.success(f"🎉 All {lv_total} chunks generated!")
+                st.session_state["lv_generating"] = False
+
+        # ── Merge section — always visible once chunks exist ─────────────────
+        lv_videos = st.session_state.get("lv_videos", [])
+        if lv_videos and len(lv_videos) > 1 and not st.session_state.get("lv_generating"):
+            st.markdown("---")
+            st.success(f"✅ {len(lv_videos)} chunks ready to merge")
+            if st.button("🎞️ Merge All into One Long Video", type="primary", use_container_width=True):
+                from app.services.video import merge_videos
+                merge_dir = utils.storage_dir("merged", create=True)
+                out_path = os.path.join(merge_dir, f"merged_{str(uuid4())[:8]}.mp4")
+                with st.spinner("Merging all chunks... this may take a few minutes"):
+                    try:
+                        result_path = merge_videos(lv_videos, out_path)
+                        st.session_state["lv_merged_path"] = result_path
+                        st.rerun()
+                    except Exception as e:
+                        st.error(f"Merge failed: {e}")
+
+            if st.session_state.get("lv_merged_path") and os.path.exists(st.session_state["lv_merged_path"]):
+                merged_path = st.session_state["lv_merged_path"]
+                file_size_mb = os.path.getsize(merged_path) / (1024 * 1024)
+                st.info(f"📁 Merged video: **{file_size_mb:.0f} MB**")
+                # Large files can't go through Streamlit download button — copy to Desktop instead
+                desktop_path = os.path.join(os.path.expanduser("~"), "Desktop", "full_long_video.mp4")
+                if st.button("📂 Save to Desktop", type="primary", use_container_width=True, key="lv_save_desktop"):
+                    import shutil
+                    shutil.copy2(merged_path, desktop_path)
+                    st.success(f"✅ Saved to Desktop as **full_long_video.mp4**")
+                if st.button("📁 Open in Finder", use_container_width=True, key="lv_open_finder"):
+                    import subprocess
+                    subprocess.run(["open", os.path.dirname(merged_path)])
+                st.caption(f"File location: `{merged_path}`")
+
 start_button = st.button(tr("Generate Video"), use_container_width=True, type="primary")
 if start_button:
     config.save_config()
