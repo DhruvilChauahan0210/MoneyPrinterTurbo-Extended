@@ -578,8 +578,17 @@ with middle_panel:
             with st.container(border=True):
                 st.write("🎬 Image Search Settings")
 
+                params.video_clip_ratio = st.slider(
+                    "🎥 Video Clips Mix Ratio",
+                    min_value=0.0,
+                    max_value=0.7,
+                    value=0.35,
+                    step=0.05,
+                    help="Fraction of media that are short Pexels video clips vs photos. 0 = photos only, 0.5 = half clips half photos."
+                )
+
                 params.image_motion_style = st.selectbox(
-                    "Motion Style",
+                    "Motion Style (for photos)",
                     options=["varied", "subtle", "off"],
                     index=0,
                     help="varied = 5 different Ken Burns effects cycling per image; subtle = gentle linear zoom; off = static"

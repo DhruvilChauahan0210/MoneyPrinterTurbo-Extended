@@ -561,62 +561,146 @@ def save_image(image_url: str, save_dir: str = "", search_term: str = "") -> str
     return ""
 
 
+def search_short_clips_pexels(
+    search_term: str,
+    video_aspect: str = "portrait",
+    max_clips: int = 6,
+    max_duration: int = 12,
+) -> List[MaterialInfo]:
+    """Search Pexels for short video clips (≤ max_duration seconds) in portrait orientation."""
+    api_key = get_api_key("pexels_api_keys")
+    headers = {"Authorization": api_key, "User-Agent": "Mozilla/5.0"}
+    params = {
+        "query": search_term,
+        "per_page": 20,
+        "orientation": video_aspect,
+    }
+    query_url = f"https://api.pexels.com/videos/search?{urlencode(params)}"
+    logger.info(f"searching Pexels short clips: {search_term}")
+
+    try:
+        r = requests.get(query_url, headers=headers, proxies=config.proxy, timeout=(10, 30))
+        items = []
+        for v in r.json().get("videos", []):
+            duration = v.get("duration", 999)
+            if duration > max_duration:
+                continue
+            # Pick best-resolution file
+            files = sorted(v.get("video_files", []), key=lambda f: f.get("width", 0), reverse=True)
+            for vf in files:
+                w, h = vf.get("width", 0), vf.get("height", 0)
+                if w >= 480 and h >= 480 and vf.get("link"):
+                    item = MaterialInfo()
+                    item.provider = "pexels_clip"
+                    item.url = vf["link"]
+                    item.duration = duration
+                    item.search_term = search_term
+                    items.append(item)
+                    break
+            if len(items) >= max_clips:
+                break
+        logger.info(f"found {len(items)} short clips on Pexels for '{search_term}'")
+        return items
+    except Exception as e:
+        logger.error(f"Pexels short clip search failed: {e}")
+        return []
+
+
 def download_images(
     task_id: str,
     search_terms: List[str],
     source: str = "image_search",
     audio_duration: float = 0.0,
     clip_duration: int = 5,
+    video_clip_ratio: float = 0.35,
+    video_aspect: str = "portrait",
 ) -> List[str]:
     """
-    Download images from Wikipedia Commons + Pixabay Images for the given search terms.
-    Returns a list of local image file paths ready for preprocess_video().
+    Download images AND short video clips for the given search terms.
+    Mixes them so ~video_clip_ratio fraction are real video clips (Pexels Videos)
+    and the rest are photos (DDG / Pexels Photos / Wikipedia Commons).
+    Returns a list of local file paths (.jpg images + .mp4 clips) for preprocess_video().
     """
-    image_paths = []
-    save_dir = utils.storage_dir("cache_images")
+    all_paths = []
+    image_save_dir = utils.storage_dir("cache_images")
+    video_save_dir = utils.storage_dir("cache_videos")
     total_duration = 0.0
+
+    # How many clips vs images per term
+    clips_per_term = max(1, round(video_clip_ratio * 3))   # e.g. 1-2 clips per term
+    images_per_term = max(2, round((1 - video_clip_ratio) * 6))
 
     for search_term in search_terms:
         if total_duration >= audio_duration:
             break
 
-        # 1. DuckDuckGo — free, no key, broad web coverage (best for specific events/people)
-        ddg_items = search_images_duckduckgo(search_term, max_results=15)
+        term_paths = []
 
-        # 2. Pexels Photos — reuses existing pexels key, high quality stock photos
-        pexels_items = []
+        # ── Video clips (Pexels Videos) ────────────────────────────────────
         try:
-            pexels_items = search_images_pexels(search_term, max_results=8)
+            clip_items = search_short_clips_pexels(
+                search_term,
+                video_aspect="portrait" if "9:16" in video_aspect or video_aspect == "portrait" else "landscape",
+                max_clips=clips_per_term + 2,
+            )
+            for item in clip_items[:clips_per_term]:
+                saved = save_video(
+                    video_url=item.url,
+                    save_dir=video_save_dir,
+                    search_term=search_term,
+                )
+                if saved:
+                    term_paths.append(saved)
+                    logger.info(f"saved clip: {saved} (pexels_clip / '{search_term}')")
         except Exception as e:
-            logger.warning(f"Pexels photo search skipped: {str(e)}")
+            logger.warning(f"Pexels clip search skipped: {e}")
 
-        # 3. Wikipedia Commons — free, historically rich (throttled to avoid 429s)
-        wiki_items = search_images_wikipedia(search_term, max_results=5)
+        # ── Photos (DDG + Pexels Photos + Wikipedia) ───────────────────────
+        ddg_items = search_images_duckduckgo(search_term, max_results=12)
 
-        # 4. Pixabay Photos — optional, only if key is configured
+        pexels_photo_items = []
+        try:
+            pexels_photo_items = search_images_pexels(search_term, max_results=6)
+        except Exception as e:
+            logger.warning(f"Pexels photo search skipped: {e}")
+
+        wiki_items = search_images_wikipedia(search_term, max_results=4)
+
         pixabay_items = []
         try:
-            pixabay_items = search_images_pixabay(search_term, max_results=8)
+            pixabay_items = search_images_pixabay(search_term, max_results=6)
         except Exception:
             logger.debug("Pixabay image search skipped (no key configured)")
 
-        combined = ddg_items + pexels_items + wiki_items + pixabay_items
-        random.shuffle(combined)
+        photo_pool = ddg_items + pexels_photo_items + wiki_items + pixabay_items
+        random.shuffle(photo_pool)
 
-        for item in combined:
-            if total_duration >= audio_duration:
+        photos_saved = 0
+        for item in photo_pool:
+            if photos_saved >= images_per_term:
                 break
-            # Throttle Wikipedia downloads to avoid 429 rate limiting
             if item.provider == "wikipedia":
                 time.sleep(1.0)
-            path = save_image(item.url, save_dir=save_dir, search_term=search_term)
+            path = save_image(item.url, save_dir=image_save_dir, search_term=search_term)
             if path:
-                image_paths.append(path)
-                total_duration += clip_duration
+                term_paths.append(path)
+                photos_saved += 1
                 logger.info(f"saved image: {path} ({item.provider} / '{search_term}')")
 
-    logger.success(f"downloaded {len(image_paths)} images for {len(search_terms)} search terms")
-    return image_paths
+        # Shuffle clips and photos together per term for variety
+        random.shuffle(term_paths)
+        for p in term_paths:
+            if total_duration >= audio_duration:
+                break
+            all_paths.append(p)
+            total_duration += clip_duration
+
+    clips_count = sum(1 for p in all_paths if p.endswith(".mp4"))
+    images_count = len(all_paths) - clips_count
+    logger.success(
+        f"downloaded {len(all_paths)} media items: {clips_count} video clips + {images_count} photos"
+    )
+    return all_paths
 
 
 if __name__ == "__main__":

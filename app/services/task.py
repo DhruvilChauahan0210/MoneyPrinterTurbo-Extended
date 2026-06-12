@@ -170,13 +170,15 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
         return [material_info.url for material_info in materials]
 
     elif params.video_source == "image_search":
-        logger.info("\n\n## downloading images (DuckDuckGo + Wikipedia + Pexels Photos)")
+        logger.info("\n\n## downloading images + video clips (DuckDuckGo + Wikipedia + Pexels)")
         image_paths = material.download_images(
             task_id=task_id,
             search_terms=video_terms,
             source=params.video_source,
             audio_duration=audio_duration * params.video_count,
             clip_duration=params.video_clip_duration,
+            video_clip_ratio=getattr(params, 'video_clip_ratio', 0.35),
+            video_aspect=str(params.video_aspect) if params.video_aspect else "portrait",
         )
         if not image_paths:
             sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)

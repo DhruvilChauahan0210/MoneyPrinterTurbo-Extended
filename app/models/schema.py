@@ -132,6 +132,9 @@ class VideoParams(BaseModel):
     enable_image_ranking: Optional[bool] = True
     image_ranking_min_score: Optional[float] = 0.18
 
+    # Mixed media: ratio of short video clips vs photos in image_search mode
+    video_clip_ratio: Optional[float] = 0.35
+
     # Task 2 — Ken Burns 2.0 motion style
     image_motion_style: Optional[str] = "varied"  # varied | subtle | off
 
