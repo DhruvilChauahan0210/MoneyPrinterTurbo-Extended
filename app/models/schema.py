@@ -107,26 +107,48 @@ class VideoParams(BaseModel):
     stroke_color: Optional[str] = "#000000"
     stroke_width: float = 1.5
     
-    # Word highlighting settings
-    enable_word_highlighting: Optional[bool] = False
-    word_highlight_color: Optional[str] = "#ff0000"
+    # Word highlighting settings (Task 4: gold highlight on by default)
+    enable_word_highlighting: Optional[bool] = True
+    word_highlight_color: Optional[str] = "#FFD700"
     max_chars_per_line: Optional[int] = 40
     max_lines_per_subtitle: Optional[int] = 2
-    
+    max_words_per_subtitle: Optional[int] = 4
+
     # Semantic video settings
     segmentation_method: Optional[str] = "sentences"
     min_segment_length: Optional[int] = 25
     similarity_threshold: Optional[float] = 0.5
     diversity_threshold: Optional[int] = 5
-    max_video_reuse: Optional[int] = 2  # Maximum times a video can be reused
+    max_video_reuse: Optional[int] = 2
     search_pool_size: Optional[int] = 50
     semantic_model: Optional[str] = "all-mpnet-base-v2"
-    
+
     # Image similarity settings (only when semantic mode is enabled)
     enable_image_similarity: Optional[bool] = False
     image_similarity_threshold: Optional[float] = 0.7
     image_similarity_model: Optional[str] = "clip-vit-base-patch32"
-    
+
+    # Task 1 — CLIP image-to-script ranking
+    enable_image_ranking: Optional[bool] = True
+    image_ranking_min_score: Optional[float] = 0.18
+
+    # Task 2 — Ken Burns 2.0 motion style
+    image_motion_style: Optional[str] = "varied"  # varied | subtle | off
+
+    # Task 3 — Hook card
+    enable_hook_card: Optional[bool] = True
+    hook_text: Optional[str] = ""
+    hook_duration: Optional[float] = 1.5
+
+    # Task 5 — Audio polish (lower BGM, SFX)
+    bgm_volume: Optional[float] = 0.12
+    enable_sfx: Optional[bool] = True
+    sfx_volume: Optional[float] = 0.5
+
+    # Task 6 — End-screen CTA
+    enable_cta: Optional[bool] = True
+    cta_text: Optional[str] = "FOLLOW FOR MORE"
+
     n_threads: Optional[int] = 2
     paragraph_number: Optional[int] = 1
 

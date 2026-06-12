@@ -168,6 +168,60 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
             )
             return None
         return [material_info.url for material_info in materials]
+
+    elif params.video_source == "image_search":
+        logger.info("\n\n## downloading images (DuckDuckGo + Wikipedia + Pexels Photos)")
+        image_paths = material.download_images(
+            task_id=task_id,
+            search_terms=video_terms,
+            source=params.video_source,
+            audio_duration=audio_duration * params.video_count,
+            clip_duration=params.video_clip_duration,
+        )
+        if not image_paths:
+            sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)
+            logger.error("failed to download images, no results found for the given search terms.")
+            return None
+
+        # Task 1 — CLIP image-to-script ranking
+        if getattr(params, 'enable_image_ranking', True):
+            logger.info("\n\n## ranking images against script (CLIP)")
+            try:
+                from app.services import image_ranker
+                video_script = getattr(params, 'video_script', '') or getattr(params, 'video_subject', '')
+                image_paths = image_ranker.rank_images_for_script(
+                    image_paths,
+                    video_script,
+                    model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
+                    min_score=getattr(params, 'image_ranking_min_score', 0.18),
+                )
+                # Store best image for hook card (Task 3)
+                if image_paths:
+                    params._best_image_path = image_paths[0]
+            except Exception as e:
+                logger.warning(f"image ranking failed, using original order: {e}")
+
+        # Task 3 — store hook image path on params (best / first image)
+        if not getattr(params, '_best_image_path', None) and image_paths:
+            params._best_image_path = image_paths[0]
+
+        # Force sequential so ranked order is preserved (Task 1)
+        params.video_concat_mode = VideoConcatMode.sequential
+
+        # Task 2 — Ken Burns 2.0: pass motion style
+        from app.models.schema import MaterialInfo as MI
+        image_materials = [MI(url=p, provider="image_search") for p in image_paths]
+        processed = video.preprocess_video(
+            materials=image_materials,
+            clip_duration=params.video_clip_duration,
+            motion_style=getattr(params, 'image_motion_style', 'varied'),
+        )
+        if not processed:
+            sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)
+            logger.error("failed to convert images to video clips.")
+            return None
+        return [m.url for m in processed]
+
     else:
         logger.info(f"\n\n## downloading videos from {params.video_source}")
         downloaded_videos = material.download_videos(
@@ -339,6 +393,19 @@ def start(task_id, params: VideoParams, stop_at: str = "video"):
         return {"materials": downloaded_videos}
 
     sm.state.update_task(task_id, state=const.TASK_STATE_PROCESSING, progress=50)
+
+    # Task 3 — Generate hook text and store best image on params
+    if getattr(params, 'enable_hook_card', True) and params.video_source == "image_search":
+        hook_text = getattr(params, 'hook_text', '').strip()
+        if not hook_text:
+            try:
+                hook_text = llm.generate_hook(params.video_subject, video_script)
+            except Exception as e:
+                logger.warning(f"hook text generation failed: {e}")
+                hook_text = " ".join(params.video_subject.upper().split()[:5])
+        params._hook_text = hook_text
+        params._hook_image_path = getattr(params, '_best_image_path', None) or (downloaded_videos[0].replace('.mp4', '') if downloaded_videos else None)
+        logger.info(f"hook text: '{hook_text}'")
 
     # 6. Generate final videos
     final_video_paths, combined_video_paths = generate_final_videos(

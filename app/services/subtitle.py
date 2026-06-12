@@ -353,25 +353,26 @@ def create_enhanced_subtitles(audio_file, subtitle_file: str = "", params=None):
     
     max_chars_per_line = getattr(params, 'max_chars_per_line', 40)
     max_lines_per_subtitle = getattr(params, 'max_lines_per_subtitle', 2)
-    
+    max_words_per_subtitle = getattr(params, 'max_words_per_subtitle', 4)
+
     for segment in segments:
         if not segment.words:
             continue
-            
+
         for word in segment.words:
             word_text = word.word.strip()
             if not word_text:
                 continue
-                
+
             # Create word timing
             word_timing = WordTiming(
                 word=word_text,
                 start=word.start,
                 end=word.end,
-                line=0,  # Will be calculated later
-                position=0  # Will be calculated later
+                line=0,
+                position=0
             )
-            
+
             # Start new subtitle if needed
             if current_subtitle is None:
                 current_subtitle = {
@@ -380,17 +381,20 @@ def create_enhanced_subtitles(audio_file, subtitle_file: str = "", params=None):
                     'text': '',
                     'words': []
                 }
-            
+
             # Add word to current subtitle
             current_words.append(word_timing)
             current_subtitle['words'] = current_words
             current_subtitle['text'] += word_text + ' '
             current_subtitle['end_time'] = word.end
-            
-            # Check if we should break at punctuation or max length
+
+            word_count = len(current_words)
+
+            # Break at punctuation, max chars, or max words per screen
             should_break = (
                 utils.str_contains_punctuation(word_text) or
-                len(current_subtitle['text']) > max_chars_per_line * max_lines_per_subtitle
+                len(current_subtitle['text']) > max_chars_per_line * max_lines_per_subtitle or
+                word_count >= max_words_per_subtitle
             )
             
             if should_break:

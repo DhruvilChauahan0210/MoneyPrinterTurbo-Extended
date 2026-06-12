@@ -7,6 +7,7 @@ import random
 import gc
 import shutil
 import json
+import re
 from typing import List
 from loguru import logger
 import numpy as np
@@ -451,6 +452,9 @@ def combine_videos(
         logger.warning("no clips available for merging")
         return combined_video_path
     
+    # Write cut times for SFX (Task 5)
+    _write_cut_times(output_dir, [c.duration for c in processed_clips])
+
     # if there is only one clip, use it directly
     if len(processed_clips) == 1:
         logger.info("using single clip directly")
@@ -505,6 +509,20 @@ def combine_videos(
             
     logger.info("video combining completed")
     return combined_video_path
+
+
+def _write_cut_times(output_dir: str, clip_durations: list):
+    """Write cumulative cut times to cut_times.json for SFX (Task 5)."""
+    try:
+        cut_times = []
+        t = 0.0
+        for d in clip_durations[:-1]:  # skip last — no cut after final clip
+            t += d
+            cut_times.append(round(t, 3))
+        with open(os.path.join(output_dir, "cut_times.json"), "w") as f:
+            json.dump(cut_times, f)
+    except Exception as e:
+        logger.debug(f"cut_times write failed: {e}")
 
 
 def _progressive_merge_fallback(processed_clips, combined_video_path, output_dir, threads):
@@ -852,6 +870,133 @@ def create_enhanced_subtitle_clips(enhanced_subtitle_path, params, video_width, 
     return text_clips
 
 
+def _render_text_card(
+    text: str, font_path: str, font_size: int,
+    video_width: int, video_height: int,
+    text_color=(255, 255, 255), stroke_color=(0, 0, 0), stroke_width: int = 8,
+    y_center_ratio: float = 0.45, bg_alpha: int = 0,
+) -> Image.Image:
+    """Render a centred text image (RGBA) using PIL for hook/CTA cards."""
+    try:
+        font = ImageFont.truetype(font_path, font_size)
+    except Exception:
+        font = ImageFont.load_default()
+
+    # Word-wrap
+    words = text.split()
+    lines, line = [], ""
+    for word in words:
+        test = (line + " " + word).strip()
+        bbox = font.getbbox(test)
+        if bbox[2] - bbox[0] <= video_width * 0.88:
+            line = test
+        else:
+            if line:
+                lines.append(line)
+            line = word
+    if line:
+        lines.append(line)
+
+    lh = int(font_size * 1.25)
+    total_h = lh * len(lines) + 20
+    img = Image.new("RGBA", (video_width, video_height), (0, 0, 0, bg_alpha))
+    draw = ImageDraw.Draw(img)
+    y_start = int(video_height * y_center_ratio) - total_h // 2
+
+    for line in lines:
+        bbox = font.getbbox(line)
+        lw = bbox[2] - bbox[0]
+        x = (video_width - lw) // 2
+        # Stroke
+        for dx in range(-stroke_width, stroke_width + 1):
+            for dy in range(-stroke_width, stroke_width + 1):
+                if dx != 0 or dy != 0:
+                    draw.text((x + dx, y_start + dy), line, font=font, fill=(*stroke_color, 255))
+        draw.text((x, y_start), line, font=font, fill=(*text_color, 255))
+        y_start += lh
+
+    return img
+
+
+def create_hook_clip(
+    image_path: str, hook_text: str, params, video_width: int, video_height: int
+):
+    """
+    Task 3 — first `hook_duration` seconds: cover image + dark veil + big hook text.
+    Returns a VideoClip overlay (no audio, starts at t=0).
+    """
+    hook_dur = float(getattr(params, 'hook_duration', 1.5))
+    font_path = os.path.join(utils.font_dir(), getattr(params, 'font_name', 'STHeitiMedium.ttc'))
+    font_size = int(video_width * 0.082)
+    font_size = font_size if font_size % 2 == 0 else font_size + 1
+
+    # --- Background image (cover-crop to fill frame) ---
+    try:
+        bg = Image.open(image_path).convert("RGB")
+        bg_ratio = bg.width / bg.height
+        frame_ratio = video_width / video_height
+        if bg_ratio > frame_ratio:
+            new_h = video_height
+            new_w = int(new_h * bg_ratio)
+        else:
+            new_w = video_width
+            new_h = int(new_w / bg_ratio)
+        new_w = new_w if new_w % 2 == 0 else new_w + 1
+        new_h = new_h if new_h % 2 == 0 else new_h + 1
+        bg = bg.resize((new_w, new_h), Image.LANCZOS)
+        left = (new_w - video_width) // 2
+        top = (new_h - video_height) // 2
+        bg = bg.crop((left, top, left + video_width, top + video_height))
+    except Exception as e:
+        logger.warning(f"hook card: failed to load image {image_path}: {e}")
+        bg = Image.new("RGB", (video_width, video_height), (10, 10, 10))
+
+    # --- Dark overlay (45% opacity) ---
+    overlay = Image.new("RGBA", (video_width, video_height), (0, 0, 0, int(255 * 0.45)))
+    bg_rgba = bg.convert("RGBA")
+    bg_with_veil = Image.alpha_composite(bg_rgba, overlay).convert("RGB")
+
+    # --- Hook text baked in ---
+    text_layer = _render_text_card(
+        hook_text, font_path, font_size, video_width, video_height,
+        y_center_ratio=0.42, bg_alpha=0,
+    )
+    bg_rgba2 = bg_with_veil.convert("RGBA")
+    composite = Image.alpha_composite(bg_rgba2, text_layer).convert("RGB")
+
+    hook_img_clip = ImageClip(np.array(composite)).with_duration(hook_dur)
+
+    # Fast zoom 1.0 → 1.20 on the hook card
+    d = hook_dur
+    zoomed = hook_img_clip.resized(lambda t: 1.0 + 0.20 * (1 - (1 - min(t / d, 1)) ** 2))
+    return CompositeVideoClip([zoomed.with_position("center")], size=(video_width, video_height)).with_start(0)
+
+
+def create_cta_clip(params, video_width: int, video_height: int, video_duration: float):
+    """
+    Task 6 — last 2 seconds: dark overlay + CTA text.
+    Returns a VideoClip overlay starting at video_duration - 2.
+    """
+    cta_dur = 2.0
+    cta_start = max(0.0, video_duration - cta_dur)
+    cta_text = getattr(params, 'cta_text', 'FOLLOW FOR MORE')
+    font_path = os.path.join(utils.font_dir(), getattr(params, 'font_name', 'STHeitiMedium.ttc'))
+    font_size = int(video_width * 0.075)
+    font_size = font_size if font_size % 2 == 0 else font_size + 1
+
+    text_img = _render_text_card(
+        cta_text, font_path, font_size, video_width, video_height,
+        y_center_ratio=0.50, bg_alpha=int(255 * 0.60),
+    )
+    cta_img_clip = (
+        ImageClip(np.array(text_img.convert("RGB")))
+        .with_duration(cta_dur)
+        .with_start(cta_start)
+        .with_opacity(0.92)
+    )
+    return cta_img_clip
+
+
 def generate_video(
     video_path: str,
     audio_path: str,
@@ -945,22 +1090,23 @@ def generate_video(
             font_size=params.font_size,
         )
 
+    # --- Subtitle / word-highlight layer ---
+    overlay_clips = []
+
     if subtitle_path and os.path.exists(subtitle_path):
-        # Check if word highlighting is enabled and enhanced subtitles are available
         enhanced_subtitle_path = getattr(params, '_enhanced_subtitle_path', None)
         use_word_highlighting = (
-            getattr(params, 'enable_word_highlighting', False) and
+            getattr(params, 'enable_word_highlighting', True) and
             enhanced_subtitle_path and
             os.path.exists(enhanced_subtitle_path)
         )
-        
+
         if use_word_highlighting:
             logger.info("Using enhanced subtitles with word highlighting")
             text_clips = create_enhanced_subtitle_clips(
                 enhanced_subtitle_path, params, video_width, video_height, font_path
             )
         else:
-            # Traditional subtitle rendering
             sub = SubtitlesClip(
                 subtitles=subtitle_path, encoding="utf-8", make_textclip=make_textclip
             )
@@ -968,22 +1114,83 @@ def generate_video(
             for item in sub.subtitles:
                 clip = create_text_clip(subtitle_item=item)
                 text_clips.append(clip)
-        
-        video_clip = CompositeVideoClip([video_clip, *text_clips])
 
+        overlay_clips.extend(text_clips)
+
+    # --- Task 3: Hook card overlay (first hook_duration seconds) ---
+    hook_image_path = getattr(params, '_hook_image_path', None)
+    hook_text = getattr(params, '_hook_text', '')
+    if getattr(params, 'enable_hook_card', True) and hook_image_path and hook_text:
+        try:
+            hook_clip = create_hook_clip(hook_image_path, hook_text, params, video_width, video_height)
+            overlay_clips.append(hook_clip)
+            logger.info(f"hook card added: '{hook_text}'")
+        except Exception as e:
+            logger.error(f"failed to create hook card: {e}")
+
+    # --- Task 6: CTA overlay (last 2 seconds) ---
+    if getattr(params, 'enable_cta', True):
+        try:
+            cta_clip = create_cta_clip(params, video_width, video_height, video_clip.duration)
+            overlay_clips.append(cta_clip)
+            logger.info(f"CTA card added: '{getattr(params, 'cta_text', 'FOLLOW FOR MORE')}'")
+        except Exception as e:
+            logger.error(f"failed to create CTA card: {e}")
+
+    if overlay_clips:
+        video_clip = CompositeVideoClip([video_clip, *overlay_clips])
+
+    # --- Task 5: BGM with fade-in + lower volume ---
     bgm_file = get_bgm_file(bgm_type=params.bgm_type, bgm_file=params.bgm_file)
     if bgm_file:
         try:
+            bgm_vol = getattr(params, 'bgm_volume', 0.12)
             bgm_clip = AudioFileClip(bgm_file).with_effects(
                 [
-                    afx.MultiplyVolume(params.bgm_volume),
+                    afx.MultiplyVolume(bgm_vol),
+                    afx.AudioFadeIn(1.5),
                     afx.AudioFadeOut(3),
                     afx.AudioLoop(duration=video_clip.duration),
                 ]
             )
-            audio_clip = CompositeAudioClip([audio_clip, bgm_clip])
+            audio_tracks = [audio_clip, bgm_clip]
+
+            # Task 5: SFX whoosh on each image cut
+            sfx_dir = os.path.join(utils.root_dir(), "resource", "sfx")
+            whoosh_path = os.path.join(sfx_dir, "whoosh.mp3")
+            boom_path = os.path.join(sfx_dir, "boom.mp3")
+            cut_times_path = os.path.join(output_dir, "cut_times.json")
+            sfx_vol = getattr(params, 'sfx_volume', 0.5)
+
+            if getattr(params, 'enable_sfx', True) and os.path.exists(whoosh_path):
+                cut_times = []
+                if os.path.exists(cut_times_path):
+                    try:
+                        with open(cut_times_path) as f:
+                            cut_times = json.load(f)
+                    except Exception:
+                        pass
+                for ct in cut_times:
+                    try:
+                        sfx = AudioFileClip(whoosh_path).with_effects(
+                            [afx.MultiplyVolume(sfx_vol)]
+                        ).with_start(ct)
+                        audio_tracks.append(sfx)
+                    except Exception:
+                        pass
+                # Boom at t=0 if hook card is on
+                if getattr(params, 'enable_hook_card', True) and os.path.exists(boom_path):
+                    try:
+                        boom = AudioFileClip(boom_path).with_effects(
+                            [afx.MultiplyVolume(sfx_vol)]
+                        ).with_start(0)
+                        audio_tracks.append(boom)
+                    except Exception:
+                        pass
+
+            audio_clip = CompositeAudioClip(audio_tracks)
         except Exception as e:
-            logger.error(f"failed to add bgm: {str(e)}")
+            logger.error(f"failed to add bgm/sfx: {str(e)}")
 
     video_clip = video_clip.with_audio(audio_clip)
     video_clip.write_videofile(
@@ -1002,7 +1209,72 @@ def generate_video(
     del video_clip
 
 
-def preprocess_video(materials: List[MaterialInfo], clip_duration=4):
+def _make_motion_clip(base_clip, effect_idx: int, clip_duration: float, orig_w: int, orig_h: int):
+    """
+    Apply one of 5 varied Ken Burns motions (Task 2).
+    Effect cycles by index so adjacent images never share the same motion.
+    Uses ease-out curves for professional deceleration feel.
+    """
+    d = max(clip_duration, 0.1)
+
+    def ease_out(t):
+        p = min(t / d, 1.0)
+        return 1.0 - (1.0 - p) ** 2
+
+    def ease_in_out(t):
+        p = min(t / d, 1.0)
+        return p * p * (3.0 - 2.0 * p)
+
+    effect = effect_idx % 5
+
+    if effect == 0:
+        # Zoom in fast (ease-out) 1.0 → 1.22
+        zoomed = base_clip.resized(lambda t: 1.0 + 0.22 * ease_out(t))
+        return CompositeVideoClip([zoomed.with_position("center")], size=(orig_w, orig_h))
+
+    elif effect == 1:
+        # Zoom out (ease-out reversed) 1.22 → 1.0
+        zoomed = base_clip.resized(lambda t: 1.22 - 0.22 * ease_out(t))
+        return CompositeVideoClip([zoomed.with_position("center")], size=(orig_w, orig_h))
+
+    elif effect == 2:
+        # Pan left with slight zoom (scale 1.15, x drifts left)
+        scale = 1.15
+        ow, oh = int(orig_w * scale), int(orig_h * scale)
+        extra_x = ow - orig_w
+        extra_y = (oh - orig_h) // 2
+        large = base_clip.resized(scale)
+
+        def pan_left(t):
+            return (int(-extra_x * ease_out(t)), -extra_y)
+
+        return CompositeVideoClip(
+            [large.with_position(pan_left)], size=(orig_w, orig_h)
+        )
+
+    elif effect == 3:
+        # Pan right with slight zoom (scale 1.15, x drifts right)
+        scale = 1.15
+        ow, oh = int(orig_w * scale), int(orig_h * scale)
+        extra_x = ow - orig_w
+        extra_y = (oh - orig_h) // 2
+        large = base_clip.resized(scale)
+
+        def pan_right(t):
+            return (int(-extra_x + extra_x * ease_out(t)), -extra_y)
+
+        return CompositeVideoClip(
+            [large.with_position(pan_right)], size=(orig_w, orig_h)
+        )
+
+    else:
+        # Zoom in dramatic (ease-in-out) 1.0 → 1.28
+        zoomed = base_clip.resized(lambda t: 1.0 + 0.28 * ease_in_out(t))
+        return CompositeVideoClip([zoomed.with_position("center")], size=(orig_w, orig_h))
+
+
+def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_style: str = "varied", _motion_start_index: int = 0):
+    motion_counter = _motion_start_index
     for material in materials:
         if not material.url:
             continue
@@ -1021,37 +1293,32 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4):
 
         if ext in const.FILE_TYPE_IMAGES:
             logger.info(f"processing image: {material.url}")
-            # Create an image clip and set its duration to 3 seconds
-            clip = (
-                ImageClip(material.url)
-                .with_duration(clip_duration)
-                .with_position("center")
-            )
-            # Apply a zoom effect using the resize method.
-            # A lambda function is used to make the zoom effect dynamic over time.
-            # The zoom effect starts from the original size and gradually scales up to 120%.
-            # t represents the current time, and clip.duration is the total duration of the clip (3 seconds).
-            # Note: 1 represents 100% size, so 1.2 represents 120% size.
-            zoom_clip = clip.resized(
-                lambda t: 1 + (clip_duration * 0.03) * (t / clip.duration)
-            )
+            base = ImageClip(material.url).with_duration(clip_duration)
+            orig_w, orig_h = base.size
 
-            # Optionally, create a composite video clip containing the zoomed clip.
-            # This is useful when you want to add other elements to the video.
-            final_clip = CompositeVideoClip([zoom_clip])
+            if motion_style == "off":
+                final_clip = CompositeVideoClip([base.with_position("center")], size=(orig_w, orig_h))
+            elif motion_style == "subtle":
+                # Original gentle linear zoom
+                zoomed = base.resized(lambda t: 1 + (clip_duration * 0.03) * (t / clip_duration))
+                final_clip = CompositeVideoClip([zoomed])
+            else:
+                # varied — cycle through 5 effects
+                final_clip = _make_motion_clip(base, motion_counter, clip_duration, orig_w, orig_h)
+                motion_counter += 1
 
-            # Output the video to a file.
             video_file = f"{material.url}.mp4"
             final_clip.write_videofile(
-                video_file, 
-                fps=30, 
+                video_file,
+                fps=fps,
                 logger=None,
                 codec=video_codec,
                 bitrate=video_bitrate,
                 audio_bitrate=audio_bitrate,
                 ffmpeg_params=quality_params
             )
-            close_clip(clip)
+            close_clip(base)
+            close_clip(final_clip)
             material.url = video_file
             logger.success(f"image processed: {video_file}")
     return materials

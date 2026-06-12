@@ -429,6 +429,32 @@ Please note that you must use English for generating video search terms; Chinese
     return search_terms
 
 
+def generate_hook(video_subject: str, video_script: str = "") -> str:
+    """Generate a 3-6 word all-caps hook line for the hook card (Task 3)."""
+    prompt = (
+        f"Return ONLY a 3-6 word all-caps hook for a YouTube Short about: {video_subject}. "
+        "No quotes. No explanation. Punctuation allowed: ? or ! only. "
+        "Example outputs: HE ENDED HIS CAREER WITH THIS | THE MOMENT NOBODY SAW COMING | "
+        "THIS CHANGED FOOTBALL FOREVER"
+    )
+    try:
+        result = _generate_response(prompt)
+        if result and not result.startswith("Error:"):
+            # Clean up — strip quotes, extra spaces, newlines
+            hook = result.strip().strip('"').strip("'").upper()
+            # Keep only first line
+            hook = hook.split("\n")[0].strip()
+            if 10 <= len(hook) <= 80:
+                logger.info(f"generated hook: {hook}")
+                return hook
+    except Exception as e:
+        logger.warning(f"hook generation failed: {e}")
+
+    # Fallback: capitalise first 5 words of subject
+    words = video_subject.upper().split()[:5]
+    return " ".join(words)
+
+
 if __name__ == "__main__":
     video_subject = "生命的意义是什么"
     script = generate_script(

@@ -1,6 +1,7 @@
 import os
 import random
 import threading
+import time
 from typing import List
 from urllib.parse import urlencode
 
@@ -354,6 +355,268 @@ def download_videos(
     logger.info(f"🎯 Final diversity: {len(downloaded_urls)} unique URLs downloaded")
     
     return video_paths
+
+
+def search_images_wikipedia(search_term: str, max_results: int = 10) -> List[MaterialInfo]:
+    """Search Wikipedia Commons for free images - no API key required."""
+    params = {
+        "action": "query",
+        "generator": "search",
+        "gsrsearch": search_term,
+        "gsrnamespace": 6,
+        "prop": "imageinfo",
+        "iiprop": "url|mime",
+        "format": "json",
+        "gsrlimit": max_results,
+    }
+    query_url = f"https://commons.wikimedia.org/w/api.php?{urlencode(params)}"
+    logger.info(f"searching Wikipedia Commons: {search_term}")
+    wiki_headers = {
+        "User-Agent": "MoneyPrinterTurbo/1.2 (https://github.com/DhruvilChauahan0210/MoneyPrinterTurbo-Extended; image-search-feature) python-requests"
+    }
+
+    try:
+        r = requests.get(query_url, headers=wiki_headers, timeout=(10, 30))
+        if not r.text.strip():
+            logger.warning(f"Wikipedia Commons returned empty response for '{search_term}'")
+            return []
+        response = r.json()
+        pages = response.get("query", {}).get("pages", {})
+        items = []
+        for page in pages.values():
+            imageinfo = page.get("imageinfo", [])
+            if not imageinfo:
+                continue
+            info = imageinfo[0]
+            mime = info.get("mime", "")
+            url = info.get("url", "")
+            if not url or mime not in ("image/jpeg", "image/png"):
+                continue
+            item = MaterialInfo()
+            item.provider = "wikipedia"
+            item.url = url
+            item.duration = 5
+            item.search_term = search_term
+            items.append(item)
+        logger.info(f"found {len(items)} images on Wikipedia Commons for '{search_term}'")
+        return items
+    except Exception as e:
+        logger.error(f"Wikipedia Commons search failed: {str(e)}")
+        return []
+
+
+def search_images_duckduckgo(search_term: str, max_results: int = 15) -> List[MaterialInfo]:
+    """Search DuckDuckGo Images — free, no API key, broad web coverage."""
+    try:
+        from ddgs import DDGS
+    except ImportError:
+        try:
+            from duckduckgo_search import DDGS
+        except ImportError:
+            logger.warning("ddgs/duckduckgo_search not installed, skipping DDG image search")
+            return []
+
+    logger.info(f"searching DuckDuckGo images: {search_term}")
+    try:
+        results = list(DDGS().images(search_term, max_results=max_results))
+        items = []
+        for r in results:
+            url = r.get("image", "")
+            if not url:
+                continue
+            item = MaterialInfo()
+            item.provider = "duckduckgo"
+            item.url = url
+            item.duration = 5
+            item.search_term = search_term
+            items.append(item)
+        logger.info(f"found {len(items)} images on DuckDuckGo for '{search_term}'")
+        return items
+    except Exception as e:
+        logger.error(f"DuckDuckGo image search failed: {str(e)}")
+        return []
+
+
+def search_images_pexels(search_term: str, max_results: int = 15) -> List[MaterialInfo]:
+    """Search Pexels for photos (images, not videos) — reuses existing pexels API key."""
+    api_key = get_api_key("pexels_api_keys")
+    headers = {
+        "Authorization": api_key,
+        "User-Agent": "Mozilla/5.0",
+    }
+    params = {"query": search_term, "per_page": max_results}
+    query_url = f"https://api.pexels.com/v1/search?{urlencode(params)}"
+    logger.info(f"searching Pexels photos: {search_term}")
+
+    try:
+        r = requests.get(query_url, headers=headers, proxies=config.proxy, timeout=(10, 30))
+        items = []
+        for photo in r.json().get("photos", []):
+            src = photo.get("src", {})
+            url = src.get("large2x") or src.get("large") or src.get("original", "")
+            if not url:
+                continue
+            item = MaterialInfo()
+            item.provider = "pexels_photo"
+            item.url = url
+            item.duration = 5
+            item.search_term = search_term
+            items.append(item)
+        logger.info(f"found {len(items)} photos on Pexels for '{search_term}'")
+        return items
+    except Exception as e:
+        logger.error(f"Pexels photo search failed: {str(e)}")
+        return []
+
+
+def search_images_pixabay(search_term: str, max_results: int = 20) -> List[MaterialInfo]:
+    """Search Pixabay for photos (images, not videos) — reuses existing pixabay API key."""
+    api_key = get_api_key("pixabay_api_keys")
+    params = {
+        "key": api_key,
+        "q": search_term,
+        "image_type": "photo",
+        "per_page": max_results,
+        "safesearch": "true",
+    }
+    query_url = f"https://pixabay.com/api/?{urlencode(params)}"
+    logger.info(f"searching Pixabay images: {search_term}")
+
+    try:
+        r = requests.get(query_url, proxies=config.proxy, timeout=(10, 30))
+        response = r.json()
+        items = []
+        for hit in response.get("hits", []):
+            url = hit.get("largeImageURL") or hit.get("webformatURL", "")
+            if not url:
+                continue
+            item = MaterialInfo()
+            item.provider = "pixabay_image"
+            item.url = url
+            item.duration = 5
+            item.search_term = search_term
+            items.append(item)
+        logger.info(f"found {len(items)} images on Pixabay for '{search_term}'")
+        return items
+    except Exception as e:
+        logger.error(f"Pixabay image search failed: {str(e)}")
+        return []
+
+
+def save_image(image_url: str, save_dir: str = "", search_term: str = "") -> str:
+    """Download an image, normalize it to RGB JPEG with PIL, and save locally.
+    Always outputs a standard JPEG so MoviePy ImageClip never sees exotic formats."""
+    from PIL import Image
+    import io
+
+    if not save_dir:
+        save_dir = utils.storage_dir("cache_images")
+
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+
+    url_without_query = image_url.split("?")[0]
+    url_hash = utils.md5(url_without_query)
+    # Always save as .jpg regardless of source format
+    image_path = f"{save_dir}/img-{url_hash}.jpg"
+
+    if os.path.exists(image_path) and os.path.getsize(image_path) > 0:
+        logger.info(f"image already exists: {image_path}")
+        return image_path
+
+    # Wikimedia rate-limits generic browser UAs from scripts — they require a
+    # descriptive User-Agent (https://meta.wikimedia.org/wiki/User-Agent_policy)
+    if "wikimedia.org" in image_url or "wikipedia.org" in image_url:
+        headers = {
+            "User-Agent": "MoneyPrinterTurbo/1.2 (https://github.com/DhruvilChauahan0210/MoneyPrinterTurbo-Extended; image-search-feature) python-requests"
+        }
+    else:
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+        }
+
+    try:
+        resp = requests.get(image_url, headers=headers, proxies=config.proxy, timeout=(30, 60))
+        resp.raise_for_status()
+
+        # Convert to standard RGB JPEG using PIL — handles WebP, CMYK, progressive JPEG, etc.
+        img = Image.open(io.BytesIO(resp.content)).convert("RGB")
+        # libx264 requires both dimensions divisible by 2
+        w, h = img.size
+        new_w = w if w % 2 == 0 else w - 1
+        new_h = h if h % 2 == 0 else h - 1
+        if new_w != w or new_h != h:
+            img = img.crop((0, 0, new_w, new_h))
+        img.save(image_path, "JPEG", quality=92)
+
+        if os.path.exists(image_path) and os.path.getsize(image_path) > 0:
+            return image_path
+    except Exception as e:
+        logger.error(f"failed to download/convert image {image_url}: {str(e)}")
+        try:
+            os.remove(image_path)
+        except Exception:
+            pass
+
+    return ""
+
+
+def download_images(
+    task_id: str,
+    search_terms: List[str],
+    source: str = "image_search",
+    audio_duration: float = 0.0,
+    clip_duration: int = 5,
+) -> List[str]:
+    """
+    Download images from Wikipedia Commons + Pixabay Images for the given search terms.
+    Returns a list of local image file paths ready for preprocess_video().
+    """
+    image_paths = []
+    save_dir = utils.storage_dir("cache_images")
+    total_duration = 0.0
+
+    for search_term in search_terms:
+        if total_duration >= audio_duration:
+            break
+
+        # 1. DuckDuckGo — free, no key, broad web coverage (best for specific events/people)
+        ddg_items = search_images_duckduckgo(search_term, max_results=15)
+
+        # 2. Pexels Photos — reuses existing pexels key, high quality stock photos
+        pexels_items = []
+        try:
+            pexels_items = search_images_pexels(search_term, max_results=8)
+        except Exception as e:
+            logger.warning(f"Pexels photo search skipped: {str(e)}")
+
+        # 3. Wikipedia Commons — free, historically rich (throttled to avoid 429s)
+        wiki_items = search_images_wikipedia(search_term, max_results=5)
+
+        # 4. Pixabay Photos — optional, only if key is configured
+        pixabay_items = []
+        try:
+            pixabay_items = search_images_pixabay(search_term, max_results=8)
+        except Exception:
+            logger.debug("Pixabay image search skipped (no key configured)")
+
+        combined = ddg_items + pexels_items + wiki_items + pixabay_items
+        random.shuffle(combined)
+
+        for item in combined:
+            if total_duration >= audio_duration:
+                break
+            # Throttle Wikipedia downloads to avoid 429 rate limiting
+            if item.provider == "wikipedia":
+                time.sleep(1.0)
+            path = save_image(item.url, save_dir=save_dir, search_term=search_term)
+            if path:
+                image_paths.append(path)
+                total_duration += clip_duration
+                logger.info(f"saved image: {path} ({item.provider} / '{search_term}')")
+
+    logger.success(f"downloaded {len(image_paths)} images for {len(search_terms)} search terms")
+    return image_paths
 
 
 if __name__ == "__main__":
