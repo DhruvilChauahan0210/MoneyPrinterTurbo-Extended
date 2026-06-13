@@ -370,17 +370,18 @@ def generate_terms(video_subject: str, video_script: str, amount: int = 5) -> Li
 # Role: Video Search Terms Generator
 
 ## Goals:
-Generate {amount} search terms for stock videos, depending on the subject of a video.
+Generate {amount} search terms used to find images and video clips for a video, depending on the subject of a video.
 
 ## Constrains:
 1. the search terms are to be returned as a json-array of strings.
-2. each search term should consist of 1-3 words, always add the main subject of the video.
-3. you must only return the json-array of strings. you must not return anything else. you must not return the script.
-4. the search terms must be related to the subject of the video.
-5. reply with english search terms only.
+2. each search term should consist of 2-6 words and MUST include the specific named entities of the video (people's names, team/place names, event name, year). NEVER return generic terms like "soccer player", "angry man" or "sports moment" — they retrieve unrelated media.
+3. the FIRST search term must describe the single most important moment of the video as precisely as possible (who did what to whom, where, when).
+4. you must only return the json-array of strings. you must not return anything else. you must not return the script.
+5. every search term must stay strictly on the main subject of the script — no tangents, no background topics.
+6. reply with english search terms only.
 
-## Output Example:
-["search term 1", "search term 2", "search term 3","search term 4","search term 5"]
+## Output Example (for a video about Zidane's 2006 headbutt):
+["Zidane headbutt Materazzi 2006 World Cup final", "Zidane red card 2006 final", "Zinedine Zidane France captain 2006", "Marco Materazzi Italy 2006 World Cup", "Zidane walking past World Cup trophy"]
 
 ## Context:
 ### Video Subject
@@ -400,8 +401,8 @@ Please note that you must use English for generating video search terms; Chinese
         try:
             response = _generate_response(prompt)
             if "Error: " in response:
-                logger.error(f"failed to generate video script: {response}")
-                return response
+                logger.error(f"failed to generate video terms: {response}")
+                continue
             search_terms = json.loads(response)
             if not isinstance(search_terms, list) or not all(
                 isinstance(term, str) for term in search_terms
@@ -427,6 +428,32 @@ Please note that you must use English for generating video search terms; Chinese
 
     logger.success(f"completed: \n{search_terms}")
     return search_terms
+
+
+def generate_hook_term(video_subject: str, video_script: str = "") -> str:
+    """
+    Generate ONE precise search phrase describing the exact key moment of the video
+    (used to find the hook image/clip, e.g. "Zidane headbutt Materazzi 2006 World Cup final").
+    """
+    prompt = (
+        "Return ONLY one search phrase (4-8 words) that describes the single most iconic, "
+        f"climactic moment of a video about: {video_subject}. "
+        "It MUST contain the specific names of the people/places/event involved (who did what to whom, when). "
+        "No quotes, no explanation, no generic words like 'moment' or 'incident' alone. "
+        "Example output: Zidane headbutt Materazzi 2006 World Cup final"
+        + (f"\n\nVideo script for context:\n{video_script[:1500]}" if video_script else "")
+    )
+    try:
+        result = _generate_response(prompt)
+        if result and not result.startswith("Error:"):
+            term = result.strip().strip('"').strip("'").split("\n")[0].strip()
+            if 3 <= len(term.split()) <= 12:
+                logger.info(f"generated hook search term: {term}")
+                return term
+    except Exception as e:
+        logger.warning(f"hook term generation failed: {e}")
+    # Fallback: the subject itself is usually already specific
+    return video_subject.strip()
 
 
 def generate_hook(video_subject: str, video_script: str = "") -> str:

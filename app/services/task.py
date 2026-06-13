@@ -40,6 +40,13 @@ def generate_terms(task_id, params, video_script):
         video_terms = llm.generate_terms(
             video_subject=params.video_subject, video_script=video_script, amount=5
         )
+        # llm.generate_terms returns the error message as a plain string on failure;
+        # without this guard the string gets iterated character by character downstream
+        if isinstance(video_terms, str) or not video_terms:
+            logger.warning(
+                f"term generation failed ({str(video_terms)[:80]}), falling back to video subject"
+            )
+            video_terms = [params.video_subject]
     else:
         if isinstance(video_terms, str):
             video_terms = [term.strip() for term in re.split(r"[,，]", video_terms)]
@@ -170,6 +177,16 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
         return [material_info.url for material_info in materials]
 
     elif params.video_source == "image_search":
+        video_script = getattr(params, 'video_script', '') or getattr(params, 'video_subject', '')
+
+        # Hook moment — one precise search phrase for the exact key moment
+        hook_term = ""
+        try:
+            hook_term = llm.generate_hook_term(params.video_subject, video_script)
+        except Exception as e:
+            logger.warning(f"hook term generation failed: {e}")
+            hook_term = params.video_subject or ""
+
         logger.info("\n\n## downloading images + video clips (DuckDuckGo + Wikipedia + Pexels)")
         image_paths = material.download_images(
             task_id=task_id,
@@ -179,33 +196,67 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
             clip_duration=params.video_clip_duration,
             video_clip_ratio=getattr(params, 'video_clip_ratio', 0.35),
             video_aspect=str(params.video_aspect) if params.video_aspect else "portrait",
+            hook_term=hook_term,
         )
         if not image_paths:
             sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)
             logger.error("failed to download images, no results found for the given search terms.")
             return None
 
+        from app.services import image_ranker
+
+        # Relevance gate — drop media unrelated to the video subject (CLIP)
+        subject_text = params.video_subject or video_script[:200]
+        try:
+            image_paths = image_ranker.filter_by_relevance(
+                image_paths,
+                subject_text,
+                min_score=getattr(params, 'image_ranking_min_score', 0.18),
+                model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
+            )
+        except Exception as e:
+            logger.warning(f"relevance filter failed, keeping all media: {e}")
+
+        # Task 3 — pick the media that best matches the exact hook moment
+        hook_path = None
+        if hook_term:
+            try:
+                hook_path, _ = image_ranker.pick_best_media(
+                    image_paths, hook_term,
+                    model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
+                )
+            except Exception as e:
+                logger.warning(f"hook media selection failed: {e}")
+
         # Task 1 — CLIP image-to-script ranking
         if getattr(params, 'enable_image_ranking', True):
             logger.info("\n\n## ranking images against script (CLIP)")
             try:
-                from app.services import image_ranker
-                video_script = getattr(params, 'video_script', '') or getattr(params, 'video_subject', '')
                 image_paths = image_ranker.rank_images_for_script(
                     image_paths,
                     video_script,
                     model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
                     min_score=getattr(params, 'image_ranking_min_score', 0.18),
                 )
-                # Store best image for hook card (Task 3)
-                if image_paths:
-                    params._best_image_path = image_paths[0]
             except Exception as e:
                 logger.warning(f"image ranking failed, using original order: {e}")
 
-        # Task 3 — store hook image path on params (best / first image)
-        if not getattr(params, '_best_image_path', None) and image_paths:
-            params._best_image_path = image_paths[0]
+        # Open the short on the hook moment itself
+        if hook_path and hook_path in image_paths:
+            image_paths.remove(hook_path)
+            image_paths.insert(0, hook_path)
+        if not hook_path and image_paths:
+            hook_path = image_paths[0]
+
+        # Hook card needs a still image — extract a frame if the best match is a clip
+        if hook_path and hook_path.lower().endswith((".mp4", ".mov", ".webm", ".mkv", ".avi")):
+            frame = image_ranker.extract_video_frame(hook_path, hook_path + ".hook.jpg")
+            params._best_image_path = frame or next(
+                (p for p in image_paths if not p.lower().endswith((".mp4", ".mov", ".webm", ".mkv", ".avi"))),
+                None,
+            )
+        else:
+            params._best_image_path = hook_path
 
         # Force sequential so ranked order is preserved (Task 1)
         params.video_concat_mode = VideoConcatMode.sequential
@@ -406,7 +457,13 @@ def start(task_id, params: VideoParams, stop_at: str = "video"):
                 logger.warning(f"hook text generation failed: {e}")
                 hook_text = " ".join(params.video_subject.upper().split()[:5])
         params._hook_text = hook_text
-        params._hook_image_path = getattr(params, '_best_image_path', None) or (downloaded_videos[0].replace('.mp4', '') if downloaded_videos else None)
+        hook_image = getattr(params, '_best_image_path', None)
+        if not hook_image and downloaded_videos:
+            from app.services import image_ranker
+            hook_image = image_ranker.extract_video_frame(
+                downloaded_videos[0], downloaded_videos[0] + ".hook.jpg"
+            ) or None
+        params._hook_image_path = hook_image
         logger.info(f"hook text: '{hook_text}'")
 
     # 6. Generate final videos

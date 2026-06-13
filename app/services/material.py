@@ -614,17 +614,42 @@ def download_images(
     clip_duration: int = 5,
     video_clip_ratio: float = 0.35,
     video_aspect: str = "portrait",
+    hook_term: str = "",
 ) -> List[str]:
     """
     Download images AND short video clips for the given search terms.
     Mixes them so ~video_clip_ratio fraction are real video clips (Pexels Videos)
     and the rest are photos (DDG / Pexels Photos / Wikipedia Commons).
+    If hook_term is given, a dedicated search for the exact key moment runs first
+    and its results go at the FRONT of the returned list.
     Returns a list of local file paths (.jpg images + .mp4 clips) for preprocess_video().
     """
     all_paths = []
     image_save_dir = utils.storage_dir("cache_images")
     video_save_dir = utils.storage_dir("cache_videos")
     total_duration = 0.0
+
+    # ── Hook moment: dedicated search for the exact key moment ──────────────
+    # DDG and Wikipedia are the only sources with real-event photos (stock sites
+    # like Pexels won't have e.g. "Zidane headbutt"), so prioritise them here.
+    if hook_term:
+        logger.info(f"searching for hook moment: '{hook_term}'")
+        hook_pool = search_images_duckduckgo(hook_term, max_results=10)
+        hook_pool += search_images_wikipedia(hook_term, max_results=4)
+        hook_saved = 0
+        for item in hook_pool:
+            if hook_saved >= 4:
+                break
+            if item.provider == "wikipedia":
+                time.sleep(1.0)
+            path = save_image(item.url, save_dir=image_save_dir, search_term=hook_term)
+            if path:
+                all_paths.append(path)
+                total_duration += clip_duration
+                hook_saved += 1
+                logger.info(f"saved hook candidate: {path} ({item.provider} / '{hook_term}')")
+        if not hook_saved:
+            logger.warning(f"no hook moment media found for '{hook_term}'")
 
     # How many clips vs images per term
     clips_per_term = max(1, round(video_clip_ratio * 3))   # e.g. 1-2 clips per term

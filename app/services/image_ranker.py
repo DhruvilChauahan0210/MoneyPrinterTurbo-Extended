@@ -64,13 +64,49 @@ def _try_load_clip(model_name: str = "clip-vit-base-patch32"):
         return False
 
 
+def _as_tensor(emb):
+    # transformers v5 wraps get_*_features output in a ModelOutput;
+    # its pooler_output is the projected joint-space embedding
+    return emb.pooler_output if hasattr(emb, "pooler_output") else emb
+
+
 def _embed_texts(texts: List[str]):
     import torch
     inputs = _clip_processor(text=texts, return_tensors="pt", padding=True, truncation=True)
     with torch.no_grad():
-        emb = _clip_model.get_text_features(**inputs)
+        emb = _as_tensor(_clip_model.get_text_features(**inputs))
     emb = emb / emb.norm(p=2, dim=-1, keepdim=True)
     return emb.cpu()
+
+
+def _load_media_as_image(path: str):
+    """Load an image file, or extract a middle frame from a video file, as PIL RGB."""
+    from PIL import Image
+    if path.lower().endswith((".mp4", ".mov", ".webm", ".mkv", ".avi")):
+        import cv2
+        cap = cv2.VideoCapture(path)
+        try:
+            total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT) or 0)
+            if total > 1:
+                cap.set(cv2.CAP_PROP_POS_FRAMES, total // 2)
+            ok, frame = cap.read()
+            if ok and frame is not None:
+                return Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+        finally:
+            cap.release()
+        raise ValueError(f"could not extract frame from {path}")
+    return Image.open(path).convert("RGB")
+
+
+def extract_video_frame(video_path: str, out_path: str) -> str:
+    """Save a middle frame of a video to out_path (jpg). Returns out_path or ''."""
+    try:
+        img = _load_media_as_image(video_path)
+        img.save(out_path, "JPEG", quality=92)
+        return out_path
+    except Exception as e:
+        logger.warning(f"image_ranker: frame extraction failed for {video_path}: {e}")
+        return ""
 
 
 def _embed_images(paths: List[str]):
@@ -79,12 +115,12 @@ def _embed_images(paths: List[str]):
     imgs = []
     for p in paths:
         try:
-            imgs.append(Image.open(p).convert("RGB"))
+            imgs.append(_load_media_as_image(p))
         except Exception:
             imgs.append(Image.new("RGB", (224, 224)))
     inputs = _clip_processor(images=imgs, return_tensors="pt")
     with torch.no_grad():
-        emb = _clip_model.get_image_features(**inputs)
+        emb = _as_tensor(_clip_model.get_image_features(**inputs))
     emb = emb / emb.norm(p=2, dim=-1, keepdim=True)
     return emb.cpu()
 
@@ -92,6 +128,67 @@ def _embed_images(paths: List[str]):
 # ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
+
+def pick_best_media(paths: List[str], text: str, model_name: str = "clip-vit-base-patch32"):
+    """
+    Return (best_path, score) — the media item (image or video) whose CLIP embedding
+    best matches `text`. Returns (None, 0.0) if CLIP is unavailable or paths is empty.
+    """
+    if not paths or not text or not _try_load_clip(model_name):
+        return None, 0.0
+    try:
+        import torch
+        text_emb = _embed_texts([text])          # (1, d)
+        img_emb = _embed_images(paths)           # (n, d)
+        sim = torch.mm(text_emb, img_emb.T).numpy()[0]  # (n,)
+        best_i = int(sim.argmax())
+        logger.info(
+            f"image_ranker: best match for '{text[:60]}' → {paths[best_i]} (score={sim[best_i]:.3f})"
+        )
+        return paths[best_i], float(sim[best_i])
+    except Exception as e:
+        logger.warning(f"image_ranker: pick_best_media failed ({e})")
+        return None, 0.0
+
+
+def filter_by_relevance(
+    paths: List[str],
+    subject_text: str,
+    min_score: float = 0.20,
+    min_keep: int = 6,
+    model_name: str = "clip-vit-base-patch32",
+) -> List[str]:
+    """
+    Drop media whose CLIP similarity to the video subject is below min_score,
+    so off-topic downloads (e.g. random DDG results) never reach the final video.
+    Always keeps at least min_keep items (the highest-scoring ones).
+    Falls back to the original list if CLIP is unavailable.
+    """
+    if not paths or not subject_text or not _try_load_clip(model_name):
+        return paths
+    try:
+        import torch
+        text_emb = _embed_texts([subject_text])
+        img_emb = _embed_images(paths)
+        sim = torch.mm(text_emb, img_emb.T).numpy()[0]
+
+        kept = [(s, p) for s, p in zip(sim, paths) if s >= min_score]
+        if len(kept) < min_keep:
+            ranked = sorted(zip(sim, paths), key=lambda x: -x[0])
+            kept = ranked[: min(min_keep, len(ranked))]
+        kept_paths = [p for _, p in sorted(kept, key=lambda x: paths.index(x[1]))]
+
+        dropped = len(paths) - len(kept_paths)
+        if dropped:
+            logger.info(
+                f"image_ranker: dropped {dropped}/{len(paths)} off-topic media "
+                f"(score < {min_score} vs subject '{subject_text[:50]}')"
+            )
+        return kept_paths
+    except Exception as e:
+        logger.warning(f"image_ranker: relevance filter failed ({e}), keeping all media")
+        return paths
+
 
 def rank_images_for_script(
     image_paths: List[str],
