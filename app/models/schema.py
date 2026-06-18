@@ -132,6 +132,17 @@ class VideoParams(BaseModel):
     enable_image_ranking: Optional[bool] = True
     image_ranking_min_score: Optional[float] = 0.18
 
+    # Subject-presence gate — drop images that don't actually contain the target
+    # people/subjects. Uses CLIP zero-shot: positive labels vs negative distractors.
+    enable_subject_gate: Optional[bool] = False
+    subject_positive_labels: Optional[List[str]] = None   # e.g. ["Lionel Messi", "Cristiano Ronaldo"]
+    subject_negative_labels: Optional[List[str]] = None   # e.g. ["a random soccer player", "an empty stadium"]
+    subject_gate_margin: Optional[float] = 0.05           # positive prob must beat best negative by this
+
+    # Timed sync — align each image to the caption phrase being spoken, so the
+    # right visual shows at the right moment (uses enhanced subtitle word timings).
+    enable_timed_sync: Optional[bool] = False
+
     # Mixed media: ratio of short video clips vs photos in image_search mode
     video_clip_ratio: Optional[float] = 0.35
 

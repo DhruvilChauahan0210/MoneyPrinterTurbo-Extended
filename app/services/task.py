@@ -205,6 +205,14 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
 
         from app.services import image_ranker
 
+        # Photo-quality filter — drop graphics/posters/cutouts/logos so only real
+        # photographs reach the video (runs before CLIP to shrink the work too).
+        try:
+            image_paths = [p for p in image_paths if p.lower().endswith((".mp4", ".mov", ".webm", ".mkv", ".avi"))] \
+                + image_ranker.filter_graphics([p for p in image_paths if not p.lower().endswith((".mp4", ".mov", ".webm", ".mkv", ".avi"))])
+        except Exception as e:
+            logger.warning(f"photo-quality filter failed, keeping all media: {e}")
+
         # Relevance gate — drop media unrelated to the video subject (CLIP)
         subject_text = params.video_subject or video_script[:200]
         try:
@@ -216,6 +224,22 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
             )
         except Exception as e:
             logger.warning(f"relevance filter failed, keeping all media: {e}")
+
+        # Subject-presence gate — drop media that doesn't actually contain the
+        # target people/subjects (e.g. random players, stadiums, logos), which
+        # the relevance filter alone lets through and which tanks retention.
+        if getattr(params, 'enable_subject_gate', False) and getattr(params, 'subject_positive_labels', None):
+            logger.info("\n\n## subject-presence gate (verifying target characters are in frame)")
+            try:
+                image_paths = image_ranker.filter_by_subject_presence(
+                    image_paths,
+                    positive_labels=params.subject_positive_labels,
+                    negative_labels=getattr(params, 'subject_negative_labels', None),
+                    margin=getattr(params, 'subject_gate_margin', 0.05),
+                    model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
+                )
+            except Exception as e:
+                logger.warning(f"subject-presence gate failed, keeping all media: {e}")
 
         # Task 3 — pick the media that best matches the exact hook moment
         hook_path = None
@@ -258,16 +282,57 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
         else:
             params._best_image_path = hook_path
 
-        # Force sequential so ranked order is preserved (Task 1)
+        # Force sequential so ranked/synced order is preserved (Task 1)
         params.video_concat_mode = VideoConcatMode.sequential
 
+        # ── Timed sync — align each image to the caption phrase being spoken ──
+        # Each image is shown for exactly its caption's time window, so the right
+        # visual lands at the right moment instead of on a fixed clip-duration grid.
+        clip_durations = None
+        if getattr(params, 'enable_timed_sync', False):
+            import json as _json
+            enh_path = os.path.join(utils.task_dir(task_id), "subtitle_enhanced.json")
+            segments = []
+            try:
+                with open(enh_path, "r", encoding="utf-8") as f:
+                    segments = _json.load(f)
+            except Exception as e:
+                logger.warning(f"timed sync: cannot load enhanced subtitles ({e}), skipping sync")
+            if segments:
+                seg_texts = [s.get("text", "") for s in segments]
+                idxs = image_ranker.assign_images_to_segments(
+                    image_paths, seg_texts,
+                    model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
+                )
+                synced_paths, clip_durations = [], []
+                for s, seg in enumerate(segments):
+                    start = float(seg.get("start_time", 0.0))
+                    end = float(seg.get("end_time", start))
+                    if s + 1 < len(segments):   # close gaps to the next phrase
+                        end = float(segments[s + 1].get("start_time", end))
+                    synced_paths.append(image_paths[idxs[s]])
+                    clip_durations.append(max(0.4, end - start))
+                total = sum(clip_durations)
+                if audio_duration and total < audio_duration:   # cover full voiceover
+                    clip_durations[-1] += (audio_duration - total)
+                image_paths = synced_paths
+                params.video_clip_duration = int(max(clip_durations)) + 1   # no truncation
+                logger.info(
+                    f"timed sync: aligned {len(image_paths)} images to {len(segments)} caption "
+                    f"phrases (visual {sum(clip_durations):.1f}s vs audio {audio_duration:.1f}s)"
+                )
+
         # Task 2 — Ken Burns 2.0: pass motion style
-        from app.models.schema import MaterialInfo as MI
+        from app.models.schema import MaterialInfo as MI, VideoAspect
+        vw, vh = VideoAspect(params.video_aspect).to_resolution()
         image_materials = [MI(url=p, provider="image_search") for p in image_paths]
         processed = video.preprocess_video(
             materials=image_materials,
             clip_duration=params.video_clip_duration,
             motion_style=getattr(params, 'image_motion_style', 'varied'),
+            durations=clip_durations,
+            video_width=vw,
+            video_height=vh,
         )
         if not processed:
             sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)

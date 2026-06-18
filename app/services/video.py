@@ -233,17 +233,21 @@ def combine_videos(
                     if clip_ratio == video_ratio:
                         clip = clip.resized(new_size=(video_width, video_height))
                     else:
+                        # COVER: scale to FILL the frame then center-crop the
+                        # overflow, so the image fills all of 9:16 with no black bars.
                         if clip_ratio > video_ratio:
-                            scale_factor = video_width / clip_w
-                        else:
+                            # source wider than target → match height, crop sides
                             scale_factor = video_height / clip_h
+                        else:
+                            # source taller than target → match width, crop top/bottom
+                            scale_factor = video_width / clip_w
 
                         new_width = int(clip_w * scale_factor)
                         new_height = int(clip_h * scale_factor)
 
-                        background = ColorClip(size=(video_width, video_height), color=(0, 0, 0)).with_duration(clip_duration)
                         clip_resized = clip.resized(new_size=(new_width, new_height)).with_position("center")
-                        clip = CompositeVideoClip([background, clip_resized])
+                        # Composite sized to the target frame crops the overflow.
+                        clip = CompositeVideoClip([clip_resized], size=(video_width, video_height))
                 
                 # Apply transitions if specified
                 if video_transition_mode and video_transition_mode.value != VideoTransitionMode.none.value:
@@ -300,10 +304,13 @@ def combine_videos(
             start_time = 0
 
             while start_time < clip_duration:
-                end_time = min(start_time + max_clip_duration, clip_duration)            
-                if clip_duration - start_time >= max_clip_duration:
+                end_time = min(start_time + max_clip_duration, clip_duration)
+                # Keep this chunk if it's a full max-length chunk OR the first chunk
+                # of the clip (so clips shorter than max_clip_duration aren't dropped —
+                # required for timed-sync phrase clips, which are often < max).
+                if clip_duration - start_time >= max_clip_duration or start_time == 0:
                     subclipped_items.append(SubClippedVideoClip(file_path= video_path, start_time=start_time, end_time=end_time, width=clip_w, height=clip_h))
-                start_time = end_time    
+                start_time = end_time
                 if video_concat_mode.value == VideoConcatMode.sequential.value:
                     break
 
@@ -333,17 +340,21 @@ def combine_videos(
                     if clip_ratio == video_ratio:
                         clip = clip.resized(new_size=(video_width, video_height))
                     else:
+                        # COVER: scale to FILL the frame then center-crop the
+                        # overflow, so the image fills all of 9:16 with no black bars.
                         if clip_ratio > video_ratio:
-                            scale_factor = video_width / clip_w
-                        else:
+                            # source wider than target → match height, crop sides
                             scale_factor = video_height / clip_h
+                        else:
+                            # source taller than target → match width, crop top/bottom
+                            scale_factor = video_width / clip_w
 
                         new_width = int(clip_w * scale_factor)
                         new_height = int(clip_h * scale_factor)
 
-                        background = ColorClip(size=(video_width, video_height), color=(0, 0, 0)).with_duration(clip_duration)
                         clip_resized = clip.resized(new_size=(new_width, new_height)).with_position("center")
-                        clip = CompositeVideoClip([background, clip_resized])
+                        # Composite sized to the target frame crops the overflow.
+                        clip = CompositeVideoClip([clip_resized], size=(video_width, video_height))
                         
                 shuffle_side = random.choice(["left", "right", "top", "bottom"])
                 if video_transition_mode and video_transition_mode.value == VideoTransitionMode.none.value:
@@ -1273,11 +1284,37 @@ def _make_motion_clip(base_clip, effect_idx: int, clip_duration: float, orig_w: 
         return CompositeVideoClip([zoomed.with_position("center")], size=(orig_w, orig_h))
 
 
-def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_style: str = "varied", _motion_start_index: int = 0):
+def _make_blurred_background(image_path: str, W: int, H: int) -> str:
+    """
+    Build a full-frame (W×H) blurred, darkened version of the image to use as a
+    background fill, so the foreground image can be shown FULLY (fit, not cropped)
+    with no black bars. Returns the path to the saved background jpg.
+    """
+    from PIL import Image, ImageFilter, ImageEnhance
+    img = Image.open(image_path).convert("RGB")
+    iw, ih = img.size
+    scale = max(W / iw, H / ih)
+    bw, bh = int(iw * scale) + 2, int(ih * scale) + 2
+    bg = img.resize((bw, bh), Image.LANCZOS)
+    left, top = (bw - W) // 2, (bh - H) // 2
+    bg = bg.crop((left, top, left + W, top + H))
+    bg = bg.filter(ImageFilter.GaussianBlur(40))
+    bg = ImageEnhance.Brightness(bg).enhance(0.5)
+    out = f"{image_path}.bg.jpg"
+    bg.save(out, "JPEG", quality=82)
+    return out
+
+
+def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_style: str = "varied", _motion_start_index: int = 0, durations: List[float] = None, video_width: int = None, video_height: int = None):
     motion_counter = _motion_start_index
-    for material in materials:
+    for idx, material in enumerate(materials):
         if not material.url:
             continue
+
+        # Per-clip duration (timed sync): each image lasts exactly its caption window.
+        this_duration = clip_duration
+        if durations and idx < len(durations) and durations[idx]:
+            this_duration = max(0.4, float(durations[idx]))
 
         ext = utils.parse_extension(material.url)
         try:
@@ -1292,22 +1329,46 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_styl
             continue
 
         if ext in const.FILE_TYPE_IMAGES:
-            logger.info(f"processing image: {material.url}")
-            base = ImageClip(material.url).with_duration(clip_duration)
-            orig_w, orig_h = base.size
+            logger.info(f"processing image: {material.url} ({this_duration:.2f}s)")
 
-            if motion_style == "off":
-                final_clip = CompositeVideoClip([base.with_position("center")], size=(orig_w, orig_h))
-            elif motion_style == "subtle":
-                # Original gentle linear zoom
-                zoomed = base.resized(lambda t: 1 + (clip_duration * 0.03) * (t / clip_duration))
-                final_clip = CompositeVideoClip([zoomed])
+            if video_width and video_height:
+                # ── Blurred-fill framing ──────────────────────────────────────
+                # Show the WHOLE image (fit, no clipping) over a blurred copy of
+                # itself that fills the frame — full-screen with no black bars and
+                # no aggressive crop. Gentle zoom only, so subjects stay in frame.
+                W, H = video_width, video_height
+                from PIL import Image as _PILImage
+                with _PILImage.open(material.url) as _im:
+                    iw, ih = _im.size
+                fit = min(W / iw, H / ih)
+                fw, fh = max(2, int(iw * fit)), max(2, int(ih * fit))
+
+                bg_path = _make_blurred_background(material.url, W, H)
+                bg_clip = ImageClip(bg_path).with_duration(this_duration)
+                fg = ImageClip(material.url).with_duration(this_duration).resized(new_size=(fw, fh))
+
+                if motion_style != "off":
+                    # subtle, slow zoom (1.00 → 1.06) — no harsh Ken Burns crop
+                    fg = fg.resized(lambda t: 1.0 + 0.06 * min(t / max(this_duration, 0.1), 1.0))
+
+                final_clip = CompositeVideoClip(
+                    [bg_clip.with_position("center"), fg.with_position("center")],
+                    size=(W, H),
+                )
             else:
-                # varied — cycle through 5 effects
-                final_clip = _make_motion_clip(base, motion_counter, clip_duration, orig_w, orig_h)
-                motion_counter += 1
+                base = ImageClip(material.url).with_duration(this_duration)
+                orig_w, orig_h = base.size
+                if motion_style == "off":
+                    final_clip = CompositeVideoClip([base.with_position("center")], size=(orig_w, orig_h))
+                elif motion_style == "subtle":
+                    zoomed = base.resized(lambda t: 1 + (this_duration * 0.03) * (t / this_duration))
+                    final_clip = CompositeVideoClip([zoomed])
+                else:
+                    final_clip = _make_motion_clip(base, motion_counter, this_duration, orig_w, orig_h)
+                    motion_counter += 1
 
-            video_file = f"{material.url}.mp4"
+            # Unique output per segment so a reused image keeps its own duration.
+            video_file = f"{material.url}.seg{idx}.mp4" if durations else f"{material.url}.mp4"
             final_clip.write_videofile(
                 video_file,
                 fps=fps,
@@ -1317,7 +1378,6 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_styl
                 audio_bitrate=audio_bitrate,
                 ffmpeg_params=quality_params
             )
-            close_clip(base)
             close_clip(final_clip)
             material.url = video_file
             logger.success(f"image processed: {video_file}")

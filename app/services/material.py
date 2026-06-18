@@ -634,7 +634,7 @@ def download_images(
     # like Pexels won't have e.g. "Zidane headbutt"), so prioritise them here.
     if hook_term:
         logger.info(f"searching for hook moment: '{hook_term}'")
-        hook_pool = search_images_duckduckgo(hook_term, max_results=10)
+        hook_pool = search_images_duckduckgo(hook_term, max_results=16)
         hook_pool += search_images_wikipedia(hook_term, max_results=4)
         hook_saved = 0
         for item in hook_pool:
@@ -653,10 +653,15 @@ def download_images(
 
     # How many clips vs images per term
     clips_per_term = max(1, round(video_clip_ratio * 3))   # e.g. 1-2 clips per term
-    images_per_term = max(2, round((1 - video_clip_ratio) * 6))
+    images_per_term = max(4, round((1 - video_clip_ratio) * 10))
+
+    # Oversample: gather several times more candidates than the audio strictly
+    # needs, so the subject gate + relevance ranker have real choice and can drop
+    # weak/off-target images instead of being forced to keep everything.
+    candidate_target = max(audio_duration * 4, audio_duration + 30)
 
     for search_term in search_terms:
-        if total_duration >= audio_duration:
+        if total_duration >= candidate_target:
             break
 
         term_paths = []
@@ -681,7 +686,7 @@ def download_images(
             logger.warning(f"Pexels clip search skipped: {e}")
 
         # ── Photos (DDG + Pexels Photos + Wikipedia) ───────────────────────
-        ddg_items = search_images_duckduckgo(search_term, max_results=12)
+        ddg_items = search_images_duckduckgo(search_term, max_results=24)
 
         pexels_photo_items = []
         try:
@@ -715,7 +720,7 @@ def download_images(
         # Shuffle clips and photos together per term for variety
         random.shuffle(term_paths)
         for p in term_paths:
-            if total_duration >= audio_duration:
+            if total_duration >= candidate_target:   # oversample (was: audio_duration)
                 break
             all_paths.append(p)
             total_duration += clip_duration

@@ -1,0 +1,52 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "random",
+    "video_transition_mode": "None",
+    "video_clip_duration": 3,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 1.1,
+    "bgm_type": "random",
+    "bgm_volume": 0.2,
+    "subtitle_enabled": true,
+    "subtitle_position": "center",
+    "custom_position": 70.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 52,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 20,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 4,
+    "segmentation_method": "sentences",
+    "min_segment_length": 25,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.18,
+    "video_clip_ratio": 0.2,
+    "image_motion_style": "varied",
+    "enable_hook_card": true,
+    "hook_text": "38 YEARS OLD. HIS FIRST EVER WORLD CUP HAT-TRICK",
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "FOLLOW FOR MORE",
+    "n_threads": 2,
+    "paragraph_number": 1
+  },
+  "videos": [
+    {
+      "video_subject": "Messi's first ever World Cup hat-trick at 38 (2026 World Cup vs Algeria)",
+      "video_script": "Lionel Messi has played in SIX World Cups. Twenty-two years on the biggest stage in football. And today, at 38 years old, he finally did the one thing he had NEVER done. A World Cup hat-trick. Three goals against Algeria. With those goals, Messi tied Miroslav Klose's all-time record of sixteen World Cup goals, and became the first player in history to appear in six World Cups. Let that sink in. The greatest is still re-writing the record books at thirty-eight.",
+      "video_terms": "Lionel Messi, Messi Argentina, Messi celebration, Messi World Cup, Argentina football, Messi goal, Argentina jersey blue white, Messi close up"
+    }
+  ]
+}
