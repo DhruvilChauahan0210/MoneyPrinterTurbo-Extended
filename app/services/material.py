@@ -416,13 +416,27 @@ def search_images_duckduckgo(search_term: str, max_results: int = 15) -> List[Ma
             logger.warning("ddgs/duckduckgo_search not installed, skipping DDG image search")
             return []
 
+    # Stock sites that overlay visible watermarks/credits — skip them so the
+    # video doesn't look reused/non-original (which hurts reach + perceived quality).
+    WATERMARK_DOMAINS = (
+        "gettyimages", "alamy", "shutterstock", "istockphoto", "dreamstime",
+        "123rf", "depositphotos", "agefotostock", "picfair", "sportphoto",
+        "imago-images", "imago", "stock.adobe", "adobestock", "rexfeatures",
+        "shutter", "newscom", "zumapress", "actionimages", "profimedia",
+    )
+
     logger.info(f"searching DuckDuckGo images: {search_term}")
     try:
         results = list(DDGS().images(search_term, max_results=max_results))
         items = []
+        skipped = 0
         for r in results:
             url = r.get("image", "")
             if not url:
+                continue
+            haystack = f"{url} {r.get('source','')} {r.get('url','')}".lower()
+            if any(dom in haystack for dom in WATERMARK_DOMAINS):
+                skipped += 1
                 continue
             item = MaterialInfo()
             item.provider = "duckduckgo"
@@ -430,7 +444,7 @@ def search_images_duckduckgo(search_term: str, max_results: int = 15) -> List[Ma
             item.duration = 5
             item.search_term = search_term
             items.append(item)
-        logger.info(f"found {len(items)} images on DuckDuckGo for '{search_term}'")
+        logger.info(f"found {len(items)} images on DuckDuckGo for '{search_term}' (skipped {skipped} watermarked)")
         return items
     except Exception as e:
         logger.error(f"DuckDuckGo image search failed: {str(e)}")

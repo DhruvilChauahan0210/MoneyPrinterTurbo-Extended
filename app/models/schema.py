@@ -149,10 +149,27 @@ class VideoParams(BaseModel):
     # Task 2 — Ken Burns 2.0 motion style
     image_motion_style: Optional[str] = "varied"  # varied | subtle | off
 
+    # Framing for body images: "cover" = full-bleed crop-to-fill (immersive,
+    # native-Shorts, lower swipe-away) anchored to the upper third to protect
+    # faces. "blur" = fit the whole image over a blurred copy (shows everything
+    # but has a letterboxed band).
+    image_fill_mode: Optional[str] = "cover"  # cover | blur
+
+    # Global black-and-white: desaturate all footage so mixed-era / mixed-source
+    # images read as a cohesive historical archive. Applied to footage only —
+    # subtitles, word-highlights, hook card and CTA stay colored.
+    enable_grayscale: Optional[bool] = False
+
     # Task 3 — Hook card
     enable_hook_card: Optional[bool] = True
     hook_text: Optional[str] = ""
     hook_duration: Optional[float] = 1.5
+    # Cover/opening frame selection. The first frame decides swipe-away rate, so
+    # it must be a thumb-stopper (the recognizable star's FACE / an action shot),
+    # NOT a literal match to the hook text (which can land on a boring object like
+    # a document). If set, the cover image is chosen to match this term instead.
+    # e.g. "a close-up photo of Lionel Messi's face"
+    hook_cover_term: Optional[str] = ""
 
     # Task 5 — Audio polish (lower BGM, SFX)
     bgm_volume: Optional[float] = 0.12

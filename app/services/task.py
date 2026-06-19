@@ -241,14 +241,20 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
             except Exception as e:
                 logger.warning(f"subject-presence gate failed, keeping all media: {e}")
 
-        # Task 3 — pick the media that best matches the exact hook moment
+        # Task 3 — pick the COVER/opening image. The first frame decides swipe-away,
+        # so prefer a thumb-stopper (the star's FACE / an action shot) via
+        # `hook_cover_term`, falling back to the hook-moment term. Matching the
+        # literal hook text can land on a boring object (e.g. a document) and spike
+        # swipe-away — hence the explicit cover term.
         hook_path = None
-        if hook_term:
+        cover_term = getattr(params, 'hook_cover_term', '') or hook_term
+        if cover_term:
             try:
                 hook_path, _ = image_ranker.pick_best_media(
-                    image_paths, hook_term,
+                    image_paths, cover_term,
                     model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
                 )
+                logger.info(f"cover/hook frame selected via term: '{cover_term[:60]}'")
             except Exception as e:
                 logger.warning(f"hook media selection failed: {e}")
 
@@ -333,6 +339,7 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
             durations=clip_durations,
             video_width=vw,
             video_height=vh,
+            fill_mode=getattr(params, 'image_fill_mode', 'cover'),
         )
         if not processed:
             sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)

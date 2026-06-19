@@ -1090,6 +1090,11 @@ def generate_video(
         return _clip
 
     video_clip = VideoFileClip(video_path).without_audio()
+    # Global black-and-white on footage only (before colored overlays composite on top)
+    if getattr(params, 'enable_grayscale', False):
+        from moviepy.video.fx.BlackAndWhite import BlackAndWhite
+        video_clip = video_clip.with_effects([BlackAndWhite()])
+        logger.info("grayscale applied to footage")
     audio_clip = AudioFileClip(audio_path).with_effects(
         [afx.MultiplyVolume(params.voice_volume)]
     )
@@ -1305,7 +1310,7 @@ def _make_blurred_background(image_path: str, W: int, H: int) -> str:
     return out
 
 
-def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_style: str = "varied", _motion_start_index: int = 0, durations: List[float] = None, video_width: int = None, video_height: int = None):
+def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_style: str = "varied", _motion_start_index: int = 0, durations: List[float] = None, video_width: int = None, video_height: int = None, fill_mode: str = "cover"):
     motion_counter = _motion_start_index
     for idx, material in enumerate(materials):
         if not material.url:
@@ -1332,29 +1337,44 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_styl
             logger.info(f"processing image: {material.url} ({this_duration:.2f}s)")
 
             if video_width and video_height:
-                # ── Blurred-fill framing ──────────────────────────────────────
-                # Show the WHOLE image (fit, no clipping) over a blurred copy of
-                # itself that fills the frame — full-screen with no black bars and
-                # no aggressive crop. Gentle zoom only, so subjects stay in frame.
                 W, H = video_width, video_height
                 from PIL import Image as _PILImage
-                with _PILImage.open(material.url) as _im:
-                    iw, ih = _im.size
-                fit = min(W / iw, H / ih)
-                fw, fh = max(2, int(iw * fit)), max(2, int(ih * fit))
-
-                bg_path = _make_blurred_background(material.url, W, H)
-                bg_clip = ImageClip(bg_path).with_duration(this_duration)
-                fg = ImageClip(material.url).with_duration(this_duration).resized(new_size=(fw, fh))
-
-                if motion_style != "off":
-                    # subtle, slow zoom (1.00 → 1.06) — no harsh Ken Burns crop
-                    fg = fg.resized(lambda t: 1.0 + 0.06 * min(t / max(this_duration, 0.1), 1.0))
-
-                final_clip = CompositeVideoClip(
-                    [bg_clip.with_position("center"), fg.with_position("center")],
-                    size=(W, H),
-                )
+                if fill_mode == "cover":
+                    # ── Full-bleed cover framing ──────────────────────────────
+                    # Crop-to-fill the frame (no bars, no blurred band), anchored to
+                    # the upper third so faces/heads survive the crop. Most immersive,
+                    # native-Shorts look → lower swipe-away.
+                    with _PILImage.open(material.url) as _im:
+                        im = _im.convert("RGB")
+                        iw, ih = im.size
+                        fill = max(W / iw, H / ih)
+                        nw, nh = max(2, int(iw * fill)), max(2, int(ih * fill))
+                        im = im.resize((nw, nh), _PILImage.LANCZOS)
+                        left = (nw - W) // 2
+                        top = max(0, min(int((nh - H) * 0.30), nh - H))
+                        im = im.crop((left, top, left + W, top + H))
+                        cover_path = f"{material.url}.cover.jpg"
+                        im.save(cover_path, "JPEG", quality=90)
+                    base = ImageClip(cover_path).with_duration(this_duration)
+                    if motion_style != "off":
+                        base = base.resized(lambda t: 1.0 + 0.08 * min(t / max(this_duration, 0.1), 1.0))
+                    final_clip = CompositeVideoClip([base.with_position("center")], size=(W, H))
+                else:
+                    # ── Blurred-fill framing (fallback) ───────────────────────
+                    # Show the WHOLE image (fit) over a blurred copy of itself.
+                    with _PILImage.open(material.url) as _im:
+                        iw, ih = _im.size
+                    fit = min(W / iw, H / ih)
+                    fw, fh = max(2, int(iw * fit)), max(2, int(ih * fit))
+                    bg_path = _make_blurred_background(material.url, W, H)
+                    bg_clip = ImageClip(bg_path).with_duration(this_duration)
+                    fg = ImageClip(material.url).with_duration(this_duration).resized(new_size=(fw, fh))
+                    if motion_style != "off":
+                        fg = fg.resized(lambda t: 1.0 + 0.06 * min(t / max(this_duration, 0.1), 1.0))
+                    final_clip = CompositeVideoClip(
+                        [bg_clip.with_position("center"), fg.with_position("center")],
+                        size=(W, H),
+                    )
             else:
                 base = ImageClip(material.url).with_duration(this_duration)
                 orig_w, orig_h = base.size
