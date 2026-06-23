@@ -138,6 +138,18 @@ class VideoParams(BaseModel):
     subject_positive_labels: Optional[List[str]] = None   # e.g. ["Lionel Messi", "Cristiano Ronaldo"]
     subject_negative_labels: Optional[List[str]] = None   # e.g. ["a random soccer player", "an empty stadium"]
     subject_gate_margin: Optional[float] = 0.05           # positive prob must beat best negative by this
+    # Absolute floor for the BEST positive-label probability. An image must look
+    # at least this much like one of the positive labels to survive — even when
+    # back-filling to reach min_keep. This stops "least-bad" off-topic filler
+    # (random crowds, scenery) from sneaking in when the candidate pool is poor.
+    # 0.0 = off (legacy behaviour). ~0.30 is a sensible on value for one clear star.
+    subject_gate_abs_floor: Optional[float] = 0.0
+    # Penalty subtracted from an image's match score each time it has already been
+    # used, in timed-sync segment assignment. LOWER = the pipeline will happily
+    # REUSE a strong on-subject image instead of reaching for a weak off-topic one
+    # (a repeated good shot retains better than a random irrelevant photo). Raise
+    # it only when the footage pool is rich enough that variety beats relevance.
+    segment_reuse_penalty: Optional[float] = 0.12
 
     # Timed sync — align each image to the caption phrase being spoken, so the
     # right visual shows at the right moment (uses enhanced subtitle word timings).
@@ -145,6 +157,28 @@ class VideoParams(BaseModel):
 
     # Mixed media: ratio of short video clips vs photos in image_search mode
     video_clip_ratio: Optional[float] = 0.35
+
+    # ── Auto real-footage (yt-dlp) ────────────────────────────────────────────
+    # When True, in image_search mode the pipeline also auto-downloads real
+    # highlight footage from YouTube (yt-dlp), cuts it into vertical action clips,
+    # and feeds them into the same CLIP gates as the photos. This replaces
+    # Ken-Burns stills with actual motion — the real retention unlock for Shorts.
+    enable_youtube_footage: Optional[bool] = False
+    youtube_footage_queries: Optional[List[str]] = None   # search phrases; defaults to video_terms
+    youtube_max_videos: Optional[int] = 3                  # how many source videos to download
+    youtube_clip_len: Optional[float] = 3.0               # seconds per cut clip
+    youtube_clips_per_video: Optional[int] = 5            # clips cut from each source video
+    youtube_max_clips: Optional[int] = 24                 # cap total clips fed to the pool
+    youtube_max_height: Optional[int] = 720              # max source resolution (720 = sharp + fast)
+    # Score nudge that tilts segment assignment toward real video clips over
+    # photos (clip mid-frames score lower on CLIP, so without this stills always
+    # win). Higher = more real footage on screen. ~0.06–0.10 is a good range.
+    footage_video_bonus: Optional[float] = 0.06
+    # GUARANTEE this fraction of segments use real video clips (when footage is
+    # available). Crisp photos always out-score motion-blurred clip frames on
+    # CLIP, so a soft bonus can't ensure motion makes the cut — this forces it.
+    # 0.5 = half the shots are real footage, half are stills (face/hook moments).
+    footage_min_fraction: Optional[float] = 0.5
 
     # Task 2 — Ken Burns 2.0 motion style
     image_motion_style: Optional[str] = "varied"  # varied | subtle | off
@@ -154,6 +188,16 @@ class VideoParams(BaseModel):
     # faces. "blur" = fit the whole image over a blurred copy (shows everything
     # but has a letterboxed band).
     image_fill_mode: Optional[str] = "cover"  # cover | blur
+
+    # Cinematic color grade on body images: contrast + punchy saturation + a
+    # subtle vignette, so raw stock reads as intentionally graded / edited.
+    enable_color_grade: Optional[bool] = True
+
+    # Cover-mode safety valve: only crop-to-fill when at least this fraction of the
+    # cropped dimension survives. If cover would slice off more than (1 - this) of
+    # the image (e.g. a wide/landscape shot), fall back to showing the WHOLE image
+    # over a blurred fill so the subject is never cut off. 0.62 ≈ allow ≤38% crop.
+    cover_min_keep: Optional[float] = 0.62
 
     # Global black-and-white: desaturate all footage so mixed-era / mixed-source
     # images read as a cohesive historical archive. Applied to footage only —
@@ -179,6 +223,12 @@ class VideoParams(BaseModel):
     # Task 6 — End-screen CTA
     enable_cta: Optional[bool] = True
     cta_text: Optional[str] = "FOLLOW FOR MORE"
+
+    # Seamless loop — no terminal end-card, continuous BGM (no fade-out) and a
+    # clean visual loop-back so viewers can't tell where the Short restarts.
+    # Pair with a circular voiceover script for the strongest effect.
+    loop_seamless: Optional[bool] = False
+    loop_follow_tag: Optional[bool] = True  # small persistent "follow" tag (loop-safe)
 
     n_threads: Optional[int] = 2
     paragraph_number: Optional[int] = 1

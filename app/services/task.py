@@ -199,6 +199,37 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
             hook_term=hook_term,
         )
         if not image_paths:
+            image_paths = []   # tolerate: real footage below may still carry the video
+
+        # Auto real-footage: download + cut YouTube highlight clips and add them to
+        # the pool. They flow through the same CLIP gates / timed-sync as photos,
+        # so only on-subject motion footage survives. Best-effort — never fatal.
+        if getattr(params, 'enable_youtube_footage', False):
+            try:
+                from app.services import auto_footage
+                from app.models.schema import VideoAspect as _VA
+                _vw, _vh = _VA(params.video_aspect).to_resolution()
+                yt_queries = getattr(params, 'youtube_footage_queries', None) or [
+                    t.strip() for t in (video_terms or "").split(",") if t.strip()
+                ]
+                clip_paths = auto_footage.fetch_clips(
+                    task_id=task_id,
+                    queries=yt_queries,
+                    video_width=_vw, video_height=_vh,
+                    max_videos=getattr(params, 'youtube_max_videos', 3),
+                    clip_len=getattr(params, 'youtube_clip_len', 3.0),
+                    clips_per_video=getattr(params, 'youtube_clips_per_video', 5),
+                    max_clips=getattr(params, 'youtube_max_clips', 24),
+                    max_height=getattr(params, 'youtube_max_height', 720),
+                )
+                if clip_paths:
+                    # Front-load real footage so it's preferred by the assigner.
+                    image_paths = clip_paths + image_paths
+                    logger.success(f"auto_footage: added {len(clip_paths)} real highlight clips to the pool")
+            except Exception as e:
+                logger.warning(f"auto_footage failed, continuing with image_search only: {e}")
+
+        if not image_paths:
             sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)
             logger.error("failed to download images, no results found for the given search terms.")
             return None
@@ -236,6 +267,7 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     positive_labels=params.subject_positive_labels,
                     negative_labels=getattr(params, 'subject_negative_labels', None),
                     margin=getattr(params, 'subject_gate_margin', 0.05),
+                    abs_floor=getattr(params, 'subject_gate_abs_floor', 0.0),
                     model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
                 )
             except Exception as e:
@@ -250,10 +282,27 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
         cover_term = getattr(params, 'hook_cover_term', '') or hook_term
         if cover_term:
             try:
-                hook_path, _ = image_ranker.pick_best_media(
-                    image_paths, cover_term,
-                    model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
-                )
+                # The hook frame is the #1 thumb-stopper. With auto-footage on,
+                # the real clips are reliably the actual player (DDG photos return
+                # fans/look-alikes in the same kit that CLIP can't disambiguate),
+                # so pick the SHARPEST on-term frame from the clips for the hook.
+                if getattr(params, 'enable_youtube_footage', False):
+                    _hook_jpg = os.path.join(utils.task_dir(task_id), "hook_cover.jpg")
+                    sharp_hook, _hk_src, _hk_t = image_ranker.pick_sharp_subject_frame(
+                        image_paths, cover_term, _hook_jpg,
+                        model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
+                    )
+                    if sharp_hook:
+                        hook_path = sharp_hook
+                        # Remember the SOURCE clip + timestamp so the hook card can
+                        # play the real moving footage (not just a still frame).
+                        params._hook_clip_path = _hk_src
+                        params._hook_clip_start = _hk_t
+                if not hook_path:
+                    hook_path, _ = image_ranker.pick_best_media(
+                        image_paths, cover_term,
+                        model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
+                    )
                 logger.info(f"cover/hook frame selected via term: '{cover_term[:60]}'")
             except Exception as e:
                 logger.warning(f"hook media selection failed: {e}")
@@ -308,6 +357,11 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                 seg_texts = [s.get("text", "") for s in segments]
                 idxs = image_ranker.assign_images_to_segments(
                     image_paths, seg_texts,
+                    reuse_penalty=getattr(params, 'segment_reuse_penalty', 0.12),
+                    video_bonus=(getattr(params, 'footage_video_bonus', 0.06)
+                                 if getattr(params, 'enable_youtube_footage', False) else 0.0),
+                    min_video_fraction=(getattr(params, 'footage_min_fraction', 0.5)
+                                        if getattr(params, 'enable_youtube_footage', False) else 0.0),
                     model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
                 )
                 synced_paths, clip_durations = [], []
@@ -321,6 +375,14 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                 total = sum(clip_durations)
                 if audio_duration and total < audio_duration:   # cover full voiceover
                     clip_durations[-1] += (audio_duration - total)
+                # Loop design: make the FINAL visual the same as the opening hook
+                # frame so the Short loops seamlessly (strong rewatch/retention signal).
+                cover = getattr(params, '_best_image_path', None)
+                if cover and synced_paths and not str(synced_paths[-1]).lower().endswith(
+                    (".mp4", ".mov", ".webm", ".mkv", ".avi")
+                ):
+                    synced_paths[-1] = cover
+                    logger.info("loop design: final frame set to opening hook image")
                 image_paths = synced_paths
                 params.video_clip_duration = int(max(clip_durations)) + 1   # no truncation
                 logger.info(
@@ -340,6 +402,8 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
             video_width=vw,
             video_height=vh,
             fill_mode=getattr(params, 'image_fill_mode', 'cover'),
+            color_grade=getattr(params, 'enable_color_grade', True),
+            cover_min_keep=getattr(params, 'cover_min_keep', 0.62),
         )
         if not processed:
             sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)

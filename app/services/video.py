@@ -703,6 +703,59 @@ def _balance_line_lengths(lines, font, max_width):
     return balanced_lines
 
 
+# Power words → emoji sticker that pops in when the word is spoken. First match wins.
+_EMOJI_MAP = [
+    (("goat", "greatest", "legend", "legendary", "best"), "🐐"),
+    (("worldcup", "world", "cup", "trophy", "trophies", "ballon", "champion", "champions", "title"), "🏆"),
+    (("died", "death", "dead", "die", "dies"), "💀"),
+    (("broke", "broken", "neck", "injury", "injured", "crash"), "🤕"),
+    (("cry", "crying", "cried", "tears", "tear"), "😭"),
+    (("napkin",), "🧾"),
+    (("money", "dollars", "dollar", "million", "millions", "rich", "fortune", "paid"), "💰"),
+    (("never", "impossible", "unbelievable", "shocked", "stunned", "insane", "crazy"), "🤯"),
+    (("goal", "goals", "scored", "score", "scores"), "⚽"),
+    (("unstoppable", "fire", "magic", "genius"), "🔥"),
+    (("god", "miracle", "prayed"), "🙏"),
+    (("heart", "love"), "❤️"),
+]
+# Shock words flash RED instead of gold — adds the hand-picked emphasis a human editor does.
+_SHOCK_WORDS = {
+    "never", "died", "death", "dead", "broke", "broken", "cry", "crying", "tears",
+    "shocked", "stunned", "impossible", "unbelievable", "worst", "destroyed",
+    "humiliation", "nightmare", "tragedy", "betrayed", "alone",
+}
+
+
+def _word_emoji(word: str):
+    w = "".join(c for c in word.lower() if c.isalpha())
+    if not w:
+        return None
+    for keys, emoji in _EMOJI_MAP:
+        if w in keys:
+            return emoji
+    return None
+
+
+def _render_emoji_img(ch: str, px: int):
+    """Render a color emoji to an RGBA PIL image ~px tall. Apple Color Emoji only
+    supports the 160 strike, so render at 160 then downscale. Returns None on failure."""
+    try:
+        from PIL import ImageFont as _IF
+        f = _IF.truetype("/System/Library/Fonts/Apple Color Emoji.ttc", 160)
+        canvas = Image.new("RGBA", (200, 200), (0, 0, 0, 0))
+        ImageDraw.Draw(canvas).text((10, 10), ch, font=f, embedded_color=True)
+        bbox = canvas.getbbox()
+        if not bbox:
+            return None
+        canvas = canvas.crop(bbox)
+        w, h = canvas.size
+        nw = max(2, int(w * px / h))
+        return canvas.resize((nw, px), Image.LANCZOS)
+    except Exception as e:
+        logger.warning(f"emoji render failed for {ch!r}: {e}")
+        return None
+
+
 def create_enhanced_subtitle_clips(enhanced_subtitle_path, params, video_width, video_height, font_path):
     """
     Create text clips with true word-by-word highlighting
@@ -751,10 +804,16 @@ def create_enhanced_subtitle_clips(enhanced_subtitle_path, params, video_width, 
         # Split into lines and words
         lines = wrapped_txt.split('\n')
         
-        # Calculate image dimensions
-        line_height = int(font_size * 1.3)
+        # Bigger font for the active word — Hormozi-style size emphasis
+        try:
+            big_font = ImageFont.truetype(font_path, int(font_size * 1.26))
+        except (IOError, OSError):
+            big_font = font
+
+        # Calculate image dimensions (tall enough for the enlarged word)
+        line_height = int(font_size * 1.26 * 1.32)
         img_height = len(lines) * line_height + 40  # Add padding
-        img_width = max_width + 40  # Add padding
+        img_width = max_width + 80  # Add padding (room for the bigger word)
         
         # Create transparent image
         img = Image.new('RGBA', (img_width, img_height), (0, 0, 0, 0))
@@ -771,10 +830,11 @@ def create_enhanced_subtitle_clips(enhanced_subtitle_path, params, video_width, 
         for line in lines:
             words = line.split()
             
-            # Calculate total line width for center alignment
+            # Calculate total line width (per-word font: active word is bigger)
             line_width = 0
-            for word in words:
-                word_bbox = font.getbbox(word + ' ')
+            for k, word in enumerate(words):
+                wf = big_font if (word_index + k) in highlighted_word_indices else font
+                word_bbox = wf.getbbox(word + ' ')
                 line_width += word_bbox[2] - word_bbox[0]
             
             # Center the line
@@ -782,23 +842,24 @@ def create_enhanced_subtitle_clips(enhanced_subtitle_path, params, video_width, 
             x_pos = max(20, x_pos)  # Ensure minimum padding
             
             for word in words:
-                # Determine color for this word
-                word_color = highlight_rgb if word_index in highlighted_word_indices else normal_rgb
-                
-                # Draw word with stroke if specified
+                is_hl = word_index in highlighted_word_indices
+                wf = big_font if is_hl else font
+                word_color = highlight_rgb if is_hl else normal_rgb
+                # Vertical-center this word within the line (handles mixed sizes)
+                wb = wf.getbbox(word)
+                wh = wb[3] - wb[1]
+                y_word = y_pos + (line_height - wh) // 2 - wb[1]
+                # Draw word with stroke if specified (thicker stroke on the big word)
                 if stroke_rgb and stroke_width > 0:
-                    # Draw stroke by drawing text multiple times with offset
-                    stroke_w = int(stroke_width)
+                    stroke_w = int(stroke_width) + (1 if is_hl else 0)
                     for dx in range(-stroke_w, stroke_w + 1):
                         for dy in range(-stroke_w, stroke_w + 1):
                             if dx != 0 or dy != 0:
-                                draw.text((x_pos + dx, y_pos + dy), word, font=font, fill=stroke_rgb)
-                
+                                draw.text((x_pos + dx, y_word + dy), word, font=wf, fill=stroke_rgb)
                 # Draw main text
-                draw.text((x_pos, y_pos), word, font=font, fill=word_color)
-                
+                draw.text((x_pos, y_word), word, font=wf, fill=word_color)
                 # Calculate next position
-                word_bbox = font.getbbox(word + ' ')
+                word_bbox = wf.getbbox(word + ' ')
                 x_pos += word_bbox[2] - word_bbox[0]
                 word_index += 1
             
@@ -806,7 +867,7 @@ def create_enhanced_subtitle_clips(enhanced_subtitle_path, params, video_width, 
         
         return img
     
-    def create_subtitle_clip(text, highlighted_word_indices, start_time, duration, params):
+    def create_subtitle_clip(text, highlighted_word_indices, start_time, duration, params, animate=False, hl_color=None):
         """Create a subtitle clip with specified highlighting"""
         try:
             img = create_word_highlighted_image(
@@ -814,18 +875,23 @@ def create_enhanced_subtitle_clips(enhanced_subtitle_path, params, video_width, 
                 highlighted_word_indices=highlighted_word_indices,
                 font_size=int(params.font_size),
                 normal_color=params.text_fore_color,
-                highlight_color=params.word_highlight_color,
+                highlight_color=hl_color or params.word_highlight_color,
                 stroke_color=params.stroke_color,
                 stroke_width=int(params.stroke_width)
             )
-            
+
             clip = ImageClip(np.array(img)).with_duration(duration).with_start(start_time)
+            if animate and duration > 0:
+                # CapCut/Hormozi-style pop: overshoot to 1.14 and settle to 1.0
+                # over ~0.13s as each word becomes active. Reads as animated captions.
+                clip = clip.resized(lambda t: 1.0 + 0.14 * (1 - min(t / 0.13, 1.0)))
             return position_clip(clip, params, video_height)
-            
+
         except Exception as e:
             logger.error(f"Failed to create subtitle clip: {str(e)}")
             return None
     
+    last_emoji_end = -10.0  # spacing so emoji stickers don't clutter
     for subtitle_data in enhanced_data:
         start_time = subtitle_data['start_time']
         end_time = subtitle_data['end_time']
@@ -864,12 +930,33 @@ def create_enhanced_subtitle_clips(enhanced_subtitle_path, params, video_width, 
                 if clip:
                     text_clips.append(clip)
             
-            # Create highlighted segment during word
+            # Create highlighted segment during word (pop animation; shock words flash red)
             if word_index >= 0:
-                clip = create_subtitle_clip(text, {word_index}, word_start, word_end - word_start, params)
+                is_shock = "".join(c for c in word_text.lower() if c.isalpha()) in _SHOCK_WORDS
+                hl = "#FF2D2D" if is_shock else None
+                clip = create_subtitle_clip(text, {word_index}, word_start, word_end - word_start, params, animate=True, hl_color=hl)
                 if clip:
                     text_clips.append(clip)
-            
+
+            # Emoji sticker pop on power words (spaced ≥1.2s apart so it doesn't clutter)
+            emoji = _word_emoji(word_text)
+            if emoji and word_start - last_emoji_end >= 1.2:
+                em_img = _render_emoji_img(emoji, int(video_height * 0.11))
+                if em_img is not None:
+                    em_dur = min(1.4, max(0.8, end_time - word_start))
+                    em_clip = ImageClip(np.array(em_img)).with_start(word_start).with_duration(em_dur)
+
+                    def _epop(t):
+                        if t < 0.13:
+                            return max(0.08, 1.3 * (t / 0.13))      # scale 0 → 1.3 (pop)
+                        if t < 0.26:
+                            return 1.3 - 0.3 * ((t - 0.13) / 0.13)  # 1.3 → 1.0 (settle)
+                        return 1.0
+
+                    em_clip = em_clip.resized(_epop).with_position(("center", int(video_height * 0.30)))
+                    text_clips.append(em_clip)
+                    last_emoji_end = word_start
+
             current_time = word_end
         
         # Create final normal segment if needed
@@ -881,13 +968,34 @@ def create_enhanced_subtitle_clips(enhanced_subtitle_path, params, video_width, 
     return text_clips
 
 
+def _split_emoji(text: str):
+    """Return (text_without_emoji, first_emoji_char_or_None). Regular fonts render
+    emoji as tofu boxes, so we strip them and composite a real color emoji instead."""
+    emoji = None
+    kept = []
+    for ch in text:
+        cp = ord(ch)
+        is_emoji = (
+            0x1F000 <= cp <= 0x1FAFF or 0x2600 <= cp <= 0x27BF
+            or cp in (0x2705, 0x274C, 0x2B50, 0x2728) or 0xFE00 <= cp <= 0xFE0F
+        )
+        if is_emoji:
+            if emoji is None and not (0xFE00 <= cp <= 0xFE0F):
+                emoji = ch
+        else:
+            kept.append(ch)
+    return "".join(kept).strip(), emoji
+
+
 def _render_text_card(
     text: str, font_path: str, font_size: int,
     video_width: int, video_height: int,
     text_color=(255, 255, 255), stroke_color=(0, 0, 0), stroke_width: int = 8,
     y_center_ratio: float = 0.45, bg_alpha: int = 0,
 ) -> Image.Image:
-    """Render a centred text image (RGBA) using PIL for hook/CTA cards."""
+    """Render a centred text image (RGBA) using PIL for hook/CTA cards.
+    Any emoji in `text` is rendered as a real color glyph centred below the text."""
+    text, _emoji_char = _split_emoji(text)
     try:
         font = ImageFont.truetype(font_path, font_size)
     except Exception:
@@ -926,6 +1034,15 @@ def _render_text_card(
         draw.text((x, y_start), line, font=font, fill=(*text_color, 255))
         y_start += lh
 
+    # Composite a real color emoji centred just below the text (regular fonts can't
+    # render it — without this it shows as a tofu box).
+    if _emoji_char:
+        em = _render_emoji_img(_emoji_char, int(font_size * 1.05))
+        if em is not None:
+            ex = (video_width - em.width) // 2
+            ey = y_start + int(font_size * 0.15)
+            img.alpha_composite(em, (ex, ey))
+
     return img
 
 
@@ -940,6 +1057,38 @@ def create_hook_clip(
     font_path = os.path.join(utils.font_dir(), getattr(params, 'font_name', 'STHeitiMedium.ttc'))
     font_size = int(video_width * 0.082)
     font_size = font_size if font_size % 2 == 0 else font_size + 1
+
+    # --- MOVING-VIDEO hook: play the real footage clip the cover came from, with
+    #     a dark veil + hook text on top. Far more thumb-stopping than a still. ---
+    clip_path = getattr(params, '_hook_clip_path', None)
+    clip_start = float(getattr(params, '_hook_clip_start', 0.0) or 0.0)
+    if clip_path and os.path.exists(clip_path):
+        try:
+            src = VideoFileClip(clip_path)
+            sdur = float(src.duration or hook_dur)
+            seg = min(hook_dur, sdur)
+            st = max(0.0, min(clip_start - seg / 2.0, max(0.0, sdur - seg)))
+            vclip = src.subclipped(st, st + seg)
+            # cover-crop to fill 9:16
+            cw, ch = vclip.size
+            cr, fr = cw / ch, video_width / video_height
+            sf = (video_height / ch) if cr > fr else (video_width / cw)
+            vclip = vclip.resized(new_size=(max(2, int(cw * sf)), max(2, int(ch * sf)))).with_position("center")
+            # punch-in zoom for energy
+            vclip = vclip.resized(lambda t: 1.0 + 0.12 * (1 - (1 - min(t / max(seg, 0.1), 1)) ** 2))
+            # dark veil + baked hook text as a transparent overlay
+            veil_text = Image.new("RGBA", (video_width, video_height), (0, 0, 0, int(255 * 0.45)))
+            text_layer = _render_text_card(
+                hook_text, font_path, font_size, video_width, video_height,
+                y_center_ratio=0.42, bg_alpha=0,
+            )
+            veil_text = Image.alpha_composite(veil_text, text_layer)
+            overlay = ImageClip(np.array(veil_text)).with_duration(seg)
+            return CompositeVideoClip(
+                [vclip, overlay.with_position("center")], size=(video_width, video_height)
+            ).with_start(0)
+        except Exception as e:
+            logger.warning(f"hook card: moving-video hook failed ({e}), falling back to still")
 
     # --- Background image (cover-crop to fill frame) ---
     try:
@@ -983,28 +1132,118 @@ def create_hook_clip(
     return CompositeVideoClip([zoomed.with_position("center")], size=(video_width, video_height)).with_start(0)
 
 
-def create_cta_clip(params, video_width: int, video_height: int, video_duration: float):
+def create_follow_tag(params, video_width: int, video_height: int, video_duration: float):
+    """Loop-safe persistent follow nudge: a small semi-transparent tag near the
+    bottom, present for the WHOLE video — identical at the loop seam, so it never
+    signals 'the end'. Returns an overlay clip or None."""
+    try:
+        font_path = os.path.join(utils.font_dir(), getattr(params, 'font_name', 'STHeitiMedium.ttc'))
+        fsize = int(video_width * 0.040)
+        fsize = fsize if fsize % 2 == 0 else fsize + 1
+        layer = _render_text_card(
+            "FOLLOW +", font_path, fsize, video_width, video_height,
+            stroke_width=4, y_center_ratio=0.93, bg_alpha=0,
+        )
+        return (
+            ImageClip(np.array(layer))
+            .with_duration(video_duration)
+            .with_start(0)
+            .with_opacity(0.78)
+        )
+    except Exception as e:
+        logger.warning(f"follow tag failed: {e}")
+        return None
+
+
+def create_loopback_clip(params, video_width: int, video_height: int, video_duration: float):
+    """Seamless visual loop-back: replay the SAME moving hook clip (no veil/text) for
+    the final ~1.6s, so the last shot equals the opening shot in motion. Falls back to
+    a clean still of the hook image if no clip is available; None if neither exists."""
+    seg = min(1.6, max(0.8, video_duration * 0.08))
+    clip_path = getattr(params, '_hook_clip_path', None)
+    clip_start = float(getattr(params, '_hook_clip_start', 0.0) or 0.0)
+    if clip_path and os.path.exists(clip_path):
+        try:
+            src = VideoFileClip(clip_path)
+            sdur = float(src.duration or seg)
+            s = min(seg, sdur)
+            st = max(0.0, min(clip_start - s / 2.0, max(0.0, sdur - s)))
+            vclip = src.subclipped(st, st + s)
+            cw, ch = vclip.size
+            cr, fr = cw / ch, video_width / video_height
+            sf = (video_height / ch) if cr > fr else (video_width / cw)
+            vclip = vclip.resized(new_size=(max(2, int(cw * sf)), max(2, int(ch * sf))))
+            vclip = vclip.resized(lambda t: 1.0 + 0.10 * (1 - (1 - min(t / max(s, 0.1), 1)) ** 2))
+            return CompositeVideoClip(
+                [vclip.with_position("center")], size=(video_width, video_height)
+            ).with_duration(s).with_start(max(0.0, video_duration - s))
+        except Exception as e:
+            logger.warning(f"loopback clip failed, falling back to still: {e}")
+    return create_cta_clip(params, video_width, video_height, video_duration, loop_mode=True)
+
+
+def create_cta_clip(params, video_width: int, video_height: int, video_duration: float, loop_mode: bool = False):
     """
     Task 6 — last 2 seconds: dark overlay + CTA text.
     Returns a VideoClip overlay starting at video_duration - 2.
+    In loop_mode: no dark veil and no end-text — just re-show the opening hook
+    image cleanly so the last frame matches frame 1 (seamless visual loop-back).
     """
     cta_dur = 2.0
     cta_start = max(0.0, video_duration - cta_dur)
-    cta_text = getattr(params, 'cta_text', 'FOLLOW FOR MORE')
+    cta_text = '' if loop_mode else getattr(params, 'cta_text', 'FOLLOW FOR MORE')
     font_path = os.path.join(utils.font_dir(), getattr(params, 'font_name', 'STHeitiMedium.ttc'))
     font_size = int(video_width * 0.075)
     font_size = font_size if font_size % 2 == 0 else font_size + 1
 
-    text_img = _render_text_card(
-        cta_text, font_path, font_size, video_width, video_height,
-        y_center_ratio=0.50, bg_alpha=int(255 * 0.60),
-    )
-    cta_img_clip = (
-        ImageClip(np.array(text_img.convert("RGB")))
-        .with_duration(cta_dur)
-        .with_start(cta_start)
-        .with_opacity(0.92)
-    )
+    # Loop design: end on the SAME hook face (darkened) + CTA text, so the Short
+    # loops seamlessly back into the opening hook card (top retention signal).
+    cover_path = getattr(params, '_hook_image_path', None) or getattr(params, '_best_image_path', None)
+    bg = None
+    if cover_path and os.path.exists(cover_path):
+        try:
+            im = Image.open(cover_path).convert("RGB")
+            r, fr = im.width / im.height, video_width / video_height
+            if r > fr:
+                nh = video_height; nw = int(nh * r)
+            else:
+                nw = video_width; nh = int(nw / r)
+            nw += nw % 2; nh += nh % 2
+            im = im.resize((nw, nh), Image.LANCZOS)
+            l = (nw - video_width) // 2
+            t = max(0, min(int((nh - video_height) * 0.30), nh - video_height))
+            im = im.crop((l, t, l + video_width, t + video_height))
+            if loop_mode:
+                bg = im  # clean loop-back, no veil
+            else:
+                veil = Image.new("RGBA", (video_width, video_height), (0, 0, 0, int(255 * 0.60)))
+                bg = Image.alpha_composite(im.convert("RGBA"), veil).convert("RGB")
+        except Exception as e:
+            logger.warning(f"cta cover bg failed: {e}")
+
+    # Loop mode with no cover image: skip the overlay entirely so the last footage
+    # clip plays out (circular audio carries the loop).
+    if loop_mode and bg is None:
+        return None
+
+    if bg is not None:
+        text_layer = _render_text_card(
+            cta_text, font_path, font_size, video_width, video_height,
+            y_center_ratio=0.50, bg_alpha=0,
+        )
+        composite = Image.alpha_composite(bg.convert("RGBA"), text_layer).convert("RGB")
+        cta_img_clip = ImageClip(np.array(composite)).with_duration(cta_dur).with_start(cta_start)
+    else:
+        text_img = _render_text_card(
+            cta_text, font_path, font_size, video_width, video_height,
+            y_center_ratio=0.50, bg_alpha=int(255 * 0.60),
+        )
+        cta_img_clip = (
+            ImageClip(np.array(text_img.convert("RGB")))
+            .with_duration(cta_dur)
+            .with_start(cta_start)
+            .with_opacity(0.92)
+        )
     return cta_img_clip
 
 
@@ -1144,8 +1383,21 @@ def generate_video(
         except Exception as e:
             logger.error(f"failed to create hook card: {e}")
 
-    # --- Task 6: CTA overlay (last 2 seconds) ---
-    if getattr(params, 'enable_cta', True):
+    # --- Task 6: CTA overlay / seamless loop-back (last ~2 seconds) ---
+    loop_mode = getattr(params, 'loop_seamless', False)
+    if loop_mode:
+        try:
+            loopback = create_loopback_clip(params, video_width, video_height, video_clip.duration)
+            if loopback is not None:
+                overlay_clips.append(loopback)
+            if getattr(params, 'loop_follow_tag', True):
+                tag = create_follow_tag(params, video_width, video_height, video_clip.duration)
+                if tag is not None:
+                    overlay_clips.append(tag)
+            logger.info("seamless loop mode: no terminal CTA card, clean visual loop-back")
+        except Exception as e:
+            logger.error(f"failed to create loop overlay: {e}")
+    elif getattr(params, 'enable_cta', True):
         try:
             cta_clip = create_cta_clip(params, video_width, video_height, video_clip.duration)
             overlay_clips.append(cta_clip)
@@ -1161,11 +1413,15 @@ def generate_video(
     if bgm_file:
         try:
             bgm_vol = getattr(params, 'bgm_volume', 0.12)
+            # In seamless-loop mode keep the music continuous (a long fade-out would
+            # die at the end then slam back on restart — the loudest "it ended" cue).
+            bgm_fadeout = 0.15 if loop_mode else 3
+            bgm_fadein = 0.15 if loop_mode else 1.5
             bgm_clip = AudioFileClip(bgm_file).with_effects(
                 [
                     afx.MultiplyVolume(bgm_vol),
-                    afx.AudioFadeIn(1.5),
-                    afx.AudioFadeOut(3),
+                    afx.AudioFadeIn(bgm_fadein),
+                    afx.AudioFadeOut(bgm_fadeout),
                     afx.AudioLoop(duration=video_clip.duration),
                 ]
             )
@@ -1178,7 +1434,7 @@ def generate_video(
             cut_times_path = os.path.join(output_dir, "cut_times.json")
             sfx_vol = getattr(params, 'sfx_volume', 0.5)
 
-            if getattr(params, 'enable_sfx', True) and os.path.exists(whoosh_path):
+            if getattr(params, 'enable_sfx', True):
                 cut_times = []
                 if os.path.exists(cut_times_path):
                     try:
@@ -1186,19 +1442,23 @@ def generate_video(
                             cut_times = json.load(f)
                     except Exception:
                         pass
-                for ct in cut_times:
-                    try:
-                        sfx = AudioFileClip(whoosh_path).with_effects(
-                            [afx.MultiplyVolume(sfx_vol)]
-                        ).with_start(ct)
-                        audio_tracks.append(sfx)
-                    except Exception:
-                        pass
-                # Boom at t=0 if hook card is on
-                if getattr(params, 'enable_hook_card', True) and os.path.exists(boom_path):
+                # Whoosh on each cut (only if the sfx file is present)
+                if os.path.exists(whoosh_path):
+                    for ct in cut_times:
+                        try:
+                            sfx = AudioFileClip(whoosh_path).with_effects(
+                                [afx.MultiplyVolume(sfx_vol)]
+                            ).with_start(ct)
+                            audio_tracks.append(sfx)
+                        except Exception:
+                            pass
+                # Impact hit (boom) at t=0 on the hook — independent of whoosh.
+                # Suppressed in loop mode: a boom on every restart is a clear "it
+                # restarted" marker that breaks the seamless-loop illusion.
+                if getattr(params, 'enable_hook_card', True) and os.path.exists(boom_path) and not loop_mode:
                     try:
                         boom = AudioFileClip(boom_path).with_effects(
-                            [afx.MultiplyVolume(sfx_vol)]
+                            [afx.MultiplyVolume(min(sfx_vol * 1.3, 1.0))]
                         ).with_start(0)
                         audio_tracks.append(boom)
                     except Exception:
@@ -1289,6 +1549,26 @@ def _make_motion_clip(base_clip, effect_idx: int, clip_duration: float, orig_w: 
         return CompositeVideoClip([zoomed.with_position("center")], size=(orig_w, orig_h))
 
 
+def _apply_grade(im):
+    """
+    Cinematic color grade: punchier contrast + saturation, a touch of brightness,
+    and a soft vignette so raw stock reads as intentionally graded / edited.
+    Takes and returns a PIL RGB image.
+    """
+    from PIL import ImageEnhance, ImageFilter, ImageDraw
+    im = ImageEnhance.Contrast(im).enhance(1.12)
+    im = ImageEnhance.Color(im).enhance(1.20)
+    im = ImageEnhance.Brightness(im).enhance(1.02)
+    # Soft vignette — darken edges ~40% via a blurred elliptical mask.
+    w, h = im.size
+    mask = Image.new("L", (w, h), 0)
+    mx, my = int(w * 0.06), int(h * 0.06)
+    ImageDraw.Draw(mask).ellipse([mx, my, w - mx, h - my], fill=255)
+    mask = mask.filter(ImageFilter.GaussianBlur(int(min(w, h) * 0.13)))
+    darker = Image.blend(im, Image.new("RGB", (w, h), (0, 0, 0)), 0.40)
+    return Image.composite(im, darker, mask)
+
+
 def _make_blurred_background(image_path: str, W: int, H: int) -> str:
     """
     Build a full-frame (W×H) blurred, darkened version of the image to use as a
@@ -1310,7 +1590,7 @@ def _make_blurred_background(image_path: str, W: int, H: int) -> str:
     return out
 
 
-def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_style: str = "varied", _motion_start_index: int = 0, durations: List[float] = None, video_width: int = None, video_height: int = None, fill_mode: str = "cover"):
+def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_style: str = "varied", _motion_start_index: int = 0, durations: List[float] = None, video_width: int = None, video_height: int = None, fill_mode: str = "cover", color_grade: bool = True, cover_min_keep: float = 0.62):
     motion_counter = _motion_start_index
     for idx, material in enumerate(materials):
         if not material.url:
@@ -1339,36 +1619,54 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_styl
             if video_width and video_height:
                 W, H = video_width, video_height
                 from PIL import Image as _PILImage
-                if fill_mode == "cover":
+                with _PILImage.open(material.url) as _im0:
+                    iw, ih = _im0.size
+                # Decide cover vs blurred-fill PER IMAGE: only crop-to-fill when enough
+                # of the image survives, so wide/landscape shots aren't sliced apart.
+                cover_scale = max(W / iw, H / ih)
+                crop_keep = min(W / (iw * cover_scale), H / (ih * cover_scale))
+                use_cover = (fill_mode == "cover") and (crop_keep >= cover_min_keep)
+
+                if use_cover:
                     # ── Full-bleed cover framing ──────────────────────────────
-                    # Crop-to-fill the frame (no bars, no blurred band), anchored to
-                    # the upper third so faces/heads survive the crop. Most immersive,
-                    # native-Shorts look → lower swipe-away.
+                    # Crop-to-fill the frame, anchored to the upper third so faces/
+                    # heads survive. Only used when crop_keep ≥ cover_min_keep.
                     with _PILImage.open(material.url) as _im:
                         im = _im.convert("RGB")
-                        iw, ih = im.size
-                        fill = max(W / iw, H / ih)
-                        nw, nh = max(2, int(iw * fill)), max(2, int(ih * fill))
+                        nw, nh = max(2, int(iw * cover_scale)), max(2, int(ih * cover_scale))
                         im = im.resize((nw, nh), _PILImage.LANCZOS)
                         left = (nw - W) // 2
                         top = max(0, min(int((nh - H) * 0.30), nh - H))
                         im = im.crop((left, top, left + W, top + H))
+                        if color_grade:
+                            im = _apply_grade(im)
                         cover_path = f"{material.url}.cover.jpg"
                         im.save(cover_path, "JPEG", quality=90)
                     base = ImageClip(cover_path).with_duration(this_duration)
                     if motion_style != "off":
-                        base = base.resized(lambda t: 1.0 + 0.08 * min(t / max(this_duration, 0.1), 1.0))
+                        # Zoom-punch: snap-in to 1.10 settling over 0.25s, then a slow
+                        # 1.0→1.05 drift — gives each cut energy instead of a flat slide.
+                        dd = max(this_duration, 0.1)
+                        base = base.resized(
+                            lambda t: 1.0 + 0.10 * (1 - min(t / 0.25, 1.0)) + 0.05 * min(t / dd, 1.0)
+                        )
                     final_clip = CompositeVideoClip([base.with_position("center")], size=(W, H))
                 else:
-                    # ── Blurred-fill framing (fallback) ───────────────────────
-                    # Show the WHOLE image (fit) over a blurred copy of itself.
-                    with _PILImage.open(material.url) as _im:
-                        iw, ih = _im.size
+                    # ── Blurred-fill framing ──────────────────────────────────
+                    # Show the WHOLE image (fit, never cropped) over a blurred copy of
+                    # itself — used for wide images where cover would cut the subject.
+                    # Foreground is graded too so the look stays consistent.
                     fit = min(W / iw, H / ih)
                     fw, fh = max(2, int(iw * fit)), max(2, int(ih * fit))
                     bg_path = _make_blurred_background(material.url, W, H)
+                    fg_src = material.url
+                    if color_grade:
+                        with _PILImage.open(material.url) as _imf:
+                            graded = _apply_grade(_imf.convert("RGB"))
+                            fg_src = f"{material.url}.graded.jpg"
+                            graded.save(fg_src, "JPEG", quality=90)
                     bg_clip = ImageClip(bg_path).with_duration(this_duration)
-                    fg = ImageClip(material.url).with_duration(this_duration).resized(new_size=(fw, fh))
+                    fg = ImageClip(fg_src).with_duration(this_duration).resized(new_size=(fw, fh))
                     if motion_style != "off":
                         fg = fg.resized(lambda t: 1.0 + 0.06 * min(t / max(this_duration, 0.1), 1.0))
                     final_clip = CompositeVideoClip(
@@ -1401,6 +1699,42 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_styl
             close_clip(final_clip)
             material.url = video_file
             logger.success(f"image processed: {video_file}")
+
+        else:
+            # ── Real video clip (e.g. auto-fetched highlight footage) ──────────
+            # Trim to the caption window (timed sync) and reframe to 9:16 cover so
+            # motion footage is a first-class citizen alongside processed images.
+            logger.info(f"processing clip: {material.url} ({this_duration:.2f}s)")
+            try:
+                src = clip if isinstance(clip, VideoFileClip) else VideoFileClip(material.url)
+                src_dur = float(src.duration or this_duration)
+                seg_len = max(0.4, min(this_duration, src_dur))
+                # Take the segment from the middle of the clip (best action density).
+                start = max(0.0, (src_dur - seg_len) / 2.0)
+                seg = src.subclipped(start, start + seg_len)
+
+                if video_width and video_height:
+                    W, H = video_width, video_height
+                    cw, ch = seg.size
+                    cr, fr = cw / ch, W / H
+                    sf = (H / ch) if cr > fr else (W / cw)
+                    nw, nh = max(2, int(cw * sf)), max(2, int(ch * sf))
+                    seg = seg.resized(new_size=(nw, nh)).with_position("center")
+                    final_clip = CompositeVideoClip([seg], size=(W, H))
+                else:
+                    final_clip = seg
+
+                video_file = f"{material.url}.seg{idx}.mp4" if durations else f"{material.url}.proc.mp4"
+                final_clip.write_videofile(
+                    video_file, fps=fps, logger=None, codec=video_codec,
+                    bitrate=video_bitrate, audio_bitrate=audio_bitrate,
+                    ffmpeg_params=quality_params,
+                )
+                close_clip(final_clip)
+                material.url = video_file
+                logger.success(f"clip processed: {video_file}")
+            except Exception as e:
+                logger.warning(f"clip processing failed for {material.url}: {e}; passing through")
     return materials
 
 def merge_videos(video_paths: List[str], output_path: str) -> str:
