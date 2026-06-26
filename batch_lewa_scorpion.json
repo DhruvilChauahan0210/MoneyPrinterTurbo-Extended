@@ -1,0 +1,31 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "comparison_mode": true,
+    "transition_style": "cut",
+    "transition_at": 5.0,
+    "beat_sync": true,
+    "comparison_sfx_on_drop": true,
+    "loop_follow_tag": false,
+    "bgm_type": "custom",
+    "bgm_file": "resource/phonk/the_raven.mp3",
+    "bgm_volume": 1.0,
+    "font_name": "STHeitiMedium.ttc",
+    "n_threads": 4,
+    "comparison_clips": [
+      { "url": "https://www.youtube.com/watch?v=ymkKmFjlOkY", "start": 1.5, "end": 4.0, "label": "lewa_a", "fill": "contain" },
+      { "url": "https://www.youtube.com/watch?v=ymkKmFjlOkY", "start": 26.0, "end": 28.5, "label": "lewa_b", "fill": "contain" },
+      { "url": "https://www.youtube.com/watch?v=gzszFCxFKNo", "start": 75.0, "end": 77.5, "label": "scorpion_a", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=gzszFCxFKNo", "start": 78.5, "end": 81.0, "label": "scorpion_b", "fill": "cover" }
+    ],
+    "comparison_captions": [
+      { "text": "STRIKES LIKE A SCORPION", "start": 0.2, "end": 4.8, "y": 0.12, "color": "#FFFFFF" },
+      { "text": "LEWANDOWSKI", "emoji": "🔥", "start": 2.3, "end": 4.8, "y": 0.85, "color": "#FFFFFF" },
+      { "text": "LITERALLY...", "start": 5.0, "end": 10.0, "y": 0.12, "color": "#FFFFFF" },
+      { "text": "A SCORPION", "emoji": "🦂", "start": 5.2, "end": 10.0, "y": 0.85, "color": "#FFD700" }
+    ]
+  },
+  "videos": [
+    { "video_subject": "Lewandowski vs a scorpion strike finishing comparison phonk short" }
+  ]
+}
