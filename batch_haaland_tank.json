@@ -1,0 +1,31 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "comparison_mode": true,
+    "transition_style": "cut",
+    "transition_at": 5.0,
+    "beat_sync": true,
+    "comparison_sfx_on_drop": true,
+    "loop_follow_tag": false,
+    "bgm_type": "custom",
+    "bgm_file": "resource/phonk/faster.mp3",
+    "bgm_volume": 1.0,
+    "font_name": "STHeitiMedium.ttc",
+    "n_threads": 4,
+    "comparison_clips": [
+      { "url": "https://www.youtube.com/watch?v=HVRUSmHT9IU", "start": 293.0, "end": 295.5, "label": "haaland_a" },
+      { "url": "https://www.youtube.com/watch?v=HVRUSmHT9IU", "start": 295.5, "end": 298.0, "label": "haaland_b" },
+      { "url": "https://youtu.be/VX-Ix02dKw0", "start": 61.0, "end": 65.0, "label": "tank_a", "fill": "contain" },
+      { "url": "https://youtu.be/VX-Ix02dKw0", "start": 66.0, "end": 70.0, "label": "tank_b", "fill": "contain" }
+    ],
+    "comparison_captions": [
+      { "text": "BUILT LIKE A TANK", "start": 0.2, "end": 4.8, "y": 0.12, "color": "#FFFFFF" },
+      { "text": "HAALAND", "emoji": "💪", "start": 2.4, "end": 4.8, "y": 0.85, "color": "#FFFFFF" },
+      { "text": "LITERALLY...", "start": 5.0, "end": 13.0, "y": 0.12, "color": "#FFFFFF" },
+      { "text": "A TANK", "emoji": "🔥", "start": 5.2, "end": 13.0, "y": 0.85, "color": "#FFD700" }
+    ]
+  },
+  "videos": [
+    { "video_subject": "Haaland vs a tank unstoppable force comparison phonk short" }
+  ]
+}

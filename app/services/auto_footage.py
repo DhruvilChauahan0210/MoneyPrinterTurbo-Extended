@@ -253,3 +253,114 @@ def fetch_clips(
     clips = clips[:max_clips]
     logger.success(f"auto_footage: produced {len(clips)} vertical highlight clips")
     return clips
+
+
+def _download_url(url: str, dest_dir: str, max_height: int, max_filesize_mb: int,
+                  use_node: bool, timeout: int) -> str:
+    """Download ONE specific YouTube URL (not a search). Returns the local path."""
+    ytdlp = _ytdlp_bin()
+    if not ytdlp:
+        logger.error("auto_footage: yt-dlp not found")
+        return ""
+    before = set(os.listdir(dest_dir)) if os.path.isdir(dest_dir) else set()
+    # Existing download for this id? reuse it.
+    existing = [os.path.join(dest_dir, f) for f in before if f.lower().endswith(VIDEO_EXTS)]
+    if existing:
+        return sorted(existing)[0]
+    fmt = (
+        f"bestvideo[height<={max_height}][vcodec^=avc1][ext=mp4]/"
+        f"bestvideo[height<={max_height}][ext=mp4]/"
+        f"best[height<={max_height}][ext=mp4]/best[ext=mp4]/best"
+    )
+    cmd = [
+        ytdlp, "--no-playlist", "--socket-timeout", "20",
+        "--no-warnings", "--ignore-errors",
+        "--retries", "3", "--extractor-retries", "3",
+        "-f", fmt,
+        "--max-filesize", f"{max_filesize_mb}M",
+        "-o", os.path.join(dest_dir, "%(id)s.%(ext)s"),
+        url,
+    ]
+    if use_node:
+        cmd[1:1] = ["--js-runtimes", "node"]
+    try:
+        r = _run(cmd, timeout=timeout)
+        if r.returncode != 0:
+            logger.warning(f"auto_footage: yt-dlp non-zero for url: {r.stderr.strip()[-180:]}")
+    except subprocess.TimeoutExpired:
+        logger.warning("auto_footage: yt-dlp timed out for url")
+    after = set(os.listdir(dest_dir)) if os.path.isdir(dest_dir) else set()
+    new = [os.path.join(dest_dir, f) for f in (after - before) if f.lower().endswith(VIDEO_EXTS)]
+    return sorted(new)[0] if new else ""
+
+
+def fetch_exact_clip(
+    url: str, start: float, end: float, video_width: int, video_height: int,
+    out_path: str, max_height: int = 720, max_filesize_mb: int = 200,
+    fill: str = "cover",
+) -> str:
+    """
+    Download ONE specific YouTube video by URL and cut the EXACT [start, end]
+    window, reframed to vertical 9:16. This is the precise-moment path for the
+    comparison/match-cut series (vs the search-based fetch_clips above).
+    Returns the path to the cut clip (out_path) or "" on failure. Source videos
+    are cached so re-runs / multiple cuts from the same video don't re-download.
+
+    fill:
+      "cover"   – crop-to-fill the 9:16 frame (good for vertical/centered sources;
+                  on a WIDE landscape subject it zooms in and cuts the sides off).
+      "contain" – fit the WHOLE frame inside 9:16 over a blurred zoomed copy of
+                  itself, so a horizontal subject (e.g. a running cheetah) stays
+                  fully in frame with no black bars.
+    """
+    if not _which("ffmpeg"):
+        logger.error("auto_footage: ffmpeg not found")
+        return ""
+    use_node = bool(_which("node") or _which("deno"))
+    root = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+        "storage", "cache_videos", "comparison",
+    )
+    key = hashlib.md5(url.encode()).hexdigest()[:12]
+    src_dir = os.path.join(root, key)
+    os.makedirs(src_dir, exist_ok=True)
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+
+    src = _download_url(url, src_dir, max_height, max_filesize_mb, use_node, timeout=300)
+    if not src:
+        logger.warning(f"auto_footage: could not download {url}")
+        return ""
+
+    dur = max(0.1, float(end) - float(start))
+    W, H = video_width, video_height
+    if fill == "contain":
+        # Whole subject visible: a blurred zoom-to-fill copy as the background,
+        # the full (un-cropped) frame fit on top and centred.
+        vf = (
+            f"split=2[bg][fg];"
+            f"[bg]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},gblur=sigma=24[bgb];"
+            f"[fg]scale={W}:{H}:force_original_aspect_ratio=decrease[fgs];"
+            f"[bgb][fgs]overlay=(W-w)/2:(H-h)/2,setsar=1"
+        )
+    else:
+        vf = (
+            f"crop='min(iw,ih*{W}/{H})':'min(ih,iw*{H}/{W})',"
+            f"scale={W}:{H}:force_original_aspect_ratio=increase,"
+            f"crop={W}:{H},setsar=1"
+        )
+    cmd = [
+        "ffmpeg", "-y", "-loglevel", "error",
+        "-ss", f"{float(start):.3f}", "-i", src, "-t", f"{dur:.3f}",
+        "-an", "-vf", vf,
+        "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
+        "-pix_fmt", "yuv420p", out_path,
+    ]
+    try:
+        r = _run(cmd, timeout=180)
+        if r.returncode == 0 and os.path.exists(out_path) and os.path.getsize(out_path) > 10000:
+            logger.success(f"auto_footage: cut exact clip [{start:.1f}-{end:.1f}] → {os.path.basename(out_path)}")
+            return out_path
+        logger.warning(f"auto_footage: exact cut failed: {r.stderr.strip()[-160:]}")
+    except subprocess.TimeoutExpired:
+        logger.warning("auto_footage: exact cut timed out")
+    return ""

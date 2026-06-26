@@ -497,6 +497,22 @@ def start(task_id, params: VideoParams, stop_at: str = "video"):
     if type(params.video_concat_mode) is str:
         params.video_concat_mode = VideoConcatMode(params.video_concat_mode)
 
+    # 0. Comparison / match-cut PHONK series — a self-contained, voiceover-free
+    #    path. Inert unless comparison_mode is True, so the normal pipeline below
+    #    is completely unaffected when the flag is off (default).
+    if getattr(params, "comparison_mode", False):
+        logger.info("comparison_mode ON — building match-cut phonk short (no voiceover)")
+        try:
+            result = video.build_comparison_short(task_id, params)
+        except Exception as e:
+            logger.error(f"comparison_mode build failed: {e}")
+            result = None
+        if result and result.get("videos"):
+            sm.state.update_task(task_id, state=const.TASK_STATE_COMPLETE, progress=100, **result)
+        else:
+            sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)
+        return result
+
     # 1. Generate script
     video_script = generate_script(task_id, params)
     if not video_script or "Error: " in video_script:

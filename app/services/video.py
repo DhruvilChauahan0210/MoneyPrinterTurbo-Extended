@@ -1762,3 +1762,252 @@ def merge_videos(video_paths: List[str], output_path: str) -> str:
                 c.close()
             except Exception:
                 pass
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# COMPARISON / MATCH-CUT PHONK SERIES (additive — only runs when comparison_mode)
+# ──────────────────────────────────────────────────────────────────────────────
+def _hex_to_rgb(s, default=(255, 255, 255)):
+    try:
+        s = str(s).lstrip("#")
+        if len(s) == 3:
+            s = "".join(c * 2 for c in s)
+        return (int(s[0:2], 16), int(s[2:4], 16), int(s[4:6], 16))
+    except Exception:
+        return default
+
+
+def _find_boom_sfx():
+    """Best-effort: locate a short impact SFX in the repo's resources. Returns
+    a path or None (SFX is optional — never fail the render over it)."""
+    base = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+        "resource",
+    )
+    for sub in ("sfx", "songs", ""):
+        d = os.path.join(base, sub)
+        if not os.path.isdir(d):
+            continue
+        for f in sorted(os.listdir(d)):
+            low = f.lower()
+            if low.endswith((".mp3", ".wav")) and ("boom" in low or "impact" in low or "hit" in low):
+                return os.path.join(d, f)
+    return None
+
+
+def build_comparison_short(task_id, params):
+    """
+    Build ONE comparison / match-cut phonk short (no voiceover, no subtitles).
+
+    Reads params.comparison_clips (precise YouTube URL + in/out timestamps),
+    downloads + cuts each to 9:16, stitches them with a beat-aligned transition,
+    overlays bold stat captions, and lays a phonk track whose DROP is aligned to
+    the football→comparison cut. Returns the same dict shape as task.start().
+    """
+    from app.services import auto_footage, beat_sync
+
+    aspect = VideoAspect(params.video_aspect)
+    video_width, video_height = aspect.to_resolution()
+    out_dir = utils.task_dir(task_id)
+    os.makedirs(out_dir, exist_ok=True)
+    clips_dir = os.path.join(out_dir, "comparison_clips")
+    os.makedirs(clips_dir, exist_ok=True)
+
+    specs = params.comparison_clips or []
+    if not specs:
+        logger.error("comparison_mode: no comparison_clips provided")
+        return {"videos": [], "combined_videos": []}
+
+    # 1. Download + cut each exact clip ----------------------------------------
+    segments = []  # (path, label, duration)
+    for i, spec in enumerate(specs):
+        url = spec.get("url", "")
+        start = float(spec.get("start", 0.0))
+        end = float(spec.get("end", start + 4.0))
+        label = spec.get("label", f"clip{i}")
+        out_path = os.path.join(clips_dir, f"{i:02d}_{label}.mp4")
+        cut = auto_footage.fetch_exact_clip(
+            url, start, end, video_width, video_height, out_path,
+            max_height=int(getattr(params, "youtube_max_height", 720) or 720),
+            fill=spec.get("fill", "cover"),
+        )
+        if cut and os.path.exists(cut):
+            segments.append({"path": cut, "label": label, "dur": max(0.1, end - start)})
+        else:
+            logger.warning(f"comparison_mode: clip {i} ({label}) failed to download — skipping")
+    if len(segments) < 2:
+        logger.error("comparison_mode: need at least 2 usable clips")
+        return {"videos": [], "combined_videos": []}
+
+    # 2. Load clips & compute the seam (football→comparison) -------------------
+    loaded = []
+    for s in segments:
+        vc = VideoFileClip(s["path"]).without_audio()
+        s["dur"] = float(vc.duration or s["dur"])
+        loaded.append(vc)
+
+    # transition_at = explicit, else the end of the first clip (first seam)
+    seam = float(getattr(params, "transition_at", 0.0) or 0.0)
+    if seam <= 0:
+        seam = loaded[0].duration
+    total_dur = sum(c.duration for c in loaded)
+    cf = float(getattr(params, "crossfade_dur", 0.18) or 0.18)
+    style = (getattr(params, "transition_style", "cut") or "cut").lower()
+
+    # 3. Build the seam transition (uniform W×H segments, then concatenate) -----
+    built = []
+    for i, vc in enumerate(loaded):
+        if style == "zoom_punch" and i > 0:
+            d = vc.duration
+            punched = vc.resized(lambda t: 1.0 + 0.16 * max(0.0, 1.0 - t / max(cf, 0.05)))
+            seg = CompositeVideoClip(
+                [punched.with_position("center")], size=(video_width, video_height)
+            ).with_duration(d)
+            built.append(seg)
+        else:
+            built.append(vc)
+
+    video_clip = None
+    if style == "crossfade":
+        try:
+            from moviepy import vfx
+            timeline, t0 = [], 0.0
+            for i, seg in enumerate(built):
+                if i == 0:
+                    timeline.append(seg.with_start(0.0))
+                    t0 = seg.duration
+                else:
+                    s = seg.with_effects([vfx.CrossFadeIn(cf)]).with_start(max(0.0, t0 - cf))
+                    timeline.append(s)
+                    t0 = (t0 - cf) + seg.duration
+            video_clip = CompositeVideoClip(timeline, size=(video_width, video_height))
+            total_dur = t0
+            seam = loaded[0].duration - cf if seam == loaded[0].duration else seam
+        except Exception as e:
+            logger.warning(f"comparison_mode: crossfade failed ({e}); using hard cut")
+            video_clip = None
+    if video_clip is None:
+        video_clip = concatenate_videoclips(built, method="chain")
+        total_dur = float(video_clip.duration)
+
+    # 4. Beat analysis → align the phonk DROP to the seam ----------------------
+    bgm_file = get_bgm_file(bgm_type=getattr(params, "bgm_type", "random"),
+                            bgm_file=getattr(params, "bgm_file", ""))
+    beats, drop_time = [], 0.0
+    bgm_start = float(getattr(params, "bgm_drop_offset", 0.0) or 0.0)
+    if bgm_file and os.path.exists(bgm_file) and getattr(params, "beat_sync", True):
+        info = beat_sync.analyze(bgm_file)
+        beats = info.get("beats", [])
+        drop_time = float(info.get("drop_time", 0.0) or 0.0)
+        if drop_time > 0:
+            bgm_start = max(0.0, drop_time - seam)  # so the drop lands on the seam
+            logger.info(f"comparison_mode: drop={drop_time}s seam={seam:.2f}s → bgm_start={bgm_start:.2f}s")
+    # Detected beats are in TRACK time; convert to VIDEO time (offset by bgm_start)
+    # so caption pops can snap to the beat the viewer actually hears.
+    video_beats = sorted(b - bgm_start for b in beats if bgm_start <= b <= bgm_start + total_dur) if beats else []
+
+    # 5. Caption overlays (snap to beats when beat_sync) -----------------------
+    font_path = os.path.join(utils.font_dir(), getattr(params, "font_name", "STHeitiMedium.ttc"))
+    fsize = int(video_width * 0.075)
+    fsize = fsize if fsize % 2 == 0 else fsize + 1
+    overlays = []
+    for cap in (params.comparison_captions or []):
+        text = cap.get("text", "")
+        if not text:
+            continue
+        cstart = float(cap.get("start", 0.0))
+        cend = float(cap.get("end", total_dur))
+        if getattr(params, "beat_sync", True) and video_beats:
+            cstart = beat_sync.nearest_beat(video_beats, cstart)
+        cend = min(cend, total_dur)
+        if cend <= cstart:
+            cend = min(total_dur, cstart + 1.5)
+        color = _hex_to_rgb(cap.get("color", "#FFFFFF"))
+        y = float(cap.get("y", 0.5))
+        emoji = cap.get("emoji", "")
+        layer = _render_text_card(
+            (text + (" " + emoji if emoji else "")).strip(),
+            font_path, fsize, video_width, video_height,
+            text_color=color, stroke_color=(0, 0, 0), stroke_width=8,
+            y_center_ratio=y, bg_alpha=0,
+        )
+        dur = cend - cstart
+        # Layer is already full-frame W×H; apply pop-in (local time t), centre it,
+        # and set the absolute start ONCE (a second with_start would double the
+        # offset and push the caption past the end of the video).
+        clip = ImageClip(np.array(layer)).with_duration(dur)
+        clip = clip.resized(lambda t: 1.0 + 0.12 * (1 - min(t / 0.16, 1)))
+        clip = clip.with_position("center").with_start(cstart)
+        overlays.append(clip)
+
+    if getattr(params, "loop_follow_tag", False):
+        tag = create_follow_tag(params, video_width, video_height, total_dur)
+        if tag is not None:
+            overlays.append(tag)
+
+    if overlays:
+        video_clip = CompositeVideoClip([video_clip, *overlays], size=(video_width, video_height))
+
+    # 6. Audio: phonk BGM (drop-aligned) + optional impact on the drop ---------
+    audio_tracks = []
+    if bgm_file and os.path.exists(bgm_file):
+        try:
+            from moviepy import vfx as _vfx  # noqa
+        except Exception:
+            pass
+        try:
+            bgm = AudioFileClip(bgm_file)
+            seg_end = min(bgm.duration, bgm_start + total_dur)
+            bgm = bgm.subclipped(bgm_start, seg_end)
+            vol = getattr(params, "bgm_volume", 0.0) or 0.0
+            if vol < 0.5:   # music is the LEAD in this format
+                vol = 0.95
+            bgm = bgm.with_effects([afx.MultiplyVolume(vol), afx.AudioFadeOut(0.4)])
+            audio_tracks.append(bgm)
+        except Exception as e:
+            logger.warning(f"comparison_mode: bgm failed ({e})")
+
+    if getattr(params, "comparison_sfx_on_drop", True):
+        boom = _find_boom_sfx()
+        if boom:
+            try:
+                sfx_vol = getattr(params, "sfx_volume", 0.5) or 0.5
+                hit = AudioFileClip(boom)
+                hit = hit.subclipped(0, min(hit.duration, 1.2)).with_start(max(0.0, seam))
+                hit = hit.with_effects([afx.MultiplyVolume(min(1.0, sfx_vol * 1.3))])
+                audio_tracks.append(hit)
+            except Exception as e:
+                logger.warning(f"comparison_mode: sfx failed ({e})")
+
+    if audio_tracks:
+        video_clip = video_clip.with_audio(CompositeAudioClip(audio_tracks))
+
+    # 7. Write final-1.mp4 ------------------------------------------------------
+    final_path = os.path.join(out_dir, "final-1.mp4")
+    logger.info(f"comparison_mode: writing {final_path} ({total_dur:.1f}s, style={style})")
+    video_clip.write_videofile(
+        final_path,
+        audio_codec=audio_codec,
+        temp_audiofile_path=out_dir,
+        threads=getattr(params, "n_threads", 2) or 2,
+        logger=None,
+        fps=fps,
+        codec=video_codec,
+        bitrate=video_bitrate,
+        audio_bitrate=audio_bitrate,
+        ffmpeg_params=quality_params,
+    )
+    try:
+        close_clip(video_clip)
+        for c in loaded:
+            close_clip(c)
+    except Exception:
+        pass
+    logger.success(f"comparison_mode: done → {final_path}")
+    return {
+        "videos": [final_path],
+        "combined_videos": [],
+        "script": "",
+        "terms": "",
+        "materials": [s["path"] for s in segments],
+    }

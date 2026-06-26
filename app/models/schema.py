@@ -230,6 +230,27 @@ class VideoParams(BaseModel):
     loop_seamless: Optional[bool] = False
     loop_follow_tag: Optional[bool] = True  # small persistent "follow" tag (loop-safe)
 
+    # ── Comparison / match-cut PHONK series (additive, OFF by default) ──────────
+    # When comparison_mode is True, task.start() branches at the top into a
+    # dedicated builder that SKIPS TTS/subtitles entirely. It downloads the exact
+    # clips listed in comparison_clips (precise URL + in/out timestamps), stitches
+    # them with a beat-aligned transition, overlays bold stat captions, and lays a
+    # phonk track whose DROP is aligned to the football→comparison cut. None of the
+    # existing voiceover pipeline runs. Defaults below keep everything inert when off.
+    comparison_mode: Optional[bool] = False
+    # Ordered shots. Each: {"url": <youtube url>, "start": <sec>, "end": <sec>,
+    #                       "label": "football"|"comparison", "freeze_end": <bool>}
+    comparison_clips: Optional[List[dict]] = None
+    # Timed bold captions: [{"text": "38 KM/H", "start": 0.0, "end": 3.0,
+    #                        "color": "#FFFFFF", "y": 0.5, "emoji": "🐆"}]
+    comparison_captions: Optional[List[dict]] = None
+    transition_style: Optional[str] = "cut"      # cut | crossfade | zoom_punch
+    transition_at: Optional[float] = 0.0         # seconds; 0 = auto (end of clip 1)
+    crossfade_dur: Optional[float] = 0.18         # seconds, used by crossfade/zoom_punch
+    beat_sync: Optional[bool] = True             # align transition + captions to phonk beats
+    bgm_drop_offset: Optional[float] = 0.0       # manual BGM start (auto when beat_sync)
+    comparison_sfx_on_drop: Optional[bool] = True # boom hit on the transition/drop
+
     n_threads: Optional[int] = 2
     paragraph_number: Optional[int] = 1
 

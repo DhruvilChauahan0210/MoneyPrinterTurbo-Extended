@@ -1,0 +1,34 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "comparison_mode": true,
+    "transition_style": "zoom_punch",
+    "transition_at": 7.0,
+    "crossfade_dur": 0.18,
+    "beat_sync": true,
+    "comparison_sfx_on_drop": true,
+    "loop_follow_tag": false,
+    "bgm_type": "custom",
+    "bgm_file": "resource/phonk/mortals.mp3",
+    "bgm_volume": 1.0,
+    "sfx_volume": 0.6,
+    "font_name": "STHeitiMedium.ttc",
+    "youtube_max_height": 1080,
+    "n_threads": 4,
+    "comparison_clips": [
+      { "url": "https://youtu.be/JH_WRKTCPK4", "start": 5.0, "end": 12.0, "label": "goal1", "fill": "cover" },
+      { "url": "https://youtu.be/JH_WRKTCPK4", "start": 24.0, "end": 38.0, "label": "goal2", "fill": "cover" },
+      { "url": "https://youtu.be/JH_WRKTCPK4", "start": 65.0, "end": 88.0, "label": "goal3", "fill": "cover" }
+    ],
+    "comparison_captions": [
+      { "text": "MESSI", "emoji": "🐐", "start": 0.3, "end": 7.0, "y": 0.16, "color": "#FFD700" },
+      { "text": "GOAL 1", "start": 0.4, "end": 7.0, "y": 0.84, "color": "#FFFFFF" },
+      { "text": "GOAL 2", "start": 7.2, "end": 21.0, "y": 0.84, "color": "#FFFFFF" },
+      { "text": "GOAL 3", "start": 21.2, "end": 44.0, "y": 0.84, "color": "#FFFFFF" },
+      { "text": "HAT-TRICK", "emoji": "🔥", "start": 21.2, "end": 44.0, "y": 0.16, "color": "#FF2D2D" }
+    ]
+  },
+  "videos": [
+    { "video_subject": "Messi World Cup 2026 hat-trick vs Algeria phonk goal montage" }
+  ]
+}
