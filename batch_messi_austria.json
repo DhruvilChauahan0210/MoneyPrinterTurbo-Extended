@@ -32,11 +32,11 @@
     "image_ranking_min_score": 0.22,
     "enable_subject_gate": true,
     "subject_positive_labels": [
-      "a real photograph of Cristiano Ronaldo the footballer",
-      "Cristiano Ronaldo in an Al Nassr yellow jersey",
-      "Cristiano Ronaldo in a Portugal red national team jersey",
-      "Cristiano Ronaldo celebrating a goal close up",
-      "a tight close up of Cristiano Ronaldo's face"
+      "a real photograph of Lionel Messi the Argentina footballer",
+      "Lionel Messi in a light blue and white striped Argentina jersey",
+      "Lionel Messi celebrating a goal close up arms out",
+      "Lionel Messi dribbling past a defender on the pitch",
+      "Lionel Messi screaming in celebration close up"
     ],
     "subject_negative_labels": [
       "a stats infographic full of text and numbers",
@@ -63,46 +63,35 @@
       "a referee holding up a card at an amateur grassroots match",
       "a folded football jersey product photo on a plain background",
       "a merchandise photo of a football shirt for sale on a grey background",
-      "a close up of a blank football shirt with no person wearing it",
-      "a close up of a tattooed arm or tattooed body",
-      "a person getting a tattoo in a tattoo studio",
-      "a close up of a hand holding a cigarette",
-      "a person smoking a cigarette",
-      "a close up of a syringe or needle",
-      "a medical or pharmacy product close up",
-      "a close up of fingers holding a thin white object"
+      "a close up of a blank football shirt with no person wearing it"
     ],
     "subject_gate_margin": 0.1,
     "subject_gate_abs_floor": 0.37,
-    "segment_reuse_penalty": 0.25,
+    "segment_reuse_penalty": 0.1,
     "enable_timed_sync": true,
     "enable_grayscale": false,
-    "video_clip_ratio": 0.0,
+    "video_clip_ratio": 0.2,
     "cover_min_keep": 0.5,
     "enable_youtube_footage": true,
     "youtube_footage_queries": [
-      "Cristiano Ronaldo screaming celebration close up slow motion",
-      "Cristiano Ronaldo Real Madrid goal celebration close up",
-      "Cristiano Ronaldo free kick goal slow motion",
-      "Cristiano Ronaldo header goal jump slow motion",
-      "Cristiano Ronaldo Portugal goal celebration close up face",
-      "Cristiano Ronaldo Al Nassr goal celebration siu",
-      "Cristiano Ronaldo Manchester United goal celebration",
-      "Cristiano Ronaldo dribbling skills slow motion close up",
-      "Cristiano Ronaldo bicycle kick goal Juventus",
-      "Cristiano Ronaldo solo run goal celebration arms wide"
+      "Lionel Messi goal Argentina vs Austria World Cup 2026",
+      "Argentina 2-0 Austria highlights Messi World Cup 2026",
+      "Lionel Messi Argentina goal celebration close up slow motion",
+      "Lionel Messi screaming celebration Argentina blue jersey close up",
+      "Lionel Messi Argentina World Cup best moments close up face",
+      "Lionel Messi dribble past defender Argentina close up slow motion"
     ],
-    "youtube_max_videos": 10,
+    "youtube_max_videos": 8,
     "youtube_clip_len": 3.0,
     "youtube_clips_per_video": 4,
-    "youtube_max_clips": 44,
+    "youtube_max_clips": 28,
     "youtube_max_height": 720,
     "footage_video_bonus": 0.12,
-    "footage_min_fraction": 1.0,
+    "footage_min_fraction": 0.72,
     "image_motion_style": "varied",
     "enable_hook_card": true,
-    "hook_text": "WHY RONALDO HAS ZERO TATTOOS",
-    "hook_cover_term": "a tight close up of Cristiano Ronaldo's face celebrating intensely in a Portugal red jersey, his face filling the frame, sharp and clear",
+    "hook_text": "AUSTRIA HAD NO ANSWER FOR MESSI",
+    "hook_cover_term": "a tight close up of Lionel Messi's face celebrating intensely in a light blue and white striped Argentina jersey, his face filling the frame, sharp and clear",
     "hook_duration": 1.5,
     "enable_sfx": true,
     "sfx_volume": 0.5,
@@ -115,9 +104,9 @@
   },
   "videos": [
     {
-      "video_subject": "Why Cristiano Ronaldo has no tattoos - because he regularly donates blood and bone marrow and tattoos would force a waiting period before donating",
-      "video_script": "Ronaldo has zero tattoos, and the reason is beautiful. He donates blood and bone marrow, and fresh ink blocks donation. So he stays clean to save lives. Which makes you wonder,",
-      "video_terms": "Cristiano Ronaldo celebration close up, Cristiano Ronaldo Portugal red jersey, Cristiano Ronaldo Al Nassr goal celebration, Cristiano Ronaldo siu celebration close up, Cristiano Ronaldo face close up, Cristiano Ronaldo arms wide celebration, Cristiano Ronaldo no tattoos arms, Cristiano Ronaldo smiling close up, Cristiano Ronaldo screaming celebration, Cristiano Ronaldo Portugal national team"
+      "video_subject": "Messi strikes again for Argentina against Austria at the FIFA World Cup 2026 - Austria had no answer for the 38 year old GOAT who scored in a 2-0 win",
+      "video_script": "Austria thought they had a plan to stop Lionel Messi. They were wrong. At thirty eight years old, Messi strikes again for Argentina at the World Cup. One touch to kill the ball, one look up, and the defender was already beaten. Austria had no answer for him all game long. Argentina win it two nil and the whole stadium went silent. The greatest of all time is still writing history at this World Cup. Which makes you wonder,",
+      "video_terms": "Lionel Messi Argentina goal celebration, Lionel Messi light blue and white Argentina jersey, Lionel Messi World Cup celebration close up, Lionel Messi dribbling past a defender, Lionel Messi screaming celebration arms out, Lionel Messi Argentina captain armband, Lionel Messi free kick Argentina, Lionel Messi close up face celebrating, Argentina World Cup 2026 Messi, Lionel Messi pointing to the sky celebration"
     }
   ]
 }

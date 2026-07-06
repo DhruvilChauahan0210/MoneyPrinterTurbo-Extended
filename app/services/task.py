@@ -229,6 +229,26 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
             except Exception as e:
                 logger.warning(f"auto_footage failed, continuing with image_search only: {e}")
 
+        # Pinned local story photos (additive; no-op if unset). Copied into the
+        # task dir, prepended to the pool, exempt from the subject gate, and forced
+        # to the opening segments. First = hook/cover.
+        _pins = []
+        _hook_img = getattr(params, 'hook_image_path', '') or ''
+        _intro = list(getattr(params, 'intro_image_paths', None) or [])
+        for _src in ([_hook_img] if _hook_img else []) + _intro:
+            if _src and os.path.exists(_src):
+                try:
+                    from PIL import Image as _PILImage
+                    _dst = os.path.join(utils.task_dir(task_id), f"pin_{len(_pins)}.jpg")
+                    _PILImage.open(_src).convert("RGB").save(_dst, "JPEG", quality=95)
+                    _pins.append(_dst)
+                except Exception as _e:
+                    logger.warning(f"pin image failed {_src}: {_e}")
+        params._pinned_imgs = _pins
+        if _pins:
+            image_paths = _pins + (image_paths or [])
+            logger.success(f"pinned {len(_pins)} local story photos to the pool")
+
         if not image_paths:
             sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)
             logger.error("failed to download images, no results found for the given search terms.")
@@ -273,14 +293,25 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
             except Exception as e:
                 logger.warning(f"subject-presence gate failed, keeping all media: {e}")
 
+        # Re-add pinned story photos the gate may have dropped (they contain
+        # legit non-target subjects like a baby); keep them at the front.
+        if getattr(params, '_pinned_imgs', None):
+            for _p in reversed(params._pinned_imgs):
+                if _p not in image_paths:
+                    image_paths.insert(0, _p)
+
         # Task 3 — pick the COVER/opening image. The first frame decides swipe-away,
         # so prefer a thumb-stopper (the star's FACE / an action shot) via
         # `hook_cover_term`, falling back to the hook-moment term. Matching the
         # literal hook text can land on a boring object (e.g. a document) and spike
         # swipe-away — hence the explicit cover term.
         hook_path = None
+        # Pinned hook image wins outright (skip CLIP hook lottery).
+        if getattr(params, 'hook_image_path', '') and getattr(params, '_pinned_imgs', None):
+            hook_path = params._pinned_imgs[0]
+            logger.success(f"hook pinned to local story photo: {os.path.basename(hook_path)}")
         cover_term = getattr(params, 'hook_cover_term', '') or hook_term
-        if cover_term:
+        if cover_term and not hook_path:
             try:
                 # The hook frame is the #1 thumb-stopper. With auto-footage on,
                 # the real clips are reliably the actual player (DDG photos return
@@ -384,6 +415,13 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     synced_paths[-1] = cover
                     logger.info("loop design: final frame set to opening hook image")
                 image_paths = synced_paths
+                # Pin story photos to the FIRST segments in order (synced to the
+                # opening lines), so the reveal opens on them regardless of CLIP.
+                if getattr(params, '_pinned_imgs', None):
+                    for _i, _p in enumerate(params._pinned_imgs):
+                        if _i < len(image_paths):
+                            image_paths[_i] = _p
+                    logger.info(f"pinned {len(params._pinned_imgs)} photos to opening segments")
                 params.video_clip_duration = int(max(clip_durations)) + 1   # no truncation
                 logger.info(
                     f"timed sync: aligned {len(image_paths)} images to {len(segments)} caption "

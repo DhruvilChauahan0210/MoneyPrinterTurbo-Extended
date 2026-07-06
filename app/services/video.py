@@ -1074,8 +1074,14 @@ def create_hook_clip(
             cr, fr = cw / ch, video_width / video_height
             sf = (video_height / ch) if cr > fr else (video_width / cw)
             vclip = vclip.resized(new_size=(max(2, int(cw * sf)), max(2, int(ch * sf)))).with_position("center")
-            # punch-in zoom for energy
-            vclip = vclip.resized(lambda t: 1.0 + 0.12 * (1 - (1 - min(t / max(seg, 0.1), 1)) ** 2))
+            # punch-in zoom for energy — but NOT in seamless-loop mode. The loop-back
+            # already settles the title in at the END, so re-punching the footage at the
+            # START makes the intro re-animate right after the seam (reads as a gap). In
+            # loop mode the footage continues at a steady 1.0 scale (it ends the loop-back
+            # at 1.0 too) so the restart is a direct, continuous continuation, not a new
+            # appearance animation.
+            if not getattr(params, 'loop_seamless', False):
+                vclip = vclip.resized(lambda t: 1.0 + 0.12 * (1 - (1 - min(t / max(seg, 0.1), 1)) ** 2))
             # dark veil + baked hook text as a transparent overlay
             veil_text = Image.new("RGBA", (video_width, video_height), (0, 0, 0, int(255 * 0.45)))
             text_layer = _render_text_card(
@@ -1126,8 +1132,11 @@ def create_hook_clip(
 
     hook_img_clip = ImageClip(np.array(composite)).with_duration(hook_dur)
 
-    # Fast zoom 1.0 → 1.20 on the hook card
+    # Fast zoom 1.0 → 1.20 on the hook card — skipped in seamless-loop mode so the
+    # start is a direct, static continuation of the settled loop-back (no re-animation).
     d = hook_dur
+    if getattr(params, 'loop_seamless', False):
+        return CompositeVideoClip([hook_img_clip.with_position("center")], size=(video_width, video_height)).with_start(0)
     zoomed = hook_img_clip.resized(lambda t: 1.0 + 0.20 * (1 - (1 - min(t / d, 1)) ** 2))
     return CompositeVideoClip([zoomed.with_position("center")], size=(video_width, video_height)).with_start(0)
 
@@ -1156,27 +1165,65 @@ def create_follow_tag(params, video_width: int, video_height: int, video_duratio
 
 
 def create_loopback_clip(params, video_width: int, video_height: int, video_duration: float):
-    """Seamless visual loop-back: replay the SAME moving hook clip (no veil/text) for
-    the final ~1.6s, so the last shot equals the opening shot in motion. Falls back to
-    a clean still of the hook image if no clip is available; None if neither exists."""
-    seg = min(1.6, max(0.8, video_duration * 0.08))
+    """Seamless visual loop-back. Instead of replaying the hook moment with a reset
+    zoom (which read as a ~1s freeze/stall at the loop seam), this LEADS the footage
+    UP TO the opening hook frame so the last frame ≈ the first frame: same footage
+    moment, the zoom LANDS on 1.0 (matching the opening hook's start scale → no snap),
+    and the hook veil+title fade back in over the tail so the title doesn't pop on at
+    the restart. Net effect: the Short restarts invisibly. Falls back to a clean still
+    of the hook image if no clip is available; None if neither exists."""
+    from moviepy import vfx
+    seg = min(1.4, max(0.7, video_duration * 0.10))
     clip_path = getattr(params, '_hook_clip_path', None)
     clip_start = float(getattr(params, '_hook_clip_start', 0.0) or 0.0)
+    hook_dur = float(getattr(params, 'hook_duration', 1.5))
+    hook_text = getattr(params, '_hook_text', '') or ''
     if clip_path and os.path.exists(clip_path):
         try:
             src = VideoFileClip(clip_path)
             sdur = float(src.duration or seg)
             s = min(seg, sdur)
-            st = max(0.0, min(clip_start - s / 2.0, max(0.0, sdur - s)))
+            # The opening hook plays footage starting here; END the loop-back on this
+            # exact frame so its last frame == the opening's first frame (continuous
+            # motion across the seam, no jump).
+            st_hook = max(0.0, min(clip_start - hook_dur / 2.0, max(0.0, sdur - hook_dur)))
+            st = max(0.0, st_hook - s)
             vclip = src.subclipped(st, st + s)
             cw, ch = vclip.size
             cr, fr = cw / ch, video_width / video_height
             sf = (video_height / ch) if cr > fr else (video_width / cw)
             vclip = vclip.resized(new_size=(max(2, int(cw * sf)), max(2, int(ch * sf))))
-            vclip = vclip.resized(lambda t: 1.0 + 0.10 * (1 - (1 - min(t / max(s, 0.1), 1)) ** 2))
-            return CompositeVideoClip(
-                [vclip.with_position("center")], size=(video_width, video_height)
-            ).with_duration(s).with_start(max(0.0, video_duration - s))
+            # Gentle push that LANDS on 1.0 to match the opening hook's starting scale.
+            vclip = vclip.resized(lambda t: 1.05 - 0.05 * min(t / max(s, 0.1), 1.0))
+            layers = [vclip.with_position("center")]
+            # Fade the hook veil + title back in over the tail so the final frame looks
+            # like the opening hook card → the restart is invisible (no text pop).
+            if hook_text:
+                try:
+                    font_path = os.path.join(utils.font_dir(), getattr(params, 'font_name', 'STHeitiMedium.ttc'))
+                    fsize = int(video_width * 0.082)
+                    fsize = fsize if fsize % 2 == 0 else fsize + 1
+                    veil_text = Image.new("RGBA", (video_width, video_height), (0, 0, 0, int(255 * 0.45)))
+                    text_layer = _render_text_card(
+                        hook_text, font_path, fsize, video_width, video_height,
+                        y_center_ratio=0.42, bg_alpha=0,
+                    )
+                    veil_text = Image.alpha_composite(veil_text, text_layer)
+                    fade = min(max(0.4, s * 0.5), s)
+                    ov = (
+                        ImageClip(np.array(veil_text))
+                        .with_duration(fade)
+                        .with_start(max(0.0, s - fade))
+                        .with_position("center")
+                        .with_effects([vfx.CrossFadeIn(min(fade, max(0.25, fade * 0.8)))])
+                    )
+                    layers.append(ov)
+                except Exception as e:
+                    logger.warning(f"loopback veil/title overlay failed: {e}")
+            comp = CompositeVideoClip(layers, size=(video_width, video_height)).with_duration(s)
+            # Dissolve the loop-back in from the body footage (no hard cut into it).
+            comp = comp.with_effects([vfx.CrossFadeIn(min(0.4, s * 0.4))])
+            return comp.with_start(max(0.0, video_duration - s))
         except Exception as e:
             logger.warning(f"loopback clip failed, falling back to still: {e}")
     return create_cta_clip(params, video_width, video_height, video_duration, loop_mode=True)
@@ -1245,6 +1292,37 @@ def create_cta_clip(params, video_width: int, video_height: int, video_duration:
             .with_opacity(0.92)
         )
     return cta_img_clip
+
+
+def _speech_end_time(audio_path: str, total_dur: float):
+    """Return the timestamp of the LAST spoken word in the voiceover (i.e. where the
+    trailing silence begins), or None. Used in seamless-loop mode to trim dead air so
+    the circular voiceover's last word flows straight into its first word on restart."""
+    try:
+        import subprocess as _sp
+        try:
+            import imageio_ffmpeg
+            ff = imageio_ffmpeg.get_ffmpeg_exe()
+        except Exception:
+            ff = "ffmpeg"
+        cmd = [ff, "-hide_banner", "-i", audio_path,
+               "-af", "silencedetect=n=-40dB:d=0.25", "-f", "null", "-"]
+        r = _sp.run(cmd, capture_output=True, text=True, timeout=60)
+        starts, ends = [], []
+        for line in r.stderr.splitlines():
+            if "silence_start:" in line:
+                try: starts.append(float(line.split("silence_start:")[1].strip().split()[0]))
+                except Exception: pass
+            if "silence_end:" in line:
+                try: ends.append(float(line.split("silence_end:")[1].split("|")[0].strip()))
+                except Exception: pass
+        # A trailing silence block whose end ≈ the file end means speech stopped at its
+        # start. Only trust it if it leaves a sensible amount of speech in front.
+        if starts and ends and abs(ends[-1] - total_dur) < 0.35 and 1.0 < starts[-1] < total_dur:
+            return starts[-1]
+    except Exception as e:
+        logger.warning(f"speech-end detect failed: {e}")
+    return None
 
 
 def generate_video(
@@ -1338,6 +1416,25 @@ def generate_video(
         [afx.MultiplyVolume(params.voice_volume)]
     )
 
+    # --- Seamless-loop tight trim: cut the dead air after the last spoken word so the
+    #     circular voiceover loops within ~200ms (last word → first word on restart).
+    #     The footage is built to >= audio length (overshoot by whole clips) AND the TTS
+    #     leaves trailing silence; both are removed here. Loop mode only; additive. ---
+    if getattr(params, 'loop_seamless', False) and getattr(params, 'loop_tight_trim', True):
+        try:
+            sp_end = _speech_end_time(audio_path, audio_clip.duration)
+            tail = float(getattr(params, 'loop_tail_pad', 0.12))
+            loop_end = (sp_end + tail) if sp_end else min(audio_clip.duration, video_clip.duration)
+            loop_end = max(1.5, min(loop_end, video_clip.duration, audio_clip.duration + tail))
+            if loop_end + 0.05 < video_clip.duration:
+                video_clip = video_clip.subclipped(0, loop_end)
+            if loop_end < audio_clip.duration:
+                audio_clip = audio_clip.subclipped(0, loop_end)
+            logger.info(f"loop tight-trim: speech_end={sp_end}, loop_end={loop_end:.2f}s "
+                        f"(was video {video_clip.duration:.2f}s / audio {audio_clip.duration:.2f}s)")
+        except Exception as e:
+            logger.warning(f"loop tight-trim failed: {e}")
+
     def make_textclip(text):
         return TextClip(
             text=text,
@@ -1415,8 +1512,10 @@ def generate_video(
             bgm_vol = getattr(params, 'bgm_volume', 0.12)
             # In seamless-loop mode keep the music continuous (a long fade-out would
             # die at the end then slam back on restart — the loudest "it ended" cue).
-            bgm_fadeout = 0.15 if loop_mode else 3
-            bgm_fadein = 0.15 if loop_mode else 1.5
+            # Loop mode: keep the music continuous across the seam — a 0.15s in/out
+            # made a ~0.3s volume dip at the restart. 0.04s only de-clicks the join.
+            bgm_fadeout = 0.04 if loop_mode else 3
+            bgm_fadein = 0.04 if loop_mode else 1.5
             bgm_clip = AudioFileClip(bgm_file).with_effects(
                 [
                     afx.MultiplyVolume(bgm_vol),
@@ -1686,7 +1785,13 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_styl
                     motion_counter += 1
 
             # Unique output per segment so a reused image keeps its own duration.
-            video_file = f"{material.url}.seg{idx}.mp4" if durations else f"{material.url}.mp4"
+            # Written to a _segtmp subdir so temp segments never pollute the
+            # shared auto-footage clip cache (they used to be picked up as
+            # pool clips on later renders, collapsing variety to 3-4 scenes).
+            _seg_dir = os.path.join(os.path.dirname(material.url), "_segtmp")
+            os.makedirs(_seg_dir, exist_ok=True)
+            _seg_base = os.path.join(_seg_dir, os.path.basename(material.url))
+            video_file = f"{_seg_base}.seg{idx}.mp4" if durations else f"{material.url}.mp4"
             final_clip.write_videofile(
                 video_file,
                 fps=fps,
@@ -1724,7 +1829,10 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_styl
                 else:
                     final_clip = seg
 
-                video_file = f"{material.url}.seg{idx}.mp4" if durations else f"{material.url}.proc.mp4"
+                _seg_dir = os.path.join(os.path.dirname(material.url), "_segtmp")
+                os.makedirs(_seg_dir, exist_ok=True)
+                _seg_base = os.path.join(_seg_dir, os.path.basename(material.url))
+                video_file = f"{_seg_base}.seg{idx}.mp4" if durations else f"{_seg_base}.proc.mp4"
                 final_clip.write_videofile(
                     video_file, fps=fps, logger=None, codec=video_codec,
                     bitrate=video_bitrate, audio_bitrate=audio_bitrate,

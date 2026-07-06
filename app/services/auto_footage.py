@@ -216,7 +216,8 @@ def fetch_clips(
 
     # Reuse already-cut clips if this exact query set ran before (fast re-runs).
     existing = [os.path.join(cut_dir, f) for f in sorted(os.listdir(cut_dir))
-                if f.lower().endswith(".mp4")] if os.path.isdir(cut_dir) else []
+                if f.lower().endswith(".mp4")
+                and ".seg" not in f.lower() and ".proc" not in f.lower()] if os.path.isdir(cut_dir) else []
     if len(existing) >= min(max_clips, 6):
         logger.info(f"auto_footage: reusing {len(existing)} cached clips for this query set")
         return existing[:max_clips]

@@ -32,11 +32,11 @@
     "image_ranking_min_score": 0.22,
     "enable_subject_gate": true,
     "subject_positive_labels": [
-      "a real photograph of Cristiano Ronaldo the footballer",
-      "Cristiano Ronaldo in an Al Nassr yellow jersey",
-      "Cristiano Ronaldo in a Portugal red national team jersey",
-      "Cristiano Ronaldo celebrating a goal close up",
-      "a tight close up of Cristiano Ronaldo's face"
+      "a real photograph of Kylian Mbappe the footballer",
+      "Kylian Mbappe in a white Real Madrid jersey",
+      "Kylian Mbappe in a blue France national team jersey",
+      "Kylian Mbappe celebrating a goal close up arms crossed",
+      "Kylian Mbappe sprinting with the ball on the pitch"
     ],
     "subject_negative_labels": [
       "a stats infographic full of text and numbers",
@@ -64,13 +64,8 @@
       "a folded football jersey product photo on a plain background",
       "a merchandise photo of a football shirt for sale on a grey background",
       "a close up of a blank football shirt with no person wearing it",
-      "a close up of a tattooed arm or tattooed body",
-      "a person getting a tattoo in a tattoo studio",
-      "a close up of a hand holding a cigarette",
-      "a person smoking a cigarette",
-      "a close up of a syringe or needle",
-      "a medical or pharmacy product close up",
-      "a close up of fingers holding a thin white object"
+      "a car or automobile on a road",
+      "a TikTok video with a username watermark and baked in caption text"
     ],
     "subject_gate_margin": 0.1,
     "subject_gate_abs_floor": 0.37,
@@ -81,28 +76,24 @@
     "cover_min_keep": 0.5,
     "enable_youtube_footage": true,
     "youtube_footage_queries": [
-      "Cristiano Ronaldo screaming celebration close up slow motion",
-      "Cristiano Ronaldo Real Madrid goal celebration close up",
-      "Cristiano Ronaldo free kick goal slow motion",
-      "Cristiano Ronaldo header goal jump slow motion",
-      "Cristiano Ronaldo Portugal goal celebration close up face",
-      "Cristiano Ronaldo Al Nassr goal celebration siu",
-      "Cristiano Ronaldo Manchester United goal celebration",
-      "Cristiano Ronaldo dribbling skills slow motion close up",
-      "Cristiano Ronaldo bicycle kick goal Juventus",
-      "Cristiano Ronaldo solo run goal celebration arms wide"
+      "Kylian Mbappe Real Madrid sprint dribble skills slow motion close up",
+      "Kylian Mbappe Real Madrid white jersey goal celebration close up",
+      "Kylian Mbappe change of pace dribble past defender slow motion",
+      "Kylian Mbappe Real Madrid screaming celebration arms crossed close up",
+      "Kylian Mbappe France blue jersey sprinting with the ball close up",
+      "Kylian Mbappe Real Madrid first goal celebration close up face"
     ],
-    "youtube_max_videos": 10,
+    "youtube_max_videos": 8,
     "youtube_clip_len": 3.0,
-    "youtube_clips_per_video": 4,
-    "youtube_max_clips": 44,
+    "youtube_clips_per_video": 5,
+    "youtube_max_clips": 34,
     "youtube_max_height": 720,
     "footage_video_bonus": 0.12,
     "footage_min_fraction": 1.0,
     "image_motion_style": "varied",
     "enable_hook_card": true,
-    "hook_text": "WHY RONALDO HAS ZERO TATTOOS",
-    "hook_cover_term": "a tight close up of Cristiano Ronaldo's face celebrating intensely in a Portugal red jersey, his face filling the frame, sharp and clear",
+    "hook_text": "MBAPPE CAN'T EVEN DRIVE",
+    "hook_cover_term": "a tight close up of Kylian Mbappe's face celebrating in a white Real Madrid jersey, his face filling the frame, sharp and clear",
     "hook_duration": 1.5,
     "enable_sfx": true,
     "sfx_volume": 0.5,
@@ -115,9 +106,9 @@
   },
   "videos": [
     {
-      "video_subject": "Why Cristiano Ronaldo has no tattoos - because he regularly donates blood and bone marrow and tattoos would force a waiting period before donating",
-      "video_script": "Ronaldo has zero tattoos, and the reason is beautiful. He donates blood and bone marrow, and fresh ink blocks donation. So he stays clean to save lives. Which makes you wonder,",
-      "video_terms": "Cristiano Ronaldo celebration close up, Cristiano Ronaldo Portugal red jersey, Cristiano Ronaldo Al Nassr goal celebration, Cristiano Ronaldo siu celebration close up, Cristiano Ronaldo face close up, Cristiano Ronaldo arms wide celebration, Cristiano Ronaldo no tattoos arms, Cristiano Ronaldo smiling close up, Cristiano Ronaldo screaming celebration, Cristiano Ronaldo Portugal national team"
+      "video_subject": "Kylian Mbappe is one of the fastest players in football reaching thirty eight kilometers per hour in matches, but for years he had no driving license and was chauffeured everywhere because he turned professional so young he never learned to drive",
+      "video_script": "Mbappe runs faster than almost anyone alive, thirty eight kilometers an hour. But off the pitch, he can't even drive. He turned pro so young he never learned. Which makes you wonder,",
+      "video_terms": "Kylian Mbappe sprint with the ball, Kylian Mbappe Real Madrid white jersey, Kylian Mbappe dribble past defender close up, Kylian Mbappe celebrating a goal close up, Kylian Mbappe France blue jersey, Kylian Mbappe screaming celebration arms crossed, Kylian Mbappe close up face, Kylian Mbappe explosive acceleration, Kylian Mbappe top speed, Kylian Mbappe skills slow motion"
     }
   ]
 }

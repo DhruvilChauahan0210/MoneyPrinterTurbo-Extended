@@ -215,6 +215,13 @@ class VideoParams(BaseModel):
     # e.g. "a close-up photo of Lionel Messi's face"
     hook_cover_term: Optional[str] = ""
 
+    # Pinned local story photos (additive; no-op when empty). `hook_image_path`
+    # is forced as the cover/hook frame; `intro_image_paths` are pinned to the
+    # first caption segments IN ORDER. Both are EXEMPT from the subject gate so
+    # legit story photos (e.g. a baby photo) survive. Used for reveal shorts.
+    hook_image_path: Optional[str] = ""
+    intro_image_paths: Optional[List[str]] = []
+
     # Task 5 — Audio polish (lower BGM, SFX)
     bgm_volume: Optional[float] = 0.12
     enable_sfx: Optional[bool] = True
@@ -229,6 +236,8 @@ class VideoParams(BaseModel):
     # Pair with a circular voiceover script for the strongest effect.
     loop_seamless: Optional[bool] = False
     loop_follow_tag: Optional[bool] = True  # small persistent "follow" tag (loop-safe)
+    loop_tight_trim: Optional[bool] = True  # trim dead air after last spoken word for a ~200ms-accurate loop
+    loop_tail_pad: Optional[float] = 0.12   # seconds kept after the last word before the loop point
 
     # ── Comparison / match-cut PHONK series (additive, OFF by default) ──────────
     # When comparison_mode is True, task.start() branches at the top into a

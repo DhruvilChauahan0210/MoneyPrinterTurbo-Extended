@@ -64,13 +64,8 @@
       "a folded football jersey product photo on a plain background",
       "a merchandise photo of a football shirt for sale on a grey background",
       "a close up of a blank football shirt with no person wearing it",
-      "a close up of a tattooed arm or tattooed body",
-      "a person getting a tattoo in a tattoo studio",
-      "a close up of a hand holding a cigarette",
-      "a person smoking a cigarette",
-      "a close up of a syringe or needle",
-      "a medical or pharmacy product close up",
-      "a close up of fingers holding a thin white object"
+      "a fast food restaurant or hamburger product photo",
+      "a TikTok video with a username watermark and baked in caption text"
     ],
     "subject_gate_margin": 0.1,
     "subject_gate_abs_floor": 0.37,
@@ -101,7 +96,7 @@
     "footage_min_fraction": 1.0,
     "image_motion_style": "varied",
     "enable_hook_card": true,
-    "hook_text": "WHY RONALDO HAS ZERO TATTOOS",
+    "hook_text": "RONALDO SECRETLY SAVES KIDS",
     "hook_cover_term": "a tight close up of Cristiano Ronaldo's face celebrating intensely in a Portugal red jersey, his face filling the frame, sharp and clear",
     "hook_duration": 1.5,
     "enable_sfx": true,
@@ -115,9 +110,9 @@
   },
   "videos": [
     {
-      "video_subject": "Why Cristiano Ronaldo has no tattoos - because he regularly donates blood and bone marrow and tattoos would force a waiting period before donating",
-      "video_script": "Ronaldo has zero tattoos, and the reason is beautiful. He donates blood and bone marrow, and fresh ink blocks donation. So he stays clean to save lives. Which makes you wonder,",
-      "video_terms": "Cristiano Ronaldo celebration close up, Cristiano Ronaldo Portugal red jersey, Cristiano Ronaldo Al Nassr goal celebration, Cristiano Ronaldo siu celebration close up, Cristiano Ronaldo face close up, Cristiano Ronaldo arms wide celebration, Cristiano Ronaldo no tattoos arms, Cristiano Ronaldo smiling close up, Cristiano Ronaldo screaming celebration, Cristiano Ronaldo Portugal national team"
+      "video_subject": "Cristiano Ronaldo quietly funds life saving surgeries and cancer treatments for sick children around the world without any cameras or social media posts, saving kids most fans have never even heard about",
+      "video_script": "Ronaldo quietly pays for children's surgeries around the world. No cameras. No posts. He's funded cancer treatments and saved kids that most fans never even heard about. Which makes you wonder,",
+      "video_terms": "Cristiano Ronaldo celebration close up, Cristiano Ronaldo Portugal red jersey, Cristiano Ronaldo Al Nassr goal celebration, Cristiano Ronaldo siu celebration close up, Cristiano Ronaldo face close up, Cristiano Ronaldo arms wide celebration, Cristiano Ronaldo emotional, Cristiano Ronaldo smiling close up, Cristiano Ronaldo screaming celebration, Cristiano Ronaldo Portugal national team"
     }
   ]
 }

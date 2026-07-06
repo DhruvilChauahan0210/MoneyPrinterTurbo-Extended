@@ -32,11 +32,11 @@
     "image_ranking_min_score": 0.22,
     "enable_subject_gate": true,
     "subject_positive_labels": [
-      "a real photograph of Cristiano Ronaldo the footballer",
-      "Cristiano Ronaldo in an Al Nassr yellow jersey",
-      "Cristiano Ronaldo in a Portugal red national team jersey",
-      "Cristiano Ronaldo celebrating a goal close up",
-      "a tight close up of Cristiano Ronaldo's face"
+      "a real photograph of Lionel Messi the footballer",
+      "Lionel Messi in a dark red and blue Barcelona jersey",
+      "Lionel Messi in a light blue and white striped Argentina jersey",
+      "Lionel Messi pointing to the sky celebrating a goal",
+      "Lionel Messi celebrating a goal close up"
     ],
     "subject_negative_labels": [
       "a stats infographic full of text and numbers",
@@ -55,22 +55,12 @@
       "a wide angle photo with the player small and off to one side of the frame",
       "a wide shot of a football pitch where no single player is close to the camera",
       "a TV studio with pundits sitting at a desk",
-      "a person running on an athletics track",
       "a young child or boy playing youth football",
-      "a close up of a young boy's face",
       "a kid in a football kit on an amateur pitch",
       "an amateur or sunday league football match on a public pitch",
-      "a referee holding up a card at an amateur grassroots match",
       "a folded football jersey product photo on a plain background",
-      "a merchandise photo of a football shirt for sale on a grey background",
-      "a close up of a blank football shirt with no person wearing it",
-      "a close up of a tattooed arm or tattooed body",
-      "a person getting a tattoo in a tattoo studio",
-      "a close up of a hand holding a cigarette",
-      "a person smoking a cigarette",
-      "a close up of a syringe or needle",
-      "a medical or pharmacy product close up",
-      "a close up of fingers holding a thin white object"
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame"
     ],
     "subject_gate_margin": 0.1,
     "subject_gate_abs_floor": 0.37,
@@ -81,28 +71,26 @@
     "cover_min_keep": 0.5,
     "enable_youtube_footage": true,
     "youtube_footage_queries": [
-      "Cristiano Ronaldo screaming celebration close up slow motion",
-      "Cristiano Ronaldo Real Madrid goal celebration close up",
-      "Cristiano Ronaldo free kick goal slow motion",
-      "Cristiano Ronaldo header goal jump slow motion",
-      "Cristiano Ronaldo Portugal goal celebration close up face",
-      "Cristiano Ronaldo Al Nassr goal celebration siu",
-      "Cristiano Ronaldo Manchester United goal celebration",
-      "Cristiano Ronaldo dribbling skills slow motion close up",
-      "Cristiano Ronaldo bicycle kick goal Juventus",
-      "Cristiano Ronaldo solo run goal celebration arms wide"
+      "Lionel Messi Barcelona goal celebration close up face",
+      "Lionel Messi Argentina celebration close up slow motion",
+      "Lionel Messi dribbling past defenders close up slow motion",
+      "Lionel Messi Barcelona finger point celebration close up",
+      "Lionel Messi solo goal dribble run close up",
+      "Lionel Messi emotional celebration close up slow motion",
+      "Lionel Messi World Cup celebration pointing up close up",
+      "Lionel Messi Inter Miami goal celebration close up"
     ],
-    "youtube_max_videos": 10,
+    "youtube_max_videos": 8,
     "youtube_clip_len": 3.0,
-    "youtube_clips_per_video": 4,
-    "youtube_max_clips": 44,
+    "youtube_clips_per_video": 5,
+    "youtube_max_clips": 34,
     "youtube_max_height": 720,
     "footage_video_bonus": 0.12,
     "footage_min_fraction": 1.0,
     "image_motion_style": "varied",
     "enable_hook_card": true,
-    "hook_text": "WHY RONALDO HAS ZERO TATTOOS",
-    "hook_cover_term": "a tight close up of Cristiano Ronaldo's face celebrating intensely in a Portugal red jersey, his face filling the frame, sharp and clear",
+    "hook_text": "WHY MESSI POINTS TO THE SKY",
+    "hook_cover_term": "a tight close up of Lionel Messi's face celebrating in a Barcelona jersey, his face filling the frame, sharp and clear",
     "hook_duration": 1.5,
     "enable_sfx": true,
     "sfx_volume": 0.5,
@@ -115,9 +103,9 @@
   },
   "videos": [
     {
-      "video_subject": "Why Cristiano Ronaldo has no tattoos - because he regularly donates blood and bone marrow and tattoos would force a waiting period before donating",
-      "video_script": "Ronaldo has zero tattoos, and the reason is beautiful. He donates blood and bone marrow, and fresh ink blocks donation. So he stays clean to save lives. Which makes you wonder,",
-      "video_terms": "Cristiano Ronaldo celebration close up, Cristiano Ronaldo Portugal red jersey, Cristiano Ronaldo Al Nassr goal celebration, Cristiano Ronaldo siu celebration close up, Cristiano Ronaldo face close up, Cristiano Ronaldo arms wide celebration, Cristiano Ronaldo no tattoos arms, Cristiano Ronaldo smiling close up, Cristiano Ronaldo screaming celebration, Cristiano Ronaldo Portugal national team"
+      "video_subject": "Why Lionel Messi points to the sky after every goal - it is a tribute to his grandmother Celia who believed in him and pushed coaches to play him, but died when he was ten before she ever saw him become a star",
+      "video_script": "Messi points to the sky after every goal. It's for his grandmother, the only person who believed in him. She died before she ever saw him make it. Which makes you wonder,",
+      "video_terms": "Lionel Messi pointing to the sky celebration, Lionel Messi Barcelona celebration close up, Lionel Messi Argentina celebration, Lionel Messi emotional celebration, Lionel Messi finger point celebration, Lionel Messi close up face, Lionel Messi grandmother tribute, Lionel Messi solo goal, Lionel Messi GOAT, Lionel Messi skills"
     }
   ]
 }

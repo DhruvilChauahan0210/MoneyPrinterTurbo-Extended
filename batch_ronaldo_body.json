@@ -33,10 +33,10 @@
     "enable_subject_gate": true,
     "subject_positive_labels": [
       "a real photograph of Cristiano Ronaldo the footballer",
-      "Cristiano Ronaldo in an Al Nassr yellow jersey",
-      "Cristiano Ronaldo in a Portugal red national team jersey",
-      "Cristiano Ronaldo celebrating a goal close up",
-      "a tight close up of Cristiano Ronaldo's face"
+      "Cristiano Ronaldo in a yellow Al Nassr jersey celebrating a goal",
+      "Cristiano Ronaldo in a red Portugal national team jersey celebrating",
+      "Cristiano Ronaldo screaming in celebration after scoring a goal close up",
+      "a tight close up of Cristiano Ronaldo's face during a match"
     ],
     "subject_negative_labels": [
       "a stats infographic full of text and numbers",
@@ -63,14 +63,7 @@
       "a referee holding up a card at an amateur grassroots match",
       "a folded football jersey product photo on a plain background",
       "a merchandise photo of a football shirt for sale on a grey background",
-      "a close up of a blank football shirt with no person wearing it",
-      "a close up of a tattooed arm or tattooed body",
-      "a person getting a tattoo in a tattoo studio",
-      "a close up of a hand holding a cigarette",
-      "a person smoking a cigarette",
-      "a close up of a syringe or needle",
-      "a medical or pharmacy product close up",
-      "a close up of fingers holding a thin white object"
+      "a close up of a blank football shirt with no person wearing it"
     ],
     "subject_gate_margin": 0.1,
     "subject_gate_abs_floor": 0.37,
@@ -81,28 +74,24 @@
     "cover_min_keep": 0.5,
     "enable_youtube_footage": true,
     "youtube_footage_queries": [
-      "Cristiano Ronaldo screaming celebration close up slow motion",
+      "Cristiano Ronaldo Al Nassr goal celebration siuu close up",
+      "Cristiano Ronaldo Portugal goal celebration scream close up",
+      "Cristiano Ronaldo free kick goal celebration close up slow motion",
+      "Cristiano Ronaldo header goal celebration close up",
       "Cristiano Ronaldo Real Madrid goal celebration close up",
-      "Cristiano Ronaldo free kick goal slow motion",
-      "Cristiano Ronaldo header goal jump slow motion",
-      "Cristiano Ronaldo Portugal goal celebration close up face",
-      "Cristiano Ronaldo Al Nassr goal celebration siu",
-      "Cristiano Ronaldo Manchester United goal celebration",
-      "Cristiano Ronaldo dribbling skills slow motion close up",
-      "Cristiano Ronaldo bicycle kick goal Juventus",
-      "Cristiano Ronaldo solo run goal celebration arms wide"
+      "Cristiano Ronaldo screaming celebration arms out close up"
     ],
-    "youtube_max_videos": 10,
+    "youtube_max_videos": 12,
     "youtube_clip_len": 3.0,
     "youtube_clips_per_video": 4,
-    "youtube_max_clips": 44,
+    "youtube_max_clips": 34,
     "youtube_max_height": 720,
     "footage_video_bonus": 0.12,
     "footage_min_fraction": 1.0,
     "image_motion_style": "varied",
     "enable_hook_card": true,
-    "hook_text": "WHY RONALDO HAS ZERO TATTOOS",
-    "hook_cover_term": "a tight close up of Cristiano Ronaldo's face celebrating intensely in a Portugal red jersey, his face filling the frame, sharp and clear",
+    "hook_text": "HIS BODY IS YOUNGER THAN YOURS",
+    "hook_cover_term": "a tight close up of Cristiano Ronaldo's face celebrating intensely, his face filling the frame, sharp and clear",
     "hook_duration": 1.5,
     "enable_sfx": true,
     "sfx_volume": 0.5,
@@ -115,9 +104,9 @@
   },
   "videos": [
     {
-      "video_subject": "Why Cristiano Ronaldo has no tattoos - because he regularly donates blood and bone marrow and tattoos would force a waiting period before donating",
-      "video_script": "Ronaldo has zero tattoos, and the reason is beautiful. He donates blood and bone marrow, and fresh ink blocks donation. So he stays clean to save lives. Which makes you wonder,",
-      "video_terms": "Cristiano Ronaldo celebration close up, Cristiano Ronaldo Portugal red jersey, Cristiano Ronaldo Al Nassr goal celebration, Cristiano Ronaldo siu celebration close up, Cristiano Ronaldo face close up, Cristiano Ronaldo arms wide celebration, Cristiano Ronaldo no tattoos arms, Cristiano Ronaldo smiling close up, Cristiano Ronaldo screaming celebration, Cristiano Ronaldo Portugal national team"
+      "video_subject": "Cristiano Ronaldo is over 40 years old but medical tests show his body has the biological age of someone in their early twenties - around 7 percent body fat and nearly 50 percent muscle mass",
+      "video_script": "Cristiano Ronaldo is over forty years old, but his body tells a completely different story. Doctors tested him and found just seven percent body fat, with almost fifty percent pure muscle. That is the body of an athlete in his early twenties. His heart, his bones, his reflexes, all years younger than his real age. While other players slow down and retire, he somehow keeps getting stronger. The man simply refuses to age. Which makes you wonder,",
+      "video_terms": "Cristiano Ronaldo celebration close up, Cristiano Ronaldo Al Nassr yellow jersey, Cristiano Ronaldo Portugal red jersey, Cristiano Ronaldo shirtless muscles physique, Cristiano Ronaldo gym training body, Cristiano Ronaldo screaming celebration, Cristiano Ronaldo header jump, Cristiano Ronaldo running sprint, Cristiano Ronaldo face close up, Cristiano Ronaldo goal celebration"
     }
   ]
 }

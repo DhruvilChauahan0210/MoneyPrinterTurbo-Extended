@@ -32,11 +32,11 @@
     "image_ranking_min_score": 0.22,
     "enable_subject_gate": true,
     "subject_positive_labels": [
-      "a real photograph of Cristiano Ronaldo the footballer",
-      "Cristiano Ronaldo in an Al Nassr yellow jersey",
-      "Cristiano Ronaldo in a Portugal red national team jersey",
-      "Cristiano Ronaldo celebrating a goal close up",
-      "a tight close up of Cristiano Ronaldo's face"
+      "a real photograph of Jude Bellingham the footballer",
+      "Jude Bellingham in a white Real Madrid jersey",
+      "Jude Bellingham in a white England national team jersey",
+      "Jude Bellingham celebrating a goal with his arms spread wide open",
+      "a close up of Jude Bellingham's face celebrating"
     ],
     "subject_negative_labels": [
       "a stats infographic full of text and numbers",
@@ -49,13 +49,14 @@
       "a magazine cover with text",
       "a cartoon or illustration",
       "a video game or FIFA screenshot",
+      "Kylian Mbappe",
+      "Vinicius Junior",
       "a generic soccer player in an empty stadium",
       "a crowd of spectators waving flags",
       "an empty landscape or scenery with no people",
       "a wide angle photo with the player small and off to one side of the frame",
       "a wide shot of a football pitch where no single player is close to the camera",
       "a TV studio with pundits sitting at a desk",
-      "a person running on an athletics track",
       "a young child or boy playing youth football",
       "a close up of a young boy's face",
       "a kid in a football kit on an amateur pitch",
@@ -63,14 +64,7 @@
       "a referee holding up a card at an amateur grassroots match",
       "a folded football jersey product photo on a plain background",
       "a merchandise photo of a football shirt for sale on a grey background",
-      "a close up of a blank football shirt with no person wearing it",
-      "a close up of a tattooed arm or tattooed body",
-      "a person getting a tattoo in a tattoo studio",
-      "a close up of a hand holding a cigarette",
-      "a person smoking a cigarette",
-      "a close up of a syringe or needle",
-      "a medical or pharmacy product close up",
-      "a close up of fingers holding a thin white object"
+      "a close up of a blank football shirt with no person wearing it"
     ],
     "subject_gate_margin": 0.1,
     "subject_gate_abs_floor": 0.37,
@@ -81,28 +75,28 @@
     "cover_min_keep": 0.5,
     "enable_youtube_footage": true,
     "youtube_footage_queries": [
-      "Cristiano Ronaldo screaming celebration close up slow motion",
-      "Cristiano Ronaldo Real Madrid goal celebration close up",
-      "Cristiano Ronaldo free kick goal slow motion",
-      "Cristiano Ronaldo header goal jump slow motion",
-      "Cristiano Ronaldo Portugal goal celebration close up face",
-      "Cristiano Ronaldo Al Nassr goal celebration siu",
-      "Cristiano Ronaldo Manchester United goal celebration",
-      "Cristiano Ronaldo dribbling skills slow motion close up",
-      "Cristiano Ronaldo bicycle kick goal Juventus",
-      "Cristiano Ronaldo solo run goal celebration arms wide"
+      "Jude Bellingham arms wide celebration close up Real Madrid",
+      "Jude Bellingham Real Madrid goal celebration slow motion close up",
+      "Jude Bellingham screaming celebration close up white kit",
+      "Jude Bellingham Bernabeu winning goal celebration close up",
+      "Jude Bellingham El Clasico goal celebration Real Madrid",
+      "Jude Bellingham Real Madrid skills dribble run match",
+      "Jude Bellingham Champions League goal Real Madrid",
+      "Jude Bellingham Real Madrid debut season goals montage",
+      "Jude Bellingham England national team goal celebration",
+      "Jude Bellingham Real Madrid number 5 white jersey close up"
     ],
-    "youtube_max_videos": 10,
+    "youtube_max_videos": 12,
     "youtube_clip_len": 3.0,
     "youtube_clips_per_video": 4,
-    "youtube_max_clips": 44,
+    "youtube_max_clips": 34,
     "youtube_max_height": 720,
     "footage_video_bonus": 0.12,
     "footage_min_fraction": 1.0,
     "image_motion_style": "varied",
     "enable_hook_card": true,
-    "hook_text": "WHY RONALDO HAS ZERO TATTOOS",
-    "hook_cover_term": "a tight close up of Cristiano Ronaldo's face celebrating intensely in a Portugal red jersey, his face filling the frame, sharp and clear",
+    "hook_text": "MADRID GAVE HIM ZIDANE'S NUMBER",
+    "hook_cover_term": "a tight close up of Jude Bellingham's face celebrating with arms spread wide, his face filling the frame, sharp and clear",
     "hook_duration": 1.5,
     "enable_sfx": true,
     "sfx_volume": 0.5,
@@ -115,9 +109,9 @@
   },
   "videos": [
     {
-      "video_subject": "Why Cristiano Ronaldo has no tattoos - because he regularly donates blood and bone marrow and tattoos would force a waiting period before donating",
-      "video_script": "Ronaldo has zero tattoos, and the reason is beautiful. He donates blood and bone marrow, and fresh ink blocks donation. So he stays clean to save lives. Which makes you wonder,",
-      "video_terms": "Cristiano Ronaldo celebration close up, Cristiano Ronaldo Portugal red jersey, Cristiano Ronaldo Al Nassr goal celebration, Cristiano Ronaldo siu celebration close up, Cristiano Ronaldo face close up, Cristiano Ronaldo arms wide celebration, Cristiano Ronaldo no tattoos arms, Cristiano Ronaldo smiling close up, Cristiano Ronaldo screaming celebration, Cristiano Ronaldo Portugal national team"
+      "video_subject": "When Jude Bellingham joined Real Madrid they gave him the number 5 shirt, the number once worn by club legend Zinedine Zidane, and the 20 year old lived up to it with a sensational debut season",
+      "video_script": "When Jude Bellingham joined Real Madrid, they handed him the number five shirt. That number belonged to Zinedine Zidane, a Madrid legend and a World Cup winner. Giving it to a twenty year old was a huge statement, some said it was too much pressure. Then Bellingham scored in almost every single game, and the whole Bernabeu started chanting his name. He didn't just wear the legend's number. He became the new legend. Which makes you wonder,",
+      "video_terms": "Jude Bellingham Real Madrid white jersey, Jude Bellingham arms wide celebration, Jude Bellingham screaming celebration close up, Jude Bellingham Bernabeu goal, Jude Bellingham England white jersey, Jude Bellingham number 5, Jude Bellingham face close up, Jude Bellingham winning goal, Jude Bellingham Real Madrid debut, Jude Bellingham celebration"
     }
   ]
 }

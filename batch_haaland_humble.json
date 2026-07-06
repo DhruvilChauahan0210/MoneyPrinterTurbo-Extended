@@ -32,11 +32,11 @@
     "image_ranking_min_score": 0.22,
     "enable_subject_gate": true,
     "subject_positive_labels": [
-      "a real photograph of Cristiano Ronaldo the footballer",
-      "Cristiano Ronaldo in an Al Nassr yellow jersey",
-      "Cristiano Ronaldo in a Portugal red national team jersey",
-      "Cristiano Ronaldo celebrating a goal close up",
-      "a tight close up of Cristiano Ronaldo's face"
+      "a real photograph of Erling Haaland the footballer",
+      "Erling Haaland in a sky blue Manchester City jersey",
+      "Erling Haaland in a white and red Norway jersey",
+      "Erling Haaland celebrating a goal close up",
+      "Erling Haaland running on the pitch"
     ],
     "subject_negative_labels": [
       "a stats infographic full of text and numbers",
@@ -55,25 +55,19 @@
       "a wide angle photo with the player small and off to one side of the frame",
       "a wide shot of a football pitch where no single player is close to the camera",
       "a TV studio with pundits sitting at a desk",
-      "a person running on an athletics track",
       "a young child or boy playing youth football",
-      "a close up of a young boy's face",
       "a kid in a football kit on an amateur pitch",
       "an amateur or sunday league football match on a public pitch",
-      "a referee holding up a card at an amateur grassroots match",
       "a folded football jersey product photo on a plain background",
-      "a merchandise photo of a football shirt for sale on a grey background",
-      "a close up of a blank football shirt with no person wearing it",
-      "a close up of a tattooed arm or tattooed body",
-      "a person getting a tattoo in a tattoo studio",
-      "a close up of a hand holding a cigarette",
-      "a person smoking a cigarette",
-      "a close up of a syringe or needle",
-      "a medical or pharmacy product close up",
-      "a close up of fingers holding a thin white object"
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a fan or supporter wearing a replica football jersey, not a professional player",
+      "a posed studio photo of a person screaming or shouting against a plain background",
+      "a person wearing a bucket hat or casual cap, not a football player in a match",
+      "a studio portrait photo with a plain gray or white background, not a stadium"
     ],
     "subject_gate_margin": 0.1,
-    "subject_gate_abs_floor": 0.37,
+    "subject_gate_abs_floor": 0.4,
     "segment_reuse_penalty": 0.25,
     "enable_timed_sync": true,
     "enable_grayscale": false,
@@ -81,28 +75,24 @@
     "cover_min_keep": 0.5,
     "enable_youtube_footage": true,
     "youtube_footage_queries": [
-      "Cristiano Ronaldo screaming celebration close up slow motion",
-      "Cristiano Ronaldo Real Madrid goal celebration close up",
-      "Cristiano Ronaldo free kick goal slow motion",
-      "Cristiano Ronaldo header goal jump slow motion",
-      "Cristiano Ronaldo Portugal goal celebration close up face",
-      "Cristiano Ronaldo Al Nassr goal celebration siu",
-      "Cristiano Ronaldo Manchester United goal celebration",
-      "Cristiano Ronaldo dribbling skills slow motion close up",
-      "Cristiano Ronaldo bicycle kick goal Juventus",
-      "Cristiano Ronaldo solo run goal celebration arms wide"
+      "Erling Haaland Manchester City goal celebration close up",
+      "Erling Haaland Norway celebration close up slow motion",
+      "Erling Haaland running celebration close up",
+      "Erling Haaland calm reaction after goal close up",
+      "Erling Haaland City hat trick celebration close up",
+      "Erling Haaland face close up slow motion"
     ],
-    "youtube_max_videos": 10,
+    "youtube_max_videos": 8,
     "youtube_clip_len": 3.0,
-    "youtube_clips_per_video": 4,
-    "youtube_max_clips": 44,
+    "youtube_clips_per_video": 5,
+    "youtube_max_clips": 34,
     "youtube_max_height": 720,
     "footage_video_bonus": 0.12,
     "footage_min_fraction": 1.0,
     "image_motion_style": "varied",
     "enable_hook_card": true,
-    "hook_text": "WHY RONALDO HAS ZERO TATTOOS",
-    "hook_cover_term": "a tight close up of Cristiano Ronaldo's face celebrating intensely in a Portugal red jersey, his face filling the frame, sharp and clear",
+    "hook_text": "HAALAND BARELY CELEBRATES",
+    "hook_cover_term": "a tight close up of Erling Haaland's face celebrating in a Manchester City jersey, his face filling the frame, sharp and clear",
     "hook_duration": 1.5,
     "enable_sfx": true,
     "sfx_volume": 0.5,
@@ -115,9 +105,9 @@
   },
   "videos": [
     {
-      "video_subject": "Why Cristiano Ronaldo has no tattoos - because he regularly donates blood and bone marrow and tattoos would force a waiting period before donating",
-      "video_script": "Ronaldo has zero tattoos, and the reason is beautiful. He donates blood and bone marrow, and fresh ink blocks donation. So he stays clean to save lives. Which makes you wonder,",
-      "video_terms": "Cristiano Ronaldo celebration close up, Cristiano Ronaldo Portugal red jersey, Cristiano Ronaldo Al Nassr goal celebration, Cristiano Ronaldo siu celebration close up, Cristiano Ronaldo face close up, Cristiano Ronaldo arms wide celebration, Cristiano Ronaldo no tattoos arms, Cristiano Ronaldo smiling close up, Cristiano Ronaldo screaming celebration, Cristiano Ronaldo Portugal national team"
+      "video_subject": "Erling Haaland rarely celebrates his goals wildly because his father, a former professional footballer, raised him to stay humble and respect opponents no matter how many he scores",
+      "video_script": "Haaland scores like a machine, but barely celebrates. Not arrogance. His dad, an ex-pro, raised him to respect every opponent. Even scoring five, he just walks back calm. Which makes you wonder,",
+      "video_terms": "Erling Haaland Manchester City celebration close up, Erling Haaland Norway celebration, Erling Haaland calm reaction, Erling Haaland running celebration, Erling Haaland face close up, Erling Haaland hat trick, Erling Haaland skills, Erling Haaland goals"
     }
   ]
 }

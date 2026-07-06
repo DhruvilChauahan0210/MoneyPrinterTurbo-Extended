@@ -64,13 +64,10 @@
       "a folded football jersey product photo on a plain background",
       "a merchandise photo of a football shirt for sale on a grey background",
       "a close up of a blank football shirt with no person wearing it",
-      "a close up of a tattooed arm or tattooed body",
-      "a person getting a tattoo in a tattoo studio",
-      "a close up of a hand holding a cigarette",
-      "a person smoking a cigarette",
-      "a close up of a syringe or needle",
-      "a medical or pharmacy product close up",
-      "a close up of fingers holding a thin white object"
+      "a TikTok video with a username watermark and baked in caption text",
+      "a hospital room with medical equipment and beds",
+      "a person lying in a hospital bed connected to machines",
+      "a close up of a stethoscope or heart monitor display"
     ],
     "subject_gate_margin": 0.1,
     "subject_gate_abs_floor": 0.37,
@@ -81,16 +78,16 @@
     "cover_min_keep": 0.5,
     "enable_youtube_footage": true,
     "youtube_footage_queries": [
-      "Cristiano Ronaldo screaming celebration close up slow motion",
-      "Cristiano Ronaldo Real Madrid goal celebration close up",
-      "Cristiano Ronaldo free kick goal slow motion",
-      "Cristiano Ronaldo header goal jump slow motion",
-      "Cristiano Ronaldo Portugal goal celebration close up face",
-      "Cristiano Ronaldo Al Nassr goal celebration siu",
-      "Cristiano Ronaldo Manchester United goal celebration",
-      "Cristiano Ronaldo dribbling skills slow motion close up",
-      "Cristiano Ronaldo bicycle kick goal Juventus",
-      "Cristiano Ronaldo solo run goal celebration arms wide"
+      "Cristiano Ronaldo emotional face close up crying winning",
+      "Cristiano Ronaldo Ballon d'Or award ceremony celebration close up",
+      "Cristiano Ronaldo trophy lift arms raised celebration",
+      "Cristiano Ronaldo young Manchester United early career goals",
+      "Cristiano Ronaldo Portugal emotional close up face screaming",
+      "Cristiano Ronaldo heart story comeback greatest football legend",
+      "Cristiano Ronaldo greatest player of all time celebration",
+      "Cristiano Ronaldo Al Nassr siu celebration close up face",
+      "Cristiano Ronaldo screaming celebration arms wide close up",
+      "Cristiano Ronaldo impossible story rise football superstar"
     ],
     "youtube_max_videos": 10,
     "youtube_clip_len": 3.0,
@@ -101,7 +98,7 @@
     "footage_min_fraction": 1.0,
     "image_motion_style": "varied",
     "enable_hook_card": true,
-    "hook_text": "WHY RONALDO HAS ZERO TATTOOS",
+    "hook_text": "HIS HEART ALMOST KILLED HIM",
     "hook_cover_term": "a tight close up of Cristiano Ronaldo's face celebrating intensely in a Portugal red jersey, his face filling the frame, sharp and clear",
     "hook_duration": 1.5,
     "enable_sfx": true,
@@ -115,9 +112,9 @@
   },
   "videos": [
     {
-      "video_subject": "Why Cristiano Ronaldo has no tattoos - because he regularly donates blood and bone marrow and tattoos would force a waiting period before donating",
-      "video_script": "Ronaldo has zero tattoos, and the reason is beautiful. He donates blood and bone marrow, and fresh ink blocks donation. So he stays clean to save lives. Which makes you wonder,",
-      "video_terms": "Cristiano Ronaldo celebration close up, Cristiano Ronaldo Portugal red jersey, Cristiano Ronaldo Al Nassr goal celebration, Cristiano Ronaldo siu celebration close up, Cristiano Ronaldo face close up, Cristiano Ronaldo arms wide celebration, Cristiano Ronaldo no tattoos arms, Cristiano Ronaldo smiling close up, Cristiano Ronaldo screaming celebration, Cristiano Ronaldo Portugal national team"
+      "video_subject": "Cristiano Ronaldo was diagnosed with an irregular heartbeat at age 15 and doctors warned playing football could kill him - he had cardiac surgery and went on to win 5 Ballon d'Ors",
+      "video_script": "At 15, Ronaldo was told his heart could kill him. He had surgery that morning. Then went on to win 5 Ballon d'Ors. Which makes you wonder,",
+      "video_terms": "Cristiano Ronaldo emotional close up face, Cristiano Ronaldo Ballon d'Or trophy celebration, Cristiano Ronaldo young career Manchester United, Cristiano Ronaldo comeback story greatest player, Cristiano Ronaldo Portugal screaming celebration, Cristiano Ronaldo trophy arms wide celebration, Cristiano Ronaldo siu celebration close up, Cristiano Ronaldo winning moment close up, Cristiano Ronaldo heart surgery comeback, Cristiano Ronaldo greatest footballer celebration"
     }
   ]
 }

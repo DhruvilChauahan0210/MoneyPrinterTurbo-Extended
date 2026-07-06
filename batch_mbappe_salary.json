@@ -32,11 +32,11 @@
     "image_ranking_min_score": 0.22,
     "enable_subject_gate": true,
     "subject_positive_labels": [
-      "a real photograph of Cristiano Ronaldo the footballer",
-      "Cristiano Ronaldo in an Al Nassr yellow jersey",
-      "Cristiano Ronaldo in a Portugal red national team jersey",
-      "Cristiano Ronaldo celebrating a goal close up",
-      "a tight close up of Cristiano Ronaldo's face"
+      "a real photograph of Kylian Mbappe the footballer",
+      "Kylian Mbappe in a blue France national team jersey",
+      "Kylian Mbappe in a white Real Madrid jersey",
+      "Kylian Mbappe celebrating a goal close up arms crossed",
+      "a close up of Kylian Mbappe's face smiling"
     ],
     "subject_negative_labels": [
       "a stats infographic full of text and numbers",
@@ -63,46 +63,35 @@
       "a referee holding up a card at an amateur grassroots match",
       "a folded football jersey product photo on a plain background",
       "a merchandise photo of a football shirt for sale on a grey background",
-      "a close up of a blank football shirt with no person wearing it",
-      "a close up of a tattooed arm or tattooed body",
-      "a person getting a tattoo in a tattoo studio",
-      "a close up of a hand holding a cigarette",
-      "a person smoking a cigarette",
-      "a close up of a syringe or needle",
-      "a medical or pharmacy product close up",
-      "a close up of fingers holding a thin white object"
+      "a close up of a blank football shirt with no person wearing it"
     ],
     "subject_gate_margin": 0.1,
     "subject_gate_abs_floor": 0.37,
-    "segment_reuse_penalty": 0.25,
+    "segment_reuse_penalty": 0.1,
     "enable_timed_sync": true,
     "enable_grayscale": false,
-    "video_clip_ratio": 0.0,
+    "video_clip_ratio": 0.2,
     "cover_min_keep": 0.5,
     "enable_youtube_footage": true,
     "youtube_footage_queries": [
-      "Cristiano Ronaldo screaming celebration close up slow motion",
-      "Cristiano Ronaldo Real Madrid goal celebration close up",
-      "Cristiano Ronaldo free kick goal slow motion",
-      "Cristiano Ronaldo header goal jump slow motion",
-      "Cristiano Ronaldo Portugal goal celebration close up face",
-      "Cristiano Ronaldo Al Nassr goal celebration siu",
-      "Cristiano Ronaldo Manchester United goal celebration",
-      "Cristiano Ronaldo dribbling skills slow motion close up",
-      "Cristiano Ronaldo bicycle kick goal Juventus",
-      "Cristiano Ronaldo solo run goal celebration arms wide"
+      "Kylian Mbappe France blue jersey goal celebration close up",
+      "Kylian Mbappe World Cup celebration close up slow motion",
+      "Kylian Mbappe screaming celebration close up France kit",
+      "Kylian Mbappe France goal close up face",
+      "Kylian Mbappe Real Madrid white jersey celebration close up",
+      "Kylian Mbappe smiling close up France national team"
     ],
-    "youtube_max_videos": 10,
+    "youtube_max_videos": 8,
     "youtube_clip_len": 3.0,
-    "youtube_clips_per_video": 4,
-    "youtube_max_clips": 44,
+    "youtube_clips_per_video": 5,
+    "youtube_max_clips": 34,
     "youtube_max_height": 720,
     "footage_video_bonus": 0.12,
     "footage_min_fraction": 1.0,
     "image_motion_style": "varied",
     "enable_hook_card": true,
-    "hook_text": "WHY RONALDO HAS ZERO TATTOOS",
-    "hook_cover_term": "a tight close up of Cristiano Ronaldo's face celebrating intensely in a Portugal red jersey, his face filling the frame, sharp and clear",
+    "hook_text": "HE PLAYED THE WORLD CUP FOR FREE",
+    "hook_cover_term": "a tight close up of Kylian Mbappe's face celebrating in a blue France jersey, his face filling the frame, sharp and clear",
     "hook_duration": 1.5,
     "enable_sfx": true,
     "sfx_volume": 0.5,
@@ -115,9 +104,9 @@
   },
   "videos": [
     {
-      "video_subject": "Why Cristiano Ronaldo has no tattoos - because he regularly donates blood and bone marrow and tattoos would force a waiting period before donating",
-      "video_script": "Ronaldo has zero tattoos, and the reason is beautiful. He donates blood and bone marrow, and fresh ink blocks donation. So he stays clean to save lives. Which makes you wonder,",
-      "video_terms": "Cristiano Ronaldo celebration close up, Cristiano Ronaldo Portugal red jersey, Cristiano Ronaldo Al Nassr goal celebration, Cristiano Ronaldo siu celebration close up, Cristiano Ronaldo face close up, Cristiano Ronaldo arms wide celebration, Cristiano Ronaldo no tattoos arms, Cristiano Ronaldo smiling close up, Cristiano Ronaldo screaming celebration, Cristiano Ronaldo Portugal national team"
+      "video_subject": "Kylian Mbappe donated his entire France national team salary and World Cup bonuses to charity, giving it to a foundation that helps sick and disabled children play sport, playing for France for free",
+      "video_script": "Kylian Mbappe won the World Cup and didn't keep a single euro of his bonus. Every payment he earned wearing the France shirt, he gave away to charity. He donated all of it to sick and disabled children who dream of playing sport. While other stars cashed their massive checks, the best young player on the planet played for free. He said that wearing the France shirt is priceless. Which makes you wonder,",
+      "video_terms": "Kylian Mbappe France blue jersey, Kylian Mbappe World Cup celebration, Kylian Mbappe screaming celebration close up, Kylian Mbappe France goal, Kylian Mbappe Real Madrid white jersey, Kylian Mbappe smiling, Kylian Mbappe face close up, Kylian Mbappe France national team, Kylian Mbappe celebration arms crossed, Kylian Mbappe trophy"
     }
   ]
 }

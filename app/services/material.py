@@ -666,7 +666,7 @@ def download_images(
             logger.warning(f"no hook moment media found for '{hook_term}'")
 
     # How many clips vs images per term
-    clips_per_term = max(1, round(video_clip_ratio * 3))   # e.g. 1-2 clips per term
+    clips_per_term = 0 if video_clip_ratio <= 0 else max(1, round(video_clip_ratio * 3))   # e.g. 1-2 clips per term
     images_per_term = max(4, round((1 - video_clip_ratio) * 10))
 
     # Oversample: gather several times more candidates than the audio strictly
