@@ -40,6 +40,14 @@ def _ytdlp_bin() -> str:
     return _which("yt-dlp")
 
 
+def _cookies_args() -> List[str]:
+    """YouTube's bot-wall now requires authenticated cookies for downloads.
+    Use the exported cookies.txt (see project notes) if present. Env override:
+    YT_DLP_COOKIES=<path>."""
+    cand = os.environ.get("YT_DLP_COOKIES") or os.path.expanduser("~/Desktop/.yt_cookies.txt")
+    return ["--cookies", cand] if cand and os.path.exists(cand) else []
+
+
 def _run(cmd: List[str], timeout: int = 240) -> subprocess.CompletedProcess:
     return subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
 
@@ -81,6 +89,7 @@ def _download_one(query: str, dest_dir: str, max_height: int, max_filesize_mb: i
         "-f", fmt,
         "--max-filesize", f"{max_filesize_mb}M",
         "-o", os.path.join(dest_dir, "%(id)s.%(ext)s"),
+        *_cookies_args(),
         f"ytsearch2:{query}",
     ]
     if use_node:
@@ -280,6 +289,7 @@ def _download_url(url: str, dest_dir: str, max_height: int, max_filesize_mb: int
         "-f", fmt,
         "--max-filesize", f"{max_filesize_mb}M",
         "-o", os.path.join(dest_dir, "%(id)s.%(ext)s"),
+        *_cookies_args(),
         url,
     ]
     if use_node:
