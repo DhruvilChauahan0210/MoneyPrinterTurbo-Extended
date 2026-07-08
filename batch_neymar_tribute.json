@@ -1,0 +1,61 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "comparison_mode": true,
+    "transition_style": "crossfade",
+    "transition_at": 3.7,
+    "crossfade_dur": 0.4,
+    "beat_sync": false,
+    "comparison_sfx_on_drop": false,
+    "loop_follow_tag": false,
+    "bgm_type": "custom",
+    "bgm_file": "resource/phonk/eternity.mp3",
+    "bgm_volume": 1.0,
+    "bgm_drop_offset": 134.0,
+    "font_name": "STHeitiMedium.ttc",
+    "youtube_max_height": 1080,
+    "n_threads": 4,
+    "comparison_clips": [
+      { "url": "https://www.youtube.com/watch?v=cdpXaTArAvg", "start": 212.3, "end": 216.0, "label": "cry_hook", "fill": "contain" },
+      { "url": "https://www.youtube.com/watch?v=cdpXaTArAvg", "start": 197.6, "end": 201.2, "label": "hug_whistle", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=zSPkdQZiR5U", "start": 50.2, "end": 53.8, "label": "young_navy17", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=zSPkdQZiR5U", "start": 30.4, "end": 34.0, "label": "santos_huddle", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=zSPkdQZiR5U", "start": 5.2, "end": 8.8, "label": "barca_ucl_medal", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=zSPkdQZiR5U", "start": 58.0, "end": 61.6, "label": "barca_cornerflag", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=zSPkdQZiR5U", "start": 64.0, "end": 67.6, "label": "barca_armswide", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=zSPkdQZiR5U", "start": 70.0, "end": 73.6, "label": "barca_kissfingers", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=zSPkdQZiR5U", "start": 82.0, "end": 85.6, "label": "barca_copa_pile", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=zSPkdQZiR5U", "start": 9.8, "end": 13.4, "label": "psg_armsout_cl", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=zSPkdQZiR5U", "start": 94.0, "end": 97.6, "label": "psg_kissfingers", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=zSPkdQZiR5U", "start": 54.0, "end": 57.6, "label": "psg_scream", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=zSPkdQZiR5U", "start": 37.8, "end": 41.4, "label": "brazil_scream", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=zSPkdQZiR5U", "start": 44.0, "end": 47.6, "label": "brazil_armsout_run", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=zSPkdQZiR5U", "start": 90.0, "end": 93.6, "label": "brazil_blonde_scream", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=cdpXaTArAvg", "start": 143.5, "end": 147.1, "label": "wc_last_face", "fill": "contain" },
+      { "url": "https://www.youtube.com/watch?v=cdpXaTArAvg", "start": 180.0, "end": 183.6, "label": "consoled_bow", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=cdpXaTArAvg", "start": 213.0, "end": 216.6, "label": "cry_close_loop", "fill": "contain" }
+    ],
+    "comparison_captions": [
+      { "text": "THANK YOU,", "start": 0.5, "end": 3.3, "y": 0.5, "color": "#FFD700" },
+      { "text": "NEYMAR", "emoji": "❤️", "start": 3.4, "end": 6.3, "y": 0.5, "color": "#FFD700" },
+      { "text": "FROM THE STREETS OF BRAZIL", "emoji": "⚽", "start": 6.4, "end": 9.9, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "COPA LIBERTADORES 2011", "emoji": "🏆", "start": 10.0, "end": 13.5, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "LA LIGA & COPA DEL REY", "emoji": "🏆", "start": 13.6, "end": 17.0, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "CHAMPIONS LEAGUE 2015", "emoji": "⭐", "start": 17.1, "end": 20.6, "y": 0.5, "color": "#FFD700" },
+      { "text": "43 UCL GOALS - A BRAZILIAN RECORD", "start": 20.7, "end": 24.2, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "222M - WORLD RECORD TRANSFER", "emoji": "💰", "start": 24.3, "end": 27.9, "y": 0.5, "color": "#FFD700" },
+      { "text": "5 LIGUE 1 TITLES", "emoji": "🏆", "start": 28.0, "end": 31.5, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "128 CAPS FOR BRAZIL", "start": 31.6, "end": 35.1, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "OLYMPIC GOLD 2016", "emoji": "🥇", "start": 35.2, "end": 38.7, "y": 0.5, "color": "#FFD700" },
+      { "text": "80 GOALS - ALL-TIME RECORD", "emoji": "⚽", "start": 38.8, "end": 42.4, "y": 0.5, "color": "#FFD700" },
+      { "text": "HE PASSED PELE", "emoji": "🐐", "start": 42.5, "end": 46.0, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "HIS LAST WORLD CUP", "start": 46.1, "end": 49.6, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "39 TROPHIES - A LEGEND", "emoji": "🏆", "start": 49.7, "end": 53.0, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "THANK YOU FOR", "start": 53.1, "end": 56.4, "y": 0.5, "color": "#FFD700" },
+      { "text": "EVERYTHING, NEYMAR", "emoji": "❤️", "start": 56.5, "end": 59.8, "y": 0.5, "color": "#FFD700" }
+    ]
+  },
+  "videos": [
+    { "video_subject": "Neymar greatest career tribute montage emotional Brazil retirement goodbye World Cup" }
+  ]
+}

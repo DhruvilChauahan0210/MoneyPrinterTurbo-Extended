@@ -1,0 +1,62 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "comparison_mode": true,
+    "transition_style": "crossfade",
+    "transition_at": 3.7,
+    "crossfade_dur": 0.4,
+    "beat_sync": false,
+    "comparison_sfx_on_drop": false,
+    "loop_follow_tag": false,
+    "bgm_type": "custom",
+    "bgm_file": "resource/phonk/eternity.mp3",
+    "bgm_volume": 1.0,
+    "bgm_drop_offset": 134.0,
+    "font_name": "STHeitiMedium.ttc",
+    "youtube_max_height": 1080,
+    "n_threads": 4,
+    "comparison_clips": [
+      { "url": "https://www.youtube.com/watch?v=GfaZ5LjDTfA", "start": 5.8, "end": 9.5, "label": "cry_face_walk", "fill": "contain" },
+      { "url": "https://www.youtube.com/watch?v=GfaZ5LjDTfA", "start": 10.6, "end": 13.8, "label": "cry_yamal", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=29mtSn1RdMQ", "start": 62.6, "end": 66.3, "label": "manutd_early", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=dWhdZxhFCC8", "start": 43.0, "end": 47.8, "label": "rm_longshot_goal", "fill": "contain" },
+      { "url": "https://www.youtube.com/watch?v=29mtSn1RdMQ", "start": 96.6, "end": 100.8, "label": "rm_white_scream", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=p5Uf4k44E3w", "start": 5.6, "end": 10.6, "label": "bicycle_kick", "fill": "contain" },
+      { "url": "https://www.youtube.com/watch?v=N2SHndL-KUQ", "start": 35.3, "end": 39.5, "label": "juve_header", "fill": "contain" },
+      { "url": "https://www.youtube.com/watch?v=29mtSn1RdMQ", "start": 85.0, "end": 89.0, "label": "juve_purple_celeb", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=dWhdZxhFCC8", "start": 80.0, "end": 84.0, "label": "rm_longshot_goal2", "fill": "contain" },
+      { "url": "https://www.youtube.com/watch?v=29mtSn1RdMQ", "start": 58.5, "end": 62.3, "label": "rm_white_7", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=29mtSn1RdMQ", "start": 213.0, "end": 216.5, "label": "rm_arms_out", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=29mtSn1RdMQ", "start": 170.0, "end": 173.6, "label": "alnassr_celeb", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=KRqgjpiwrY8", "start": 6.0, "end": 9.2, "label": "fk_spain_strike", "fill": "contain" },
+      { "url": "https://www.youtube.com/watch?v=KRqgjpiwrY8", "start": 11.4, "end": 15.4, "label": "fk_spain_celeb", "fill": "contain" },
+      { "url": "https://www.youtube.com/watch?v=29mtSn1RdMQ", "start": 202.0, "end": 205.6, "label": "portugal_run_celeb", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=29mtSn1RdMQ", "start": 44.2, "end": 47.9, "label": "rm_pink", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=29mtSn1RdMQ", "start": 217.0, "end": 220.5, "label": "manutd_2022", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=29mtSn1RdMQ", "start": 115.2, "end": 119.6, "label": "portugal_close", "fill": "cover" },
+      { "url": "https://www.youtube.com/watch?v=d3zw3ZWTOaA", "start": 0.8, "end": 4.4, "label": "cry_face_4k", "fill": "contain" }
+    ],
+    "comparison_captions": [
+      { "text": "THANK YOU,", "start": 0.5, "end": 3.4, "y": 0.5, "color": "#FFD700" },
+      { "text": "CRISTIANO", "emoji": "🐐", "start": 3.5, "end": 6.3, "y": 0.5, "color": "#FFD700" },
+      { "text": "3x PREMIER LEAGUE", "emoji": "🏆", "start": 6.4, "end": 9.6, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "976 CAREER GOALS", "emoji": "⚽", "start": 9.7, "end": 14.0, "y": 0.5, "color": "#FFD700" },
+      { "text": "5 BALLON D'ORS", "emoji": "🏆", "start": 14.1, "end": 17.8, "y": 0.5, "color": "#FFD700" },
+      { "text": "SERIE A CHAMPION", "start": 22.5, "end": 26.2, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "4 GOLDEN SHOES", "emoji": "⚽", "start": 26.3, "end": 29.8, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "5 CHAMPIONS LEAGUES", "emoji": "⭐", "start": 33.5, "end": 36.8, "y": 0.5, "color": "#FFD700" },
+      { "text": "140 UCL GOALS - A RECORD", "start": 36.9, "end": 39.9, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "STILL SCORING AT 41", "emoji": "🐐", "start": 40.0, "end": 43.1, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "SCORED AT 6 WORLD CUPS", "emoji": "⚽", "start": 43.2, "end": 45.9, "y": 0.5, "color": "#FFD700" },
+      { "text": "146 GOALS FOR PORTUGAL", "start": 46.0, "end": 49.5, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "EURO 2016 CHAMPION", "emoji": "🏆", "start": 49.6, "end": 52.7, "y": 0.5, "color": "#FFD700" },
+      { "text": "35 TROPHIES WON", "emoji": "🏆", "start": 52.8, "end": 56.0, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "23 YEARS AT THE TOP", "start": 56.1, "end": 59.1, "y": 0.5, "color": "#FFFFFF" },
+      { "text": "THANK YOU FOR", "start": 59.2, "end": 62.9, "y": 0.5, "color": "#FFD700" },
+      { "text": "EVERYTHING", "emoji": "❤️", "start": 63.0, "end": 66.4, "y": 0.5, "color": "#FFD700" }
+    ]
+  },
+  "videos": [
+    { "video_subject": "Cristiano Ronaldo greatest career tribute montage World Cup records emotional goodbye" }
+  ]
+}
