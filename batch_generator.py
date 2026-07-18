@@ -27,6 +27,7 @@ batch.json format:
 }
 """
 
+import argparse
 import json
 import sys
 import os
@@ -39,10 +40,10 @@ if root_dir not in sys.path:
 
 from loguru import logger
 from app.models.schema import VideoParams, VideoConcatMode
-from app.services import task as tm
+from app.services import one_shot
 
 
-def run_batch(batch_file: str):
+def run_batch(batch_file: str, dry_run: bool = False):
     with open(batch_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -56,20 +57,55 @@ def run_batch(batch_file: str):
     total = len(videos)
     results = []
 
-    logger.info(f"Batch generator: {total} videos queued.")
+    logger.info(f"Batch generator: {total} videos queued (one-shot preflight first).")
 
+    # Validate the ENTIRE batch before the first provider call. This prevents a
+    # malformed later entry from being discovered after an earlier entry spent.
+    prepared = []
     for i, entry in enumerate(videos, 1):
         merged = {**defaults, **entry}
-        task_id = str(uuid4())
         subject = merged.get("video_subject", f"video_{i}")
+        try:
+            params = VideoParams(**merged)
+            changes = one_shot.apply_growth_profile(params)
+            report = one_shot.preflight(params)
+            prepared.append((subject, params, report))
+            logger.success(
+                f"[{i}/{total}] PREFLIGHT OK: {subject} "
+                f"({report['fingerprint'][:12]})"
+            )
+            for warning in report["warnings"]:
+                logger.warning(f"[{i}/{total}] {warning}")
+            for change in changes:
+                logger.info(f"[{i}/{total}] growth profile: {change}")
+        except Exception as exc:
+            logger.error(f"[{i}/{total}] PREFLIGHT FAILED: {subject}: {exc}")
+            results.append({"subject": subject, "status": "preflight_failed", "error": str(exc), "path": None})
+
+    if results:
+        logger.error("Batch blocked before generation because at least one preflight failed.")
+        return results
+
+    if dry_run:
+        print(f"DRY_RUN_OK={total}")
+        return [
+            {"subject": subject, "status": "dry_run_ok", "fingerprint": report["fingerprint"], "path": None}
+            for subject, _, report in prepared
+        ]
+
+    # Import the heavy rendering stack only after every zero-cost check passed.
+    from app.services import task as tm
+
+    for i, (subject, params, _) in enumerate(prepared, 1):
+        task_id = str(uuid4())
         logger.info(f"\n{'='*60}\n[{i}/{total}] Starting: {subject}\ntask_id: {task_id}\n{'='*60}")
 
         try:
-            params = VideoParams(**merged)
             result = tm.start(task_id=task_id, params=params)
             if result and result.get("videos"):
                 video_path = result["videos"][0]
                 logger.success(f"[{i}/{total}] DONE: {video_path}")
+                print(f"GENERATED_VIDEO={video_path}")
                 results.append({"subject": subject, "status": "ok", "path": video_path})
             else:
                 logger.error(f"[{i}/{total}] FAILED: {subject}")
@@ -94,7 +130,14 @@ def run_batch(batch_file: str):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: .venv/bin/python3 batch_generator.py batch.json")
-        sys.exit(1)
-    run_batch(sys.argv[1])
+    parser = argparse.ArgumentParser(description="Strict one-shot batch generator")
+    parser.add_argument("batch_file")
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="run zero-cost validation only; does not create a ledger attempt",
+    )
+    args = parser.parse_args()
+    batch_results = run_batch(args.batch_file, dry_run=args.dry_run)
+    success_status = "dry_run_ok" if args.dry_run else "ok"
+    sys.exit(0 if batch_results and all(r["status"] == success_status for r in batch_results) else 1)

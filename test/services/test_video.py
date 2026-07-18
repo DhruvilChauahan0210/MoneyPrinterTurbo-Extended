@@ -1,7 +1,9 @@
 
 import unittest
 import os
+import shutil
 import sys
+import tempfile
 from pathlib import Path
 from moviepy import (
     VideoFileClip,
@@ -16,36 +18,39 @@ resources_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "resour
 
 class TestVideoService(unittest.TestCase):
     def setUp(self):
-        self.test_img_path = os.path.join(resources_dir, "1.png")
-    
+        # preprocess_video writes its output (and _segtmp/ scratch files) next
+        # to the source image. Run on a scratch copy in a temp dir, never the
+        # tracked fixture directly — a crash mid-write must not corrupt
+        # checked-in test resources.
+        self._scratch_dir = tempfile.mkdtemp(prefix="test_video_")
+        self.test_img_path = os.path.join(self._scratch_dir, "1.png")
+        shutil.copyfile(os.path.join(resources_dir, "1.png"), self.test_img_path)
+
     def tearDown(self):
-        pass
-    
+        shutil.rmtree(self._scratch_dir, ignore_errors=True)
+
     def test_preprocess_video(self):
         if not os.path.exists(self.test_img_path):
             self.fail(f"test image not found: {self.test_img_path}")
-        
+
         # test preprocess_video function
         m = MaterialInfo()
         m.url = self.test_img_path
         m.provider = "local"
         print(m)
-        
+
         materials = vd.preprocess_video([m], clip_duration=4)
         print(materials)
-        
+
         # verify result
         self.assertIsNotNone(materials)
         self.assertEqual(len(materials), 1)
         self.assertTrue(materials[0].url.endswith(".mp4"))
-        
+
         # moviepy get video info
         clip = VideoFileClip(materials[0].url)
         print(clip)
-        
-        # clean generated test video file
-        if os.path.exists(materials[0].url):
-            os.remove(materials[0].url)
+        clip.close()
     
     def test_wrap_text(self):
         """test text wrapping function"""

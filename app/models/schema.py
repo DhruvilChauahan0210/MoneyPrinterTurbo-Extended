@@ -76,11 +76,21 @@ class VideoParams(BaseModel):
     video_subject: str
     video_script: str = ""  # Script used to generate the video
     video_terms: Optional[str | list] = None  # Keywords used to generate the video
-    video_aspect: Optional[VideoAspect] = VideoAspect.portrait.value
-    video_concat_mode: Optional[VideoConcatMode] = VideoConcatMode.random.value
+    video_aspect: Optional[VideoAspect] = VideoAspect.portrait
+    video_concat_mode: Optional[VideoConcatMode] = VideoConcatMode.random
     video_transition_mode: Optional[VideoTransitionMode] = None
     video_clip_duration: Optional[int] = 5
     video_count: Optional[int] = 1
+
+    # Strict cost-control mode. When omitted, the repository-wide value from
+    # config.toml is used (enabled by default for this installation). A request
+    # task invocation is allowed to enter the generation pipeline exactly once.
+    # A new task may freely cover the same topic with fresh generation.
+    one_shot_mode: Optional[bool] = None
+    # Retained for old batch-file compatibility; task IDs now define attempts.
+    one_shot_allow_retry: Optional[bool] = False
+    one_shot_max_script_words: Optional[int] = 90
+    one_shot_min_media: Optional[int] = 3
 
     video_source: Optional[str] = "pexels"
     video_materials: Optional[List[MaterialInfo]] = (
@@ -144,16 +154,29 @@ class VideoParams(BaseModel):
     # (random crowds, scenery) from sneaking in when the candidate pool is poor.
     # 0.0 = off (legacy behaviour). ~0.30 is a sensible on value for one clear star.
     subject_gate_abs_floor: Optional[float] = 0.0
+    # Video frames are noisier than photos but must still beat obvious junk.
+    subject_gate_video_margin: Optional[float] = -0.05
+    subject_gate_video_abs_floor: Optional[float] = 0.05
     # Penalty subtracted from an image's match score each time it has already been
     # used, in timed-sync segment assignment. LOWER = the pipeline will happily
     # REUSE a strong on-subject image instead of reaching for a weak off-topic one
     # (a repeated good shot retains better than a random irrelevant photo). Raise
     # it only when the footage pool is rich enough that variety beats relevance.
     segment_reuse_penalty: Optional[float] = 0.12
+    # Repetition controls operate at two levels: individual cut and original
+    # source video. A dozen cuts from one upload are not genuine visual variety.
+    segment_source_reuse_penalty: Optional[float] = 0.08
+    segment_max_media_reuse: Optional[int] = 0       # 0 = unlimited
+    segment_max_source_reuse: Optional[int] = 0      # 0 = unlimited
+    one_shot_min_visual_sources: Optional[int] = 0   # 0 = disabled
 
     # Timed sync — align each image to the caption phrase being spoken, so the
     # right visual shows at the right moment (uses enhanced subtitle word timings).
     enable_timed_sync: Optional[bool] = False
+    # Optional sentence-by-sentence visual descriptions. Caption fragments are
+    # mapped to these full prompts before CLIP assignment.
+    visual_evidence_prompts: Optional[List[str]] = None
+    segment_assignment_min_score: Optional[float] = 0.0
 
     # Mixed media: ratio of short video clips vs photos in image_search mode
     video_clip_ratio: Optional[float] = 0.35
@@ -164,6 +187,9 @@ class VideoParams(BaseModel):
     # and feeds them into the same CLIP gates as the photos. This replaces
     # Ken-Burns stills with actual motion — the real retention unlock for Shorts.
     enable_youtube_footage: Optional[bool] = False
+    # Exclude Pexels/search filler from the final edit; hook and body visuals
+    # must come from the auto-fetched historical footage pool.
+    youtube_only_media: Optional[bool] = False
     youtube_footage_queries: Optional[List[str]] = None   # search phrases; defaults to video_terms
     youtube_max_videos: Optional[int] = 3                  # how many source videos to download
     youtube_clip_len: Optional[float] = 3.0               # seconds per cut clip
@@ -214,6 +240,14 @@ class VideoParams(BaseModel):
     # a document). If set, the cover image is chosen to match this term instead.
     # e.g. "a close-up photo of Lionel Messi's face"
     hook_cover_term: Optional[str] = ""
+    hook_min_similarity: Optional[float] = 0.0
+    hook_require_video: Optional[bool] = False
+    # Optional contrastive hook gate. The positive cover term must beat every
+    # negative description by at least `hook_negative_margin`; this prevents a
+    # poster/sign containing the player's name from outranking the actual face.
+    hook_negative_labels: Optional[List[str]] = []
+    hook_negative_margin: Optional[float] = 0.0
+    hook_overlay_opacity: Optional[float] = 0.45
 
     # Pinned local story photos (additive; no-op when empty). `hook_image_path`
     # is forced as the cover/hook frame; `intro_image_paths` are pinned to the
@@ -238,6 +272,10 @@ class VideoParams(BaseModel):
     loop_follow_tag: Optional[bool] = True  # small persistent "follow" tag (loop-safe)
     loop_tight_trim: Optional[bool] = True  # trim dead air after last spoken word for a ~200ms-accurate loop
     loop_tail_pad: Optional[float] = 0.12   # seconds kept after the last word before the loop point
+    # Strict one-shot duration ceiling. Checked after the sole TTS call and
+    # before media acquisition/render, so an unexpectedly slow narration cannot
+    # silently become a retention-killing long edit.
+    one_shot_max_audio_seconds: Optional[float] = 0.0
 
     # ── Comparison / match-cut PHONK series (additive, OFF by default) ──────────
     # When comparison_mode is True, task.start() branches at the top into a

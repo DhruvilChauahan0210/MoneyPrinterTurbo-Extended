@@ -1,0 +1,178 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "sequential",
+    "video_transition_mode": "None",
+    "video_clip_duration": 2,
+    "video_count": 1,
+    "one_shot_mode": true,
+    "one_shot_max_script_words": 40,
+    "one_shot_max_audio_seconds": 13.5,
+    "one_shot_min_media": 6,
+    "one_shot_min_visual_sources": 2,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.25,
+    "voice_rate": 1.28,
+    "bgm_type": "random",
+    "bgm_volume": 0.08,
+    "subtitle_enabled": true,
+    "subtitle_position": "center",
+    "custom_position": 70.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 60,
+    "stroke_color": "#000000",
+    "stroke_width": 2.2,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD400",
+    "max_chars_per_line": 17,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 4,
+    "segmentation_method": "sentences",
+    "min_segment_length": 12,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.16,
+    "enable_subject_gate": true,
+    "subject_negative_labels": [
+      "a newspaper article or website screenshot",
+      "a football lineup or fixture graphic",
+      "a screen full of large text",
+      "a random unrelated footballer",
+      "a television studio with pundits",
+      "a crowd with no visible player",
+      "a football video game",
+      "a poster or collage",
+      "a news ticker or lower-third headline",
+      "a video with large burned-in source subtitles"
+    ],
+    "subject_gate_margin": 0.05,
+    "subject_gate_abs_floor": 0.2,
+    "subject_gate_video_margin": -0.15,
+    "subject_gate_video_abs_floor": 0.03,
+    "segment_reuse_penalty": 0.1,
+    "segment_source_reuse_penalty": 0.16,
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 4,
+    "enable_timed_sync": true,
+    "segment_assignment_min_score": 0.15,
+    "enable_grayscale": false,
+    "cover_min_keep": 0.48,
+    "enable_youtube_footage": true,
+    "youtube_only_media": false,
+    "youtube_max_videos": 6,
+    "youtube_clip_len": 2.0,
+    "youtube_clips_per_video": 3,
+    "youtube_max_clips": 18,
+    "youtube_max_height": 720,
+    "footage_video_bonus": 0.1,
+    "footage_min_fraction": 0.5,
+    "image_motion_style": "off",
+    "enable_color_grade": true,
+    "enable_hook_card": true,
+    "hook_min_similarity": 0.2,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "a football crowd or stadium with no close-up face",
+      "a full-body player standing far from the camera",
+      "a television graphic, collage, or headline"
+    ],
+    "hook_negative_margin": 0.0,
+    "hook_overlay_opacity": 0.3,
+    "hook_duration": 0.55,
+    "enable_sfx": true,
+    "sfx_volume": 0.38,
+    "enable_cta": false,
+    "cta_text": "",
+    "loop_seamless": true,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "loop_tail_pad": 0.08,
+    "n_threads": 2,
+    "paragraph_number": 1
+  },
+  "videos": [
+    {
+      "video_subject": "In 2022 Kylian Mbappe verbally agreed to join Real Madrid before performing a shock last-minute U-turn to re-sign with Paris Saint-Germain instead",
+      "video_script": "In 2022 Kylian Mbappe told Real Madrid he was joining. Contracts were ready. Then, hours before signing, he changed his mind and re-signed with PSG instead, stunning Real Madrid completely.",
+      "video_terms": "Kylian Mbappe Real Madrid 2022, Mbappe PSG re-sign, Mbappe transfer saga, Mbappe close up interview",
+      "hook_text": "MBAPPE BETRAYED REAL MADRID",
+      "hook_cover_term": "a tight close-up interview or match shot of Kylian Mbappe's recognizable face filling the frame",
+      "subject_positive_labels": [
+        "a close-up photo of Kylian Mbappe's recognizable face",
+        "Kylian Mbappe wearing a PSG or France kit",
+        "Kylian Mbappe in a press conference or interview",
+        "Kylian Mbappe celebrating or playing football"
+      ],
+      "visual_evidence_prompts": [
+        "close-up archive photo of Kylian Mbappe's recognizable face",
+        "Kylian Mbappe in a press conference discussing his transfer decision",
+        "Kylian Mbappe wearing a Real Madrid or PSG kit",
+        "Kylian Mbappe playing football for PSG in 2022",
+        "Kylian Mbappe looking serious or conflicted in an interview"
+      ],
+      "youtube_footage_queries": [
+        "Kylian Mbappe 2022 Real Madrid PSG transfer saga",
+        "Kylian Mbappe PSG re-sign announcement 2022",
+        "Kylian Mbappe interview close up 2022",
+        "Kylian Mbappe playing for PSG highlights"
+      ]
+    },
+    {
+      "video_subject": "Erling Haaland's contract at Borussia Dortmund contained a release clause of only around sixty million euros, letting Manchester City sign one of football's best strikers for a fraction of his value",
+      "video_script": "Erling Haaland's Dortmund contract had a release clause of just sixty million euros. Any club could trigger it. Manchester City did, signing one of football's best strikers for a fraction of his value.",
+      "video_terms": "Erling Haaland Dortmund release clause, Haaland Manchester City transfer, Haaland Dortmund close up, Haaland transfer bargain",
+      "hook_text": "HAALAND'S $60M CLAUSE SHOCKED EUROPE",
+      "hook_cover_term": "a tight close-up interview or match shot of Erling Haaland's recognizable face filling the frame",
+      "subject_positive_labels": [
+        "a close-up photo of Erling Haaland's recognizable face",
+        "Erling Haaland wearing a Borussia Dortmund kit",
+        "Erling Haaland wearing a Manchester City kit",
+        "Erling Haaland celebrating or playing football"
+      ],
+      "visual_evidence_prompts": [
+        "close-up archive photo of Erling Haaland's recognizable face",
+        "Erling Haaland wearing a Borussia Dortmund kit playing football",
+        "Erling Haaland signing for Manchester City",
+        "Erling Haaland wearing a Manchester City kit celebrating",
+        "Erling Haaland in a press conference about his transfer"
+      ],
+      "youtube_footage_queries": [
+        "Erling Haaland Borussia Dortmund release clause Manchester City",
+        "Erling Haaland Manchester City signing 2022",
+        "Erling Haaland Dortmund highlights close up",
+        "Erling Haaland Manchester City first interview"
+      ]
+    },
+    {
+      "video_subject": "At just sixteen years old Jude Bellingham was sent off with a red card during his professional debut for Birmingham City, only twenty five seconds after coming on as a substitute",
+      "video_script": "At sixteen, Jude Bellingham made his professional debut for Birmingham City. Twenty five seconds after coming on, he was sent off with a red card. Years later, he's one of football's biggest stars.",
+      "video_terms": "Jude Bellingham Birmingham City debut, Bellingham red card, Bellingham young close up, Bellingham Real Madrid",
+      "hook_text": "BELLINGHAM'S RED CARD ON HIS DEBUT",
+      "hook_cover_term": "a tight close-up interview or match shot of young Jude Bellingham's recognizable face filling the frame",
+      "subject_positive_labels": [
+        "a close-up photo of Jude Bellingham's recognizable face",
+        "Jude Bellingham wearing a Birmingham City kit",
+        "Jude Bellingham wearing a Real Madrid or England kit",
+        "Jude Bellingham celebrating or playing football"
+      ],
+      "visual_evidence_prompts": [
+        "close-up archive photo of young Jude Bellingham's recognizable face",
+        "Jude Bellingham wearing a Birmingham City kit as a teenager",
+        "Jude Bellingham receiving a red card from a referee",
+        "Jude Bellingham playing football for Birmingham City",
+        "Jude Bellingham wearing a Real Madrid kit celebrating"
+      ],
+      "youtube_footage_queries": [
+        "Jude Bellingham Birmingham City debut red card",
+        "Jude Bellingham young Birmingham City highlights",
+        "Jude Bellingham close up interview young",
+        "Jude Bellingham Real Madrid highlights"
+      ]
+    }
+  ]
+}

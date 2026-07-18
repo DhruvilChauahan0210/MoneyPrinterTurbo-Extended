@@ -1,6 +1,10 @@
 [app]
 video_source = "pexels" # "pexels" or "pixabay"
 
+# Spend-once safety: validate first, reserve each task atomically, and never retry
+# a provider or render inside that task. A new task may reuse the same topic.
+one_shot_mode = true
+
 # 是否隐藏配置面板
 hide_config = false
 

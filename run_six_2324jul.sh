@@ -20,14 +20,16 @@ for pair in $ORDER; do
   echo "############################################################"
   echo "### BUILDING $batch  ->  ~/Desktop/$out.mp4"
   echo "############################################################"
-  $PY batch_generator.py "$batch.json" 2>&1
-  newest=$(ls -t storage/tasks/*/final-1.mp4 2>/dev/null | head -1)
-  if [[ -n "$newest" ]]; then
-    cp "$newest" ~/Desktop/"$out.mp4"
-    dur=$(ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$newest" 2>/dev/null)
-    echo ">>> COPIED $newest -> ~/Desktop/$out.mp4  (duration=${dur}s)"
+  build_log=$($PY batch_generator.py "$batch.json" 2>&1)
+  rc=$?
+  print -r -- "$build_log"
+  generated=$(print -r -- "$build_log" | sed -n 's/^GENERATED_VIDEO=//p' | tail -1)
+  if (( rc == 0 )) && [[ -n "$generated" && -f "$generated" ]]; then
+    cp "$generated" ~/Desktop/"$out.mp4"
+    dur=$(ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$generated" 2>/dev/null)
+    echo ">>> COPIED $generated -> ~/Desktop/$out.mp4  (duration=${dur}s)"
   else
-    echo ">>> !!! NO OUTPUT for $batch"
+    echo ">>> !!! CURRENT BUILD FAILED for $batch — stale output was NOT copied"
   fi
 done
 echo "ALL SIX DONE"

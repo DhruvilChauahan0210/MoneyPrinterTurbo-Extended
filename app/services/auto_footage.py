@@ -64,7 +64,7 @@ def _ffprobe_duration(path: str) -> float:
 
 
 def _download_one(query: str, dest_dir: str, max_height: int, max_filesize_mb: int,
-                  use_node: bool, timeout: int) -> List[str]:
+                  use_node: bool, timeout: int, retries: int = 3) -> List[str]:
     """Search YouTube for `query` and download the top match (video-only, mp4/h264)."""
     ytdlp = _ytdlp_bin()
     if not ytdlp:
@@ -77,14 +77,15 @@ def _download_one(query: str, dest_dir: str, max_height: int, max_filesize_mb: i
         f"bestvideo[height<={max_height}][ext=mp4]/"
         f"best[height<={max_height}][ext=mp4]/best[ext=mp4]/best"
     )
-    # Pull the top 2 matches per query (not 1) and keep retries on — yt-dlp throttles
+    # Pull the top 2 matches per query (not 1). Strict one-shot callers set
+    # retries=0; legacy callers retain the old network retry behaviour.
     # after a few rapid searches, so a single result per query leaves most queries
     # empty and the footage pool tiny (→ the same clips repeat). 2 distinct source
     # matches per working query is the cheapest way to raise visual variety.
     cmd = [
         ytdlp, "--no-playlist", "--socket-timeout", "20",
         "--no-warnings", "--ignore-errors",
-        "--retries", "3", "--extractor-retries", "3",
+        "--retries", str(retries), "--extractor-retries", str(retries),
         "--match-filter", "duration < 1200 & duration > 12",
         "-f", fmt,
         "--max-filesize", f"{max_filesize_mb}M",
@@ -200,6 +201,7 @@ def fetch_clips(
     max_clips: int = 24,
     max_height: int = 720,
     max_filesize_mb: int = 80,
+    retries: int = 3,
 ) -> List[str]:
     """
     Download + cut real highlight footage for `queries`. Returns a list of local
@@ -237,7 +239,10 @@ def fetch_clips(
     for q in queries:
         if n_have >= max_videos:
             break
-        got = _download_one(q, dl_dir, max_height, max_filesize_mb, use_node, timeout=240)
+        got = _download_one(
+            q, dl_dir, max_height, max_filesize_mb, use_node,
+            timeout=240, retries=retries,
+        )
         for g in got:
             logger.info(f"auto_footage: downloaded '{q[:42]}' → {os.path.basename(g)}")
         n_have = len([f for f in os.listdir(dl_dir) if f.lower().endswith(VIDEO_EXTS)])
@@ -266,7 +271,7 @@ def fetch_clips(
 
 
 def _download_url(url: str, dest_dir: str, max_height: int, max_filesize_mb: int,
-                  use_node: bool, timeout: int) -> str:
+                  use_node: bool, timeout: int, retries: int = 3) -> str:
     """Download ONE specific YouTube URL (not a search). Returns the local path."""
     ytdlp = _ytdlp_bin()
     if not ytdlp:
@@ -285,7 +290,7 @@ def _download_url(url: str, dest_dir: str, max_height: int, max_filesize_mb: int
     cmd = [
         ytdlp, "--no-playlist", "--socket-timeout", "20",
         "--no-warnings", "--ignore-errors",
-        "--retries", "3", "--extractor-retries", "3",
+        "--retries", str(retries), "--extractor-retries", str(retries),
         "-f", fmt,
         "--max-filesize", f"{max_filesize_mb}M",
         "-o", os.path.join(dest_dir, "%(id)s.%(ext)s"),
@@ -308,7 +313,7 @@ def _download_url(url: str, dest_dir: str, max_height: int, max_filesize_mb: int
 def fetch_exact_clip(
     url: str, start: float, end: float, video_width: int, video_height: int,
     out_path: str, max_height: int = 720, max_filesize_mb: int = 200,
-    fill: str = "cover",
+    fill: str = "cover", retries: int = 3,
 ) -> str:
     """
     Download ONE specific YouTube video by URL and cut the EXACT [start, end]
@@ -337,7 +342,10 @@ def fetch_exact_clip(
     os.makedirs(src_dir, exist_ok=True)
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
 
-    src = _download_url(url, src_dir, max_height, max_filesize_mb, use_node, timeout=300)
+    src = _download_url(
+        url, src_dir, max_height, max_filesize_mb, use_node,
+        timeout=300, retries=retries,
+    )
     if not src:
         logger.warning(f"auto_footage: could not download {url}")
         return ""

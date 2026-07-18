@@ -151,7 +151,15 @@ def combine_videos(
 ) -> str:
     audio_clip = AudioFileClip(audio_file)
     audio_duration = audio_clip.duration
+    required_visual_duration = float(
+        getattr(params, "_required_visual_duration", audio_duration) or audio_duration
+    ) if params else float(audio_duration)
     logger.info(f"audio duration: {audio_duration} seconds")
+    if required_visual_duration < audio_duration:
+        logger.info(
+            f"speech-aware visual target: {required_visual_duration:.2f}s "
+            f"({audio_duration - required_visual_duration:.2f}s trailing audio silence excluded)"
+        )
     # Required duration of each clip
     req_dur = audio_duration / len(video_paths)
     req_dur = max_clip_duration
@@ -289,6 +297,12 @@ def combine_videos(
                 
             except Exception as e:
                 logger.error(f"failed to process semantic clip: {str(e)}")
+                if params:
+                    from app.services import one_shot
+                    if one_shot.is_enabled(params):
+                        raise one_shot.OneShotError(
+                            f"semantic clip processing failed; fallback blocked: {e}"
+                        ) from e
         
     else:
         # Original random/sequential logic
@@ -399,9 +413,33 @@ def combine_videos(
                 
             except Exception as e:
                 logger.error(f"failed to process clip: {str(e)}")
+                if params:
+                    from app.services import one_shot
+                    if one_shot.is_enabled(params):
+                        raise one_shot.OneShotError(
+                            f"clip processing failed; fallback blocked: {e}"
+                        ) from e
     
+    # Codec/frame quantization can make a carefully timed fast-cut plan a few
+    # frames shorter than the audio container. In strict mode allow only the
+    # same 200ms structural tolerance used by the pre-render media gate; the
+    # final compositor trims both streams to their safe shared duration.
+    strict_one_shot = False
+    if params:
+        from app.services import one_shot
+        strict_one_shot = one_shot.is_enabled(params)
+    coverage_tolerance = 0.2 if strict_one_shot else 0.0
+
     # loop processed clips until the video duration matches or exceeds the audio duration.
-    if video_duration < audio_duration:
+    if video_duration + coverage_tolerance < required_visual_duration:
+        if params:
+            from app.services import one_shot
+            if one_shot.is_enabled(params):
+                raise one_shot.OneShotError(
+                    f"render plan is short ({video_duration:.2f}s visual vs "
+                    f"{required_visual_duration:.2f}s required speech coverage); "
+                    "automatic clip looping blocked"
+                )
         # Check if we should respect max_video_reuse setting (already defined for semantic mode)
         if 'max_reuse_limit' not in locals():
             max_reuse_limit = params.max_video_reuse if params and hasattr(params, 'max_video_reuse') and params.max_video_reuse is not None else None
@@ -456,6 +494,11 @@ def combine_videos(
                     processed_clips.append(clip)
                     video_duration += clip.duration
                 logger.info(f"video duration: {video_duration:.2f}s, audio duration: {audio_duration:.2f}s, looped {len(processed_clips)-len(base_clips)} clips")
+    elif video_duration < required_visual_duration:
+        logger.info(
+            f"accepting {required_visual_duration - video_duration:.2f}s frame-quantization "
+            "shortfall within one-shot tolerance"
+        )
      
     # merge video clips using direct concatenation to avoid quality degradation
     logger.info("starting clip merging process")
@@ -510,6 +553,12 @@ def combine_videos(
         
     except Exception as e:
         logger.error(f"failed to concatenate clips: {str(e)}")
+        if params:
+            from app.services import one_shot
+            if one_shot.is_enabled(params):
+                raise one_shot.OneShotError(
+                    f"direct concatenation failed; progressive re-render blocked: {e}"
+                ) from e
         # Fallback to progressive merging if direct concatenation fails
         logger.warning("falling back to progressive merging")
         return _progressive_merge_fallback(processed_clips, combined_video_path, output_dir, threads)
@@ -1083,7 +1132,8 @@ def create_hook_clip(
             if not getattr(params, 'loop_seamless', False):
                 vclip = vclip.resized(lambda t: 1.0 + 0.12 * (1 - (1 - min(t / max(seg, 0.1), 1)) ** 2))
             # dark veil + baked hook text as a transparent overlay
-            veil_text = Image.new("RGBA", (video_width, video_height), (0, 0, 0, int(255 * 0.45)))
+            hook_opacity = max(0.0, min(0.8, float(getattr(params, 'hook_overlay_opacity', 0.45))))
+            veil_text = Image.new("RGBA", (video_width, video_height), (0, 0, 0, int(255 * hook_opacity)))
             text_layer = _render_text_card(
                 hook_text, font_path, font_size, video_width, video_height,
                 y_center_ratio=0.42, bg_alpha=0,
@@ -1094,6 +1144,11 @@ def create_hook_clip(
                 [vclip, overlay.with_position("center")], size=(video_width, video_height)
             ).with_start(0)
         except Exception as e:
+            from app.services import one_shot
+            if one_shot.is_enabled(params):
+                raise one_shot.OneShotError(
+                    f"moving hook footage failed; static fallback blocked: {e}"
+                ) from e
             logger.warning(f"hook card: moving-video hook failed ({e}), falling back to still")
 
     # --- Background image (cover-crop to fill frame) ---
@@ -1114,11 +1169,15 @@ def create_hook_clip(
         top = (new_h - video_height) // 2
         bg = bg.crop((left, top, left + video_width, top + video_height))
     except Exception as e:
+        from app.services import one_shot
+        if one_shot.is_enabled(params):
+            raise one_shot.OneShotError(f"hook image failed to load: {e}") from e
         logger.warning(f"hook card: failed to load image {image_path}: {e}")
         bg = Image.new("RGB", (video_width, video_height), (10, 10, 10))
 
     # --- Dark overlay (45% opacity) ---
-    overlay = Image.new("RGBA", (video_width, video_height), (0, 0, 0, int(255 * 0.45)))
+    hook_opacity = max(0.0, min(0.8, float(getattr(params, 'hook_overlay_opacity', 0.45))))
+    overlay = Image.new("RGBA", (video_width, video_height), (0, 0, 0, int(255 * hook_opacity)))
     bg_rgba = bg.convert("RGBA")
     bg_with_veil = Image.alpha_composite(bg_rgba, overlay).convert("RGB")
 
@@ -1164,6 +1223,40 @@ def create_follow_tag(params, video_width: int, video_height: int, video_duratio
         return None
 
 
+def create_midroll_cta(params, video_width: int, video_height: int, video_duration: float):
+    """A brief CTA after the payoff, not at frame zero and not at the loop seam.
+
+    It preserves the invisible ending while still giving high-intent viewers a
+    reason to subscribe. The old persistent FOLLOW tag asked before delivering
+    value and was visible for the entire Short.
+    """
+    from moviepy import vfx
+
+    duration = min(0.9, max(0.6, video_duration * 0.07))
+    start = min(max(0.0, video_duration * 0.68), max(0.0, video_duration - duration - 2.0))
+    font_path = os.path.join(utils.font_dir(), getattr(params, "font_name", "STHeitiMedium.ttc"))
+    font_size = int(video_width * 0.046)
+    font_size += font_size % 2
+    layer = _render_text_card(
+        getattr(params, "cta_text", "FOLLOW FOR MORE"),
+        font_path,
+        font_size,
+        video_width,
+        video_height,
+        stroke_width=5,
+        y_center_ratio=0.84,
+        bg_alpha=0,
+    )
+    fade = min(0.14, duration / 3)
+    return (
+        ImageClip(np.array(layer))
+        .with_duration(duration)
+        .with_start(start)
+        .with_opacity(0.92)
+        .with_effects([vfx.CrossFadeIn(fade), vfx.CrossFadeOut(fade)])
+    )
+
+
 def create_loopback_clip(params, video_width: int, video_height: int, video_duration: float):
     """Seamless visual loop-back. Instead of replaying the hook moment with a reset
     zoom (which read as a ~1s freeze/stall at the loop seam), this LEADS the footage
@@ -1203,7 +1296,8 @@ def create_loopback_clip(params, video_width: int, video_height: int, video_dura
                     font_path = os.path.join(utils.font_dir(), getattr(params, 'font_name', 'STHeitiMedium.ttc'))
                     fsize = int(video_width * 0.082)
                     fsize = fsize if fsize % 2 == 0 else fsize + 1
-                    veil_text = Image.new("RGBA", (video_width, video_height), (0, 0, 0, int(255 * 0.45)))
+                    hook_opacity = max(0.0, min(0.8, float(getattr(params, 'hook_overlay_opacity', 0.45))))
+                    veil_text = Image.new("RGBA", (video_width, video_height), (0, 0, 0, int(255 * hook_opacity)))
                     text_layer = _render_text_card(
                         hook_text, font_path, fsize, video_width, video_height,
                         y_center_ratio=0.42, bg_alpha=0,
@@ -1433,7 +1527,19 @@ def generate_video(
             logger.info(f"loop tight-trim: speech_end={sp_end}, loop_end={loop_end:.2f}s "
                         f"(was video {video_clip.duration:.2f}s / audio {audio_clip.duration:.2f}s)")
         except Exception as e:
+            from app.services import one_shot
+            if one_shot.is_enabled(params):
+                raise one_shot.OneShotError(f"loop tight-trim failed: {e}") from e
             logger.warning(f"loop tight-trim failed: {e}")
+
+    # Clip concatenation intentionally overshoots to guarantee coverage. Remove
+    # that silent visual tail for every mode so the payoff/CTA lands against the
+    # real narration ending instead of one or two seconds of dead footage.
+    exact_end = min(float(video_clip.duration), float(audio_clip.duration))
+    if video_clip.duration > exact_end + 0.03:
+        video_clip = video_clip.subclipped(0, exact_end)
+    if audio_clip.duration > exact_end + 0.03:
+        audio_clip = audio_clip.subclipped(0, exact_end)
 
     def make_textclip(text):
         return TextClip(
@@ -1478,6 +1584,9 @@ def generate_video(
             overlay_clips.append(hook_clip)
             logger.info(f"hook card added: '{hook_text}'")
         except Exception as e:
+            from app.services import one_shot
+            if one_shot.is_enabled(params):
+                raise one_shot.OneShotError(f"hook overlay failed: {e}") from e
             logger.error(f"failed to create hook card: {e}")
 
     # --- Task 6: CTA overlay / seamless loop-back (last ~2 seconds) ---
@@ -1491,8 +1600,15 @@ def generate_video(
                 tag = create_follow_tag(params, video_width, video_height, video_clip.duration)
                 if tag is not None:
                     overlay_clips.append(tag)
+            if getattr(params, 'enable_cta', True):
+                overlay_clips.append(
+                    create_midroll_cta(params, video_width, video_height, video_clip.duration)
+                )
             logger.info("seamless loop mode: no terminal CTA card, clean visual loop-back")
         except Exception as e:
+            from app.services import one_shot
+            if one_shot.is_enabled(params):
+                raise one_shot.OneShotError(f"loop/CTA overlay failed: {e}") from e
             logger.error(f"failed to create loop overlay: {e}")
     elif getattr(params, 'enable_cta', True):
         try:
@@ -1500,6 +1616,9 @@ def generate_video(
             overlay_clips.append(cta_clip)
             logger.info(f"CTA card added: '{getattr(params, 'cta_text', 'FOLLOW FOR MORE')}'")
         except Exception as e:
+            from app.services import one_shot
+            if one_shot.is_enabled(params):
+                raise one_shot.OneShotError(f"CTA overlay failed: {e}") from e
             logger.error(f"failed to create CTA card: {e}")
 
     if overlay_clips:
@@ -1565,9 +1684,13 @@ def generate_video(
 
             audio_clip = CompositeAudioClip(audio_tracks)
         except Exception as e:
+            from app.services import one_shot
+            if one_shot.is_enabled(params):
+                raise one_shot.OneShotError(f"audio polish failed: {e}") from e
             logger.error(f"failed to add bgm/sfx: {str(e)}")
 
     video_clip = video_clip.with_audio(audio_clip)
+    planned_duration = float(video_clip.duration)
     video_clip.write_videofile(
         output_file,
         audio_codec=audio_codec,
@@ -1582,6 +1705,7 @@ def generate_video(
     )
     video_clip.close()
     del video_clip
+    return planned_duration
 
 
 def _make_motion_clip(base_clip, effect_idx: int, clip_duration: float, orig_w: int, orig_h: int):
@@ -1775,6 +1899,13 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_styl
             else:
                 base = ImageClip(material.url).with_duration(this_duration)
                 orig_w, orig_h = base.size
+                # libx264 rejects odd frame dimensions outright ("height not
+                # divisible by 2"); clamp to even before any clip derives its
+                # size from this source, since every branch below inherits it.
+                even_w, even_h = orig_w - (orig_w % 2), orig_h - (orig_h % 2)
+                if (even_w, even_h) != (orig_w, orig_h):
+                    base = base.resized(new_size=(even_w, even_h))
+                    orig_w, orig_h = even_w, even_h
                 if motion_style == "off":
                     final_clip = CompositeVideoClip([base.with_position("center")], size=(orig_w, orig_h))
                 elif motion_style == "subtle":
@@ -1912,7 +2043,7 @@ def build_comparison_short(task_id, params):
     overlays bold stat captions, and lays a phonk track whose DROP is aligned to
     the football→comparison cut. Returns the same dict shape as task.start().
     """
-    from app.services import auto_footage, beat_sync
+    from app.services import auto_footage, beat_sync, one_shot
 
     aspect = VideoAspect(params.video_aspect)
     video_width, video_height = aspect.to_resolution()
@@ -1938,6 +2069,7 @@ def build_comparison_short(task_id, params):
             url, start, end, video_width, video_height, out_path,
             max_height=int(getattr(params, "youtube_max_height", 720) or 720),
             fill=spec.get("fill", "cover"),
+            retries=0 if one_shot.is_enabled(params) else 3,
         )
         if cut and os.path.exists(cut):
             segments.append({"path": cut, "label": label, "dur": max(0.1, end - start)})

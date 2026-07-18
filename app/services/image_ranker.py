@@ -30,6 +30,44 @@ def _split_sentences(script: str, min_len: int = 20) -> List[str]:
     return merged or [script]
 
 
+def contextualize_segment_texts(
+    segment_texts: List[str],
+    script: str,
+    evidence_prompts: List[str] | None = None,
+) -> List[str]:
+    """Map short caption fragments to their complete sentence/evidence intent.
+
+    Whisper segments such as ``four days later`` are too ambiguous for visual
+    retrieval. We preserve their spoken order, map each segment midpoint onto
+    the corresponding script sentence, then substitute an explicit evidence
+    prompt when supplied.
+    """
+    if not segment_texts:
+        return []
+    sentences = _split_sentences(script, min_len=1)
+    prompts = list(evidence_prompts or [])
+    sentence_word_counts = [max(1, len(re.findall(r"[\w’'-]+", s))) for s in sentences]
+    boundaries = []
+    total = 0
+    for count in sentence_word_counts:
+        total += count
+        boundaries.append(total)
+
+    contextualized = []
+    cursor = 0.0
+    for fragment in segment_texts:
+        count = max(1, len(re.findall(r"[\w’'-]+", fragment or "")))
+        midpoint = cursor + count / 2.0
+        sentence_idx = next(
+            (idx for idx, boundary in enumerate(boundaries) if midpoint <= boundary),
+            len(sentences) - 1,
+        )
+        context = prompts[sentence_idx] if sentence_idx < len(prompts) and prompts[sentence_idx].strip() else sentences[sentence_idx]
+        contextualized.append(context)
+        cursor += count
+    return contextualized
+
+
 # ---------------------------------------------------------------------------
 # CLIP helpers (load once, reuse across calls)
 # ---------------------------------------------------------------------------
@@ -37,14 +75,21 @@ def _split_sentences(script: str, min_len: int = 20) -> List[str]:
 _clip_model = None
 _clip_processor = None
 _clip_available = None   # None = untested, True/False = known
+_clip_load_failures = 0  # consecutive failed load attempts (transient infra hiccups)
+_CLIP_LOAD_MAX_ATTEMPTS = 3  # a flaky HF Hub download shouldn't permanently blacklist CLIP for the process
 
 
 def _try_load_clip(model_name: str = "clip-vit-base-patch32"):
-    global _clip_model, _clip_processor, _clip_available
+    global _clip_model, _clip_processor, _clip_available, _clip_load_failures
     if _clip_available is False:
-        return False
+        if _clip_load_failures >= _CLIP_LOAD_MAX_ATTEMPTS:
+            return False
+        # Give a fresh attempt after previous transient failures instead of
+        # blacklisting CLIP for the rest of the process lifetime.
+        _clip_available = None
     if _clip_model is not None:
         return True
+    import time
     try:
         import torch
         from transformers import CLIPModel, CLIPProcessor
@@ -56,11 +101,20 @@ def _try_load_clip(model_name: str = "clip-vit-base-patch32"):
         _clip_processor = CLIPProcessor.from_pretrained(hf_name, cache_dir=cache, use_fast=False)
         _clip_model = CLIPModel.from_pretrained(hf_name, cache_dir=cache).to("cpu")
         _clip_available = True
+        _clip_load_failures = 0
         logger.info(f"image_ranker: CLIP model loaded ({model_name})")
         return True
     except Exception as e:
+        _clip_load_failures += 1
         _clip_available = False
-        logger.warning(f"image_ranker: CLIP unavailable ({e}), using original image order")
+        if _clip_load_failures < _CLIP_LOAD_MAX_ATTEMPTS:
+            logger.warning(
+                f"image_ranker: CLIP load attempt {_clip_load_failures}/{_CLIP_LOAD_MAX_ATTEMPTS} "
+                f"failed ({e}); will retry on next call"
+            )
+            time.sleep(min(2 * _clip_load_failures, 5))
+        else:
+            logger.warning(f"image_ranker: CLIP unavailable after {_clip_load_failures} attempts ({e}), using original image order")
         return False
 
 
@@ -136,9 +190,45 @@ def _sharpness(img) -> float:
     return float(gx.var() + gy.var())
 
 
+def _select_hook_candidate(pos_sims, sharpness, negative_sims=None,
+                           min_similarity: float = 0.0,
+                           negative_margin: float = 0.0):
+    """Return the strongest hook-frame index after hard positive/negative gates.
+
+    CLIP text similarity alone is vulnerable to posters containing a subject's
+    printed name. Contrastive negatives make the decision visual: an actual
+    close-up must score above descriptions such as "poster or sign" and "wide
+    match footage". Returns ``None`` when no frame is safe for the one render.
+    """
+    import numpy as np
+
+    pos = np.asarray(pos_sims, dtype=float)
+    sharp = np.asarray(sharpness, dtype=float)
+    if pos.size == 0:
+        return None
+    sharp_n = (sharp - sharp.min()) / (sharp.max() - sharp.min() + 1e-6)
+    valid = pos >= float(min_similarity or 0.0)
+    contrast = np.zeros_like(pos)
+    if negative_sims is not None:
+        neg = np.asarray(negative_sims, dtype=float)
+        if neg.ndim == 1:
+            neg = neg[:, None]
+        neg_max = neg.max(axis=1)
+        contrast = pos - neg_max
+        valid &= contrast >= float(negative_margin or 0.0)
+    if not valid.any():
+        return None
+    score = pos + 0.04 * sharp_n + 0.10 * contrast
+    score[~valid] = -np.inf
+    return int(score.argmax())
+
+
 def pick_sharp_subject_frame(video_paths, cover_term, out_path,
                              n_samples: int = 6,
                              prefer_substr: str = "/auto/",
+                             min_similarity: float = 0.0,
+                             negative_labels=None,
+                             negative_margin: float = 0.0,
                              model_name: str = "clip-vit-base-patch32"):
     """
     Find the best HOOK moment across REAL-footage clips: sample frames from each
@@ -164,7 +254,8 @@ def pick_sharp_subject_frame(video_paths, cover_term, out_path,
     try:
         import torch
         import numpy as np
-        txt = _embed_texts([cover_term])
+        negative_labels = list(negative_labels or [])
+        txt = _embed_texts([cover_term] + negative_labels)
         cand_imgs, cand_meta = [], []
         for v in vids:
             dur = 0.0
@@ -185,6 +276,8 @@ def pick_sharp_subject_frame(video_paths, cover_term, out_path,
                     capture_output=True, timeout=30)
                 if r.returncode == 0 and r.stdout:
                     im = Image.open(io.BytesIO(r.stdout)).convert("RGB")
+                    if is_graphic_frame(im):
+                        continue
                     cand_imgs.append(im)
                     cand_meta.append((v, t))
         if not cand_imgs:
@@ -193,13 +286,26 @@ def pick_sharp_subject_frame(video_paths, cover_term, out_path,
         with torch.no_grad():
             emb = _as_tensor(_clip_model.get_image_features(**inputs))
         emb = emb / emb.norm(p=2, dim=-1, keepdim=True)
-        sims = torch.mm(txt, emb.T).numpy()[0]
+        all_sims = torch.mm(txt, emb.T).numpy()
+        sims = all_sims[0]
+        negative_sims = all_sims[1:].T if len(negative_labels) else None
         sharp = np.array([_sharpness(im) for im in cand_imgs])
-        # Normalize sharpness to 0..1 and combine: relevance dominates, sharpness
-        # breaks ties / penalizes motion blur.
+        best = _select_hook_candidate(
+            sims,
+            sharp,
+            negative_sims=negative_sims,
+            min_similarity=min_similarity,
+            negative_margin=negative_margin,
+        )
+        if best is None:
+            best_sim = float(sims.max()) if len(sims) else 0.0
+            logger.warning(
+                f"image_ranker: no hook frame cleared the contrastive gate "
+                f"(best positive={best_sim:.3f}, min={float(min_similarity):.3f}, "
+                f"negative_margin={float(negative_margin):.3f})"
+            )
+            return "", "", 0.0
         sN = (sharp - sharp.min()) / (sharp.max() - sharp.min() + 1e-6)
-        score = sims + 0.12 * sN
-        best = int(score.argmax())
         cand_imgs[best].save(out_path, "JPEG", quality=92)
         src_v, src_t = cand_meta[best]
         logger.info(f"image_ranker: hook frame from clip {os.path.basename(src_v)} "
@@ -210,20 +316,55 @@ def pick_sharp_subject_frame(video_paths, cover_term, out_path,
         return "", "", 0.0
 
 
+_image_embed_cache = {}  # path -> (mtime, size, embedding tensor)
+_IMAGE_EMBED_CACHE_MAX = 2000  # bound memory; a run's media pool is far smaller than this
+
+
 def _embed_images(paths: List[str]):
+    """CLIP-embed each path, reusing a cached embedding when the file is unchanged.
+
+    The same footage pool is re-embedded across several gates in one run
+    (relevance, subject-presence, segment assignment, hook selection) — caching
+    by (path, mtime, size) turns those into O(1) lookups after the first pass
+    instead of repeated encoder forward passes over identical images.
+    """
     from PIL import Image
     import torch
-    imgs = []
-    for p in paths:
+
+    to_embed_idx = []
+    to_embed_imgs = []
+    cached = [None] * len(paths)
+    for i, p in enumerate(paths):
+        key = None
         try:
-            imgs.append(_load_media_as_image(p))
+            st = os.stat(p)
+            key = (p, st.st_mtime, st.st_size)
+        except OSError:
+            key = None
+        if key is not None and key in _image_embed_cache:
+            cached[i] = _image_embed_cache[key]
+            continue
+        try:
+            img = _load_media_as_image(p)
         except Exception:
-            imgs.append(Image.new("RGB", (224, 224)))
-    inputs = _clip_processor(images=imgs, return_tensors="pt")
-    with torch.no_grad():
-        emb = _as_tensor(_clip_model.get_image_features(**inputs))
-    emb = emb / emb.norm(p=2, dim=-1, keepdim=True)
-    return emb.cpu()
+            img = Image.new("RGB", (224, 224))
+        to_embed_idx.append((i, key))
+        to_embed_imgs.append(img)
+
+    if to_embed_imgs:
+        inputs = _clip_processor(images=to_embed_imgs, return_tensors="pt")
+        with torch.no_grad():
+            fresh = _as_tensor(_clip_model.get_image_features(**inputs))
+        fresh = fresh / fresh.norm(p=2, dim=-1, keepdim=True)
+        fresh = fresh.cpu()
+        for (i, key), vec in zip(to_embed_idx, fresh):
+            cached[i] = vec
+            if key is not None:
+                if len(_image_embed_cache) >= _IMAGE_EMBED_CACHE_MAX:
+                    _image_embed_cache.pop(next(iter(_image_embed_cache)))
+                _image_embed_cache[key] = vec
+
+    return torch.stack(cached)
 
 
 # ---------------------------------------------------------------------------
@@ -258,6 +399,7 @@ def filter_by_relevance(
     min_score: float = 0.20,
     min_keep: int = 6,
     model_name: str = "clip-vit-base-patch32",
+    strict: bool = False,
 ) -> List[str]:
     """
     Drop media whose CLIP similarity to the video subject is below min_score,
@@ -265,7 +407,12 @@ def filter_by_relevance(
     Always keeps at least min_keep items (the highest-scoring ones).
     Falls back to the original list if CLIP is unavailable.
     """
-    if not paths or not subject_text or not _try_load_clip(model_name):
+    if not paths or not subject_text:
+        return paths
+    if not _try_load_clip(model_name):
+        if strict:
+            from app.services.one_shot import OneShotError
+            raise OneShotError("CLIP relevance gate is unavailable; unverified media blocked")
         return paths
     try:
         import torch
@@ -273,13 +420,13 @@ def filter_by_relevance(
         img_emb = _embed_images(paths)
         sim = torch.mm(text_emb, img_emb.T).numpy()[0]
 
-        # Video clips bypass the relevance threshold: they're fetched from
-        # targeted searches and their wide, motion-blurred mid-frames score low
-        # against a verbose subject sentence even when they're exactly on topic.
+        # Non-strict legacy runs may keep targeted video despite a weak midpoint.
+        # Strict one-shot runs never grant that bypass: a wrong moving clip is
+        # more damaging than a repeated correct one.
         _vid_ext = (".mp4", ".mov", ".webm", ".mkv", ".avi")
         kept = [(s, p) for s, p in zip(sim, paths)
-                if s >= min_score or p.lower().endswith(_vid_ext)]
-        if len(kept) < min_keep:
+                if s >= min_score or (not strict and p.lower().endswith(_vid_ext))]
+        if len(kept) < min_keep and not strict:
             ranked = sorted(zip(sim, paths), key=lambda x: -x[0])
             kept = ranked[: min(min_keep, len(ranked))]
         kept_paths = [p for _, p in sorted(kept, key=lambda x: paths.index(x[1]))]
@@ -292,15 +439,17 @@ def filter_by_relevance(
             )
         return kept_paths
     except Exception as e:
+        if strict:
+            from app.services.one_shot import OneShotError
+            raise OneShotError(f"CLIP relevance gate failed; unverified media blocked: {e}") from e
         logger.warning(f"image_ranker: relevance filter failed ({e}), keeping all media")
         return paths
 
 
-def _graphic_stats(path: str):
+def _graphic_stats_image(img):
     """Cheap visual stats used to tell real photos from graphics/posters/junk."""
-    from PIL import Image
     import numpy as np
-    img = Image.open(path).convert("RGB").resize((160, 160))
+    img = img.convert("RGB").resize((160, 160))
     arr = np.asarray(img)
     q = (arr >> 4).astype(int)                      # 16 levels/channel
     codes = (q[..., 0] << 8) | (q[..., 1] << 4) | q[..., 2]
@@ -316,6 +465,18 @@ def _graphic_stats(path: str):
     return dom, nsig, detail, dark_border
 
 
+def is_graphic_frame(img) -> bool:
+    try:
+        dom, nsig, detail, db = _graphic_stats_image(img)
+    except Exception:
+        return False
+    if dom >= 0.45 or nsig <= 12 or db >= 0.70 or detail < 3.5:
+        return True
+    if db >= 0.45 and dom >= 0.30:
+        return True
+    return False
+
+
 def is_graphic_image(path: str) -> bool:
     """
     True if the image looks like a graphic/poster/cutout/logo rather than a real
@@ -323,17 +484,13 @@ def is_graphic_image(path: str) -> bool:
     have low dominant-color share, many colors, no dark bands; graphics don't.
     """
     try:
-        dom, nsig, detail, db = _graphic_stats(path)
+        img = _load_media_as_image(path)
     except Exception:
         return False
-    if dom >= 0.45 or nsig <= 12 or db >= 0.70 or detail < 3.5:
-        return True
-    if db >= 0.45 and dom >= 0.30:        # poster: dark bands + a big flat region
-        return True
-    return False
+    return is_graphic_frame(img)
 
 
-def filter_graphics(paths: List[str], min_keep: int = 5) -> List[str]:
+def filter_graphics(paths: List[str], min_keep: int = 5, strict: bool = False) -> List[str]:
     """
     Drop graphics/posters/cutouts/logos, keeping only real photos. Never drops
     below min_keep (falls back to the original list) so we can't end up empty.
@@ -344,6 +501,12 @@ def filter_graphics(paths: List[str], min_keep: int = 5) -> List[str]:
     for p in paths:
         (dropped if is_graphic_image(p) else kept).append(p)
     if len(kept) < min_keep:
+        if strict:
+            logger.warning(
+                f"image_ranker: strict photo-quality gate kept only {len(kept)} "
+                f"(<{min_keep}); rejected media will not be restored"
+            )
+            return kept
         logger.info(f"image_ranker: photo-quality filter would keep only {len(kept)} (<{min_keep}), keeping all")
         return paths
     if dropped:
@@ -355,8 +518,13 @@ def assign_images_to_segments(
     image_paths: List[str],
     segment_texts: List[str],
     reuse_penalty: float = 0.12,
+    source_reuse_penalty: float = 0.08,
+    max_media_reuse: int = 0,
+    max_source_reuse: int = 0,
     video_bonus: float = 0.0,
     min_video_fraction: float = 0.0,
+    min_score: float = 0.0,
+    strict: bool = False,
     model_name: str = "clip-vit-base-patch32",
 ) -> List[int]:
     """
@@ -374,6 +542,9 @@ def assign_images_to_segments(
         return [0] * n_seg
 
     if not _try_load_clip(model_name):
+        if strict:
+            from app.services.one_shot import OneShotError
+            raise OneShotError("CLIP evidence assignment is unavailable")
         return [i % n_img for i in range(n_seg)]
 
     try:
@@ -405,13 +576,21 @@ def assign_images_to_segments(
             best_vid_sim.sort(reverse=True)
             force_video_segs = {s for _, s in best_vid_sim[:target]}
 
+        def _source_key(media_path: str) -> str:
+            base = os.path.basename(media_path).lower()
+            match = re.match(r"(.+?)_c\d+(?:\.|$)", base)
+            return match.group(1) if match else base
+
+        source_keys = [_source_key(p) for p in image_paths]
         chosen: List[int] = []
         prev = -1
         used_count = [0] * n_img
+        source_count: Dict[str, int] = {}
         for s in range(n_seg):
             scores = sim[s].copy()
             for i in range(n_img):
                 scores[i] -= reuse_penalty * used_count[i]
+                scores[i] -= source_reuse_penalty * source_count.get(source_keys[i], 0)
                 if is_video[i]:
                     scores[i] += video_bonus
             # Restrict the candidate pool for this segment to the chosen media type.
@@ -420,20 +599,61 @@ def assign_images_to_segments(
             )
             if not pool:
                 pool = list(range(n_img))
+            if max_media_reuse > 0:
+                under_cap = [i for i in pool if used_count[i] < max_media_reuse]
+                if under_cap:
+                    pool = under_cap
+                elif strict:
+                    from app.services.one_shot import OneShotError
+                    raise OneShotError(
+                        f"all evidence clips reached the per-clip reuse cap before segment {s + 1}"
+                    )
+            if max_source_reuse > 0:
+                under_source_cap = [
+                    i for i in pool
+                    if source_count.get(source_keys[i], 0) < max_source_reuse
+                ]
+                if under_source_cap:
+                    pool = under_source_cap
+                elif strict:
+                    from app.services.one_shot import OneShotError
+                    raise OneShotError(
+                        f"all source videos reached the reuse cap before segment {s + 1}"
+                    )
             if prev >= 0 and len(pool) > 1 and prev in pool:
                 scores[prev] = -1e9            # never repeat the same media back-to-back
+            # Prefer a genuinely different upload for the next beat whenever one
+            # is available; a different cut from the same upload still feels repeated.
+            if prev >= 0:
+                other_sources = [i for i in pool if source_keys[i] != source_keys[prev]]
+                if other_sources:
+                    pool = other_sources
             best = max(pool, key=lambda i: scores[i])
+            if strict and float(sim[s][best]) < float(min_score or 0.0):
+                from app.services.one_shot import OneShotError
+                raise OneShotError(
+                    f"no media clears evidence score for segment {s + 1} "
+                    f"({float(sim[s][best]):.3f} < {float(min_score):.3f})"
+                )
             chosen.append(best)
             used_count[best] += 1
+            source_count[source_keys[best]] = source_count.get(source_keys[best], 0) + 1
             prev = best
         n_vid_used = sum(1 for c in chosen if is_video[c])
         distinct = len(set(chosen))
+        distinct_sources = len({source_keys[i] for i in chosen})
         logger.info(
             f"image_ranker: assigned {distinct} distinct media across {n_seg} segments "
+            f"from {distinct_sources} source videos "
             f"({n_vid_used} real video clips, {n_seg - n_vid_used} photos)"
         )
         return chosen
     except Exception as e:
+        if strict:
+            from app.services.one_shot import OneShotError
+            if isinstance(e, OneShotError):
+                raise
+            raise OneShotError(f"segment evidence assignment failed: {e}") from e
         logger.warning(f"image_ranker: segment assignment failed ({e}), using round-robin")
         return [i % n_img for i in range(n_seg)]
 
@@ -445,7 +665,10 @@ def filter_by_subject_presence(
     margin: float = 0.05,
     min_keep: int = 4,
     abs_floor: float = 0.0,
+    video_margin: float = -0.05,
+    video_abs_floor: float = 0.05,
     model_name: str = "clip-vit-base-patch32",
+    strict: bool = False,
 ) -> List[str]:
     """
     Keep only media in which the target subject(s) actually appear.
@@ -461,7 +684,12 @@ def filter_by_subject_presence(
     so a too-strict gate can never empty the video. Falls back to the input list
     if CLIP is unavailable or no positive labels are given.
     """
-    if not paths or not positive_labels or not _try_load_clip(model_name):
+    if not paths or not positive_labels:
+        return paths
+    if not _try_load_clip(model_name):
+        if strict:
+            from app.services.one_shot import OneShotError
+            raise OneShotError("CLIP subject gate is unavailable; unverified media blocked")
         return paths
 
     negative_labels = negative_labels or [
@@ -508,18 +736,18 @@ def filter_by_subject_presence(
             # CLEARLY junk (a graphic/logo/infographic dominates by a wide margin).
             is_video = p.lower().endswith(_vid_ext)
             if is_video:
-                ok = (neg_p - pos_p) < 0.35   # drop only obvious graphic/junk clips
+                ok = (m >= video_margin) and (pos_p >= video_abs_floor) if strict else (neg_p - pos_p) < 0.35
             else:
                 ok = (m >= margin) and (pos_p >= abs_floor)
             scored.append((m, pos_p, ok, p))
 
         kept = [p for m, pp, ok, p in scored if ok]
-        if len(kept) < min_keep:
+        if len(kept) < min_keep and not strict:
             # Back-fill toward min_keep, but NEVER below the absolute floor — better
             # to ship fewer images (the segment assigner reuses good ones) than to
             # pad with irrelevant photos that trigger swipe-away. Rank back-fill
             # candidates by positive-likeness, not just margin.
-            floor_ok = [t for t in scored if (t[3].lower().endswith(_vid_ext) or t[1] >= abs_floor)
+            floor_ok = [t for t in scored if ((not strict and t[3].lower().endswith(_vid_ext)) or t[1] >= abs_floor)
                         and t[3] not in set(kept)]
             ranked = sorted(floor_ok, key=lambda x: -x[1])
             for _, _, _, p in ranked:
@@ -527,9 +755,13 @@ def filter_by_subject_presence(
                     break
                 kept.append(p)
 
-        # preserve original order; guarantee we never return empty
+        # Preserve original order. Strict mode fails instead of restoring media
+        # that the evidence gate explicitly rejected.
         kept = [p for p in paths if p in set(kept)]
         if not kept:
+            if strict:
+                from app.services.one_shot import OneShotError
+                raise OneShotError("subject gate rejected every candidate")
             ranked_all = sorted(scored, key=lambda x: -x[1])
             kept = [p for _, _, _, p in ranked_all[: min(min_keep, len(ranked_all))]]
             kept = [p for p in paths if p in set(kept)]
@@ -544,6 +776,9 @@ def filter_by_subject_presence(
                 logger.debug(f"image_ranker: subject gate DROP (margin={m:.3f} pos={pp:.3f}) {os.path.basename(p)}")
         return kept
     except Exception as e:
+        if strict:
+            from app.services.one_shot import OneShotError
+            raise OneShotError(f"CLIP subject gate failed; unverified media blocked: {e}") from e
         logger.warning(f"image_ranker: subject gate failed ({e}), keeping all media")
         return paths
 

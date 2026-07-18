@@ -1,4 +1,5 @@
 import math
+import json
 import os.path
 import re
 from os import path
@@ -8,9 +9,15 @@ from loguru import logger
 from app.config import config
 from app.models import const
 from app.models.schema import VideoConcatMode, VideoParams
-from app.services import llm, material, subtitle, video, voice
+from app.services import llm, material, one_shot, subtitle, video, voice
 from app.services import state as sm
 from app.utils import utils
+
+
+def _claim_once(params, stage: str):
+    guard = getattr(params, "_one_shot_guard", None)
+    if guard:
+        guard.claim(stage)
 
 
 def generate_script(task_id, params):
@@ -67,25 +74,42 @@ def generate_terms(task_id, params, video_script):
 
 def save_script_data(task_id, video_script, video_terms, params):
     script_file = path.join(utils.task_dir(task_id), "script.json")
+    params_data = (
+        params.model_dump(mode="json")
+        if hasattr(params, "model_dump")
+        else params.dict()
+        if hasattr(params, "dict")
+        else params
+    )
     script_data = {
         "script": video_script,
         "search_terms": video_terms,
-        "params": params,
+        # Persist only declared request fields. Runtime-only objects such as the
+        # one-shot guard contain locks/file handles and must never enter JSON.
+        "params": params_data,
     }
 
-    with open(script_file, "w", encoding="utf-8") as f:
-        f.write(utils.to_json(script_data))
+    temp_file = script_file + ".tmp"
+    with open(temp_file, "w", encoding="utf-8") as f:
+        json.dump(script_data, f, ensure_ascii=False, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(temp_file, script_file)
 
 
 def generate_audio(task_id, params, video_script):
     logger.info("\n\n## generating audio")
     audio_file = path.join(utils.task_dir(task_id), "audio.mp3")
-    sub_maker = voice.tts(
-        text=video_script,
-        voice_name=voice.parse_voice_name(params.voice_name),
-        voice_rate=params.voice_rate,
-        voice_file=audio_file,
-    )
+    _claim_once(params, "voice_generation")
+    attempts = 1 if one_shot.is_enabled(params) else 3
+    with voice.attempt_limit(attempts):
+        sub_maker = voice.tts(
+            text=video_script,
+            voice_name=voice.parse_voice_name(params.voice_name),
+            voice_rate=params.voice_rate,
+            voice_file=audio_file,
+            voice_volume=params.voice_volume,
+        )
     if sub_maker is None:
         sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)
         logger.error(
@@ -97,12 +121,28 @@ def generate_audio(task_id, params, video_script):
         return None, None, None
 
     # Get the actual audio file path (might be .wav if MP3 conversion failed)
-    actual_audio_file = getattr(sub_maker, '_actual_audio_file', audio_file)
+    actual_audio_file = getattr(sub_maker, '_actual_audio_file', None) or audio_file
     if actual_audio_file != audio_file:
         logger.info(f"Audio file saved as: {actual_audio_file} (instead of {audio_file})")
         audio_file = actual_audio_file
 
-    audio_duration = math.ceil(voice.get_audio_duration(sub_maker))
+    # The subtitle provider reports the final word boundary, not the encoded
+    # file duration (which also contains codec padding/trailing audio). Planning
+    # visuals from that value can be short even after rounding. MoviePy is also
+    # what the final combiner uses, so measure the actual file with the same
+    # reader and keep the precise float throughout the pipeline.
+    try:
+        from moviepy import AudioFileClip
+
+        audio_probe = AudioFileClip(audio_file)
+        audio_duration = float(audio_probe.duration)
+        audio_probe.close()
+    except Exception as exc:
+        if one_shot.is_enabled(params):
+            raise one_shot.OneShotError(
+                f"could not measure generated audio before media planning: {exc}"
+            ) from exc
+        audio_duration = float(math.ceil(voice.get_audio_duration(sub_maker)))
     return audio_file, audio_duration, sub_maker
 
 
@@ -179,25 +219,41 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
     elif params.video_source == "image_search":
         video_script = getattr(params, 'video_script', '') or getattr(params, 'video_subject', '')
 
-        # Hook moment — one precise search phrase for the exact key moment
-        hook_term = ""
-        try:
-            hook_term = llm.generate_hook_term(params.video_subject, video_script)
-        except Exception as e:
-            logger.warning(f"hook term generation failed: {e}")
-            hook_term = params.video_subject or ""
+        # In one-shot mode the complete hook plan must be supplied up front.
+        # Never spend another LLM call trying alternate search wording.
+        if one_shot.is_enabled(params):
+            hook_term = (
+                getattr(params, "hook_cover_term", "")
+                or params.video_subject
+                or video_script[:160]
+            )
+        else:
+            hook_term = ""
+            try:
+                hook_term = llm.generate_hook_term(params.video_subject, video_script)
+            except Exception as e:
+                logger.warning(f"hook term generation failed: {e}")
+                hook_term = params.video_subject or ""
 
-        logger.info("\n\n## downloading images + video clips (DuckDuckGo + Wikipedia + Pexels)")
-        image_paths = material.download_images(
-            task_id=task_id,
-            search_terms=video_terms,
-            source=params.video_source,
-            audio_duration=audio_duration * params.video_count,
-            clip_duration=params.video_clip_duration,
-            video_clip_ratio=getattr(params, 'video_clip_ratio', 0.35),
-            video_aspect=str(params.video_aspect) if params.video_aspect else "portrait",
-            hook_term=hook_term,
-        )
+        youtube_only_media = bool(getattr(params, "youtube_only_media", False))
+        logger.info("\n\n## acquiring visual media")
+        _claim_once(params, "material_acquisition")
+        if youtube_only_media:
+            # This factual sports profile needs the real event, not stock photos,
+            # article screenshots or generic football filler.
+            image_paths = []
+            logger.info("actual-footage-only mode: skipping stock/photo search")
+        else:
+            image_paths = material.download_images(
+                task_id=task_id,
+                search_terms=video_terms,
+                source=params.video_source,
+                audio_duration=audio_duration * params.video_count,
+                clip_duration=params.video_clip_duration,
+                video_clip_ratio=getattr(params, 'video_clip_ratio', 0.35),
+                video_aspect=getattr(params.video_aspect, "value", params.video_aspect) if params.video_aspect else "portrait",
+                hook_term=hook_term,
+            )
         if not image_paths:
             image_paths = []   # tolerate: real footage below may still carry the video
 
@@ -209,8 +265,11 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                 from app.services import auto_footage
                 from app.models.schema import VideoAspect as _VA
                 _vw, _vh = _VA(params.video_aspect).to_resolution()
+                raw_terms = video_terms or []
+                if isinstance(raw_terms, str):
+                    raw_terms = raw_terms.split(",")
                 yt_queries = getattr(params, 'youtube_footage_queries', None) or [
-                    t.strip() for t in (video_terms or "").split(",") if t.strip()
+                    str(t).strip() for t in raw_terms if str(t).strip()
                 ]
                 clip_paths = auto_footage.fetch_clips(
                     task_id=task_id,
@@ -221,12 +280,17 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     clips_per_video=getattr(params, 'youtube_clips_per_video', 5),
                     max_clips=getattr(params, 'youtube_max_clips', 24),
                     max_height=getattr(params, 'youtube_max_height', 720),
+                    retries=0 if one_shot.is_enabled(params) else 3,
                 )
                 if clip_paths:
                     # Front-load real footage so it's preferred by the assigner.
                     image_paths = clip_paths + image_paths
                     logger.success(f"auto_footage: added {len(clip_paths)} real highlight clips to the pool")
             except Exception as e:
+                if one_shot.is_enabled(params):
+                    raise one_shot.OneShotError(
+                        f"real-footage acquisition failed; fallback blocked: {e}"
+                    ) from e
                 logger.warning(f"auto_footage failed, continuing with image_search only: {e}")
 
         # Pinned local story photos (additive; no-op if unset). Copied into the
@@ -243,6 +307,8 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     _PILImage.open(_src).convert("RGB").save(_dst, "JPEG", quality=95)
                     _pins.append(_dst)
                 except Exception as _e:
+                    if one_shot.is_enabled(params):
+                        raise one_shot.OneShotError(f"pinned image conversion failed: {_src}: {_e}") from _e
                     logger.warning(f"pin image failed {_src}: {_e}")
         params._pinned_imgs = _pins
         if _pins:
@@ -256,12 +322,17 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
 
         from app.services import image_ranker
 
-        # Photo-quality filter — drop graphics/posters/cutouts/logos so only real
-        # photographs reach the video (runs before CLIP to shrink the work too).
+        # Inspect videos too: search results often contain article/lineup graphics
+        # encoded as MP4, and those are just as damaging as screenshot images.
         try:
-            image_paths = [p for p in image_paths if p.lower().endswith((".mp4", ".mov", ".webm", ".mkv", ".avi"))] \
-                + image_ranker.filter_graphics([p for p in image_paths if not p.lower().endswith((".mp4", ".mov", ".webm", ".mkv", ".avi"))])
+            image_paths = image_ranker.filter_graphics(
+                image_paths,
+                min_keep=int(getattr(params, "one_shot_min_media", 3) or 3),
+                strict=one_shot.is_enabled(params),
+            )
         except Exception as e:
+            if one_shot.is_enabled(params):
+                raise
             logger.warning(f"photo-quality filter failed, keeping all media: {e}")
 
         # Relevance gate — drop media unrelated to the video subject (CLIP)
@@ -272,8 +343,11 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                 subject_text,
                 min_score=getattr(params, 'image_ranking_min_score', 0.18),
                 model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
+                strict=one_shot.is_enabled(params),
             )
         except Exception as e:
+            if one_shot.is_enabled(params):
+                raise
             logger.warning(f"relevance filter failed, keeping all media: {e}")
 
         # Subject-presence gate — drop media that doesn't actually contain the
@@ -288,9 +362,14 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     negative_labels=getattr(params, 'subject_negative_labels', None),
                     margin=getattr(params, 'subject_gate_margin', 0.05),
                     abs_floor=getattr(params, 'subject_gate_abs_floor', 0.0),
+                    video_margin=getattr(params, 'subject_gate_video_margin', -0.05),
+                    video_abs_floor=getattr(params, 'subject_gate_video_abs_floor', 0.05),
                     model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
+                    strict=one_shot.is_enabled(params),
                 )
             except Exception as e:
+                if one_shot.is_enabled(params):
+                    raise
                 logger.warning(f"subject-presence gate failed, keeping all media: {e}")
 
         # Re-add pinned story photos the gate may have dropped (they contain
@@ -299,6 +378,14 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
             for _p in reversed(params._pinned_imgs):
                 if _p not in image_paths:
                     image_paths.insert(0, _p)
+
+        if one_shot.is_enabled(params):
+            min_media = int(getattr(params, "one_shot_min_media", 3) or 3)
+            if len(image_paths) < min_media:
+                raise one_shot.OneShotError(
+                    f"visual gates kept only {len(image_paths)} candidates; "
+                    f"{min_media} are required before the only render"
+                )
 
         # Task 3 — pick the COVER/opening image. The first frame decides swipe-away,
         # so prefer a thumb-stopper (the star's FACE / an action shot) via
@@ -321,6 +408,9 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     _hook_jpg = os.path.join(utils.task_dir(task_id), "hook_cover.jpg")
                     sharp_hook, _hk_src, _hk_t = image_ranker.pick_sharp_subject_frame(
                         image_paths, cover_term, _hook_jpg,
+                        min_similarity=getattr(params, 'hook_min_similarity', 0.0),
+                        negative_labels=getattr(params, 'hook_negative_labels', None),
+                        negative_margin=getattr(params, 'hook_negative_margin', 0.0),
                         model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
                     )
                     if sharp_hook:
@@ -329,13 +419,21 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                         # play the real moving footage (not just a still frame).
                         params._hook_clip_path = _hk_src
                         params._hook_clip_start = _hk_t
-                if not hook_path:
+                if not hook_path and not getattr(params, 'hook_require_video', False):
                     hook_path, _ = image_ranker.pick_best_media(
                         image_paths, cover_term,
                         model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
                     )
+                if (one_shot.is_enabled(params)
+                        and getattr(params, 'hook_require_video', False)
+                        and not getattr(params, '_hook_clip_path', None)):
+                    raise one_shot.OneShotError(
+                        "no actual video frame cleared the hook similarity/quality gate"
+                    )
                 logger.info(f"cover/hook frame selected via term: '{cover_term[:60]}'")
             except Exception as e:
+                if one_shot.is_enabled(params):
+                    raise one_shot.OneShotError(f"hook media selection failed: {e}") from e
                 logger.warning(f"hook media selection failed: {e}")
 
         # Task 1 — CLIP image-to-script ranking
@@ -349,6 +447,8 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     min_score=getattr(params, 'image_ranking_min_score', 0.18),
                 )
             except Exception as e:
+                if one_shot.is_enabled(params):
+                    raise one_shot.OneShotError(f"image ranking failed: {e}") from e
                 logger.warning(f"image ranking failed, using original order: {e}")
 
         # Open the short on the hook moment itself
@@ -383,16 +483,29 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                 with open(enh_path, "r", encoding="utf-8") as f:
                     segments = _json.load(f)
             except Exception as e:
+                if one_shot.is_enabled(params):
+                    raise one_shot.OneShotError(f"timed sync unavailable: {e}") from e
                 logger.warning(f"timed sync: cannot load enhanced subtitles ({e}), skipping sync")
             if segments:
-                seg_texts = [s.get("text", "") for s in segments]
+                raw_seg_texts = [s.get("text", "") for s in segments]
+                seg_texts = image_ranker.contextualize_segment_texts(
+                    raw_seg_texts,
+                    video_script,
+                    evidence_prompts=getattr(params, 'visual_evidence_prompts', None),
+                )
+                logger.info("timed sync: caption fragments mapped to sentence-level visual evidence")
                 idxs = image_ranker.assign_images_to_segments(
                     image_paths, seg_texts,
                     reuse_penalty=getattr(params, 'segment_reuse_penalty', 0.12),
+                    source_reuse_penalty=getattr(params, 'segment_source_reuse_penalty', 0.08),
+                    max_media_reuse=getattr(params, 'segment_max_media_reuse', 0),
+                    max_source_reuse=getattr(params, 'segment_max_source_reuse', 0),
                     video_bonus=(getattr(params, 'footage_video_bonus', 0.06)
                                  if getattr(params, 'enable_youtube_footage', False) else 0.0),
                     min_video_fraction=(getattr(params, 'footage_min_fraction', 0.5)
                                         if getattr(params, 'enable_youtube_footage', False) else 0.0),
+                    min_score=getattr(params, 'segment_assignment_min_score', 0.0),
+                    strict=one_shot.is_enabled(params),
                     model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
                 )
                 synced_paths, clip_durations = [], []
@@ -404,8 +517,14 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     synced_paths.append(image_paths[idxs[s]])
                     clip_durations.append(max(0.4, end - start))
                 total = sum(clip_durations)
-                if audio_duration and total < audio_duration:   # cover full voiceover
-                    clip_durations[-1] += (audio_duration - total)
+                if audio_duration:
+                    # Segment encodes quantize boundaries to video frames. Across
+                    # many fast cuts that can remove ~0.2-0.3s even when the planned
+                    # durations exactly equal narration. Budget the difference plus
+                    # a small tail allowance *before* the only render; the final
+                    # compositor trims the harmless overshoot to the voice track.
+                    encode_guard = 0.35 if one_shot.is_enabled(params) else 0.0
+                    clip_durations[-1] += max(0.0, audio_duration - total) + encode_guard
                 # Loop design: make the FINAL visual the same as the opening hook
                 # frame so the Short loops seamlessly (strong rewatch/retention signal).
                 cover = getattr(params, '_best_image_path', None)
@@ -425,7 +544,8 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                 params.video_clip_duration = int(max(clip_durations)) + 1   # no truncation
                 logger.info(
                     f"timed sync: aligned {len(image_paths)} images to {len(segments)} caption "
-                    f"phrases (visual {sum(clip_durations):.1f}s vs audio {audio_duration:.1f}s)"
+                    f"phrases (planned visual {sum(clip_durations):.2f}s vs "
+                    f"audio {audio_duration:.2f}s)"
                 )
 
         # Task 2 — Ken Burns 2.0: pass motion style
@@ -475,6 +595,9 @@ def generate_final_videos(
     final_video_paths = []
     combined_video_paths = []
     
+    if one_shot.is_enabled(params) and params.video_count != 1:
+        raise one_shot.OneShotError("one-shot mode cannot render multiple variants")
+
     # Force random mode for multiple videos to ensure variety
     # Semantic mode would produce identical videos, which doesn't make sense for multiple generation
     video_concat_mode = params.video_concat_mode
@@ -511,13 +634,14 @@ def generate_final_videos(
         final_video_path = path.join(utils.task_dir(task_id), f"final-{index}.mp4")
 
         logger.info(f"\n\n## generating video: {index} => {final_video_path}")
-        video.generate_video(
+        rendered_duration = video.generate_video(
             video_path=combined_video_path,
             audio_path=audio_file,
             subtitle_path=subtitle_path,
             output_file=final_video_path,
             params=params,
         )
+        params._rendered_duration = rendered_duration
 
         _progress += 50 / params.video_count / 2
         sm.state.update_task(task_id, progress=_progress)
@@ -528,7 +652,7 @@ def generate_final_videos(
     return final_video_paths, combined_video_paths
 
 
-def start(task_id, params: VideoParams, stop_at: str = "video"):
+def _start_impl(task_id, params: VideoParams, stop_at: str = "video"):
     logger.info(f"start task: {task_id}, stop_at: {stop_at}")
     sm.state.update_task(task_id, state=const.TASK_STATE_PROCESSING, progress=5)
 
@@ -541,6 +665,7 @@ def start(task_id, params: VideoParams, stop_at: str = "video"):
     if getattr(params, "comparison_mode", False):
         logger.info("comparison_mode ON — building match-cut phonk short (no voiceover)")
         try:
+            _claim_once(params, "comparison_render")
             result = video.build_comparison_short(task_id, params)
         except Exception as e:
             logger.error(f"comparison_mode build failed: {e}")
@@ -590,6 +715,25 @@ def start(task_id, params: VideoParams, stop_at: str = "video"):
     if not audio_file:
         sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)
         return
+    # Speech-aware visual target: the encoded file duration includes codec
+    # padding/trailing silence after the last spoken word, which the visual
+    # track doesn't need to cover. video.py's combiner reads this back via
+    # `_required_visual_duration` to avoid padding the edit for dead air.
+    try:
+        last_word_end = voice.get_audio_duration(sub_maker)
+        if last_word_end > 0 and last_word_end <= audio_duration:
+            params._required_visual_duration = last_word_end
+    except Exception as exc:
+        logger.debug(f"could not compute speech-aware visual duration: {exc}")
+    if one_shot.is_enabled(params):
+        max_audio_seconds = float(
+            getattr(params, "one_shot_max_audio_seconds", 0.0) or 0.0
+        )
+        if max_audio_seconds > 0 and float(audio_duration) > max_audio_seconds:
+            raise one_shot.OneShotError(
+                f"sole narration is {float(audio_duration):.2f}s, above the "
+                f"{max_audio_seconds:.2f}s retention ceiling; acquisition/render blocked"
+            )
 
     sm.state.update_task(task_id, state=const.TASK_STATE_PROCESSING, progress=30)
 
@@ -606,6 +750,8 @@ def start(task_id, params: VideoParams, stop_at: str = "video"):
     subtitle_path = generate_subtitle(
         task_id, params, video_script, sub_maker, audio_file
     )
+    if one_shot.is_enabled(params) and params.subtitle_enabled and not subtitle_path:
+        raise one_shot.OneShotError("subtitle generation failed; captionless render blocked")
 
     if stop_at == "subtitle":
         sm.state.update_task(
@@ -641,6 +787,8 @@ def start(task_id, params: VideoParams, stop_at: str = "video"):
     if getattr(params, 'enable_hook_card', True) and params.video_source == "image_search":
         hook_text = getattr(params, 'hook_text', '').strip()
         if not hook_text:
+            if one_shot.is_enabled(params):
+                raise one_shot.OneShotError("hook_text missing after one-shot preflight")
             try:
                 hook_text = llm.generate_hook(params.video_subject, video_script)
             except Exception as e:
@@ -656,7 +804,19 @@ def start(task_id, params: VideoParams, stop_at: str = "video"):
         params._hook_image_path = hook_image
         logger.info(f"hook text: '{hook_text}'")
 
+    # Structural media validation happens before the only final render. It may
+    # reject a bad plan, but it never searches/renders again automatically.
+    if one_shot.is_enabled(params):
+        params._media_quality_report = one_shot.validate_media_plan(
+            downloaded_videos,
+            audio_duration,
+            min_media=int(getattr(params, "one_shot_min_media", 3) or 3),
+            min_sources=int(getattr(params, "one_shot_min_visual_sources", 0) or 0),
+            image_duration=float(getattr(params, "video_clip_duration", 2) or 2),
+        )
+
     # 6. Generate final videos
+    _claim_once(params, "final_render")
     final_video_paths, combined_video_paths = generate_final_videos(
         task_id, params, downloaded_videos, audio_file, subtitle_path, video_script
     )
@@ -664,6 +824,15 @@ def start(task_id, params: VideoParams, stop_at: str = "video"):
     if not final_video_paths:
         sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)
         return
+
+    quality_report = None
+    if one_shot.is_enabled(params):
+        expected_duration = getattr(params, "_rendered_duration", None) or audio_duration
+        quality_report = one_shot.validate_render(final_video_paths[0], expected_duration)
+        quality_report["media_plan"] = getattr(params, "_media_quality_report", {})
+        report_path = path.join(utils.task_dir(task_id), "quality_report.json")
+        with open(report_path, "w", encoding="utf-8") as handle:
+            handle.write(utils.to_json(quality_report))
 
     logger.success(
         f"task {task_id} finished, generated {len(final_video_paths)} videos."
@@ -678,11 +847,50 @@ def start(task_id, params: VideoParams, stop_at: str = "video"):
         "audio_duration": audio_duration,
         "subtitle_path": subtitle_path,
         "materials": downloaded_videos,
+        "quality_report": quality_report,
     }
     sm.state.update_task(
         task_id, state=const.TASK_STATE_COMPLETE, progress=100, **kwargs
     )
     return kwargs
+
+
+def start(task_id, params: VideoParams, stop_at: str = "video"):
+    """Run once, fail closed, and never convert an internal failure into a retry."""
+    if not one_shot.is_enabled(params):
+        return _start_impl(task_id, params, stop_at)
+
+    guard = None
+    try:
+        one_shot.apply_growth_profile(params)
+        report = one_shot.preflight(params, stop_at=stop_at)
+        with one_shot.generation_slot(task_id=task_id):
+            guard = one_shot.OneShotGuard(task_id, params, report)
+            params._one_shot_guard = guard
+
+            params.video_count = 1
+
+            result = _start_impl(task_id, params, stop_at)
+            if result and (stop_at != "video" or result.get("videos")):
+                guard.finish(
+                    "complete",
+                    output=(result.get("videos") or [None])[0] if isinstance(result, dict) else None,
+                    quality_report=result.get("quality_report") if isinstance(result, dict) else None,
+                )
+            else:
+                guard.finish("failed", error="pipeline returned no valid output; retry blocked")
+            return result
+    except Exception as exc:
+        logger.exception(f"one-shot task {task_id} failed; no retry will be attempted: {exc}")
+        if guard:
+            guard.finish("failed", error=str(exc))
+        sm.state.update_task(
+            task_id,
+            state=const.TASK_STATE_FAILED,
+            error=str(exc),
+            one_shot=True,
+        )
+        return {"error": str(exc), "one_shot": True, "retry_attempted": False}
 
 
 if __name__ == "__main__":

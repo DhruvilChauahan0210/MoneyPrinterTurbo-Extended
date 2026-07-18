@@ -1,6 +1,9 @@
 import asyncio
 import os
 import re
+import time
+from contextlib import contextmanager
+from contextvars import ContextVar
 from datetime import datetime
 from typing import Union
 from xml.sax.saxutils import unescape
@@ -50,6 +53,27 @@ except ImportError as e:
 # Global Chatterbox model instance
 chatterbox_model = None
 whisperx_model = None
+
+# Provider retry count is request-local so concurrent API jobs cannot change one
+# another. Strict one-shot tasks enter attempt_limit(1); legacy tasks keep 3.
+_provider_attempts = ContextVar("voice_provider_attempts", default=3)
+
+
+@contextmanager
+def attempt_limit(count: int):
+    token = _provider_attempts.set(max(1, int(count)))
+    try:
+        yield
+    finally:
+        _provider_attempts.reset(token)
+
+
+def _retry_backoff(attempt_index: int, max_attempts: int) -> None:
+    """Sleep with exponential backoff between TTS retries (skips the wait after
+    the final attempt, since there's nothing left to retry for)."""
+    if attempt_index + 1 >= max_attempts:
+        return
+    time.sleep(min(2 ** attempt_index, 8))
 
 
 def ensure_submaker_compatibility(sub_maker):
@@ -1224,7 +1248,7 @@ def azure_tts_v1(
     voice_name = parse_voice_name(voice_name)
     text = text.strip()
     rate_str = convert_rate_to_percent(voice_rate)
-    for i in range(3):
+    for i in range(_provider_attempts.get()):
         try:
             logger.info(f"start, voice name: {voice_name}, try: {i + 1}")
 
@@ -1245,12 +1269,14 @@ def azure_tts_v1(
             sub_maker = asyncio.run(_do())
             if not sub_maker or not sub_maker.subs:
                 logger.warning("failed, sub_maker is None or sub_maker.subs is None")
+                _retry_backoff(i, _provider_attempts.get())
                 continue
 
             logger.info(f"completed, output file: {voice_file}")
             return sub_maker
         except Exception as e:
             logger.error(f"failed, error: {str(e)}")
+            _retry_backoff(i, _provider_attempts.get())
     return None
 
 
@@ -1304,7 +1330,7 @@ def siliconflow_tts(
 
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
 
-    for i in range(3):  # 尝试3次
+    for i in range(_provider_attempts.get()):
         try:
             logger.info(
                 f"start siliconflow tts, model: {model}, voice: {voice}, try: {i + 1}"
@@ -1385,8 +1411,10 @@ def siliconflow_tts(
                 logger.error(
                     f"siliconflow tts failed with status code {response.status_code}: {response.text}"
                 )
+                _retry_backoff(i, _provider_attempts.get())
         except Exception as e:
             logger.error(f"siliconflow tts failed: {str(e)}")
+            _retry_backoff(i, _provider_attempts.get())
 
     return None
 
@@ -1447,7 +1475,7 @@ def sarvam_tts(
     }
     headers = {"api-subscription-key": api_key, "Content-Type": "application/json"}
 
-    for i in range(3):
+    for i in range(_provider_attempts.get()):
         try:
             response = requests.post(url, json=payload, headers=headers, timeout=30)
             if response.status_code == 200:
@@ -1474,8 +1502,10 @@ def sarvam_tts(
                 return sub_maker
             else:
                 logger.error(f"sarvam tts failed {response.status_code}: {response.text}")
+                _retry_backoff(i, _provider_attempts.get())
         except Exception as e:
             logger.error(f"sarvam tts error: {str(e)}")
+            _retry_backoff(i, _provider_attempts.get())
 
     return None
 
@@ -2110,7 +2140,7 @@ def azure_tts_v2(text: str, voice_name: str, voice_file: str) -> Union[SubMaker,
 
         return 0
 
-    for i in range(3):
+    for i in range(_provider_attempts.get()):
         try:
             logger.info(f"start, voice name: {voice_name}, try: {i + 1}")
 
@@ -2177,8 +2207,10 @@ def azure_tts_v2(text: str, voice_name: str, voice_file: str) -> Union[SubMaker,
                         f"azure v2 speech synthesis error: {cancellation_details.error_details}"
                     )
             logger.info(f"completed, output file: {voice_file}")
+            _retry_backoff(i, _provider_attempts.get())
         except Exception as e:
             logger.error(f"failed, error: {str(e)}")
+            _retry_backoff(i, _provider_attempts.get())
     return None
 
 
