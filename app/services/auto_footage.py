@@ -94,7 +94,7 @@ def _download_one(query: str, dest_dir: str, max_height: int, max_filesize_mb: i
         f"ytsearch2:{query}",
     ]
     if use_node:
-        cmd[1:1] = ["--js-runtimes", "node"]
+        cmd[1:1] = ["--extractor-args", "youtube:player_client=default,web_safari;jsi=Deno"]
     try:
         r = _run(cmd, timeout=timeout)
         if r.returncode != 0:
@@ -169,7 +169,7 @@ def _cut_vertical_clips(src: str, out_dir: str, base: str, clip_len: float,
             "ffmpeg", "-y", "-loglevel", "error",
             "-ss", f"{off:.2f}", "-i", src, "-t", f"{clip_len:.2f}",
             "-an", "-vf", vf,
-            "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
+            "-c:v", "libx264", "-preset", "fast", "-crf", "16",
             "-pix_fmt", "yuv420p", out,
         ]
         try:
@@ -298,7 +298,7 @@ def _download_url(url: str, dest_dir: str, max_height: int, max_filesize_mb: int
         url,
     ]
     if use_node:
-        cmd[1:1] = ["--js-runtimes", "node"]
+        cmd[1:1] = ["--extractor-args", "youtube:player_client=default,web_safari;jsi=Deno"]
     try:
         r = _run(cmd, timeout=timeout)
         if r.returncode != 0:

@@ -1,0 +1,52 @@
+### BUILDING batch_messi_copa2021  ->  ~/Desktop/15AUG_slot1_1300_messi_copa2021.mp4
+>>> COPIED -> ~/Desktop/15AUG_slot1_1300_messi_copa2021.mp4  (duration=9.970000s)
+### BUILDING batch_salah_ramos  ->  ~/Desktop/15AUG_slot2_1700_salah_ramos.mp4
+>>> COPIED -> ~/Desktop/15AUG_slot2_1700_salah_ramos.mp4  (duration=11.090000s)
+### BUILDING batch_ronaldo_moscow  ->  ~/Desktop/15AUG_slot3_2100_ronaldo_moscow.mp4
+>>> COPIED -> ~/Desktop/15AUG_slot3_2100_ronaldo_moscow.mp4  (duration=11.170000s)
+### BUILDING batch_ronaldo_atletico  ->  ~/Desktop/16AUG_slot1_1300_ronaldo_atletico.mp4
+>>> COPIED -> ~/Desktop/16AUG_slot1_1300_ronaldo_atletico.mp4  (duration=11.400000s)
+### BUILDING batch_kane_curse  ->  ~/Desktop/16AUG_slot2_1700_kane_curse.mp4
+>>> COPIED -> ~/Desktop/16AUG_slot2_1700_kane_curse.mp4  (duration=11.300000s)
+### BUILDING batch_messi_43seconds  ->  ~/Desktop/16AUG_slot3_2100_messi_43seconds.mp4
+>>> COPIED -> ~/Desktop/16AUG_slot3_2100_messi_43seconds.mp4  (duration=10.370000s)
+### BUILDING batch_messi_bobo  ->  ~/Desktop/17AUG_slot1_1300_messi_bobo.mp4
+>>> COPIED -> ~/Desktop/17AUG_slot1_1300_messi_bobo.mp4  (duration=9.720000s)
+### BUILDING batch_modric_war  ->  ~/Desktop/17AUG_slot2_1700_modric_war.mp4
+>>> COPIED -> ~/Desktop/17AUG_slot2_1700_modric_war.mp4  (duration=10.780000s)
+### BUILDING batch_ronaldo_benched  ->  ~/Desktop/17AUG_slot3_2100_ronaldo_benched.mp4
+>>> COPIED -> ~/Desktop/17AUG_slot3_2100_ronaldo_benched.mp4  (duration=11.200000s)
+### BUILDING batch_ronaldo_taxes  ->  ~/Desktop/18AUG_slot1_1300_ronaldo_taxes.mp4
+>>> COPIED -> ~/Desktop/18AUG_slot1_1300_ronaldo_taxes.mp4  (duration=10.430000s)
+### BUILDING batch_debruyne_mourinho  ->  ~/Desktop/18AUG_slot2_1700_debruyne_mourinho.mp4
+>>> COPIED -> ~/Desktop/18AUG_slot2_1700_debruyne_mourinho.mp4  (duration=10.030000s)
+### BUILDING batch_messi_suspended  ->  ~/Desktop/18AUG_slot3_2100_messi_suspended.mp4
+>>> COPIED -> ~/Desktop/18AUG_slot3_2100_messi_suspended.mp4  (duration=9.820000s)
+### BUILDING batch_messi_chess  ->  ~/Desktop/19AUG_slot1_1300_messi_chess.mp4
+>>> !!! BUILD FAILED for batch_messi_chess (no retry)
+[32m2026-08-13 08:58:52[0m | [1mINFO[0m | "./app/services/image_ranker.py:436":[34m filter_by_relevance[0m - [1mimage_ranker: dropped 18/23 off-topic media (score < 0.22 vs subject 'Lionel Messi and Cristiano Ronaldo posed over a ch')[0m
+[32m2026-08-13 08:58:52[0m | [1mINFO[0m | "./app/services/task.py:357":[34m get_video_materials[0m - [1m
+
+## subject-presence gate (verifying target characters are in frame)[0m
+[32m2026-08-13 08:58:52[0m | [1mINFO[0m | "./app/services/image_ranker.py:770":[34m filter_by_subject_presence[0m - [1mimage_ranker: subject gate kept 4/5 (dropped 1 without ['a real photograph of Lionel Messi the footballer', 'Lionel Messi in a blue and red Barcelona jersey', 'Lionel Messi in a light blue and white Argentina jersey', "a tight close up of Lionel Messi's face", 'Lionel Messi dribbling with the ball close up'], margin>=0.1, floor>=0.35)[0m
+[32m2026-08-13 08:58:52[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.195 pos=0.192) HnHF-si5rdk_c0.mp4[0m
+[32m2026-08-13 08:58:56[0m | [33m[1mWARNING[0m | "./app/services/image_ranker.py:302":[34m pick_sharp_subject_frame[0m - [33m[1mimage_ranker: no hook frame cleared the contrastive gate (best positive=0.234, min=0.200, negative_margin=0.080)[0m
+[32m2026-08-13 08:58:56[0m | [1mINFO[0m | "./app/services/image_ranker.py:387":[34m pick_best_media[0m - [1mimage_ranker: best match for 'a tight close up of Lionel Messi's face looking toward the c' → /Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/cache_images/img-b9386df9386f22512547b9b4e1c3cdb4.jpg (score=0.325)[0m
+[32m2026-08-13 08:58:56[0m | [1mINFO[0m | "./app/services/task.py:433":[34m get_video_materials[0m - [1mcover/hook frame selected via term: 'a tight close up of Lionel Messi's face looking toward the c'[0m
+[32m2026-08-13 08:58:56[0m | [1mINFO[0m | "./app/services/task.py:441":[34m get_video_materials[0m - [1m
+
+## ranking images against script (CLIP)[0m
+[32m2026-08-13 08:58:56[0m | [1mINFO[0m | "./app/services/image_ranker.py:811":[34m rank_images_for_script[0m - [1mimage_ranker: ranking 4 images against 3 sentences[0m
+[32m2026-08-13 08:58:56[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:848":[34m rank_images_for_script[0m - [34m[1mimage_ranker: sentence[0] → img[2] score=0.248 'Messi and Ronaldo sat across a chessboard for one photograph'[0m
+[32m2026-08-13 08:58:56[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:848":[34m rank_images_for_script[0m - [34m[1mimage_ranker: sentence[1] → img[1] score=0.209 'It became one of the most liked sports photos ever posted'[0m
+[32m2026-08-13 08:58:56[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:848":[34m rank_images_for_script[0m - [34m[1mimage_ranker: sentence[2] → img[3] score=0.194 'Which makes you wonder,'[0m
+[32m2026-08-13 08:58:56[0m | [1mINFO[0m | "./app/services/image_ranker.py:858":[34m rank_images_for_script[0m - [1mimage_ranker: ordered 4 images for 3 sentences[0m
+[32m2026-08-13 08:58:56[0m | [31m[1mERROR[0m | "./app/services/task.py:884":[34m start[0m - [31m[1mone-shot task 0b17c813-207a-44c7-a51d-dc7187d6ee0b failed; no retry will be attempted: timed sync unavailable: [Errno 2] No such file or directory: '/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/tasks/0b17c813-207a-44c7-a51d-dc7187d6ee0b/subtitle_enhanced.json'[0m
+[32m2026-08-13 08:58:56[0m | [31m[1mERROR[0m | "./batch_generator.py:111":[34m run_batch[0m - [31m[1m[1/1] FAILED: Lionel Messi and Cristiano Ronaldo posed over a chessboard for a Louis Vuitton advert before the 2022 World Cup and the photo became one of the most liked sports images ever posted[0m
+
+============================================================
+BATCH COMPLETE — 1 videos processed
+============================================================
+  ❌  Lionel Messi and Cristiano Ronaldo posed over a chessboard for a Louis Vuitton advert before the 2022 World Cup and the photo became one of the most liked sports images ever posted (failed)
+============================================================
+### BUILDING batch_benzema_booed  ->  ~/Desktop/19AUG_slot2_1700_benzema_booed.mp4

@@ -1,0 +1,194 @@
+### BUILDING batch_messi_helicopter  ->  ~/Desktop/25AUG_slot1_1300_messi_helicopter.mp4
+>>> COPIED -> ~/Desktop/25AUG_slot1_1300_messi_helicopter.mp4  (duration=9.720000s)
+### BUILDING batch_pogba_ban  ->  ~/Desktop/25AUG_slot2_1700_pogba_ban.mp4
+>>> !!! BUILD FAILED for batch_pogba_ban (no retry)
+[32m2026-08-13 15:31:00[0m | [1mINFO[0m | "./app/services/task.py:44":[34m generate_terms[0m - [1m
+
+## generating video terms[0m
+[32m2026-08-13 15:31:00[0m | [34m[1mDEBUG[0m | "./app/services/task.py:65":[34m generate_terms[0m - [34m[1mvideo terms: [
+    "Paul Pogba",
+    "Pogba Manchester United",
+    "Pogba Juventus",
+    "Pogba France",
+    "Pogba close up face"
+][0m
+[32m2026-08-13 15:31:00[0m | [1mINFO[0m | "./app/services/task.py:101":[34m generate_audio[0m - [1m
+
+## generating audio[0m
+[32m2026-08-13 15:31:00[0m | [1mINFO[0m | "./app/services/voice.py:1253":[34m azure_tts_v1[0m - [1mstart, voice name: en-US-EricNeural, try: 1[0m
+[32m2026-08-13 15:31:00[0m | [31m[1mERROR[0m | "./app/services/voice.py:1278":[34m azure_tts_v1[0m - [31m[1mfailed, error: Cannot connect to host speech.platform.bing.com:443 ssl:<ssl.SSLContext object at 0x11f6d5570> [None][0m
+[32m2026-08-13 15:31:00[0m | [31m[1mERROR[0m | "./app/services/task.py:115":[34m generate_audio[0m - [31m[1mfailed to generate audio:
+1. check if the language of the voice matches the language of the video script.
+2. check if the network is available. If you are in China, it is recommended to use a VPN and enable the global traffic mode.[0m
+[32m2026-08-13 15:31:00[0m | [31m[1mERROR[0m | "./batch_generator.py:111":[34m run_batch[0m - [31m[1m[1/1] FAILED: Paul Pogba was banned from football for four years after a positive doping test, said he considered quitting the game entirely, and the ban was later cut to eighteen months on appeal[0m
+
+============================================================
+BATCH COMPLETE — 1 videos processed
+============================================================
+  ❌  Paul Pogba was banned from football for four years after a positive doping test, said he considered quitting the game entirely, and the ban was later cut to eighteen months on appeal (failed)
+============================================================
+### BUILDING batch_ronaldo_euro2004  ->  ~/Desktop/25AUG_slot3_2100_ronaldo_euro2004.mp4
+>>> !!! BUILD FAILED for batch_ronaldo_euro2004 (no retry)
+[32m2026-08-13 15:31:14[0m | [1mINFO[0m | "./app/services/task.py:44":[34m generate_terms[0m - [1m
+
+## generating video terms[0m
+[32m2026-08-13 15:31:14[0m | [34m[1mDEBUG[0m | "./app/services/task.py:65":[34m generate_terms[0m - [34m[1mvideo terms: [
+    "Cristiano Ronaldo",
+    "Ronaldo Real Madrid",
+    "Ronaldo Portugal",
+    "Ronaldo close up face",
+    "Ronaldo celebration"
+][0m
+[32m2026-08-13 15:31:14[0m | [1mINFO[0m | "./app/services/task.py:101":[34m generate_audio[0m - [1m
+
+## generating audio[0m
+[32m2026-08-13 15:31:14[0m | [1mINFO[0m | "./app/services/voice.py:1253":[34m azure_tts_v1[0m - [1mstart, voice name: en-US-EricNeural, try: 1[0m
+[32m2026-08-13 15:31:35[0m | [31m[1mERROR[0m | "./app/services/voice.py:1278":[34m azure_tts_v1[0m - [31m[1mfailed, error: Connection timeout to host wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=7fe8d8ae9a79441dab6800a2688485c9&Sec-MS-GEC=B6E16CAD7BB26EEF606F47F166DED7BF647F6A2ED25A23543F04AA7ACDCD01A0&Sec-MS-GEC-Version=1-143.0.3650.75[0m
+[32m2026-08-13 15:31:35[0m | [31m[1mERROR[0m | "./app/services/task.py:115":[34m generate_audio[0m - [31m[1mfailed to generate audio:
+1. check if the language of the voice matches the language of the video script.
+2. check if the network is available. If you are in China, it is recommended to use a VPN and enable the global traffic mode.[0m
+[32m2026-08-13 15:31:35[0m | [31m[1mERROR[0m | "./batch_generator.py:111":[34m run_batch[0m - [31m[1m[1/1] FAILED: At nineteen Cristiano Ronaldo lost the Euro 2004 final on home soil to Greece and cried on the pitch, and twelve years later he captained Portugal to win the Euros[0m
+
+============================================================
+BATCH COMPLETE — 1 videos processed
+============================================================
+  ❌  At nineteen Cristiano Ronaldo lost the Euro 2004 final on home soil to Greece and cried on the pitch, and twelve years later he captained Portugal to win the Euros (failed)
+============================================================
+### BUILDING batch_ronaldo_spain_hattrick  ->  ~/Desktop/26AUG_slot1_1300_ronaldo_spain_hattrick.mp4
+>>> !!! BUILD FAILED for batch_ronaldo_spain_hattrick (no retry)
+[32m2026-08-13 15:31:45[0m | [1mINFO[0m | "./app/services/task.py:44":[34m generate_terms[0m - [1m
+
+## generating video terms[0m
+[32m2026-08-13 15:31:45[0m | [34m[1mDEBUG[0m | "./app/services/task.py:65":[34m generate_terms[0m - [34m[1mvideo terms: [
+    "Cristiano Ronaldo",
+    "Ronaldo Real Madrid",
+    "Ronaldo Portugal",
+    "Ronaldo close up face",
+    "Ronaldo celebration"
+][0m
+[32m2026-08-13 15:31:45[0m | [1mINFO[0m | "./app/services/task.py:101":[34m generate_audio[0m - [1m
+
+## generating audio[0m
+[32m2026-08-13 15:31:45[0m | [1mINFO[0m | "./app/services/voice.py:1253":[34m azure_tts_v1[0m - [1mstart, voice name: en-US-EricNeural, try: 1[0m
+[32m2026-08-13 15:32:06[0m | [31m[1mERROR[0m | "./app/services/voice.py:1278":[34m azure_tts_v1[0m - [31m[1mfailed, error: Connection timeout to host wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=2e7de04b05804390861fa576123ed76e&Sec-MS-GEC=B6E16CAD7BB26EEF606F47F166DED7BF647F6A2ED25A23543F04AA7ACDCD01A0&Sec-MS-GEC-Version=1-143.0.3650.75[0m
+[32m2026-08-13 15:32:06[0m | [31m[1mERROR[0m | "./app/services/task.py:115":[34m generate_audio[0m - [31m[1mfailed to generate audio:
+1. check if the language of the voice matches the language of the video script.
+2. check if the network is available. If you are in China, it is recommended to use a VPN and enable the global traffic mode.[0m
+[32m2026-08-13 15:32:06[0m | [31m[1mERROR[0m | "./batch_generator.py:111":[34m run_batch[0m - [31m[1m[1/1] FAILED: Spain were favourites in the 2018 World Cup opener but Cristiano Ronaldo scored a penalty, a scruffy shot past De Gea and then a curling free kick to complete a hat-trick[0m
+
+============================================================
+BATCH COMPLETE — 1 videos processed
+============================================================
+  ❌  Spain were favourites in the 2018 World Cup opener but Cristiano Ronaldo scored a penalty, a scruffy shot past De Gea and then a curling free kick to complete a hat-trick (failed)
+============================================================
+### BUILDING batch_ramos_reds  ->  ~/Desktop/26AUG_slot2_1700_ramos_reds.mp4
+>>> !!! BUILD FAILED for batch_ramos_reds (no retry)
+[32m2026-08-13 15:32:15[0m | [1mINFO[0m | "./app/services/task.py:44":[34m generate_terms[0m - [1m
+
+## generating video terms[0m
+[32m2026-08-13 15:32:15[0m | [34m[1mDEBUG[0m | "./app/services/task.py:65":[34m generate_terms[0m - [34m[1mvideo terms: [
+    "Sergio Ramos",
+    "Ramos Real Madrid",
+    "Ramos Spain",
+    "Ramos red card",
+    "Ramos close up face"
+][0m
+[32m2026-08-13 15:32:15[0m | [1mINFO[0m | "./app/services/task.py:101":[34m generate_audio[0m - [1m
+
+## generating audio[0m
+[32m2026-08-13 15:32:15[0m | [1mINFO[0m | "./app/services/voice.py:1253":[34m azure_tts_v1[0m - [1mstart, voice name: en-US-EricNeural, try: 1[0m
+[32m2026-08-13 15:32:36[0m | [31m[1mERROR[0m | "./app/services/voice.py:1278":[34m azure_tts_v1[0m - [31m[1mfailed, error: Connection timeout to host wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=becdfa2253684147a279ba4fd6fcf420&Sec-MS-GEC=B6E16CAD7BB26EEF606F47F166DED7BF647F6A2ED25A23543F04AA7ACDCD01A0&Sec-MS-GEC-Version=1-143.0.3650.75[0m
+[32m2026-08-13 15:32:36[0m | [31m[1mERROR[0m | "./app/services/task.py:115":[34m generate_audio[0m - [31m[1mfailed to generate audio:
+1. check if the language of the voice matches the language of the video script.
+2. check if the network is available. If you are in China, it is recommended to use a VPN and enable the global traffic mode.[0m
+[32m2026-08-13 15:32:36[0m | [31m[1mERROR[0m | "./batch_generator.py:111":[34m run_batch[0m - [31m[1m[1/1] FAILED: Sergio Ramos has been sent off more times than any player in the history of Spanish league football, and in the same career he won four Champions Leagues and a World Cup[0m
+
+============================================================
+BATCH COMPLETE — 1 videos processed
+============================================================
+  ❌  Sergio Ramos has been sent off more times than any player in the history of Spanish league football, and in the same career he won four Champions Leagues and a World Cup (failed)
+============================================================
+### BUILDING batch_messi_tax  ->  ~/Desktop/26AUG_slot3_2100_messi_tax.mp4
+>>> !!! BUILD FAILED for batch_messi_tax (no retry)
+[32m2026-08-13 15:32:45[0m | [1mINFO[0m | "./app/services/task.py:44":[34m generate_terms[0m - [1m
+
+## generating video terms[0m
+[32m2026-08-13 15:32:45[0m | [34m[1mDEBUG[0m | "./app/services/task.py:65":[34m generate_terms[0m - [34m[1mvideo terms: [
+    "Lionel Messi",
+    "Messi Argentina",
+    "Messi Barcelona",
+    "Messi close up face",
+    "Messi dribbling"
+][0m
+[32m2026-08-13 15:32:45[0m | [1mINFO[0m | "./app/services/task.py:101":[34m generate_audio[0m - [1m
+
+## generating audio[0m
+[32m2026-08-13 15:32:45[0m | [1mINFO[0m | "./app/services/voice.py:1253":[34m azure_tts_v1[0m - [1mstart, voice name: en-US-EricNeural, try: 1[0m
+[32m2026-08-13 15:33:06[0m | [31m[1mERROR[0m | "./app/services/voice.py:1278":[34m azure_tts_v1[0m - [31m[1mfailed, error: Connection timeout to host wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=a47533d7e51e43d08cea219ede7e3594&Sec-MS-GEC=B6E16CAD7BB26EEF606F47F166DED7BF647F6A2ED25A23543F04AA7ACDCD01A0&Sec-MS-GEC-Version=1-143.0.3650.75[0m
+[32m2026-08-13 15:33:06[0m | [31m[1mERROR[0m | "./app/services/task.py:115":[34m generate_audio[0m - [31m[1mfailed to generate audio:
+1. check if the language of the voice matches the language of the video script.
+2. check if the network is available. If you are in China, it is recommended to use a VPN and enable the global traffic mode.[0m
+[32m2026-08-13 15:33:06[0m | [31m[1mERROR[0m | "./batch_generator.py:111":[34m run_batch[0m - [31m[1m[1/1] FAILED: Lionel Messi and his father were convicted of tax fraud in Spain in 2016 and handed suspended prison sentences of twenty one months, paying millions in fines without serving jail time[0m
+
+============================================================
+BATCH COMPLETE — 1 videos processed
+============================================================
+  ❌  Lionel Messi and his father were convicted of tax fraud in Spain in 2016 and handed suspended prison sentences of twenty one months, paying millions in fines without serving jail time (failed)
+============================================================
+### BUILDING batch_messi_sleeping  ->  ~/Desktop/27AUG_slot1_1300_messi_sleeping.mp4
+>>> !!! BUILD FAILED for batch_messi_sleeping (no retry)
+[32m2026-08-13 15:33:15[0m | [1mINFO[0m | "./app/services/task.py:44":[34m generate_terms[0m - [1m
+
+## generating video terms[0m
+[32m2026-08-13 15:33:15[0m | [34m[1mDEBUG[0m | "./app/services/task.py:65":[34m generate_terms[0m - [34m[1mvideo terms: [
+    "Lionel Messi",
+    "Messi Argentina",
+    "Messi Barcelona",
+    "Messi close up face",
+    "Messi dribbling"
+][0m
+[32m2026-08-13 15:33:15[0m | [1mINFO[0m | "./app/services/task.py:101":[34m generate_audio[0m - [1m
+
+## generating audio[0m
+[32m2026-08-13 15:33:15[0m | [1mINFO[0m | "./app/services/voice.py:1253":[34m azure_tts_v1[0m - [1mstart, voice name: en-US-EricNeural, try: 1[0m
+[32m2026-08-13 15:33:36[0m | [31m[1mERROR[0m | "./app/services/voice.py:1278":[34m azure_tts_v1[0m - [31m[1mfailed, error: Connection timeout to host wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=807df7f947a44c9493cfe0742133bce8&Sec-MS-GEC=B6E16CAD7BB26EEF606F47F166DED7BF647F6A2ED25A23543F04AA7ACDCD01A0&Sec-MS-GEC-Version=1-143.0.3650.75[0m
+[32m2026-08-13 15:33:36[0m | [31m[1mERROR[0m | "./app/services/task.py:115":[34m generate_audio[0m - [31m[1mfailed to generate audio:
+1. check if the language of the voice matches the language of the video script.
+2. check if the network is available. If you are in China, it is recommended to use a VPN and enable the global traffic mode.[0m
+[32m2026-08-13 15:33:36[0m | [31m[1mERROR[0m | "./batch_generator.py:111":[34m run_batch[0m - [31m[1m[1/1] FAILED: After winning the 2022 World Cup Lionel Messi fell asleep in bed holding the trophy, and the photo his wife posted became one of the most liked pictures ever shared[0m
+
+============================================================
+BATCH COMPLETE — 1 videos processed
+============================================================
+  ❌  After winning the 2022 World Cup Lionel Messi fell asleep in bed holding the trophy, and the photo his wife posted became one of the most liked pictures ever shared (failed)
+============================================================
+### BUILDING batch_trent_corner  ->  ~/Desktop/27AUG_slot2_1700_trent_corner.mp4
+>>> !!! BUILD FAILED for batch_trent_corner (no retry)
+[32m2026-08-13 15:33:45[0m | [1mINFO[0m | "./app/services/task.py:44":[34m generate_terms[0m - [1m
+
+## generating video terms[0m
+[32m2026-08-13 15:33:45[0m | [34m[1mDEBUG[0m | "./app/services/task.py:65":[34m generate_terms[0m - [34m[1mvideo terms: [
+    "Trent Alexander-Arnold",
+    "Trent Liverpool",
+    "corner taken quickly",
+    "Trent close up face",
+    "Trent assists"
+][0m
+[32m2026-08-13 15:33:45[0m | [1mINFO[0m | "./app/services/task.py:101":[34m generate_audio[0m - [1m
+
+## generating audio[0m
+[32m2026-08-13 15:33:45[0m | [1mINFO[0m | "./app/services/voice.py:1253":[34m azure_tts_v1[0m - [1mstart, voice name: en-US-EricNeural, try: 1[0m
+[32m2026-08-13 15:34:06[0m | [31m[1mERROR[0m | "./app/services/voice.py:1278":[34m azure_tts_v1[0m - [31m[1mfailed, error: Connection timeout to host wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&ConnectionId=bd30a14fe47a4051991e97ae9c419352&Sec-MS-GEC=B6E16CAD7BB26EEF606F47F166DED7BF647F6A2ED25A23543F04AA7ACDCD01A0&Sec-MS-GEC-Version=1-143.0.3650.75[0m
+[32m2026-08-13 15:34:06[0m | [31m[1mERROR[0m | "./app/services/task.py:115":[34m generate_audio[0m - [31m[1mfailed to generate audio:
+1. check if the language of the voice matches the language of the video script.
+2. check if the network is available. If you are in China, it is recommended to use a VPN and enable the global traffic mode.[0m
+[32m2026-08-13 15:34:06[0m | [31m[1mERROR[0m | "./batch_generator.py:111":[34m run_batch[0m - [31m[1m[1/1] FAILED: Liverpool trailed Barcelona three nil from the first leg, and Trent Alexander-Arnold spotted the defence switching off, took a corner quickly for Divock Origi to score and complete a four nil win[0m
+
+============================================================
+BATCH COMPLETE — 1 videos processed
+============================================================
+  ❌  Liverpool trailed Barcelona three nil from the first leg, and Trent Alexander-Arnold spotted the defence switching off, took a corner quickly for Divock Origi to score and complete a four nil win (failed)
+============================================================
+### BUILDING batch_ronaldo_donations  ->  ~/Desktop/27AUG_slot3_2100_ronaldo_donations.mp4
+>>> COPIED -> ~/Desktop/27AUG_slot3_2100_ronaldo_donations.mp4  (duration=9.220000s)
+9 SHORTS ATTEMPTED — ok=2 failed=7

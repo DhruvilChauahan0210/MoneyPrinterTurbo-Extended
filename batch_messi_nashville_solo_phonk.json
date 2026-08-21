@@ -1,0 +1,76 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_count": 1,
+    "comparison_mode": true,
+    "beat_sync": true,
+    "transition_style": "zoom_punch",
+    "transition_at": 4.0,
+    "crossfade_dur": 0.18,
+    "comparison_sfx_on_drop": true,
+    "bgm_type": "custom",
+    "bgm_file": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/resource/phonk/pull_up.mp3",
+    "bgm_volume": 0.95,
+    "voice_volume": 0.0,
+    "subtitle_enabled": false,
+    "enable_word_highlighting": false,
+    "enable_timed_sync": false,
+    "enable_color_grade": true,
+    "youtube_max_height": 1080,
+    "comparison_clips": [
+      {
+        "url": "https://www.youtube.com/watch?v=mAHp1xY5hzQ",
+        "start": 13.0,
+        "end": 17.0,
+        "label": "football",
+        "fill": "cover"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=mAHp1xY5hzQ",
+        "start": 8.5,
+        "end": 12.5,
+        "label": "football",
+        "fill": "contain"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=mAHp1xY5hzQ",
+        "start": 17.5,
+        "end": 21.5,
+        "label": "football",
+        "fill": "cover"
+      }
+    ],
+    "comparison_captions": [
+      {
+        "text": "MESSI 🐐",
+        "start": 0.2,
+        "end": 3.8,
+        "color": "#FFFFFF",
+        "y": 0.22
+      },
+      {
+        "text": "HE SOLOED THEM ALL",
+        "start": 4.1,
+        "end": 7.8,
+        "color": "#FFD700",
+        "y": 0.22
+      },
+      {
+        "text": "AT 39 🔥",
+        "start": 8.2,
+        "end": 11.8,
+        "color": "#FF3B3B",
+        "y": 0.22
+      }
+    ],
+    "n_threads": 2,
+    "paragraph_number": 1
+  },
+  "videos": [
+    {
+      "video_subject": "Lionel Messi solo goal for Inter Miami against Nashville - phonk beat synced montage",
+      "video_script": "",
+      "video_terms": "Lionel Messi Inter Miami solo goal"
+    }
+  ]
+}

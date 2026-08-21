@@ -1,0 +1,17 @@
+>>> SKIP 25AUG_slot1_1300_messi_helicopter (already on Desktop)
+### BUILDING batch_pogba_ban  ->  ~/Desktop/25AUG_slot2_1700_pogba_ban.mp4
+>>> COPIED -> ~/Desktop/25AUG_slot2_1700_pogba_ban.mp4  (duration=8.570000s)
+### BUILDING batch_ronaldo_euro2004  ->  ~/Desktop/25AUG_slot3_2100_ronaldo_euro2004.mp4
+>>> COPIED -> ~/Desktop/25AUG_slot3_2100_ronaldo_euro2004.mp4  (duration=9.366667s)
+### BUILDING batch_ronaldo_spain_hattrick  ->  ~/Desktop/26AUG_slot1_1300_ronaldo_spain_hattrick.mp4
+>>> COPIED -> ~/Desktop/26AUG_slot1_1300_ronaldo_spain_hattrick.mp4  (duration=9.740000s)
+### BUILDING batch_ramos_reds  ->  ~/Desktop/26AUG_slot2_1700_ramos_reds.mp4
+>>> COPIED -> ~/Desktop/26AUG_slot2_1700_ramos_reds.mp4  (duration=9.820000s)
+### BUILDING batch_messi_tax  ->  ~/Desktop/26AUG_slot3_2100_messi_tax.mp4
+>>> COPIED -> ~/Desktop/26AUG_slot3_2100_messi_tax.mp4  (duration=9.980000s)
+### BUILDING batch_messi_sleeping  ->  ~/Desktop/27AUG_slot1_1300_messi_sleeping.mp4
+>>> COPIED -> ~/Desktop/27AUG_slot1_1300_messi_sleeping.mp4  (duration=9.170000s)
+### BUILDING batch_trent_corner  ->  ~/Desktop/27AUG_slot2_1700_trent_corner.mp4
+>>> COPIED -> ~/Desktop/27AUG_slot2_1700_trent_corner.mp4  (duration=9.820000s)
+>>> SKIP 27AUG_slot3_2100_ronaldo_donations (already on Desktop)
+9 SHORTS ATTEMPTED — ok=7 failed=0
