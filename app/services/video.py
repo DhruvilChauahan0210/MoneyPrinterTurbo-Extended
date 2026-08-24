@@ -1223,6 +1223,34 @@ def create_follow_tag(params, video_width: int, video_height: int, video_duratio
         return None
 
 
+def create_series_badge(params, video_width: int, video_height: int, video_duration: float):
+    """Small persistent episode badge (e.g. "PART 3") for series shorts.
+
+    Sits high in the frame for the whole duration so it is identical at the loop
+    seam and never reads as "the end". Deliberately NOT part of hook_text, which
+    one_shot caps at nine words and which must stay pure drama."""
+    text = (getattr(params, 'series_badge_text', '') or '').strip()
+    if not text:
+        return None
+    try:
+        font_path = os.path.join(utils.font_dir(), getattr(params, 'font_name', 'STHeitiMedium.ttc'))
+        fsize = int(video_width * 0.038)
+        fsize = fsize if fsize % 2 == 0 else fsize + 1
+        layer = _render_text_card(
+            text, font_path, fsize, video_width, video_height,
+            stroke_width=5, y_center_ratio=0.065, bg_alpha=0,
+        )
+        return (
+            ImageClip(np.array(layer))
+            .with_duration(video_duration)
+            .with_start(0)
+            .with_opacity(0.85)
+        )
+    except Exception as e:
+        logger.warning(f"series badge failed: {e}")
+        return None
+
+
 def create_midroll_cta(params, video_width: int, video_height: int, video_duration: float):
     """A brief CTA after the payoff, not at frame zero and not at the loop seam.
 
@@ -1620,6 +1648,11 @@ def generate_video(
             if one_shot.is_enabled(params):
                 raise one_shot.OneShotError(f"CTA overlay failed: {e}") from e
             logger.error(f"failed to create CTA card: {e}")
+
+    badge = create_series_badge(params, video_width, video_height, video_clip.duration)
+    if badge is not None:
+        overlay_clips.append(badge)
+        logger.info(f"series badge added: '{getattr(params, 'series_badge_text', '')}'")
 
     if overlay_clips:
         video_clip = CompositeVideoClip([video_clip, *overlay_clips])

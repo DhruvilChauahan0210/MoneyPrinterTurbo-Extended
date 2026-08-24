@@ -256,6 +256,15 @@ class VideoParams(BaseModel):
     hook_image_path: Optional[str] = ""
     intro_image_paths: Optional[List[str]] = []
 
+    # Series support (Ronaldo "The Story"). `series_badge_text` renders a small
+    # persistent corner tag (e.g. "PART 3") for the whole video — episode identity
+    # without spending any of hook_text's 9-word budget. `series_ledger_path` points
+    # at a JSON file of clip basenames already used by EARLIER episodes; those clips
+    # are dropped from this episode's pool and the ones used here are appended, so
+    # a viewer bingeing the series never sees the same footage twice.
+    series_badge_text: Optional[str] = ""
+    series_ledger_path: Optional[str] = ""
+
     # Task 5 — Audio polish (lower BGM, SFX)
     bgm_volume: Optional[float] = 0.12
     enable_sfx: Optional[bool] = True

@@ -283,6 +283,30 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     retries=0 if one_shot.is_enabled(params) else 3,
                 )
                 if clip_paths:
+                    # Series de-dup: drop any clip an EARLIER episode already used,
+                    # so a viewer bingeing the series never sees repeated footage.
+                    # Never starve the pool — if exclusion leaves too few clips the
+                    # filter backs off and logs it rather than degrading the build.
+                    _ledger = getattr(params, 'series_ledger_path', '') or ''
+                    if _ledger and os.path.exists(_ledger):
+                        try:
+                            with open(_ledger) as _lf:
+                                _used = set(json.load(_lf))
+                            _fresh = [c for c in clip_paths if os.path.basename(c) not in _used]
+                            _floor = max(10, len(clip_paths) // 3)
+                            if len(_fresh) >= _floor:
+                                logger.success(
+                                    f"series ledger: excluded {len(clip_paths) - len(_fresh)} "
+                                    f"already-used clips, {len(_fresh)} fresh remain"
+                                )
+                                clip_paths = _fresh
+                            else:
+                                logger.warning(
+                                    f"series ledger: only {len(_fresh)} fresh clips (floor {_floor}) "
+                                    f"— keeping the full pool to avoid a starved build"
+                                )
+                        except Exception as _e:
+                            logger.warning(f"series ledger read failed, ignoring: {_e}")
                     # Front-load real footage so it's preferred by the assigner.
                     image_paths = clip_paths + image_paths
                     logger.success(f"auto_footage: added {len(clip_paths)} real highlight clips to the pool")
@@ -534,6 +558,27 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     synced_paths[-1] = cover
                     logger.info("loop design: final frame set to opening hook image")
                 image_paths = synced_paths
+                # Series de-dup write-back: record the footage this episode used.
+                _ledger = getattr(params, 'series_ledger_path', '') or ''
+                if _ledger:
+                    try:
+                        _prev = []
+                        if os.path.exists(_ledger):
+                            with open(_ledger) as _lf:
+                                _prev = json.load(_lf)
+                        _vid_ext = (".mp4", ".mov", ".webm", ".mkv", ".avi")
+                        _now = [os.path.basename(p) for p in synced_paths
+                                if str(p).lower().endswith(_vid_ext)]
+                        _merged = sorted(set(_prev) | set(_now))
+                        os.makedirs(os.path.dirname(_ledger) or ".", exist_ok=True)
+                        with open(_ledger, "w") as _lf:
+                            json.dump(_merged, _lf, indent=1)
+                        logger.info(
+                            f"series ledger: +{len(set(_now) - set(_prev))} clips "
+                            f"({len(_merged)} total burned)"
+                        )
+                    except Exception as _e:
+                        logger.warning(f"series ledger write failed, ignoring: {_e}")
                 # Pin story photos to the FIRST segments in order (synced to the
                 # opening lines), so the reveal opens on them regardless of CLIP.
                 if getattr(params, '_pinned_imgs', None):
