@@ -1,0 +1,97 @@
+### BUILDING batch_ronaldo_ep01_oneroom  ->  ~/Desktop/25AUG_slot1_1300_RONALDO_EP01_oneroom.mp4
+>>> !!! BUILD FAILED for batch_ronaldo_ep01_oneroom (no retry)
+
+## subject-presence gate (verifying target characters are in frame)[0m
+[32m2026-08-24 13:47:47[0m | [1mINFO[0m | "./app/services/image_ranker.py:770":[34m filter_by_subject_presence[0m - [1mimage_ranker: subject gate kept 9/15 (dropped 6 without ['a real photograph of Cristiano Ronaldo the footballer', "a tight close up of Cristiano Ronaldo's face", 'Cristiano Ronaldo speaking in an interview', 'a small poor house with a tin roof on a hillside', 'a narrow poor street in Funchal Madeira Portugal', 'an aerial view of the island of Madeira Portugal', 'an old family photograph of a Portuguese boy', 'a modern hotel building on a Portuguese island'], margin>=0.06, floor>=0.28)[0m
+[32m2026-08-24 13:47:47[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.652 pos=0.018) CcGwlvqXaIg_c2.mp4[0m
+[32m2026-08-24 13:47:47[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.060 pos=0.379) Ds-QS80GMxE_c0.mp4[0m
+[32m2026-08-24 13:47:47[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.884 pos=0.005) Ds-QS80GMxE_c2.mp4[0m
+[32m2026-08-24 13:47:47[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.739 pos=0.001) Ds-QS80GMxE_c3.mp4[0m
+[32m2026-08-24 13:47:47[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.183 pos=0.324) Gz_-cAvfVnk_c4.mp4[0m
+[32m2026-08-24 13:47:47[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=0.154 pos=0.274) img-61cb0d8a46b95bbf38e588b584878024.jpg[0m
+[32m2026-08-24 13:47:51[0m | [33m[1mWARNING[0m | "./app/services/image_ranker.py:302":[34m pick_sharp_subject_frame[0m - [33m[1mimage_ranker: no hook frame cleared the contrastive gate (best positive=0.102, min=0.200, negative_margin=0.080)[0m
+[32m2026-08-24 13:47:51[0m | [1mINFO[0m | "./app/services/image_ranker.py:387":[34m pick_best_media[0m - [1mimage_ranker: best match for 'a tight close up of Cristiano Ronaldo looking intense and em' → /Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/cache_images/img-f2c058dda910e15a63e4317a1d647016.jpg (score=0.275)[0m
+[32m2026-08-24 13:47:51[0m | [1mINFO[0m | "./app/services/task.py:457":[34m get_video_materials[0m - [1mcover/hook frame selected via term: 'a tight close up of Cristiano Ronaldo looking intense and em'[0m
+[32m2026-08-24 13:47:51[0m | [1mINFO[0m | "./app/services/task.py:465":[34m get_video_materials[0m - [1m
+
+## ranking images against script (CLIP)[0m
+[32m2026-08-24 13:47:51[0m | [1mINFO[0m | "./app/services/image_ranker.py:811":[34m rank_images_for_script[0m - [1mimage_ranker: ranking 9 images against 4 sentences[0m
+[32m2026-08-24 13:47:51[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:848":[34m rank_images_for_script[0m - [34m[1mimage_ranker: sentence[0] → img[1] score=0.244 'Six of them shared one room in Madeira'[0m
+[32m2026-08-24 13:47:51[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:848":[34m rank_images_for_script[0m - [34m[1mimage_ranker: sentence[1] → img[8] score=0.194 'Rain came through the tin roof onto his bed'[0m
+[32m2026-08-24 13:47:51[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:848":[34m rank_images_for_script[0m - [34m[1mimage_ranker: sentence[2] → img[3] score=0.228 'He had nothing on that island'[0m
+[32m2026-08-24 13:47:51[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:848":[34m rank_images_for_script[0m - [34m[1mimage_ranker: sentence[3] → img[0] score=0.236 'Today, he owns a hotel on it'[0m
+[32m2026-08-24 13:47:51[0m | [1mINFO[0m | "./app/services/image_ranker.py:858":[34m rank_images_for_script[0m - [1mimage_ranker: ordered 9 images for 4 sentences[0m
+[32m2026-08-24 13:47:51[0m | [1mINFO[0m | "./app/services/task.py:520":[34m get_video_materials[0m - [1mtimed sync: caption fragments mapped to sentence-level visual evidence[0m
+[32m2026-08-24 13:47:51[0m | [31m[1mERROR[0m | "./app/services/task.py:929":[34m start[0m - [31m[1mone-shot task e955baa3-2225-4bff-bf0c-7449486d6933 failed; no retry will be attempted: all evidence clips reached the per-clip reuse cap before segment 13[0m
+[32m2026-08-24 13:47:51[0m | [31m[1mERROR[0m | "./batch_generator.py:111":[34m run_batch[0m - [31m[1m[1/1] FAILED: Cristiano Ronaldo's childhood in Madeira, where six family members shared one room in a small house with a leaking tin roof, and the island he now owns a hotel on[0m
+
+============================================================
+BATCH COMPLETE — 1 videos processed
+============================================================
+  ❌  Cristiano Ronaldo's childhood in Madeira, where six family members shared one room in a small house with a leaking tin roof, and the island he now owns a hotel on (failed)
+============================================================
+### BUILDING batch_mbappe_bondy  ->  ~/Desktop/25AUG_slot2_1700_mbappe_bondy.mp4
+>>> !!! BUILD FAILED for batch_mbappe_bondy (no retry)
+[32m2026-08-24 13:56:45[0m | [1mINFO[0m | "./app/services/video.py:159":[34m combine_videos[0m - [1mspeech-aware visual target: 10.77s (0.75s trailing audio silence excluded)[0m
+[32m2026-08-24 13:56:45[0m | [1mINFO[0m | "./app/services/video.py:166":[34m combine_videos[0m - [1mmaximum clip duration: 2 seconds[0m
+[32m2026-08-24 13:56:48[0m | [34m[1mDEBUG[0m | "./app/services/video.py:335":[34m combine_videos[0m - [34m[1mtotal subclipped items: 17[0m
+[32m2026-08-24 13:56:48[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 1: 1080x1920, current duration: 0.00s, remaining: 11.52s[0m
+[32m2026-08-24 13:56:49[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 2: 1080x1920, current duration: 0.57s, remaining: 10.95s[0m
+[32m2026-08-24 13:56:49[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 3: 1080x1920, current duration: 1.07s, remaining: 10.45s[0m
+[32m2026-08-24 13:56:49[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 4: 1080x1920, current duration: 1.60s, remaining: 9.92s[0m
+[32m2026-08-24 13:56:50[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 5: 1080x1920, current duration: 2.00s, remaining: 9.52s[0m
+[32m2026-08-24 13:56:50[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 6: 1080x1920, current duration: 2.43s, remaining: 9.09s[0m
+[32m2026-08-24 13:56:51[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 7: 1080x1920, current duration: 2.96s, remaining: 8.56s[0m
+[32m2026-08-24 13:56:52[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 8: 1080x1920, current duration: 3.93s, remaining: 7.59s[0m
+[32m2026-08-24 13:56:52[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 9: 1080x1920, current duration: 4.46s, remaining: 7.06s[0m
+[32m2026-08-24 13:56:53[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 10: 1080x1920, current duration: 5.06s, remaining: 6.46s[0m
+[32m2026-08-24 13:56:54[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 11: 1080x1920, current duration: 6.39s, remaining: 5.13s[0m
+[32m2026-08-24 13:56:54[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 12: 1080x1920, current duration: 7.09s, remaining: 4.43s[0m
+[32m2026-08-24 13:56:54[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 13: 452x834, current duration: 7.49s, remaining: 4.03s[0m
+[32m2026-08-24 13:56:55[0m | [34m[1mDEBUG[0m | "./app/services/video.py:352":[34m combine_videos[0m - [34m[1mresizing clip, source: 452x834, ratio: 0.54, target: 1080x1920, ratio: 0.56[0m
+[32m2026-08-24 13:56:55[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 14: 1080x1920, current duration: 7.53s, remaining: 3.99s[0m
+[32m2026-08-24 13:56:55[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 15: 452x834, current duration: 7.93s, remaining: 3.59s[0m
+[32m2026-08-24 13:56:55[0m | [34m[1mDEBUG[0m | "./app/services/video.py:352":[34m combine_videos[0m - [34m[1mresizing clip, source: 452x834, ratio: 0.54, target: 1080x1920, ratio: 0.56[0m
+[32m2026-08-24 13:56:56[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 16: 1080x1920, current duration: 7.97s, remaining: 3.55s[0m
+[32m2026-08-24 13:56:56[0m | [34m[1mDEBUG[0m | "./app/services/video.py:342":[34m combine_videos[0m - [34m[1mprocessing clip 17: 1080x1920, current duration: 8.40s, remaining: 3.12s[0m
+[32m2026-08-24 13:56:57[0m | [31m[1mERROR[0m | "./app/services/task.py:929":[34m start[0m - [31m[1mone-shot task f29647bf-ebb7-4cf0-bfc9-ebce0322dc48 failed; no retry will be attempted: render plan is short (9.77s visual vs 10.77s required speech coverage); automatic clip looping blocked[0m
+[32m2026-08-24 13:56:57[0m | [31m[1mERROR[0m | "./batch_generator.py:111":[34m run_batch[0m - [31m[1m[1/1] FAILED: Kylian Mbappe grew up in the Paris suburb of Bondy, which painted a huge mural of him on the side of a tower block beside the slogan Bondy, city of possibilities[0m
+
+============================================================
+BATCH COMPLETE — 1 videos processed
+============================================================
+  ❌  Kylian Mbappe grew up in the Paris suburb of Bondy, which painted a huge mural of him on the side of a tower block beside the slogan Bondy, city of possibilities (failed)
+============================================================
+### BUILDING batch_ronaldo_ep02_father  ->  ~/Desktop/25AUG_slot3_2100_RONALDO_EP02_father.mp4
+>>> !!! BUILD FAILED for batch_ronaldo_ep02_father (no retry)
+[32m2026-08-24 14:06:11[0m | [1mINFO[0m | "./app/services/image_ranker.py:436":[34m filter_by_relevance[0m - [1mimage_ranker: dropped 20/36 off-topic media (score < 0.22 vs subject 'Cristiano Ronaldo's father Jose Dinis Aveiro was t')[0m
+[32m2026-08-24 14:06:11[0m | [1mINFO[0m | "./app/services/task.py:381":[34m get_video_materials[0m - [1m
+
+## subject-presence gate (verifying target characters are in frame)[0m
+[32m2026-08-24 14:06:11[0m | [1mINFO[0m | "./app/services/image_ranker.py:770":[34m filter_by_subject_presence[0m - [1mimage_ranker: subject gate kept 11/16 (dropped 5 without ['a real photograph of Cristiano Ronaldo the footballer', "a tight close up of Cristiano Ronaldo's face", 'Cristiano Ronaldo speaking in an interview', 'Cristiano Ronaldo looking emotional or crying', 'a skinny teenage Cristiano Ronaldo in a green and white Sporting Lisbon jersey', 'an old family photograph of a Portuguese man'], margin>=0.06, floor>=0.28)[0m
+[32m2026-08-24 14:06:11[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.447 pos=0.190) 2lux_E5bt5Q_c3.mp4[0m
+[32m2026-08-24 14:06:11[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.400 pos=0.194) 2lux_E5bt5Q_c4.mp4[0m
+[32m2026-08-24 14:06:11[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.647 pos=0.017) CcGwlvqXaIg_c2.mp4[0m
+[32m2026-08-24 14:06:11[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.921 pos=0.006) b1nIgKTPgVM_c1.mp4[0m
+[32m2026-08-24 14:06:11[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.921 pos=0.001) b1nIgKTPgVM_c5.mp4[0m
+[32m2026-08-24 14:06:23[0m | [33m[1mWARNING[0m | "./app/services/image_ranker.py:302":[34m pick_sharp_subject_frame[0m - [33m[1mimage_ranker: no hook frame cleared the contrastive gate (best positive=0.333, min=0.200, negative_margin=0.080)[0m
+[32m2026-08-24 14:06:23[0m | [1mINFO[0m | "./app/services/image_ranker.py:387":[34m pick_best_media[0m - [1mimage_ranker: best match for 'a tight close up of Cristiano Ronaldo's face looking straigh' → /Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/cache_videos/auto/ce8657af9b/clips/NXQ_xh9FYvg_c0.mp4 (score=0.324)[0m
+[32m2026-08-24 14:06:23[0m | [1mINFO[0m | "./app/services/task.py:457":[34m get_video_materials[0m - [1mcover/hook frame selected via term: 'a tight close up of Cristiano Ronaldo's face looking straigh'[0m
+[32m2026-08-24 14:06:23[0m | [1mINFO[0m | "./app/services/task.py:465":[34m get_video_materials[0m - [1m
+
+## ranking images against script (CLIP)[0m
+[32m2026-08-24 14:06:23[0m | [1mINFO[0m | "./app/services/image_ranker.py:811":[34m rank_images_for_script[0m - [1mimage_ranker: ranking 11 images against 3 sentences[0m
+[32m2026-08-24 14:06:23[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:848":[34m rank_images_for_script[0m - [34m[1mimage_ranker: sentence[0] → img[2] score=0.305 'His father carried the kit bags at his very first club'[0m
+[32m2026-08-24 14:06:23[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:848":[34m rank_images_for_script[0m - [34m[1mimage_ranker: sentence[1] → img[1] score=0.286 'He was also an alcoholic, and he died when Cristiano was twe'[0m
+[32m2026-08-24 14:06:23[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:848":[34m rank_images_for_script[0m - [34m[1mimage_ranker: sentence[2] → img[8] score=0.292 'Cristiano has not touched a drink since'[0m
+[32m2026-08-24 14:06:23[0m | [1mINFO[0m | "./app/services/image_ranker.py:858":[34m rank_images_for_script[0m - [1mimage_ranker: ordered 11 images for 3 sentences[0m
+[32m2026-08-24 14:06:23[0m | [1mINFO[0m | "./app/services/task.py:520":[34m get_video_materials[0m - [1mtimed sync: caption fragments mapped to sentence-level visual evidence[0m
+[32m2026-08-24 14:06:23[0m | [31m[1mERROR[0m | "./app/services/task.py:929":[34m start[0m - [31m[1mone-shot task 80ff38e5-0847-4752-b90a-c3b5d5b77519 failed; no retry will be attempted: all evidence clips reached the per-clip reuse cap before segment 11[0m
+[32m2026-08-24 14:06:23[0m | [31m[1mERROR[0m | "./batch_generator.py:111":[34m run_batch[0m - [31m[1m[1/1] FAILED: Cristiano Ronaldo's father Jose Dinis Aveiro was the kit man at his first club Andorinha and an alcoholic who died in 2005 when Ronaldo was twenty, which is why Ronaldo does not drink[0m
+
+============================================================
+BATCH COMPLETE — 1 videos processed
+============================================================
+  ❌  Cristiano Ronaldo's father Jose Dinis Aveiro was the kit man at his first club Andorinha and an alcoholic who died in 2005 when Ronaldo was twenty, which is why Ronaldo does not drink (failed)
+============================================================
+ATTEMPTED 3 — ok=0 failed=3

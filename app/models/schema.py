@@ -262,6 +262,12 @@ class VideoParams(BaseModel):
     # at a JSON file of clip basenames already used by EARLIER episodes; those clips
     # are dropped from this episode's pool and the ones used here are appended, so
     # a viewer bingeing the series never sees the same footage twice.
+    # Hand-curated, verified local images (e.g. the real Pestana CR7 hotel, the
+    # actual street he grew up on). Added to the pool and re-inserted AFTER the
+    # subject gate so a correct-but-unrecognisable photo (a building, a street)
+    # can never be filtered out. Unlike intro_image_paths these are NOT forced to
+    # the opening segments — the evidence prompts place them on the right line.
+    curated_image_paths: Optional[List[str]] = None
     series_badge_text: Optional[str] = ""
     series_ledger_path: Optional[str] = ""
 

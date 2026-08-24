@@ -1,0 +1,33 @@
+### BUILDING batch_ronaldo_ep01_oneroom  ->  ~/Desktop/25AUG_slot1_1300_RONALDO_EP01_oneroom.mp4
+>>> !!! BUILD FAILED for batch_ronaldo_ep01_oneroom (no retry)
+[32m2026-08-24 12:33:13[0m | [1mINFO[0m | "./app/services/task.py:381":[34m get_video_materials[0m - [1m
+
+## subject-presence gate (verifying target characters are in frame)[0m
+[32m2026-08-24 12:33:13[0m | [1mINFO[0m | "./app/services/image_ranker.py:770":[34m filter_by_subject_presence[0m - [1mimage_ranker: subject gate kept 15/20 (dropped 5 without ['a real photograph of Cristiano Ronaldo the footballer', "a tight close up of Cristiano Ronaldo's face", 'Cristiano Ronaldo speaking in an interview', 'a small poor house with a tin roof on a hillside', 'a narrow poor street in Funchal Madeira Portugal', 'an aerial view of the island of Madeira Portugal', 'an old family photograph of a Portuguese boy', 'a modern hotel building on a Portuguese island'], margin>=0.06, floor>=0.28)[0m
+[32m2026-08-24 12:33:13[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.060 pos=0.379) Ds-QS80GMxE_c0.mp4[0m
+[32m2026-08-24 12:33:13[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.884 pos=0.005) Ds-QS80GMxE_c2.mp4[0m
+[32m2026-08-24 12:33:13[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.739 pos=0.001) Ds-QS80GMxE_c3.mp4[0m
+[32m2026-08-24 12:33:13[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=-0.183 pos=0.324) Gz_-cAvfVnk_c4.mp4[0m
+[32m2026-08-24 12:33:13[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:776":[34m filter_by_subject_presence[0m - [34m[1mimage_ranker: subject gate DROP (margin=0.154 pos=0.274) img-61cb0d8a46b95bbf38e588b584878024.jpg[0m
+[32m2026-08-24 12:33:26[0m | [33m[1mWARNING[0m | "./app/services/image_ranker.py:302":[34m pick_sharp_subject_frame[0m - [33m[1mimage_ranker: no hook frame cleared the contrastive gate (best positive=0.233, min=0.200, negative_margin=0.080)[0m
+[32m2026-08-24 12:33:26[0m | [1mINFO[0m | "./app/services/image_ranker.py:387":[34m pick_best_media[0m - [1mimage_ranker: best match for 'a tight close up of Cristiano Ronaldo's face looking straigh' → /Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/cache_images/img-f2c058dda910e15a63e4317a1d647016.jpg (score=0.301)[0m
+[32m2026-08-24 12:33:26[0m | [1mINFO[0m | "./app/services/task.py:457":[34m get_video_materials[0m - [1mcover/hook frame selected via term: 'a tight close up of Cristiano Ronaldo's face looking straigh'[0m
+[32m2026-08-24 12:33:26[0m | [1mINFO[0m | "./app/services/task.py:465":[34m get_video_materials[0m - [1m
+
+## ranking images against script (CLIP)[0m
+[32m2026-08-24 12:33:26[0m | [1mINFO[0m | "./app/services/image_ranker.py:811":[34m rank_images_for_script[0m - [1mimage_ranker: ranking 15 images against 4 sentences[0m
+[32m2026-08-24 12:33:26[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:848":[34m rank_images_for_script[0m - [34m[1mimage_ranker: sentence[0] → img[7] score=0.266 'Six of them shared one room in Madeira'[0m
+[32m2026-08-24 12:33:26[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:848":[34m rank_images_for_script[0m - [34m[1mimage_ranker: sentence[1] → img[14] score=0.194 'Rain came through the tin roof onto his bed'[0m
+[32m2026-08-24 12:33:26[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:848":[34m rank_images_for_script[0m - [34m[1mimage_ranker: sentence[2] → img[8] score=0.228 'He had nothing on that island'[0m
+[32m2026-08-24 12:33:26[0m | [34m[1mDEBUG[0m | "./app/services/image_ranker.py:848":[34m rank_images_for_script[0m - [34m[1mimage_ranker: sentence[3] → img[4] score=0.245 'Today, he owns a hotel on it'[0m
+[32m2026-08-24 12:33:26[0m | [1mINFO[0m | "./app/services/image_ranker.py:858":[34m rank_images_for_script[0m - [1mimage_ranker: ordered 15 images for 4 sentences[0m
+[32m2026-08-24 12:33:26[0m | [1mINFO[0m | "./app/services/task.py:520":[34m get_video_materials[0m - [1mtimed sync: caption fragments mapped to sentence-level visual evidence[0m
+[32m2026-08-24 12:33:26[0m | [31m[1mERROR[0m | "./app/services/task.py:929":[34m start[0m - [31m[1mone-shot task e5517939-5f47-445a-9e7e-fe5ce612457a failed; no retry will be attempted: all source videos reached the reuse cap before segment 5[0m
+[32m2026-08-24 12:33:26[0m | [31m[1mERROR[0m | "./batch_generator.py:111":[34m run_batch[0m - [31m[1m[1/1] FAILED: Cristiano Ronaldo's childhood in Madeira, where six family members shared one room in a small house with a leaking tin roof, and the island he now owns a hotel on[0m
+
+============================================================
+BATCH COMPLETE — 1 videos processed
+============================================================
+  ❌  Cristiano Ronaldo's childhood in Madeira, where six family members shared one room in a small house with a leaking tin roof, and the island he now owns a hotel on (failed)
+============================================================
+ATTEMPTED 1 — ok=0 failed=1

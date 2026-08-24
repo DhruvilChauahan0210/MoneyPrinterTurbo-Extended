@@ -288,10 +288,21 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     # Never starve the pool — if exclusion leaves too few clips the
                     # filter backs off and logs it rather than degrading the build.
                     _ledger = getattr(params, 'series_ledger_path', '') or ''
+                    # Permanent banlist: media rejected on sight (a holiday-snap
+                    # portrait, a painted door). Survives ledger resets.
+                    _banlist = os.path.join(os.path.dirname(_ledger) or ".",
+                                            "series_media_banlist.json") if _ledger else ""
+                    _banned = set()
+                    if _banlist and os.path.exists(_banlist):
+                        try:
+                            with open(_banlist) as _bf:
+                                _banned = set(json.load(_bf))
+                        except Exception as _e:
+                            logger.warning(f"banlist read failed: {_e}")
                     if _ledger and os.path.exists(_ledger):
                         try:
                             with open(_ledger) as _lf:
-                                _used = set(json.load(_lf))
+                                _used = set(json.load(_lf)) | _banned
                             _fresh = [c for c in clip_paths if os.path.basename(c) not in _used]
                             _floor = max(10, len(clip_paths) // 3)
                             if len(_fresh) >= _floor:
@@ -309,6 +320,22 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                             logger.warning(f"series ledger read failed, ignoring: {_e}")
                     # Front-load real footage so it's preferred by the assigner.
                     image_paths = clip_paths + image_paths
+                    # Same exclusion over the photo half of the pool.
+                    if _ledger and os.path.exists(_ledger):
+                        try:
+                            with open(_ledger) as _lf:
+                                _used = set(json.load(_lf)) | _banned
+                            _fresh_i = [p for p in image_paths if os.path.basename(p) not in _used]
+                            if len(_fresh_i) >= max(12, len(image_paths) // 3):
+                                logger.success(
+                                    f"series ledger: pool {len(image_paths)} -> {len(_fresh_i)} after "
+                                    f"excluding stills used by earlier episodes"
+                                )
+                                image_paths = _fresh_i
+                            else:
+                                logger.warning("series ledger: too few fresh media, keeping full pool")
+                        except Exception as _e:
+                            logger.warning(f"series ledger photo filter failed: {_e}")
                     logger.success(f"auto_footage: added {len(clip_paths)} real highlight clips to the pool")
             except Exception as e:
                 if one_shot.is_enabled(params):
@@ -335,6 +362,24 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                         raise one_shot.OneShotError(f"pinned image conversion failed: {_src}: {_e}") from _e
                     logger.warning(f"pin image failed {_src}: {_e}")
         params._pinned_imgs = _pins
+
+        # Curated verified photos: same conversion, pooled but NOT pinned.
+        _curated = []
+        for _src in (getattr(params, 'curated_image_paths', None) or []):
+            if _src and os.path.exists(_src):
+                try:
+                    from PIL import Image as _PILImage
+                    _dst = os.path.join(utils.task_dir(task_id), f"curated_{len(_curated)}.jpg")
+                    _PILImage.open(_src).convert("RGB").save(_dst, "JPEG", quality=95)
+                    _curated.append(_dst)
+                except Exception as _e:
+                    logger.warning(f"curated image conversion failed {_src}: {_e}")
+            else:
+                logger.warning(f"curated image missing on disk: {_src}")
+        params._curated_imgs = _curated
+        if _curated:
+            image_paths = _curated + (image_paths or [])
+            logger.success(f"curated: added {len(_curated)} verified local photos to the pool")
         if _pins:
             image_paths = _pins + (image_paths or [])
             logger.success(f"pinned {len(_pins)} local story photos to the pool")
@@ -345,6 +390,7 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
             return None
 
         from app.services import image_ranker
+
 
         # Inspect videos too: search results often contain article/lineup graphics
         # encoded as MP4, and those are just as damaging as screenshot images.
@@ -398,10 +444,14 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
 
         # Re-add pinned story photos the gate may have dropped (they contain
         # legit non-target subjects like a baby); keep them at the front.
-        if getattr(params, '_pinned_imgs', None):
-            for _p in reversed(params._pinned_imgs):
+        # Curated verified photos go back too: a building or a street can never
+        # satisfy an "is the player in frame" gate, but it is exactly the shot the
+        # script calls for.
+        for _bucket in (getattr(params, '_pinned_imgs', None), getattr(params, '_curated_imgs', None)):
+            for _p in reversed(_bucket or []):
                 if _p not in image_paths:
                     image_paths.insert(0, _p)
+                    logger.info(f"restored curated/pinned photo past the gate: {os.path.basename(_p)}")
 
         if one_shot.is_enabled(params):
             min_media = int(getattr(params, "one_shot_min_media", 3) or 3)
@@ -566,9 +616,10 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                         if os.path.exists(_ledger):
                             with open(_ledger) as _lf:
                                 _prev = json.load(_lf)
-                        _vid_ext = (".mp4", ".mov", ".webm", ".mkv", ".avi")
-                        _now = [os.path.basename(p) for p in synced_paths
-                                if str(p).lower().endswith(_vid_ext)]
+                        # Track EVERY medium, stills included. Photos now supply
+                        # roughly half of each episode, so a video-only ledger let
+                        # the same photo carry straight over into the next episode.
+                        _now = [os.path.basename(p) for p in synced_paths]
                         _merged = sorted(set(_prev) | set(_now))
                         os.makedirs(os.path.dirname(_ledger) or ".", exist_ok=True)
                         with open(_ledger, "w") as _lf:
