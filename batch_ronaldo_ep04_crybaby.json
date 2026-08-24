@@ -72,7 +72,13 @@
    "a small child or toddler wearing a football kit standing on the pitch",
    "a professional footballer's young son being carried or held on the pitch after a match",
    "children playing on the pitch during a trophy celebration",
-   "a baby or infant held up in front of a trophy"
+   "a baby or infant held up in front of a trophy",
+   "a man in a casual polo shirt with sunglasses hanging on his collar",
+   "a relaxed holiday snapshot of a man outdoors in casual clothes",
+   "a bronze or metal statue of a footballer",
+   "a wax figure or mannequin of a person",
+   "a low resolution blurry pixelated frame",
+   "a video frame with a match timecode or clock burned into the corner"
   ],
   "subject_gate_margin": 0.06,
   "subject_gate_abs_floor": 0.28,
@@ -81,28 +87,29 @@
   "enable_timed_sync": true,
   "enable_grayscale": false,
   "video_clip_ratio": 0.0,
-  "cover_min_keep": 0.5,
+  "cover_min_keep": 0.3,
   "enable_youtube_footage": true,
   "youtube_footage_queries": [
-   "young Cristiano Ronaldo youth football Madeira Nacional",
-   "Cristiano Ronaldo angry at teammates on the pitch",
-   "Cristiano Ronaldo shouting demanding the ball",
+   "young Cristiano Ronaldo youth football Madeira",
+   "Cristiano Ronaldo angry shouting at teammates",
+   "Cristiano Ronaldo demanding the ball frustrated",
    "Cristiano Ronaldo frustrated close up face",
-   "young Cristiano Ronaldo Sporting Lisbon academy skinny",
-   "Cristiano Ronaldo dribbling past players close up slow motion",
+   "young Cristiano Ronaldo Sporting Lisbon academy",
+   "Cristiano Ronaldo dribbling past players slow motion",
    "Cristiano Ronaldo crying emotional close up",
-   "Cristiano Ronaldo talking about his childhood interview close up",
-   "Cristiano Ronaldo close up face slow motion",
-   "Cristiano Ronaldo interview close up talking",
-   "Cristiano Ronaldo walking on the pitch close up"
+   "Cristiano Ronaldo talking about his childhood interview",
+   "Cristiano Ronaldo Manchester United young close up",
+   "Cristiano Ronaldo stepovers skills close up",
+   "Cristiano Ronaldo close up face intense",
+   "Cristiano Ronaldo celebration close up slow motion"
   ],
-  "youtube_max_videos": 16,
+  "youtube_max_videos": 24,
   "youtube_clip_len": 2.6,
-  "youtube_clips_per_video": 6,
-  "youtube_max_clips": 80,
+  "youtube_clips_per_video": 7,
+  "youtube_max_clips": 120,
   "youtube_max_height": 1080,
   "footage_video_bonus": 0.12,
-  "footage_min_fraction": 0.5,
+  "footage_min_fraction": 0.45,
   "image_motion_style": "varied",
   "enable_color_grade": true,
   "enable_hook_card": true,
@@ -121,7 +128,9 @@
    "a goalkeeper diving for the ball",
    "a spectator in the stands",
    "an empty patch of grass",
-   "a motion blurred smeared unclear frame"
+   "a motion blurred smeared unclear frame",
+   "a man in a casual polo shirt with sunglasses hanging on his collar",
+   "a relaxed holiday snapshot of a man outdoors in casual clothes"
   ],
   "hook_negative_margin": 0.08,
   "hook_overlay_opacity": 0.25,
@@ -139,7 +148,13 @@
   "segment_max_media_reuse": 0,
   "segment_max_source_reuse": 0,
   "segment_source_reuse_penalty": 0.3,
-  "series_badge_text": "PART 4"
+  "series_badge_text": "PART 4",
+  "visual_evidence_prompts": [
+   "an old photograph of Cristiano Ronaldo as a young boy",
+   "Cristiano Ronaldo shouting and demanding the ball on the pitch",
+   "a tight close up of Cristiano Ronaldo looking angry and frustrated",
+   "Cristiano Ronaldo dribbling past defenders in close up"
+  ]
  },
  "videos": [
   {

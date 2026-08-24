@@ -73,7 +73,11 @@
    "a small child or toddler wearing a football kit standing on the pitch",
    "a professional footballer's young son being carried or held on the pitch after a match",
    "children playing on the pitch during a trophy celebration",
-   "a baby or infant held up in front of a trophy"
+   "a baby or infant held up in front of a trophy",
+   "a bronze or metal statue of a footballer",
+   "a wax figure or mannequin of a person",
+   "a low resolution blurry pixelated frame",
+   "a video frame with a match timecode or clock burned into the corner"
   ],
   "subject_gate_margin": 0.1,
   "subject_gate_abs_floor": 0.35,
@@ -82,7 +86,7 @@
   "enable_timed_sync": true,
   "enable_grayscale": false,
   "video_clip_ratio": 0.0,
-  "cover_min_keep": 0.5,
+  "cover_min_keep": 0.3,
   "enable_youtube_footage": true,
   "youtube_footage_queries": [
    "Erling Haaland Manchester City close up face",
@@ -94,13 +98,13 @@
    "Erling Haaland scoring header close up",
    "Erling Haaland walking off the pitch close up"
   ],
-  "youtube_max_videos": 14,
+  "youtube_max_videos": 24,
   "youtube_clip_len": 2.6,
-  "youtube_clips_per_video": 6,
-  "youtube_max_clips": 70,
+  "youtube_clips_per_video": 7,
+  "youtube_max_clips": 120,
   "youtube_max_height": 1080,
   "footage_video_bonus": 0.12,
-  "footage_min_fraction": 0.5,
+  "footage_min_fraction": 0.45,
   "image_motion_style": "varied",
   "enable_color_grade": true,
   "enable_hook_card": true,
@@ -135,7 +139,13 @@
   "paragraph_number": 1,
   "segment_max_media_reuse": 0,
   "segment_max_source_reuse": 0,
-  "segment_source_reuse_penalty": 0.3
+  "segment_source_reuse_penalty": 0.3,
+  "visual_evidence_prompts": [
+   "Erling Haaland signing a contract or holding a Manchester City shirt",
+   "a tight close up of Erling Haaland's face looking serious",
+   "Erling Haaland celebrating a goal in a sky blue Manchester City shirt",
+   "Erling Haaland running powerfully at defenders"
+  ]
  },
  "videos": [
   {

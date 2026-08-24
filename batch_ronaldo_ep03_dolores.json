@@ -32,12 +32,9 @@
   "image_ranking_min_score": 0.22,
   "enable_subject_gate": true,
   "subject_positive_labels": [
-   "a real photograph of Cristiano Ronaldo the footballer",
-   "a tight close up of Cristiano Ronaldo's face",
-   "Cristiano Ronaldo with his mother Dolores",
-   "an older Portuguese woman being interviewed",
-   "Cristiano Ronaldo speaking in an interview",
-   "a narrow poor street in Funchal Madeira Portugal"
+   "a tight close up of Cristiano Ronaldo's face alone in frame",
+   "Cristiano Ronaldo the footballer alone, filling most of the frame",
+   "Cristiano Ronaldo celebrating alone with no other player nearby"
   ],
   "subject_negative_labels": [
    "a stats infographic full of text and numbers",
@@ -72,37 +69,55 @@
    "a small child or toddler wearing a football kit standing on the pitch",
    "a professional footballer's young son being carried or held on the pitch after a match",
    "children playing on the pitch during a trophy celebration",
-   "a baby or infant held up in front of a trophy"
+   "a baby or infant held up in front of a trophy",
+   "a man in a casual polo shirt with sunglasses hanging on his collar",
+   "a relaxed holiday snapshot of a man outdoors in casual clothes",
+   "a bronze or metal statue of a footballer",
+   "a wax figure or mannequin of a person",
+   "a low resolution blurry pixelated frame",
+   "a video frame with a match timecode or clock burned into the corner",
+   "a video frame with large white or yellow words printed across the middle of the picture",
+   "a broadcast clip with a headline banner or lower third caption bar",
+   "a screenshot of a news article or quote graphic",
+   "a talk show studio set with a purple or blue lit backdrop",
+   "a footballer who is not Cristiano Ronaldo",
+   "two or more footballers standing or walking together",
+   "a group of players celebrating together",
+   "a bald or shaven headed footballer",
+   "a blond haired footballer",
+   "a television advert with a person talking to the camera",
+   "a person who is not a footballer talking indoors"
   ],
-  "subject_gate_margin": 0.06,
-  "subject_gate_abs_floor": 0.28,
+  "subject_gate_margin": 0.12,
+  "subject_gate_abs_floor": 0.32,
   "segment_reuse_penalty": 0.45,
   "max_video_reuse": 2,
   "enable_timed_sync": true,
   "enable_grayscale": false,
   "video_clip_ratio": 0.0,
-  "cover_min_keep": 0.5,
+  "cover_min_keep": 0.3,
   "enable_youtube_footage": true,
   "youtube_footage_queries": [
-   "Dolores Aveiro Cristiano Ronaldo mother interview",
-   "Cristiano Ronaldo hugging his mother",
-   "Cristiano Ronaldo talking about his mother emotional",
-   "Funchal Madeira poor hillside neighbourhood houses",
    "Cristiano Ronaldo close up face serious slow motion",
-   "Cristiano Ronaldo celebration crowd roaring",
-   "Cristiano Ronaldo documentary childhood Madeira",
-   "Cristiano Ronaldo with his family in the stands",
-   "Cristiano Ronaldo close up face slow motion",
-   "Cristiano Ronaldo interview close up talking",
+   "Cristiano Ronaldo emotional close up face",
+   "Cristiano Ronaldo celebration close up slow motion",
+   "Cristiano Ronaldo number 7 shirt close up",
+   "Cristiano Ronaldo Portugal national anthem close up",
+   "Cristiano Ronaldo alone on the pitch close up",
+   "Cristiano Ronaldo siu celebration close up",
+   "Cristiano Ronaldo Real Madrid close up face",
+   "Cristiano Ronaldo Manchester United close up face",
+   "Cristiano Ronaldo free kick stance close up",
+   "Cristiano Ronaldo scoring header close up",
    "Cristiano Ronaldo walking on the pitch close up"
   ],
-  "youtube_max_videos": 16,
+  "youtube_max_videos": 24,
   "youtube_clip_len": 2.6,
-  "youtube_clips_per_video": 6,
-  "youtube_max_clips": 80,
+  "youtube_clips_per_video": 7,
+  "youtube_max_clips": 120,
   "youtube_max_height": 1080,
   "footage_video_bonus": 0.12,
-  "footage_min_fraction": 0.5,
+  "footage_min_fraction": 0.45,
   "image_motion_style": "varied",
   "enable_color_grade": true,
   "enable_hook_card": true,
@@ -121,7 +136,9 @@
    "a goalkeeper diving for the ball",
    "a spectator in the stands",
    "an empty patch of grass",
-   "a motion blurred smeared unclear frame"
+   "a motion blurred smeared unclear frame",
+   "a man in a casual polo shirt with sunglasses hanging on his collar",
+   "a relaxed holiday snapshot of a man outdoors in casual clothes"
   ],
   "hook_negative_margin": 0.08,
   "hook_overlay_opacity": 0.25,
@@ -139,13 +156,19 @@
   "segment_max_media_reuse": 0,
   "segment_max_source_reuse": 0,
   "segment_source_reuse_penalty": 0.3,
-  "series_badge_text": "PART 3"
+  "series_badge_text": "PART 3",
+  "visual_evidence_prompts": [
+   "a tight close up of Cristiano Ronaldo's face looking serious and thoughtful",
+   "a tight close up of Cristiano Ronaldo's face looking emotional",
+   "Cristiano Ronaldo alone on the pitch in a tight close up",
+   "Cristiano Ronaldo celebrating a goal, the number 7 on his shirt"
+  ]
  },
  "videos": [
   {
    "video_subject": "Dolores Aveiro has spoken publicly about how, with three children already and no money, she asked a doctor about ending her pregnancy with Cristiano and the doctor refused",
-   "video_script": "She already had three children and no money at all. She asked a doctor to end the pregnancy. He refused. That refusal gave football its most famous number seven.",
-   "video_terms": "Dolores Aveiro, Cristiano Ronaldo mother, Ronaldo family, Ronaldo close up face"
+   "video_script": "His mother had three children already, and no money. She asked a doctor to end the pregnancy. The doctor said no. That no gave football its most famous number seven.",
+   "video_terms": "Cristiano Ronaldo close up face, Cristiano Ronaldo celebration, Cristiano Ronaldo number 7, Cristiano Ronaldo Portugal, Cristiano Ronaldo Real Madrid, Cristiano Ronaldo serious"
   }
  ]
 }

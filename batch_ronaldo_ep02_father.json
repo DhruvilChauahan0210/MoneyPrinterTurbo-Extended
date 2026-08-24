@@ -102,13 +102,13 @@
    "Cristiano Ronaldo Real Madrid close up face",
    "Cristiano Ronaldo free kick close up"
   ],
-  "youtube_max_videos": 20,
+  "youtube_max_videos": 24,
   "youtube_clip_len": 2.6,
-  "youtube_clips_per_video": 6,
-  "youtube_max_clips": 100,
+  "youtube_clips_per_video": 7,
+  "youtube_max_clips": 120,
   "youtube_max_height": 1080,
   "footage_video_bonus": 0.12,
-  "footage_min_fraction": 0.5,
+  "footage_min_fraction": 0.45,
   "image_motion_style": "varied",
   "enable_color_grade": true,
   "enable_hook_card": true,
@@ -154,6 +154,9 @@
    "an old photograph of Cristiano Ronaldo as a young boy in Madeira",
    "Cristiano Ronaldo looking down, sad and emotional, a tight close up of his face",
    "Cristiano Ronaldo pointing up to the sky with both hands after scoring a goal"
+  ],
+  "curated_image_paths": [
+   "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/resource/series_assets/ep02/01_cr2010.jpg"
   ]
  },
  "videos": [
