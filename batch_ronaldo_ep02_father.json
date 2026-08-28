@@ -102,10 +102,10 @@
    "Cristiano Ronaldo Real Madrid close up face",
    "Cristiano Ronaldo free kick close up"
   ],
-  "youtube_max_videos": 24,
+  "youtube_max_videos": 18,
   "youtube_clip_len": 2.6,
   "youtube_clips_per_video": 7,
-  "youtube_max_clips": 120,
+  "youtube_max_clips": 90,
   "youtube_max_height": 1080,
   "footage_video_bonus": 0.12,
   "footage_min_fraction": 0.45,

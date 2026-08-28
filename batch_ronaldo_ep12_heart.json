@@ -103,10 +103,10 @@
    "young Cristiano Ronaldo skinny sprinting with the ball",
    "Cristiano Ronaldo aged 15 16 Sporting youth football"
   ],
-  "youtube_max_videos": 44,
+  "youtube_max_videos": 16,
   "youtube_clip_len": 2.6,
   "youtube_clips_per_video": 8,
-  "youtube_max_clips": 240,
+  "youtube_max_clips": 80,
   "youtube_max_height": 1080,
   "footage_video_bonus": 0.12,
   "footage_min_fraction": 0.45,

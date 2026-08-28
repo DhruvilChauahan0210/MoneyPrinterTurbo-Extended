@@ -111,10 +111,10 @@
    "referee showing red card close up",
    "Jude Bellingham Real Madrid interview close up"
   ],
-  "youtube_max_videos": 30,
+  "youtube_max_videos": 20,
   "youtube_clip_len": 2.6,
   "youtube_clips_per_video": 7,
-  "youtube_max_clips": 150,
+  "youtube_max_clips": 100,
   "youtube_max_height": 1080,
   "footage_video_bonus": 0.12,
   "footage_min_fraction": 0.45,

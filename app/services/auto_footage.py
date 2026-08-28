@@ -63,6 +63,11 @@ def _ffprobe_duration(path: str) -> float:
         return 0.0
 
 
+# Concurrent query downloads. Capped at 5: yt-dlp's bot-wall workaround is fragile
+# and more parallelism risks rate-limiting for no real gain.
+DOWNLOAD_WORKERS = 4
+
+
 def _download_one(query: str, dest_dir: str, max_height: int, max_filesize_mb: int,
                   use_node: bool, timeout: int, retries: int = 3) -> List[str]:
     """Search YouTube for `query` and download the top match (video-only, mp4/h264)."""
@@ -236,16 +241,33 @@ def fetch_clips(
     logger.info(f"auto_footage: fetching real footage for {len(queries)} queries "
                 f"(node_js={use_node}, target {max_height}p)")
     n_have = len([f for f in os.listdir(dl_dir) if f.lower().endswith(VIDEO_EXTS)])
-    for q in queries:
-        if n_have >= max_videos:
-            break
-        got = _download_one(
-            q, dl_dir, max_height, max_filesize_mb, use_node,
-            timeout=240, retries=retries,
-        )
-        for g in got:
-            logger.info(f"auto_footage: downloaded '{q[:42]}' → {os.path.basename(g)}")
+
+    # Downloads used to run one query at a time. Measured on EP12: 16 minutes of a
+    # 18-minute build with nothing written to disk, because yt-dlp spends nearly all of
+    # that waiting on the network. Queries are dispatched in waves of DOWNLOAD_WORKERS
+    # instead -- waves rather than one big pool so the max_videos cap is still honoured
+    # and we stop as soon as there is enough footage, rather than fetching every query.
+    workers = max(1, min(int(os.environ.get("MPT_DOWNLOAD_WORKERS", DOWNLOAD_WORKERS)), 5))
+    pending = list(queries)
+    while pending and n_have < max_videos:
+        wave, pending = pending[:workers], pending[workers:]
+        if len(wave) == 1:
+            results = [(wave[0], _download_one(wave[0], dl_dir, max_height,
+                                               max_filesize_mb, use_node,
+                                               timeout=240, retries=retries))]
+        else:
+            from concurrent.futures import ThreadPoolExecutor
+            with ThreadPoolExecutor(max_workers=len(wave)) as pool:
+                futs = {pool.submit(_download_one, q, dl_dir, max_height,
+                                    max_filesize_mb, use_node, 240, retries): q
+                        for q in wave}
+                results = [(futs[f], f.result()) for f in futs]
+        for q, got in results:
+            for g in got:
+                logger.info(f"auto_footage: downloaded '{q[:42]}' → {os.path.basename(g)}")
         n_have = len([f for f in os.listdir(dl_dir) if f.lower().endswith(VIDEO_EXTS)])
+        logger.info(f"auto_footage: {n_have}/{max_videos} source videos after wave of "
+                    f"{len(wave)} ({len(pending)} queries left)")
     # Use every source video present in the cache dir (handles already-downloaded
     # files that yt-dlp skips on re-run).
     downloaded = sorted(os.path.join(dl_dir, f) for f in os.listdir(dl_dir)

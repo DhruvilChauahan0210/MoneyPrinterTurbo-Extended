@@ -50,6 +50,35 @@ def _subject_terms(df):
 def check(path):
     d = json.load(open(path)); df = d.get("defaults", {}); warn = []
 
+    # --- pool feasibility: the arithmetic behind the commonest build failure ---
+    # "all evidence clips reached the per-clip reuse cap before segment N" was five of
+    # the seven recorded failures, each costing a 9-15 minute rebuild. It is pure
+    # arithmetic and knowable here, in a second, before anything downloads.
+    script = (df.get("video_script") or
+              ((d.get("videos") or [{}])[0].get("video_script") if d.get("videos") else "") or "")
+    words = len(script.split())
+    per_cap = int(df.get("max_words_per_subtitle") or 2)
+    reuse = int(df.get("max_video_reuse") or 2)
+    maxvid = int(df.get("youtube_max_videos") or 3)
+    if words and per_cap > 0 and reuse > 0:
+        segments = -(-words // per_cap)                 # ceil
+        need_distinct = -(-segments // reuse)           # ceil
+        # The subject gate historically keeps ~60% of candidates ("kept 9/15" in the
+        # 25 Aug log), and each source video yields roughly one usable distinct clip
+        # after de-duplication.
+        supply = int(maxvid * 0.6) + len(df.get("pinned_image_paths") or [])
+        if supply < need_distinct:
+            warn.append(f"pool too thin: {words} words / {per_cap} = {segments} segments "
+                        f"need {need_distinct} distinct clips at reuse {reuse}, but "
+                        f"youtube_max_videos={maxvid} supplies about {supply} after the "
+                        f"gate -- raise youtube_max_videos to "
+                        f"{max(16, min(30, -(-need_distinct * 5 // 2)))} or raise max_video_reuse")
+        elif maxvid > max(16, min(30, -(-need_distinct * 5 // 2))) * 1.4:
+            warn.append(f"pool oversized: needs about {need_distinct} distinct clips but "
+                        f"youtube_max_videos={maxvid}. Downloads dominate build time -- "
+                        f"{max(16, min(30, -(-need_distinct * 5 // 2)))} would do "
+                        f"(sized at need x2.5, floor 16, ceiling 30)")
+
     # --- footage queries must name the subject ---
     queries = df.get("youtube_footage_queries") or []
     subject = _subject_terms(df)

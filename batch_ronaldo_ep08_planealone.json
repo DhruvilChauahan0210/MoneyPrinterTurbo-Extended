@@ -112,10 +112,10 @@
    "Cristiano Ronaldo early career highlights young",
    "empty football stadium Lisbon Portugal"
   ],
-  "youtube_max_videos": 24,
+  "youtube_max_videos": 20,
   "youtube_clip_len": 2.6,
   "youtube_clips_per_video": 7,
-  "youtube_max_clips": 120,
+  "youtube_max_clips": 100,
   "youtube_max_height": 1080,
   "footage_video_bonus": 0.12,
   "footage_min_fraction": 0.45,

@@ -110,10 +110,10 @@
    "Mohamed Salah goal celebration slow motion",
    "Mohamed Salah walking on the pitch close up"
   ],
-  "youtube_max_videos": 36,
+  "youtube_max_videos": 16,
   "youtube_clip_len": 2.6,
   "youtube_clips_per_video": 7,
-  "youtube_max_clips": 190,
+  "youtube_max_clips": 80,
   "youtube_max_height": 1080,
   "footage_video_bonus": 0.12,
   "footage_min_fraction": 0.25,

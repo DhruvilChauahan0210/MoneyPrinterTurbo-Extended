@@ -72,6 +72,7 @@ def contextualize_segment_texts(
 # CLIP helpers (load once, reuse across calls)
 # ---------------------------------------------------------------------------
 
+_MAX_REUSE_RELAX = 2   # how far the per-clip reuse cap may be raised before giving up
 _clip_model = None
 _clip_processor = None
 _clip_available = None   # None = untested, True/False = known
@@ -586,6 +587,7 @@ def assign_images_to_segments(
         prev = -1
         used_count = [0] * n_img
         source_count: Dict[str, int] = {}
+        _reuse_relax = 0            # how far the per-clip cap has been raised this build
         for s in range(n_seg):
             scores = sim[s].copy()
             for i in range(n_img):
@@ -600,13 +602,32 @@ def assign_images_to_segments(
             if not pool:
                 pool = list(range(n_img))
             if max_media_reuse > 0:
-                under_cap = [i for i in pool if used_count[i] < max_media_reuse]
+                # Degrade, do not abort. This raise accounted for five of the seven
+                # recorded build failures, and every one cost a full 9-15 minute rebuild
+                # under the one-attempt rule. A slightly more repetitive short is a far
+                # better outcome than no short at all, and the editorial gate downstream
+                # already rejects a plan that is genuinely too repetitive. The relaxation
+                # is bounded so a build can never collapse onto one or two clips.
+                under_cap = [i for i in pool if used_count[i] < max_media_reuse + _reuse_relax]
+                while not under_cap and _reuse_relax < _MAX_REUSE_RELAX:
+                    _reuse_relax += 1
+                    under_cap = [i for i in pool
+                                 if used_count[i] < max_media_reuse + _reuse_relax]
+                    if under_cap:
+                        logger.warning(
+                            f"image_ranker: pool exhausted at segment {s + 1}; raising the "
+                            f"per-clip reuse cap {max_media_reuse} -> "
+                            f"{max_media_reuse + _reuse_relax} for this build "
+                            f"(was an abort; see the editorial gate for the repetition check)")
                 if under_cap:
                     pool = under_cap
                 elif strict:
                     from app.services.one_shot import OneShotError
                     raise OneShotError(
-                        f"all evidence clips reached the per-clip reuse cap before segment {s + 1}"
+                        f"all evidence clips reached the per-clip reuse cap before segment "
+                        f"{s + 1}, even after relaxing it to "
+                        f"{max_media_reuse + _MAX_REUSE_RELAX} -- the pool is genuinely "
+                        f"too small; raise youtube_max_videos or prune the ledger/banlist"
                     )
             if max_source_reuse > 0:
                 under_source_cap = [
