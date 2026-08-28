@@ -79,6 +79,36 @@ def check(path):
                         f"{max(16, min(30, -(-need_distinct * 5 // 2)))} would do "
                         f"(sized at need x2.5, floor 16, ceiling 30)")
 
+    # --- EVERY text field that drives media selection, not just the footage queries ---
+    # Caught by a local review on 28 Aug: a config copied from another episode passed this
+    # linter with zero warnings while still carrying the SOURCE episode's video_subject,
+    # video_terms, visual_evidence_prompts and curated_image_paths. The footage queries had
+    # been rewritten; these four had not, and they are consumed independently (task.py:374
+    # and :574). A Champions League short would have pulled in hospital ECG imagery.
+    # Copying a config is the normal workflow, so the linter has to check all of them.
+    subject_check = _subject_terms(df)
+    if subject_check:
+        for field in ("video_subject", "video_terms", "hook_cover_term"):
+            val = (df.get(field) or (d.get("videos") or [{}])[0].get(field) or "")
+            if isinstance(val, str) and val.strip():
+                hits = [k for k in STOCK_WORDS if k in val.lower()]
+                if hits:
+                    warn.append(f'{field} contains stock terms {hits}: "{val[:70]}..."')
+        for field in ("visual_evidence_prompts", "youtube_footage_queries"):
+            for item in (df.get(field) or []):
+                hits = [k for k in STOCK_WORDS if k in str(item).lower()]
+                if hits and field == "visual_evidence_prompts":
+                    warn.append(f'{field} stock entry {hits}: "{str(item)[:60]}..."')
+
+    # Curated images must belong to THIS short, not the config it was copied from.
+    slug = os.path.basename(path)[len("batch_"):-len(".json")]
+    for cimg in (df.get("curated_image_paths") or []):
+        tag = os.path.basename(os.path.dirname(str(cimg)))
+        if tag and tag not in slug and tag not in ("series_assets", "resource"):
+            warn.append(f"curated_image_paths points at '{tag}' assets but this config is "
+                        f"'{slug}' -- leftover from a copied config?")
+            break
+
     # --- footage queries must name the subject ---
     queries = df.get("youtube_footage_queries") or []
     subject = _subject_terms(df)

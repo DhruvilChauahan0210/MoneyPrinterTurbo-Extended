@@ -111,7 +111,7 @@
   "enable_color_grade": true,
   "enable_hook_card": true,
   "hook_text": "THEY SAID IT WAS MADNESS 😳",
-  "hook_cover_term": "a sharp tight close up of a young Cristiano Ronaldo's face looking worried and serious, eyes visible, filling the frame",
+  "hook_cover_term": "a sharp tight close up of Cristiano Ronaldo's face in a white Real Madrid shirt, triumphant and intense, eyes visible, filling the frame",
   "hook_min_similarity": 0.26,
   "hook_require_video": false,
   "hook_negative_labels": [
@@ -148,27 +148,24 @@
   "segment_source_reuse_penalty": 0.45,
   "series_badge_text": "",
   "visual_evidence_prompts": [
-   "a hospital heart monitor screen showing a dangerously fast heart rate",
-   "an electrocardiogram trace printed on pink graph paper",
-   "an empty hospital procedure room with monitors and a bed"
+   "Cristiano Ronaldo holding the Champions League trophy above his head",
+   "Cristiano Ronaldo in a white Real Madrid shirt roaring in celebration",
+   "Cristiano Ronaldo being presented to a packed Bernabeu crowd"
   ],
-  "curated_image_paths": [
-   "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/resource/series_assets/ep12/h1_vitals_monitor_crop.jpg",
-   "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/resource/series_assets/ep12/h2_ecg_tachy_crop.jpg",
-   "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/resource/series_assets/ep12/h3_cathlab_crop.jpg",
-   "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/resource/series_assets/ep12/h4_12lead_ecg_crop.jpg"
-  ],
+  "curated_image_paths": [],
   "max_sentence_gap": 0.18,
   "video_script": "In two thousand nine, Madrid paid a world record fee for a winger. Fans called it madness. Nine years later he walked out with five European Cups. Which makes you wonder,",
   "ambience_file": "resource/ambience/stadium_roomtone.mp3",
   "ambience_volume": 0.07,
-  "jl_cut_offset": 0.12
+  "jl_cut_offset": 0.12,
+  "video_subject": "In 2009 Real Madrid paid a world record fee for Cristiano Ronaldo, a decision widely called madness at the time, and over nine years at the club he won five Champions League titles, more than any player in the history of the competition",
+  "video_terms": "Cristiano Ronaldo Real Madrid, Ronaldo Champions League trophy, Ronaldo Bernabeu presentation, Ronaldo white Madrid jersey celebration"
  },
  "videos": [
   {
-   "video_subject": "At the age of fifteen Cristiano Ronaldo was diagnosed with tachycardia, a racing heart that would not slow down even at rest, and Sporting Lisbon told his mother Dolores that the condition could end his football career before it began",
+   "video_subject": "In 2009 Real Madrid paid a world record fee for Cristiano Ronaldo, a decision widely called madness at the time, and over nine years at the club he won five Champions League titles, more than any player in the history of the competition",
    "video_script": "In two thousand nine, Madrid paid a world record fee for a winger. Fans called it madness. Nine years later he walked out with five European Cups. Which makes you wonder,",
-   "video_terms": "young Cristiano Ronaldo, Ronaldo heart condition, hospital heart monitor, electrocardiogram, Ronaldo Sporting academy"
+   "video_terms": "Cristiano Ronaldo Real Madrid, Ronaldo Champions League trophy, Ronaldo Bernabeu presentation, Ronaldo white Madrid jersey celebration"
   }
  ]
 }
