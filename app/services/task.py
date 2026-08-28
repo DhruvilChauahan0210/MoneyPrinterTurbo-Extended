@@ -605,6 +605,23 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     # compositor trims the harmless overshoot to the voice track.
                     encode_guard = 0.35 if one_shot.is_enabled(params) else 0.0
                     clip_durations[-1] += max(0.0, audio_duration - total) + encode_guard
+                # Rhythm: stretch the opening shot, borrowing proportionally from the
+                # shots that follow so the total is unchanged. The closing shot is left
+                # alone - it already carries the tail allowance.
+                _hold = float(getattr(params, "rhythm_opening_hold", 0.0) or 0.0)
+                if _hold > 0 and len(clip_durations) >= 4 and clip_durations[0] < _hold:
+                    _need = _hold - clip_durations[0]
+                    _mid = list(range(1, len(clip_durations) - 1))
+                    _avail = sum(max(0.0, clip_durations[i] - 0.35) for i in _mid)
+                    if _avail > 0:
+                        _take = min(_need, _avail)
+                        for i in _mid:
+                            _slack = max(0.0, clip_durations[i] - 0.35)
+                            clip_durations[i] -= _take * (_slack / _avail)
+                        clip_durations[0] += _take
+                        logger.info(f"rhythm: opening hold {clip_durations[0]:.2f}s "
+                                    f"(borrowed {_take:.2f}s from {len(_mid)} shots)")
+
                 # Loop design: make the FINAL visual the same as the opening hook
                 # frame so the Short loops seamlessly (strong rewatch/retention signal).
                 cover = getattr(params, '_best_image_path', None)

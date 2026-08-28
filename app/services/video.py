@@ -1684,6 +1684,26 @@ def generate_video(
                 )
                 audio_tracks.append(bgm_clip)
 
+            # Ambience bed: sound design, not BGM. Runs under the whole short at a level
+            # you notice only when it is missing - it stops the mix sounding like a voice
+            # memo in an empty room. Independent of bgm_type.
+            amb_file = getattr(params, 'ambience_file', '') or ''
+            amb_vol = float(getattr(params, 'ambience_volume', 0.0) or 0.0)
+            if amb_file and amb_vol > 0 and os.path.exists(amb_file):
+                try:
+                    amb = AudioFileClip(amb_file).with_effects([
+                        afx.MultiplyVolume(amb_vol),
+                        afx.AudioLoop(duration=video_clip.duration),
+                        afx.AudioFadeIn(0.3),
+                        afx.AudioFadeOut(0.5),
+                    ])
+                    audio_tracks.append(amb)
+                    logger.info(f"ambience bed added at {amb_vol:.2f}: {os.path.basename(amb_file)}")
+                except Exception as e:
+                    logger.warning(f"ambience bed skipped: {e}")
+            elif amb_file and amb_vol > 0:
+                logger.warning(f"ambience bed requested but missing: {amb_file}")
+
             # Task 5: SFX whoosh on each image cut
             sfx_dir = os.path.join(utils.root_dir(), "resource", "sfx")
             whoosh_path = os.path.join(sfx_dir, "whoosh.mp3")
@@ -1812,6 +1832,33 @@ def _master_audio(output_file: str, params) -> bool:
     except Exception as e:
         logger.warning(f"audio master skipped: {e}")
         return False
+
+
+# A Ken Burns move spread across 0.4s is an imperceptible wobble - it reads as a cheap
+# slideshow rather than a camera move. Editors hard-cut fast montages on STATIC frames and
+# save movement for shots long enough to carry it. Shots shorter than this hold get none.
+_MOTION_MIN_HOLD = 0.5
+
+
+def _static_with_drift(base_clip, clip_duration: float, orig_w: int, orig_h: int,
+                       amp: float = 1.4):
+    """A held frame with ~1px of organic drift.
+
+    Nothing in real footage is perfectly still, and a mathematically static frame is one of
+    the clearest "assembled by software" cues. The motion here is below conscious notice;
+    it only removes the digital stillness. The 1.2% overscan keeps edges off the frame.
+    """
+    import math
+    scale = 1.012
+    ow, oh = int(orig_w * scale), int(orig_h * scale)
+    ow, oh = ow - (ow % 2), oh - (oh % 2)
+    large = base_clip.resized(new_size=(ow, oh))
+    ex, ey = (ow - orig_w) // 2, (oh - orig_h) // 2
+
+    def drift(t):
+        return (int(-ex + amp * math.sin(t * 1.9)), int(-ey + amp * math.cos(t * 1.37)))
+
+    return CompositeVideoClip([large.with_position(drift)], size=(orig_w, orig_h))
 
 
 def _make_motion_clip(base_clip, effect_idx: int, clip_duration: float, orig_w: int, orig_h: int):
@@ -1963,6 +2010,93 @@ def _make_blurred_background(image_path: str, W: int, H: int) -> str:
     return out
 
 
+_SHOT_MATCH_ENABLED = True
+
+
+def _probe_luma(path: str):
+    """Mean brightness and contrast (std-dev) of a frame from the middle of a clip."""
+    import subprocess as _sp, io as _io
+    try:
+        try:
+            import imageio_ffmpeg
+            ff = imageio_ffmpeg.get_ffmpeg_exe()
+        except Exception:
+            ff = "ffmpeg"
+        r = _sp.run([ff, "-hide_banner", "-nostats", "-i", path, "-frames:v", "1",
+                     "-vf", "scale=160:-1", "-f", "image2pipe", "-vcodec", "png", "-"],
+                    capture_output=True, timeout=60)
+        if r.returncode != 0 or not r.stdout:
+            return None
+        im = Image.open(_io.BytesIO(r.stdout)).convert("L")
+        px = list(im.getdata()); n = len(px)
+        if not n:
+            return None
+        mean = sum(px) / n
+        var = sum((v - mean) ** 2 for v in px) / n
+        return mean, var ** 0.5
+    except Exception:
+        return None
+
+
+def _match_shots(materials, max_brightness_shift: float = 0.18,
+                 contrast_range=(0.80, 1.25)):
+    """Pull every shot toward a common exposure so cuts stop flashing.
+
+    Measured on the 28 Aug builds: EP12's twelve shots ran brightness 66 to 196 on a
+    0-255 scale (spread 130, stdev 45.6), so consecutive 0.4s cuts strobed between
+    near-black and near-white. The pipeline already records this per clip in
+    quality_report.json's media_plan and has never acted on it. `_apply_grade` only
+    ever touched images, so YouTube footage was never graded at all - which is why
+    archive stills and broadcast frames refuse to sit together.
+
+    This is what a colourist calls shot matching: measure all shots, take the median
+    as the target, nudge each one toward it. Corrections are clamped so a deliberately
+    dark or bright shot keeps its intent - the goal is a consistent edit, not a flat one.
+    """
+    import subprocess as _sp, os as _os, shutil as _shutil, statistics as _st
+    try:
+        try:
+            import imageio_ffmpeg
+            ff = imageio_ffmpeg.get_ffmpeg_exe()
+        except Exception:
+            ff = "ffmpeg"
+        stats, idxs = [], []
+        for i, m in enumerate(materials):
+            if not getattr(m, "url", None) or not _os.path.exists(m.url):
+                continue
+            v = _probe_luma(m.url)
+            if v:
+                stats.append(v); idxs.append(i)
+        if len(stats) < 3:
+            return materials
+        tgt_b = _st.median([b for b, _ in stats])
+        tgt_c = _st.median([c for _, c in stats])
+        spread = max(b for b, _ in stats) - min(b for b, _ in stats)
+        fixed = 0
+        for (b, c), i in zip(stats, idxs):
+            db = max(-max_brightness_shift, min(max_brightness_shift, (tgt_b - b) / 255.0))
+            rc = max(contrast_range[0], min(contrast_range[1], (tgt_c / c) if c > 1 else 1.0))
+            if abs(db) < 0.012 and 0.97 < rc < 1.03:
+                continue
+            src = materials[i].url
+            root, ext = _os.path.splitext(src)
+            tmp = f"{root}.matched{ext or '.mp4'}"
+            r = _sp.run([ff, "-hide_banner", "-nostats", "-y", "-i", src,
+                         "-vf", f"eq=brightness={db:.4f}:contrast={rc:.4f}",
+                         "-c:v", "libx264", "-preset", "fast", "-crf", "16",
+                         "-pix_fmt", "yuv420p", "-an", tmp],
+                        capture_output=True, text=True, timeout=180)
+            if r.returncode == 0 and _os.path.exists(tmp) and _os.path.getsize(tmp) > 10000:
+                _shutil.move(tmp, src); fixed += 1
+            elif _os.path.exists(tmp):
+                _os.remove(tmp)
+        logger.info(f"shot matching: {fixed}/{len(stats)} shots corrected toward "
+                    f"brightness {tgt_b:.0f}/contrast {tgt_c:.0f} (was spread {spread:.0f})")
+    except Exception as e:
+        logger.warning(f"shot matching skipped: {e}")
+    return materials
+
+
 def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_style: str = "varied", _motion_start_index: int = 0, durations: List[float] = None, video_width: int = None, video_height: int = None, fill_mode: str = "cover", color_grade: bool = True, cover_min_keep: float = 0.62):
     motion_counter = _motion_start_index
     for idx, material in enumerate(materials):
@@ -2057,7 +2191,11 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_styl
                     base = base.resized(new_size=(even_w, even_h))
                     orig_w, orig_h = even_w, even_h
                 if motion_style == "off":
-                    final_clip = CompositeVideoClip([base.with_position("center")], size=(orig_w, orig_h))
+                    final_clip = _static_with_drift(base, this_duration, orig_w, orig_h)
+                elif this_duration < _MOTION_MIN_HOLD:
+                    # Too short to carry a move - hold it static (with micro-drift) so the
+                    # cut lands as a punch instead of a half-finished drift.
+                    final_clip = _static_with_drift(base, this_duration, orig_w, orig_h)
                 elif motion_style == "subtle":
                     zoomed = base.resized(lambda t: 1 + (this_duration * 0.03) * (t / this_duration))
                     final_clip = CompositeVideoClip([zoomed])
@@ -2124,6 +2262,8 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_styl
                 logger.success(f"clip processed: {video_file}")
             except Exception as e:
                 logger.warning(f"clip processing failed for {material.url}: {e}; passing through")
+    if _SHOT_MATCH_ENABLED:
+        materials = _match_shots(materials)
     return materials
 
 def merge_videos(video_paths: List[str], output_path: str) -> str:

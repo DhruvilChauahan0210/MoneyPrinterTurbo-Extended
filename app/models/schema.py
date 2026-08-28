@@ -295,6 +295,18 @@ class VideoParams(BaseModel):
     master_audio: Optional[bool] = True
     target_lufs: Optional[float] = -14.0
     target_true_peak: Optional[float] = -1.5
+    # Ambience bed - sound design, NOT background music. A narration track over pure
+    # digital silence reads as "recorded in a closet"; a low room tone gives the edit air.
+    # Off by default (0.0): set ambience_volume ~0.05-0.09 to enable.
+    ambience_file: Optional[str] = ""
+    ambience_volume: Optional[float] = 0.0
+    # Rhythm shaping: length of the opening establishing hold, in seconds (0 = off).
+    # Timed sync gives every caption phrase its own shot, so at max_words_per_subtitle 2
+    # every shot lands at ~0.4-0.6s - a relentless, machine-even rhythm with no place for
+    # the hook to land. This buys an opening hold back from the shots that follow, which
+    # drifts the image/phrase match by ~0.2s for a few early shots. OFF by default: it
+    # trades against the audio/visual guarantee timed sync exists to provide. Try 1.1.
+    rhythm_opening_hold: Optional[float] = 0.0
     # Strict one-shot duration ceiling. Checked after the sole TTS call and
     # before media acquisition/render, so an unexpectedly slow narration cannot
     # silently become a retention-killing long edit.
