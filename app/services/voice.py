@@ -2433,3 +2433,125 @@ def get_audio_duration(sub_maker: SubMaker):
 
 # Note: This module contains TTS functions for Azure TTS V1/V2, SiliconFlow TTS, and Chatterbox TTS
 # All functions are optimized for production use with proper error handling and fallbacks
+
+
+def _ffmpeg_exe() -> str:
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except Exception:
+        return "ffmpeg"
+
+
+def _detect_silences(audio_path: str, noise_db: int = -40, min_dur: float = 0.20):
+    """Return [(start, end), ...] silence spans in seconds, via ffmpeg silencedetect."""
+    import subprocess as _sp
+    cmd = [_ffmpeg_exe(), "-hide_banner", "-nostats", "-i", audio_path,
+           "-af", f"silencedetect=noise={noise_db}dB:d={min_dur}", "-f", "null", "-"]
+    r = _sp.run(cmd, capture_output=True, text=True, timeout=120)
+    spans, cur = [], None
+    for line in r.stderr.splitlines():
+        if "silence_start:" in line:
+            try: cur = float(line.split("silence_start:")[1].strip().split()[0])
+            except Exception: cur = None
+        elif "silence_end:" in line and cur is not None:
+            try:
+                end = float(line.split("silence_end:")[1].split("|")[0].strip())
+                spans.append((cur, end))
+            except Exception:
+                pass
+            cur = None
+    return spans
+
+
+def compress_internal_silence(audio_file: str, sub_maker=None, max_gap: float = 0.18,
+                              noise_db: int = -40):
+    """Shorten the silent gaps BETWEEN sentences in a TTS voiceover to `max_gap` seconds.
+
+    Edge-TTS inserts ~0.8s of true silence at every full stop. With a background music
+    bed those gaps were inaudible; with `bgm_type: ""` they became dead air — measured at
+    19-33% of every short built after 4 Aug 2026, with the first hole landing ~2s in,
+    exactly where a Shorts viewer decides to swipe.
+
+    Only INTERNAL gaps are touched. Leading silence is preserved and any trailing silence
+    is left for `loop_tight_trim` in video.py to cut. If `sub_maker` is supplied its word
+    boundary offsets are remapped by the same piecewise time transform, so edge-provider
+    subtitles stay in sync with the shortened audio.
+
+    Returns the number of seconds removed (0.0 if nothing was done). Never raises: on any
+    failure the original file is left untouched.
+    """
+    import os as _os, subprocess as _sp, shutil as _shutil
+    try:
+        spans = _detect_silences(audio_file, noise_db=noise_db, min_dur=max_gap + 0.05)
+        if not spans:
+            return 0.0
+
+        from moviepy import AudioFileClip
+        _probe = AudioFileClip(audio_file); total = float(_probe.duration); _probe.close()
+
+        # Drop the trailing span (tight-trim handles it) and anything at the very start.
+        cuts = []   # (cut_from, cut_to) absolute seconds to REMOVE
+        for st, en in spans:
+            if en >= total - 0.05:      # trailing silence -> leave for loop_tight_trim
+                continue
+            if st <= 0.05:              # leading silence -> keep, it is part of the hook
+                continue
+            excess = (en - st) - max_gap
+            if excess <= 0.02:
+                continue
+            # remove from the middle of the gap, keeping max_gap of breathing room
+            mid = (st + en) / 2.0
+            cuts.append((mid - excess / 2.0, mid + excess / 2.0))
+        if not cuts:
+            return 0.0
+
+        # Build the keep-segments and an ffmpeg atrim/concat filter over them.
+        keeps, cursor = [], 0.0
+        for cs, ce in cuts:
+            if cs > cursor:
+                keeps.append((cursor, cs))
+            cursor = ce
+        if cursor < total:
+            keeps.append((cursor, total))
+        if len(keeps) < 2:
+            return 0.0
+
+        parts = "".join(
+            f"[0:a]atrim=start={a:.4f}:end={b:.4f},asetpts=PTS-STARTPTS[a{i}];"
+            for i, (a, b) in enumerate(keeps)
+        )
+        chain = "".join(f"[a{i}]" for i in range(len(keeps)))
+        filt = f"{parts}{chain}concat=n={len(keeps)}:v=0:a=1[out]"
+
+        root, ext = _os.path.splitext(audio_file)
+        tmp = f"{root}.gapfix{ext or '.mp3'}"
+        cmd = [_ffmpeg_exe(), "-hide_banner", "-nostats", "-y", "-i", audio_file,
+               "-filter_complex", filt, "-map", "[out]"]
+        cmd += ["-c:a", "libmp3lame", "-q:a", "2"] if (ext or "").lower() == ".mp3" else []
+        cmd += [tmp]
+        r = _sp.run(cmd, capture_output=True, text=True, timeout=180)
+        if r.returncode != 0 or not _os.path.exists(tmp) or _os.path.getsize(tmp) < 1024:
+            logger.warning(f"gap compression: ffmpeg failed, keeping original ({r.returncode})")
+            if _os.path.exists(tmp):
+                _os.remove(tmp)
+            return 0.0
+        _shutil.move(tmp, audio_file)
+
+        removed = sum(ce - cs for cs, ce in cuts)
+
+        # Remap edge-TTS word boundaries (100ns ticks) onto the shortened timeline.
+        if sub_maker is not None and getattr(sub_maker, "offset", None):
+            def shift(sec):
+                return sec - sum(ce - cs for cs, ce in cuts if ce <= sec)
+            sub_maker.offset = [
+                (int(shift(a / 1e7) * 1e7), int(shift(b / 1e7) * 1e7))
+                for (a, b) in sub_maker.offset
+            ]
+
+        logger.info(f"gap compression: removed {removed:.2f}s of dead air across "
+                    f"{len(cuts)} internal gap(s), capped at {max_gap:.2f}s each")
+        return removed
+    except Exception as e:
+        logger.warning(f"gap compression skipped: {e}")
+        return 0.0

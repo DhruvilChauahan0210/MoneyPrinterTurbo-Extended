@@ -126,6 +126,12 @@ def generate_audio(task_id, params, video_script):
         logger.info(f"Audio file saved as: {actual_audio_file} (instead of {audio_file})")
         audio_file = actual_audio_file
 
+    # Shorten the inter-sentence dead air before anything measures the audio. With no BGM
+    # bed these gaps are audible holes; the first one lands ~2s in, at the swipe decision.
+    _gap = getattr(params, "max_sentence_gap", None)
+    if _gap:
+        voice.compress_internal_silence(audio_file, sub_maker=sub_maker, max_gap=float(_gap))
+
     # The subtitle provider reports the final word boundary, not the encoded
     # file duration (which also contains codec padding/trailing audio). Planning
     # visuals from that value can be short even after rounding. MoviePy is also

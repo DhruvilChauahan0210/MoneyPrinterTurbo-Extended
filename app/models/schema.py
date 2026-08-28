@@ -246,7 +246,7 @@ class VideoParams(BaseModel):
     # negative description by at least `hook_negative_margin`; this prevents a
     # poster/sign containing the player's name from outranking the actual face.
     hook_negative_labels: Optional[List[str]] = []
-    hook_negative_margin: Optional[float] = 0.0
+    hook_negative_margin: Optional[float] = 0.08
     hook_overlay_opacity: Optional[float] = 0.45
 
     # Pinned local story photos (additive; no-op when empty). `hook_image_path`
@@ -287,6 +287,9 @@ class VideoParams(BaseModel):
     loop_follow_tag: Optional[bool] = True  # small persistent "follow" tag (loop-safe)
     loop_tight_trim: Optional[bool] = True  # trim dead air after last spoken word for a ~200ms-accurate loop
     loop_tail_pad: Optional[float] = 0.12   # seconds kept after the last word before the loop point
+    # Cap the silent gap BETWEEN sentences in the voiceover (seconds). Edge-TTS leaves
+    # ~0.8s at every full stop; audible as dead air whenever bgm_type is "". None = off.
+    max_sentence_gap: Optional[float] = 0.18
     # Strict one-shot duration ceiling. Checked after the sole TTS call and
     # before media acquisition/render, so an unexpectedly slow narration cannot
     # silently become a retention-killing long edit.

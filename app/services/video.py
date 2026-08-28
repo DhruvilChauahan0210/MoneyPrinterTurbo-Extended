@@ -1538,11 +1538,12 @@ def generate_video(
         [afx.MultiplyVolume(params.voice_volume)]
     )
 
-    # --- Seamless-loop tight trim: cut the dead air after the last spoken word so the
-    #     circular voiceover loops within ~200ms (last word → first word on restart).
-    #     The footage is built to >= audio length (overshoot by whole clips) AND the TTS
-    #     leaves trailing silence; both are removed here. Loop mode only; additive. ---
-    if getattr(params, 'loop_seamless', False) and getattr(params, 'loop_tight_trim', True):
+    # --- Tight trim: cut the dead air after the last spoken word. In seamless-loop mode
+    #     this makes the circular voiceover loop within ~200ms (last word → first word on
+    #     restart); in NORMAL mode it removes the trailing TTS silence that otherwise ends
+    #     every short on ~0.7s of nothing. Runs whenever loop_tight_trim is on (was
+    #     previously gated behind loop_seamless, which silently disabled it). ---
+    if getattr(params, 'loop_tight_trim', True):
         try:
             sp_end = _speech_end_time(audio_path, audio_clip.duration)
             tail = float(getattr(params, 'loop_tail_pad', 0.12))
@@ -1743,9 +1744,11 @@ def generate_video(
 
 def _make_motion_clip(base_clip, effect_idx: int, clip_duration: float, orig_w: int, orig_h: int):
     """
-    Apply one of 5 varied Ken Burns motions (Task 2).
+    Apply one of 8 varied motions.
     Effect cycles by index so adjacent images never share the same motion.
-    Uses ease-out curves for professional deceleration feel.
+    Effects 0-4 are Ken Burns (ease-out deceleration). Effects 5-7 are the high-energy
+    set restored after the 4 Aug 2026 repo reset - whip pan, snap zoom and speed ramp -
+    which exist to put movement in the first second, where retention is decided.
     """
     d = max(clip_duration, 0.1)
 
@@ -1757,7 +1760,7 @@ def _make_motion_clip(base_clip, effect_idx: int, clip_duration: float, orig_w: 
         p = min(t / d, 1.0)
         return p * p * (3.0 - 2.0 * p)
 
-    effect = effect_idx % 5
+    effect = effect_idx % 8
 
     if effect == 0:
         # Zoom in fast (ease-out) 1.0 → 1.22
@@ -1799,10 +1802,52 @@ def _make_motion_clip(base_clip, effect_idx: int, clip_duration: float, orig_w: 
             [large.with_position(pan_right)], size=(orig_w, orig_h)
         )
 
-    else:
+    elif effect == 4:
         # Zoom in dramatic (ease-in-out) 1.0 → 1.28
         zoomed = base_clip.resized(lambda t: 1.0 + 0.28 * ease_in_out(t))
         return CompositeVideoClip([zoomed.with_position("center")], size=(orig_w, orig_h))
+
+    elif effect == 5:
+        # WHIP PAN — fast lateral sweep that decelerates hard. Quartic ease-out puts
+        # almost all the travel in the first third, so the cut lands with momentum.
+        scale = 1.30
+        ow, oh = int(orig_w * scale), int(orig_h * scale)
+        extra_x = ow - orig_w
+        extra_y = (oh - orig_h) // 2
+        large = base_clip.resized(scale)
+
+        def whip(t):
+            p = min(t / d, 1.0)
+            return (int(-extra_x * (1.0 - (1.0 - p) ** 4)), -extra_y)
+
+        return CompositeVideoClip([large.with_position(whip)], size=(orig_w, orig_h))
+
+    elif effect == 6:
+        # SNAP ZOOM — punches in over the first ~15% of the clip, then holds. Reads as
+        # a hard cut-in rather than a drift; strongest opener of the set.
+        def snap(t):
+            k = min(min(t / d, 1.0) / 0.15, 1.0)
+            return 1.0 + 0.20 * (1.0 - (1.0 - k) ** 3)
+
+        zoomed = base_clip.resized(snap)
+        return CompositeVideoClip([zoomed.with_position("center")], size=(orig_w, orig_h))
+
+    else:
+        # SPEED RAMP — slow creep, sharp acceleration through the middle, settle at the
+        # end. On a still this reads as a ramped push-in with a lateral drift.
+        scale = 1.18
+        ow, oh = int(orig_w * scale), int(orig_h * scale)
+        extra_x = ow - orig_w
+        extra_y = (oh - orig_h) // 2
+        large = base_clip.resized(scale)
+
+        def ramp(t):
+            p = min(t / d, 1.0)
+            # ease-in-out-quart: flat, fast, flat
+            e = 8 * p ** 4 if p < 0.5 else 1.0 - ((-2 * p + 2) ** 4) / 2
+            return (int(-extra_x * e), -extra_y)
+
+        return CompositeVideoClip([large.with_position(ramp)], size=(orig_w, orig_h))
 
 
 def _apply_grade(im):
