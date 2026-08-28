@@ -195,7 +195,7 @@ class VideoParams(BaseModel):
     youtube_clip_len: Optional[float] = 3.0               # seconds per cut clip
     youtube_clips_per_video: Optional[int] = 5            # clips cut from each source video
     youtube_max_clips: Optional[int] = 24                 # cap total clips fed to the pool
-    youtube_max_height: Optional[int] = 720              # max source resolution (720 = sharp + fast)
+    youtube_max_height: Optional[int] = 1080             # 1080 sources = 1.78x upscale to 1080x1920; 720 = 2.67x (7.1x invented pixels)
     # Score nudge that tilts segment assignment toward real video clips over
     # photos (clip mid-frames score lower on CLIP, so without this stills always
     # win). Higher = more real footage on screen. ~0.06–0.10 is a good range.
@@ -290,6 +290,11 @@ class VideoParams(BaseModel):
     # Cap the silent gap BETWEEN sentences in the voiceover (seconds). Edge-TTS leaves
     # ~0.8s at every full stop; audible as dead air whenever bgm_type is "". None = off.
     max_sentence_gap: Optional[float] = 0.18
+    # Final-mix mastering. Renders measured -19.5..-20.6 LUFS against YouTube's ~-14
+    # reference, i.e. audibly quieter and flatter than surrounding shorts in the feed.
+    master_audio: Optional[bool] = True
+    target_lufs: Optional[float] = -14.0
+    target_true_peak: Optional[float] = -1.5
     # Strict one-shot duration ceiling. Checked after the sole TTS call and
     # before media acquisition/render, so an unexpectedly slow narration cannot
     # silently become a retention-killing long edit.

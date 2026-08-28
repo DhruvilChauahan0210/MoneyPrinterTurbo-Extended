@@ -371,7 +371,9 @@ def fetch_exact_clip(
         "ffmpeg", "-y", "-loglevel", "error",
         "-ss", f"{float(start):.3f}", "-i", src, "-t", f"{dur:.3f}",
         "-an", "-vf", vf,
-        "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
+        # This cut ALSO performs the crop+upscale to 1080x1920, so it is the worst
+        # place to lose detail. Matches the intermediate cut above (was veryfast/CRF 18).
+        "-c:v", "libx264", "-preset", "fast", "-crf", "16",
         "-pix_fmt", "yuv420p", out_path,
     ]
     try:

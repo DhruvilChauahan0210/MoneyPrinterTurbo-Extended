@@ -1659,9 +1659,13 @@ def generate_video(
         video_clip = CompositeVideoClip([video_clip, *overlay_clips])
 
     # --- Task 5: BGM with fade-in + lower volume ---
+    # NOTE: the SFX/boom section below used to live INSIDE `if bgm_file:`. Setting
+    # bgm_type "" on 4 Aug 2026 therefore also silenced the t=0 hook impact, measurable
+    # as an opening 1.5dB QUIETER than mid-clip. BGM is now optional; SFX always runs.
     bgm_file = get_bgm_file(bgm_type=params.bgm_type, bgm_file=params.bgm_file)
-    if bgm_file:
+    if True:
         try:
+            audio_tracks = [audio_clip]
             bgm_vol = getattr(params, 'bgm_volume', 0.12)
             # In seamless-loop mode keep the music continuous (a long fade-out would
             # die at the end then slam back on restart — the loudest "it ended" cue).
@@ -1669,15 +1673,16 @@ def generate_video(
             # made a ~0.3s volume dip at the restart. 0.04s only de-clicks the join.
             bgm_fadeout = 0.04 if loop_mode else 3
             bgm_fadein = 0.04 if loop_mode else 1.5
-            bgm_clip = AudioFileClip(bgm_file).with_effects(
-                [
-                    afx.MultiplyVolume(bgm_vol),
-                    afx.AudioFadeIn(bgm_fadein),
-                    afx.AudioFadeOut(bgm_fadeout),
-                    afx.AudioLoop(duration=video_clip.duration),
-                ]
-            )
-            audio_tracks = [audio_clip, bgm_clip]
+            if bgm_file:
+                bgm_clip = AudioFileClip(bgm_file).with_effects(
+                    [
+                        afx.MultiplyVolume(bgm_vol),
+                        afx.AudioFadeIn(bgm_fadein),
+                        afx.AudioFadeOut(bgm_fadeout),
+                        afx.AudioLoop(duration=video_clip.duration),
+                    ]
+                )
+                audio_tracks.append(bgm_clip)
 
             # Task 5: SFX whoosh on each image cut
             sfx_dir = os.path.join(utils.root_dir(), "resource", "sfx")
@@ -1716,7 +1721,8 @@ def generate_video(
                     except Exception:
                         pass
 
-            audio_clip = CompositeAudioClip(audio_tracks)
+            if len(audio_tracks) > 1:
+                audio_clip = CompositeAudioClip(audio_tracks)
         except Exception as e:
             from app.services import one_shot
             if one_shot.is_enabled(params):
@@ -1739,7 +1745,73 @@ def generate_video(
     )
     video_clip.close()
     del video_clip
+    _master_audio(output_file, params)
     return planned_duration
+
+
+def _master_audio(output_file: str, params) -> bool:
+    """Master the finished short's audio to broadcast loudness, in place.
+
+    Measured on the 25-30 Aug builds: every short landed at -19.5 to -20.6 LUFS with a
+    loudness range of 1.0 and 4-6dB of unused headroom. YouTube's reference is ~-14 LUFS,
+    so each short played back noticeably quieter and flatter than whatever the viewer
+    swiped in from - a low-energy read that no amount of scripting fixes.
+
+    Chain: rumble filter -> gentle compression -> presence lift -> two-pass loudnorm.
+    The presence band matters most: 71% of this channel's audience is on mobile, and
+    phone speakers reproduce almost nothing below ~500Hz, so intelligibility and
+    "expensive" both live around 2-5kHz.
+
+    Video is stream-copied, so this costs no quality and only a second or two. Returns
+    True when the file was replaced. Never raises: on any failure the render is kept.
+    """
+    import subprocess as _sp, json as _json, os as _os, shutil as _shutil
+    if not getattr(params, "master_audio", True):
+        return False
+    target = float(getattr(params, "target_lufs", -14.0))
+    tp = float(getattr(params, "target_true_peak", -1.5))
+    try:
+        try:
+            import imageio_ffmpeg
+            ff = imageio_ffmpeg.get_ffmpeg_exe()
+        except Exception:
+            ff = "ffmpeg"
+
+        pre = ("highpass=f=80,"
+               "acompressor=threshold=-18dB:ratio=3:attack=5:release=120:makeup=1.5,"
+               "equalizer=f=3200:t=q:w=1.4:g=3")
+
+        # Pass 1 - measure the source through the same pre-chain loudnorm will see.
+        p1 = _sp.run([ff, "-hide_banner", "-nostats", "-i", output_file, "-af",
+                      f"{pre},loudnorm=I={target}:TP={tp}:LRA=7:print_format=json",
+                      "-f", "null", "-"], capture_output=True, text=True, timeout=180)
+        blob = p1.stderr[p1.stderr.rindex("{"):p1.stderr.rindex("}") + 1]
+        m = _json.loads(blob)
+        before = float(m["input_i"])
+
+        # Pass 2 - apply with the measured values for an accurate landing.
+        norm = (f"loudnorm=I={target}:TP={tp}:LRA=7"
+                f":measured_I={m['input_i']}:measured_TP={m['input_tp']}"
+                f":measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}"
+                f":offset={m['target_offset']}:linear=true")
+        root, ext = _os.path.splitext(output_file)
+        tmp = f"{root}.mastered{ext}"
+        p2 = _sp.run([ff, "-hide_banner", "-nostats", "-y", "-i", output_file,
+                      "-af", f"{pre},{norm}", "-c:v", "copy",
+                      "-c:a", "aac", "-b:a", "192k", "-ar", "44100", tmp],
+                     capture_output=True, text=True, timeout=300)
+        if p2.returncode != 0 or not _os.path.exists(tmp) or _os.path.getsize(tmp) < 10000:
+            logger.warning(f"audio master: ffmpeg failed ({p2.returncode}), keeping unmastered")
+            if _os.path.exists(tmp):
+                _os.remove(tmp)
+            return False
+        _shutil.move(tmp, output_file)
+        logger.info(f"audio mastered: {before:.1f} LUFS -> {target:.1f} LUFS "
+                    f"(TP {tp}dB, presence +3dB @3.2kHz)")
+        return True
+    except Exception as e:
+        logger.warning(f"audio master skipped: {e}")
+        return False
 
 
 def _make_motion_clip(base_clip, effect_idx: int, clip_duration: float, orig_w: int, orig_h: int):
