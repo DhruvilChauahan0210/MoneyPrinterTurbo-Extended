@@ -1036,6 +1036,59 @@ def _split_emoji(text: str):
     return "".join(kept).strip(), emoji
 
 
+def _balanced_wrap(words, font, max_w: int):
+    """Wrap into the fewest lines, then even those lines out.
+
+    Greedy wrapping packs each line to the limit and dumps the remainder on the last
+    one, which is how "DOCTORS SAID HIS / HEART COULD KILL / HIM" reached frame 1 with a
+    single orphaned word. Typesetters minimise raggedness instead: same line count, but
+    the breaks chosen so the lines come out near-equal. Hook text is short, so the exact
+    minimum is cheap to find by search rather than approximated.
+    """
+    def w(t):
+        b = font.getbbox(t)
+        return b[2] - b[0]
+
+    # fewest lines a greedy pass can achieve
+    lines, line = [], ""
+    for word in words:
+        test = (line + " " + word).strip()
+        if w(test) <= max_w:
+            line = test
+        else:
+            if line:
+                lines.append(line)
+            line = word
+    if line:
+        lines.append(line)
+    k = len(lines)
+    if k < 2 or len(words) < k:
+        return lines
+
+    best, best_cost = lines, None
+    def search(start, remaining, acc):
+        nonlocal best, best_cost
+        if remaining == 1:
+            tail = " ".join(words[start:])
+            if w(tail) > max_w:
+                return
+            cand = acc + [tail]
+            widths = [w(x) for x in cand]
+            # squared spread from the widest line: even lines win
+            cost = sum((max(widths) - x) ** 2 for x in widths)
+            if best_cost is None or cost < best_cost:
+                best, best_cost = cand, cost
+            return
+        for end in range(start + 1, len(words) - remaining + 2):
+            piece = " ".join(words[start:end])
+            if w(piece) > max_w:
+                break
+            search(end, remaining - 1, acc + [piece])
+
+    search(0, k, [])
+    return best
+
+
 def _render_text_card(
     text: str, font_path: str, font_size: int,
     video_width: int, video_height: int,
@@ -1050,20 +1103,8 @@ def _render_text_card(
     except Exception:
         font = ImageFont.load_default()
 
-    # Word-wrap
-    words = text.split()
-    lines, line = [], ""
-    for word in words:
-        test = (line + " " + word).strip()
-        bbox = font.getbbox(test)
-        if bbox[2] - bbox[0] <= video_width * 0.88:
-            line = test
-        else:
-            if line:
-                lines.append(line)
-            line = word
-    if line:
-        lines.append(line)
+    # Word-wrap, balanced so no line is left with a single orphaned word.
+    lines = _balanced_wrap(text.split(), font, int(video_width * 0.88))
 
     lh = int(font_size * 1.25)
     total_h = lh * len(lines) + 20
@@ -1684,26 +1725,6 @@ def generate_video(
                 )
                 audio_tracks.append(bgm_clip)
 
-            # Ambience bed: sound design, not BGM. Runs under the whole short at a level
-            # you notice only when it is missing - it stops the mix sounding like a voice
-            # memo in an empty room. Independent of bgm_type.
-            amb_file = getattr(params, 'ambience_file', '') or ''
-            amb_vol = float(getattr(params, 'ambience_volume', 0.0) or 0.0)
-            if amb_file and amb_vol > 0 and os.path.exists(amb_file):
-                try:
-                    amb = AudioFileClip(amb_file).with_effects([
-                        afx.MultiplyVolume(amb_vol),
-                        afx.AudioLoop(duration=video_clip.duration),
-                        afx.AudioFadeIn(0.3),
-                        afx.AudioFadeOut(0.5),
-                    ])
-                    audio_tracks.append(amb)
-                    logger.info(f"ambience bed added at {amb_vol:.2f}: {os.path.basename(amb_file)}")
-                except Exception as e:
-                    logger.warning(f"ambience bed skipped: {e}")
-            elif amb_file and amb_vol > 0:
-                logger.warning(f"ambience bed requested but missing: {amb_file}")
-
             # Task 5: SFX whoosh on each image cut
             sfx_dir = os.path.join(utils.root_dir(), "resource", "sfx")
             whoosh_path = os.path.join(sfx_dir, "whoosh.mp3")
@@ -1816,10 +1837,33 @@ def _master_audio(output_file: str, params) -> bool:
                 f":offset={m['target_offset']}:linear=true")
         root, ext = _os.path.splitext(output_file)
         tmp = f"{root}.mastered{ext}"
-        p2 = _sp.run([ff, "-hide_banner", "-nostats", "-y", "-i", output_file,
-                      "-af", f"{pre},{norm}", "-c:v", "copy",
-                      "-c:a", "aac", "-b:a", "192k", "-ar", "44100", tmp],
-                     capture_output=True, text=True, timeout=300)
+
+        # Ambience is mixed HERE rather than in the moviepy graph so it can be properly
+        # sidechained: a fixed-level bed fights the narration, a ducked one breathes in
+        # the gaps and is only noticed when it is missing. Still not BGM -- independent
+        # of bgm_type, which stays "".
+        amb_file = getattr(params, "ambience_file", "") or ""
+        amb_vol = float(getattr(params, "ambience_volume", 0.0) or 0.0)
+        use_amb = bool(amb_file and amb_vol > 0 and _os.path.exists(amb_file))
+        if amb_file and amb_vol > 0 and not use_amb:
+            logger.warning(f"ambience bed requested but missing: {amb_file}")
+
+        if use_amb:
+            duck = float(getattr(params, "ambience_duck", 8.0))
+            fc = (f"[0:a]{pre},asplit=2[v][sc];"
+                  f"[1:a]volume={amb_vol},aloop=loop=-1:size=2000000000[ambl];"
+                  f"[ambl][sc]sidechaincompress=threshold=0.02:ratio={duck}:"
+                  f"attack=5:release=260:makeup=1[ambd];"
+                  f"[v][ambd]amix=inputs=2:duration=first:normalize=0[mx];"
+                  f"[mx]{norm}[out]")
+            cmd2 = [ff, "-hide_banner", "-nostats", "-y", "-i", output_file,
+                    "-i", amb_file, "-filter_complex", fc, "-map", "0:v", "-map", "[out]",
+                    "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "44100", tmp]
+        else:
+            cmd2 = [ff, "-hide_banner", "-nostats", "-y", "-i", output_file,
+                    "-af", f"{pre},{norm}", "-c:v", "copy",
+                    "-c:a", "aac", "-b:a", "192k", "-ar", "44100", tmp]
+        p2 = _sp.run(cmd2, capture_output=True, text=True, timeout=300)
         if p2.returncode != 0 or not _os.path.exists(tmp) or _os.path.getsize(tmp) < 10000:
             logger.warning(f"audio master: ffmpeg failed ({p2.returncode}), keeping unmastered")
             if _os.path.exists(tmp):
@@ -1827,7 +1871,8 @@ def _master_audio(output_file: str, params) -> bool:
             return False
         _shutil.move(tmp, output_file)
         logger.info(f"audio mastered: {before:.1f} LUFS -> {target:.1f} LUFS "
-                    f"(TP {tp}dB, presence +3dB @3.2kHz)")
+                    f"(TP {tp}dB, presence +3dB @3.2kHz"
+                    + (", ambience ducked" if use_amb else "") + ")")
         return True
     except Exception as e:
         logger.warning(f"audio master skipped: {e}")

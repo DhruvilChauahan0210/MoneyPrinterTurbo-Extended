@@ -622,6 +622,25 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                         logger.info(f"rhythm: opening hold {clip_durations[0]:.2f}s "
                                     f"(borrowed {_take:.2f}s from {len(_mid)} shots)")
 
+                # J/L cuts: nudge each visual boundary off its audio boundary, in
+                # alternating directions so the running total never drifts. Picture and
+                # sound currently cut on the same frame every single time, which is the
+                # flattest edit grammar there is; letting one lead the other by a couple
+                # of frames is the clearest signature of a hand-made cut. Small by
+                # design -- it must not undo the image/phrase match timed sync provides.
+                _jl = float(getattr(params, "jl_cut_offset", 0.0) or 0.0)
+                if _jl > 0 and len(clip_durations) >= 4:
+                    _moved = 0
+                    for i in range(1, len(clip_durations) - 2, 2):
+                        d = _jl if i % 4 == 1 else -_jl
+                        if clip_durations[i] + d >= 0.30 and clip_durations[i + 1] - d >= 0.30:
+                            clip_durations[i] += d
+                            clip_durations[i + 1] -= d
+                            _moved += 1
+                    if _moved:
+                        logger.info(f"J/L cuts: {_moved} visual boundaries offset by "
+                                    f"{_jl * 1000:.0f}ms against the narration")
+
                 # Loop design: make the FINAL visual the same as the opening hook
                 # frame so the Short loops seamlessly (strong rewatch/retention signal).
                 cover = getattr(params, '_best_image_path', None)
@@ -933,6 +952,33 @@ def _start_impl(task_id, params: VideoParams, stop_at: str = "video"):
             min_sources=int(getattr(params, "one_shot_min_visual_sources", 0) or 0),
             image_duration=float(getattr(params, "video_clip_duration", 2) or 2),
         )
+
+        # Structural validation above answers "will this decode?". This answers "is this
+        # worth rendering?" -- the question nothing was asking when a short shipped with
+        # five interchangeable ICU monitors and a chyron across half its runtime.
+        if getattr(params, "editorial_gate", True):
+            try:
+                from app.services import craft
+                audit = craft.audit_media_plan(
+                    downloaded_videos,
+                    subject_floor=float(getattr(params, "min_subject_fraction", 0.60)),
+                )
+                params._editorial_audit = audit
+                logger.info(
+                    f"editorial gate: {audit['subject_present']}/{audit['clips']} shots with a "
+                    f"person, {audit['burned_in_text']} with burned-in text, "
+                    f"{audit['near_duplicates']} near-duplicates, brightness spread "
+                    f"{audit['brightness_spread']:.0f}, sizes {audit['shot_sizes']}")
+                for problem in audit["problems"]:
+                    logger.warning(f"editorial gate: {problem}")
+                if not audit["ok"]:
+                    raise one_shot.OneShotError(
+                        "editorial gate rejected the media plan: "
+                        + "; ".join(audit["problems"]))
+            except one_shot.OneShotError:
+                raise
+            except Exception as exc:
+                logger.warning(f"editorial gate skipped: {exc}")
 
     # 6. Generate final videos
     _claim_once(params, "final_render")

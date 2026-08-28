@@ -362,8 +362,56 @@ def fetch_exact_clip(
             f"[bgb][fgs]overlay=(W-w)/2:(H-h)/2,setsar=1"
         )
     else:
+        # Subject-aware reframe. The old filter cropped dead centre: on a 1920x1080
+        # broadcast frame the 9:16 window is 608px, so 68% of the width was discarded
+        # blind on every clip. If the action sat anywhere but the middle it was simply
+        # gone -- which is how referees, grass and half-cropped heads reached the edit.
+        # craft.subject_window scores a probe frame and returns the window that actually
+        # holds the subject; below its confidence floor it returns dead centre, so the
+        # fallback is byte-identical to the previous behaviour.
+        crop_expr = None
+        reject_text = bool(globals().get("_REJECT_BURNED_IN_TEXT", True))
+        try:
+            from app.services import craft
+            probe = f"{out_path}.probe.jpg"
+            pr = _run(["ffmpeg", "-y", "-loglevel", "error",
+                       "-ss", f"{float(start) + dur / 2:.3f}", "-i", src,
+                       "-frames:v", "1", "-q:v", "3", probe], timeout=60)
+            if pr.returncode == 0 and os.path.exists(probe):
+                # Reject broadcast furniture HERE, while the caller can still choose a
+                # different clip. The MEMORIAS DO MELHOR bar sat across ~8 of EP12's 18
+                # frames because CLIP scores content, not furniture, and because the
+                # source was banned by video id -- and the same documentary was
+                # re-uploaded under a new id the same day.
+                if reject_text:
+                    bands = craft.detect_text_bands(probe)
+                    if bands:
+                        b = bands[0]
+                        logger.warning(
+                            f"auto_footage: REJECTED {os.path.basename(str(url))[:24]} "
+                            f"[{start:.1f}-{end:.1f}] - burned-in text band at "
+                            f"y={b['y0']:.2f}-{b['y1']:.2f} (score {b['score']}, "
+                            f"{b['width_frac']:.0%} of width)")
+                        try:
+                            os.remove(probe)
+                        except Exception:
+                            pass
+                        return ""
+                win = craft.subject_window(probe, W, H)
+                if win and win.get("w"):
+                    crop_expr = f"crop={win['w']}:{win['h']}:{win['x']}:{win['y']}"
+                    logger.info(f"auto_footage: reframe {win['method']} "
+                                f"x={win['x']} (drift {win.get('drift', 0):+.1%})")
+                try:
+                    os.remove(probe)
+                except Exception:
+                    pass
+        except Exception as e:
+            logger.debug(f"auto_footage: reframe unavailable, centring ({e})")
+        if not crop_expr:
+            crop_expr = f"crop='min(iw,ih*{W}/{H})':'min(ih,iw*{H}/{W})'"
         vf = (
-            f"crop='min(iw,ih*{W}/{H})':'min(ih,iw*{H}/{W})',"
+            f"{crop_expr},"
             f"scale={W}:{H}:force_original_aspect_ratio=increase,"
             f"crop={W}:{H},setsar=1"
         )

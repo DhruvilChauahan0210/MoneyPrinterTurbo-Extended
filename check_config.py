@@ -13,6 +13,17 @@ fatal, but it is the first thing to suspect when builds start failing.
 """
 import json, sys, os
 
+# Concept queries are how stock footage gets in. EP12 asked for "hospital heart monitor
+# beeping close up" and "electrocardiogram machine hospital", and shipped with five
+# interchangeable ICU monitors, two ECG printouts and an empty hospital room in nine
+# seconds -- roughly half the runtime. The editor's rule is cut to the SUBJECT, not to
+# the concept: when the line is "his heart wouldn't slow down" you hold on his face.
+STOCK_WORDS = (
+    "hospital", "electrocardiogram", "ecg", "heart monitor", "stethoscope", "surgery room",
+    "operating theatre", "medical chart", "x-ray", "ambulance", "laboratory", "microscope",
+    "stock footage", "abstract", "background loop", "generic",
+)
+
 BUDGET = {
     "subject_negative_labels": 45,   # July baseline 35
     "hook_negative_labels":    18,   # July baseline 11
@@ -21,8 +32,40 @@ FLOOR_MIN   = 0.30                   # July baseline 0.35; lowering this lets ju
 LEDGER_MAX  = 20                     # rolling window, not an all-time ban
 BANLIST_MAX = 160
 
+def _subject_terms(df):
+    """Names the short is about, taken from the positive labels."""
+    terms = set()
+    for lab in (df.get("subject_positive_labels") or []):
+        for w in lab.split():
+            w = w.strip(".,'\"").lower()
+            if len(w) > 3 and w[0].isupper() is False and w.isalpha():
+                continue
+        for w in lab.replace("'s", "").split():
+            w = w.strip(".,'\"")
+            if len(w) > 3 and w[0].isupper():
+                terms.add(w.lower())
+    return terms
+
+
 def check(path):
     d = json.load(open(path)); df = d.get("defaults", {}); warn = []
+
+    # --- footage queries must name the subject ---
+    queries = df.get("youtube_footage_queries") or []
+    subject = _subject_terms(df)
+    if queries and subject:
+        anon = [q for q in queries
+                if not any(t in q.lower() for t in subject)]
+        stock = [q for q in queries if any(k in q.lower() for k in STOCK_WORDS)]
+        for q in stock:
+            warn.append(f'stock query: "{q}" -- cut to the subject, not the concept')
+        for q in anon:
+            if q not in stock:
+                warn.append(f'query names no subject: "{q}" (expected one of: '
+                            f'{", ".join(sorted(subject))})')
+        if queries and len(anon) / len(queries) > 0.25:
+            warn.append(f"{len(anon)}/{len(queries)} queries do not name the subject "
+                        f"-- the pool will fill with stock and the edit will show it")
     for key, cap in BUDGET.items():
         n = len(df.get(key) or [])
         if n > cap:

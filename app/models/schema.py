@@ -300,6 +300,7 @@ class VideoParams(BaseModel):
     # Off by default (0.0): set ambience_volume ~0.05-0.09 to enable.
     ambience_file: Optional[str] = ""
     ambience_volume: Optional[float] = 0.0
+    ambience_duck: Optional[float] = 8.0   # sidechain ratio: how hard the voice pushes the bed down
     # Rhythm shaping: length of the opening establishing hold, in seconds (0 = off).
     # Timed sync gives every caption phrase its own shot, so at max_words_per_subtitle 2
     # every shot lands at ~0.4-0.6s - a relentless, machine-even rhythm with no place for
@@ -307,6 +308,18 @@ class VideoParams(BaseModel):
     # drifts the image/phrase match by ~0.2s for a few early shots. OFF by default: it
     # trades against the audio/visual guarantee timed sync exists to provide. Try 1.1.
     rhythm_opening_hold: Optional[float] = 0.0
+    # J/L cuts: seconds by which a visual boundary may lead or trail its audio boundary.
+    # 0 = off (picture and sound cut together, as before). 0.10-0.14 is the useful range.
+    jl_cut_offset: Optional[float] = 0.0
+    # Reject a source clip whose frames carry burned-in furniture -- broadcaster chyrons,
+    # hardcoded subtitles, sponsor bars. Detected at cut time so the pool can supply a
+    # replacement, rather than after the render when it is too late.
+    reject_burned_in_text: Optional[bool] = True
+    # Editorial gate: judge the SELECTED media before the only render, since the channel
+    # renders once and ships. Structural validation asks "will this decode?"; this asks
+    # "is this worth rendering?".
+    editorial_gate: Optional[bool] = True
+    min_subject_fraction: Optional[float] = 0.60
     # Strict one-shot duration ceiling. Checked after the sole TTS call and
     # before media acquisition/render, so an unexpectedly slow narration cannot
     # silently become a retention-killing long edit.
