@@ -588,6 +588,7 @@ def assign_images_to_segments(
         used_count = [0] * n_img
         source_count: Dict[str, int] = {}
         _reuse_relax = 0            # how far the per-clip cap has been raised this build
+        _source_relax = 0           # and the per-source cap
         for s in range(n_seg):
             scores = sim[s].copy()
             for i in range(n_img):
@@ -630,16 +631,30 @@ def assign_images_to_segments(
                         f"too small; raise youtube_max_videos or prune the ledger/banlist"
                     )
             if max_source_reuse > 0:
+                # Same degrade-don't-abort rule as the per-clip cap above. Missed on the
+                # first pass; it is the identical failure one line down the same loop.
                 under_source_cap = [
                     i for i in pool
-                    if source_count.get(source_keys[i], 0) < max_source_reuse
+                    if source_count.get(source_keys[i], 0) < max_source_reuse + _source_relax
                 ]
+                while not under_source_cap and _source_relax < _MAX_REUSE_RELAX:
+                    _source_relax += 1
+                    under_source_cap = [
+                        i for i in pool
+                        if source_count.get(source_keys[i], 0) < max_source_reuse + _source_relax
+                    ]
+                    if under_source_cap:
+                        logger.warning(
+                            f"image_ranker: sources exhausted at segment {s + 1}; raising the "
+                            f"per-source reuse cap {max_source_reuse} -> "
+                            f"{max_source_reuse + _source_relax} for this build")
                 if under_source_cap:
                     pool = under_source_cap
                 elif strict:
                     from app.services.one_shot import OneShotError
                     raise OneShotError(
-                        f"all source videos reached the reuse cap before segment {s + 1}"
+                        f"all source videos reached the reuse cap before segment {s + 1}, "
+                        f"even relaxed to {max_source_reuse + _MAX_REUSE_RELAX}"
                     )
             if prev >= 0 and len(pool) > 1 and prev in pool:
                 scores[prev] = -1e9            # never repeat the same media back-to-back

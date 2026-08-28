@@ -336,7 +336,8 @@ def matches_any_hash(h: str, banned: List[str], threshold: int = 8) -> bool:
 # ------------------------------------------------------------- editorial QA ----
 
 def audit_media_plan(paths: List[str], subject_floor: float = 0.60,
-                     dupe_threshold: int = 6) -> dict:
+                     dupe_threshold: int = 6, max_media_reuse: int = 2,
+                     min_media: int = 6) -> dict:
     """Judge the selected media before the render, not after.
 
     `validate_media_plan` already checks that the files exist, decode and are portrait --
@@ -351,7 +352,7 @@ def audit_media_plan(paths: List[str], subject_floor: float = 0.60,
     """
     report = {"clips": len(paths or []), "subject_present": 0, "burned_in_text": 0,
               "near_duplicates": 0, "brightness_spread": 0.0, "shot_sizes": {},
-              "ok": True, "problems": []}
+              "ok": True, "problems": [], "drop": []}
     if not paths:
         report["ok"] = False
         report["problems"].append("no media")
@@ -384,6 +385,7 @@ def audit_media_plan(paths: List[str], subject_floor: float = 0.60,
             report["subject_present"] += 1
         if detect_text_bands(im):
             report["burned_in_text"] += 1
+            report["drop"].append(p)          # surgical: remove this shot, keep the build
         brights.append(float(np.asarray(sm.convert("L"), dtype=np.float32).mean()))
         sizes.append(shot_size(sm))
         h = frame_hash(im)
@@ -405,16 +407,31 @@ def audit_media_plan(paths: List[str], subject_floor: float = 0.60,
             f"only {report['subject_present']}/{n} shots contain a person "
             f"({frac:.0%} < {subject_floor:.0%}) -- the pool has filled with stock")
     if report["burned_in_text"]:
-        # Hard fail: these are now rejected at cut time, so anything reaching the gate
-        # means the detector was bypassed or the pool had no clean alternative. Either
-        # way it must not render -- this is the exact defect that put a broadcaster's
-        # chyron on frame 1 of a shipped short.
-        report["ok"] = False
+        # DROP, do not fail. The first version hard-failed here on the premise that
+        # cut-time rejection had already removed these, so anything reaching the gate was
+        # a bypass. That premise was wrong: cut-time rejection lives in _cut_exact_clip
+        # and only sees YouTube footage, while most configs run video_source
+        # "image_search" -- so the gate routinely meets unfiltered media and killed an
+        # entire 11-minute build over one bad shot in seventeen. Removing the offending
+        # shot and rendering the rest is both correct and what an editor would do.
+        remaining = len(paths) - len(report["drop"])
+        if remaining < min_media:
+            report["ok"] = False
+            report["problems"].append(
+                f"{report['burned_in_text']} shot(s) carry burned-in text and dropping "
+                f"them leaves only {remaining} (< {min_media}) -- pool is too thin")
+        else:
+            report["problems"].append(
+                f"{report['burned_in_text']} shot(s) carry burned-in text -- dropped, "
+                f"rendering with the remaining {remaining}")
+    # A fixed 34% threshold contradicted max_video_reuse: at reuse 2, half the plan is
+    # ALLOWED to be a second use of an earlier clip, so normal operation looked like a
+    # fault. Derive the bar from the cap actually in force, plus headroom.
+    dupe_bar = min(0.85, (1.0 - 1.0 / max(1, max_media_reuse)) + 0.20)
+    if report["near_duplicates"] > n * dupe_bar:
         report["problems"].append(
-            f"{report['burned_in_text']} shot(s) carry burned-in text (chyron/subtitles)")
-    if report["near_duplicates"] > n * 0.34:
-        report["problems"].append(
-            f"{report['near_duplicates']}/{n} shots are near-duplicates of earlier ones")
+            f"{report['near_duplicates']}/{n} shots are near-duplicates "
+            f"(over {dupe_bar:.0%}, the bar implied by max_video_reuse={max_media_reuse})")
     if report["brightness_spread"] > 110:
         # Warning only: _match_shots corrects exposure during preprocess_video, which runs
         # after this gate. Worth surfacing so a genuinely extreme plan is visible.

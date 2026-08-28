@@ -962,6 +962,8 @@ def _start_impl(task_id, params: VideoParams, stop_at: str = "video"):
                 audit = craft.audit_media_plan(
                     downloaded_videos,
                     subject_floor=float(getattr(params, "min_subject_fraction", 0.60)),
+                    max_media_reuse=int(getattr(params, "max_video_reuse", 2) or 2),
+                    min_media=int(getattr(params, "one_shot_min_media", 3) or 3),
                 )
                 params._editorial_audit = audit
                 logger.info(
@@ -971,6 +973,13 @@ def _start_impl(task_id, params: VideoParams, stop_at: str = "video"):
                     f"{audit['brightness_spread']:.0f}, sizes {audit['shot_sizes']}")
                 for problem in audit["problems"]:
                     logger.warning(f"editorial gate: {problem}")
+                # Remove what the gate condemned and carry on. Failing the whole build
+                # over a removable shot is what cost an 11-minute render on 28 Aug.
+                if audit.get("drop"):
+                    keep = [p for p in downloaded_videos if p not in set(audit["drop"])]
+                    logger.warning(f"editorial gate: dropping {len(audit['drop'])} shot(s) "
+                                   f"with burned-in text; {len(keep)} remain")
+                    downloaded_videos[:] = keep
                 if not audit["ok"]:
                     raise one_shot.OneShotError(
                         "editorial gate rejected the media plan: "

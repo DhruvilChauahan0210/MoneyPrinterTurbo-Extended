@@ -27,7 +27,7 @@ for pair in "$@"; do
   # --- LEDGER GUARD: a rejected/failed attempt must never burn the ledger ---
   LEDGER=storage/ronaldo_series_clip_ledger.json
   [[ -f $LEDGER ]] && cp $LEDGER /tmp/ledger_before_${batch}.json
-  tmplog="/tmp/mpt_${batch}.log"
+  tmplog=~/Desktop/"BUILDLOG_${batch}.log"   # kept, not /tmp: on failure we need the whole thing
   $PY batch_generator.py "$batch.json" > "$tmplog" 2>&1 &
   bpid=$!
   killed=0
@@ -50,6 +50,7 @@ for pair in "$@"; do
       echo ">>> ledger rolled back (failed attempt did not burn media)"
     fi
     echo ">>> !!! BUILD FAILED for $batch (no retry)"
+    echo ">>> full log kept at $tmplog"
     print -r -- "$build_log" | tail -30
     fail=$((fail+1))
   fi
