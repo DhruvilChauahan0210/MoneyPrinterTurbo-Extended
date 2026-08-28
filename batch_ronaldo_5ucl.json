@@ -137,7 +137,7 @@
   "enable_sfx": true,
   "sfx_volume": 0.5,
   "enable_cta": true,
-  "cta_text": "COULD YOU RISK IT? 👇",
+  "cta_text": "WORTH THE MONEY? 👇",
   "loop_seamless": false,
   "loop_follow_tag": false,
   "loop_tight_trim": true,
@@ -154,17 +154,17 @@
   ],
   "curated_image_paths": [],
   "max_sentence_gap": 0.18,
-  "video_script": "In two thousand nine, Madrid paid a world record fee for a winger. Fans called it madness. Nine years later he walked out with five European Cups. Which makes you wonder,",
+  "video_script": "In two thousand nine, Madrid paid a world record fee for a winger who had already won one European Cup. Fans called it madness. He left the Bernabeu with four more. Which makes you wonder,",
   "ambience_file": "resource/ambience/stadium_roomtone.mp3",
   "ambience_volume": 0.07,
   "jl_cut_offset": 0.12,
-  "video_subject": "In 2009 Real Madrid paid a world record fee for Cristiano Ronaldo, a decision widely called madness at the time, and over nine years at the club he won five Champions League titles, more than any player in the history of the competition",
+  "video_subject": "In 2009 Real Madrid paid a world record transfer fee for Cristiano Ronaldo, who had won the Champions League once with Manchester United in 2008. Over nine years at Real Madrid he won it four more times, in 2014, 2016, 2017 and 2018, taking his career total to five",
   "video_terms": "Cristiano Ronaldo Real Madrid, Ronaldo Champions League trophy, Ronaldo Bernabeu presentation, Ronaldo white Madrid jersey celebration"
  },
  "videos": [
   {
-   "video_subject": "In 2009 Real Madrid paid a world record fee for Cristiano Ronaldo, a decision widely called madness at the time, and over nine years at the club he won five Champions League titles, more than any player in the history of the competition",
-   "video_script": "In two thousand nine, Madrid paid a world record fee for a winger. Fans called it madness. Nine years later he walked out with five European Cups. Which makes you wonder,",
+   "video_subject": "In 2009 Real Madrid paid a world record transfer fee for Cristiano Ronaldo, who had won the Champions League once with Manchester United in 2008. Over nine years at Real Madrid he won it four more times, in 2014, 2016, 2017 and 2018, taking his career total to five",
+   "video_script": "In two thousand nine, Madrid paid a world record fee for a winger who had already won one European Cup. Fans called it madness. He left the Bernabeu with four more. Which makes you wonder,",
    "video_terms": "Cristiano Ronaldo Real Madrid, Ronaldo Champions League trophy, Ronaldo Bernabeu presentation, Ronaldo white Madrid jersey celebration"
   }
  ]
