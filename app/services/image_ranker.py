@@ -486,9 +486,26 @@ def filter_by_relevance(
         _vid_ext = (".mp4", ".mov", ".webm", ".mkv", ".avi")
         kept = [(s, p) for s, p in zip(sim, paths)
                 if s >= min_score or (not strict and p.lower().endswith(_vid_ext))]
-        if len(kept) < min_keep and not strict:
+        if len(kept) < min_keep:
+            # The floor applies in STRICT mode too, and that is the whole point of it.
+            # Similarity for a single-topic footage corpus clusters in a very narrow
+            # band: measured on the EP15 pool, min_score 0.200 keeps 72 clips and 0.205
+            # keeps 7. A threshold a few thousandths too high therefore does not degrade
+            # a build, it deletes it -- the gate chain multiplies down to one candidate
+            # and the run hard-fails AFTER paying the full 10-16 minute download cost,
+            # which is by far the most expensive failure this pipeline has. Back-filling
+            # the best-ranked media keeps the render alive and reports the shortfall,
+            # which is always cheaper than a rebuild. Safe to relax here because this
+            # gate only ever measured TOPICAL similarity: filter_by_subject_presence
+            # below is what keeps the wrong player off the screen.
             ranked = sorted(zip(sim, paths), key=lambda x: -x[0])
             kept = ranked[: min(min_keep, len(ranked))]
+            if strict:
+                logger.warning(
+                    f"relevance gate: only {int((sim >= min_score).sum())} of {len(paths)} "
+                    f"cleared min_score {min_score}; backfilled to {len(kept)} best-ranked "
+                    f"rather than starving the build"
+                )
         kept_paths = [p for _, p in sorted(kept, key=lambda x: paths.index(x[1]))]
 
         dropped = len(paths) - len(kept_paths)
@@ -827,7 +844,7 @@ def assign_images_to_segments(
 
 
 def filter_soft_media(paths: List[str], floor: float = 12.0, min_keep: int = 3,
-                      strict: bool = False) -> List[str]:
+                      strict: bool = False, max_drop_fraction: float = 1.0) -> List[str]:
     """Drop visually soft media from the POOL, before anything is assigned or rendered.
 
     The 29 Aug build shipped two shots at edge detail 16.7 and 8.3 against a median of
@@ -852,6 +869,13 @@ def filter_soft_media(paths: List[str], floor: float = 12.0, min_keep: int = 3,
             scored.append((floor, p))     # unreadable here: let a later stage judge it
     keep = [p for v, p in scored if v >= floor]
     soft = sorted(((v, p) for v, p in scored if v < floor), reverse=True)
+    # Two independent brakes. min_keep is an absolute floor; max_drop_fraction bounds how
+    # much of the pool a preference is allowed to remove at all. Sharpness is a preference
+    # -- it must never be the reason a build has nothing left to render.
+    _cap = int(len(paths) * max_drop_fraction)
+    if len(soft) > _cap:
+        keep += [p for _, p in soft[:len(soft) - _cap]]
+        soft = soft[len(soft) - _cap:]
     if len(keep) < min_keep:
         restore = soft[:min_keep - len(keep)]
         keep += [p for _, p in restore]
@@ -866,7 +890,8 @@ def filter_soft_media(paths: List[str], floor: float = 12.0, min_keep: int = 3,
     return [p for p in paths if p in set(keep)]
 
 
-def filter_text_media(paths: List[str], min_keep: int = 3) -> List[str]:
+def filter_text_media(paths: List[str], min_keep: int = 3,
+                      max_drop_fraction: float = 1.0) -> List[str]:
     """Drop media carrying burned-in text (chyrons, source subtitles, watermarks).
 
     The editorial gate already detects these, but it can only act by DELETING from a
@@ -885,14 +910,58 @@ def filter_text_media(paths: List[str], min_keep: int = 3) -> List[str]:
             (dropped if (im is not None and craft.has_burned_in_text(im)) else kept).append(p)
         except Exception:
             kept.append(p)          # unreadable here: let a later stage judge it
-    if len(kept) < min_keep:
-        logger.info(f"image_ranker: burned-in-text filter would keep only {len(kept)} "
-                    f"(<{min_keep}); keeping all and leaving it to the gate")
+    _cap = int(len(paths) * max_drop_fraction)
+    if len(dropped) > _cap or len(kept) < min_keep:
+        logger.info(f"image_ranker: burned-in-text filter would drop {len(dropped)}/"
+                    f"{len(paths)} (cap {_cap}, floor {min_keep}); keeping all and leaving "
+                    f"it to the editorial gate")
         return paths
     if dropped:
         logger.info(f"image_ranker: dropped {len(dropped)} shot(s) with burned-in text; "
                     f"{len(kept)} media remain")
     return kept
+
+
+def _suppress_catch_all_negatives(probs, n_pos: int, neg_labels: List[str],
+                                  gate: str, dominance: float = 0.6):
+    """Neutralise negative labels that match nearly the whole pool.
+
+    Both CLIP gates score an item as max(positive) - max(negative). That makes them
+    silently fragile to ONE over-broad negative: because only the argmax matters, a
+    label that happens to fit every candidate becomes a constant penalty applied to
+    everything, and the gate stops discriminating at all while still looking healthy
+    in the log. Two real cases cost a full day of rebuilds:
+
+      * "a video frame with a channel name or social media watermark across the frame"
+        was the top negative for 65 of 72 clips (90%) -- every YouTube frame matches it,
+        so the subject gate kept 1 item and the build hard-failed.
+      * "a footballer in a black and white striped Juventus shirt" was the top negative
+        for 44 of 105 clips, because CLIP reads Sporting's green-and-white stripes as
+        Juventus stripes -- the era gate threw away most of a correct pool.
+
+    A negative that fires on most of the pool is not describing a defect, it is
+    describing the medium. Suppressing it restores the gate's real discrimination, and
+    naming it in the log is what lets the operator fix the config instead of guessing
+    at thresholds. A genuinely junk-dominated pool trips this too -- and the warning is
+    then still the correct signal, because the queries are what need fixing, not the gate.
+    """
+    if not neg_labels or probs.shape[0] == 0:
+        return None
+    import numpy as np
+    winners = probs[:, n_pos:].argmax(axis=1)
+    n = probs.shape[0]
+    counts = np.bincount(winners, minlength=len(neg_labels))
+    dominant = [i for i, c in enumerate(counts) if c >= max(3, int(n * dominance))]
+    if not dominant:
+        return None
+    for i in dominant:
+        logger.warning(
+            f"{gate}: negative label {neg_labels[i]!r} was the top negative for "
+            f"{counts[i]}/{n} candidates ({counts[i] / n:.0%}) -- treating it as a "
+            f"catch-all and ignoring it for this build; prune or narrow it in the config"
+        )
+    keep = [i for i in range(len(neg_labels)) if i not in set(dominant)]
+    return keep
 
 
 def filter_wrong_era(paths: List[str], era_negative_labels: List[str],
@@ -933,10 +1002,12 @@ def filter_wrong_era(paths: List[str], era_negative_labels: List[str],
         label_emb = _embed_texts(pos + neg)
         img_emb = _embed_images(paths)
         probs = torch.softmax(torch.mm(img_emb, label_emb.T) * 100.0, dim=-1).numpy()
+        _neg_keep = _suppress_catch_all_negatives(probs, n_pos, era_negative_labels, "era gate")
         scored = []
         for i, p in enumerate(paths):
             pp = float(probs[i][:n_pos].max())
-            np_ = float(probs[i][n_pos:].max())
+            _negs = probs[i][n_pos:]
+            np_ = float(_negs[_neg_keep].max()) if _neg_keep else float(_negs.max())
             scored.append((pp - np_, p, pp, np_))
         keep = [t for t in scored if t[0] >= margin]
         dropped = [t for t in scored if t[0] < margin]
@@ -968,6 +1039,7 @@ def filter_by_subject_presence(
     abs_floor: float = 0.0,
     video_margin: float = -0.05,
     video_abs_floor: float = 0.05,
+    cosine_floor: float = 0.24,
     model_name: str = "clip-vit-base-patch32",
     strict: bool = False,
 ) -> List[str]:
@@ -1021,11 +1093,25 @@ def filter_by_subject_presence(
         logits = torch.mm(img_emb, label_emb.T) * 100.0   # (n_img, n_labels)
         probs = torch.softmax(logits, dim=-1).numpy()
 
+        _neg_keep = _suppress_catch_all_negatives(probs, n_pos, negative_labels, "subject gate")
+
+        # Raw cosine, kept alongside the softmax scores purely for the back-fill below.
+        # probs are a softmax over positives AND negatives together, so every negative
+        # the operator adds drains mass from pos_p -- a config with 39 negatives scores
+        # the SAME correct photo far lower than a config with 11, which makes any absolute
+        # threshold on pos_p a function of config length rather than of what is in frame.
+        # Cosine does not share that defect and is the honest measure of "does this look
+        # like the subject at all".
+        _cos = (logits / 100.0).numpy()
+        pcos_all = _cos[:, :n_pos].max(axis=1)
+        ncos_all = _cos[:, n_pos:][:, _neg_keep].max(axis=1) if _neg_keep else _cos[:, n_pos:].max(axis=1)
+
         _vid_ext = (".mp4", ".mov", ".webm", ".mkv", ".avi")
         scored = []   # (margin, pos_p, keep_bool, path)
         for i, p in enumerate(paths):
             pos_p = float(probs[i][:n_pos].max())
-            neg_p = float(probs[i][n_pos:].max())
+            _negs = probs[i][n_pos:]
+            neg_p = float(_negs[_neg_keep].max()) if _neg_keep else float(_negs.max())
             m = pos_p - neg_p
             # Photos pass only if they (a) beat the best negative by `margin` AND
             # (b) actually look like the subject (pos_p ≥ abs_floor) — this blocks
@@ -1043,26 +1129,77 @@ def filter_by_subject_presence(
             scored.append((m, pos_p, ok, p))
 
         kept = [p for m, pp, ok, p in scored if ok]
-        if len(kept) < min_keep and not strict:
+        if len(kept) < min_keep:
             # Back-fill toward min_keep, but NEVER below the absolute floor — better
             # to ship fewer images (the segment assigner reuses good ones) than to
             # pad with irrelevant photos that trigger swipe-away. Rank back-fill
             # candidates by positive-likeness, not just margin.
-            floor_ok = [t for t in scored if ((not strict and t[3].lower().endswith(_vid_ext)) or t[1] >= abs_floor)
-                        and t[3] not in set(kept)]
-            ranked = sorted(floor_ok, key=lambda x: -x[1])
+            #
+            # STRICT mode back-fills too, but from a deliberately narrower set. The
+            # configured `margin`/`video_margin` is a CONFIDENCE BUFFER, not the
+            # identity test itself; the identity test is "does the best positive label
+            # beat the best negative one", i.e. m >= 0. So strict is allowed to recover
+            # media that merely failed the buffer, and is never allowed to recover media
+            # whose best-matching label was a NEGATIVE one. That keeps the guarantee
+            # that actually protects the channel -- no wrong player, no wrong era on
+            # screen -- while removing the failure mode where a buffer set 0.04 too tight
+            # discards the entire pool and burns a full download cycle for no output.
+            if strict:
+                # Back-fill on COSINE, not on the softmax margin. The softmax margin is
+                # unsatisfiable once a config carries a long negative list (measured on
+                # the EP15 pool: 1 of 72 genuine clips could clear it), but dropping the
+                # subject condition altogether is worse -- doing exactly that admitted a
+                # tennis clip, a bedroom and a woman in a dress into an EP15 render.
+                # A cosine floor asks the only question that matters here, "does this
+                # actually look like the subject", in units that do not move when the
+                # operator edits the negative list.
+                _cf = float(cosine_floor)
+                floor_ok = [t for i, t in enumerate(scored)
+                            if t[3] not in set(kept)
+                            and pcos_all[i] >= _cf
+                            and pcos_all[i] >= ncos_all[i] - 0.03]
+                floor_ok.sort(key=lambda t: -pcos_all[paths.index(t[3])])
+            else:
+                floor_ok = [t for t in scored if (t[3].lower().endswith(_vid_ext) or t[1] >= abs_floor)
+                            and t[3] not in set(kept)]
+            _cleared = len(kept)
+            ranked = floor_ok if strict else sorted(floor_ok, key=lambda x: -x[1])
             for _, _, _, p in ranked:
                 if len(kept) >= min_keep:
                     break
                 kept.append(p)
+            if strict and len(kept) > _cleared:
+                logger.warning(
+                    f"subject gate: only {_cleared} of {len(paths)} cleared the confidence "
+                    f"buffer; backfilled to {len(kept)} by cosine>={cosine_floor} -- CHECK THE "
+                    f"CONTACT SHEET, these were admitted below the configured bar"
+                )
+            if strict and len(kept) < min_keep:
+                # Do NOT pad past this point. Everything remaining scored below the cosine
+                # floor, which means the pool genuinely does not contain enough footage of
+                # this subject in this era -- the honest cause is the footage queries, not
+                # the gate. Say so and stop, because the alternative is a short built from
+                # whatever the pool happened to hold, and a wrong-era or wrong-person shot
+                # costs more than a failed build.
+                from app.services.one_shot import OneShotError
+                raise OneShotError(
+                    f"pool lacks era-appropriate footage of the subject: only {len(kept)} of "
+                    f"{len(paths)} candidates reach cosine {cosine_floor} against the positive "
+                    f"labels (need {min_keep}). Fix youtube_footage_queries or add "
+                    f"curated_image_paths -- loosening the gates here would ship wrong footage."
+                )
 
-        # Preserve original order. Strict mode fails instead of restoring media
-        # that the evidence gate explicitly rejected.
+        # Preserve original order. Strict mode still fails if NOTHING beat a negative —
+        # at that point the pool genuinely does not contain the subject and rendering it
+        # would put the wrong person on screen, which is worse than no video at all.
         kept = [p for p in paths if p in set(kept)]
         if not kept:
             if strict:
                 from app.services.one_shot import OneShotError
-                raise OneShotError("subject gate rejected every candidate")
+                raise OneShotError(
+                    "subject gate rejected every candidate: no media in the pool matched a "
+                    "positive label better than a negative one"
+                )
             ranked_all = sorted(scored, key=lambda x: -x[1])
             kept = [p for _, _, _, p in ranked_all[: min(min_keep, len(ranked_all))]]
             kept = [p for p in paths if p in set(kept)]

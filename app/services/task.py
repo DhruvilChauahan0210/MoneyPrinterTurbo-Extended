@@ -371,11 +371,26 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                                 _banned = set(json.load(_bf))
                         except Exception as _e:
                             logger.warning(f"banlist read failed: {_e}")
+                    # An entry may be a whole SOURCE id ("thCVNXKOL1k") as well as a single
+                    # clip file ("thCVNXKOL1k_c3.mp4"). Exact-filename matching alone made
+                    # source bans impossible to express: a documentary with a burned-in
+                    # broadcast chyron is bad in every clip cut from it, but banning it
+                    # only removed the specific _cN seen that day, and the next build cut
+                    # fresh clips at different offsets from the same upload and shipped the
+                    # chyron again. That is why sources recorded as banned in
+                    # BANNED_SOURCES.md kept reappearing.
+                    _banned_srcs = {b for b in _banned if not b.endswith(".mp4")}
+                    def _is_banned(_path: str) -> bool:
+                        _b = os.path.basename(_path)
+                        if _b in _used:
+                            return True
+                        _src = _b.rsplit("_c", 1)[0] if "_c" in _b else os.path.splitext(_b)[0]
+                        return _src in _banned_srcs
                     if _ledger and os.path.exists(_ledger):
                         try:
                             with open(_ledger) as _lf:
                                 _used = set(json.load(_lf)) | _banned
-                            _fresh = [c for c in clip_paths if os.path.basename(c) not in _used]
+                            _fresh = [c for c in clip_paths if not _is_banned(c)]
                             _floor = max(10, len(clip_paths) // 3)
                             if len(_fresh) >= _floor:
                                 logger.success(
@@ -477,32 +492,6 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                 raise
             logger.warning(f"photo-quality filter failed, keeping all media: {e}")
 
-        # Sharpness gate — soft media is caught here rather than at the editorial gate,
-        # which runs on rendered segments paired positionally with clip_durations and so
-        # cannot remove a shot without shortening the picture against the narration.
-        try:
-            _phase("pool: sharpness")
-            image_paths = image_ranker.filter_soft_media(
-                image_paths,
-                floor=float(getattr(params, "sharpness_floor", 12.0) or 0.0),
-                min_keep=int(getattr(params, "one_shot_min_media", 3) or 3),
-                strict=False,
-            )
-        except Exception as e:
-            logger.warning(f"sharpness filter failed, keeping all media: {e}")
-
-        # Burned-in text is removed from the POOL for the same reason softness is: the
-        # editorial gate can only act by deleting from a plan that is paired positionally
-        # with clip_durations, which would end the picture before the narration.
-        try:
-            _phase("pool: burned-in text")
-            image_paths = image_ranker.filter_text_media(
-                image_paths,
-                min_keep=int(getattr(params, "one_shot_min_media", 3) or 3),
-            )
-        except Exception as e:
-            logger.warning(f"burned-in-text filter failed, keeping all media: {e}")
-
         # Era gate — same pool-level placement and for the same reason. The subject gate
         # passes these because they genuinely ARE the player; era is a separate axis.
         try:
@@ -521,11 +510,19 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
 
         # Relevance gate — drop media unrelated to the video subject (CLIP)
         subject_text = params.video_subject or video_script[:200]
+        # Both CLIP gates below back-fill toward a floor rather than starving the build.
+        # That floor should be the EDITORIAL bar, not the survival bar: one_shot_min_media
+        # (3) is only what the renderer needs to emit a file at all, whereas a short that
+        # reads as varied needs ~12 distinct media across its caption segments. Leaving the
+        # gates on their library defaults (6 and 4) is what produced 6-media episodes that
+        # technically shipped and visibly repeated the same clip four and five times.
+        _media_floor = int(getattr(params, "target_distinct_media", 0) or 12)
         try:
             image_paths = image_ranker.filter_by_relevance(
                 image_paths,
                 subject_text,
                 min_score=getattr(params, 'image_ranking_min_score', 0.18),
+                min_keep=_media_floor,
                 model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
                 strict=one_shot.is_enabled(params),
             )
@@ -544,6 +541,7 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     image_paths,
                     positive_labels=params.subject_positive_labels,
                     negative_labels=getattr(params, 'subject_negative_labels', None),
+                    min_keep=_media_floor,
                     margin=getattr(params, 'subject_gate_margin', 0.05),
                     abs_floor=getattr(params, 'subject_gate_abs_floor', 0.0),
                     video_margin=getattr(params, 'subject_gate_video_margin', -0.05),
@@ -555,6 +553,36 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                 if one_shot.is_enabled(params):
                     raise
                 logger.warning(f"subject-presence gate failed, keeping all media: {e}")
+
+        # --- cosmetic pool filters run LAST, after every hard gate ---
+        # These were originally placed before the era/relevance/subject gates with a floor
+        # of one_shot_min_media. That floor is meaningless there: EP13 kept 23 of 61 after
+        # sharpness (a "safe" number against a floor of 3), then four more gates multiplied
+        # down to 1 candidate and the build failed after 12 minutes. Softness and burned-in
+        # text are preferences; being the right player, era and subject are requirements.
+        # So they now trim only what has already qualified, and they are bounded so they can
+        # never be the reason a build starves.
+        _cosmetic_floor = max(int(getattr(params, "one_shot_min_media", 3) or 3), 6)
+        try:
+            _phase("pool: sharpness")
+            image_paths = image_ranker.filter_soft_media(
+                image_paths,
+                floor=float(getattr(params, "sharpness_floor", 12.0) or 0.0),
+                min_keep=_cosmetic_floor,
+                max_drop_fraction=0.34,
+                strict=False,
+            )
+        except Exception as e:
+            logger.warning(f"sharpness filter failed, keeping all media: {e}")
+        try:
+            _phase("pool: burned-in text")
+            image_paths = image_ranker.filter_text_media(
+                image_paths,
+                min_keep=_cosmetic_floor,
+                max_drop_fraction=0.34,
+            )
+        except Exception as e:
+            logger.warning(f"burned-in-text filter failed, keeping all media: {e}")
 
         # Re-add pinned story photos the gate may have dropped (they contain
         # legit non-target subjects like a baby); keep them at the front.
