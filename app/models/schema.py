@@ -91,6 +91,12 @@ class VideoParams(BaseModel):
     one_shot_allow_retry: Optional[bool] = False
     one_shot_max_script_words: Optional[int] = 90
     one_shot_min_media: Optional[int] = 3
+    # Editorial floor the CLIP gates back-fill toward, distinct from one_shot_min_media
+    # (which is only what the renderer needs to emit a file). Set it BELOW 12 for episodes
+    # whose era genuinely has little surviving footage and whose variety comes from
+    # curated_image_paths instead -- those stills are re-inserted after the subject gate,
+    # so they are not counted by it.
+    target_distinct_media: Optional[int] = 12
 
     video_source: Optional[str] = "pexels"
     video_materials: Optional[List[MaterialInfo]] = (

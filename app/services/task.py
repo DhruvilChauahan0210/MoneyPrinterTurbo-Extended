@@ -362,8 +362,14 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     _ledger = getattr(params, 'series_ledger_path', '') or ''
                     # Permanent banlist: media rejected on sight (a holiday-snap
                     # portrait, a painted door). Survives ledger resets.
-                    _banlist = os.path.join(os.path.dirname(_ledger) or ".",
-                                            "series_media_banlist.json") if _ledger else ""
+                    # Resolved INDEPENDENTLY of the ledger. Deriving its path from
+                    # series_ledger_path meant the banlist silently did nothing for every
+                    # short that does not set a ledger -- i.e. all of the standalone
+                    # slot-2 shorts -- so sources banned for burned-in title cards and
+                    # SUBSCRIBE overlays kept being re-selected there build after build.
+                    # "Rejected on sight" has to mean everywhere, not only inside a series.
+                    _banlist = os.path.join(os.path.dirname(_ledger), "series_media_banlist.json") \
+                        if _ledger else os.path.join(utils.storage_dir(), "series_media_banlist.json")
                     _banned = set()
                     if _banlist and os.path.exists(_banlist):
                         try:
@@ -386,6 +392,23 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                             return True
                         _src = _b.rsplit("_c", 1)[0] if "_c" in _b else os.path.splitext(_b)[0]
                         return _src in _banned_srcs
+                    # Apply the banlist even with no ledger configured; the ledger only adds
+                    # the "already used by an earlier episode" entries on top of it.
+                    _used = set(_banned)
+                    if _banned and not (_ledger and os.path.exists(_ledger)):
+                        _clean = [c for c in clip_paths if not _is_banned(c)]
+                        if len(_clean) >= max(10, len(clip_paths) // 3):
+                            if len(_clean) != len(clip_paths):
+                                logger.success(
+                                    f"banlist: excluded {len(clip_paths) - len(_clean)} "
+                                    f"permanently-banned clips, {len(_clean)} remain"
+                                )
+                            clip_paths = _clean
+                        else:
+                            logger.warning(
+                                f"banlist: only {len(_clean)} clips would remain — keeping the "
+                                f"full pool to avoid a starved build"
+                            )
                     if _ledger and os.path.exists(_ledger):
                         try:
                             with open(_ledger) as _lf:
@@ -542,6 +565,8 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     positive_labels=params.subject_positive_labels,
                     negative_labels=getattr(params, 'subject_negative_labels', None),
                     min_keep=_media_floor,
+                    supplemental_media=len(getattr(params, '_curated_imgs', None) or [])
+                                       + len(getattr(params, '_pinned_imgs', None) or []),
                     margin=getattr(params, 'subject_gate_margin', 0.05),
                     abs_floor=getattr(params, 'subject_gate_abs_floor', 0.0),
                     video_margin=getattr(params, 'subject_gate_video_margin', -0.05),

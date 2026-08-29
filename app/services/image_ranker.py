@@ -1040,6 +1040,7 @@ def filter_by_subject_presence(
     video_margin: float = -0.05,
     video_abs_floor: float = 0.05,
     cosine_floor: float = 0.24,
+    supplemental_media: int = 0,
     model_name: str = "clip-vit-base-patch32",
     strict: bool = False,
 ) -> List[str]:
@@ -1175,18 +1176,38 @@ def filter_by_subject_presence(
                     f"CONTACT SHEET, these were admitted below the configured bar"
                 )
             if strict and len(kept) < min_keep:
-                # Do NOT pad past this point. Everything remaining scored below the cosine
-                # floor, which means the pool genuinely does not contain enough footage of
-                # this subject in this era -- the honest cause is the footage queries, not
-                # the gate. Say so and stop, because the alternative is a short built from
-                # whatever the pool happened to hold, and a wrong-era or wrong-person shot
-                # costs more than a failed build.
-                from app.services.one_shot import OneShotError
-                raise OneShotError(
-                    f"pool lacks era-appropriate footage of the subject: only {len(kept)} of "
-                    f"{len(paths)} candidates reach cosine {cosine_floor} against the positive "
-                    f"labels (need {min_keep}). Fix youtube_footage_queries or add "
-                    f"curated_image_paths -- loosening the gates here would ship wrong footage."
+                # Do NOT pad past this point: everything still excluded scored below the
+                # cosine floor, and padding with it is what put a tennis clip and a woman in
+                # a dress into an EP15 render.
+                #
+                # But short of the target is NOT the same as unusable. min_keep is an
+                # EDITORIAL target (how much variety a short wants); cosine_floor is the
+                # QUALITY bar (whether a shot is really the subject). Everything in `kept`
+                # has cleared the quality bar, so a thin set is merely repetitive, which is
+                # a judgement call for the operator and cheap to see on the contact sheet.
+                # Failing here instead turned "this era only has 5 usable clips" into a dead
+                # build and a per-episode hunt for the right number. Only a pool too thin to
+                # render at all is a real failure.
+                # Curated stills are re-inserted immediately after this gate (they can never
+                # pass an "is the player in frame" test, which is the whole reason they are
+                # curated by hand), so they count toward whether a render is possible even
+                # though they cannot count toward what this gate keeps. Ignoring them made
+                # the gate fail an episode that had 2 verified clips plus 3 verified stills
+                # -- five usable media, and a dead build.
+                _hard_floor = max(1, 3 - int(supplemental_media))
+                if len(kept) < _hard_floor:
+                    from app.services.one_shot import OneShotError
+                    raise OneShotError(
+                        f"pool lacks era-appropriate footage of the subject: only {len(kept)} of "
+                        f"{len(paths)} candidates reach cosine {cosine_floor} against the positive "
+                        f"labels. Fix youtube_footage_queries or add curated_image_paths -- "
+                        f"loosening the gates here would ship wrong footage."
+                    )
+                logger.warning(
+                    f"subject gate: only {len(kept)} of {len(paths)} candidates clear cosine "
+                    f"{cosine_floor} (target {min_keep}). Rendering with what is verified rather "
+                    f"than padding below the bar -- expect repetition, and if that reads badly "
+                    f"the fix is the footage queries or more curated stills, not the thresholds."
                 )
 
         # Preserve original order. Strict mode still fails if NOTHING beat a negative —
