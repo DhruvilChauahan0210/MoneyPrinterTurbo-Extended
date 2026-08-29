@@ -24,6 +24,11 @@ if [[ ! -f "$NEW" ]]; then
 fi
 
 echo; echo "=== MEASURING ==="
-FFMPEG_BIN="$FF" ELAPSED="$ELAPSED" BUILD_LOG=~/Desktop/BUILD_${OUT}.log \
+# Measure against the DETAILED build log, not this script's own tee. BUILD_${OUT}.log
+# holds four summary lines, so every feature-hit count in COMPARE_${OUT}.txt read 0 on
+# 29 Aug and looked like nothing had fired. run_series_ep.sh writes the real one.
+DETAIL=~/Desktop/"BUILDLOG_${BATCH}.log"
+[[ -f "$DETAIL" ]] || DETAIL=~/Desktop/BUILD_${OUT}.log
+FFMPEG_BIN="$FF" ELAPSED="$ELAPSED" BUILD_LOG="$DETAIL" \
 $PY tools_compare.py "$NEW" "$REF" | tee "$REPORT"
 echo; echo "report saved: $REPORT"

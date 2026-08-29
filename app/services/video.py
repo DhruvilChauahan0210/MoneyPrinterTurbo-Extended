@@ -1755,8 +1755,14 @@ def generate_video(
                 # restarted" marker that breaks the seamless-loop illusion.
                 if getattr(params, 'enable_hook_card', True) and os.path.exists(boom_path) and not loop_mode:
                     try:
+                        # At sfx_volume 0.5 this was 0.65, which the -14 LUFS master then
+                        # limited back to the body's ceiling: the 29 Aug build measured a
+                        # hook peak of -2.77dB against -1.51dB mid-clip, so the "restored"
+                        # boom was still QUIETER than the narration it was meant to punch.
+                        # Level it near full scale here and give it room in _master_audio.
+                        _boom_gain = float(getattr(params, 'hook_boom_gain', 0.85) or 0.85)
                         boom = AudioFileClip(boom_path).with_effects(
-                            [afx.MultiplyVolume(min(sfx_vol * 1.3, 1.0))]
+                            [afx.MultiplyVolume(min(_boom_gain, 1.0))]
                         ).with_start(0)
                         audio_tracks.append(boom)
                     except Exception:
@@ -1822,19 +1828,34 @@ def _master_audio(output_file: str, params) -> bool:
                "acompressor=threshold=-18dB:ratio=3:attack=5:release=120:makeup=1.5,"
                "equalizer=f=3200:t=q:w=1.4:g=3")
 
+        # A true-peak limiter cannot make the hook louder than the body -- it clamps both
+        # to the same ceiling, which is why raising the boom alone never moved the
+        # measurement. Dipping the body BEFORE loudnorm does not work either: the body was
+        # already into the limiter, so it simply gave back most of the dip (measured 29 Aug:
+        # a 1.5dB pre-dip bought 0.4dB of separation). The dip has to land AFTER the
+        # limiter, where nothing can undo it -- and loudnorm is aimed _lift higher so the
+        # body still arrives at the intended LUFS once the dip is applied.
+        _lift = float(getattr(params, "hook_lift_db", 1.5) or 0.0)
+        _lift_win = float(getattr(params, "hook_lift_seconds", 0.5) or 0.5)
+        norm_target = target + _lift
+
         # Pass 1 - measure the source through the same pre-chain loudnorm will see.
         p1 = _sp.run([ff, "-hide_banner", "-nostats", "-i", output_file, "-af",
-                      f"{pre},loudnorm=I={target}:TP={tp}:LRA=7:print_format=json",
+                      f"{pre},loudnorm=I={norm_target}:TP={tp}:LRA=7:print_format=json",
                       "-f", "null", "-"], capture_output=True, text=True, timeout=180)
         blob = p1.stderr[p1.stderr.rindex("{"):p1.stderr.rindex("}") + 1]
         m = _json.loads(blob)
         before = float(m["input_i"])
 
         # Pass 2 - apply with the measured values for an accurate landing.
-        norm = (f"loudnorm=I={target}:TP={tp}:LRA=7"
+        norm = (f"loudnorm=I={norm_target}:TP={tp}:LRA=7"
                 f":measured_I={m['input_i']}:measured_TP={m['input_tp']}"
                 f":measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}"
                 f":offset={m['target_offset']}:linear=true")
+        if _lift > 0:
+            # Only ever attenuates, and never inside the hook window, so it cannot push
+            # anything back above the true-peak ceiling the limiter just established.
+            norm += f",volume=volume=-{_lift}dB:enable='gt(t,{_lift_win})'"
         root, ext = _os.path.splitext(output_file)
         tmp = f"{root}.mastered{ext}"
 
@@ -1872,6 +1893,7 @@ def _master_audio(output_file: str, params) -> bool:
         _shutil.move(tmp, output_file)
         logger.info(f"audio mastered: {before:.1f} LUFS -> {target:.1f} LUFS "
                     f"(TP {tp}dB, presence +3dB @3.2kHz"
+                    + (f", hook +{_lift}dB over body" if _lift > 0 else "")
                     + (", ambience ducked" if use_amb else "") + ")")
         return True
     except Exception as e:
