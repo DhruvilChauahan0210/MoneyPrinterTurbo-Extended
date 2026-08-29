@@ -97,7 +97,72 @@ def save_script_data(task_id, video_script, video_terms, params):
     os.replace(temp_file, script_file)
 
 
+_PHASE_T = {"last": None, "marks": []}
+
+
+def _phase(label: str):
+    """Log wall-clock per pipeline stage.
+
+    Twice now a build-time optimisation has been sized by estimate and been wrong: the
+    embedding cache was reasoned at ~2 minutes and measures 5-10 seconds, because frame
+    extraction is 99ms/clip and the CLIP forward pass is not what dominates. A warm build
+    is 3.0 minutes and roughly 2.2 of those are still unaccounted for. Guessing a third
+    time is not worth it -- have the build say where the time went.
+    """
+    import time
+    now = time.time()
+    if _PHASE_T["last"] is not None:
+        prev, t0 = _PHASE_T["last"]
+        dt = now - t0
+        _PHASE_T["marks"].append((prev, dt))
+        logger.info(f"[phase] {prev}: {dt:.1f}s")
+    _PHASE_T["last"] = (label, now)
+
+
+def phase_summary() -> str:
+    marks = sorted(_PHASE_T["marks"], key=lambda m: -m[1])
+    total = sum(d for _, d in marks) or 1.0
+    out = [f"[phase] TOTAL {total:.1f}s across {len(marks)} stages"]
+    for name, dt in marks:
+        out.append(f"[phase]   {name:<26}{dt:6.1f}s  {100*dt/total:4.1f}%  "
+                   + "#" * int(40 * dt / total))
+    return "\n".join(out)
+
+
+_PHASE_T = {"last": None, "marks": []}
+
+
+def _phase(label: str):
+    """Log wall-clock per pipeline stage.
+
+    Twice now a build-time optimisation has been sized by estimate and been wrong: the
+    embedding cache was reasoned at ~2 minutes and measures 5-10 seconds, because frame
+    extraction costs 99ms/clip and the CLIP forward pass is not what dominates. A warm
+    build is 3.0 minutes and roughly 2.2 of those remain unaccounted for. Guessing a
+    third time is not worth it -- have the build say where its time went.
+    """
+    import time
+    now = time.time()
+    if _PHASE_T["last"] is not None:
+        prev, t0 = _PHASE_T["last"]
+        dt = now - t0
+        _PHASE_T["marks"].append((prev, dt))
+        logger.info(f"[phase] {prev}: {dt:.1f}s")
+    _PHASE_T["last"] = (label, now)
+
+
+def phase_summary() -> str:
+    marks = sorted(_PHASE_T["marks"], key=lambda m: -m[1])
+    total = sum(d for _, d in marks) or 1.0
+    out = [f"[phase] TOTAL {total:.1f}s across {len(marks)} stages"]
+    for name, dt in marks:
+        out.append(f"[phase]   {name:<26}{dt:6.1f}s  {100*dt/total:4.1f}%  "
+                   + "#" * int(40 * dt / total))
+    return "\n".join(out)
+
+
 def generate_audio(task_id, params, video_script):
+    _phase("tts")
     logger.info("\n\n## generating audio")
     audio_file = path.join(utils.task_dir(task_id), "audio.mp3")
     _claim_once(params, "voice_generation")
@@ -128,6 +193,7 @@ def generate_audio(task_id, params, video_script):
 
     # Shorten the inter-sentence dead air before anything measures the audio. With no BGM
     # bed these gaps are audible holes; the first one lands ~2s in, at the swipe decision.
+    _phase("gap compression")
     _gap = getattr(params, "max_sentence_gap", None)
     if _gap:
         voice.compress_internal_silence(audio_file, sub_maker=sub_maker, max_gap=float(_gap))
@@ -415,6 +481,7 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
         # which runs on rendered segments paired positionally with clip_durations and so
         # cannot remove a shot without shortening the picture against the narration.
         try:
+            _phase("pool: sharpness")
             image_paths = image_ranker.filter_soft_media(
                 image_paths,
                 floor=float(getattr(params, "sharpness_floor", 12.0) or 0.0),
@@ -428,6 +495,7 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
         # editorial gate can only act by deleting from a plan that is paired positionally
         # with clip_durations, which would end the picture before the narration.
         try:
+            _phase("pool: burned-in text")
             image_paths = image_ranker.filter_text_media(
                 image_paths,
                 min_keep=int(getattr(params, "one_shot_min_media", 3) or 3),
@@ -440,6 +508,7 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
         try:
             _era_neg = getattr(params, "era_negative_labels", None) or []
             if _era_neg:
+                _phase("pool: era gate")
                 image_paths = image_ranker.filter_wrong_era(
                     image_paths,
                     era_negative_labels=_era_neg,

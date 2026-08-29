@@ -352,8 +352,13 @@ def _embed_disk_save(path: str, key, vec) -> None:
         import numpy as _np
         os.makedirs(_EMBED_DIR, exist_ok=True)
         f = os.path.join(_EMBED_DIR, _embed_disk_key(path, key) + ".npy")
+        # np.save APPENDS ".npy" when handed a path, so saving to "<hash>.npy.tmp" wrote
+        # "<hash>.npy.tmp.npy" and the rename of a file that was never created failed
+        # straight into the except below -- a silent no-op that made the whole cache
+        # useless while looking like it worked. A file object gets no extension added.
         tmp = f + ".tmp"
-        _np.save(tmp, vec.detach().cpu().numpy())
+        with open(tmp, "wb") as fh:
+            _np.save(fh, vec.detach().cpu().numpy())
         os.replace(tmp, f)
     except Exception:
         pass
