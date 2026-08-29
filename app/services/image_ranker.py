@@ -319,6 +319,44 @@ def pick_sharp_subject_frame(video_paths, cover_term, out_path,
 
 
 _image_embed_cache = {}  # path -> (mtime, size, embedding tensor)
+
+# The in-memory cache above only survives one build, and each short is its own process.
+# A warm-cache build measured 3 minutes with ~2.2 of them inside CLIP -- re-embedding the
+# SAME 65 cached clips from scratch, every single time, because the pool barely changes
+# between episodes. Persisting the vectors to disk makes that cost pay once per clip for
+# the life of the cache instead of once per build.
+_EMBED_DIR = os.path.join("storage", "clip_embeds")
+_embed_disk_hits = 0
+_embed_disk_misses = 0
+
+
+def _embed_disk_key(path: str, key) -> str:
+    import hashlib
+    raw = f"{os.path.abspath(path)}|{int(key[1])}|{key[2]}"
+    return hashlib.sha1(raw.encode()).hexdigest()
+
+
+def _embed_disk_load(path: str, key):
+    try:
+        import numpy as _np, torch
+        f = os.path.join(_EMBED_DIR, _embed_disk_key(path, key) + ".npy")
+        if os.path.exists(f):
+            return torch.from_numpy(_np.load(f))
+    except Exception:
+        pass
+    return None
+
+
+def _embed_disk_save(path: str, key, vec) -> None:
+    try:
+        import numpy as _np
+        os.makedirs(_EMBED_DIR, exist_ok=True)
+        f = os.path.join(_EMBED_DIR, _embed_disk_key(path, key) + ".npy")
+        tmp = f + ".tmp"
+        _np.save(tmp, vec.detach().cpu().numpy())
+        os.replace(tmp, f)
+    except Exception:
+        pass
 _IMAGE_EMBED_CACHE_MAX = 2000  # bound memory; a run's media pool is far smaller than this
 
 
@@ -335,6 +373,7 @@ def _embed_images(paths: List[str]):
 
     to_embed_idx = []
     to_embed_imgs = []
+    p_list = list(paths)
     cached = [None] * len(paths)
     for i, p in enumerate(paths):
         key = None
@@ -346,6 +385,14 @@ def _embed_images(paths: List[str]):
         if key is not None and key in _image_embed_cache:
             cached[i] = _image_embed_cache[key]
             continue
+        if key is not None:
+            disk = _embed_disk_load(p, key)
+            if disk is not None:
+                global _embed_disk_hits
+                _embed_disk_hits += 1
+                _image_embed_cache[key] = disk
+                cached[i] = disk
+                continue
         try:
             img = _load_media_as_image(p)
         except Exception:
@@ -359,12 +406,18 @@ def _embed_images(paths: List[str]):
             fresh = _as_tensor(_clip_model.get_image_features(**inputs))
         fresh = fresh / fresh.norm(p=2, dim=-1, keepdim=True)
         fresh = fresh.cpu()
+        global _embed_disk_misses
         for (i, key), vec in zip(to_embed_idx, fresh):
             cached[i] = vec
             if key is not None:
                 if len(_image_embed_cache) >= _IMAGE_EMBED_CACHE_MAX:
                     _image_embed_cache.pop(next(iter(_image_embed_cache)))
                 _image_embed_cache[key] = vec
+                _embed_disk_save(p_list[i], key, vec)
+                _embed_disk_misses += 1
+        if _embed_disk_hits or _embed_disk_misses:
+            logger.info(f"clip embeddings: {_embed_disk_hits} from disk cache, "
+                        f"{_embed_disk_misses} computed")
 
     return torch.stack(cached)
 
