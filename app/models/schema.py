@@ -320,6 +320,11 @@ class VideoParams(BaseModel):
     # "is this worth rendering?".
     editorial_gate: Optional[bool] = True
     min_subject_fraction: Optional[float] = 0.60
+    # Era gate. The subject gate cannot catch these -- a 2019 Nations League shot IS the
+    # player, scoring high on every positive label, and still wrong for a 2009-2018 story.
+    # List what the WRONG era looks like: rival kits, other competitions, other trophies.
+    era_negative_labels: Optional[List[str]] = []
+    era_positive_labels: Optional[List[str]] = []
     # Strict one-shot duration ceiling. Checked after the sole TTS call and
     # before media acquisition/render, so an unexpectedly slow narration cannot
     # silently become a retention-killing long edit.

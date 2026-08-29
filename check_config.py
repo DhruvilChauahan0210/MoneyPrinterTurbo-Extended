@@ -11,7 +11,7 @@ and the gate either aborted or kept only junk (hands, backs, distant figures).
 Budgets below are taken from configs that demonstrably shipped. Exceeding them is not
 fatal, but it is the first thing to suspect when builds start failing.
 """
-import json, sys, os
+import json, sys, os, re
 
 # Concept queries are how stock footage gets in. EP12 asked for "hospital heart monitor
 # beeping close up" and "electrocardiogram machine hospital", and shipped with five
@@ -78,6 +78,47 @@ def check(path):
                         f"youtube_max_videos={maxvid}. Downloads dominate build time -- "
                         f"{max(16, min(30, -(-need_distinct * 5 // 2)))} would do "
                         f"(sized at need x2.5, floor 16, ceiling 30)")
+
+    # --- the hook must not answer itself ---
+    # Shorts hold a viewer with an UNRESOLVED question. A channel-wide audit found 84 of
+    # 142 narrated configs stating the payoff in hook_text and then restating it in the
+    # first spoken line, which closes the loop about 1.5s in and leaves every later second
+    # with less reason to watch. It is the single biggest retention defect that is visible
+    # from the config alone, so it is checked here rather than left to review.
+    hook = (df.get("hook_text") or "").strip()
+    if hook and script:
+        first = re.split(r"(?<=[.!?])\s+", script.strip())[0]
+        hw = {w for w in re.findall(r"[a-z]{4,}", hook.lower())}
+        fw = {w for w in re.findall(r"[a-z]{4,}", first.lower())}
+        if hw:
+            overlap = len(hw & fw) / len(hw)
+            if overlap >= 0.5:
+                warn.append(
+                    f"hook answers itself ({overlap:.0%} of its words are in the first "
+                    f"spoken line): hook={hook!r} line1={first!r} -- pose the tension in "
+                    f"the hook and let the payoff land last")
+
+    # --- the script must actually finish ---
+    # batch_ronaldo_5ucl shipped a test build whose narration ended "Which makes you
+    # wonder," -- a dangling clause with no payoff, which the pipeline happily voiced.
+    # The channel's circular scripts END on a dangling clause ON PURPOSE: the last words
+    # flow back into the hook when the Short auto-replays, which is what the looping
+    # format relies on (documented across three separate memory entries, e.g. Mbappe
+    # "...Which makes you wonder," looping into "This man might be faster than Usain
+    # Bolt."). A truncated script is still a real bug, so the check stays -- it just has
+    # to recognise the deliberate ending rather than flag the convention as a fault.
+    LOOP_ENDINGS = ("which makes you wonder,", "and that makes you wonder,",
+                    "which is why,", "and somehow,")
+    if script:
+        _tail = script.rstrip().lower()
+        _is_loop = any(_tail.endswith(e) for e in LOOP_ENDINGS)
+        if not _is_loop and not script.rstrip().endswith((".", "!", "?")):
+            warn.append(f'script does not end in terminal punctuation: "...{script[-45:]}" '
+                        f"-- it will be voiced as an unfinished sentence")
+        n_words = len(script.split())
+        if n_words > 40:
+            warn.append(f"script is {n_words} words; over ~40 risks breaching the 15s cap "
+                        f"(target ~30)")
 
     # --- EVERY text field that drives media selection, not just the footage queries ---
     # Caught by a local review on 28 Aug: a config copied from another episode passed this

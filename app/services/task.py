@@ -411,6 +411,45 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                 raise
             logger.warning(f"photo-quality filter failed, keeping all media: {e}")
 
+        # Sharpness gate — soft media is caught here rather than at the editorial gate,
+        # which runs on rendered segments paired positionally with clip_durations and so
+        # cannot remove a shot without shortening the picture against the narration.
+        try:
+            image_paths = image_ranker.filter_soft_media(
+                image_paths,
+                floor=float(getattr(params, "sharpness_floor", 12.0) or 0.0),
+                min_keep=int(getattr(params, "one_shot_min_media", 3) or 3),
+                strict=False,
+            )
+        except Exception as e:
+            logger.warning(f"sharpness filter failed, keeping all media: {e}")
+
+        # Burned-in text is removed from the POOL for the same reason softness is: the
+        # editorial gate can only act by deleting from a plan that is paired positionally
+        # with clip_durations, which would end the picture before the narration.
+        try:
+            image_paths = image_ranker.filter_text_media(
+                image_paths,
+                min_keep=int(getattr(params, "one_shot_min_media", 3) or 3),
+            )
+        except Exception as e:
+            logger.warning(f"burned-in-text filter failed, keeping all media: {e}")
+
+        # Era gate — same pool-level placement and for the same reason. The subject gate
+        # passes these because they genuinely ARE the player; era is a separate axis.
+        try:
+            _era_neg = getattr(params, "era_negative_labels", None) or []
+            if _era_neg:
+                image_paths = image_ranker.filter_wrong_era(
+                    image_paths,
+                    era_negative_labels=_era_neg,
+                    era_positive_labels=getattr(params, "era_positive_labels", None)
+                        or getattr(params, "subject_positive_labels", None),
+                    min_keep=int(getattr(params, "one_shot_min_media", 3) or 3),
+                )
+        except Exception as e:
+            logger.warning(f"era gate failed, keeping all media: {e}")
+
         # Relevance gate — drop media unrelated to the video subject (CLIP)
         subject_text = params.video_subject or video_script[:200]
         try:
@@ -574,6 +613,13 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     evidence_prompts=getattr(params, 'visual_evidence_prompts', None),
                 )
                 logger.info("timed sync: caption fragments mapped to sentence-level visual evidence")
+                # How many caption segments fall inside the swipe-decision window.
+                # Those segments are forced onto real footage below; a still there is
+                # what a viewer reads as "slideshow" before the first word lands.
+                _open_secs = float(getattr(params, "opening_video_seconds", 3.0) or 0.0)
+                _open_segs = (sum(1 for _sg in segments
+                                  if float(_sg.get("start_time", 0.0)) < _open_secs)
+                              if _open_secs > 0 else 0)
                 idxs = image_ranker.assign_images_to_segments(
                     image_paths, seg_texts,
                     reuse_penalty=getattr(params, 'segment_reuse_penalty', 0.12),
@@ -587,6 +633,10 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     min_score=getattr(params, 'segment_assignment_min_score', 0.0),
                     strict=one_shot.is_enabled(params),
                     model_name=getattr(params, 'image_similarity_model', 'clip-vit-base-patch32'),
+                    still_max_reuse=int(getattr(params, 'segment_max_still_reuse', 2) or 0),
+                    opening_video_segments=_open_segs,
+                    max_consecutive_close=int(getattr(params, 'max_consecutive_close', 3) or 0),
+                    establish_within=int(getattr(params, 'establish_within', 3) or 0),
                 )
                 synced_paths, clip_durations = [], []
                 for s, seg in enumerate(segments):
@@ -964,22 +1014,38 @@ def _start_impl(task_id, params: VideoParams, stop_at: str = "video"):
                     subject_floor=float(getattr(params, "min_subject_fraction", 0.60)),
                     max_media_reuse=int(getattr(params, "max_video_reuse", 2) or 2),
                     min_media=int(getattr(params, "one_shot_min_media", 3) or 3),
+                    sharpness_floor=float(getattr(params, "sharpness_floor", 12.0) or 0.0),
                 )
                 params._editorial_audit = audit
                 logger.info(
                     f"editorial gate: {audit['subject_present']}/{audit['clips']} shots with a "
                     f"person, {audit['burned_in_text']} with burned-in text, "
                     f"{audit['near_duplicates']} near-duplicates, brightness spread "
-                    f"{audit['brightness_spread']:.0f}, sizes {audit['shot_sizes']}")
+                    f"{audit['brightness_spread']:.0f}, sizes {audit['shot_sizes']}, "
+                    f"sharpness min {audit['sharpness_min']:.1f} / median "
+                    f"{audit['sharpness_median']:.1f} ({audit['soft_shots']} soft)")
                 for problem in audit["problems"]:
                     logger.warning(f"editorial gate: {problem}")
                 # Remove what the gate condemned and carry on. Failing the whole build
                 # over a removable shot is what cost an 11-minute render on 28 Aug.
                 if audit.get("drop"):
-                    keep = [p for p in downloaded_videos if p not in set(audit["drop"])]
-                    logger.warning(f"editorial gate: dropping {len(audit['drop'])} shot(s) "
-                                   f"with burned-in text; {len(keep)} remain")
-                    downloaded_videos[:] = keep
+                    # Under timed sync these entries are rendered segments whose durations
+                    # were planned per caption phrase, so removing one shortens the picture
+                    # against the narration -- a silent desync that only shows up on the
+                    # finished file. Pool-level filtering (filter_text_media,
+                    # filter_soft_media) is what actually removes these now; if one still
+                    # reaches here the pool had nothing better, and shipping it beats
+                    # shipping a short whose video ends early.
+                    if getattr(params, "enable_timed_sync", False):
+                        logger.warning(
+                            f"editorial gate: {len(audit['drop'])} shot(s) flagged but kept "
+                            f"-- timed sync pairs each shot with a caption phrase, so "
+                            f"dropping one would end the picture before the narration")
+                    else:
+                        keep = [p for p in downloaded_videos if p not in set(audit["drop"])]
+                        logger.warning(f"editorial gate: dropping {len(audit['drop'])} shot(s) "
+                                       f"(burned-in text); {len(keep)} remain")
+                        downloaded_videos[:] = keep
                 if not audit["ok"]:
                     raise one_shot.OneShotError(
                         "editorial gate rejected the media plan: "

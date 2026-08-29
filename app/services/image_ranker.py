@@ -6,6 +6,7 @@ Falls back to original order silently when CLIP is unavailable.
 import re
 import os
 import io
+from collections import Counter
 from typing import List, Dict
 from loguru import logger
 
@@ -527,6 +528,10 @@ def assign_images_to_segments(
     min_score: float = 0.0,
     strict: bool = False,
     model_name: str = "clip-vit-base-patch32",
+    still_max_reuse: int = 0,
+    opening_video_segments: int = 0,
+    max_consecutive_close: int = 0,
+    establish_within: int = 0,
 ) -> List[int]:
     """
     For each caption segment (in spoken order) pick the index of the image that
@@ -577,12 +582,38 @@ def assign_images_to_segments(
             best_vid_sim.sort(reverse=True)
             force_video_segs = {s for _, s in best_vid_sim[:target]}
 
+        # The opening segments are the swipe decision, and this picker had no notion of
+        # them: on the 29 Aug test build it gave the first four segments -- 0.00-2.57s,
+        # the entire window in which 53% of viewers leave -- to a SINGLE still photo,
+        # with the punch-in, the boom and the hook card all landing on a frozen frame.
+        # Whatever CLIP thinks, frame one is never a photo when real footage exists.
+        if vid_idx and opening_video_segments > 0:
+            force_video_segs |= set(range(min(int(opening_video_segments), n_seg)))
+
         def _source_key(media_path: str) -> str:
             base = os.path.basename(media_path).lower()
             match = re.match(r"(.+?)_c\d+(?:\.|$)", base)
             return match.group(1) if match else base
 
         source_keys = [_source_key(p) for p in image_paths]
+
+        # Shot sizes for the grammar rules below. The editorial gate already MEASURED
+        # this -- the 29 Aug plan was 14 close-ups and 3 mediums, no wide at all -- but
+        # measuring it after the render only ever produced a log line. Computed once per
+        # build; craft.shot_size works on a 160px thumbnail, so the pool costs ~a second.
+        _sizes: List[str] = []
+        if max_consecutive_close > 0 or establish_within > 0:
+            from app.services import craft as _craft
+            for p in image_paths:
+                try:
+                    im = _load_media_as_image(p)
+                    _sizes.append(_craft.shot_size(im) if im is not None else "medium")
+                except Exception:
+                    _sizes.append("medium")
+        _is_close = [sz == "close" for sz in _sizes]
+        _run_close = 0                # consecutive close-ups chosen so far
+        _established = not establish_within   # has a non-close been shown yet
+
         chosen: List[int] = []
         prev = -1
         used_count = [0] * n_img
@@ -602,6 +633,22 @@ def assign_images_to_segments(
             )
             if not pool:
                 pool = list(range(n_img))
+            # A still reused across many segments is the clearest "slideshow" tell, and
+            # max_media_reuse cannot see it: configs run segment_max_media_reuse 0, so on
+            # 29 Aug one photo covered 8 of 17 shots (4.5s of 9.4s) while every real clip
+            # was used once. Cap stills specifically, and when they are all at the cap
+            # fall back to real footage -- a repeated clip beats a sixth look at the same
+            # photograph. Videos are never restricted here; that is max_media_reuse's job.
+            if still_max_reuse > 0 and img_idx:
+                fresh = [i for i in pool if is_video[i] or used_count[i] < still_max_reuse]
+                if fresh:
+                    pool = fresh
+                elif vid_idx:
+                    pool = list(vid_idx)
+                    logger.info(
+                        f"image_ranker: every still hit the {still_max_reuse}x cap by "
+                        f"segment {s + 1}; using real footage instead of repeating a photo")
+
             if max_media_reuse > 0:
                 # Degrade, do not abort. This raise accounted for five of the seven
                 # recorded build failures, and every one cost a full 9-15 minute rebuild
@@ -656,6 +703,23 @@ def assign_images_to_segments(
                         f"all source videos reached the reuse cap before segment {s + 1}, "
                         f"even relaxed to {max_source_reuse + _MAX_REUSE_RELAX}"
                     )
+            # Shot grammar. An editor establishes, then pushes in; a run of close-ups
+            # reads as monotony however good each frame is. Both rules only ever narrow
+            # the pool when a legal alternative exists, so neither can starve a segment.
+            if _sizes:
+                _want_open = (not _established and establish_within > 0
+                              and s == max(0, establish_within - 1))
+                _want_break = (max_consecutive_close > 0
+                               and _run_close >= max_consecutive_close)
+                if _want_open or _want_break:
+                    _alt = [i for i in pool if not _is_close[i]]
+                    if _alt:
+                        pool = _alt
+                        logger.info(
+                            f"image_ranker: segment {s + 1} forced off close-up "
+                            + ("(no establishing shot yet)" if _want_open
+                               else f"(after {_run_close} consecutive close-ups)"))
+
             if prev >= 0 and len(pool) > 1 and prev in pool:
                 scores[prev] = -1e9            # never repeat the same media back-to-back
             # Prefer a genuinely different upload for the next beat whenever one
@@ -671,6 +735,12 @@ def assign_images_to_segments(
                     f"no media clears evidence score for segment {s + 1} "
                     f"({float(sim[s][best]):.3f} < {float(min_score):.3f})"
                 )
+            if _sizes:
+                if _is_close[best]:
+                    _run_close += 1
+                else:
+                    _run_close = 0
+                    _established = True
             chosen.append(best)
             used_count[best] += 1
             source_count[source_keys[best]] = source_count.get(source_keys[best], 0) + 1
@@ -678,10 +748,14 @@ def assign_images_to_segments(
         n_vid_used = sum(1 for c in chosen if is_video[c])
         distinct = len(set(chosen))
         distinct_sources = len({source_keys[i] for i in chosen})
+        _worst = max(used_count) if used_count else 0
+        _worst_still = max([used_count[i] for i in img_idx], default=0)
         logger.info(
             f"image_ranker: assigned {distinct} distinct media across {n_seg} segments "
             f"from {distinct_sources} source videos "
-            f"({n_vid_used} real video clips, {n_seg - n_vid_used} photos)"
+            f"({n_vid_used} real video clips, {n_seg - n_vid_used} photos); "
+            f"most-reused media {_worst}x, most-reused still {_worst_still}x"
+            + (f"; shot sizes {dict(Counter(_sizes[i] for i in chosen))}" if _sizes else "")
         )
         return chosen
     except Exception as e:
@@ -692,6 +766,139 @@ def assign_images_to_segments(
             raise OneShotError(f"segment evidence assignment failed: {e}") from e
         logger.warning(f"image_ranker: segment assignment failed ({e}), using round-robin")
         return [i % n_img for i in range(n_seg)]
+
+
+def filter_soft_media(paths: List[str], floor: float = 12.0, min_keep: int = 3,
+                      strict: bool = False) -> List[str]:
+    """Drop visually soft media from the POOL, before anything is assigned or rendered.
+
+    The 29 Aug build shipped two shots at edge detail 16.7 and 8.3 against a median of
+    19.9 -- visible mush. The obvious place to catch that is the editorial gate, but the
+    gate runs on already-rendered segments that are paired positionally with
+    clip_durations, so removing one there shortens the picture against the narration.
+    Filtering the pool instead means the assigner simply picks a sharp shot for that
+    caption phrase and the timeline is never disturbed.
+
+    Never starves the pool: if the floor would leave fewer than `min_keep`, the sharpest
+    of the rejects are put back.
+    """
+    if not paths or floor <= 0:
+        return paths
+    from app.services import craft
+    scored = []
+    for p in paths:
+        try:
+            im = _load_media_as_image(p)
+            scored.append((craft.edge_detail(im) if im is not None else 0.0, p))
+        except Exception:
+            scored.append((floor, p))     # unreadable here: let a later stage judge it
+    keep = [p for v, p in scored if v >= floor]
+    soft = sorted(((v, p) for v, p in scored if v < floor), reverse=True)
+    if len(keep) < min_keep:
+        restore = soft[:min_keep - len(keep)]
+        keep += [p for _, p in restore]
+        soft = soft[len(restore):]
+    if soft:
+        logger.info(
+            f"image_ranker: dropped {len(soft)} soft shot(s) below edge detail {floor:.0f} "
+            f"(softest {soft[-1][0]:.1f}); {len(keep)} media remain")
+    if strict and len(keep) < min_keep:
+        from app.services.one_shot import OneShotError
+        raise OneShotError(f"only {len(keep)} media clear the sharpness floor {floor}")
+    return [p for p in paths if p in set(keep)]
+
+
+def filter_text_media(paths: List[str], min_keep: int = 3) -> List[str]:
+    """Drop media carrying burned-in text (chyrons, source subtitles, watermarks).
+
+    The editorial gate already detects these, but it can only act by DELETING from a
+    plan whose entries are paired positionally with clip_durations -- so the first time
+    it actually dropped one, that short's picture would have ended before its narration.
+    Catching them in the pool means the assigner never places one and the timeline is
+    never touched. The gate keeps its detection as the backstop.
+    """
+    if not paths:
+        return paths
+    from app.services import craft
+    kept, dropped = [], []
+    for p in paths:
+        try:
+            im = _load_media_as_image(p)
+            (dropped if (im is not None and craft.has_burned_in_text(im)) else kept).append(p)
+        except Exception:
+            kept.append(p)          # unreadable here: let a later stage judge it
+    if len(kept) < min_keep:
+        logger.info(f"image_ranker: burned-in-text filter would keep only {len(kept)} "
+                    f"(<{min_keep}); keeping all and leaving it to the gate")
+        return paths
+    if dropped:
+        logger.info(f"image_ranker: dropped {len(dropped)} shot(s) with burned-in text; "
+                    f"{len(kept)} media remain")
+    return kept
+
+
+def filter_wrong_era(paths: List[str], era_negative_labels: List[str],
+                     era_positive_labels: List[str] = None, margin: float = 0.0,
+                     min_keep: int = 4, model_name: str = "clip-vit-base-patch32") -> List[str]:
+    """Drop media from the wrong era or the wrong competition, at POOL level.
+
+    The builder has no concept of time, and on a chronological biography series that is
+    the continuity error that hurts most. The first clean 5UCL build proved it: a short
+    about five Champions Leagues at Real Madrid opened AND closed on Ronaldo holding the
+    2019 UEFA Nations League trophy in a red Portugal shirt, and elsewhere used Euro 2016
+    and two Juventus shots. Every frame was sharp, well exposed and genuinely of the
+    subject -- and wrong. A football audience reads that instantly.
+
+    The subject gate cannot help: all of those ARE Cristiano Ronaldo, scoring high on
+    every positive label. Era is a separate axis, so it needs a separate pass, run on the
+    pool before anything is assigned -- deleting later would break the positional pairing
+    with clip_durations, the same trap filter_text_media exists to avoid.
+
+    Keeps at least min_keep by best margin, so an over-strict era list can never empty
+    the pool. That guard matters more here than anywhere: pre-2003 and single-competition
+    footage is genuinely scarce, which is exactly why substitutions creep in.
+    """
+    if not paths or not era_negative_labels:
+        return paths
+    if not _try_load_clip(model_name):
+        logger.warning("era gate: CLIP unavailable, keeping all media")
+        return paths
+
+    def _tmpl(lbl: str) -> str:
+        return lbl if lbl.lower().startswith(("a ", "an ", "the ")) else f"a photo of {lbl}"
+
+    pos = [_tmpl(l) for l in (era_positive_labels or ["a photo of a footballer"])]
+    neg = [_tmpl(l) for l in era_negative_labels]
+    n_pos = len(pos)
+    try:
+        import torch
+        label_emb = _embed_texts(pos + neg)
+        img_emb = _embed_images(paths)
+        probs = torch.softmax(torch.mm(img_emb, label_emb.T) * 100.0, dim=-1).numpy()
+        scored = []
+        for i, p in enumerate(paths):
+            pp = float(probs[i][:n_pos].max())
+            np_ = float(probs[i][n_pos:].max())
+            scored.append((pp - np_, p, pp, np_))
+        keep = [t for t in scored if t[0] >= margin]
+        dropped = [t for t in scored if t[0] < margin]
+        if len(keep) < min_keep:
+            dropped.sort(key=lambda t: -t[0])
+            need = min_keep - len(keep)
+            keep += dropped[:need]
+            dropped = dropped[need:]
+            logger.warning(f"era gate: only {len(keep) - need} cleared; kept {need} of the "
+                           f"closest anyway rather than starve the pool")
+        for _, p, pp, np_ in dropped:
+            logger.info(f"era gate: dropped {os.path.basename(p)[:34]} "
+                        f"(era-negative {np_:.3f} > positive {pp:.3f})")
+        if dropped:
+            logger.info(f"era gate: kept {len(keep)}/{len(paths)}, dropped {len(dropped)} "
+                        f"as wrong era/competition")
+        return [t[1] for t in keep]
+    except Exception as e:
+        logger.warning(f"era gate failed, keeping all media: {e}")
+        return paths
 
 
 def filter_by_subject_presence(

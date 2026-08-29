@@ -159,7 +159,22 @@
   "ambience_volume": 0.07,
   "jl_cut_offset": 0.12,
   "video_subject": "In 2009 Real Madrid paid a world record transfer fee for Cristiano Ronaldo, who had won the Champions League once with Manchester United in 2008. Over nine years at Real Madrid he won it four more times, in 2014, 2016, 2017 and 2018, taking his career total to five",
-  "video_terms": "Cristiano Ronaldo Real Madrid, Ronaldo Champions League trophy, Ronaldo Bernabeu presentation, Ronaldo white Madrid jersey celebration"
+  "video_terms": "Cristiano Ronaldo Real Madrid, Ronaldo Champions League trophy, Ronaldo Bernabeu presentation, Ronaldo white Madrid jersey celebration",
+  "era_positive_labels": [
+   "Cristiano Ronaldo in a white Real Madrid shirt",
+   "Cristiano Ronaldo holding the silver Champions League trophy with big ears",
+   "Real Madrid players celebrating in white and purple kit",
+   "Cristiano Ronaldo in a Manchester United red shirt in 2008"
+  ],
+  "era_negative_labels": [
+   "a footballer in a black and white striped Juventus shirt",
+   "a footballer in a red Portugal national team shirt",
+   "the UEFA Nations League trophy",
+   "the UEFA European Championship trophy",
+   "a footballer in a yellow Al Nassr shirt",
+   "a footballer in a green and white Sporting Lisbon shirt",
+   "Portugal national team players celebrating in red shirts"
+  ]
  },
  "videos": [
   {

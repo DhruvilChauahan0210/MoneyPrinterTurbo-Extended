@@ -15,7 +15,7 @@ import math, os
 from typing import Optional, Tuple, List
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageFilter, ImageStat
 from loguru import logger
 
 try:                       # optional, materially better when present
@@ -119,8 +119,84 @@ def detect_text_bands(src, min_score: float = 5.0) -> List[dict]:
         return []
 
 
+def detect_text_regions(src, spike: float = 2.6, min_rows: int = 3) -> List[dict]:
+    """Find burned-in text ANYWHERE in frame, not only as a title-safe bar.
+
+    detect_text_bands catches a broadcaster's chyron: a wide, high-energy band in the top
+    or bottom third. It is precise and it missed everything else. On the first clean build
+    it let through another channel's centred motivational caption, a corner "Football"
+    watermark and a station logo -- four for four, because none of them is a wide band in
+    a title-safe zone.
+
+    Raw edge density cannot separate these from a crowd or a stadium, which are busier
+    still. What distinguishes a line of text is that it is LOCALLY exceptional: strokes
+    spike hard for a few rows with quiet space directly above and below. A crowd is
+    uniformly busy, so its rows never stand out against their own neighbourhood. Scoring
+    each row against a local baseline rather than the frame median finds text in mid-frame
+    and in corners while leaving busy scenes alone.
+    """
+    try:
+        g, (ow, oh), _ = _load_gray(src, max_w=360)
+        h, w = g.shape
+        if h < 60 or w < 60:
+            return []
+
+        dx = np.abs(np.diff(g, axis=1))
+        thr = max(14.0, float(np.percentile(dx, 93)))
+        strokes = (dx > thr).sum(axis=1).astype(np.float32)
+
+        # Local baseline: what this row's neighbourhood looks like, so a busy frame
+        # raises its own bar instead of tripping the detector everywhere.
+        win = max(9, (h // 12) | 1)
+        pad = win // 2
+        padded = np.pad(strokes, pad, mode="edge")
+        base = np.array([np.median(padded[i:i + win]) for i in range(h)], dtype=np.float32)
+        base = np.maximum(base, 2.0)
+        ratio = strokes / base
+
+        hot = ratio > spike
+        runs, start = [], None
+        for y in range(h):
+            if hot[y] and start is None:
+                start = y
+            elif not hot[y] and start is not None:
+                runs.append((start, y)); start = None
+        if start is not None:
+            runs.append((start, h))
+
+        out = []
+        for y0, y1 in runs:
+            if (y1 - y0) < min_rows or (y1 - y0) / h > 0.34:
+                continue
+            strip = dx[y0:y1]
+            cols = strip.mean(axis=0) > thr * 0.6
+            if not cols.any():
+                continue
+            idx = np.flatnonzero(cols)
+            span = (idx[-1] - idx[0] + 1) / w
+            if span < 0.10:                       # smaller than a corner watermark
+                continue
+            density = float(cols[idx[0]:idx[-1] + 1].mean())
+            if density < 0.22:                    # sparse edges, not glyphs
+                continue
+            out.append({"y0": round(y0 / h, 3), "y1": round(y1 / h, 3),
+                        "x0": round(float(idx[0] / w), 3), "x1": round(float(idx[-1] / w), 3),
+                        "score": round(float(ratio[y0:y1].mean()), 2),
+                        "width_frac": round(span, 3), "density": round(density, 3),
+                        "kind": "text-region"})
+        return out
+    except Exception as e:
+        logger.debug(f"detect_text_regions failed: {e}")
+        return []
+
+
 def has_burned_in_text(src, min_score: float = 5.0) -> bool:
-    return bool(detect_text_bands(src, min_score=min_score))
+    """Either kind of furniture: a title-safe chyron bar, or text anywhere else."""
+    return bool(detect_text_bands(src, min_score=min_score)) or bool(detect_text_regions(src))
+
+
+def all_text_furniture(src) -> List[dict]:
+    return detect_text_bands(src) + detect_text_regions(src)
 
 
 # ---------------------------------------------------------- subject window ----
@@ -335,9 +411,28 @@ def matches_any_hash(h: str, banned: List[str], threshold: int = 8) -> bool:
 
 # ------------------------------------------------------------- editorial QA ----
 
+
+def edge_detail(im) -> float:
+    """Sharpness on the SAME scale one_shot._frame_quality reports.
+
+    That function measures the mean of a FIND_EDGES pass over a 180px-wide grayscale
+    and writes it into quality_report.json, where the 29 Aug test build recorded a
+    median of 19.9 with two shots at 16.7 and 8.3 -- visible mush that the gate happily
+    passed because it only ever looked at people, text and brightness. Matching the
+    resize width keeps the configured floor comparable to the numbers already logged.
+    """
+    try:
+        g = im.convert("L")
+        w = 180
+        g = g.resize((w, max(1, int(g.size[1] * w / g.size[0]))), Image.BILINEAR)
+        return float(ImageStat.Stat(g.filter(ImageFilter.FIND_EDGES)).mean[0])
+    except Exception:
+        return 0.0
+
+
 def audit_media_plan(paths: List[str], subject_floor: float = 0.60,
                      dupe_threshold: int = 6, max_media_reuse: int = 2,
-                     min_media: int = 6) -> dict:
+                     min_media: int = 6, sharpness_floor: float = 0.0) -> dict:
     """Judge the selected media before the render, not after.
 
     `validate_media_plan` already checks that the files exist, decode and are portrait --
@@ -352,6 +447,7 @@ def audit_media_plan(paths: List[str], subject_floor: float = 0.60,
     """
     report = {"clips": len(paths or []), "subject_present": 0, "burned_in_text": 0,
               "near_duplicates": 0, "brightness_spread": 0.0, "shot_sizes": {},
+              "soft_shots": 0, "sharpness_min": 0.0, "sharpness_median": 0.0,
               "ok": True, "problems": [], "drop": []}
     if not paths:
         report["ok"] = False
@@ -359,6 +455,7 @@ def audit_media_plan(paths: List[str], subject_floor: float = 0.60,
         return report
 
     hashes, brights, sizes = [], [], []
+    sharp: List[Tuple[float, str]] = []      # (edge detail, path), for the softness check
     for p in paths:
         try:
             import subprocess as _sp, io as _io
@@ -388,6 +485,7 @@ def audit_media_plan(paths: List[str], subject_floor: float = 0.60,
             report["drop"].append(p)          # surgical: remove this shot, keep the build
         brights.append(float(np.asarray(sm.convert("L"), dtype=np.float32).mean()))
         sizes.append(shot_size(sm))
+        sharp.append((edge_detail(im), p))
         h = frame_hash(im)
         if h and matches_any_hash(h, hashes, threshold=dupe_threshold):
             report["near_duplicates"] += 1
@@ -400,6 +498,10 @@ def audit_media_plan(paths: List[str], subject_floor: float = 0.60,
         report["shot_sizes"][s] = report["shot_sizes"].get(s, 0) + 1
     frac = report["subject_present"] / n
     report["subject_fraction"] = round(frac, 2)
+    if sharp:
+        vals = sorted(v for v, _ in sharp)
+        report["sharpness_min"] = round(vals[0], 1)
+        report["sharpness_median"] = round(vals[len(vals) // 2], 1)
 
     if frac < subject_floor:
         report["ok"] = False
@@ -424,6 +526,26 @@ def audit_media_plan(paths: List[str], subject_floor: float = 0.60,
             report["problems"].append(
                 f"{report['burned_in_text']} shot(s) carry burned-in text -- dropped, "
                 f"rendering with the remaining {remaining}")
+    # Softness was the one visible defect nothing measured. Drop the mush, but only
+    # while the plan stays above min_media, and never fail the build over it: a soft
+    # shot is worse than a sharp one and better than no short at all. Softest first, so
+    # a thin pool loses the worst frame rather than an arbitrary one.
+    if sharpness_floor > 0 and sharp:
+        already = set(report["drop"])
+        soft = sorted((v, p) for v, p in sharp if v < sharpness_floor and p not in already)
+        report["soft_shots"] = len(soft)
+        # Report only -- deliberately NOT added to `drop`. By this point the plan is a
+        # list of rendered segments paired positionally with clip_durations, so removing
+        # one shortens the picture against the narration. Enforcement lives in
+        # image_ranker.filter_soft_media, which runs on the pool before assignment; if a
+        # soft shot still reaches here, the pool was too thin to do better and shipping
+        # it is the right call.
+        if soft:
+            report["problems"].append(
+                f"{len(soft)} shot(s) below the sharpness floor (edge detail < "
+                f"{sharpness_floor:.0f}, softest {soft[0][0]:.1f}) -- pool filter could "
+                f"not do better; rendering them")
+
     # A fixed 34% threshold contradicted max_video_reuse: at reuse 2, half the plan is
     # ALLOWED to be a second use of an earlier clip, so normal operation looked like a
     # fault. Derive the bar from the cap actually in force, plus headroom.
