@@ -161,19 +161,67 @@ def _cut_vertical_clips(src: str, out_dir: str, base: str, clip_len: float,
             offsets.append(t)
             t += step
     W, H = video_width, video_height
-    # Center vertical crop to target aspect, then scale to WxH. -an drops audio.
-    vf = (
-        f"crop='min(iw,ih*{W}/{H})':'min(ih,iw*{H}/{W})',"
-        f"scale={W}:{H}:force_original_aspect_ratio=increase,"
-        f"crop={W}:{H},setsar=1"
-    )
+
+    # Subject-aware reframe on the MAINLINE path. craft.subject_window was only ever
+    # wired into fetch_exact_clip (comparison mode), so every series short was still
+    # cropped dead centre -- 68% of a 1920px broadcast frame discarded blind, which is
+    # the defect 74da959 set out to fix. Same for burned-in text: rejecting it here, while
+    # the pool can still supply a replacement, is far cheaper than meeting it at the gate.
+    def _centre_vf() -> str:
+        return (
+            f"crop='min(iw,ih*{W}/{H})':'min(ih,iw*{H}/{W})',"
+            f"scale={W}:{H}:force_original_aspect_ratio=increase,"
+            f"crop={W}:{H},setsar=1"
+        )
+
+    def _vf_from(crop_expr: str) -> str:
+        return (
+            f"{crop_expr},"
+            f"scale={W}:{H}:force_original_aspect_ratio=increase,"
+            f"crop={W}:{H},setsar=1"
+        )
+
+    vf = _centre_vf()
+    reject_text = bool(globals().get("_REJECT_BURNED_IN_TEXT", True))
+
+    def _analyse(off: float):
+        """Return (vf, has_text). Any failure degrades to the old centre crop."""
+        probe = os.path.join(out_dir, f"{base}_p{int(off * 100)}.jpg")
+        try:
+            from app.services import craft
+            pr = _run(["ffmpeg", "-y", "-loglevel", "error",
+                       "-ss", f"{off + clip_len / 2:.2f}", "-i", src,
+                       "-frames:v", "1", "-q:v", "3", probe], timeout=60)
+            if pr.returncode != 0 or not os.path.exists(probe):
+                return _centre_vf(), False
+            has_text = bool(reject_text and craft.detect_text_bands(probe))
+            win = craft.subject_window(probe, W, H)
+            if win and win.get("w"):
+                logger.info(f"auto_footage: reframe {win['method']} x={win['x']} "
+                            f"(drift {win.get('drift', 0):+.1%})")
+                return _vf_from(f"crop={win['w']}:{win['h']}:{win['x']}:{win['y']}"), has_text
+            return _centre_vf(), has_text
+        except Exception as e:
+            logger.debug(f"auto_footage: reframe unavailable, centring ({e})")
+            return _centre_vf(), False
+        finally:
+            try:
+                os.remove(probe)
+            except OSError:
+                pass
+
     made = []
+    # Clips carrying burned-in text are held back rather than binned outright: if a source
+    # yields nothing else, one chyron shot still beats starving the pool (the editorial
+    # gate can drop it later). Starvation is what cost 11 minutes earlier tonight.
+    spares = []
     for i, off in enumerate(offsets):
         out = os.path.join(out_dir, f"{base}_c{i}.mp4")
+        clip_vf, has_text = _analyse(off)
         cmd = [
             "ffmpeg", "-y", "-loglevel", "error",
             "-ss", f"{off:.2f}", "-i", src, "-t", f"{clip_len:.2f}",
-            "-an", "-vf", vf,
+            "-an", "-vf", clip_vf,
             "-c:v", "libx264", "-preset", "fast", "-crf", "16",
             "-pix_fmt", "yuv420p", out,
         ]
@@ -186,12 +234,26 @@ def _cut_vertical_clips(src: str, out_dir: str, base: str, clip_len: float,
                     logger.debug(f"auto_footage: dropping dark/fade clip @{off:.1f}s")
                     try: os.remove(out)
                     except OSError: pass
+                elif has_text:
+                    logger.info(f"auto_footage: burned-in text @{off:.1f}s "
+                                f"- held back as a spare")
+                    spares.append(out)
                 else:
                     made.append(out)
             else:
                 logger.debug(f"auto_footage: ffmpeg cut failed @{off:.1f}s: {r.stderr.strip()[-120:]}")
         except subprocess.TimeoutExpired:
             logger.warning(f"auto_footage: ffmpeg cut timed out @{off:.1f}s")
+    if not made and spares:
+        logger.warning(f"auto_footage: {base} yielded only text-carrying clips "
+                       f"- keeping {len(spares)} rather than starving the pool")
+        made = spares
+        spares = []
+    for extra in spares:
+        try:
+            os.remove(extra)
+        except OSError:
+            pass
     return made
 
 

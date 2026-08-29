@@ -7,7 +7,12 @@ env:   FFMPEG_BIN, ELAPSED (build seconds), BUILD_LOG (path to the build log)
 import json, os, re, subprocess, sys
 
 FF = os.environ.get("FFMPEG_BIN") or "ffmpeg"
-FP = FF.replace("ffmpeg", "ffprobe") if "ffmpeg" in FF else "ffprobe"
+# Only rewrite the BINARY name, not the path. static_ffmpeg ships both binaries in
+# the same package dir, so a blind replace() invented a static_ffprobe/ that is not there.
+FP = os.environ.get("FFPROBE_BIN") or (
+    os.path.join(os.path.dirname(FF), "ffprobe") if os.path.dirname(FF) else "ffprobe")
+if not (os.path.dirname(FP) and os.path.exists(FP)):
+    FP = "ffprobe"
 
 
 def sh(cmd, t=180):
