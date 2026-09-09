@@ -78,23 +78,28 @@ def check(video, log, config=None):
 
     # The assigner logs one summary line; it is the only trustworthy source for what
     # actually landed on screen, as opposed to what the pool theoretically held.
-    # The "from N source videos" and "most-reused media Nx" clauses are OPTIONAL. The old
-    # pattern required them, and real build logs do not emit them -- the actual line is
-    # `assigned 13 distinct media across 13 segments (13 real video clips, 0 photos)`.
-    # So this check silently degraded to "no assigner summary" on every build and the media
-    # diversity bar has never once been enforced. Found 9 Sep 2026.
+    # Parse the summary line FIELD BY FIELD rather than with one long pattern. Two
+    # successive bugs came from trying to do it in a single regex: the first required
+    # clauses the logger never emits, and the replacement bounded the optional
+    # most-reused clause with a lookahead that did not allow the trailing comma in
+    # `most-reused media 3x, most-reused still 0x`, so reuse silently parsed as None and
+    # a 3x render passed the gate. Anchor on the leading clause, then pull each optional
+    # field out of that same line independently.
     m = None
-    for m in re.finditer(
-        r"assigned (\d+) distinct media across (\d+) segments"
-        r"(?:.*?from (\d+) source videos)?"
-        r"(?:.*?most-reused media (\d+)x)?(?=\s|$|\x1b|\))", text):
+    for m in re.finditer(r"assigned (\d+) distinct media across (\d+) segments", text):
         pass
+    line = ""
+    if m:
+        eol = text.find("\n", m.end())
+        line = text[m.start():eol if eol != -1 else len(text)]
     if not m:
         warn.append("no assigner summary in the log -- cannot verify media diversity")
     else:
         distinct, segments = int(m.group(1)), int(m.group(2))
-        sources = int(m.group(3)) if m.group(3) else None
-        reused = int(m.group(4)) if m.group(4) else None
+        _src = re.search(r"from (\d+) source videos", line)
+        _reu = re.search(r"most-reused media (\d+)x", line)
+        sources = int(_src.group(1)) if _src else None
+        reused = int(_reu.group(1)) if _reu else None
 
         # Shots, not caption segments, are the unit the pool has to cover: with
         # min_shot_seconds set the picture holds across several segments, so `segments`
