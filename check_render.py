@@ -96,6 +96,21 @@ def check(video, log, config=None):
         warn.append("no assigner summary in the log -- cannot verify media diversity")
     else:
         distinct, segments = int(m.group(1)), int(m.group(2))
+
+        # PREFER the post-merge numbers. The assigner line counts CAPTION segments and
+        # the media assigned to them, but consecutive segments holding the same clip are
+        # coalesced afterwards into one continuous shot (task.py). So the assigner can
+        # report "13 distinct, most-reused 3x" for an edit that actually puts 7 clips on
+        # screen, each exactly once. Judging the render on pre-merge numbers fails good
+        # edits and is measuring the wrong unit.
+        _mm = None
+        for _mm in re.finditer(
+            r"shot merge: (\d+) caption segments -> (\d+) continuous shots "
+            r"\((\d+) distinct media\)", text):
+            pass
+        merged = None
+        if _mm:
+            merged = (int(_mm.group(2)), int(_mm.group(3)))   # shots, distinct
         _src = re.search(r"from (\d+) source videos", line)
         _reu = re.search(r"most-reused media (\d+)x", line)
         sources = int(_src.group(1)) if _src else None
@@ -112,6 +127,8 @@ def check(video, log, config=None):
             except Exception:
                 pass
         shots = max(1, int((dur or DUR_MIN) / max(min_shot, 0.1) + 0.999))
+        if merged:
+            shots, distinct = merged[0], merged[1]
         need = max(DISTINCT_FLOOR, int(shots * DISTINCT_SHOT_FRACTION + 0.999))
         if distinct < need:
             fail.append(f"only {distinct} distinct media across {segments} segments "
@@ -135,6 +152,11 @@ def check(video, log, config=None):
             cdf = json.load(open(config)).get("defaults", {})
             cap = cdf.get("segment_max_media_reuse")
             pen = cdf.get("segment_reuse_penalty")
+        if merged:
+            # After the merge every shot is a distinct entry in the montage, so on-screen
+            # reuse is simply how many more shots there are than distinct clips.
+            shots_m, distinct_m = merged
+            reused = 1 if distinct_m >= shots_m else 2 + (shots_m - distinct_m) // max(distinct_m, 1)
         if reused is not None:
             if cap and reused > int(cap):
                 fail.append(f"most-reused media {reused}x exceeds the hard "
