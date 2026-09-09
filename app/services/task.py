@@ -601,10 +601,16 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
             logger.warning(f"sharpness filter failed, keeping all media: {e}")
         try:
             _phase("pool: burned-in text")
+            # 0.60, not 0.34. On the 9 Sep Ronaldinho build 6 of 10 clips carried burned-in
+            # text; a 0.34 cap allowed only 3 drops, so the filter kept ALL of them and
+            # deferred to the editorial gate. Text-laden clips are not a cosmetic
+            # preference -- they are another channel's captions on screen -- so allow the
+            # majority to go provided min_keep still holds. Sharpness stays at 0.34: soft
+            # footage is a degradation, burned-in text is a defect.
             image_paths = image_ranker.filter_text_media(
                 image_paths,
                 min_keep=_cosmetic_floor,
-                max_drop_fraction=0.34,
+                max_drop_fraction=0.60,
             )
         except Exception as e:
             logger.warning(f"burned-in-text filter failed, keeping all media: {e}")
