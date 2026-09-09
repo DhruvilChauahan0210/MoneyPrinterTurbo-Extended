@@ -32,6 +32,19 @@ FLOOR_MIN   = 0.30                   # July baseline 0.35; lowering this lets ju
 LEDGER_MAX  = 20                     # rolling window, not an all-time ban
 BANLIST_MAX = 160
 
+# Runtime band in words. Set 7 Sep 2026 from the analytics RCA; see the note at the
+# n_words check for the derivation and for why this is a band and not a point target.
+# Rebased 8 Sep 2026 against @_simplesports (796K subs, 694 shorts). Its top-40 shorts
+# have a 31s duration median, a range of 18-48s and NOTHING under 18s, because 2026
+# Shorts ranking weights watch time over swipe rate. The old 40-48 word / 12-15s band
+# was tuned to a swipe-rate model that no longer holds and capped our watch time at
+# roughly a third of the benchmark's. MEASURED on the first EP39 render: 113 words gave
+# 49.97s of narration at voice_rate 1.0, i.e. 2.26 words/sec -- NOT the 4.2 w/s first
+# assumed from finished-short totals (those include tight trim and a hook card).
+WORDS_MIN    = 42                    # ~19s -- below the benchmark's own 18s floor
+WORDS_TARGET = 68                    # ~30s -- the benchmark's 31s median
+WORDS_MAX    = 81                    # ~36s -- past this, completion rate starts to fall
+
 def _subject_terms(df):
     """Names the short is about, taken from the positive labels."""
     terms = set()
@@ -60,15 +73,22 @@ def check(path):
     per_cap = int(df.get("max_words_per_subtitle") or 2)
     reuse = int(df.get("max_video_reuse") or 2)
     maxvid = int(df.get("youtube_max_videos") or 3)
+    hold = float(df.get("min_shot_seconds") or 0.0)
     if words and per_cap > 0 and reuse > 0:
         segments = -(-words // per_cap)                 # ceil
-        need_distinct = -(-segments // reuse)           # ceil
+        # With min_shot_seconds the picture no longer changes once per caption segment,
+        # so the pool has to cover SHOTS, not segments. Runtime ~= words/2.261 + 1.0s.
+        if hold > 0:
+            shots = max(1, int((words / 2.261 + 1.0) / hold + 0.999))
+        else:
+            shots = segments
+        need_distinct = -(-shots // reuse)              # ceil
         # The subject gate historically keeps ~60% of candidates ("kept 9/15" in the
         # 25 Aug log), and each source video yields roughly one usable distinct clip
         # after de-duplication.
         supply = int(maxvid * 0.6) + len(df.get("pinned_image_paths") or [])
         if supply < need_distinct:
-            warn.append(f"pool too thin: {words} words / {per_cap} = {segments} segments "
+            warn.append(f"pool too thin: {words} words -> {shots} shots "
                         f"need {need_distinct} distinct clips at reuse {reuse}, but "
                         f"youtube_max_videos={maxvid} supplies about {supply} after the "
                         f"gate -- raise youtube_max_videos to "
@@ -115,10 +135,42 @@ def check(path):
         if not _is_loop and not script.rstrip().endswith((".", "!", "?")):
             warn.append(f'script does not end in terminal punctuation: "...{script[-45:]}" '
                         f"-- it will be voiced as an unfinished sentence")
+        # --- runtime band, checked from BOTH sides ---
+        # This check used to warn only when a script ran LONG ("over ~40 risks breaching
+        # the 15s cap, target ~30"). Nothing ever warned when one ran short, so the
+        # channel drifted down unchallenged: measured 7 Sep 2026 across all 24 September
+        # shorts, median runtime was 9.74s on 31-38 word scripts. Meanwhile the 90-day
+        # top performers were 0:12-0:15 (the two 15K breakouts were 0:12 and 0:13). A
+        # 9.7s short is not a shorter version of a 13s short -- it is one story beat
+        # instead of three, and the swipe-away rate went 51.9% -> 67.2% over the same
+        # window. Too short is now the defect that actually happens, so it is a warning.
+        #
+        # Word count alone does NOT determine runtime. Regressing the 16 built EP17-EP32
+        # renders against their scripts (voice_rate 1.2) gives
+        #     duration ~= 0.394*words + 0.524*commas - 0.040*sentences - 4.66
+        # i.e. a comma costs about as much as 1.3 extra words, because each one is a
+        # pause. But R^2 is only 0.414 and the max error is 2.26s (EP22 and EP26 both
+        # ran ~2s longer than predicted, most likely timed-sync stretching segments to
+        # the captions), so this is a sighting shot, not a guarantee. Hence a BAND, and
+        # hence the target sits at ~13.4s rather than 14s: with +2s of observed noise
+        # against a hard 15s ceiling, anything higher risks shipping an over-cap short.
+        # ALWAYS verify the rendered duration -- run_series_ep.sh prints it.
         n_words = len(script.split())
-        if n_words > 40:
-            warn.append(f"script is {n_words} words; over ~40 risks breaching the 15s cap "
-                        f"(target ~30)")
+        n_commas = script.count(",")
+        est = 0.3941 * n_words + 0.5239 * n_commas - 0.0396 * max(
+            1, len([x for x in re.split(r"(?<=[.!?])\s+", script.strip()) if x.strip()])
+        ) - 4.6640
+        # The old EP17-EP32 regression was fitted on 31-47 word scripts at voice_rate 1.2
+        # and does not extrapolate to 115 words; use a flat rate for the new band.
+        est = n_words / 2.261 + 1.0
+        if n_words > WORDS_MAX:
+            warn.append(f"script is {n_words} words (+{n_commas} commas); over "
+                        f"{WORDS_MAX} it is predicted at ~{est:.1f}s, past the ~36s point "
+                        f"where completion rate falls (target ~{WORDS_TARGET})")
+        elif n_words < WORDS_MIN:
+            warn.append(f"script is only {n_words} words (+{n_commas} commas); predicted "
+                        f"~{est:.1f}s, under the 18s floor that @_simplesports' top 40 "
+                        f"never goes below (target ~{WORDS_TARGET} words / ~29s)")
 
     # --- EVERY text field that drives media selection, not just the footage queries ---
     # Caught by a local review on 28 Aug: a config copied from another episode passed this
@@ -166,6 +218,18 @@ def check(path):
         if queries and len(anon) / len(queries) > 0.25:
             warn.append(f"{len(anon)}/{len(queries)} queries do not name the subject "
                         f"-- the pool will fill with stock and the edit will show it")
+    # --- there must be something under the voice at t=0 ---
+    # bgm_type was set "" channel-wide on 4 Aug 2026. video.py already carries a note that
+    # this silenced the t=0 hook impact, and the fix at the time was to move the boom out
+    # of the `if bgm_file:` block -- but that left a boom and 0.07 room tone as the entire
+    # audio bed. Swipe-away went 51.9% (Jul) -> 62.8% (Aug) -> 67.2% (Sep) and the Shorts
+    # feed is 94.7% of this channel's traffic, so second zero is the whole funnel.
+    # Restored 7 Sep 2026 to bgm_volume 0.10, which sits well under the -14 LUFS voice.
+    if (df.get("bgm_type") or "") == "" and not float(df.get("bgm_volume") or 0):
+        warn.append("no music bed: bgm_type=\"\" and bgm_volume=0, so frame 1 is only a "
+                    "boom + room tone -- set bgm_type \"random\" / bgm_volume 0.10 "
+                    "(swipe-away rose 51.9%->67.2% while this was off)")
+
     for key, cap in BUDGET.items():
         n = len(df.get(key) or [])
         if n > cap:
