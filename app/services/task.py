@@ -890,8 +890,24 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     end = float(seg.get("end_time", start))
                     if s + 1 < len(segments):   # close gaps to the next phrase
                         end = float(segments[s + 1].get("start_time", end))
-                    synced_paths.append(image_paths[idxs[s]])
-                    clip_durations.append(max(0.4, end - start))
+                    _p = image_paths[idxs[s]]
+                    _d = max(0.4, end - start)
+                    # Consecutive segments holding the SAME media are ONE continuous
+                    # shot, not N separate clips. This used to append one entry per
+                    # caption segment, and preprocess_video cuts a fresh excerpt for
+                    # every entry -- always from the middle of the source -- so a shot
+                    # held across 3 segments replayed the same moment three times back
+                    # to back and the picture visibly restarted mid-shot. Coalesce the
+                    # run into a single clip and let it play through once.
+                    if synced_paths and synced_paths[-1] == _p:
+                        clip_durations[-1] += _d
+                    else:
+                        synced_paths.append(_p)
+                        clip_durations.append(_d)
+                if len(synced_paths) != len(segments):
+                    logger.info(f"shot merge: {len(segments)} caption segments -> "
+                                f"{len(synced_paths)} continuous shots "
+                                f"({len(set(synced_paths))} distinct media)")
                 total = sum(clip_durations)
                 if audio_duration:
                     # Segment encodes quantize boundaries to video frames. Across

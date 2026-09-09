@@ -2147,6 +2147,15 @@ def _match_shots(materials, max_brightness_shift: float = 0.18,
                 continue
             src = materials[i].url
             root, ext = _os.path.splitext(src)
+            # Shot-match VIDEO only. This re-encodes with libx264 and moves the result
+            # over the source, so running it on a still rewrote a cached .jpg with a raw
+            # H.264 stream that kept its .jpg name. Every later build that picked that
+            # cached image died in moviepy's ffmpeg probe ("At least one output file must
+            # be specified") ten minutes in. Stills reach here whenever preprocess_video
+            # skipped them (e.g. the <480px low-resolution guard), so their url is still
+            # the shared cache path. Stills already get their own grade via _apply_grade.
+            if ext.lower() not in (".mp4", ".mov", ".mkv", ".webm", ".m4v"):
+                continue
             tmp = f"{root}.matched{ext or '.mp4'}"
             r = _sp.run([ff, "-hide_banner", "-nostats", "-y", "-i", src,
                          "-vf", f"eq=brightness={db:.4f}:contrast={rc:.4f}",
@@ -2164,8 +2173,16 @@ def _match_shots(materials, max_brightness_shift: float = 0.18,
     return materials
 
 
+# Threads for the per-clip encodes below. 10-core machine; leave headroom for the
+# final render and the parallel clip-cutting pool in auto_footage.
+_ENC_THREADS = max(1, min(int(os.environ.get("MPT_ENCODE_THREADS", "6")), 8))
+
 def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_style: str = "varied", _motion_start_index: int = 0, durations: List[float] = None, video_width: int = None, video_height: int = None, fill_mode: str = "cover", color_grade: bool = True, cover_min_keep: float = 0.62):
     motion_counter = _motion_start_index
+    # How many times each source file has already been drawn from in THIS render.
+    # A reused clip must show a different moment each time; see the window stepping
+    # in the real-video branch below.
+    _draws = {}
     for idx, material in enumerate(materials):
         if not material.url:
             continue
@@ -2285,7 +2302,8 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_styl
                 codec=video_codec,
                 bitrate=video_bitrate,
                 audio_bitrate=audio_bitrate,
-                ffmpeg_params=quality_params
+                ffmpeg_params=quality_params,
+                threads=_ENC_THREADS,
             )
             close_clip(final_clip)
             material.url = video_file
@@ -2300,8 +2318,35 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_styl
                 src = clip if isinstance(clip, VideoFileClip) else VideoFileClip(material.url)
                 src_dur = float(src.duration or this_duration)
                 seg_len = max(0.4, min(this_duration, src_dur))
-                # Take the segment from the middle of the clip (best action density).
-                start = max(0.0, (src_dur - seg_len) / 2.0)
+                # Always taking the MIDDLE meant a clip used twice showed the exact
+                # same moment twice -- the most visible repetition defect in the
+                # finished shorts. Step the window forward on each successive draw from
+                # the same file so the second and third appearances are different
+                # action. Falls back to the middle when the source is too short to
+                # yield a distinct window.
+                _key = str(material.url)
+                _n = _draws.get(_key, 0)
+                _draws[_key] = _n + 1
+                _slack = max(0.0, src_dur - seg_len)
+                # Fixed offset table rather than computed steps: the first draw keeps
+                # the middle (best action density), later draws walk to the extremes
+                # and then bisect. A computed step size looked right but handed draw #2
+                # the middle again whenever the slack was under one shot length, which
+                # is the common case at youtube_clip_len 4.2s.
+                _OFFSETS = (0.5, 0.0, 1.0, 0.25, 0.75)
+                if _slack <= 0.15:
+                    start = _slack / 2.0
+                    if _n:
+                        logger.warning(
+                            f"reuse window: {os.path.basename(_key)} draw #{_n + 1} has "
+                            f"only {_slack:.2f}s of slack -- replaying the same moment. "
+                            f"Raise youtube_clip_len or widen the pool.")
+                else:
+                    start = _slack * _OFFSETS[_n % len(_OFFSETS)]
+                    if _n:
+                        logger.info(f"reuse window: {os.path.basename(_key)} draw "
+                                    f"#{_n + 1} from {start:.2f}s "
+                                    f"(middle is {_slack / 2.0:.2f}s)")
                 seg = src.subclipped(start, start + seg_len)
 
                 if video_width and video_height:
@@ -2322,7 +2367,7 @@ def preprocess_video(materials: List[MaterialInfo], clip_duration=4, motion_styl
                 final_clip.write_videofile(
                     video_file, fps=fps, logger=None, codec=video_codec,
                     bitrate=video_bitrate, audio_bitrate=audio_bitrate,
-                    ffmpeg_params=quality_params,
+                    ffmpeg_params=quality_params, threads=_ENC_THREADS,
                 )
                 close_clip(final_clip)
                 material.url = video_file
