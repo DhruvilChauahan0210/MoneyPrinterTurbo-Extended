@@ -82,22 +82,58 @@ def check(path):
             shots = max(1, int((words / 2.261 + 1.0) / hold + 0.999))
         else:
             shots = segments
-        need_distinct = -(-shots // reuse)              # ceil
-        # The subject gate historically keeps ~60% of candidates ("kept 9/15" in the
-        # 25 Aug log), and each source video yields roughly one usable distinct clip
-        # after de-duplication.
-        supply = int(maxvid * 0.6) + len(df.get("pinned_image_paths") or [])
+        # Match the RENDER gate, which is what actually decides whether this ships:
+        # it wants ceil(0.75 * shots) distinct media (check_render.DISTINCT_SHOT_FRACTION),
+        # not shots/reuse. The old formula under-predicted and reported "needs about 5"
+        # for a build that then died needing far more.
+        need_distinct = max(6, -(-shots * 3 // 4))
+        # Supply, measured end to end on 9 Sep rather than assumed. The real funnel on a
+        # 30-video pull was 72 downloaded -> 27 past the subject gate -> 13 reaching the
+        # assigner, i.e. about 0.45 usable distinct clips per source video. The old model
+        # (0.6 keep x one clip per source) was optimistic and never matched a build.
+        supply = int(maxvid * 0.45) + len(df.get("pinned_image_paths") or [])
         if supply < need_distinct:
-            warn.append(f"pool too thin: {words} words -> {shots} shots "
-                        f"need {need_distinct} distinct clips at reuse {reuse}, but "
-                        f"youtube_max_videos={maxvid} supplies about {supply} after the "
-                        f"gate -- raise youtube_max_videos to "
-                        f"{max(16, min(30, -(-need_distinct * 5 // 2)))} or raise max_video_reuse")
-        elif maxvid > max(16, min(30, -(-need_distinct * 5 // 2))) * 1.4:
-            warn.append(f"pool oversized: needs about {need_distinct} distinct clips but "
-                        f"youtube_max_videos={maxvid}. Downloads dominate build time -- "
-                        f"{max(16, min(30, -(-need_distinct * 5 // 2)))} would do "
-                        f"(sized at need x2.5, floor 16, ceiling 30)")
+            want = max(16, min(40, -(-need_distinct * 100 // 45)))
+            warn.append(f"pool too thin: {words} words -> {shots} shots need "
+                        f"{need_distinct} distinct clips (the render gate's bar), but "
+                        f"youtube_max_videos={maxvid} supplies about {supply} at the "
+                        f"measured 0.45 usable clips per source -- raise it to {want}")
+        elif supply > need_distinct * 3:
+            warn.append(f"pool oversized: needs about {need_distinct} distinct clips and "
+                        f"youtube_max_videos={maxvid} supplies ~{supply}. Downloads "
+                        f"dominate build time -- "
+                        f"{max(16, min(40, -(-need_distinct * 200 // 45)))} would do")
+
+    # --- is the subject a face CLIP actually knows? ---
+    # The single unpreventable-by-config failure so far. Julian Alvarez gated at 13/68
+    # (19%) and the build died with 7 clips against 32 segments; Sergio Ramos gated at
+    # 27/63 (43%) and built fine. Pool size cannot fix this and lowering the gate floor
+    # makes it worse (wrong-person footage). The only fix is to change the subject, so
+    # say so here rather than after a 16-minute render.
+    CLIP_RELIABLE = {
+        "ronaldo", "messi", "neymar", "mbappe", "mbappé", "ramos", "suarez", "suárez",
+        "haaland", "benzema", "modric", "modrić", "zlatan", "ibrahimovic", "ibrahimović",
+        "salah", "kane", "bellingham", "vinicius", "vinícius", "pogba", "griezmann",
+        "lewandowski", "debruyne", "bruyne", "maradona", "pele", "pelé", "beckham",
+        "zidane", "ronaldinho", "mourinho", "guardiola", "ferguson", "courtois",
+    }
+    KNOWN_WEAK = {"alvarez", "álvarez", "yamal", "musiala", "wirtz", "gyokeres",
+                  "gyökeres", "isak", "palmer", "olise", "mainoo", "endrick", "huijsen"}
+    _names = set()
+    for lab in (df.get("subject_positive_labels") or []):
+        for w in lab.replace("'s", "").split():
+            w = w.strip(".,'\"").lower()
+            if len(w) > 3:
+                _names.add(w)
+    _weak = _names & KNOWN_WEAK
+    if _weak:
+        warn.append(f"subject {'/'.join(sorted(_weak))} is on the CLIP-weak list -- the "
+                    f"subject gate keeps ~20% for these and the build will very likely "
+                    f"die on a thin pool. Swap the subject; do not lower the gate floor")
+    elif _names and not (_names & CLIP_RELIABLE):
+        warn.append("subject is not on the CLIP-reliable list -- keep rate is unknown, so "
+                    "expect a thin pool. Prefer a household name, or accept the risk on a "
+                    "one-attempt build")
 
     # --- the hook must not answer itself ---
     # Shorts hold a viewer with an UNRESOLVED question. A channel-wide audit found 84 of

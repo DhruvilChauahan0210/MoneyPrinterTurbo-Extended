@@ -742,6 +742,23 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                 _open_segs = (sum(1 for _sg in segments
                                   if float(_sg.get("start_time", 0.0)) < _open_secs)
                               if _open_secs > 0 else 0)
+                # Segments per shot: how many caption segments one held shot covers.
+                _msec = float(getattr(params, "min_shot_seconds", 0.0) or 0.0)
+                _span = (float(segments[-1].get("end_time", 0.0))
+                         - float(segments[0].get("start_time", 0.0))) if segments else 0.0
+                _avg_seg = (_span / len(segments)) if segments and _span > 0 else 0.0
+                _spshot = max(1, int(round(_msec / _avg_seg))) if (_msec > 0 and _avg_seg > 0) else 1
+
+                def _seg_units(shots_cap):
+                    """A cap written in shots, expressed in caption segments."""
+                    if shots_cap <= 0:
+                        return 0
+                    out = shots_cap * _spshot
+                    if _spshot > 1:
+                        logger.info(f"reuse cap: {shots_cap} shots -> {out} caption segments "
+                                    f"({_spshot} segments per shot at min_shot_seconds={_msec})")
+                    return out
+
                 idxs = image_ranker.assign_images_to_segments(
                     image_paths, seg_texts,
                     reuse_penalty=getattr(params, 'segment_reuse_penalty', 0.12),
@@ -750,8 +767,17 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     # hard cap used to ABORT the build; image_ranker now degrades the cap
                     # instead of raising, so a cap is safe and the soft penalty alone was
                     # demonstrably letting one clip land 4x on screen.
-                    max_media_reuse=int(getattr(params, 'segment_max_media_reuse', 2) or 2),
-                    max_source_reuse=getattr(params, 'segment_max_source_reuse', 0),
+                    #
+                    # The cap is expressed in SHOTS but this function counts CAPTION
+                    # SEGMENTS, and with min_shot_seconds one shot spans several segments.
+                    # On a 23s/33-segment render that made a cap of 2 mean 0.44 shots --
+                    # every clip was "exhausted" before it had filled a single continuous
+                    # shot, so the pool looked far too small and the cap kept getting
+                    # relaxed. Convert to segment units before passing it down.
+                    max_media_reuse=_seg_units(
+                        int(getattr(params, 'segment_max_media_reuse', 2) or 2)),
+                    max_source_reuse=_seg_units(
+                        int(getattr(params, 'segment_max_source_reuse', 0) or 0)),
                     video_bonus=(getattr(params, 'footage_video_bonus', 0.06)
                                  if getattr(params, 'enable_youtube_footage', False) else 0.0),
                     min_video_fraction=(getattr(params, 'footage_min_fraction', 0.5)
