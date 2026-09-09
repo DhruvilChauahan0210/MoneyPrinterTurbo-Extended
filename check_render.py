@@ -17,7 +17,7 @@ build log states the achieved numbers exactly, so checking them afterwards is re
 
 This matters because of WHY the scripts got longer in the first place. The 7 Sep RCA
 traced the channel's collapse (views 180K->80.6K, swipe-away 51.9%->67.2%) to a hook and
-runtime problem, and lengthening scripts to reach the 12-15s band raises the caption
+runtime problem, and lengthening scripts to reach the 18-38s band raises the caption
 segment count, which raises how much distinct media a build needs. Fixing the hook while
 letting the same four clips cycle four times would just trade one retention defect for
 another. Run this before anything ships.
@@ -123,7 +123,7 @@ def check(video, log, config=None):
         # The series configs run `segment_max_media_reuse: 0`, i.e. deliberately no hard
         # cap, because the build standard records that any hard cap aborts the build in
         # one-shot mode. So with the cap off there is nothing to "violate": report the
-        # observed reuse against the soft penalty instead, and let the >=DISTINCT_MIN
+        # observed reuse against the soft penalty instead, and let the distinct-media
         # check above be the thing that actually fails a render.
         cap = pen = None
         if config and os.path.exists(config):
