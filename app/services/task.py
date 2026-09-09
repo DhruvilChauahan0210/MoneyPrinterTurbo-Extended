@@ -746,7 +746,11 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     image_paths, seg_texts,
                     reuse_penalty=getattr(params, 'segment_reuse_penalty', 0.12),
                     source_reuse_penalty=getattr(params, 'segment_source_reuse_penalty', 0.08),
-                    max_media_reuse=getattr(params, 'segment_max_media_reuse', 0),
+                    # Default 2, not 0. Configs carried 0 (= no cap at all) because a
+                    # hard cap used to ABORT the build; image_ranker now degrades the cap
+                    # instead of raising, so a cap is safe and the soft penalty alone was
+                    # demonstrably letting one clip land 4x on screen.
+                    max_media_reuse=int(getattr(params, 'segment_max_media_reuse', 2) or 2),
                     max_source_reuse=getattr(params, 'segment_max_source_reuse', 0),
                     video_bonus=(getattr(params, 'footage_video_bonus', 0.06)
                                  if getattr(params, 'enable_youtube_footage', False) else 0.0),
@@ -760,6 +764,126 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                     max_consecutive_close=int(getattr(params, 'max_consecutive_close', 3) or 0),
                     establish_within=int(getattr(params, 'establish_within', 3) or 0),
                 )
+                # Shot hold: captions may flip every 2 words, but the PICTURE must not.
+                # assign_images_to_segments deliberately never repeats a media two
+                # segments in a row, which at max_words_per_subtitle=2 produced ~2 cuts
+                # per second. Measured against @_simplesports (796K subs), a 7.6M-view
+                # short cuts once every 3.0s -- 6x slower than ours. Hold each chosen
+                # media across the following segments until min_shot_seconds of narration
+                # has elapsed, so fast captions ride a slow edit instead of driving it.
+                _min_shot = float(getattr(params, "min_shot_seconds", 0.0) or 0.0)
+                #
+                # Reuse policy (CD, 8 Sep 2026): a clip may appear AT MOST twice, and
+                # never again inside min_reuse_gap_seconds. Earlier attempts used a soft
+                # preference for unseen media, which the ranker happily overrode -- EP39
+                # still put one portrait on 4 of 8 shots. This is a HARD cap: a media at
+                # its use limit is removed from consideration entirely.
+                _gap = float(getattr(params, "min_reuse_gap_seconds", 5.0) or 0.0)
+                _max_uses = int(getattr(params, "max_media_uses", 2) or 0)
+                if _min_shot > 0 and len(segments) > 1:
+                    _n_media = len(image_paths)
+                    # How many shots this hold produces, so we can tell up front whether
+                    # the cap is even satisfiable and relax it rather than crash the edit.
+                    _shots = 1
+                    _t0 = float(segments[0].get("start_time", 0.0))
+                    for _sg in segments:
+                        if float(_sg.get("start_time", 0.0)) - _t0 >= _min_shot:
+                            _shots += 1; _t0 = float(_sg.get("start_time", 0.0))
+                    _cap = _max_uses
+                    if _cap and _n_media * _cap < _shots:
+                        _cap = -(-_shots // max(1, _n_media))
+                        logger.warning(
+                            f"shot hold: {_n_media} media cannot cover {_shots} shots at "
+                            f"{_max_uses} uses each; relaxing cap to {_cap}. Widen the "
+                            f"footage pool rather than accepting the repeats.")
+
+                    # Preference order = the order the CLIP assigner first reached for each
+                    # media. Picking "any unused clip" by raw array index instead put a
+                    # grass-only frame and an out-of-focus blur into EP40 ahead of good
+                    # footage, because freshness was being scored without quality.
+                    # Source identity: auto_footage names clips "<videoid>_cN.mp4", so the
+                    # prefix is the source video. Capping SHOTS per source (not caption
+                    # segments -- that starved the assigner and aborted every build) is
+                    # what stops 3 of 7 shots coming from one touchline sequence.
+                    def _src_of(_i):
+                        import os as _os, re as _re
+                        _b = _os.path.basename(str(image_paths[_i]))
+                        return _re.sub(r"_c\d+\..*$", "", _b) or _b
+                    _src_cap = int(getattr(params, "max_shots_per_source", 0) or 0)
+                    _src_uses = {}
+
+                    _pref = []
+                    for _i in idxs:
+                        if _i not in _pref:
+                            _pref.append(_i)
+                    _pref += [_i for _i in range(len(image_paths)) if _i not in _pref]
+                    _rank = {_i: _r for _r, _i in enumerate(_pref)}
+
+                    _held, _cur, _cur_start = [], idxs[0], float(segments[0].get("start_time", 0.0))
+                    _uses = {idxs[0]: 1}
+                    _last_shown = {idxs[0]: _cur_start}
+                    for _s, _seg in enumerate(segments):
+                        _st = float(_seg.get("start_time", 0.0))
+                        if _s and (_st - _cur_start) >= _min_shot and idxs[_s] != _cur:
+                            def _free(_i):
+                                if _i == _cur or (_cap and _uses.get(_i, 0) >= _cap):
+                                    return False
+                                if _src_cap and _src_uses.get(_src_of(_i), 0) >= _src_cap:
+                                    return False
+                                return True
+                            def _ok(_i):
+                                return _free(_i) and (_st - _last_shown.get(_i, -1e9)) >= _gap
+                            # FRESHNESS FIRST. Taking the assigner's pick whenever it was
+                            # merely legal (under cap, outside gap) meant a clip already
+                            # shown once beat a clip never shown at all -- which is how a
+                            # 7-shot edit used 5 of 10 available media instead of 7.
+                            # Prefer the assigner's pick only among never-used media.
+                            _pick = None
+                            for _t in range(_s, len(segments)):    # its picks for this shot
+                                if float(segments[_t].get("start_time", 0.0)) - _st >= _min_shot:
+                                    break
+                                if idxs[_t] not in _uses and _ok(idxs[_t]):
+                                    _pick = idxs[_t]; break
+                            if _pick is None:                      # best-ranked never-shown
+                                _fresh = [_i for _i in range(_n_media)
+                                          if _i not in _uses and _i != _cur]
+                                if _fresh:
+                                    _pick = min(_fresh, key=lambda _i: _rank.get(_i, 1 << 30))
+                            if _pick is None and _ok(idxs[_s]):    # now allow a repeat
+                                _pick = idxs[_s]
+                            if _pick is None:
+                                for _t in range(_s, len(segments)):
+                                    if float(segments[_t].get("start_time", 0.0)) - _st >= _min_shot:
+                                        break
+                                    if _ok(idxs[_t]):
+                                        _pick = idxs[_t]; break
+                            if _pick is None:                      # least used, then stalest
+                                _cands = [_i for _i in range(_n_media) if _free(_i)]
+                                if _cands:
+                                    _pick = min(_cands, key=lambda _i: (_uses.get(_i, 0),
+                                                                        _rank.get(_i, 1 << 30)))
+                            if _pick is None:
+                                # Source cap unsatisfiable with this pool: drop it rather
+                                # than abort, the media cap still holds the line.
+                                _relaxed = [_i for _i in range(_n_media)
+                                            if _i != _cur and (not _cap or _uses.get(_i, 0) < _cap)]
+                                _pick = (min(_relaxed, key=lambda _i: _rank.get(_i, 1 << 30))
+                                         if _relaxed else idxs[_s])
+                            _cur, _cur_start = _pick, _st
+                            _src_uses[_src_of(_cur)] = _src_uses.get(_src_of(_cur), 0) + 1
+                            _uses[_cur] = _uses.get(_cur, 0) + 1
+                            _last_shown[_cur] = _st
+                        _held.append(_cur)
+                    _before = sum(1 for _i in range(1, len(idxs)) if idxs[_i] != idxs[_i - 1])
+                    _after = sum(1 for _i in range(1, len(_held)) if _held[_i] != _held[_i - 1])
+                    idxs = _held
+                    _worst = max(_uses.values()) if _uses else 0
+                    logger.info(f"shot hold {_min_shot:.1f}s: {_before} cuts -> {_after} cuts "
+                                f"({len(segments)} caption segments); {len(_uses)} of "
+                                f"{_n_media} media used, most-repeated clip appears "
+                                f"{_worst}x (cap {_cap}); {len(_src_uses)} distinct source "
+                                f"videos, most-used source {max(_src_uses.values()) if _src_uses else 0}x")
+
                 synced_paths, clip_durations = [], []
                 for s, seg in enumerate(segments):
                     start = float(seg.get("start_time", 0.0))
