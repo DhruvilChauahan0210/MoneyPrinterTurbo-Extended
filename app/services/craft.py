@@ -480,7 +480,14 @@ def audit_media_plan(paths: List[str], subject_floor: float = 0.60,
         skin = float(_skin_mask(np.asarray(sm, dtype=np.uint8)).mean())
         if skin >= 0.030:
             report["subject_present"] += 1
-        if detect_text_bands(im):
+        # has_burned_in_text, NOT detect_text_bands. Bands only finds a broadcaster's
+        # chyron -- a wide high-energy strip in a title-safe zone -- and detect_text_regions
+        # exists precisely because bands missed everything else (another channel's centred
+        # caption, a corner watermark, a station logo). This gate called bands alone, so on
+        # 9 Sep it reported "0 with burned-in text" for a Ronaldinho short whose hook frame
+        # carried the source video's own subtitles: 4 of its 6 clips test positive under
+        # has_burned_in_text and 0 under bands.
+        if has_burned_in_text(im):
             report["burned_in_text"] += 1
             report["drop"].append(p)          # surgical: remove this shot, keep the build
         brights.append(float(np.asarray(sm.convert("L"), dtype=np.float32).mean()))
