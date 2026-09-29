@@ -91,12 +91,12 @@ def _download_one(query: str, dest_dir: str, max_height: int, max_filesize_mb: i
         ytdlp, "--no-playlist", "--socket-timeout", "20",
         "--no-warnings", "--ignore-errors",
         "--retries", str(retries), "--extractor-retries", str(retries),
-        "--match-filter", "duration < 1200 & duration > 12",
+        "--match-filter", "duration < 1200 & duration > 12" + _claim_filter() + _title_filter(),
         "-f", fmt,
         "--max-filesize", f"{max_filesize_mb}M",
         "-o", os.path.join(dest_dir, "%(id)s.%(ext)s"),
         *_cookies_args(),
-        f"ytsearch2:{query}",
+        f"ytsearch{max(2, min(int(os.environ.get('MPT_SEARCH_DEPTH', '5')), 10))}:{query}",
     ]
     if use_node:
         cmd[1:1] = ["--extractor-args", "youtube:player_client=default,web_safari;jsi=Deno"]
@@ -109,6 +109,67 @@ def _download_one(query: str, dest_dir: str, max_height: int, max_filesize_mb: i
     after = set(os.listdir(dest_dir)) if os.path.isdir(dest_dir) else set()
     new = [os.path.join(dest_dir, f) for f in (after - before) if f.lower().endswith(VIDEO_EXTS)]
     return new
+
+
+# --- Claim safety -------------------------------------------------------------
+# Measured 8 Sep 2026: EP39 pulled 12 sources, ALL Standard YouTube License (no
+# Creative Commons), of which 4 were FIFA, 1 LALIGA and 1 DAZN. Those rightsholders
+# run Content ID aggressively and issue worldwide blocks, which for a channel chasing
+# the YPP Shorts-view threshold is the worst possible outcome: a blocked Short earns
+# nothing AND its views stop counting. Skipping them at SEARCH time costs a little
+# pool breadth and removes the largest single monetization risk in the pipeline.
+# Fan re-upload channels are left in: the underlying rights are the same, but they do
+# not themselves file claims, so the exposure is one step further away.
+# --- Source TYPE filter ------------------------------------------------------
+# Measured 8 Sep 2026 on the Salah build: 12 queries collapsed to 8 source videos,
+# and every one was a fan edit, a commentary channel or a documentary -- a TIME
+# interview piece and The Redmen TV, which is exactly where the Wikipedia-page
+# screenshots, the burned-in subtitles and the "LFC TV" watermark in the render came
+# from. CLIP scores content, so an article screenshot inside a documentary still reads
+# as "about Mohamed Salah" and passes the subject gate. The only reliable place to
+# reject this material is at search time, by what the upload IS.
+NON_FOOTAGE_TITLE_TERMS = [
+    "clips for edits", "free clips", "clip pack", "edit pack", "4k upscaled",
+    "reaction", "reacts", "review", "podcast", "explained", "analysis",
+    "documentary", "interview", "talks", "press conference", "kit",
+    "top 10", "top 5", "tier list", "fifa", "efootball", "career mode",
+]
+
+
+# Channels that only ever publish talk, not football.
+NON_FOOTAGE_CHANNELS = [
+    "Redmen TV", "TIME", "Sky Sports News", "talkSPORT", "ESPN FC",
+    "The Athletic", "Tifo", "COPA90", "Football Daily",
+]
+
+
+def _title_filter() -> str:
+    """yt-dlp match-filter clauses skipping uploads that are not match footage.
+
+    yt-dlp's `title!*=` is CASE-SENSITIVE -- verified 8 Sep 2026: "Clips For Edits"
+    rejected the offending upload while "clips for edits" let it straight through,
+    which is why the first version of this filter changed nothing at all. Emit a
+    clause per casing variant rather than pretending one form is enough.
+    """
+    out = []
+    for t in NON_FOOTAGE_TITLE_TERMS:
+        for v in {t.lower(), t.upper(), t.title(), t.capitalize()}:
+            out.append(f" & title!*={v}")
+    for c in NON_FOOTAGE_CHANNELS:
+        out.append(f" & channel!*={c}")
+    return "".join(out)
+
+
+CLAIM_HEAVY_CHANNELS = [
+    "FIFA", "UEFA", "LALIGA", "La Liga", "DAZN", "Premier League", "beIN",
+    "ESPN", "Sky Sports", "CBS Sports", "TNT Sports", "Eurosport", "Bundesliga",
+    "Serie A", "Ligue 1", "Amazon Prime Video Sport", "Optus Sport",
+]
+
+
+def _claim_filter() -> str:
+    """yt-dlp match-filter clauses that skip the aggressive rightsholders."""
+    return "".join(f" & channel!*={c}" for c in CLAIM_HEAVY_CHANNELS)
 
 
 def _clip_is_dark(path: str, thresh: float = 22.0, black_floor: float = 9.0) -> bool:
@@ -194,7 +255,7 @@ def _cut_vertical_clips(src: str, out_dir: str, base: str, clip_len: float,
                        "-frames:v", "1", "-q:v", "3", probe], timeout=60)
             if pr.returncode != 0 or not os.path.exists(probe):
                 return _centre_vf(), False
-            has_text = bool(reject_text and craft.detect_text_bands(probe))
+            has_text = bool(reject_text and craft.all_text_furniture(probe))
             win = craft.subject_window(probe, W, H)
             if win and win.get("w"):
                 logger.info(f"auto_footage: reframe {win['method']} x={win['x']} "
@@ -301,7 +362,8 @@ def fetch_clips(
         return existing[:max_clips]
 
     logger.info(f"auto_footage: fetching real footage for {len(queries)} queries "
-                f"(node_js={use_node}, target {max_height}p)")
+                f"(node_js={use_node}, target {max_height}p, "
+                f"jev_triage={'on' if _jev_enabled() else 'off'})")
     n_have = len([f for f in os.listdir(dl_dir) if f.lower().endswith(VIDEO_EXTS)])
 
     # Downloads used to run one query at a time. Measured on EP12: 16 minutes of a
@@ -309,18 +371,19 @@ def fetch_clips(
     # that waiting on the network. Queries are dispatched in waves of DOWNLOAD_WORKERS
     # instead -- waves rather than one big pool so the max_videos cap is still honoured
     # and we stop as soon as there is enough footage, rather than fetching every query.
-    workers = max(1, min(int(os.environ.get("MPT_DOWNLOAD_WORKERS", DOWNLOAD_WORKERS)), 5))
+    workers = max(1, min(int(os.environ.get("MPT_DOWNLOAD_WORKERS", DOWNLOAD_WORKERS)), 10))
     pending = list(queries)
     while pending and n_have < max_videos:
         wave, pending = pending[:workers], pending[workers:]
+        _fetch = _download_one_triaged if _jev_enabled() else _download_one
         if len(wave) == 1:
-            results = [(wave[0], _download_one(wave[0], dl_dir, max_height,
-                                               max_filesize_mb, use_node,
-                                               timeout=240, retries=retries))]
+            results = [(wave[0], _fetch(wave[0], dl_dir, max_height,
+                                        max_filesize_mb, use_node,
+                                        240, retries))]
         else:
             from concurrent.futures import ThreadPoolExecutor
             with ThreadPoolExecutor(max_workers=len(wave)) as pool:
-                futs = {pool.submit(_download_one, q, dl_dir, max_height,
+                futs = {pool.submit(_fetch, q, dl_dir, max_height,
                                     max_filesize_mb, use_node, 240, retries): q
                         for q in wave}
                 results = [(futs[f], f.result()) for f in futs]
@@ -338,32 +401,306 @@ def fetch_clips(
         logger.warning("auto_footage: no source videos downloaded — falling back to image_search")
         return []
 
+    # Cutting is N independent ffmpeg jobs, one per source, and ran serially -- about
+    # half of auto_footage's share of a 580s build. Fan out, then reassemble in the
+    # ORIGINAL source order: clip order feeds timed sync, so completion order would
+    # quietly reshuffle which shot lands on which caption.
     clips: List[str] = []
-    for src in downloaded:
-        base = os.path.splitext(os.path.basename(src))[0]
-        made = _cut_vertical_clips(
-            src, cut_dir, base, clip_len, clips_per_video, video_width, video_height,
-        )
-        clips.extend(made)
-        logger.info(f"auto_footage: cut {len(made)} clips from {os.path.basename(src)}")
-        if len(clips) >= max_clips:
-            break
+    _cut_workers = max(1, min(int(os.environ.get("MPT_CUT_WORKERS", "6")), 8))
+    if len(downloaded) > 1 and _cut_workers > 1:
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(max_workers=_cut_workers) as pool:
+            _made = list(pool.map(
+                lambda src: _cut_vertical_clips(
+                    src, cut_dir, os.path.splitext(os.path.basename(src))[0],
+                    clip_len, clips_per_video, video_width, video_height,
+                ), downloaded))
+        for src, made in zip(downloaded, _made):
+            clips.extend(made)
+            logger.info(f"auto_footage: cut {len(made)} clips from {os.path.basename(src)}")
+            if len(clips) >= max_clips:
+                break
+    else:
+        for src in downloaded:
+            base = os.path.splitext(os.path.basename(src))[0]
+            made = _cut_vertical_clips(
+                src, cut_dir, base, clip_len, clips_per_video, video_width, video_height,
+            )
+            clips.extend(made)
+            logger.info(f"auto_footage: cut {len(made)} clips from {os.path.basename(src)}")
+            if len(clips) >= max_clips:
+                break
 
     clips = clips[:max_clips]
     logger.success(f"auto_footage: produced {len(clips)} vertical highlight clips")
     return clips
 
 
+# --- Jev source triage ---------------------------------------------------------
+# The only pre-download filter used to be _title_filter()/_claim_filter(): case-sensitive
+# yt-dlp keyword blacklists. They cannot tell "Ronaldo's 2006 wink, broadcast footage"
+# from "TOP 10 RONALDO MOMENTS (fan edit)" -- both pass, and the junk only gets caught
+# much later by CLIP, after we have paid to download and cut it. yt-dlp can list the
+# search results as TEXT (--flat-playlist --dump-json) before downloading anything, so
+# a text model can read title/channel/description and judge them first.
+#
+# Opt-in: set MPT_JEV_TRIAGE=1. Without it (or without TYPESAFE_API_KEY, or on any API
+# error) this falls back to the original _download_one path, so a Jev outage can never
+# block a build.
+JEV_MIN_SCORE = float(os.environ.get("MPT_JEV_MIN_SCORE", "0.45"))
+# Hard disqualifiers, checked separately from the weighted score.
+JEV_FOOTAGE_MIN = float(os.environ.get("MPT_JEV_FOOTAGE_MIN", "0.35"))
+JEV_SUBJECT_MIN = float(os.environ.get("MPT_JEV_SUBJECT_MIN", "0.50"))
+
+
+def _jev_enabled() -> bool:
+    if os.environ.get("MPT_JEV_TRIAGE", "") != "1":
+        return False
+    if not os.environ.get("TYPESAFE_API_KEY"):
+        _load_env_key()
+    return bool(os.environ.get("TYPESAFE_API_KEY"))
+
+
+def _load_env_key() -> None:
+    """Pick TYPESAFE_API_KEY out of the repo .env if it is not already exported."""
+    root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    path = os.path.join(root, ".env")
+    if not os.path.isfile(path):
+        return
+    try:
+        for line in open(path):
+            line = line.strip()
+            if line.startswith("#") or "=" not in line:
+                continue
+            k, _, v = line.partition("=")
+            if k.strip() == "TYPESAFE_API_KEY":
+                os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+    except Exception as e:
+        logger.warning(f"auto_footage: could not read .env for Jev key: {e}")
+
+
+def _search_metadata(query: str, depth: int, use_node: bool, timeout: int = 90) -> List[dict]:
+    """List search results as metadata only -- no download, no video bytes."""
+    ytdlp = _ytdlp_bin()
+    if not ytdlp:
+        return []
+    cmd = [
+        ytdlp, "--flat-playlist", "--dump-json", "--no-warnings", "--ignore-errors",
+        "--socket-timeout", "20", *_cookies_args(), f"ytsearch{depth}:{query}",
+    ]
+    if use_node:
+        cmd[1:1] = ["--extractor-args", "youtube:player_client=default,web_safari;jsi=Deno"]
+    try:
+        r = _run(cmd, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        logger.warning(f"auto_footage: metadata search timed out for '{query[:40]}'")
+        return []
+    out = []
+    for line in (r.stdout or "").splitlines():
+        line = line.strip()
+        if not line.startswith("{"):
+            continue
+        try:
+            d = json.loads(line)
+        except Exception:
+            continue
+        dur = d.get("duration") or 0
+        try:
+            dur = float(dur)
+        except Exception:
+            dur = 0.0
+        # Same hard bounds the old --match-filter enforced. Duration is arithmetic:
+        # it stays in code, the model never sees a number it has to compare.
+        if not (12 < dur < 1200):
+            continue
+        chan = (d.get("channel") or d.get("uploader") or "")
+        title = d.get("title") or ""
+        # Rightsholder banlist is legal policy, not a judgement call -- keep it in code.
+        if any(c.lower() in chan.lower() for c in CLAIM_HEAVY_CHANNELS):
+            continue
+        # Keep the proven keyword blacklist too. Triage replaces the JUDGEMENT calls,
+        # not the deterministic ones: a free exact filter should never be handed to a
+        # model. Matching here is case-INSENSITIVE, which also sidesteps the yt-dlp
+        # `title!*=` case-sensitivity trap that made _title_filter() a no-op.
+        if any(t in title.lower() for t in NON_FOOTAGE_TITLE_TERMS):
+            continue
+        if any(c.lower() in chan.lower() for c in NON_FOOTAGE_CHANNELS):
+            continue
+        if not d.get("id"):
+            continue
+        out.append({
+            "id": d["id"],
+            "title": d.get("title") or "",
+            "channel": chan,
+            "duration_seconds": int(dur),
+            "description": (d.get("description") or "")[:400],
+        })
+    return out
+
+
+def _jev_triage(cands: List[dict], query: str) -> List[dict]:
+    """Score candidates on whether they really are broadcast footage of the subject.
+
+    Returns candidate dicts filtered and sorted best-first, each carrying `jev_score`
+    and the raw `jev` judgements. On any failure every candidate is returned with a
+    just-below-threshold score, so triage can only ever reorder -- never starve -- the
+    download step.
+    """
+    if not cands:
+        return cands
+    # Callers may reach this directly (tests, other modules), so never assume
+    # _jev_enabled() already ran and loaded the key.
+    if not os.environ.get("TYPESAFE_API_KEY"):
+        _load_env_key()
+    try:
+        from typesafe_sdk import TypeSafeClient, Noul
+    except ImportError:
+        logger.warning("auto_footage: typesafe-sdk not installed, skipping Jev triage")
+        return [dict(c, jev_score=JEV_MIN_SCORE - 0.01, jev=None) for c in cands]
+
+    questions = {
+        # This asks for PRIMARY footage, not "match action". A press conference or a
+        # tunnel camera IS the real filmed event for some topics; a studio pundit
+        # discussing that event afterwards is not. Asking for "match action" made the
+        # model rate genuine farewell-press-conference video at 0.02.
+        "is_primary_footage": Noul(instructions=(
+            "Judging only from its title, channel and description, does this video show "
+            "the real event actually happening on camera -- match play, a filmed incident, "
+            "or the live press conference or ceremony itself -- rather than people "
+            "discussing, analysing, reacting to or narrating the event after the fact, "
+            "or a video-game recreation?")),
+        "shows_subject": Noul(instructions=(
+            "Does this video feature the specific player or team named in `search_intent` "
+            "as its main subject, rather than merely mentioning them in passing or being "
+            "about a different player?")),
+        "matches_event": Noul(instructions=(
+            "Does this video cover the particular match, moment or incident described in "
+            "`search_intent`, rather than that player's career in general?")),
+        "is_edit_or_compilation": Noul(instructions=(
+            "Is this a fan edit, a 'top 10' countdown, a skills/goals compilation, or a "
+            "montage set to music -- as opposed to continuous footage of one match or "
+            "one incident?")),
+    }
+
+    client = TypeSafeClient()
+
+    def judge(c):
+        try:
+            r = client.system_one(
+                state={"search_intent": query, "video": {
+                    "title": c["title"], "channel": c["channel"],
+                    "description": c["description"],
+                    "duration_seconds": c["duration_seconds"]}},
+                questions=questions)
+            a = r.answers
+            return {
+                "footage": a["is_primary_footage"].noul,
+                "subject": a["shows_subject"].noul,
+                "event": a["matches_event"].noul,
+                "edit": a["is_edit_or_compilation"].noul,
+            }
+        except Exception as e:
+            logger.warning(f"auto_footage: Jev triage failed for {c['id']}: {e}")
+            return None
+
+    from concurrent.futures import ThreadPoolExecutor
+    try:
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            judgements = list(pool.map(judge, cands))
+    finally:
+        try:
+            client.close()
+        except Exception:
+            pass
+
+    if all(j is None for j in judgements):
+        logger.warning("auto_footage: Jev triage returned nothing usable, using raw search order")
+        return [dict(c, jev_score=JEV_MIN_SCORE - 0.01, jev=None) for c in cands]
+
+    scored = []
+    for c, j in zip(cands, judgements):
+        if j is None:
+            # Unjudged candidates sit just below the pass mark rather than being dropped:
+            # an API hiccup must not shrink the pool. Pool starvation is what puts the
+            # wrong player on screen.
+            c = dict(c, jev_score=JEV_MIN_SCORE - 0.01, jev=None, jev_ok=True)
+        else:
+            # Two HARD conditions, then a weighted rank among whatever survives them.
+            # A plain weighted sum let a 0.99 subject score carry a clip whose footage
+            # score was 0.02 -- the compensating-preferences trap. Wrong-person and
+            # not-really-footage are disqualifying, not merely costly.
+            disqualified = (j["footage"] < JEV_FOOTAGE_MIN) or (j["subject"] < JEV_SUBJECT_MIN)
+            score = (0.40 * j["footage"] + 0.35 * j["subject"]
+                     + 0.15 * j["event"] + 0.10 * (1.0 - j["edit"]))
+            c = dict(c, jev_score=round(score, 3), jev=j, jev_ok=not disqualified)
+        scored.append(c)
+
+    scored.sort(key=lambda x: -x["jev_score"])
+    kept = [c for c in scored if c.get("jev_ok", True) and c["jev_score"] >= JEV_MIN_SCORE]
+    kept_ids = {c["id"] for c in kept}
+    dropped = [c for c in scored if c["id"] not in kept_ids]
+    for c in dropped[:4]:
+        logger.info(f"auto_footage: Jev dropped {c['jev_score']:.2f} '{c['title'][:52]}' [{c['channel'][:22]}]")
+    if not kept:
+        # Everything failed the bar. Returning the best two anyway beats an empty pool.
+        logger.warning(f"auto_footage: Jev rejected all {len(scored)} results for "
+                       f"'{query[:40]}' -- keeping best 2 to protect the pool")
+        return scored[:2]
+    logger.info(f"auto_footage: Jev kept {len(kept)}/{len(scored)} for '{query[:40]}' "
+                f"(best {kept[0]['jev_score']:.2f} '{kept[0]['title'][:44]}')")
+    return kept
+
+
+def _download_one_triaged(query: str, dest_dir: str, max_height: int, max_filesize_mb: int,
+                          use_node: bool, timeout: int, retries: int = 3,
+                          want: int = 2) -> List[str]:
+    """Search -> judge the text metadata -> download only what survives."""
+    depth = max(6, min(int(os.environ.get("MPT_JEV_SEARCH_DEPTH", "12")), 25))
+    cands = _search_metadata(query, depth, use_node)
+    if not cands:
+        logger.info(f"auto_footage: no metadata for '{query[:40]}', falling back to direct download")
+        return _download_one(query, dest_dir, max_height, max_filesize_mb, use_node, timeout, retries)
+    kept = _jev_triage(cands, query)
+    got, attempts = [], 0
+    # Walk DOWN the ranked list on failure instead of stopping at `want`. Individual
+    # videos die for reasons triage cannot see (removed, geo-blocked, no mp4 under the
+    # size cap), and one dud link used to cost this query its entire contribution to
+    # the pool. Attempts are capped so a run of dead links cannot stall the build.
+    for c in kept:
+        if len(got) >= want or attempts >= want + 3:
+            break
+        attempts += 1
+        path = _download_url(f"https://www.youtube.com/watch?v={c['id']}", dest_dir,
+                             max_height, max_filesize_mb, use_node, timeout, retries,
+                             video_id=c["id"])
+        if path and path not in got:
+            got.append(path)
+    if not got:
+        logger.warning(f"auto_footage: triage found sources for '{query[:40]}' but none "
+                       f"downloaded after {attempts} attempts")
+    return got
+
+
 def _download_url(url: str, dest_dir: str, max_height: int, max_filesize_mb: int,
-                  use_node: bool, timeout: int, retries: int = 3) -> str:
-    """Download ONE specific YouTube URL (not a search). Returns the local path."""
+                  use_node: bool, timeout: int, retries: int = 3,
+                  video_id: str = "") -> str:
+    """Download ONE specific YouTube URL (not a search). Returns the local path.
+
+    `video_id` matters when dest_dir is a SHARED pool directory: without it the reuse
+    shortcut below returns whatever video happens to be in the directory already, so a
+    second call for a different id hands back the first file. That silently collapses
+    the footage pool to one source -- caught 29 Sep 2026 when triage "downloaded" two
+    clips and both were the same mp4.
+    """
     ytdlp = _ytdlp_bin()
     if not ytdlp:
         logger.error("auto_footage: yt-dlp not found")
         return ""
     before = set(os.listdir(dest_dir)) if os.path.isdir(dest_dir) else set()
     # Existing download for this id? reuse it.
-    existing = [os.path.join(dest_dir, f) for f in before if f.lower().endswith(VIDEO_EXTS)]
+    existing = [os.path.join(dest_dir, f) for f in before
+                if f.lower().endswith(VIDEO_EXTS)
+                and (not video_id or f.startswith(video_id + "."))]
     if existing:
         return sorted(existing)[0]
     fmt = (
@@ -468,7 +805,7 @@ def fetch_exact_clip(
                 # source was banned by video id -- and the same documentary was
                 # re-uploaded under a new id the same day.
                 if reject_text:
-                    bands = craft.detect_text_bands(probe)
+                    bands = craft.all_text_furniture(probe)
                     if bands:
                         b = bands[0]
                         logger.warning(
