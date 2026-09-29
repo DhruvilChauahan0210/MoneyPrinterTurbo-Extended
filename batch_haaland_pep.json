@@ -25,7 +25,7 @@
     "word_highlight_color": "#FFD700",
     "max_chars_per_line": 18,
     "max_lines_per_subtitle": 2,
-    "max_words_per_subtitle": 3,
+    "max_words_per_subtitle": 2,
     "segmentation_method": "sentences",
     "min_segment_length": 18,
     "enable_image_ranking": true,
@@ -82,7 +82,7 @@
       "Erling Haaland City hat trick celebration close up",
       "Erling Haaland face close up slow motion"
     ],
-    "youtube_max_videos": 8,
+    "youtube_max_videos": 20,
     "youtube_clip_len": 3.0,
     "youtube_clips_per_video": 5,
     "youtube_max_clips": 34,

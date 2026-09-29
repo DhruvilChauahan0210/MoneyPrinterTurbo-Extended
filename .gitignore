@@ -26,3 +26,7 @@ node_modules
 
 venv/
 .venv
+# Secrets — never commit (TYPESAFE_API_KEY et al)
+.env
+.env.*
+!.env.example

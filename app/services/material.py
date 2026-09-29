@@ -535,8 +535,20 @@ def save_image(image_url: str, save_dir: str = "", search_term: str = "") -> str
     image_path = f"{save_dir}/img-{url_hash}.jpg"
 
     if os.path.exists(image_path) and os.path.getsize(image_path) > 0:
-        logger.info(f"image already exists: {image_path}")
-        return image_path
+        # A cached .jpg is not necessarily a JPEG. One entry in this cache was a raw
+        # H.264 stream saved under a .jpg name; MoviePy's ffmpeg probe then died with
+        # "At least one output file must be specified" and killed the whole build,
+        # twice, ten minutes in. Check the magic bytes and re-fetch if they are wrong.
+        with open(image_path, "rb") as fh:
+            magic = fh.read(2)
+        if magic == b"\xff\xd8":
+            logger.info(f"image already exists: {image_path}")
+            return image_path
+        logger.warning(f"cached file is not a JPEG, re-downloading: {image_path}")
+        try:
+            os.remove(image_path)
+        except Exception:
+            pass
 
     # Wikimedia rate-limits generic browser UAs from scripts — they require a
     # descriptive User-Agent (https://meta.wikimedia.org/wiki/User-Agent_policy)

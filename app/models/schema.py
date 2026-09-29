@@ -89,7 +89,11 @@ class VideoParams(BaseModel):
     one_shot_mode: Optional[bool] = None
     # Retained for old batch-file compatibility; task IDs now define attempts.
     one_shot_allow_retry: Optional[bool] = False
-    one_shot_max_script_words: Optional[int] = 90
+    # Raised from 90 on 8 Sep 2026. The 12-15s / ~45-word standard was measured against
+    # @_simplesports (796K subs): its top-40 shorts have a 31s median and NOTHING under
+    # 18s, because 2026 Shorts ranking weights watch time over swipe rate. A 28-32s
+    # episode needs ~115-125 words, which the old cap rejected outright in one-shot mode.
+    one_shot_max_script_words: Optional[int] = 150
     one_shot_min_media: Optional[int] = 3
     # Editorial floor the CLIP gates back-fill toward, distinct from one_shot_min_media
     # (which is only what the renderer needs to emit a file). Set it BELOW 12 for episodes
@@ -97,6 +101,19 @@ class VideoParams(BaseModel):
     # curated_image_paths instead -- those stills are re-inserted after the subject gate,
     # so they are not counted by it.
     target_distinct_media: Optional[int] = 12
+    # Minimum seconds a single media stays on screen, regardless of how fast the
+    # captions flip. 0 = off (legacy: one cut per caption segment, ~2 cuts/sec).
+    # The @_simplesports benchmark cuts once per 3.0s.
+    min_shot_seconds: Optional[float] = 0.0
+    # Minimum seconds before the SAME media may be shown again. Reuse is allowed and
+    # expected; reuse too soon is the defect. 0 = off.
+    min_reuse_gap_seconds: Optional[float] = 5.0
+    # HARD cap on how many shots a single media may occupy in one short. 0 = unlimited.
+    max_media_uses: Optional[int] = 2
+    # HARD cap on how many SHOTS may come from one source video. Distinct from
+    # segment_max_source_reuse, which the assigner applies per caption segment --
+    # setting that to 2 starved 33 segments down to 10 and aborted every build.
+    max_shots_per_source: Optional[int] = 2
 
     video_source: Optional[str] = "pexels"
     video_materials: Optional[List[MaterialInfo]] = (
