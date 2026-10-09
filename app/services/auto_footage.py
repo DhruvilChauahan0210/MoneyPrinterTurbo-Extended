@@ -357,7 +357,9 @@ def fetch_clips(
     existing = [os.path.join(cut_dir, f) for f in sorted(os.listdir(cut_dir))
                 if f.lower().endswith(".mp4")
                 and ".seg" not in f.lower() and ".proc" not in f.lower()] if os.path.isdir(cut_dir) else []
-    if len(existing) >= min(max_clips, 6):
+    # Cached clips never went through Jev triage, so reusing them would make the
+    # triage opt-in a silent no-op. Re-fetch (and re-triage) when it is on.
+    if len(existing) >= min(max_clips, 6) and not _jev_enabled():
         logger.info(f"auto_footage: reusing {len(existing)} cached clips for this query set")
         return existing[:max_clips]
 
