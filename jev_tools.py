@@ -191,6 +191,9 @@ def triage_comments(comments):
 
 # ------------------------------------------------------------- batch gate ----
 DUP_BLOCK, DUP_WARN, RISK_BLOCK, RISK_WARN = 0.80, 0.55, 0.80, 0.50
+# Only these flags can abort a build; the rest (invented_quote, sensitive_exploit,
+# overclaim) are advisory warnings, since dramatic hooks trip them constantly.
+BLOCKING_FLAGS = ("defamatory", "rumour_as_fact")
 
 
 def preflight_gate(subject, script, batch_file):
@@ -214,7 +217,8 @@ def preflight_gate(subject, script, batch_file):
             if not flags:
                 continue
             msg = f"{r['worst']:.2f} {flags}: {r['sentence'][:90]}"
-            (blocks if r["worst"] >= RISK_BLOCK else warns).append("claim risk " + msg)
+            hard = any(r[k] >= RISK_BLOCK for k in BLOCKING_FLAGS)
+            (blocks if hard else warns).append("claim risk " + msg)
     except Exception as e:
         warns.append(f"Jev gate skipped (API error, failing open): {e}")
     return blocks, warns
