@@ -291,6 +291,11 @@ class VideoParams(BaseModel):
     # can never be filtered out. Unlike intro_image_paths these are NOT forced to
     # the opening segments — the evidence prompts place them on the right line.
     curated_image_paths: Optional[List[str]] = None
+    # Beat plan: [{"says": <exact script slice>, "visual": <what must be on screen>,
+    # "images"/"clips"/"urls": per-beat search terms, "media": <picked path>}]. Sourced
+    # by beat_source.py; once every beat has media, the shared pool is skipped and each
+    # media is shown for exactly its beat's words (see app/services/beat_plan.py).
+    beat_plan: Optional[List[dict]] = None
     series_badge_text: Optional[str] = ""
     series_ledger_path: Optional[str] = ""
 
@@ -302,6 +307,7 @@ class VideoParams(BaseModel):
     # Task 6 — End-screen CTA
     enable_cta: Optional[bool] = True
     cta_text: Optional[str] = "FOLLOW FOR MORE"
+    enable_subscribe_button: Optional[bool] = False
 
     # Seamless loop — no terminal end-card, continuous BGM (no fade-out) and a
     # clean visual loop-back so viewers can't tell where the Short restarts.

@@ -122,8 +122,8 @@ def preflight(params, stop_at: str = "video") -> dict[str, Any]:
         errors.append("one-shot mode requires video_count=1")
     aspect = getattr(params, "video_aspect", "9:16")
     aspect = getattr(aspect, "value", aspect)
-    if str(aspect) != "9:16":
-        errors.append("channel one-shot profile requires portrait video_aspect=9:16")
+    if str(aspect) not in ("9:16", "16:9"):
+        errors.append("channel one-shot profile requires video_aspect=9:16 or 16:9")
 
     if not shutil.which("ffmpeg"):
         errors.append("ffmpeg is not available on PATH")
@@ -295,8 +295,18 @@ def validate_media_plan(
     min_media: int = 3,
     min_sources: int = 0,
     image_duration: float = 2.0,
+    video_aspect: str = "9:16",
 ) -> dict[str, Any]:
     """Fail before final rendering when the local visual plan is incomplete."""
+    aspect = str(getattr(video_aspect, "value", video_aspect))
+    # Orientation the SOURCE clip must be in to be usable as-is. 9:16 output wants
+    # portrait source (tall); 16:9/1:1 output wants landscape-or-square source (wide
+    # or equal). This mirrors preflight's own aspect gate so the two never disagree,
+    # and keeps every existing 9:16 caller (default) byte-for-byte unchanged.
+    if aspect == "9:16":
+        orientation_ok = lambda w, h: h > w
+    else:
+        orientation_ok = lambda w, h: w >= h
     if len(paths or []) < min_media:
         raise OneShotError(f"media gate found {len(paths or [])} clips; minimum is {min_media}")
 
@@ -327,8 +337,9 @@ def validate_media_plan(
             duration = float(stream.get("duration") or probe.get("format", {}).get("duration") or 0)
             if duration < 0.35:
                 raise OneShotError(f"media clip is too short ({duration:.2f}s): {media_path}")
-            if not width or not height or height <= width:
-                raise OneShotError(f"media clip is not valid portrait footage ({width}x{height}): {media_path}")
+            if not width or not height or not orientation_ok(width, height):
+                wanted = "portrait" if aspect == "9:16" else "landscape/square"
+                raise OneShotError(f"media clip is not valid {wanted} footage ({width}x{height}): {media_path}")
             seek_duration = duration
         frame = _frame_quality(media_path, seek_duration)
         if (

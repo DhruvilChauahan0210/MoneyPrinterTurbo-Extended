@@ -102,6 +102,7 @@ def continue_task(task_id: str, keep_original_audio: bool = False) -> str:
             audio_duration,
             min_media=int(getattr(params, "one_shot_min_media", 3) or 3),
             min_sources=int(getattr(params, "one_shot_min_visual_sources", 0) or 0),
+            video_aspect=getattr(params, "video_aspect", "9:16"),
         )
         guard.claim("final_render")
         final_paths, _ = task.generate_final_videos(

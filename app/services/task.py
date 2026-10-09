@@ -291,6 +291,37 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
     elif params.video_source == "image_search":
         video_script = getattr(params, 'video_script', '') or getattr(params, 'video_subject', '')
 
+        # Beat plan: every spoken beat already has its verified media, so there is no
+        # pool to gate and nothing for CLIP to assign. Render the timeline as written.
+        from app.services import beat_plan
+        if beat_plan.is_active(params):
+            logger.info("\n\n## beat plan: placing one verified media per spoken beat")
+            _claim_once(params, "material_acquisition")
+            image_paths, clip_durations = beat_plan.build_timeline(
+                task_id, params, audio_duration,
+                tail_guard=0.35 if one_shot.is_enabled(params) else 0.0)
+            params._best_image_path = beat_plan.hook_still(task_id, image_paths[0])
+            params.video_concat_mode = VideoConcatMode.sequential
+            params.video_clip_duration = int(max(clip_durations)) + 1
+            from app.models.schema import MaterialInfo as MI, VideoAspect
+            vw, vh = VideoAspect(params.video_aspect).to_resolution()
+            processed = video.preprocess_video(
+                materials=[MI(url=p, provider="image_search") for p in image_paths],
+                clip_duration=params.video_clip_duration,
+                motion_style=getattr(params, 'image_motion_style', 'varied'),
+                durations=clip_durations,
+                video_width=vw,
+                video_height=vh,
+                fill_mode=getattr(params, 'image_fill_mode', 'cover'),
+                color_grade=getattr(params, 'enable_color_grade', True),
+                cover_min_keep=getattr(params, 'cover_min_keep', 0.62),
+            )
+            if not processed:
+                sm.state.update_task(task_id, state=const.TASK_STATE_FAILED)
+                logger.error("beat plan: failed to convert beat media to clips.")
+                return None
+            return [m.url for m in processed]
+
         # In one-shot mode the complete hook plan must be supplied up front.
         # Never spend another LLM call trying alternate search wording.
         if one_shot.is_enabled(params):
@@ -1295,6 +1326,7 @@ def _start_impl(task_id, params: VideoParams, stop_at: str = "video"):
             min_media=int(getattr(params, "one_shot_min_media", 3) or 3),
             min_sources=int(getattr(params, "one_shot_min_visual_sources", 0) or 0),
             image_duration=float(getattr(params, "video_clip_duration", 2) or 2),
+            video_aspect=getattr(params, "video_aspect", "9:16"),
         )
 
         # Structural validation above answers "will this decode?". This answers "is this

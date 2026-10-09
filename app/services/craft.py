@@ -435,7 +435,8 @@ def audit_media_plan(paths: List[str], subject_floor: float = 0.60,
                      min_media: int = 6, sharpness_floor: float = 0.0) -> dict:
     """Judge the selected media before the render, not after.
 
-    `validate_media_plan` already checks that the files exist, decode and are portrait --
+    `validate_media_plan` already checks that the files exist, decode and match the
+    requested output orientation --
     structural questions. It cannot answer the editorial one, which is why EP12 passed
     with `distinct_source_videos: 12` while five of those twelve were interchangeable ICU
     monitors and a broadcaster's chyron ran across half the runtime. The metric counted

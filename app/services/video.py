@@ -1136,6 +1136,46 @@ def _render_text_card(
     return img
 
 
+def _render_subscribe_button(video_width: int, video_height: int, font_path: str, y_center_ratio: float = 0.62) -> Image.Image:
+    """Baked-in fake YouTube subscribe-button UI row (like pill + red Subscribe pill +
+    bell pill), matching the end-card pattern on high-performing competitor Shorts
+    (see FootBall Legends teardown, 8 Oct 2026). Test flag: enable_subscribe_button."""
+    img = Image.new("RGBA", (video_width, video_height), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(img)
+    cy = int(video_height * y_center_ratio)
+    icon_d = int(video_width * 0.10)
+    icon_r = icon_d // 2
+    sub_w = int(video_width * 0.32)
+    sub_h = icon_d
+    gap = int(video_width * 0.025)
+    total_w = icon_d + gap + sub_w + gap + icon_d
+    x = (video_width - total_w) // 2
+
+    draw.ellipse([x, cy - icon_r, x + icon_d, cy + icon_r], fill=(255, 255, 255, 235))
+    like_em = _render_emoji_img("👍", int(icon_d * 0.58))
+    if like_em is not None:
+        img.alpha_composite(like_em, (x + icon_r - like_em.width // 2, cy - like_em.height // 2))
+    x += icon_d + gap
+
+    draw.rounded_rectangle([x, cy - sub_h // 2, x + sub_w, cy + sub_h // 2], radius=sub_h // 2, fill=(224, 30, 36, 255))
+    try:
+        font = ImageFont.truetype(font_path, int(sub_h * 0.42))
+    except Exception:
+        font = ImageFont.load_default()
+    label = "Subscribe"
+    bbox = font.getbbox(label)
+    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    draw.text((x + (sub_w - tw) // 2, cy - th // 2 - bbox[1]), label, font=font, fill=(255, 255, 255, 255))
+    x += sub_w + gap
+
+    draw.ellipse([x, cy - icon_r, x + icon_d, cy + icon_r], fill=(255, 255, 255, 235))
+    bell_em = _render_emoji_img("🔔", int(icon_d * 0.55))
+    if bell_em is not None:
+        img.alpha_composite(bell_em, (x + icon_r - bell_em.width // 2, cy - bell_em.height // 2))
+
+    return img
+
+
 def create_hook_clip(
     image_path: str, hook_text: str, params, video_width: int, video_height: int
 ):
@@ -1436,18 +1476,25 @@ def create_cta_clip(params, video_width: int, video_height: int, video_duration:
     if loop_mode and bg is None:
         return None
 
+    show_button = (not loop_mode) and getattr(params, 'enable_subscribe_button', False)
+    text_y_ratio = 0.42 if show_button else 0.50
+
     if bg is not None:
         text_layer = _render_text_card(
             cta_text, font_path, font_size, video_width, video_height,
-            y_center_ratio=0.50, bg_alpha=0,
+            y_center_ratio=text_y_ratio, bg_alpha=0,
         )
-        composite = Image.alpha_composite(bg.convert("RGBA"), text_layer).convert("RGB")
-        cta_img_clip = ImageClip(np.array(composite)).with_duration(cta_dur).with_start(cta_start)
+        composite = Image.alpha_composite(bg.convert("RGBA"), text_layer)
+        if show_button:
+            composite = Image.alpha_composite(composite, _render_subscribe_button(video_width, video_height, font_path))
+        cta_img_clip = ImageClip(np.array(composite.convert("RGB"))).with_duration(cta_dur).with_start(cta_start)
     else:
         text_img = _render_text_card(
             cta_text, font_path, font_size, video_width, video_height,
-            y_center_ratio=0.50, bg_alpha=int(255 * 0.60),
+            y_center_ratio=text_y_ratio, bg_alpha=int(255 * 0.60),
         )
+        if show_button:
+            text_img = Image.alpha_composite(text_img, _render_subscribe_button(video_width, video_height, font_path))
         cta_img_clip = (
             ImageClip(np.array(text_img.convert("RGB")))
             .with_duration(cta_dur)
