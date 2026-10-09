@@ -45,10 +45,12 @@ def pmap(fn, items, workers=8):
 
 
 # ---------------------------------------------------------------- corpus ----
-def corpus():
-    """Every topic we have already built: [{file, subject}]."""
+def corpus(exclude_file=None):
+    """Every topic we have already built: [{file, subject}] (minus `exclude_file`)."""
     out = []
     for f in sorted(glob.glob(os.path.join(ROOT, "batch_*.json"))):
+        if exclude_file and os.path.basename(f) == os.path.basename(exclude_file):
+            continue
         try:
             d = json.load(open(f))
         except Exception:
@@ -76,8 +78,8 @@ def shortlist(topic, docs, k=30):
 
 
 # ----------------------------------------------------------------- dedup ----
-def dedup(topic, k=30):
-    docs = shortlist(topic, corpus(), k)
+def dedup(topic, k=30, exclude_file=None):
+    docs = shortlist(topic, corpus(exclude_file), k)
 
     def judge(d):
         a = ask({"new_topic": topic, "existing_short": d["subject"][:700]}, {
@@ -185,6 +187,37 @@ def triage_comments(comments):
                 "idea": a["short_idea"].noul}
 
     return pmap(one, comments)
+
+
+# ------------------------------------------------------------- batch gate ----
+DUP_BLOCK, DUP_WARN, RISK_BLOCK, RISK_WARN = 0.80, 0.55, 0.80, 0.50
+
+
+def preflight_gate(subject, script, batch_file):
+    """Pre-render gate for batch_generator. Returns (blocks, warnings) as lists of str.
+
+    Hard-blocks a near-duplicate topic and a high-risk sentence; fails OPEN (warning
+    only) on any API error so a Jev outage never stops a build.
+    """
+    blocks, warns = [], []
+    try:
+        top = dedup(subject, k=30, exclude_file=batch_file)[:1]
+        if top:
+            d = max(top[0]["same"], top[0]["angle"])
+            msg = f"duplicate topic {d:.2f} of [{top[0]['file']}]: {top[0]['subject'][:70]}"
+            if d >= DUP_BLOCK:
+                blocks.append(msg)
+            elif d >= DUP_WARN:
+                warns.append("possible " + msg)
+        for r in screen(script or subject):
+            flags = [k for k in SCREEN_Q if r[k] >= RISK_WARN]
+            if not flags:
+                continue
+            msg = f"{r['worst']:.2f} {flags}: {r['sentence'][:90]}"
+            (blocks if r["worst"] >= RISK_BLOCK else warns).append("claim risk " + msg)
+    except Exception as e:
+        warns.append(f"Jev gate skipped (API error, failing open): {e}")
+    return blocks, warns
 
 
 # ------------------------------------------------------------------- cli ----

@@ -43,7 +43,7 @@ from app.models.schema import VideoParams, VideoConcatMode
 from app.services import one_shot
 
 
-def run_batch(batch_file: str, dry_run: bool = False):
+def run_batch(batch_file: str, dry_run: bool = False, jev_gate: bool = True, allow_risk: bool = False):
     with open(batch_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -67,6 +67,20 @@ def run_batch(batch_file: str, dry_run: bool = False):
         subject = merged.get("video_subject", f"video_{i}")
         try:
             params = VideoParams(**merged)
+            if jev_gate:
+                try:
+                    import jev_tools
+                    blocks, warns = jev_tools.preflight_gate(
+                        subject, merged.get("video_script"), batch_file)
+                except Exception as exc:  # missing SDK/key must never stop a build
+                    blocks, warns = [], [f"Jev gate unavailable: {exc}"]
+                for w in warns:
+                    logger.warning(f"[{i}/{total}] JEV: {w}")
+                if blocks and not allow_risk:
+                    raise ValueError("Jev gate blocked: " + " | ".join(blocks)
+                                     + " (override with --allow-risk)")
+                for b in blocks:
+                    logger.warning(f"[{i}/{total}] JEV block overridden: {b}")
             changes = one_shot.apply_growth_profile(params)
             report = one_shot.preflight(params)
             prepared.append((subject, params, report))
@@ -137,7 +151,12 @@ if __name__ == "__main__":
         action="store_true",
         help="run zero-cost validation only; does not create a ledger attempt",
     )
+    parser.add_argument("--no-jev", action="store_true",
+                        help="skip the Jev duplicate-topic and claim-risk gate")
+    parser.add_argument("--allow-risk", action="store_true",
+                        help="log Jev blocks as warnings instead of aborting")
     args = parser.parse_args()
-    batch_results = run_batch(args.batch_file, dry_run=args.dry_run)
+    batch_results = run_batch(args.batch_file, dry_run=args.dry_run,
+                              jev_gate=not args.no_jev, allow_risk=args.allow_risk)
     success_status = "dry_run_ok" if args.dry_run else "ok"
     sys.exit(0 if batch_results and all(r["status"] == success_status for r in batch_results) else 1)
