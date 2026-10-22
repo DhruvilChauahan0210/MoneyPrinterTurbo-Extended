@@ -422,7 +422,14 @@ def get_video_materials(task_id, params, video_terms, audio_duration):
                         if _b in _used:
                             return True
                         _src = _b.rsplit("_c", 1)[0] if "_c" in _b else os.path.splitext(_b)[0]
-                        return _src in _banned_srcs
+                        if _src in _banned_srcs:
+                            return True
+                        # Source-level de-dup (12 Oct 2026): the ledger records clip files, so
+                        # a fresh cut at a different offset of the SAME upload slipped through,
+                        # and viewers saw the same scenepack/edit in short after short.
+                        # An upload any earlier short drew from is treated as used.
+                        return _src in {_u.rsplit("_c", 1)[0] for _u in _used
+                                        if _u.endswith(".mp4") and "_c" in _u}
                     # Apply the banlist even with no ledger configured; the ledger only adds
                     # the "already used by an earlier episode" entries on top of it.
                     _used = set(_banned)

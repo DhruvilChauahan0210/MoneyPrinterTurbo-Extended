@@ -1,0 +1,416 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 4,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo at Manchester United",
+      "a tight close up of Cristiano Ronaldo's face in a red Manchester United shirt",
+      "Erik ten Hag coaching Manchester United from the touchline",
+      "Cristiano Ronaldo and Erik ten Hag together at Old Trafford"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "TEN HAG JUST BROKE HIS SILENCE",
+    "hook_cover_term": "Cristiano Ronaldo and Erik ten Hag arguing on the Manchester United touchline",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "WHO WAS REALLY RIGHT? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo at Manchester United",
+      "a tight close up of Cristiano Ronaldo's face in a red Manchester United shirt",
+      "Erik ten Hag coaching Manchester United from the touchline",
+      "Cristiano Ronaldo and Erik ten Hag together at Old Trafford"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Erik ten Hag has reopened his feud with Cristiano Ronaldo. He says Ronaldo let Manchester United down and failed him as manager. Ten Hag claims the problem was not asking Ronaldo to press. He says Ronaldo was exhausted, was not preparing properly, and did not run with or without the ball. Ronaldo previously said he had no respect for Ten Hag. Who was really right?",
+    "video_subject": "Erik ten Hag said Cristiano Ronaldo let Manchester United and the manager down, was not fit enough, and did not prepare to meet the team's physical demands",
+    "video_terms": "Cristiano Ronaldo Erik ten Hag Manchester United argument, Ronaldo Manchester United 2022 bench, Ten Hag Ronaldo touchline, Ronaldo Old Trafford",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Erik ten Hag has reopened his feud with Cristiano Ronaldo.",
+        "visual": "Cristiano Ronaldo and Erik ten Hag together",
+        "images": [
+          "Cristiano Ronaldo Erik ten Hag Manchester United touchline",
+          "Ronaldo Ten Hag together Old Trafford"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He says Ronaldo let Manchester United down and failed him as manager.",
+        "visual": "Erik ten Hag serious Manchester United",
+        "images": [
+          "Erik ten Hag Manchester United serious close up",
+          "Erik ten Hag press conference Manchester United"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ten Hag claims the problem was not asking Ronaldo to press.",
+        "visual": "Ten Hag speaking to Cristiano Ronaldo",
+        "images": [
+          "Ten Hag talking to Cristiano Ronaldo Manchester United",
+          "Ronaldo Ten Hag conversation touchline"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He says Ronaldo was exhausted,",
+        "visual": "Cristiano Ronaldo on Manchester United bench",
+        "images": [
+          "Cristiano Ronaldo Manchester United bench 2022",
+          "Ronaldo tired Manchester United close up"
+        ],
+        "clips": []
+      },
+      {
+        "says": "was not preparing properly,",
+        "visual": "Cristiano Ronaldo Manchester United training",
+        "images": [
+          "Cristiano Ronaldo training Manchester United",
+          "Cristiano Ronaldo Man United practice"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and did not run with or without the ball.",
+        "visual": "Cristiano Ronaldo playing for Manchester United",
+        "images": [
+          "Cristiano Ronaldo playing Manchester United",
+          "Cristiano Ronaldo red Manchester United shirt match"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo previously said he had no respect for Ten Hag.",
+        "visual": "Cristiano Ronaldo serious interview",
+        "images": [
+          "Cristiano Ronaldo Piers Morgan interview Ten Hag",
+          "Cristiano Ronaldo serious interview 2022"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Who was really right?",
+        "visual": "Cristiano Ronaldo and Erik ten Hag split close up",
+        "images": [
+          "Cristiano Ronaldo Erik ten Hag face to face",
+          "Ronaldo Ten Hag Manchester United collage"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Erik ten Hag said Cristiano Ronaldo let Manchester United and the manager down, was not fit enough, and did not prepare to meet the team's physical demands",
+      "video_script": "Erik ten Hag has reopened his feud with Cristiano Ronaldo. He says Ronaldo let Manchester United down and failed him as manager. Ten Hag claims the problem was not asking Ronaldo to press. He says Ronaldo was exhausted, was not preparing properly, and did not run with or without the ball. Ronaldo previously said he had no respect for Ten Hag. Who was really right?",
+      "video_terms": "Cristiano Ronaldo Erik ten Hag Manchester United argument, Ronaldo Manchester United 2022 bench, Ten Hag Ronaldo touchline, Ronaldo Old Trafford",
+      "hook_text": "TEN HAG JUST BROKE HIS SILENCE",
+      "cta_text": "WHO WAS REALLY RIGHT? 👇",
+      "beat_plan": [
+        {
+          "says": "Erik ten Hag has reopened his feud with Cristiano Ronaldo.",
+          "visual": "Cristiano Ronaldo and Erik ten Hag together",
+          "images": [
+            "Cristiano Ronaldo Erik ten Hag Manchester United touchline",
+            "Ronaldo Ten Hag together Old Trafford"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b01/img-1d26f167d3db3d9e8584b2a72bae387f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b01/img-ee1d9e99557a87e437aa7b5cb82a0ac3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b01/img-ace235667599f573899f3d7ba7b7f7a2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b01/img-acc5749bc7d7d760b063e5c7de4e4a2d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b01/img-72a1e59b78819666fa725c53d026cf90.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b01/img-e8dd6c00a8c42bed43e523ec95044f52.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b01/img-af6779d3b1aa603bd8b615dcd843fbfd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b01/img-ed592e730cdb3058ed78749f9fa0e0f2.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b01/img-1d26f167d3db3d9e8584b2a72bae387f.jpg"
+        },
+        {
+          "says": "He says Ronaldo let Manchester United down and failed him as manager.",
+          "visual": "Erik ten Hag serious Manchester United",
+          "images": [
+            "Erik ten Hag Manchester United serious close up",
+            "Erik ten Hag press conference Manchester United"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b02/img-050704528a72a8d3be254051c6f28496.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b02/img-5a3eea66eca4edfb51f0bddcf031b562.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b02/img-2ba1cd8f446885f8470d89eb909393f0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b02/img-2f6288eb2ef544a2c6ac372d4ca9c46b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b02/img-1cca731913b09fa728634b72f319e0f2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b02/img-426a3058b0e642f4ad433ad0693ac767.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b02/img-438fe1e13ec51c54be7d6131764f9ec6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b02/img-07ef4cfe9b7dc460192b0d8374a00725.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b02/img-2ba1cd8f446885f8470d89eb909393f0.jpg",
+          "url": "https://static.independent.co.uk/2023/05/04/23/837f2729edf1a8a36ff003a596529e49Y29udGVudHNlYXJjaGFwaSwxNjgzMzI2MDcx-2.72017544.jpg"
+        },
+        {
+          "says": "Ten Hag claims the problem was not asking Ronaldo to press.",
+          "visual": "Ten Hag speaking to Cristiano Ronaldo",
+          "images": [
+            "Ten Hag talking to Cristiano Ronaldo Manchester United",
+            "Ronaldo Ten Hag conversation touchline"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b03/img-2c6d48b155db85659533869f3576f902.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b03/img-37780030fe913586b076f5902c46693f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b03/img-fd82d72158d599cc0e53daf81dc3b6b6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b03/img-a1da4b85ed7439e807e4fd4593ac07ae.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b03/img-5ab08950dea3be3091f3bb614109ec18.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b03/img-002e99bdc8348cdf94d30567de32f6cf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b03/img-9cf38262431032e71d6c6a2bfda5127f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b03/img-be52fda8bcec9e3e9bf0f6cd2bb1a2a4.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b03/img-2c6d48b155db85659533869f3576f902.jpg"
+        },
+        {
+          "says": "He says Ronaldo was exhausted,",
+          "visual": "Cristiano Ronaldo on Manchester United bench",
+          "images": [
+            "Cristiano Ronaldo Manchester United bench 2022",
+            "Ronaldo tired Manchester United close up"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b04/img-485c76d7fd48074217d55fd7f141a701.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b04/img-bab306fa7dcf3c64adc7dbd7ce897315.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b04/img-7d55c2f5d4ef344d32a782298cb18d03.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b04/img-6b53df6b1490e805c516431d18c8f18c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b04/img-7d30f842029db41e3592784569c7f45d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b04/img-dbfae1c0d81b9d652cd87437df4052b9.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b04/img-485c76d7fd48074217d55fd7f141a701.jpg"
+        },
+        {
+          "says": "was not preparing properly,",
+          "visual": "Cristiano Ronaldo Manchester United training",
+          "images": [
+            "Cristiano Ronaldo training Manchester United",
+            "Cristiano Ronaldo Man United practice"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b05/img-ec6357a55458396a1242345f96e49aab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b05/img-3057b83bb4cb5ae823c4de6d6a55d065.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b05/img-ec6357a55458396a1242345f96e49aab.jpg"
+        },
+        {
+          "says": "and did not run with or without the ball.",
+          "visual": "Cristiano Ronaldo playing for Manchester United",
+          "images": [
+            "Cristiano Ronaldo playing Manchester United",
+            "Cristiano Ronaldo red Manchester United shirt match"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b06/img-13dd197b32a078ee2d71c03bf6f20c8b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b06/img-bb49ce4ac9a0298aa460c4d998f5ab4c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b06/img-60ea58438a46f5e28c2a5828806a196e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b06/img-7b4579c2dd2cdd261fd170628e029c06.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b06/img-a1bc617dc5a26f08c5b749dbefb224b9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b06/img-45f254d00a071b078fc70f6e9e9ca23f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b06/img-380c0a0eb77709272d1173b2fbb034f1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b06/img-9a19719ee90ed98c3f9f06b6ab61d4f9.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b06/img-7b4579c2dd2cdd261fd170628e029c06.jpg",
+          "url": "https://cdn.charitystars.com/cache/resizedcrop-3d1c8178667621b00eca468cc1ae1e2c-840x630.jpg"
+        },
+        {
+          "says": "Ronaldo previously said he had no respect for Ten Hag.",
+          "visual": "Cristiano Ronaldo serious interview",
+          "images": [
+            "Cristiano Ronaldo Piers Morgan interview Ten Hag",
+            "Cristiano Ronaldo serious interview 2022"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b07/img-a3399f2ef3252328d04d952a8b150f45.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b07/img-e35bd5783f7dc72992bc5572a1d18900.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b07/img-f438c813d1082aae034c50243b37ccd2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b07/img-0aa21687646be39562665bbd127ffe96.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b07/img-7253895c58a215f8b6798c3ba9dcb03d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b07/img-edf50355dec31dfc7a059d6e2ef784ba.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b07/img-e2ae521c640537be1ab274bcc5242077.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b07/img-df2066ae7e6c3b32e595fac4be795fad.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b07/img-e35bd5783f7dc72992bc5572a1d18900.jpg",
+          "url": "https://static1.purepeople.com/articles/8/50/21/38/@/7313146-cristiano-ronaldo-revele-s-etre-senti-tr-1200x0-2.jpg"
+        },
+        {
+          "says": "Who was really right?",
+          "visual": "Cristiano Ronaldo and Erik ten Hag split close up",
+          "images": [
+            "Cristiano Ronaldo Erik ten Hag face to face",
+            "Ronaldo Ten Hag Manchester United collage"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b08/img-a6fb3b2c5cbca9ac283fa51ebb0a006b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b08/img-37780030fe913586b076f5902c46693f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b08/img-e2cd00cc8d864d7c87aef11bf2b3cb99.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b08/img-80a66dc0a8250084e57b1a5329b932fd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b08/img-f1afe5c6e2ce380bba8481d2230e8512.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b08/img-b738e5564ae1552c40be3ba372a719c3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b08/img-5ab08950dea3be3091f3bb614109ec18.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b08/img-72a1e59b78819666fa725c53d026cf90.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erik_ten_hag_said_cristiano_ronaldo_let_/b08/img-a6fb3b2c5cbca9ac283fa51ebb0a006b.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

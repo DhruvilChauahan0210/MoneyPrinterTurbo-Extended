@@ -1,0 +1,380 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 4,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of a professional footballer in a Champions League match",
+      "a tight close up of a footballer celebrating"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "Ronaldo's Farewell Promise",
+    "hook_cover_term": "a tight close up of Cristiano Ronaldo's face in a red Portugal shirt, sharp and clear",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "Would You Share This Every Year? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face",
+      "Cristiano Ronaldo looking emotional and gentle close up",
+      "Cristiano Ronaldo smiling warmly close up",
+      "Cristiano Ronaldo holding his little daughter Bella",
+      "Cristiano Ronaldo hugging his young daughter at home",
+      "Cristiano Ronaldo with his daughter Bella at home, both smiling",
+      "Cristiano Ronaldo playing with a little girl, family video moment"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "In June 2022, Georgina gave birth to twins. Their baby son didn't survive the birth. Their daughter did. Ronaldo named her Bella Esmeralda, and later said she became his reason to keep getting out of bed during the darkest months of his career. He's described holding her for the first time as the moment grief and love collided. Years later, he still posts her laughing in his arms, like nothing was ever lost.",
+    "video_subject": "In June 2022 Georgina gave birth to twins, their son did not survive but their daughter Bella Esmeralda did, and Ronaldo has said she became his reason to keep going through the darkest months of his career",
+    "video_terms": "Cristiano Ronaldo daughter Bella Esmeralda, Ronaldo Bella Esmeralda birthday video, Cristiano Ronaldo and daughter Bella close up, Ronaldo holding baby daughter Bella, Cristiano Ronaldo Bella Esmeralda sweet moment, Ronaldo Georgina Rodriguez daughter Bella family video, Cristiano Ronaldo playing with daughter Bella, Ronaldo Bella Esmeralda emotional moment",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": true
+  },
+  "videos": [
+    {
+      "video_subject": "In his statement Ronaldo said he has not quit Portugal, promised fans one or more farewell matches, and said he will be available after his suspension if fit; Portugal's next games are 14 and 17 November",
+      "video_script": "Ronaldo has made Portugal a promise. In his statement, he said he has not quit international football. He promised his fans, especially the Portuguese people, that they will play one or more farewell matches. He said he will be available again after his suspension, if he is fit. But he also said Jorge Jesus broke his word twice. Portugal play again in November. Will Ronaldo get his farewell?",
+      "beat_plan": [
+        {
+          "says": "Ronaldo has made Portugal a promise.",
+          "visual": "Cristiano Ronaldo Portugal captain close up",
+          "images": [
+            "Cristiano Ronaldo Portugal",
+            "Cristiano Ronaldo Portugal national team"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b01/img-37ad4eb4105922c505fe1543688b9406.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b01/img-faad29a04aacbd67cb923a361248061a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b01/img-c6b83f86a1a57d1a358319ce33b6ebca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b01/img-0abfda5ead0845cceda5ee2dbfc2056e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b01/img-0de3ee213ab6829332bbcc62fd23441f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b01/img-9e72e43860abb75d377acb217cf83c51.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b01/img-832ec3ee2d792b1e92318d75a44d80b8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b01/img-2d75c23547f5f4b5bc147025581b190f.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b01/img-c6b83f86a1a57d1a358319ce33b6ebca.jpg",
+          "url": "https://talksport.com/wp-content/uploads/2026/10/cristiano-ronaldo-portugal-warms-prior-1110902247.jpg?strip=all&quality=100&w=1920&h=1080&crop=1"
+        },
+        {
+          "says": "In his statement, he said",
+          "visual": "Cristiano Ronaldo serious Portugal",
+          "images": [
+            "Cristiano Ronaldo Portugal jersey",
+            "Cristiano Ronaldo serious"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b02/img-434b1315267b6d15436f7d7d58cf6e48.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b02/img-541e2956c15fce0b0dfb9cab7e370da7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b02/img-561ae74160574543c8e41f8e60866492.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b02/img-f9b4cf720ee1d7f942239803c0067ecd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b02/img-740fd5995cf3af0e8aa202bba481fdf6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b02/img-45f7a20fc643b6b798f65ec75952110b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b02/img-26715946f8ffbaf32445b69b7aae38ff.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b02/img-d6b509ca5a3ac0ce42d626320f52aa2e.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b02/img-434b1315267b6d15436f7d7d58cf6e48.jpg",
+          "url": "https://images.inkl.com/s3/article/lead_image/20688385/newFile-1.jpg"
+        },
+        {
+          "says": "he has not quit international football.",
+          "visual": "Cristiano Ronaldo Portugal armband",
+          "images": [
+            "Cristiano Ronaldo Portugal armband",
+            "Cristiano Ronaldo Portugal captain armband"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b03/img-85bb7bfeadf15f951fa45868204b59bc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b03/img-18b0225a51a0b37d0a8d01a90739e572.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b03/img-85bb7bfeadf15f951fa45868204b59bc.jpg",
+          "url": "https://cdn.charitystars.com/data/products/126698/663b4932184db-20240416200435.jpg"
+        },
+        {
+          "says": "He promised his fans, especially the Portuguese people,",
+          "visual": "Portugal fans cheering Ronaldo",
+          "images": [
+            "Portugal fans Ronaldo flags",
+            "Portugal supporters cheering Ronaldo"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b04/img-42d72d14e6e836a93567c31ed70ac7e8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b04/img-f4e7cfde8d45660caafcf4549f961451.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b04/img-391e6fbada256308b51bf02a68112f67.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b04/img-549b0edfae0a712d02a7e3afadaee4b3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b04/img-1f88749573041754bca4aa7c167e94bd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b04/img-bc82ad3aa988b3b32e1968c3908a2a3f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b04/img-6c7a051452492c7907a394b9eaed935a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b04/img-4214b7a6ae2a9df613a1f449ba63d6ea.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b04/img-549b0edfae0a712d02a7e3afadaee4b3.jpg",
+          "url": "https://nypost.com/wp-content/uploads/sites/2/2023/06/ronaldo-fan-3.jpg?quality=75&strip=all&w=1024"
+        },
+        {
+          "says": "that they will play one or more farewell matches.",
+          "visual": "Cristiano Ronaldo waving to Portugal fans",
+          "images": [
+            "Cristiano Ronaldo waving to fans Portugal",
+            "Cristiano Ronaldo applauds Portugal fans"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b05/img-549b0edfae0a712d02a7e3afadaee4b3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b05/img-fcb5bacb6b224141b753f0ae8bcd1d18.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b05/img-793431018964fe2a22d5a49b3d981b2e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b05/img-188da56f83a7a157a30b88df9d8d6438.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b05/img-793431018964fe2a22d5a49b3d981b2e.jpg",
+          "url": "https://media.worldsoccertalk.com/wp-content/uploads/sites/6/2026/06/23160207/ronaldo-portugal-world-cup-1-740x416.webp"
+        },
+        {
+          "says": "He said he will be available again after his suspension,",
+          "visual": "Cristiano Ronaldo Portugal training",
+          "images": [
+            "Cristiano Ronaldo Portugal training session",
+            "Cristiano Ronaldo Portugal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b06/img-faad29a04aacbd67cb923a361248061a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b06/img-46097e87b5062bcfa1cd81a3ca25a6c9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b06/img-c6b83f86a1a57d1a358319ce33b6ebca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b06/img-9e72e43860abb75d377acb217cf83c51.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b06/img-2d75c23547f5f4b5bc147025581b190f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b06/img-b89c29d4fe60a640e4184561c5cff97b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b06/img-807351a8e9a16dcef918fd7146d6593d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b06/img-29e620054756c445dd080054d9f8ef1d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b06/img-faad29a04aacbd67cb923a361248061a.jpg",
+          "url": "https://heavy.com/wp-content/uploads/2026/10/fbl-wc-2026-match93-por-esp-portugals-forward-07-cristiano-ronaldo-reacts-during-the-sports-championship-people.jpg?quality=35&strip=all&w=1350"
+        },
+        {
+          "says": "if he is fit.",
+          "visual": "Cristiano Ronaldo Portugal fit strong",
+          "images": [
+            "Cristiano Ronaldo celebrates Portugal",
+            "Cristiano Ronaldo goal Portugal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b07/img-78c40b85ecf45a5c9fc7baba766105bb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b07/img-77c6fb7f77bc324fc0d8e2cec277d884.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b07/img-0caf4771bf7255a97b7e46a6f28359ca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b07/img-c6e19afcda86af508efa4e0f4a5ccada.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b07/img-0c1a7a51596cc31e358b1c4d647cf994.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b07/img-ca5de11c22b1a8a9af8c0f863920d71c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b07/img-72669dc547165c4a1ef645fdc79befc5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b07/img-9f11fe6b2edf7ff847c1dd92fa253dc7.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b07/img-c6e19afcda86af508efa4e0f4a5ccada.jpg",
+          "url": "https://editorial.uefa.com/resources/027b-16a6f83fcf8f-179708787343-1000/cristiano_ronaldo_of_portugal_celebrates_after_scoring_a.jpeg"
+        },
+        {
+          "says": "But he also said Jorge Jesus broke his word twice.",
+          "visual": "Jorge Jesus Portugal coach",
+          "images": [
+            "Jorge Jesus Portugal coach",
+            "Jorge Jesus Portugal manager"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b08/img-aebff75f7b2d67e0db48619df9de9d18.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b08/img-152918ffee3d97b4fb013903e068a569.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b08/img-c4076fb5ac91db5ef869376814e312d3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b08/img-ae73c3f8c32e552dea0d76aac37c4b54.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b08/img-aebff75f7b2d67e0db48619df9de9d18.jpg",
+          "url": "https://portugoal.net/images/PortugueseAbroad/Jorge-Jesus-Flamengo-2019.jpg"
+        },
+        {
+          "says": "Portugal play again in November.",
+          "visual": "Portugal national team squad",
+          "images": [
+            "Portugal national football team 2026",
+            "Portugal national team Bruno Fernandes Ronaldo"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b09/img-148ce740c9aaa67450ce6e44ec5d2749.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b09/img-755d8a58f12198172c754ec54ab28db3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b09/img-86c5eaf239e9ffe172d499f8144457ea.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b09/img-e73107010429b61c067bd9c8afc0b5d0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b09/img-ecc31d6df0ae1cea7e9f5e1669a27e1a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b09/img-5a1bd0b6027c771f78aaabe7629194fb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b09/img-39d5386c5a5c8e78ba53872448944160.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b09/img-d236a254e231f4703c94b51960bd3ccb.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b09/img-755d8a58f12198172c754ec54ab28db3.jpg",
+          "url": "https://leaguecricketschedule.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-25-2026-12_30_06-PM.png"
+        },
+        {
+          "says": "Will Ronaldo get his farewell?",
+          "visual": "Cristiano Ronaldo Portugal looking up emotional",
+          "images": [
+            "Cristiano Ronaldo emotional Portugal",
+            "Cristiano Ronaldo Portugal looking up"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b10/img-264bb0850934a0b78c8cfb9ab431f8c9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b10/img-af3ab535143fefcfcfe61cc6eb35ecd4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b10/img-6e5ae01527f0a4d879eee7fe7de851be.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b10/img-c055eac92893d3c819efa31bc24d17ff.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b10/img-ca981d3436e8d540853da53d5216ca16.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b10/img-088d40162583d64e3c648276e4196247.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_his_statement_ronaldo_said_he_has_not/b10/img-c055eac92893d3c819efa31bc24d17ff.jpg",
+          "url": "https://wallpaperaccess.com/full/8868835.jpg"
+        }
+      ],
+      "hook_text": "Ronaldo's Farewell Promise",
+      "cta_text": "Will Ronaldo Get His Farewell? 👇",
+      "beat_shared_clips": []
+    }
+  ]
+}

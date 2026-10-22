@@ -1,0 +1,429 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 4,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of a professional footballer in a Champions League match",
+      "a tight close up of a footballer celebrating"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "Kane Scored Twice. Olise Ruined It",
+    "hook_cover_term": "a tight close up of Harry Kane's face in a red Bayern Munich shirt, sharp and clear",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "Would You Share This Every Year? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face",
+      "Cristiano Ronaldo looking emotional and gentle close up",
+      "Cristiano Ronaldo smiling warmly close up",
+      "Cristiano Ronaldo holding his little daughter Bella",
+      "Cristiano Ronaldo hugging his young daughter at home",
+      "Cristiano Ronaldo with his daughter Bella at home, both smiling",
+      "Cristiano Ronaldo playing with a little girl, family video moment"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "In June 2022, Georgina gave birth to twins. Their baby son didn't survive the birth. Their daughter did. Ronaldo named her Bella Esmeralda, and later said she became his reason to keep getting out of bed during the darkest months of his career. He's described holding her for the first time as the moment grief and love collided. Years later, he still posts her laughing in his arms, like nothing was ever lost.",
+    "video_subject": "In June 2022 Georgina gave birth to twins, their son did not survive but their daughter Bella Esmeralda did, and Ronaldo has said she became his reason to keep going through the darkest months of his career",
+    "video_terms": "Cristiano Ronaldo daughter Bella Esmeralda, Ronaldo Bella Esmeralda birthday video, Cristiano Ronaldo and daughter Bella close up, Ronaldo holding baby daughter Bella, Cristiano Ronaldo Bella Esmeralda sweet moment, Ronaldo Georgina Rodriguez daughter Bella family video, Cristiano Ronaldo playing with daughter Bella, Ronaldo Bella Esmeralda emotional moment",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": true
+  },
+  "videos": [
+    {
+      "video_subject": "Harry Kane scored twice in Viking 3-3 Bayern but Michael Olise's red card cost them; Kane said without the red they win and Olise must take responsibility; Kane has scored in nine straight Champions League games",
+      "video_script": "Harry Kane scored twice, but Bayern still dropped points. At Viking in the Champions League, Kane's brace and a Luis Díaz goal put Bayern three-two up. Then Michael Olise was sent off for throwing the ball at Viking's captain, and Viking equalised in the ninetieth minute. Kane said that without the red, Bayern for sure go on and win. He also said Olise has to take responsibility. Kane has now scored in nine straight Champions League games. Was Olise the villain?",
+      "beat_plan": [
+        {
+          "says": "Harry Kane scored twice,",
+          "visual": "Harry Kane Bayern Munich celebrating goal",
+          "images": [
+            "Harry Kane Bayern Munich celebrating Champions League",
+            "Harry Kane celebrates Bayern"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b01/img-b7e87c11df8f69eb8c62e81e3bd3ee2d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b01/img-2697486a065f97b0b6a8e81c0f17e86b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b01/img-89aa21bcf13537f7dd7811479880310e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b01/img-ee387783ae9041bb28f49a25b4b49002.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b01/img-c269b868c8c9bbb42f1b1ad313358a81.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b01/img-eecdf297f635ee989838452a16a250d7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b01/img-4a5007862a077bd3badf7c1b9572175c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b01/img-e9aed4d72b05cfbe0ee827c5553cda8e.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b01/img-2697486a065f97b0b6a8e81c0f17e86b.jpg",
+          "url": "https://e0.365dm.com/23/09/2048x1152/skysports-harry-kane-bayern-munich_6292051.jpg?20230920211741"
+        },
+        {
+          "says": "but Bayern still dropped points.",
+          "visual": "Harry Kane Bayern Munich disappointed",
+          "images": [
+            "Harry Kane Bayern Munich hands on head",
+            "Harry Kane FC Bayern sad"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b02/img-7defdf7b4faeefc3080d8b0c760b1f00.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b02/img-14c1a8fcbb1a42a7d734de41f2b51545.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b02/img-4ff9f1d2b82d64a68815fca4414eb966.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b02/img-bd6d29d1935726b7c0a8fa3e1edcdeeb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b02/img-9cfbae43359b2871d63b0f02ef7092fe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b02/img-7046f9000ae107a294b7c1f3e8f4b669.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b02/img-a836773f8ab0ef7aee50e109df8b05c3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b02/img-c7b6dc3fe6f6d9fe396c276be3cf1381.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b02/img-7defdf7b4faeefc3080d8b0c760b1f00.jpg",
+          "url": "https://www.the-sun.com/wp-content/uploads/sites/6/2024/05/real-madrid-vs-fc-bayern-900040625_6a28f2.jpg?quality=90&strip=all"
+        },
+        {
+          "says": "At Viking in the Champions League,",
+          "visual": "Viking Stadium Stavanger Champions League",
+          "images": [
+            "Viking Stadion Stavanger",
+            "Viking FK stadium Stavanger Champions League"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b03/img-51243acd76d81ebd8c5daa169a47c072.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b03/img-0eb58edab7073431726595db45c897ff.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b03/img-edc117f9ec01b225b2753e40b4b0daa8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b03/img-674bdaf3268ee28ffd258f5a2895d1dd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b03/img-c134bb066a2f35734744b22a21011886.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b03/img-4f9f5b76d43392f673d7e95b66cf5c35.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b03/img-b94210fd95a89866a4df5481132e4411.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b03/img-ed2382934a21ecd5dc6f02c9a25ff8cc.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b03/img-edc117f9ec01b225b2753e40b4b0daa8.jpg",
+          "url": "https://www.lifeinnorway.net/wp-content/uploads/2019/09/soccer-stadium-stavanger.jpg.webp"
+        },
+        {
+          "says": "Kane's brace and a Luis Díaz goal",
+          "visual": "Luis Diaz Bayern Munich celebrating",
+          "images": [
+            "Luis Diaz Bayern Munich celebration",
+            "Luis Diaz Bayern Munich goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b04/img-5f0f10ed79fb67d1b9d7ec895ec840e4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b04/img-997cb32ab00d0835a8446472d7cf2e4e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b04/img-3c239147c16d642354b425bb9da07a0f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b04/img-79b2b7a1b08122058f406606134ae0da.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b04/img-aa42be95a61b4026c1685b50bcedc222.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b04/img-801b083d4d99e80405805667a8c19d09.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b04/img-bda0958a0b152d722ab0e987ce759599.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b04/img-6dfef86291c77cda8099fc33453ac161.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b04/img-3c239147c16d642354b425bb9da07a0f.jpg",
+          "url": "https://www.elespectador.com/resizer/v2/DJ7AU3VS3RCRXIHVANLOAWGZJE.png?auth=b3c8051faafcef2a7b3053f1c0370a4eaf04d5ed790dffa1fc975824a9e20ecb&width=920&height=613&smart=true&quality=60"
+        },
+        {
+          "says": "put Bayern three-two up.",
+          "visual": "Harry Kane Bayern Munich close up",
+          "images": [
+            "Harry Kane Bayern Munich close up",
+            "Harry Kane Bayern Munich portrait"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b05/img-d233907121b82266fb18b13d64a88cbd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b05/img-0b010de0577a47b4537c9b3552c7e3a1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b05/img-3ea989bbfeae9293a7e8ef1c4a688b04.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b05/img-b2a027d3724aae74e138b5ce45a2d03f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b05/img-cba90c4b346548b83f92050e108d6707.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b05/img-a4003048f5396f16fc08fde20a94d987.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b05/img-2697486a065f97b0b6a8e81c0f17e86b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b05/img-8effd601f916833ff6ba3f2331a0f7d8.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b05/img-3ea989bbfeae9293a7e8ef1c4a688b04.jpg",
+          "url": "https://e0.365dm.com/23/09/2048x1152/skysports-harry-kane-bayern-munich_6295326.jpg?20230923153602"
+        },
+        {
+          "says": "Then Michael Olise was sent off",
+          "visual": "Michael Olise Bayern Munich red card walking off",
+          "images": [],
+          "clips": [],
+          "candidates": [],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b06/shot_65d2d2d6ce.mp4",
+          "url": "https://www.youtube.com/watch?v=3hrZiAXHVEI",
+          "start": 21,
+          "len": 3.6
+        },
+        {
+          "says": "for throwing the ball at Viking's captain,",
+          "visual": "Michael Olise Bayern Munich and referee",
+          "images": [],
+          "clips": [],
+          "candidates": [],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b07/shot_ff190cd6dc.mp4",
+          "url": "https://www.youtube.com/watch?v=3hrZiAXHVEI",
+          "start": 26,
+          "len": 3.2
+        },
+        {
+          "says": "and Viking equalised in the ninetieth minute.",
+          "visual": "Viking players celebrating equaliser",
+          "images": [
+            "Viking FK players celebrate goal",
+            "Viking FK celebrate Bayern draw"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b08/img-6fda28bcc17fce283abcb3d73bce25ab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b08/img-4bfd414d6f8ce615ed49d3d4231b8fb5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b08/img-d6aa2620b9f93edcd93ec26bbfd4078c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b08/img-2ed46b01058c79dc84c25a5f15a0f742.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b08/img-eabd889b403f5555f4703ad0c0ea13ed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b08/img-3d43666875db7750efb69a9ac710d8dc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b08/img-8db8bbee85821ab5252337916c736264.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b08/img-e61c551aae697cec4b8338181f28943a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b08/img-6fda28bcc17fce283abcb3d73bce25ab.jpg",
+          "url": "https://premium.vgc.no/v2/images/0abc597b-ed77-4bf8-afc5-7087a9894064?fit=crop&format=auto&h=1117&w=1900&s=8bb95bdd3595772892ca65bb04061eb77148bb00"
+        },
+        {
+          "says": "Kane said that without the red,",
+          "visual": "Harry Kane Bayern Munich serious face",
+          "images": [
+            "Harry Kane serious face Bayern Munich",
+            "Harry Kane Bayern Munich thinking"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b09/img-740d5d937136a3694e3b3bd2dc2c027b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b09/img-cba90c4b346548b83f92050e108d6707.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b09/img-a5ba06cd4439f019a38037039713cf36.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b09/img-42e9cbbd0ae462fe1d0d915e9b1f615b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b09/img-09598b633bc4af0103ce54f86dc06306.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b09/img-c6a32c68272428a93824362c316d4a21.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b09/img-2697486a065f97b0b6a8e81c0f17e86b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b09/img-d8d37a9d2a6259c646c344e0ccbd1600.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b09/img-740d5d937136a3694e3b3bd2dc2c027b.jpg",
+          "url": "https://assets.goal.com/images/v3/blt0f674dd91f2545b3/GOAL+-+Blank+WEB+-+Facebook(3186).jpeg?auto=webp&format=pjpg&width=3840&quality=60"
+        },
+        {
+          "says": "Bayern for sure go on and win.",
+          "visual": "Harry Kane Bayern Munich pointing",
+          "images": [
+            "Harry Kane pointing Bayern Munich",
+            "Harry Kane Bayern Munich scoring"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b10/img-4441600480095c2738bbe0f860e575c5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b10/img-b034322a2d9d92cfd07ded3952fab0dd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b10/img-d4be62925d4809e2ef3cf604e8c2b9a2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b10/img-6b3cc37c692f0b6d866e1c0d3bb50d19.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b10/img-306d118465ed157869198d835b1fe4d5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b10/img-171214be300b5062af676609e9506eed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b10/img-6cd7277f6ac7753e0bb3033bf5a28997.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b10/img-2b5070bd1956cdaa7f2ea6018a07ef5a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b10/img-6b3cc37c692f0b6d866e1c0d3bb50d19.jpg",
+          "url": "https://icdn.caughtoffside.com/wp-content/uploads/2025/09/Harry-Kane-celebrates-a-goal-for-Bayern-Munich-against-Chelsea.jpg"
+        },
+        {
+          "says": "He also said Olise has to take responsibility.",
+          "visual": "Michael Olise Bayern Munich head down",
+          "images": [],
+          "clips": [],
+          "candidates": [],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b11/shot_407b39ba5c.mp4",
+          "url": "https://www.youtube.com/watch?v=3hrZiAXHVEI",
+          "start": 48,
+          "len": 3.4
+        },
+        {
+          "says": "Kane has now scored in nine straight Champions League games.",
+          "visual": "Harry Kane Bayern Munich Champions League goal celebration",
+          "images": [
+            "Harry Kane Champions League goal celebration Bayern",
+            "Harry Kane arms out Bayern Munich"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b12/img-fb389e4d8a0e8a230a471633884b2465.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b12/img-eab2ea48a90afe08e65a8cf72d3acf8b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b12/img-97296bfbba0c739dffd334c2da760ba0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b12/img-8cecb5aa17707182400e87ed78f67ab3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b12/img-171214be300b5062af676609e9506eed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b12/img-45395c80e0e5113bc266c268e25fd558.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b12/img-0ed09971f5c199de335c05b7497f2e1c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b12/img-2697486a065f97b0b6a8e81c0f17e86b.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b12/img-fb389e4d8a0e8a230a471633884b2465.jpg",
+          "url": "https://static.independent.co.uk/2023/11/08/22/2023-11-08T214151Z_315852185_UP1EJB81O9PJX_RTRMADP_3_SOCCER-CHAMPIONS-BAY-GAL-REPORT.JPG"
+        },
+        {
+          "says": "Was Olise the villain?",
+          "visual": "Michael Olise Bayern Munich portrait",
+          "images": [
+            "Michael Olise",
+            "Michael Olise Bayern Munich"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b13/img-333b399db442a94737da9f7ebb3ec90f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b13/img-fde2e949610d08bff980a51b7e66d78b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b13/img-726a45ddebd0b914f63bacabfab9dc55.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b13/img-b0b70ab6b09b4a75b84b99955edb3bbc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b13/img-c20fdfb64fe991476d6a54291c3fd589.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b13/img-f114b7c829a524127f88ca82584792d6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b13/img-8279f5bad548ea346e873dbee3299bde.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b13/img-164da5899e91b0d940d078627ad8cd04.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_scored_twice_in_viking_3_3_ba/b13/img-726a45ddebd0b914f63bacabfab9dc55.jpg",
+          "url": "https://icdn.psgtalk.com/wp-content/uploads/2025/10/michael-olise-bayern-munich-v-chelsea-ucl-2025.jpg"
+        }
+      ],
+      "hook_text": "Kane Scored Twice. Olise Ruined It",
+      "cta_text": "Was Olise The Villain? 👇",
+      "beat_shared_clips": []
+    }
+  ]
+}

@@ -1,0 +1,419 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 4,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi the footballer",
+      "a tight close up of Lionel Messi's face",
+      "Lionel Messi in an Inter Miami shirt",
+      "Lionel Messi in a Barcelona shirt"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "MESSI'S NEXT MOVE HAS ALREADY BEGUN",
+    "hook_cover_term": "a sharp close up of Lionel Messi looking confident",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "COULD HE OWN BARCELONA ONE DAY? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi the footballer",
+      "UE Cornella football club in Spain",
+      "Lionel Messi watching a football match"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Cornella's city council says Messi now owns a football club in Spain, and it is not Barcelona. In April, the council announced he had acquired UE Cornella, a fifth division club based near Barcelona. The project is focused on youth football and developing local talent. Messi is still playing in Miami, but his next football chapter has already begun. Could he one day return to Barcelona as an owner?",
+    "video_subject": "Lionel Messi acquired Spanish fifth-division club UE Cornella in April 2026, with plans centred on youth football and local development",
+    "video_terms": "Lionel Messi UE Cornella owner, Messi Spanish football club, UE Cornella academy",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "beat_plan": [
+      {
+        "says": "Cornella's city council says Messi now owns a football club in Spain,",
+        "visual": "Lionel Messi smiling close up",
+        "images": [
+          "Lionel Messi smiling close up 2026",
+          "Lionel Messi portrait Inter Miami"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and it is not Barcelona.",
+        "visual": "Lionel Messi Barcelona stadium background",
+        "images": [
+          "Lionel Messi Barcelona Camp Nou",
+          "Messi Barcelona emotional close up"
+        ],
+        "clips": []
+      },
+      {
+        "says": "In April, the council announced he had acquired UE Cornella,",
+        "visual": "Lionel Messi UE Cornella ownership announcement",
+        "images": [
+          "Lionel Messi buys UE Cornella April 2026",
+          "Messi UE Cornella owner announcement"
+        ],
+        "clips": []
+      },
+      {
+        "says": "a fifth division club based near Barcelona.",
+        "visual": "UE Cornella football stadium and team",
+        "images": [
+          "UE Cornella football club stadium",
+          "UE Cornella team Spain"
+        ],
+        "clips": []
+      },
+      {
+        "says": "The project is focused on youth football and developing local talent.",
+        "visual": "UE Cornella youth academy players",
+        "images": [
+          "UE Cornella youth academy football",
+          "UE Cornella academy players"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi is still playing in Miami,",
+        "visual": "Lionel Messi Inter Miami playing",
+        "images": [
+          "Lionel Messi Inter Miami match 2026",
+          "Messi Inter Miami close up"
+        ],
+        "clips": []
+      },
+      {
+        "says": "but his next football chapter has already begun.",
+        "visual": "Lionel Messi watching football from stands",
+        "images": [
+          "Lionel Messi watching football from stands",
+          "Lionel Messi football owner suit"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Could he one day return to Barcelona as an owner?",
+        "visual": "Lionel Messi looking at Camp Nou",
+        "images": [
+          "Lionel Messi Camp Nou return",
+          "Messi Barcelona stadium emotional"
+        ],
+        "clips": []
+      }
+    ],
+    "intro_image_paths": []
+  },
+  "videos": [
+    {
+      "video_subject": "Lionel Messi acquired Spanish fifth-division club UE Cornella in April 2026, with plans centred on youth football and local development",
+      "video_script": "Cornella's city council says Messi now owns a football club in Spain, and it is not Barcelona. In April, the council announced he had acquired UE Cornella, a fifth division club based near Barcelona. The project is focused on youth football and developing local talent. Messi is still playing in Miami, but his next football chapter has already begun. Could he one day return to Barcelona as an owner?",
+      "video_terms": "Lionel Messi UE Cornella owner, Messi Spanish football club, UE Cornella academy",
+      "hook_text": "MESSI'S NEXT MOVE HAS ALREADY BEGUN",
+      "cta_text": "COULD HE OWN BARCELONA ONE DAY? 👇",
+      "beat_plan": [
+        {
+          "says": "Cornella's city council says Messi now owns a football club in Spain,",
+          "visual": "Lionel Messi smiling close up",
+          "images": [
+            "Lionel Messi smiling close up 2026",
+            "Lionel Messi portrait Inter Miami"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b01/img-c8096788b4121052c7250bd97a9d26d6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b01/img-bdb3869e952ee00311e845f3e54a022e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b01/img-ca4eb43a9918b9fb198fa105413ec52a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b01/img-b874b6c7fa31e474f3d4ad0c2578430f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b01/img-ddec04a173d78a98725e6e819c0761bc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b01/img-062eae23ec09c9751737b2d6f7c559e3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b01/img-ed25792302b59f35860bd72a799d52eb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b01/img-d42c5a8000abbf26fd20389be690e16c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b01/img-c8096788b4121052c7250bd97a9d26d6.jpg"
+        },
+        {
+          "says": "and it is not Barcelona.",
+          "visual": "Lionel Messi Barcelona stadium background",
+          "images": [
+            "Lionel Messi Barcelona Camp Nou",
+            "Messi Barcelona emotional close up"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b02/img-a5a1c56a28853d510d72a03a1018ef41.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b02/img-681419e98b3e882f23190e3ad18eff5b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b02/img-f33263ac6ccc4195161cf50ff86de295.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b02/img-0ee0c4cfa6e9ec6275abd79be7578045.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b02/img-a30d9b89676c94b40c799eac61387724.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b02/img-2f4cf1c9d92235d81d4ade8a694c0b62.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b02/img-20d70e836ff137a023d8d0384bdc4018.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b02/img-0cb373b64b821020d68a7ebf6ecc5226.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b02/img-a5a1c56a28853d510d72a03a1018ef41.jpg"
+        },
+        {
+          "says": "In April, the council announced he had acquired UE Cornella,",
+          "visual": "Lionel Messi UE Cornella ownership announcement",
+          "images": [
+            "Lionel Messi buys UE Cornella April 2026",
+            "Messi UE Cornella owner announcement"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b03/img-13414878053d6d1e3d8b35002a114e8f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b03/img-a9070d38a063a6541b2ac944ede80f29.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b03/img-018be3d560183734698cb3bb963372d6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b03/img-54e8ed0051d0e5bf2a111930f6e14d41.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b03/img-771c7f0ffe3c030df67dc0ac7dc89a5d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b03/img-e805db308e44eaaca4e22dadad906d44.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b03/img-71c35f4418d1fdc75905116920c8cb33.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b03/img-ecb538934b4bfb6016ff3379c451ef41.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b03/img-13414878053d6d1e3d8b35002a114e8f.jpg"
+        },
+        {
+          "says": "a fifth division club based near Barcelona.",
+          "visual": "UE Cornella football stadium and team",
+          "images": [
+            "UE Cornella football club stadium",
+            "UE Cornella team Spain"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b04/img-e9509728fc3f274ee87c67bbdc1f073e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b04/img-f73f80ff35726324c0cf01cab8733c22.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b04/img-0da3877158b46a84de95ace602a61129.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b04/img-9fa620c482e80a65c290e54308185bba.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b04/img-bcb7f80a81ff98ac6e16da8d1dd8c5c1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b04/img-0d940c5137e719add1a133d986f7622b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b04/img-96796db122be2b343100fa0a5668c3ca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b04/img-558e12710ab2833b4f32f2d0beb7148d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b04/img-e9509728fc3f274ee87c67bbdc1f073e.jpg"
+        },
+        {
+          "says": "The project is focused on youth football and developing local talent.",
+          "visual": "UE Cornella youth academy players",
+          "images": [
+            "UE Cornella youth academy football",
+            "UE Cornella academy players"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b05/img-afaeeba745cfdc4f2954d55c38c01a24.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b05/img-6077a3290218d2f381633778c2dcbc07.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b05/img-96796db122be2b343100fa0a5668c3ca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b05/img-cf20c25aaebe64c97e732595c4250b76.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b05/img-4962bdcfdcb6aa9c2d090be10248c93d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b05/img-e5e596e5d2b0d5d511f272f4d0b09f85.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b05/img-6225a2efdab628fadf56c17d200f0f22.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b05/img-f8dcebf2569791f9b9c5fe03347129f8.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b05/img-afaeeba745cfdc4f2954d55c38c01a24.jpg"
+        },
+        {
+          "says": "Messi is still playing in Miami,",
+          "visual": "Lionel Messi Inter Miami playing",
+          "images": [
+            "Lionel Messi Inter Miami match 2026",
+            "Messi Inter Miami close up"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b06/img-c2797230f374a39c681c062d5a560202.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b06/img-6f3ad368490c996922f516c8bda2d543.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b06/img-f346ecf651a73888279303439af2e5f0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b06/img-a24f6945dfe705b1ea0b6ca2a333f43a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b06/img-e785f8c48f1eaaccbd3924898350ae9d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b06/img-f3e2fe592c060a26826d8b3e876c8039.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b06/img-27265c8224c949ce32b99c690bde1e24.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b06/img-34110457a79c74a3863ef50a5df20757.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b06/img-c2797230f374a39c681c062d5a560202.jpg"
+        },
+        {
+          "says": "but his next football chapter has already begun.",
+          "visual": "Lionel Messi watching football from stands",
+          "images": [
+            "Lionel Messi watching football from stands",
+            "Lionel Messi football owner suit"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b07/img-931b2a4b1536b608eaf85d05e53677db.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b07/img-532b2af4c3841f430744d6031b4ffee0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b07/img-f77ca436ba149945e14f7fe0436addbe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b07/img-e9dee5c10052a41ab5bf2c9c2370add8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b07/img-7f3e689c5d0e12bb2d89393e2fc316ca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b07/img-ce1fabda4a6ecdd8267d8623238220c2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b07/img-aec39fd7142f7f5b949cd2b161df6ac7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b07/img-5c95b2adf7bf2cef3191b2590f85a616.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b07/img-931b2a4b1536b608eaf85d05e53677db.jpg"
+        },
+        {
+          "says": "Could he one day return to Barcelona as an owner?",
+          "visual": "Lionel Messi looking at Camp Nou",
+          "images": [
+            "Lionel Messi Camp Nou return",
+            "Messi Barcelona stadium emotional"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b08/img-f83952a995d665d2d1870ca461db7e24.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b08/img-59e76a3869ed0fbfc520786a6f356dfe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b08/img-5aa3eb3b1de66a7ef64452461bec28af.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b08/img-25d9b7ec7938ec7eb6aa65456b72f053.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b08/img-d19eb4e95dab83c2e1acd62db7e6a48b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b08/img-e513df3a91080bb76f7b2f44bcb2bce6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b08/img-96fdaeef535c7a6590f78b3c6677fd40.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b08/img-82c5281fca8e2b9805fac9149bbdc0d8.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_acquired_spanish_fifth_divi/b08/img-f83952a995d665d2d1870ca461db7e24.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

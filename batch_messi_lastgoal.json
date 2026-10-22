@@ -1,0 +1,428 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 4,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of a professional footballer in a Champions League match",
+      "a tight close up of a footballer celebrating"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "Messi's Last Goal For Argentina",
+    "hook_cover_term": "a tight close up of Lionel Messi's face in an Argentina tracksuit, sharp and clear",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "Would You Share This Every Year? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face",
+      "Cristiano Ronaldo looking emotional and gentle close up",
+      "Cristiano Ronaldo smiling warmly close up",
+      "Cristiano Ronaldo holding his little daughter Bella",
+      "Cristiano Ronaldo hugging his young daughter at home",
+      "Cristiano Ronaldo with his daughter Bella at home, both smiling",
+      "Cristiano Ronaldo playing with a little girl, family video moment"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "In June 2022, Georgina gave birth to twins. Their baby son didn't survive the birth. Their daughter did. Ronaldo named her Bella Esmeralda, and later said she became his reason to keep getting out of bed during the darkest months of his career. He's described holding her for the first time as the moment grief and love collided. Years later, he still posts her laughing in his arms, like nothing was ever lost.",
+    "video_subject": "In June 2022 Georgina gave birth to twins, their son did not survive but their daughter Bella Esmeralda did, and Ronaldo has said she became his reason to keep going through the darkest months of his career",
+    "video_terms": "Cristiano Ronaldo daughter Bella Esmeralda, Ronaldo Bella Esmeralda birthday video, Cristiano Ronaldo and daughter Bella close up, Ronaldo holding baby daughter Bella, Cristiano Ronaldo Bella Esmeralda sweet moment, Ronaldo Georgina Rodriguez daughter Bella family video, Cristiano Ronaldo playing with daughter Bella, Ronaldo Bella Esmeralda emotional moment",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": true
+  },
+  "videos": [
+    {
+      "video_subject": "Messi retired from Argentina after scoring his 126th and final goal in a 3-0 win over Benin in Buenos Aires, then scored twice for Inter Miami against DC United at 39",
+      "video_script": "Messi scored his last goal for Argentina. In Buenos Aires, against Benin, he scored his one hundred and twenty-sixth and final goal for his country, then said goodbye. Four days later, at thirty-nine, he scored twice for Inter Miami. He leads MLS in goals. Messi has left Argentina. He has not left the game. Which Messi goal will you never forget?",
+      "beat_plan": [
+        {
+          "says": "Messi scored his last goal",
+          "visual": "Lionel Messi close up looking up Argentina",
+          "images": [
+            "Lionel Messi Argentina farewell Benin",
+            "Messi Argentina farewell Buenos Aires emotional"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b01/img-66729a47af9f2f32be6def2ce558ebed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b01/img-a35c090fb6d980de479fab43e724a5db.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b01/img-cb9cc75f3d8528fd34f26d6166933e52.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b01/img-ee75246e6502235cd20d9ce8a7545bd8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b01/img-3ebb49ac8c083b49d604515bee6f750f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b01/img-b6a9bf8f1c883923c60f6b1b13fca889.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b01/img-803931c1baf5bafc22bac77e5538545b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b01/img-e09792bcae3174c730626e761865d8b9.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b01/img-a35c090fb6d980de479fab43e724a5db.jpg",
+          "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDAfqoteL2V87IPVQjU_gcQw0IAHCHSOK-AOjA8i_xkEIHrU9J1CGGzN0bfah1j7enzj3N4nFG1py4HZpsTeDXQf7R5ADLxlKdYF02jaV3YdWuppKQCNtY2LVpAa5vAP652eGTNqo0hxl4vF8x-o72geDq7E3GRVgDQXukya7vFYZ3IZ6oRVhKgk8wIGaq/s1536/1000210661.png"
+        },
+        {
+          "says": "for Argentina.",
+          "visual": "Lionel Messi Argentina tracksuit walking onto the pitch",
+          "images": [
+            "Lionel Messi Argentina jersey farewell",
+            "Messi Argentina captain last match"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b02/img-411353d474e0d4c2a7e170d2473579c7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b02/img-e6af84656d937965c06af51d1bbfff4c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b02/img-92d969f7f3003e954e0636dd8b4720ed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b02/img-376bb2fd0eee736a96ad13eb00cf375a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b02/img-3ebb49ac8c083b49d604515bee6f750f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b02/img-257fd1c29a14a32145fc189ab588ae63.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b02/img-4a8dd3872cf1a7d3c69fed78966e3e16.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b02/img-59d900037f6ce8040607de4500e27fff.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b02/img-411353d474e0d4c2a7e170d2473579c7.jpg",
+          "url": "https://images2.thanhnien.vn/528068263637045248/2025/6/11/messi-arg-17496112078981946703300.jpg"
+        },
+        {
+          "says": "In Buenos Aires, against Benin,",
+          "visual": "Aerial view River Plate stadium fireworks Buenos Aires",
+          "images": [
+            "Monumental stadium Buenos Aires Argentina fans Messi farewell",
+            "Argentina fans Messi farewell tribute stadium"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b03/img-e66d153da1093d25ec15cf6e852bba8d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b03/img-d085346f1de2fa45bfeebcc6e8e02fd5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b03/img-6f51d1a804ac2315f5fd6396cebf6441.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b03/img-ee7f10fa126b2a832f77ad2ac8995aba.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b03/img-6672dd15006505fbd56e512cc666fa41.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b03/img-a42e8f1d168de5a1448ebf3eb4aa8af1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b03/img-2df5c494f6a05db011e599b2929cbbc8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b03/img-d92799e33bbdb0b25e188786402afe89.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b03/img-d92799e33bbdb0b25e188786402afe89.jpg",
+          "url": "https://talksport.com/wp-content/uploads/sites/5/2022/12/2022-winners-trophy-shoulders-former-783808154.jpg?strip=all&w=960&quality=100"
+        },
+        {
+          "says": "he scored his one hundred and twenty-sixth",
+          "visual": "Lionel Messi scoring goal Argentina vs Benin celebration",
+          "images": [
+            "Lionel Messi goal Argentina Benin farewell",
+            "Messi Argentina Benin goal celebration Buenos Aires"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b04/img-799485350000f71605bae853b0360031.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b04/img-3c05a54db681bb8cf96fe029290dde9a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b04/img-b7c343daa08182168cfb6ecef3fd494b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b04/img-4a8dd3872cf1a7d3c69fed78966e3e16.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b04/img-788f3a3645be8f7daf48c6623cefd836.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b04/img-b6a9bf8f1c883923c60f6b1b13fca889.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b04/img-8e2ceae4a98b08a8f8ce8557bba70db2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b04/img-14002fbc21b43778b65c62cdfd0caa8f.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b04/img-3c05a54db681bb8cf96fe029290dde9a.jpg",
+          "url": "https://talksport.com/wp-content/uploads/sites/5/2022/12/lionel-messi-argentina-celebrates-scoring-782686143.jpg?w=3760"
+        },
+        {
+          "says": "and final goal for his country,",
+          "visual": "Lionel Messi emotional Argentina farewell",
+          "images": [
+            "Lionel Messi Argentina farewell goal celebration",
+            "Messi final goal Argentina Benin"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b05/img-921a92c23ae085f3c5d22ddc6c00f059.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b05/img-46427caa150fb74a07d6ea27ad0d7bdc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b05/img-b9a2e726bc214f2de84d2ea7d0523a25.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b05/img-13bc2942dd97688b4fa6e728a3b9cf97.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b05/img-e3e7a3b849a0fb9e189dc7f52ea8c8b1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b05/img-8b15a32237183c62a915ae60b37e1965.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b05/img-11cdffe18c0a0686b6ef9b5167718906.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b05/img-e04d74c80b27ba491f28d3d1c8493457.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b05/img-b9a2e726bc214f2de84d2ea7d0523a25.jpg",
+          "url": "https://media.cnn.com/api/v1/images/stellar/prod/221218173438-messi-goal-celebration.jpg?c=original"
+        },
+        {
+          "says": "then said goodbye.",
+          "visual": "Lionel Messi saying goodbye on pitch in Argentina jacket",
+          "images": [
+            "Lionel Messi farewell speech Argentina fans",
+            "Messi says goodbye Argentina"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b06/img-05f4a985109c253e197cde298acda646.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b06/img-581b5c985864bc1a787b4545396eb27f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b06/img-2215a58c7837aae2f2eb3f455d931073.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b06/img-c181bdf9c6659c30b490479f850d3fbd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b06/img-35e0a20b76c4e82021f1fb706e05288e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b06/img-4dd56048dafe1aacf2b62a29ee82c33a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b06/img-70b42a82e81b1f3adf6a6f898458cc63.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b06/img-18ac8b6815a80fc3b0ee33760d53bcac.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b06/img-70b42a82e81b1f3adf6a6f898458cc63.jpg",
+          "url": "https://menafn.com/updates/pr/2026-07/02/KT_ce480image_story.jpg"
+        },
+        {
+          "says": "Four days later, at thirty-nine,",
+          "visual": "Lionel Messi Inter Miami pink kit close up",
+          "images": [],
+          "clips": [],
+          "candidates": [],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b07/shot_5b64ae6faa.mp4",
+          "url": "https://www.youtube.com/watch?v=7L3usFf0TH0",
+          "start": 14,
+          "len": 3.0
+        },
+        {
+          "says": "he scored twice for Inter Miami.",
+          "visual": "Lionel Messi celebrating Inter Miami goal DC United",
+          "images": [
+            "Messi Inter Miami goal",
+            "Messi Inter Miami celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b08/img-6b235f7c36559b7689c731058eeb2ef9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b08/img-d332a5c26ba2baa5e9c8d2e914e3ce0a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b08/img-1e25a3f00274bdd1f4168de7bd7d599b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b08/img-45def24f907c6c0e16231e05b3af3662.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b08/img-576444870d1a9c66695c1e54a9526889.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b08/img-27265c8224c949ce32b99c690bde1e24.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b08/img-b6c1778ad9fb567a58cceec36d1104b6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b08/img-ea5f1edd4962291171bed10075abb9f0.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b08/img-6b235f7c36559b7689c731058eeb2ef9.jpg",
+          "url": "https://static.independent.co.uk/2023/08/07/13/SEI166832567.jpg"
+        },
+        {
+          "says": "He leads MLS in goals.",
+          "visual": "Lionel Messi Inter Miami pink kit",
+          "images": [
+            "Messi Inter Miami",
+            "Lionel Messi Inter Miami MLS goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b09/img-3fceb191133b66614dad636e2b2b9d97.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b09/img-fc07601d168e79a2306e72c98e9dad52.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b09/img-8f8af8174e958281a6a4b1ef7be0780b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b09/img-1b642155198363588d23d09ad080096c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b09/img-6a261eace3b440b80fdc8b0dc67e4588.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b09/img-e75646e1ac39bcc530f0f6e3970370dd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b09/img-17b95d08de51dc1f805692eb017fca07.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b09/img-dc51cad8449f61d0dd5990912b8335f3.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b09/img-8f8af8174e958281a6a4b1ef7be0780b.jpg",
+          "url": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2023/07/1200/675/lionel-messi-miami.jpg?ve=1&tl=1"
+        },
+        {
+          "says": "Messi has left Argentina.",
+          "visual": "Lionel Messi Argentina farewell standing on pitch",
+          "images": [
+            "Lionel Messi farewell Argentina fans emotional",
+            "Messi Argentina retires tribute"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b10/img-a41d834bff678223c83cb12e0d56c2d0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b10/img-97f8c7a5777a67ae99cb43b806e48eec.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b10/img-8f8baffafeee84073ebd342788670349.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b10/img-3dd118998011b8ea6672b1ebe75d216d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b10/img-0e7df172d17ea341fa2eb8c22b88b878.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b10/img-b8c375ac4140c51d7e4cac02335ebc75.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b10/img-345c802aeba934a6e83902f5eca84ba4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b10/img-7ece91b47ea5058118a5e34a0e09fdeb.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b10/img-3dd118998011b8ea6672b1ebe75d216d.jpg",
+          "url": "https://talksport.com/wp-content/uploads/sites/5/2025/09/fans-display-flag-lionel-messi-1020815398.jpg?strip=all&w=960"
+        },
+        {
+          "says": "He has not left the game.",
+          "visual": "Lionel Messi Inter Miami smiling",
+          "images": [
+            "Lionel Messi smiling Inter Miami 2026",
+            "Lionel Messi Inter Miami captain"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b11/img-ddd2a03d1699adc7a44190bf5bade474.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b11/img-9ed002bbc60966f7e503a393dfd61c15.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b11/img-84b499d31fdf513d59bf3432647a7ce6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b11/img-57758cc64e3ca0d4b2fc1e042f0f70f1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b11/img-7452093753677f2c50657cb150b64ab2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b11/img-205b62a2961b9d0611a931ccfaa73c75.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b11/img-e0551d8ff7afea44db685ff48eb38225.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b11/img-67f25698335dc830095239555fa869ee.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b11/img-67f25698335dc830095239555fa869ee.jpg",
+          "url": "https://beninwebtv.bj/en/wp-content/uploads/sites/3/2026/03/Lionel-Messi-sous-les-couleurs-de-lInter-Miami-1280x720.jpg"
+        },
+        {
+          "says": "Which Messi goal will you never forget?",
+          "visual": "Lionel Messi looking up Argentina emotional",
+          "images": [
+            "Lionel Messi Argentina emotional close up goodbye",
+            "Lionel Messi Argentina farewell tears"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b12/img-e9af667c154e5a317ec2220fa61671c4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b12/img-73c21db2eae0e0ae62bf51af5f01e0fd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b12/img-65167b0475306c3e6173644c271b2942.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b12/img-22d705b8e129b11fe4a99b61e144cee0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b12/img-025d9553fb479b576e7f4f80bc762d88.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b12/img-d56166ba6ea5cac38e4d2887b403bffb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b12/img-7b89b87363e6add7bde065a744de8a2d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b12/img-23fa83ecc90f762479caf7af56cadc00.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_retired_from_argentina_after_scori/b12/img-7b89b87363e6add7bde065a744de8a2d.jpg",
+          "url": "https://www.thesun.ie/wp-content/uploads/sites/3/2025/09/NINTCHDBPICT001020908461.jpg?quality=90&strip=all"
+        }
+      ],
+      "hook_text": "Messi's Last Goal For Argentina",
+      "cta_text": "Which Messi Goal Is Your Favourite? 👇",
+      "beat_shared_clips": []
+    }
+  ]
+}

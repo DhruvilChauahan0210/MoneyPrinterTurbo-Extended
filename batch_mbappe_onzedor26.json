@@ -1,0 +1,395 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 4,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Kylian Mbappe the footballer",
+      "a tight close up of Kylian Mbappe's face",
+      "Kylian Mbappe in a white Real Madrid shirt",
+      "Kylian Mbappe celebrating a goal or holding a football award"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "IS THE BALLON D'OR ALREADY DECIDED?",
+    "hook_cover_term": "a sharp tight close up of Kylian Mbappe in a white Real Madrid shirt holding an award",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "DOES MBAPPE DESERVE IT? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Kylian Mbappe the footballer",
+      "a tight close up of Kylian Mbappe's face",
+      "Kylian Mbappe in a white Real Madrid shirt",
+      "Kylian Mbappe celebrating a goal or holding a football award"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Six days before the Ballon d'Or, Kylian Mbappe has crushed another major vote. He won the twenty twenty-six Onze d'Or with forty-eight point two percent, while Joao Neves finished on eleven point nine and Kvaratskhelia on ten point eight. Mbappe topped both La Liga and the Champions League for goals, then won the World Cup Golden Boot. Is Monday now his night?",
+    "video_subject": "Kylian Mbappe won the 2026 Onze d'Or with 48.2 percent of the reader vote, ahead of Joao Neves and Khvicha Kvaratskhelia, six days before the Ballon d'Or",
+    "video_terms": "Kylian Mbappe Onze d'Or 2026 award, Mbappe Real Madrid 2026 celebration, Mbappe World Cup Golden Boot, Mbappe Champions League goals",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Six days before the Ballon d'Or,",
+        "visual": "Kylian Mbappe Real Madrid close up",
+        "images": [
+          "Kylian Mbappe Real Madrid close up 2026",
+          "Kylian Mbappe Real Madrid portrait"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Kylian Mbappe has crushed another major vote.",
+        "visual": "Kylian Mbappe holding an award",
+        "images": [
+          "Kylian Mbappe Onze d'Or 2026 award",
+          "Kylian Mbappe holding trophy award"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He won the twenty twenty-six Onze d'Or with forty-eight point two percent,",
+        "visual": "Kylian Mbappe smiling with an award",
+        "images": [
+          "Mbappe Onze d'Or 2026 48.2 percent",
+          "Kylian Mbappe award 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "while Joao Neves finished on eleven point nine",
+        "visual": "Joao Neves PSG close up",
+        "images": [
+          "Joao Neves PSG close up 2026",
+          "Joao Neves Paris Saint Germain portrait"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and Kvaratskhelia on ten point eight.",
+        "visual": "Khvicha Kvaratskhelia PSG close up",
+        "images": [
+          "Khvicha Kvaratskhelia PSG close up 2026",
+          "Kvaratskhelia Paris Saint Germain portrait"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Mbappe topped both La Liga and the Champions League for goals,",
+        "visual": "Kylian Mbappe celebrating for Real Madrid",
+        "images": [
+          "Kylian Mbappe Real Madrid goal celebration 2026",
+          "Mbappe Champions League Real Madrid celebration"
+        ],
+        "clips": []
+      },
+      {
+        "says": "then won the World Cup Golden Boot.",
+        "visual": "Kylian Mbappe France World Cup Golden Boot",
+        "images": [
+          "Kylian Mbappe World Cup 2026 Golden Boot",
+          "Mbappe France Golden Boot trophy"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Is Monday now his night?",
+        "visual": "Kylian Mbappe looking confident close up",
+        "images": [
+          "Kylian Mbappe confident close up Real Madrid",
+          "Kylian Mbappe portrait 2026"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Kylian Mbappe won the 2026 Onze d'Or with 48.2 percent of the reader vote, ahead of Joao Neves and Khvicha Kvaratskhelia, six days before the Ballon d'Or",
+      "video_script": "Six days before the Ballon d'Or, Kylian Mbappe has crushed another major vote. He won the twenty twenty-six Onze d'Or with forty-eight point two percent, while Joao Neves finished on eleven point nine and Kvaratskhelia on ten point eight. Mbappe topped both La Liga and the Champions League for goals, then won the World Cup Golden Boot. Is Monday now his night?",
+      "video_terms": "Kylian Mbappe Onze d'Or 2026 award, Mbappe Real Madrid 2026 celebration, Mbappe World Cup Golden Boot, Mbappe Champions League goals",
+      "hook_text": "IS THE BALLON D'OR ALREADY DECIDED?",
+      "cta_text": "DOES MBAPPE DESERVE IT? 👇",
+      "beat_plan": [
+        {
+          "says": "Six days before the Ballon d'Or,",
+          "visual": "Kylian Mbappe Real Madrid close up",
+          "images": [
+            "Kylian Mbappe Real Madrid close up 2026",
+            "Kylian Mbappe Real Madrid portrait"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b01/img-aca8974be2ed0e7fc24abe20efac235a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b01/img-aca8974be2ed0e7fc24abe20efac235a.jpg"
+        },
+        {
+          "says": "Kylian Mbappe has crushed another major vote.",
+          "visual": "Kylian Mbappe holding an award",
+          "images": [
+            "Kylian Mbappe Onze d'Or 2026 award",
+            "Kylian Mbappe holding trophy award"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b02/img-9d0a828218cab26542e4df1c423be9e1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b02/img-846d24ec8fa45609ecad5f1486983003.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b02/img-346351653dd15efc7179a371c4d4d8c1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b02/img-b11f532bbd8c97952dd3efd5811a93af.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b02/img-608e47fd08ec098df3914177c3fae931.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b02/img-248601ea4e9306fd5cd48d97abf0021b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b02/img-388319a6593d2e7035369e5b55828733.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b02/img-c1531b3d97be388add9517217f5084a4.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b02/img-9d0a828218cab26542e4df1c423be9e1.jpg"
+        },
+        {
+          "says": "He won the twenty twenty-six Onze d'Or with forty-eight point two percent,",
+          "visual": "Kylian Mbappe smiling with an award",
+          "images": [
+            "Mbappe Onze d'Or 2026 48.2 percent",
+            "Kylian Mbappe award 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b03/img-f08be3c606aa316bc018e18a7875517b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b03/img-8b93e8e2f44d95e83e03b019becb8522.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b03/img-081fe1e82ab8575c71c40768f9451d9b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b03/img-8664fa45353112d3d85f114da2e5e4ba.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b03/img-f2b91a17f8ee110a59efc253d6f6972c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b03/img-388319a6593d2e7035369e5b55828733.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b03/img-98fc12d25433a71593e90f077a2f4bfe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b03/img-b7b5d1813f1856a6145f54377e74b80d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b03/img-f08be3c606aa316bc018e18a7875517b.jpg"
+        },
+        {
+          "says": "while Joao Neves finished on eleven point nine",
+          "visual": "Joao Neves PSG close up",
+          "images": [
+            "Joao Neves PSG close up 2026",
+            "Joao Neves Paris Saint Germain portrait"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b04/img-edd94125beb199f7c9a4f11e7f8ae2d1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b04/img-52c66bdfed3f3ad62f91c354621151ab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b04/img-281d0521372f52d787e9c7f74af730eb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b04/img-d919a806b418967a7a7f7891756ac703.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b04/img-edd94125beb199f7c9a4f11e7f8ae2d1.jpg"
+        },
+        {
+          "says": "and Kvaratskhelia on ten point eight.",
+          "visual": "Khvicha Kvaratskhelia PSG close up",
+          "images": [
+            "Khvicha Kvaratskhelia PSG close up 2026",
+            "Kvaratskhelia Paris Saint Germain portrait"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b05/img-27f1c47795dbcf0edb0780e574f7431d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b05/img-e1050bcb359ba5749bc0c01e64d7661e.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b05/img-27f1c47795dbcf0edb0780e574f7431d.jpg"
+        },
+        {
+          "says": "Mbappe topped both La Liga and the Champions League for goals,",
+          "visual": "Kylian Mbappe celebrating for Real Madrid",
+          "images": [
+            "Kylian Mbappe Real Madrid goal celebration 2026",
+            "Mbappe Champions League Real Madrid celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b06/img-99fc25c2bd1a3ae44df3a12f5538f2b9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b06/img-259d16aba8d739543f798ab58d01bb0e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b06/img-4fc22c938c8f072d0a8e0df5e1107a01.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b06/img-4df9c52180b284e427b6f5312486cc09.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b06/img-ef6cbe03fd27e97ab95b7d693f6afb2c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b06/img-e752432acc0afc4224025c5ac775fcb3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b06/img-490c0df9dd2695445961cf4660c0689e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b06/img-450b5c2bb0ff0f1b21381f18c4bb6948.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b06/img-99fc25c2bd1a3ae44df3a12f5538f2b9.jpg"
+        },
+        {
+          "says": "then won the World Cup Golden Boot.",
+          "visual": "Kylian Mbappe France World Cup Golden Boot",
+          "images": [
+            "Kylian Mbappe World Cup 2026 Golden Boot",
+            "Mbappe France Golden Boot trophy"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b07/img-fbea51558f54278fc3c5130755ba4fab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b07/img-20a201662b6cde4f0cc0c6aaa95903e8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b07/img-cba3807e77806c73298ac7e4ef033d5c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b07/img-fbea51558f54278fc3c5130755ba4fab.jpg"
+        },
+        {
+          "says": "Is Monday now his night?",
+          "visual": "Kylian Mbappe looking confident close up",
+          "images": [
+            "Kylian Mbappe confident close up Real Madrid",
+            "Kylian Mbappe portrait 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b08/img-d994c68027a34fb7c82b8caaf23bdc42.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b08/img-f4d05078b951229c928cd3263e5aa22a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b08/img-08baca34027829063f9c7c0e37035aab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b08/img-3160d9271455241d0aa20d6ee1f5ab3e.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/kylian_mbappe_won_the_2026_onze_d_or_wit/b01/img-aca8974be2ed0e7fc24abe20efac235a.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

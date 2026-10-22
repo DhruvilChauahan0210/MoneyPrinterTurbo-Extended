@@ -355,12 +355,26 @@ def create_enhanced_subtitles(audio_file, subtitle_file: str = "", params=None):
     max_lines_per_subtitle = getattr(params, 'max_lines_per_subtitle', 2)
     max_words_per_subtitle = getattr(params, 'max_words_per_subtitle', 4)
 
+    # Snap words whisper misheard (Bombape, Holland) to the script's own spelling so
+    # player names caption correctly. Only touches words absent from the script.
+    import difflib, re as _re
+    _vocab = {}
+    for _t in _re.findall(r"[\w'’\-]+", (getattr(params, 'video_script', '') or '')):
+        _vocab.setdefault(_t.lower(), _t)
+
+    def _snap(w):
+        core = _re.sub(r"^\W+|\W+$", "", w)
+        if not _vocab or len(core) < 4 or core.lower() in _vocab:
+            return w
+        m = difflib.get_close_matches(core.lower(), list(_vocab), n=1, cutoff=0.6)
+        return w.replace(core, _vocab[m[0]]) if m else w
+
     for segment in segments:
         if not segment.words:
             continue
 
         for word in segment.words:
-            word_text = word.word.strip()
+            word_text = _snap(word.word.strip())
             if not word_text:
                 continue
 

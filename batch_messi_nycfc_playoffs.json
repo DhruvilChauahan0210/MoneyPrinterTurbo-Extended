@@ -1,0 +1,429 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 4,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of a professional footballer in a Champions League match",
+      "a tight close up of a footballer celebrating"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "Messi Didn't Score. He Won It.",
+    "hook_cover_term": "a tight close up of Lionel Messi's face in a pink Inter Miami shirt, sharp and clear",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "Would You Share This Every Year? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face",
+      "Cristiano Ronaldo looking emotional and gentle close up",
+      "Cristiano Ronaldo smiling warmly close up",
+      "Cristiano Ronaldo holding his little daughter Bella",
+      "Cristiano Ronaldo hugging his young daughter at home",
+      "Cristiano Ronaldo with his daughter Bella at home, both smiling",
+      "Cristiano Ronaldo playing with a little girl, family video moment"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "In June 2022, Georgina gave birth to twins. Their baby son didn't survive the birth. Their daughter did. Ronaldo named her Bella Esmeralda, and later said she became his reason to keep getting out of bed during the darkest months of his career. He's described holding her for the first time as the moment grief and love collided. Years later, he still posts her laughing in his arms, like nothing was ever lost.",
+    "video_subject": "In June 2022 Georgina gave birth to twins, their son did not survive but their daughter Bella Esmeralda did, and Ronaldo has said she became his reason to keep going through the darkest months of his career",
+    "video_terms": "Cristiano Ronaldo daughter Bella Esmeralda, Ronaldo Bella Esmeralda birthday video, Cristiano Ronaldo and daughter Bella close up, Ronaldo holding baby daughter Bella, Cristiano Ronaldo Bella Esmeralda sweet moment, Ronaldo Georgina Rodriguez daughter Bella family video, Cristiano Ronaldo playing with daughter Bella, Ronaldo Bella Esmeralda emotional moment",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": true
+  },
+  "videos": [
+    {
+      "video_subject": "Messi assisted Rodrigo De Paul in Inter Miami's 2-0 win over NYCFC on 14 Oct 2026 clinching a third straight playoff spot; he leads MLS with 23 goals and 14 assists at 39",
+      "video_script": "Messi did not score, but he still made the difference. On Wednesday against New York City, he set up Rodrigo De Paul for the second goal in a two-nil win. That sent Miami to the playoffs for the third straight year. Messi leads MLS with twenty-three goals and fourteen assists. He is thirty-nine. The champions are back, and Messi is why. Can Miami win the cup again?",
+      "beat_plan": [
+        {
+          "says": "Messi did not score,",
+          "visual": "Lionel Messi Inter Miami close up",
+          "images": [
+            "Lionel Messi Inter Miami close up portrait",
+            "Lionel Messi Inter Miami"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b01/img-86285d415b5471922d925c72c4693778.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b01/img-6b235f7c36559b7689c731058eeb2ef9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b01/img-593fd68f6dc155740909ab549be74e81.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b01/img-abb3bd03f4d14bf09e408554aea44e08.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b01/img-79f1c3c417afae672f992d8887b02511.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b01/img-2ed290e3726c94cf8432a9a6e5510a89.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b01/img-03679a1a714223ee929f2d74fecee722.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b01/img-c915da17427bc9246c228b1735291287.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b01/img-abb3bd03f4d14bf09e408554aea44e08.jpg",
+          "url": "https://media.cnn.com/api/v1/images/stellar/prod/230816151359-lionel-messi-inter-miami.jpg?c=16x9&q=h_833,w_1480,c_fill"
+        },
+        {
+          "says": "but he still made the difference.",
+          "visual": "Lionel Messi Inter Miami captain",
+          "images": [
+            "Lionel Messi Inter Miami captain",
+            "Lionel Messi Inter Miami"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b02/img-75efc11882d9918d88415cc73f3a30eb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b02/img-6b235f7c36559b7689c731058eeb2ef9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b02/img-abb3bd03f4d14bf09e408554aea44e08.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b02/img-79f1c3c417afae672f992d8887b02511.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b02/img-6246d19688860c7f44c45a44f8f8c771.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b02/img-593fd68f6dc155740909ab549be74e81.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b02/img-03679a1a714223ee929f2d74fecee722.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b02/img-b6c1778ad9fb567a58cceec36d1104b6.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b02/img-75efc11882d9918d88415cc73f3a30eb.jpg",
+          "url": "https://icdn.psgtalk.com/wp-content/uploads/2024/03/lionel-messi-orlando-city-sc-v-inter-miami-cf-mls-2024.jpg"
+        },
+        {
+          "says": "On Wednesday against New York City,",
+          "visual": "Inter Miami vs New York City match Nu Stadium",
+          "images": [],
+          "clips": [],
+          "candidates": [],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b03/shot_058f170d93.mp4",
+          "url": "https://www.youtube.com/watch?v=QG1jFlextdg",
+          "start": 3,
+          "len": 4.4
+        },
+        {
+          "says": "he set up Rodrigo De Paul",
+          "visual": "Rodrigo De Paul Inter Miami goal celebration",
+          "images": [],
+          "clips": [],
+          "candidates": [],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b04/shot_0b660658c3.mp4",
+          "url": "https://www.youtube.com/watch?v=XKh5zRE-OYQ",
+          "start": 15,
+          "len": 4.4
+        },
+        {
+          "says": "for the second goal in a two-nil win.",
+          "visual": "Rodrigo De Paul celebrating with Messi",
+          "images": [],
+          "clips": [],
+          "candidates": [],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b05/shot_685a79697e.mp4",
+          "url": "https://www.youtube.com/watch?v=QG1jFlextdg",
+          "start": 36,
+          "len": 4.4
+        },
+        {
+          "says": "That sent Miami to the playoffs",
+          "visual": "Inter Miami players celebrating",
+          "images": [
+            "Inter Miami CF players celebrate pink jerseys",
+            "Inter Miami MLS players celebrating Messi Suarez"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b06/img-ff6c8bf4415f31e33421e54ada492bb8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b06/img-e8cbd728343676b3a68cfc884eb73a0b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b06/img-0901510f7eaecdfee70a45333fe0047a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b06/img-3a2f7cc9e3744fdf906a71e88ede8fcd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b06/img-8182ff1826577bf3cab4568328401620.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b06/img-7e523a1901f3803880b1bdafd68544c4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b06/img-7474e89d205fb2030233da8ed937b9b6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b06/img-f7bc344bbc607efe496dca55b194bf48.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b06/img-0901510f7eaecdfee70a45333fe0047a.jpg",
+          "url": "https://img.vavel.com/b/GB89Qf1XoAAGReE.jpeg"
+        },
+        {
+          "says": "for the third straight year.",
+          "visual": "Lionel Messi Inter Miami smiling",
+          "images": [
+            "Lionel Messi Inter Miami smiling",
+            "Lionel Messi Inter Miami"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b07/img-5b1a832ec0825df92e4ec007d673dd4b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b07/img-51251da4e1f24fa9281481d0f30d0c6b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b07/img-1f2475203171700d04e6b7fa135c0d56.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b07/img-f9b4cf720ee1d7f942239803c0067ecd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b07/img-abb3bd03f4d14bf09e408554aea44e08.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b07/img-6b235f7c36559b7689c731058eeb2ef9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b07/img-664a7cea066fa8e25051951f65ccdf29.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b07/img-79f1c3c417afae672f992d8887b02511.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b07/img-f9b4cf720ee1d7f942239803c0067ecd.jpg",
+          "url": "https://ds-images.bolavip.com/news/image?src=https://images.worldsoccertalk.com/webp/full/WST_20251204_WST_607953_Lionel-Messi-11_a8d86bc2.webp&width=1920&height=1080"
+        },
+        {
+          "says": "Messi leads MLS with twenty-three goals",
+          "visual": "Lionel Messi Inter Miami goal celebration",
+          "images": [
+            "Lionel Messi Inter Miami goal celebration",
+            "Lionel Messi Inter Miami"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b08/img-75efc11882d9918d88415cc73f3a30eb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b08/img-6cded037ee6a647a6982569d9d6ce5bd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b08/img-1f2475203171700d04e6b7fa135c0d56.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b08/img-db18828a4d7dd4115e2f5bd690a3b1e3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b08/img-6b235f7c36559b7689c731058eeb2ef9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b08/img-79f1c3c417afae672f992d8887b02511.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b08/img-27265c8224c949ce32b99c690bde1e24.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b08/img-576444870d1a9c66695c1e54a9526889.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b08/img-6cded037ee6a647a6982569d9d6ce5bd.jpg",
+          "url": "https://i.pinimg.com/736x/0d/d8/69/0dd869eb3106b49a10684c8278a47194.jpg"
+        },
+        {
+          "says": "and fourteen assists.",
+          "visual": "Lionel Messi Inter Miami passing",
+          "images": [
+            "Lionel Messi Inter Miami assist",
+            "Lionel Messi Inter Miami"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b09/img-86285d415b5471922d925c72c4693778.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b09/img-4e375d9673177891bc8fe035d986e95d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b09/img-6b235f7c36559b7689c731058eeb2ef9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b09/img-bd2f726462a8dc6c36a66fa46e2f7edd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b09/img-3fceb191133b66614dad636e2b2b9d97.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b09/img-3726b54f8b36cc1b092c86e85f85f773.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b09/img-abb3bd03f4d14bf09e408554aea44e08.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b09/img-f26391c6c12195bf218076306ecc279a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b09/img-6b235f7c36559b7689c731058eeb2ef9.jpg",
+          "url": "https://static.independent.co.uk/2023/08/07/13/SEI166832567.jpg"
+        },
+        {
+          "says": "He is thirty-nine.",
+          "visual": "Lionel Messi Inter Miami portrait",
+          "images": [
+            "Lionel Messi Inter Miami portrait pink shirt",
+            "Lionel Messi Inter Miami"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b10/img-1f2475203171700d04e6b7fa135c0d56.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b10/img-75efc11882d9918d88415cc73f3a30eb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b10/img-db18828a4d7dd4115e2f5bd690a3b1e3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b10/img-6b235f7c36559b7689c731058eeb2ef9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b10/img-27265c8224c949ce32b99c690bde1e24.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b10/img-79f1c3c417afae672f992d8887b02511.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b10/img-03679a1a714223ee929f2d74fecee722.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b10/img-c915da17427bc9246c228b1735291287.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b10/img-1f2475203171700d04e6b7fa135c0d56.jpg",
+          "url": "https://siempreconargentina.com/wp-content/uploads/2024/10/new-england-revolution-v-inter-miami-cf-1-1-e1729412199948.jpg"
+        },
+        {
+          "says": "The champions are back,",
+          "visual": "Inter Miami MLS Cup trophy celebration",
+          "images": [
+            "Inter Miami MLS Cup champions trophy",
+            "Inter Miami MLS Cup 2025 celebration Messi"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b11/img-91085ff7d6cb9b129510b4637b4c5495.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b11/img-e26084fcde595ff30dffbaf036bbf800.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b11/img-3276ca3417c403b7a264e0f6c8bca24a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b11/img-7e523a1901f3803880b1bdafd68544c4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b11/img-812ce40da62536c0d82902c0502da47c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b11/img-8836178a6f2811c64a28be1e0e76249b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b11/img-98024de8ccb68d14b6968d308dba9bb5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b11/img-3a35e4cd2c7cc94388c0cd167d57ed22.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b11/img-3a35e4cd2c7cc94388c0cd167d57ed22.jpg",
+          "url": "https://phantom.estaticos-marca.com/4ea62949192afbe52ed240d314e61d7e/resize/1320/f/jpg/assets/multimedia/imagenes/2025/12/07/17650832732312.png"
+        },
+        {
+          "says": "and Messi is why.",
+          "visual": "Lionel Messi MLS Cup trophy",
+          "images": [
+            "Lionel Messi MLS Cup trophy",
+            "Messi lifts MLS Cup Inter Miami"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b12/img-3a35e4cd2c7cc94388c0cd167d57ed22.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b12/img-22a5ee8480a9f3062d91b8d134a015eb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b12/img-917bea277dc665fd530a5ea3b5779736.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b12/img-0a12baca3ddaf76c34e6a156cba12040.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b12/img-495bbe165114d0e86142b64bab5d47f4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b12/img-e31712c07fedfc2770db7a04bcf83f17.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b12/img-812ce40da62536c0d82902c0502da47c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b12/img-45b7dcfae496aa8d4eea58c49eca6b0b.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b12/img-22a5ee8480a9f3062d91b8d134a015eb.jpg",
+          "url": "https://media.oneturf.news/media/attachments/ANI-20251207053810_1765086000847.jpg"
+        },
+        {
+          "says": "Can Miami win the cup again?",
+          "visual": "Lionel Messi Inter Miami arms up",
+          "images": [
+            "Lionel Messi Inter Miami arms up",
+            "Lionel Messi Inter Miami"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b13/img-82e2d2e2221db75f0ceae35e389bcea4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b13/img-75efc11882d9918d88415cc73f3a30eb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b13/img-5d214c692b695ebcd5cdf68385791b0d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b13/img-abb3bd03f4d14bf09e408554aea44e08.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b13/img-6b235f7c36559b7689c731058eeb2ef9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b13/img-6246d19688860c7f44c45a44f8f8c771.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b13/img-593fd68f6dc155740909ab549be74e81.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b13/img-79f1c3c417afae672f992d8887b02511.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_assisted_rodrigo_de_paul_in_inter_/b13/img-5d214c692b695ebcd5cdf68385791b0d.jpg",
+          "url": "https://wallpapercave.com/wp/wp13371862.jpg"
+        }
+      ],
+      "hook_text": "Messi Didn't Score. He Won It.",
+      "cta_text": "Can Miami Win The Cup Again? 👇",
+      "beat_shared_clips": []
+    }
+  ]
+}

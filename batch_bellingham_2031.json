@@ -1,0 +1,412 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 4,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of a professional footballer in a Champions League match",
+      "a tight close up of a footballer celebrating"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "Bellingham Locked Until 2031?",
+    "hook_cover_term": "a tight close up of Jude Bellingham's face in a white Real Madrid shirt, sharp and clear",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "Would You Share This Every Year? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face",
+      "Cristiano Ronaldo looking emotional and gentle close up",
+      "Cristiano Ronaldo smiling warmly close up",
+      "Cristiano Ronaldo holding his little daughter Bella",
+      "Cristiano Ronaldo hugging his young daughter at home",
+      "Cristiano Ronaldo with his daughter Bella at home, both smiling",
+      "Cristiano Ronaldo playing with a little girl, family video moment"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "In June 2022, Georgina gave birth to twins. Their baby son didn't survive the birth. Their daughter did. Ronaldo named her Bella Esmeralda, and later said she became his reason to keep getting out of bed during the darkest months of his career. He's described holding her for the first time as the moment grief and love collided. Years later, he still posts her laughing in his arms, like nothing was ever lost.",
+    "video_subject": "In June 2022 Georgina gave birth to twins, their son did not survive but their daughter Bella Esmeralda did, and Ronaldo has said she became his reason to keep going through the darkest months of his career",
+    "video_terms": "Cristiano Ronaldo daughter Bella Esmeralda, Ronaldo Bella Esmeralda birthday video, Cristiano Ronaldo and daughter Bella close up, Ronaldo holding baby daughter Bella, Cristiano Ronaldo Bella Esmeralda sweet moment, Ronaldo Georgina Rodriguez daughter Bella family video, Cristiano Ronaldo playing with daughter Bella, Ronaldo Bella Esmeralda emotional moment",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": true
+  },
+  "videos": [
+    {
+      "video_subject": "AS reports Real Madrid reached an agreement with Jude Bellingham to extend to 2031 (current deal to 2029), not officially announced; 3 goals 3 assists in 10 games; 100th win in 150th match",
+      "video_script": "Real Madrid reportedly have a deal with Jude Bellingham. Spanish paper AS says he has agreed to extend until twenty thirty-one. His current contract runs to twenty twenty-nine. Under Mourinho, he has three goals and three assists in ten games. He just reached his hundredth win for Madrid, in his hundred and fiftieth match. Nothing is official yet. Would you build around Bellingham?",
+      "beat_plan": [
+        {
+          "says": "Real Madrid reportedly have a deal",
+          "visual": "Real Madrid Bernabeu stadium",
+          "images": [
+            "Santiago Bernabeu stadium night",
+            "Real Madrid Bernabeu"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b01/img-e2e3db6eb6676e11d89c5f3f66ceb9dd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b01/img-234dbefb997f65d8bd79d97db7fd01e2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b01/img-6d59a85e073f220942b015c424d765a4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b01/img-1a5031c3f3600a397bd987738bc4fe18.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b01/img-d0489f21612f80cbcf32a92c7e82880e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b01/img-1fd9eccfe8a2f15c36578b51654e1214.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b01/img-17abd1bff705f0209b8579372355843d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b01/img-97048447a6063ef5694c58e822abb1f1.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b01/img-6d59a85e073f220942b015c424d765a4.jpg",
+          "url": "https://www.pixelstalk.net/wp-content/uploads/2015/05/Santiago-Bernabeu-Real-Madrid-Stadium-Wallpaper.jpg"
+        },
+        {
+          "says": "with Jude Bellingham.",
+          "visual": "Jude Bellingham Real Madrid close up",
+          "images": [
+            "Jude Bellingham Real Madrid",
+            "Jude Bellingham"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b02/img-98c2bf195ba31cf48f2cd1711a305ea5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b02/img-59be30165c2904b9474054e6a0ea1178.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b02/img-fc342551ea12e915c548b04b0692ef3d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b02/img-a9b1708b7c4a1a60e6a4790b8a1d28cc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b02/img-72a8f4ac2260902debadbedfddb0c70a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b02/img-9cf78ac2d12e1f8946fae3c6abec81bc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b02/img-0fd7fc43b68ec427427328a2961f2b85.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b02/img-5c8bf6898a338f1dc393ed6ed32f545a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b02/img-59be30165c2904b9474054e6a0ea1178.jpg",
+          "url": "https://data2.nssmag.com/images/galleries/36475/jude-bellingham-celebration-nss-2.png"
+        },
+        {
+          "says": "Spanish paper AS says he has agreed",
+          "visual": "Jude Bellingham Real Madrid smiling",
+          "images": [
+            "Jude Bellingham smiling Real Madrid",
+            "Jude Bellingham Real Madrid portrait"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b03/img-7ea4e9197c7235db9b62ae38f6f35e31.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b03/img-42f97dc89dff9461df7aac111ae53fd3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b03/img-31763a169ff231f8250dfbb30f497bec.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b03/img-93f157e2e992e818a30149cc2ca19f74.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b03/img-e9cd01eb5a9ab371e47f152473ec6ea9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b03/img-05ac0e0f4f6ffd51ccaa81681870c372.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b03/img-cf9d79a9755b9a673378c4b1853549e3.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b03/img-05ac0e0f4f6ffd51ccaa81681870c372.jpg",
+          "url": "https://qhubobucaramanga.com/wp-content/uploads/2023/09/Jude-Bellingham-Real-Madrid.jpeg"
+        },
+        {
+          "says": "to extend until twenty thirty-one.",
+          "visual": "Jude Bellingham Real Madrid number 5",
+          "images": [
+            "Jude Bellingham number 5 Real Madrid",
+            "Jude Bellingham Real Madrid celebrating"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b04/img-93f157e2e992e818a30149cc2ca19f74.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b04/img-e0369557d6e0cf94189ecf2d53402197.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b04/img-bbce23e7e6ac1a4b4403f4bbed198ddd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b04/img-d6d9e1d03fe592b750382046da853a42.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b04/img-b97d700e75c11b4146d4c624d8f3888e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b04/img-82e7be92dbc474ebac3edcf2d6443ddb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b04/img-89b0db8cd2307c1bc16edf15950bedd7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b04/img-675f6f55422fd4cfd15a1a52f4d38286.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b04/img-93f157e2e992e818a30149cc2ca19f74.jpg",
+          "url": "https://static0.givemesportimages.com/wordpress/wp-content/uploads/2025/10/jude-bellingham-celebrating-after-scoring-for-real-madrid-against-barcelona.jpg?q=49&fit=crop&w=825&dpr=2"
+        },
+        {
+          "says": "His current contract runs to twenty twenty-nine.",
+          "visual": "Jude Bellingham Real Madrid serious",
+          "images": [
+            "Jude Bellingham serious Real Madrid",
+            "Jude Bellingham Real Madrid thinking"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b05/img-48108b1107aae9a2a20f027dd23e142c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b05/img-98c2bf195ba31cf48f2cd1711a305ea5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b05/img-b567963b2c452686bb370fac4dfe54c7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b05/img-9c4e496c8856a46470d79cd7a87ae716.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b05/img-590c94b2da925fbbf20fa73b444d9db3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b05/img-e9cd01eb5a9ab371e47f152473ec6ea9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b05/img-05ac0e0f4f6ffd51ccaa81681870c372.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b05/img-b7d4bd0ad8401712213e7e9e7b3fe5a1.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b05/img-48108b1107aae9a2a20f027dd23e142c.jpg",
+          "url": "https://static0.givemesportimages.com/wordpress/wp-content/uploads/2025/02/mixcollage-20-feb-2025-07-52-am-2136.jpg"
+        },
+        {
+          "says": "Under Mourinho,",
+          "visual": "Jose Mourinho Real Madrid coach",
+          "images": [
+            "Jose Mourinho Real Madrid coach",
+            "Jose Mourinho Real Madrid touchline"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b06/img-10cf1c9047ce57fc51eedd08ffdca1f9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b06/img-a5741f4402cf2908f5a320eac363d763.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b06/img-8bbde65540c87c1ade9ce19cb736f083.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b06/img-2a54e0939320aff6c8dfa8ef133cbc69.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b06/img-d27a1f13c1366b79c88bccc78e1bca8e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b06/img-c6004c90e4bfd22e7474ec7cd745bb9f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b06/img-08e87015b3a841cee40358bd1614995f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b06/img-39630881ec7df9f528b3d412cd328c31.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b06/img-10cf1c9047ce57fc51eedd08ffdca1f9.jpg",
+          "url": "https://images.teamtalk.com/content/uploads/2026/05/12114514/jose-mourinho-with-real-madrid-badge.jpg"
+        },
+        {
+          "says": "he has three goals and three assists in ten games.",
+          "visual": "Jude Bellingham Real Madrid scoring",
+          "images": [
+            "Jude Bellingham goal celebration Real Madrid",
+            "Jude Bellingham arms out Real Madrid"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b07/img-d1286a719629d10c7bc8585a1ec179ef.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b07/img-4552b491979d3a102abdc680a513f3ec.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b07/img-b9aa1e4893cc5e2e0c4fbf0d436d90ac.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b07/img-0ca5058418cf08eef4a4229e2878907a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b07/img-14cd6bee12fbbc438f854b76a162ff64.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b07/img-0a10cd1267ec50dbe10561412e84718a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b07/img-b9aa1e4893cc5e2e0c4fbf0d436d90ac.jpg",
+          "url": "https://assets.tegnaone.com/assets/AssociatedPress/images/b8665c2b-4626-4cd9-b77f-0a1abc86f8d9/20260121T001008/b8665c2b-4626-4cd9-b77f-0a1abc86f8d9.jpg"
+        },
+        {
+          "says": "He just reached his hundredth win for Madrid,",
+          "visual": "Jude Bellingham Real Madrid celebrating win",
+          "images": [
+            "Jude Bellingham celebrating Real Madrid win",
+            "Jude Bellingham Real Madrid fans"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b08/img-b2995ad61a8caa527ec196c181ce6fab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b08/img-e9be3b4e1c7eeed3544c4ed26baa0a25.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b08/img-ad7470e4c935e3d8e2921acf7e3589df.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b08/img-74fac9781112ef14b3b592e9605c831c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b08/img-71881285b8a93c7e07871cecae764d89.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b08/img-c124d1376c1374d51a26e197eb970a18.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b08/img-fe652ec96eb2c39606b19ef10abd6867.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b08/img-61f5bbb1b87fd081e3984be08233cdd4.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b08/img-e9be3b4e1c7eeed3544c4ed26baa0a25.jpg",
+          "url": "https://www.softfootball.com/wp-content/uploads/2025/12/G8pQpnhXMAA4eOK-768x1024.jpg"
+        },
+        {
+          "says": "in his hundred and fiftieth match.",
+          "visual": "Jude Bellingham Real Madrid running",
+          "images": [
+            "Jude Bellingham Real Madrid match",
+            "Jude Bellingham Real Madrid dribbling"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b09/img-89b39c9b87abe12a0a6468f74eb872fb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b09/img-2cfa503db71817c9be64445ab00807d5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b09/img-0aa1e0cb5636ccd43ce64e54fce3709c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b09/img-a3e56a8e145f46c30e42e292d62cca86.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b09/img-e9cd01eb5a9ab371e47f152473ec6ea9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b09/img-dcf41d3bb7054349116b9064cdaca8c1.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b09/img-0aa1e0cb5636ccd43ce64e54fce3709c.jpg",
+          "url": "https://livesport-ott-images.ssl.cdn.cra.cz/r1200xfq60/a1bfb6b7-fdd8-4c88-9731-f90ea5af086a.jpeg"
+        },
+        {
+          "says": "Nothing is official yet.",
+          "visual": "Jude Bellingham looking away Real Madrid",
+          "images": [
+            "Jude Bellingham looking away",
+            "Jude Bellingham Real Madrid unsure"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b10/img-48108b1107aae9a2a20f027dd23e142c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b10/img-98c2bf195ba31cf48f2cd1711a305ea5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b10/img-3b33ec628237401e485eeffae9e65a78.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b10/img-e9cd01eb5a9ab371e47f152473ec6ea9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b10/img-66ae226e7685348be6f3bdf74a536456.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b10/img-1f79b177f5440d9d9a9e739a7c134d0d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b10/img-69b29f2c74bdfd50b13bd99810d4abbb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b10/img-7381e515b1e3f7501699dad7dc9dd447.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b10/img-48108b1107aae9a2a20f027dd23e142c.jpg",
+          "url": "https://static0.givemesportimages.com/wordpress/wp-content/uploads/2025/02/mixcollage-20-feb-2025-07-52-am-2136.jpg"
+        },
+        {
+          "says": "Would you build around Bellingham?",
+          "visual": "Jude Bellingham Real Madrid arms wide",
+          "images": [
+            "Jude Bellingham arms wide celebration",
+            "Jude Bellingham Real Madrid iconic celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b11/img-4e841300d69b9bc164afb8035fa3922a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b11/img-4552b491979d3a102abdc680a513f3ec.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b11/img-f5bdd3d22c8af2a7393b4d4e5d562123.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b11/img-d6e4b022b92c9cd40eb8e13ee0c03cc1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b11/img-d6d6114508d8a53eaff663623600590b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b11/img-891ddb9f3195b3ffb564605fce35ba17.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b11/img-9c07bec6637fb7b396b4d9ae835f235d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b11/img-f9da4c71de5a04c68c1996e525bdf923.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/as_reports_real_madrid_reached_an_agreem/b11/img-d6e4b022b92c9cd40eb8e13ee0c03cc1.jpg",
+          "url": "https://madridistanews.com/assets/admin/news/jude-bellingham-goal-celebration-for-real-madrid.jpg"
+        }
+      ],
+      "hook_text": "Bellingham Locked Until 2031?",
+      "cta_text": "Would You Build Around Bellingham? 👇",
+      "beat_shared_clips": []
+    }
+  ]
+}

@@ -28,7 +28,7 @@ for pair in "$@"; do
   echo "### BUILDING $batch  ->  ~/Desktop/$out.mp4"
   EP_START=$(date +%s)
   # --- LEDGER GUARD: a rejected/failed attempt must never burn the ledger ---
-  LEDGER=storage/ronaldo_series_clip_ledger.json
+  LEDGER=storage/daily_shorts_clip_ledger.json
   [[ -f $LEDGER ]] && cp $LEDGER /tmp/ledger_before_${batch}.json
   tmplog=~/Desktop/"BUILDLOG_${batch}.log"   # kept, not /tmp: on failure we need the whole thing
   $PY batch_generator.py "$batch.json" > "$tmplog" 2>&1 &

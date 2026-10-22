@@ -1,0 +1,456 @@
+{
+ "defaults": {
+  "video_aspect": "9:16",
+  "video_concat_mode": "semantic",
+  "video_transition_mode": "None",
+  "video_clip_duration": 4,
+  "video_count": 1,
+  "video_source": "image_search",
+  "video_language": "",
+  "voice_name": "en-US-EricNeural-Male",
+  "voice_volume": 1.2,
+  "voice_rate": 0.88,
+  "bgm_type": "random",
+  "bgm_volume": 0.1,
+  "subtitle_enabled": true,
+  "subtitle_position": "custom",
+  "custom_position": 74.0,
+  "font_name": "MicrosoftYaHeiBold.ttc",
+  "text_fore_color": "#FFFFFF",
+  "text_background_color": true,
+  "font_size": 56,
+  "stroke_color": "#000000",
+  "stroke_width": 1.5,
+  "enable_word_highlighting": true,
+  "word_highlight_color": "#FFD700",
+  "max_chars_per_line": 18,
+  "max_lines_per_subtitle": 2,
+  "max_words_per_subtitle": 2,
+  "segmentation_method": "sentences",
+  "min_segment_length": 18,
+  "enable_image_ranking": true,
+  "image_ranking_min_score": 0.2,
+  "enable_subject_gate": true,
+  "subject_positive_labels": [
+   "a real photograph of a professional footballer in a Champions League match",
+   "a tight close up of a footballer celebrating"
+  ],
+  "subject_negative_labels": [
+   "a stats infographic full of text and numbers",
+   "a Sky Sports or broadcast graphic with a stats table",
+   "a poster or collage with player cutouts on a colored background",
+   "a thumbnail with a yellow or colored caption banner",
+   "a screenshot with large text overlay",
+   "a collage of small photos",
+   "a sports logo or graphic",
+   "a magazine cover with text",
+   "a cartoon or illustration",
+   "a video game or FIFA screenshot",
+   "a generic soccer player in an empty stadium",
+   "an empty landscape or scenery with no people",
+   "an overexposed washed out almost all white blank frame",
+   "a wide angle photo with the player small and off to one side of the frame",
+   "a wide shot of a football pitch where no single player is close to the camera",
+   "a TV studio with pundits sitting at a desk",
+   "a young child or boy playing youth football",
+   "a TikTok video with a username watermark and baked in caption text",
+   "a video clip with a large social media watermark across the frame",
+   "a video frame with a YouTube channel logo watermark in the corner",
+   "a video with large burned-in source subtitles or captions along the bottom",
+   "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+   "a player being interviewed in front of a sponsor logo wall",
+   "a broadcast scoreline graphic in the corner of the frame",
+   "a giant stadium screen or scoreboard showing a match score",
+   "a rear view of a footballer showing another player's surname printed on his shirt",
+   "a footballer being hugged or embraced by teammates with his back to the camera",
+   "a group of players in a huddle seen from behind",
+   "a footballer in a suit and tie away from a football pitch",
+   "a close up of a footballer's torso or shoulder with no face visible",
+   "a distant wide shot of players training on an empty pitch",
+   "a footballer standing in front of a plain green screen studio backdrop",
+   "a football referee in a yellow or black referee shirt",
+   "a match official holding a whistle or a card on the pitch",
+   "a linesman or assistant referee holding a flag",
+   "a crowd of supporters in the stands with no player visible",
+   "a fan filmed view from the stands looking down at a distant pitch",
+   "a group of players lifting a trophy together with no single face close to the camera",
+   "a small child or toddler wearing a football kit standing on the pitch",
+   "a professional footballer's young son being carried or held on the pitch after a match",
+   "a childhood snapshot of a boy standing beside an adult woman",
+   "a blurry panning shot of a person's body with the face out of frame"
+  ],
+  "subject_gate_margin": 0.15,
+  "subject_gate_abs_floor": 0.35,
+  "segment_reuse_penalty": 0.9,
+  "max_video_reuse": 2,
+  "enable_timed_sync": true,
+  "enable_grayscale": false,
+  "video_clip_ratio": 1.0,
+  "cover_min_keep": 0.62,
+  "enable_youtube_footage": false,
+  "youtube_footage_queries": [],
+  "youtube_max_videos": 30,
+  "youtube_clip_len": 8.0,
+  "youtube_clips_per_video": 8,
+  "youtube_max_clips": 300,
+  "youtube_max_height": 1080,
+  "footage_video_bonus": 0.18,
+  "footage_min_fraction": 1.0,
+  "image_motion_style": "subtle",
+  "enable_color_grade": true,
+  "enable_hook_card": false,
+  "hook_text": "Haaland's City Time Is Over?",
+  "hook_cover_term": "a tight close up of Erling Haaland's face in a sky blue Manchester City shirt, sharp and clear",
+  "hook_min_similarity": 0.26,
+  "hook_require_video": false,
+  "hook_negative_labels": [
+   "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+   "a paper or cardboard face mask held up by a fan in the stands",
+   "a fan in the crowd holding up a printed photograph or poster of a player",
+   "a crowd of supporters in the stands with no player visible",
+   "a blurry close up of footballers' legs and boots with no face in frame",
+   "a motion blurred tangle of players with no identifiable face",
+   "a motion blurred smeared unclear frame",
+   "a poster, billboard, sign, article, or screen containing printed words",
+   "a wide football match with tiny players",
+   "the back of a player's head",
+   "a rear view of a player showing the name and number on his shirt",
+   "a line of players standing with their backs to the camera",
+   "a close up of a torso or shoulder with the face out of frame",
+   "a referee holding a card",
+   "a goalkeeper diving for the ball",
+   "an empty patch of grass",
+   "a video frame with large burned in source subtitles or captions along the bottom",
+   "a video frame with a channel name or social media watermark across the frame"
+  ],
+  "hook_negative_margin": 0.08,
+  "hook_overlay_opacity": 0.25,
+  "hook_duration": 1.5,
+  "enable_sfx": true,
+  "sfx_volume": 0.5,
+  "enable_cta": true,
+  "cta_text": "Would You Share This Every Year? 👇",
+  "enable_subscribe_button": true,
+  "loop_seamless": false,
+  "loop_follow_tag": false,
+  "loop_tight_trim": true,
+  "n_threads": 8,
+  "paragraph_number": 1,
+  "series_ledger_path": "",
+  "segment_max_media_reuse": 2,
+  "segment_max_source_reuse": 0,
+  "segment_source_reuse_penalty": 0.6,
+  "series_badge_text": "",
+  "visual_evidence_prompts": [
+   "a real photograph of Cristiano Ronaldo the footballer",
+   "a tight close up of Cristiano Ronaldo's face",
+   "Cristiano Ronaldo looking emotional and gentle close up",
+   "Cristiano Ronaldo smiling warmly close up",
+   "Cristiano Ronaldo holding his little daughter Bella",
+   "Cristiano Ronaldo hugging his young daughter at home",
+   "Cristiano Ronaldo with his daughter Bella at home, both smiling",
+   "Cristiano Ronaldo playing with a little girl, family video moment"
+  ],
+  "curated_image_paths": [],
+  "max_sentence_gap": 0.18,
+  "video_script": "In June 2022, Georgina gave birth to twins. Their baby son didn't survive the birth. Their daughter did. Ronaldo named her Bella Esmeralda, and later said she became his reason to keep getting out of bed during the darkest months of his career. He's described holding her for the first time as the moment grief and love collided. Years later, he still posts her laughing in his arms, like nothing was ever lost.",
+  "video_subject": "In June 2022 Georgina gave birth to twins, their son did not survive but their daughter Bella Esmeralda did, and Ronaldo has said she became his reason to keep going through the darkest months of his career",
+  "video_terms": "Cristiano Ronaldo daughter Bella Esmeralda, Ronaldo Bella Esmeralda birthday video, Cristiano Ronaldo and daughter Bella close up, Ronaldo holding baby daughter Bella, Cristiano Ronaldo Bella Esmeralda sweet moment, Ronaldo Georgina Rodriguez daughter Bella family video, Cristiano Ronaldo playing with daughter Bella, Ronaldo Bella Esmeralda emotional moment",
+  "era_positive_labels": [
+   "a real photograph of Cristiano Ronaldo the footballer",
+   "a tight close up of Cristiano Ronaldo's face"
+  ],
+  "era_negative_labels": [],
+  "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+  "ambience_volume": 0.07,
+  "jl_cut_offset": 0.12,
+  "target_distinct_media": 10,
+  "one_shot_max_script_words": 150,
+  "min_shot_seconds": 3.2,
+  "min_reuse_gap_seconds": 5.0,
+  "max_media_uses": 2,
+  "max_shots_per_source": 3,
+  "youtube_only_media": true
+ },
+ "videos": [
+  {
+   "video_subject": "Haaland broke Messi's Champions League record (youngest to 60 goals) in City's 4-2 loss to PSG while City were found guilty of 114 charges and reports say Haaland has decided his City time is over",
+   "video_script": "Haaland just broke Messi's Champions League record, and City still lost four-two to PSG. At twenty-six, he became the youngest ever to score sixty goals in the competition. But the club behind him has been found guilty of one hundred and fourteen financial charges, and is appealing. Rumours now link Haaland with Barcelona and Arsenal. But Fabrizio Romano says nobody knows what he will do next. Would you stay?",
+   "beat_plan": [
+    {
+     "says": "Haaland just broke Messi's Champions League record,",
+     "visual": "Erling Haaland Manchester City celebrating goal Champions League",
+     "images": [
+      "Erling Haaland Manchester City Champions League goal celebration",
+      "Erling Haaland celebrates Etihad PSG"
+     ],
+     "clips": [],
+     "candidates": [
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b01/img-aed85b81211fd1bf046ebf453ab290f2.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b01/img-f9f4b44a8743ff943d40956a84f3a806.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b01/img-51d69649e7f2d61efc6f5db5f21bcc28.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b01/img-aa674ef94c95412f757c6b8c2197e18d.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b01/img-cb78291c18d139b353aa6eed7455cd2b.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b01/img-ad3f57775ca81d202e349c7f2769cffd.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b01/img-8d86708dbc82557fce29b3d40a035330.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b01/img-c05a01d1efb3013f96ed273845393183.jpg"
+     ],
+     "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b01/img-aed85b81211fd1bf046ebf453ab290f2.jpg",
+     "url": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1WID9y.img?w=768&h=542&m=6&x=1513&y=408&s=158&d=158"
+    },
+    {
+     "says": "and City still lost four-two to PSG.",
+     "visual": "PSG players celebrating at the Etihad",
+     "images": [
+      "PSG celebrate Etihad Manchester City October 2026",
+      "Paris Saint-Germain win Manchester City Champions League 4-2"
+     ],
+     "clips": [],
+     "candidates": [
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b02/img-905c1846dc2d232826122c923360d910.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b02/img-aba83ddbbf5631c71428c77bb98b4757.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b02/img-6a0221776e1f9def8c95d1239b101d96.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b02/img-de740bb544b433d800ebc0b442f05327.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b02/img-e97d6226d5e46e26d469fd92145c9f1d.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b02/img-c3db1157a9c58d2d8d7162ad50d653e4.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b02/img-6efd667f95fab307a75992432774e318.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b02/img-9dbccee945cdec693d86c7864bbd83c4.jpg"
+     ],
+     "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b02/img-905c1846dc2d232826122c923360d910.jpg",
+     "url": "https://cdn.images.express.co.uk/img/dynamic/67/590x/secondary/5902815.jpg?r=1737467839929"
+    },
+    {
+     "says": "At twenty-six, he became the youngest ever",
+     "visual": "Erling Haaland close up Manchester City",
+     "images": [
+      "Erling Haaland",
+      "Erling Haaland Manchester City"
+     ],
+     "clips": [],
+     "candidates": [
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b03/img-e48637576410e24225fb091dfc3a32bb.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b03/img-25a5d927cff4e9085a7e6bae46ef648b.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b03/img-2ecd33b6809f9e6044d731118f61563a.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b03/img-34cfb36c1ab31406d044b9414e376b71.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b03/img-daf6e0a33a6413ad9dca6ab29bd3c3bd.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b03/img-8f7aab6870b9f5e1f56be834617c6217.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b03/img-d483fcb9d4e97b1993e6c50814fb29e4.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b03/img-3b7b344a6a376288f33baaad76de557a.jpg"
+     ],
+     "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b03/img-25a5d927cff4e9085a7e6bae46ef648b.jpg",
+     "url": "https://img.sportsbookreview.com/uploads/98023534-f14b-459b-8003-a5c34cd46ff3.JPG?fm=webp&auto=format&auto=compress&h=572&w=1016"
+    },
+    {
+     "says": "to score sixty goals in the competition.",
+     "visual": "Erling Haaland scoring header Champions League",
+     "images": [
+      "Erling Haaland header goal Champions League",
+      "Erling Haaland 60 Champions League goals"
+     ],
+     "clips": [],
+     "candidates": [
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b04/img-5ffb2aea6e6e4db07d278eb0697ef158.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b04/img-b22192d28b2157bbaea1663de49a2fa0.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b04/img-89f1bec9628bf6ca1c733a50bc15b8e3.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b04/img-6c888de506173b7c636efa1ad4981177.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b04/img-af7e8d66c8aa67a53da7fec92e5f7b2a.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b04/img-6f35759920469eadb9d427e0fe976917.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b04/img-771e974f11c005820241f215b703a0f4.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b04/img-2800ccc5a7f69df4980a3c330275d39e.jpg"
+     ],
+     "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b04/img-89f1bec9628bf6ca1c733a50bc15b8e3.jpg",
+     "url": "https://static.ffx.io/images/$zoom_0.13,$multiply_0.7725,$ratio_1.5,$width_756,$x_0,$y_0/t_crop_custom/q_86,f_auto/f9f7d10bf664a09e04edd2bcd87ca4b031793eb1"
+    },
+    {
+     "says": "But the club behind him has been found guilty",
+     "visual": "Etihad Stadium Manchester City",
+     "images": [
+      "Etihad Stadium Manchester City",
+      "Manchester City Etihad stadium exterior"
+     ],
+     "clips": [],
+     "candidates": [
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b05/img-70153da8547820c749e7924ca6323c58.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b05/img-55dcac96bd6c665bec7e440ab1cba187.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b05/img-152c7a0fb7f1379ea31e3e78ec94a098.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b05/img-bd326b0f63f978b47d1b63eb2e162df9.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b05/img-0c12c90221d9c7166642922c3e3e8412.jpg"
+     ],
+     "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b05/img-70153da8547820c749e7924ca6323c58.jpg",
+     "url": "https://stadesdefootball.fr/wp-content/uploads/2024/01/etihad-stadium.jpg"
+    },
+    {
+     "says": "of one hundred and fourteen financial charges,",
+     "visual": "Manchester City Premier League 115 charges",
+     "images": [
+      "Manchester City trophy Etihad",
+      "Man City players Etihad"
+     ],
+     "clips": [],
+     "candidates": [
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b06/img-e210a98e9f4ffc6b6883183430cfcd47.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b06/img-5101e2f87c9d133caabbfaf1a9676692.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b06/img-3c86a00bf5994bff4384cc988545ddf4.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b06/img-94d6832d9d8d44129e9db225cfc34cdc.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b06/img-82d32cae3d8fcb1c1a89667120c0e972.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b06/img-9937cd3b999744efe83844be010f11d8.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b06/img-4ee4b04780c0bb33abba5f1eb73bd1c8.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b06/img-b62a299f5baa47f683c237ee2e9a9638.jpg"
+     ],
+     "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b06/img-9937cd3b999744efe83844be010f11d8.jpg",
+     "url": "https://idsb.tmgrup.com.tr/ly/uploads/images/2022/12/13/246226.jpg"
+    },
+    {
+     "says": "and is appealing.",
+     "visual": "Manchester City club badge Etihad",
+     "images": [
+      "Manchester City logo",
+      "Manchester City crest"
+     ],
+     "clips": [],
+     "candidates": [
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b07/img-5572a31560c7b08ab29afedcf12d3e45.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b07/img-e1e3dd0f2be0d51a7ee8b6a11e6bfc1a.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b07/img-b52a7c76387cf153612ed4d0ab98747a.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b07/img-c9f03bab8418ab7af2a6b1b80a8ebb55.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b07/img-0720946af740319f42467f37ea82b47c.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b07/img-f9f27691d9a58a22261e51a084d95e5f.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b07/img-0024e9a279f51a2d3382378ddd49d4ba.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b07/img-90176c798d0296df1cc41f03b4acfe87.jpg"
+     ],
+     "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b07/img-e1e3dd0f2be0d51a7ee8b6a11e6bfc1a.jpg",
+     "url": "https://www.designfootball.com/images/joomgallery/originals/football_crests_8/manchester_city_crest_redesign_hybrid_1980__2017_20180423_1022337712.png"
+    },
+    {
+     "says": "Rumours now link Haaland",
+     "visual": "Erling Haaland serious face Manchester City",
+     "images": [
+      "Erling Haaland serious face Manchester City",
+      "Erling Haaland unhappy Manchester City"
+     ],
+     "clips": [],
+     "candidates": [
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b08/img-23183b0bda105fc4e95547a7410aa9b7.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b08/img-dfe5fc97ae427a98347a45d62e88a7be.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b08/img-ab6d376770e96c5d588e00d769dce5b7.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b08/img-cf4432fc24c895ca5b6f8a18cddf9ff5.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b08/img-29cefa24f237c613649410f95168d848.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b08/img-7e91796efda86123bea488b04f4337f4.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b08/img-fff4cb787f98d987066874405726089f.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b08/img-5958305fbe11735be73382c40916ee66.jpg"
+     ],
+     "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b08/img-29cefa24f237c613649410f95168d848.jpg",
+     "url": "https://cdn.theathletic.com/app/uploads/2022/09/07021831/ERLING-HAALAND-MANCHESTER-CITY-scaled-e1662531544452.jpg"
+    },
+    {
+     "says": "with Barcelona and Arsenal.",
+     "visual": "Barcelona and Arsenal crests",
+     "images": [
+      "Barcelona Arsenal Haaland transfer",
+      "Haaland Barcelona Arsenal"
+     ],
+     "clips": [],
+     "candidates": [
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b10/img-64b941e80acbf6a30c05f271753a748a.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b10/img-950035d3d65d046dc1fa62a40553e92e.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b10/img-0017e317f37a8977da81613f2a72629b.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b10/img-6dd2064dd4ff73827914737ecd2cfa5e.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b10/img-a268742f58e87cd1fcfaf39bcacaeb10.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b10/img-748870630e01c75c05afcc80cd84fbae.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b10/img-c0240f063694231a80cbf76acea37228.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b10/img-879043a87cabe5284229d517bb88d45b.jpg"
+     ],
+     "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b10/img-950035d3d65d046dc1fa62a40553e92e.jpg",
+     "url": "https://billet-de-match.com/wp-content/uploads/2024/06/fc-barcelone.jpg.webp"
+    },
+    {
+     "says": "But Fabrizio Romano says",
+     "visual": "Fabrizio Romano journalist",
+     "images": [
+      "Fabrizio Romano",
+      "Fabrizio Romano journalist portrait"
+     ],
+     "clips": [],
+     "candidates": [
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b11/img-d706ead06a679fcdce90e31f9a7667c3.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b11/img-0c4193a0610c766b2dac7d1d8b5af101.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b11/img-054d235006c7c1c91d593bef9390baec.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b11/img-50d8900bf803bc04f9216080f2efc1d0.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b11/img-2e6cdd243916a57886572ae79d74d7a6.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b11/img-923069227f2ddcb85589bec41310fcde.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b11/img-5d3c8ed0f345d6c9e692760c85b8c480.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b11/img-3e388e328e619c9502730b95be3e53df.jpg"
+     ],
+     "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b11/img-054d235006c7c1c91d593bef9390baec.jpg",
+     "url": "https://www.stagtrends.com/wp-content/uploads/2023/05/image-98.jpg"
+    },
+    {
+     "says": "nobody knows",
+     "visual": "Erling Haaland looking away Manchester City",
+     "images": [
+      "Erling Haaland looking away Manchester City",
+      "Erling Haaland dejected Manchester City"
+     ],
+     "clips": [],
+     "candidates": [
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-da5aa4b596bff4b29b4cf9f59223a94f.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-2ecd33b6809f9e6044d731118f61563a.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-2e18217e0e82fca2be95010adc155e27.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-cdba0fc3357471e865ec33edfb113d9a.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-0b1b15f2fe4bf4cbfd11e2fc622ed108.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-1c9da91fe3172f07a9af4f775c753397.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-3b141731c689093cb50dfe0106ba6430.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-46b465f663a4fea021b06f038b854d65.jpg"
+     ],
+     "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b09/img-36c62d5a3700571d9053c86bf3ae4e50.jpg",
+     "url": "https://wp.clutchpoints.com/wp-content/uploads/2024/03/WATCH-Manchester-City-star-Erling-Haalands-miss-of-the-season-contender.webp?w=1200"
+    },
+    {
+     "says": "what he will do next.",
+     "visual": "Erling Haaland Manchester City looking up",
+     "images": [
+      "Erling Haaland looking up Manchester City",
+      "Erling Haaland arms out Manchester City"
+     ],
+     "clips": [],
+     "candidates": [
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b09/img-878506f2a3c174b8b63e4bad866661a7.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b09/img-a8a067cab0583e9677878f6a39edaa1d.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b09/img-36c62d5a3700571d9053c86bf3ae4e50.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b09/img-9a9f587db725c402c3b7f0b0a7e75722.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b09/img-29cefa24f237c613649410f95168d848.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b09/img-fd62c69cc6e2e9f10bb8ad33f11b2878.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b09/img-43f83ca5dba608bedfcf6a9539654a41.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b09/img-32df84d5d877c2adcd53a0e93abbd60c.jpg"
+     ],
+     "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-2e18217e0e82fca2be95010adc155e27.jpg",
+     "url": "https://www.thesun.co.uk/wp-content/uploads/2026/08/2026-manchester-citys-erling-haaland-1102963693.jpg?quality=90&strip=all&w=748"
+    },
+    {
+     "says": "Would you stay?",
+     "visual": "Erling Haaland serious face Manchester City",
+     "images": [
+      "Erling Haaland serious face Manchester City",
+      "Erling Haaland unhappy Manchester City"
+     ],
+     "clips": [],
+     "candidates": [
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-da5aa4b596bff4b29b4cf9f59223a94f.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-2ecd33b6809f9e6044d731118f61563a.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-2e18217e0e82fca2be95010adc155e27.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-cdba0fc3357471e865ec33edfb113d9a.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-0b1b15f2fe4bf4cbfd11e2fc622ed108.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-1c9da91fe3172f07a9af4f775c753397.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-3b141731c689093cb50dfe0106ba6430.jpg",
+      "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b12/img-46b465f663a4fea021b06f038b854d65.jpg"
+     ],
+     "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/haaland_broke_messi_s_champions_league_r/b08/img-29cefa24f237c613649410f95168d848.jpg",
+     "url": "https://cdn.theathletic.com/app/uploads/2022/09/07021831/ERLING-HAALAND-MANCHESTER-CITY-scaled-e1662531544452.jpg"
+    }
+   ],
+   "hook_text": "Haaland's City Time Is Over?",
+   "cta_text": "Would You Stay If You Were Haaland? 👇",
+   "beat_shared_clips": []
+  }
+ ]
+}
