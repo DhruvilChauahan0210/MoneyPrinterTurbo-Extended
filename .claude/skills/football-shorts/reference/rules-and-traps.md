@@ -34,7 +34,8 @@
 - Search results are dominated by 442oons cartoons and fan-phone uploads. Reject both.
 - Broadcast highlight timestamps can be offset. A "Neuer save" window showed a goat on the pitch. Scan finer
   (`--scan-from A --scan-to B --scan-every 0.5`) around the chosen seconds if in doubt.
-- Coverage failure = clip `len` shorter than the spoken beat. Use 6.0s on long beats, and `rm` the cached shot to re-cut.
+- Coverage failure = clip `len` shorter than the spoken beat. **Always use `--len 6.0`** (8 words with long names = 4.9s spoken;
+  a 4.4s clip failed the 12 Nov 2026 Ronaldo/Bayern render). `rm` the cached shot to re-cut after changing len.
 
 ## Rendering
 - `run_day.sh` skips Shorts that were already attempted (a BUILDLOG containing `task_id`). That's how one-shot is enforced.

@@ -88,8 +88,9 @@ For famous match moments, pin 2–4 clip beats per Short and keep photos for the
 ```
 - Read the scan strip and pick the seconds where the subject is clearly visible.
 - **Reject 442oons cartoons and fan-phone uploads** (heads or hands in frame). Prefer broadcast highlight uploads.
-- **`len` must be at least the spoken length of the beat:** 4.4s by default, **6.0s for beats of 12+ words.**
-  Otherwise the render fails with "visual coverage X for Y audio".
+- **RULE: always pin clips with `--len 6.0`** (the source must have 6s left after `--start`). A clip shorter than
+  its spoken beat fails the whole render ("visual coverage X for Y audio"), and word count is a bad predictor:
+  an 8-word beat with long names ran 4.9s and failed at 4.4s (12 Nov 2026).
 - Changing `len` does not re-cut a cached shot. `rm` that beat's `shot_*.mp4` first, then `--replace`, then check it with ffprobe.
 
 ## 6. Render: exactly one attempt per Short
@@ -117,11 +118,14 @@ For famous match moments, pin 2–4 clip beats per Short and keep photos for the
 - **Metadata goes in chat only (never in files),** and only once every Short is built, using
   `reference/metadata-template.md` exactly: four separate blocks per Short (TITLE / DESCRIPTION / TAGS /
   PINNED COMMENT), with the slot time, filename and duration in each heading.
-- Report in short form: what's built, what failed and why, anything shipped with flaws, and sources.
+- Then go straight to step 10 (schedule). Report once at the end in short form: what's built and scheduled, what
+  failed and why, anything shipped with flaws, and sources.
 - Update the inventory memory if this login has memory (next build day, the slot-1 flip, slot-2 type).
 
-## 10. Schedule on YouTube (when CD asks)
-Follow `reference/youtube-schedule.md`. In short:
+## 10. Schedule on YouTube (ALWAYS, as the last step of every build)
+**RULE (CD, 2 Nov 2026): a build is not done until it is scheduled.** After step 9, schedule every Short you
+built in its slot (date + 13:00/17:00/21:00 IST) without waiting to be asked, then confirm it in the Content list
+and delete the upload folder. Follow `reference/youtube-schedule.md`. In short:
 1. Copy the Shorts plus a `meta.json` (built by `scripts/make_meta.py`) into a folder **inside the repo**.
    The chrome MCP can't read `~/Desktop`.
 2. `python3 scripts/cors_server.py <that folder> 8799 &`
