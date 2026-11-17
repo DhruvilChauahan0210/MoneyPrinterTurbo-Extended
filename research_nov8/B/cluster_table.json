@@ -1,0 +1,119 @@
+[
+ {
+  "cluster": "1 AI/3D comedy skit (Haaland-Mbappe-Yamal cast)",
+  "n": 88,
+  "n_small": 46,
+  "med_views": 5306487,
+  "med_views_small": 3869762,
+  "med_dur": 16.0,
+  "med_subs": 43000
+ },
+ {
+  "cluster": "3 find-the-player / guess quiz",
+  "n": 15,
+  "n_small": 12,
+  "med_views": 4534871,
+  "med_views_small": 3566119,
+  "med_dur": 15,
+  "med_subs": 48800
+ },
+ {
+  "cluster": "4 pick-one / fan-poll question",
+  "n": 12,
+  "n_small": 5,
+  "med_views": 4964986,
+  "med_views_small": 2830650,
+  "med_dur": 17.0,
+  "med_subs": 108000
+ },
+ {
+  "cluster": "5 versus bracket / elimination duel",
+  "n": 33,
+  "n_small": 9,
+  "med_views": 2384160,
+  "med_views_small": 3016558,
+  "med_dur": 25,
+  "med_subs": 202000
+ },
+ {
+  "cluster": "6 kindness / charity animated story",
+  "n": 11,
+  "n_small": 5,
+  "med_views": 2653024,
+  "med_views_small": 2532184,
+  "med_dur": 23,
+  "med_subs": 157000
+ },
+ {
+  "cluster": "7 ballon dor news / reaction",
+  "n": 13,
+  "n_small": 7,
+  "med_views": 1887336,
+  "med_views_small": 1887336,
+  "med_dur": 15,
+  "med_subs": 38400
+ },
+ {
+  "cluster": "8 facts explainer (why does X)",
+  "n": 7,
+  "n_small": 5,
+  "med_views": 2348570,
+  "med_views_small": 2348570,
+  "med_dur": 19,
+  "med_subs": 28500
+ },
+ {
+  "cluster": "9 edit / goals compilation",
+  "n": 10,
+  "n_small": 7,
+  "med_views": 2649715,
+  "med_views_small": 2305938,
+  "med_dur": 24.5,
+  "med_subs": 76100
+ },
+ {
+  "cluster": "X spam religious quote loops (non-football)",
+  "n": 18,
+  "n_small": 10,
+  "med_views": 5151017,
+  "med_views_small": 5605828,
+  "med_dur": 23.0,
+  "med_subs": 82150
+ },
+ {
+  "cluster": "X other non-football",
+  "n": 35,
+  "n_small": 19,
+  "med_views": 2346534,
+  "med_views_small": 2001599,
+  "med_dur": 30,
+  "med_subs": 87700
+ },
+ {
+  "cluster": "10 match result / prediction / highlight",
+  "n": 9,
+  "n_small": 5,
+  "med_views": 2844652,
+  "med_views_small": 2844652,
+  "med_dur": 16,
+  "med_subs": 85400
+ },
+ {
+  "cluster": "11 story / biography animation",
+  "n": 2,
+  "n_small": 1,
+  "med_views": 23168112,
+  "med_views_small": 2530760,
+  "med_dur": 25.5,
+  "med_subs": 123630
+ },
+ {
+  "cluster": "12 other football",
+  "n": 24,
+  "n_small": 9,
+  "med_views": 3829926,
+  "med_views_small": 3440017,
+  "med_dur": 18.0,
+  "med_subs": 141000
+ }
+]

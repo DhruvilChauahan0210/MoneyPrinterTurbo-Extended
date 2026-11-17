@@ -1,0 +1,454 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Nani",
+      "a real photograph of Zoltan Gera",
+      "a real photograph of Balazs Dzsudzsak"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "DID THIS NIGHT START IT?",
+    "hook_cover_term": "Cristiano Ronaldo celebrating for Portugal at Euro 2016",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "WAS THIS THE NIGHT PORTUGAL'S TITLE RUN BEGAN? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Nani",
+      "a real photograph of Zoltan Gera",
+      "a real photograph of Balazs Dzsudzsak"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Ronaldo scored twice after Portugal fell behind three times against Hungary. Hungary led through Gera in the nineteenth minute. Nani levelled it before half-time. Hungary went ahead twice more through Dzsudzsak. Ronaldo answered both, in the fiftieth and sixty-second minutes. Three three at the end, and Portugal never led. It made him the first man to score at four Euros. Portugal scraped through as a third-placed side, then won the Euros. Did this night start Portugal's title run?",
+    "video_subject": "At Euro 2016 on 22 June in Lyon Cristiano Ronaldo scored twice as Portugal came from behind three times to draw 3-3 with Hungary, becoming the first player to score at four European Championships.",
+    "video_terms": "Ronaldo, Portugal, Hungary, Euro 2016, Lyon, comeback, Nani, record, four European Championships",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Ronaldo scored twice after Portugal fell behind three times against Hungary.",
+        "visual": "close up of Cristiano Ronaldo in red Portugal kit Euro 2016",
+        "images": [
+          "Cristiano Ronaldo Portugal Euro 2016",
+          "Ronaldo Hungary Euro 2016"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b07/img-1c1924b141f6235885fca0b9a2e73d5a.jpg"
+      },
+      {
+        "says": "Hungary led through Gera in the nineteenth minute.",
+        "visual": "Zoltan Gera Hungary celebrating",
+        "images": [
+          "Zoltan Gera Hungary",
+          "Hungary Euro 2016"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Nani levelled it before half-time.",
+        "visual": "Nani Portugal Euro 2016",
+        "images": [
+          "Nani Portugal",
+          "Nani goal Hungary"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Hungary went ahead twice more through Dzsudzsak.",
+        "visual": "Balazs Dzsudzsak Hungary celebrating",
+        "images": [
+          "Balazs Dzsudzsak Hungary",
+          "Dzsudzsak Euro 2016"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo answered both, in the fiftieth and sixty-second minutes.",
+        "visual": "Cristiano Ronaldo scoring Portugal Euro 2016",
+        "images": [
+          "Ronaldo goal Hungary",
+          "Ronaldo Lyon Euro 2016"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b01/img-2b8a6d72240d0b685339b87ddb35cb50.jpg"
+      },
+      {
+        "says": "Three three at the end, and Portugal never led.",
+        "visual": "Hungary Portugal players Lyon scoreboard",
+        "images": [
+          "Portugal Hungary 3-3",
+          "Parc Olympique Lyonnais Euro 2016"
+        ],
+        "clips": []
+      },
+      {
+        "says": "It made him the first man to score at four Euros.",
+        "visual": "Cristiano Ronaldo celebrating Portugal Euro 2016",
+        "images": [
+          "Ronaldo Euro 2016 celebration",
+          "Ronaldo Euro 2004"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Portugal scraped through as a third-placed side, then won the Euros.",
+        "visual": "Portugal team lifting Euro 2016 trophy",
+        "images": [
+          "Portugal Euro 2016 trophy",
+          "Ronaldo Euro 2016 winner"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b07/img-c4c2435e41e346b12921e68464f946f4.jpg"
+      },
+      {
+        "says": "Did this night start Portugal's title run?",
+        "visual": "Cristiano Ronaldo captain Portugal Euro 2016 trophy",
+        "images": [
+          "Ronaldo Euro 2016 trophy",
+          "Ronaldo captain Portugal"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b01/img-611ad23e3a756ae1d2abcd75eaafaf78.jpg"
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "At Euro 2016 on 22 June in Lyon Cristiano Ronaldo scored twice as Portugal came from behind three times to draw 3-3 with Hungary, becoming the first player to score at four European Championships.",
+      "video_script": "Ronaldo scored twice after Portugal fell behind three times against Hungary. Hungary led through Gera in the nineteenth minute. Nani levelled it before half-time. Hungary went ahead twice more through Dzsudzsak. Ronaldo answered both, in the fiftieth and sixty-second minutes. Three three at the end, and Portugal never led. It made him the first man to score at four Euros. Portugal scraped through as a third-placed side, then won the Euros. Did this night start Portugal's title run?",
+      "video_terms": "Ronaldo, Portugal, Hungary, Euro 2016, Lyon, comeback, Nani, record, four European Championships",
+      "hook_text": "DID THIS NIGHT START IT?",
+      "cta_text": "WAS THIS THE NIGHT PORTUGAL'S TITLE RUN BEGAN? 👇",
+      "beat_plan": [
+        {
+          "says": "Ronaldo scored twice after Portugal fell behind three times against Hungary.",
+          "visual": "close up of Cristiano Ronaldo in red Portugal kit Euro 2016",
+          "images": [
+            "Cristiano Ronaldo Portugal Euro 2016",
+            "Ronaldo Hungary Euro 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b01/img-ce62f6fc3c8800270eb36f3275f7723d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b01/img-611ad23e3a756ae1d2abcd75eaafaf78.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b01/img-63a54fcceeb7e3086c7031defa9ac439.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b01/img-2b8a6d72240d0b685339b87ddb35cb50.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b01/img-ecba6fe2865ad914412ab9d5f96ff09c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b07/img-1c1924b141f6235885fca0b9a2e73d5a.jpg",
+          "url": "https://www.rappler.com/tachyon/r3-assets/612F469A6EA84F6BAE882D2B94A4B421/img/CCB7186F85B04CF1B8406E69CB2D14C1/ronaldo-euro-2016.jpg"
+        },
+        {
+          "says": "Hungary led through Gera in the nineteenth minute.",
+          "visual": "Zoltan Gera Hungary celebrating",
+          "images": [
+            "Zoltan Gera Hungary",
+            "Hungary Euro 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b02/img-a0d26bd7e11da65f93010837bd159ec0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b02/img-fa64c59bef36dc147dc59bdfceaafd8d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b02/img-bd1e540b8cb285d202bd706bb8e79bbf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b02/img-b73d72aa88eb21ca0ff801d4255042b6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b02/img-ccc80c98f50832fe793ab28ed29f6f88.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b02/img-b3dc05b75e69f96555db9f4afa030fa5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b02/img-3fbf8d6e340810cc230e575f539af31f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b02/img-f800235a31d3d9ec2b29dc9f8c3bedd0.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b02/img-a0d26bd7e11da65f93010837bd159ec0.jpg",
+          "url": "https://www.getfootballnewsgermany.com/assets/fbl-euro-2016-friendly-hun-cro-scaled.jpg"
+        },
+        {
+          "says": "Nani levelled it before half-time.",
+          "visual": "Nani Portugal Euro 2016",
+          "images": [
+            "Luis Nani footballer Portugal",
+            "Luis Nani Manchester United"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b03/img-51ef08157acea4586a73742789eab86b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b03/img-1a87378af94d307905d653eb2050c1b8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b03/img-24ca3191515ed0ed9b1b1b24af42c807.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b03/img-a9590f2bd1e3733a66517234f64fec0f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b03/img-5d4b35ed46822b6ded59a31b4470bae9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b03/img-8b9ab2111b8927378de6013e267918d0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b03/img-007591c89d47f6d878262f6e864cd75f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b03/img-861e11503556d8fad3a6665da8b14d5e.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b03/img-1a87378af94d307905d653eb2050c1b8.jpg",
+          "url": "https://10footballentertainment.com/wp-content/uploads/2019/04/Nani-Portugal-1024x1024.jpg"
+        },
+        {
+          "says": "Hungary went ahead twice more through Dzsudzsak.",
+          "visual": "Balazs Dzsudzsak Hungary celebrating",
+          "images": [
+            "Hungary national football team Euro 2016 Lyon",
+            "Hungary Euro 2016 players celebrate"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b04/img-58f63df8a69009dd9f30ab94ec1378ac.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b04/img-582558d627e1bc4127be476f8cd11544.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b04/img-0a6e057307ca36575d18bb3b30ff7915.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b04/img-3e89a44468c1c0fbc87f56ad394981ff.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b04/img-42daec6badb8371ccaf1d75890b204e5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b04/img-7fac4f65dca0c3442ef5f13cf2e958a5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b04/img-63468e79ec6a734cb5ad7e585ffcfbc2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b04/img-da8fd29500491c4254eba0bca278a02a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b04/img-3e89a44468c1c0fbc87f56ad394981ff.jpg",
+          "url": "https://e0.365dm.com/16/06/736x414/hungary-euro-2016-austria_3484068.jpg?20160614194417"
+        },
+        {
+          "says": "Ronaldo answered both, in the fiftieth and sixty-second minutes.",
+          "visual": "Cristiano Ronaldo scoring Portugal Euro 2016",
+          "images": [
+            "Ronaldo goal Hungary",
+            "Ronaldo Lyon Euro 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b05/img-204f085d76b5b5df0e80db07b9ce18ae.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b05/img-cf3fdf792787db384f83415ee550f317.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b05/img-bd2710874b44caf65944495c204efecb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b05/img-4501a82be2649bff138630de6fec6217.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b05/img-f30b507b25dc24d7f49def36c50ec304.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b05/img-fe5025a8071d330293766cf50d8dbffc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b05/img-991a47122609a77df60811143bc6ce8b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b05/img-818d78ecacf0de7b9ee19e8cb998987d.jpg"
+          ],
+          "url": "https://i.pinimg.com/736x/db/9f/c0/db9fc0d976c3e1877ecaebd92d3e29a3.jpg",
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b01/img-2b8a6d72240d0b685339b87ddb35cb50.jpg"
+        },
+        {
+          "says": "Three three at the end, and Portugal never led.",
+          "visual": "Hungary Portugal players Lyon scoreboard",
+          "images": [
+            "Portugal Hungary 3-3",
+            "Parc Olympique Lyonnais Euro 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b06/img-e82b607c23170a15519c4296491c170f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b06/img-48bc1c2cb24e7e69284e819055911802.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b06/img-031b8d02d9ad7f8247b69ecdb8323394.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b06/img-876722270d502b5f1a12448e01b51650.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b06/img-031b8d02d9ad7f8247b69ecdb8323394.jpg",
+          "url": "https://media.ouest-france.fr/v1/pictures/MjAxNjA1Njc4MTNmMjhhODY2MWJlMDA4ZjViMDE4NDQ2YTIxZTQ?width=1260&height=708&focuspoint=50,25&cropresize=1&client_id=bpeditorial&sign=7ca2cb724925f0f80c58be76771015d64b63cd2a46b7999541f65c4fbbd31a62"
+        },
+        {
+          "says": "It made him the first man to score at four Euros.",
+          "visual": "Cristiano Ronaldo celebrating Portugal Euro 2016",
+          "images": [
+            "Ronaldo Euro 2016 celebration",
+            "Ronaldo Euro 2004"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b07/img-6362082dfad8a5825dbf8981c24f49d3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b07/img-c4c2435e41e346b12921e68464f946f4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b07/img-63a54fcceeb7e3086c7031defa9ac439.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b07/img-e04b0f19169e1fdc63a705393a4ec819.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b07/img-7ad3d54deb8e2c7d21e27407eff2653c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b07/img-1c1924b141f6235885fca0b9a2e73d5a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b07/img-6362082dfad8a5825dbf8981c24f49d3.jpg",
+          "url": "https://i2-prod.mirror.co.uk/incoming/article8394586.ece/ALTERNATES/s1227b/Euro-2016-Final-Portugal-v-France.jpg"
+        },
+        {
+          "says": "Portugal scraped through as a third-placed side, then won the Euros.",
+          "visual": "Portugal team lifting Euro 2016 trophy",
+          "images": [
+            "Portugal Euro 2016 trophy",
+            "Ronaldo Euro 2016 winner"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b08/img-204f085d76b5b5df0e80db07b9ce18ae.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b08/img-f55f293e23c7ce45ca265c0acf9ee02e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b08/img-cf3fdf792787db384f83415ee550f317.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b08/img-4501a82be2649bff138630de6fec6217.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b08/img-bd2710874b44caf65944495c204efecb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b08/img-fe5025a8071d330293766cf50d8dbffc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b08/img-f30b507b25dc24d7f49def36c50ec304.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b08/img-818d78ecacf0de7b9ee19e8cb998987d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b07/img-c4c2435e41e346b12921e68464f946f4.jpg",
+          "url": "https://i.pinimg.com/736x/db/9f/c0/db9fc0d976c3e1877ecaebd92d3e29a3.jpg"
+        },
+        {
+          "says": "Did this night start Portugal's title run?",
+          "visual": "Cristiano Ronaldo captain Portugal Euro 2016 trophy",
+          "images": [
+            "Ronaldo Euro 2016 trophy",
+            "Ronaldo captain Portugal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b09/img-204f085d76b5b5df0e80db07b9ce18ae.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b09/img-cf3fdf792787db384f83415ee550f317.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b09/img-bd2710874b44caf65944495c204efecb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b09/img-f30b507b25dc24d7f49def36c50ec304.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b09/img-fe5025a8071d330293766cf50d8dbffc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b09/img-4501a82be2649bff138630de6fec6217.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b09/img-818d78ecacf0de7b9ee19e8cb998987d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b09/img-991a47122609a77df60811143bc6ce8b.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2016_on_22_june_in_lyon_cristian/b01/img-611ad23e3a756ae1d2abcd75eaafaf78.jpg",
+          "url": "https://i.pinimg.com/736x/db/9f/c0/db9fc0d976c3e1877ecaebd92d3e29a3.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "cfg": "batch_ronaldo_porto2009_40yards.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 5,
+      "url": "https://www.youtube.com/watch?v=_aHvw2kbTvo",
+      "start": 0.0
+    },
+    {
+      "beat": 6,
+      "url": "https://www.youtube.com/watch?v=_aHvw2kbTvo",
+      "start": 8.0
+    }
+  ],
+  "weak_beats": [
+    {
+      "beat": 3,
+      "why": "Dragao stadium, generic"
+    },
+    {
+      "beat": 9,
+      "why": "Ronaldo in red AIG kit jumping, borrowed from beat 1 row"
+    }
+  ],
+  "beat1": "Ronaldo big face, Manchester United red AIG kit, celebrating (borrowed from beat 4 row)",
+  "notes": "Both clips from a clean 14s 4K broadcast clip (no watermark): beat 5 = run and build-up, beat 6 = the strike, keeper beaten, Ronaldo and teammates celebrating. Beat 6 photo candidates were junk (Helton) so the clip replaces them."
+}

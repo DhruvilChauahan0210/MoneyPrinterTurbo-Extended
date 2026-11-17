@@ -1,0 +1,19 @@
+{
+ "cfg": "batch_mbappe_argentina_2018.json",
+ "status": "ready",
+ "clip_beats": [
+  {
+   "beat": 5,
+   "url": "https://www.youtube.com/watch?v=cV3F3U1880M",
+   "start": 477.0
+  },
+  {
+   "beat": 7,
+   "url": "https://www.youtube.com/watch?v=cV3F3U1880M",
+   "start": 487.5
+  }
+ ],
+ "weak_beats": [],
+ "beat1": "Mbappe in France 2018 kit kissing the World Cup trophy, big close-up portrait",
+ "notes": "Beat 5 clip: Mbappe 68th-min goal replay + celebration (Football Channel highlights, faint small watermark). Beat 7 clip: Mbappe celebration then Messi hands over face. Beat 2 is the real France line-up vs Argentina 30 Jun 2018. Beat 6 Aguero Argentina 2018 kit photo (re-sourced). Beat 8 Messi-Mbappe 2018 handshake."
+}

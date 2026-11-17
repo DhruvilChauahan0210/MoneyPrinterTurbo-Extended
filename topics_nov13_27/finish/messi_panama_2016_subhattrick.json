@@ -1,0 +1,21 @@
+{
+  "cfg": "batch_messi_panama_2016_subhattrick.json",
+  "status": "ready",
+  "clip_beats": [],
+  "weak_beats": [
+    {
+      "beat": 3,
+      "why": "Otamendi in a newer (2021-24) kit, not 2016"
+    },
+    {
+      "beat": 6,
+      "why": "Aguero vs Chile photo, not the Panama goal"
+    },
+    {
+      "beat": 8,
+      "why": "borrowed Copa final Messi portrait"
+    }
+  ],
+  "beat1": "Messi arms-out goal celebration at Soldier Field Chicago 2016 in Copa America kit",
+  "notes": "No clip: only 'PASIONRIVER77' watermarked match upload and an AFP interview found; rejected."
+}

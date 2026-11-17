@@ -1,0 +1,456 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Michael of Al Hilal"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "HIS BEST SAUDI MOMENT?",
+    "hook_cover_term": "Cristiano Ronaldo celebrating for Al Nassr",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "IS THIS RONALDO'S BEST AL NASSR MOMENT? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Michael of Al Hilal"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Ronaldo scored twice to beat Al Hilal in extra time. Al Hilal led through Michael in the fifty-first minute. Al Nassr were running out of time. Ronaldo levelled it in the seventy-fourth minute. The final went to extra time in Taif. In the ninety-eighth minute Ronaldo scored again. Al Nassr won two-one and lifted the Arab Club Champions Cup. It was Ronaldo's first trophy with Al Nassr. Is this Ronaldo's best Saudi moment?",
+    "video_subject": "In the 12 August 2023 Arab Club Champions Cup final in Taif Cristiano Ronaldo scored an equaliser in the 74th minute and an extra-time winner in the 98th as Al Nassr beat Al Hilal 2-1 after Michael had given Al Hilal the lead.",
+    "video_terms": "Ronaldo, Al Nassr, Al Hilal, Arab Club Champions Cup, 2023, Taif, extra time, first trophy",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Ronaldo scored twice to beat Al Hilal in extra time.",
+        "visual": "close up of Cristiano Ronaldo in yellow Al Nassr kit 2023",
+        "images": [
+          "Cristiano Ronaldo Al Nassr 2023",
+          "Ronaldo Al Hilal"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b09/img-4b8bc975841151ffbc54cbb632168440.jpg"
+      },
+      {
+        "says": "Al Hilal led through Michael in the fifty-first minute.",
+        "visual": "Al Hilal player Michael celebrating",
+        "images": [
+          "Michael Al Hilal",
+          "Al Hilal 2023"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Al Nassr were running out of time.",
+        "visual": "Al Nassr players dejected 2023",
+        "images": [
+          "Al Nassr 2023",
+          "Al Nassr bench"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo levelled it in the seventy-fourth minute.",
+        "visual": "Cristiano Ronaldo celebrating Al Nassr goal",
+        "images": [
+          "Ronaldo Al Nassr goal",
+          "Ronaldo celebrating Al Nassr"
+        ],
+        "clips": []
+      },
+      {
+        "says": "The final went to extra time in Taif.",
+        "visual": "King Fahd Stadium Taif",
+        "images": [
+          "King Fahd Stadium Taif",
+          "Arab Club Champions Cup"
+        ],
+        "clips": []
+      },
+      {
+        "says": "In the ninety-eighth minute Ronaldo scored again.",
+        "visual": "Cristiano Ronaldo scoring header Al Nassr",
+        "images": [
+          "Ronaldo header Al Nassr",
+          "Ronaldo Al Hilal winner"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Al Nassr won two-one and lifted the Arab Club Champions Cup.",
+        "visual": "Al Nassr players lifting Arab Club Champions Cup",
+        "images": [
+          "Al Nassr trophy 2023",
+          "Arab Club Champions Cup Al Nassr"
+        ],
+        "clips": []
+      },
+      {
+        "says": "It was Ronaldo's first trophy with Al Nassr.",
+        "visual": "Cristiano Ronaldo holding trophy Al Nassr",
+        "images": [
+          "Ronaldo trophy Al Nassr",
+          "Ronaldo medal Al Nassr"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Is this Ronaldo's best Saudi moment?",
+        "visual": "Cristiano Ronaldo Al Nassr celebrating",
+        "images": [
+          "Ronaldo Al Nassr",
+          "Ronaldo Saudi Arabia"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "In the 12 August 2023 Arab Club Champions Cup final in Taif Cristiano Ronaldo scored an equaliser in the 74th minute and an extra-time winner in the 98th as Al Nassr beat Al Hilal 2-1 after Michael had given Al Hilal the lead.",
+      "video_script": "Ronaldo scored twice to beat Al Hilal in extra time. Al Hilal led through Michael in the fifty-first minute. Al Nassr were running out of time. Ronaldo levelled it in the seventy-fourth minute. The final went to extra time in Taif. In the ninety-eighth minute Ronaldo scored again. Al Nassr won two-one and lifted the Arab Club Champions Cup. It was Ronaldo's first trophy with Al Nassr. Is this Ronaldo's best Saudi moment?",
+      "video_terms": "Ronaldo, Al Nassr, Al Hilal, Arab Club Champions Cup, 2023, Taif, extra time, first trophy",
+      "hook_text": "HIS BEST SAUDI MOMENT?",
+      "cta_text": "IS THIS RONALDO'S BEST AL NASSR MOMENT? 👇",
+      "beat_plan": [
+        {
+          "says": "Ronaldo scored twice to beat Al Hilal in extra time.",
+          "visual": "close up of Cristiano Ronaldo in yellow Al Nassr kit 2023",
+          "images": [
+            "Cristiano Ronaldo Al Nassr 2023",
+            "Ronaldo Al Hilal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b01/img-e0a65aadc7fa09a7cb8ebd8a0b3da76d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b01/img-54e3776cd9a134506504adcb405954dc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b01/img-e0469336eee3e505469c44fe41a63e7f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b01/img-00a4776eb46147982faee2b88b457042.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b01/img-9ff3cee3e3f760c256f778e9ccc7053c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b01/img-2900327458d86fea5c3bb28618dd2fcf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b01/img-428d544d20b9e94a449ab5ae2791bae2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b01/img-39f58ea58ad1b0702527eec03596af2c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b09/img-4b8bc975841151ffbc54cbb632168440.jpg",
+          "url": "https://library.sportingnews.com/styles/twitter_card_120x120/s3/2023-03/Cristiano+Ronaldo+Al+Nassr+030323_0.jpg?itok=3kVgLwC6"
+        },
+        {
+          "says": "Al Hilal led through Michael in the fifty-first minute.",
+          "visual": "Al Hilal player Michael celebrating",
+          "images": [
+            "Al Hilal players celebrating goal",
+            "Al Hilal Saudi Pro League celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b02/img-88440088134631a719b17c4b6a5a1888.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b02/img-3a48bb58d2d76a2480e4d821779389ac.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b02/img-55648bd8d34a678873f7d0d89eafb873.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b02/img-bed9ac9b8d7231da1fa41502fa33f0fb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b02/img-a774b47385f840f6c4f6a3c5f0209ba9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b02/img-4dd61e58837c199ceb47fe2ea919a91a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b02/img-9e2997e29d66a68206e58d611aa34240.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b02/img-99556e4b13cb1be6a33b45d0b7da92c2.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b02/img-55648bd8d34a678873f7d0d89eafb873.jpg",
+          "url": "https://www.arabtimesonline.com/arabtimes/uploads/images/2024/10/22/34091.jpg"
+        },
+        {
+          "says": "Al Nassr were running out of time.",
+          "visual": "Al Nassr players dejected 2023",
+          "images": [
+            "Al Nassr 2023",
+            "Al Nassr bench"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b03/img-10eee32f362e14d77988a0e6ba17dfbd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b03/img-771c7c0cb1d4266795cc5cc407137827.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b03/img-722399949347378b6a51e767278deebb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b03/img-d83b566318008d2f018c9a4fb0c42c3a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b03/img-9199ec5d3f46fc77e46900525d415610.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b03/img-f440650a0cf70e72787de6cdd6545a05.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b03/img-10eee32f362e14d77988a0e6ba17dfbd.jpg",
+          "url": "https://img.asmedia.epimg.net/resizer/v2/3W5HAQOFCHUEVTSEN2HOONKJII.jpg?auth=4b2d5a391c226eda2382d94ade434ecd3f664d759b23652ac461562e78a2b1af&width=1472&height=828&focal=1672,518"
+        },
+        {
+          "says": "Ronaldo levelled it in the seventy-fourth minute.",
+          "visual": "Cristiano Ronaldo celebrating Al Nassr goal",
+          "images": [
+            "Ronaldo Al Nassr goal",
+            "Ronaldo celebrating Al Nassr"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b04/img-6d69e39517bc856131aab8cc7dd84d09.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b04/img-b2523a4f7497a409332272c4b76f0a0d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b04/img-bdaff4857890a23270f8484a46c3f013.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b04/img-4b0c339d399360623d9ff435626ee8dc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b04/img-28667ecda763eece072020fe4b5340b4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b04/img-e31057e1ec1f456302d2e4a54ffbeb17.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b04/img-beeb4ef2ba0e41d3fc8da1dd56e874a2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b04/img-cbab43543763938326f42b6fd11bcd45.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b04/shot_56bdb10004.mp4",
+          "url": "https://www.youtube.com/watch?v=2WBiqAnXYuY",
+          "start": 429.0,
+          "len": 6.0
+        },
+        {
+          "says": "The final went to extra time in Taif.",
+          "visual": "King Fahd Stadium Taif",
+          "images": [
+            "King Fahd Stadium Taif",
+            "Arab Club Champions Cup"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b05/img-f94991c17fa6ffb896260e727682b8ec.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b05/img-b04799ea89504ac1910d8188228f13ce.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b05/img-71765bdf49fdade21ba79d580f77f003.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b05/img-135d70cf91cccaa57e9528a5b627b09d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b05/img-e8fc91de98793755a49c2d549e3c7783.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b05/img-e8597b4c25e7d05a006f6af060567413.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b05/img-c38a2fae2003d2d063bf199fcd82123b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b05/img-4d92f0567916c4fef54b0f491fa60fea.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b05/img-f94991c17fa6ffb896260e727682b8ec.jpg",
+          "url": "https://stadiony.net/pictures/stadiums/ksa/king_fahd_international_stadium/king_fahd_international_stadium06.jpg"
+        },
+        {
+          "says": "In the ninety-eighth minute Ronaldo scored again.",
+          "visual": "Cristiano Ronaldo scoring header Al Nassr",
+          "images": [
+            "Ronaldo header Al Nassr",
+            "Ronaldo Al Hilal winner"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b06/img-c1a380e10a5b82a3d60c82b0bf116d75.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b06/img-175c2a33a366d1ed6634b40aeefb46dc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b06/img-07abbc14ee5cf396180e6957df382c45.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b06/img-4da551a793e665b2316c3eb3ca52e545.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b06/img-d2cdcdec30bf6c569ee2764b69662e59.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b06/img-67435322a33dd3453811c70bf146bb6e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b06/img-9c252ba381d982aa34e242294cee7cc2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b06/img-467a26855f394035ef40ae0377bb240d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b06/img-4da551a793e665b2316c3eb3ca52e545.jpg",
+          "url": "https://www.reuters.com/resizer/v2/7SVI4UVCNZJFZPFCLQA3D444AU.jpg?auth=471bec4fadaf57c93adaca2359522fa416e72e25ccc15e6a2b988a39883ece56&width=1080&quality=80"
+        },
+        {
+          "says": "Al Nassr won two-one and lifted the Arab Club Champions Cup.",
+          "visual": "Al Nassr players lifting Arab Club Champions Cup",
+          "images": [
+            "Al Nassr trophy 2023",
+            "Arab Club Champions Cup Al Nassr"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b07/img-b50da4d0fe8729bd29d828fabdf2a975.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b07/img-e2ab5f0514651bbe3c68126650f5cc87.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b07/img-4ea2f667019a4684f97dc667cef15f29.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b07/img-f4b95836be7185c1fab6b0aa615a15a1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b07/img-8b180ec55a0d2ae3d3fde9c73c34ff29.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b07/img-31a477fc9562297b290672b4318bb5ee.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b07/img-346c4e0e794973c46372db04222ef0d7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b07/img-218911758c287139b6791d7438f21ef7.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b07/img-b50da4d0fe8729bd29d828fabdf2a975.jpg",
+          "url": "https://www.kingfut.com/wp-content/uploads/2023/08/F3Wn0MvWgAAJF04-scaled.jpeg"
+        },
+        {
+          "says": "It was Ronaldo's first trophy with Al Nassr.",
+          "visual": "Cristiano Ronaldo holding trophy Al Nassr",
+          "images": [
+            "Ronaldo trophy Al Nassr",
+            "Ronaldo medal Al Nassr"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b08/img-4ed67555e19b0d8d5bb861be1448ce67.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b08/img-fc3b1a2dd9d1e56de6dc454d7bfb1bf0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b08/img-4cf9bd8089b1c0a5c09e8f4a090cf78e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b08/img-fed765b19a1bb5151c694b256b814c9c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b08/img-0f3b9482eae8b4e803d809d05e9391c8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b08/img-97a55e48b368be22d6e74f20a8c0cff3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b08/img-216b946e4c5de512af063987b0c32c4e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b08/img-858c01925a00e69cdbc30ceb196e4780.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b08/img-fc3b1a2dd9d1e56de6dc454d7bfb1bf0.jpg",
+          "url": "https://www.lindaikejisblog.com/photos/shares/Ronaldo-1_1779396329.jpg"
+        },
+        {
+          "says": "Is this Ronaldo's best Saudi moment?",
+          "visual": "Cristiano Ronaldo Al Nassr celebrating",
+          "images": [
+            "Ronaldo Al Nassr",
+            "Ronaldo Saudi Arabia"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b09/img-bc69a73e440c045f51e19901300f1abf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b09/img-2900327458d86fea5c3bb28618dd2fcf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b09/img-4b8bc975841151ffbc54cbb632168440.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b09/img-edcc32b5a3a7fd569d47252470513f93.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b09/img-bdaff4857890a23270f8484a46c3f013.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b09/img-b2523a4f7497a409332272c4b76f0a0d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b09/img-ddf8bd6bf30ba1bd5c224930afc980f3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b09/img-056be1adc0f53da642c2989849c78a43.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_12_august_2023_arab_club_champion/b09/img-bc69a73e440c045f51e19901300f1abf.jpg",
+          "url": "https://wallpaperaccess.com/full/9239924.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

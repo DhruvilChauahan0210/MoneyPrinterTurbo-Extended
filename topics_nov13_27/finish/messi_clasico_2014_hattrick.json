@@ -1,0 +1,27 @@
+{
+  "cfg": "batch_messi_clasico_2014_hattrick.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 7,
+      "url": "https://www.youtube.com/watch?v=Qq45BuVSmi8",
+      "start": 935.5
+    }
+  ],
+  "weak_beats": [
+    {
+      "beat": 2,
+      "why": "Bernabeu interior stadium photo, no match context"
+    },
+    {
+      "beat": 6,
+      "why": "red card photo likely this Clasico but not confirmed as Ramos"
+    },
+    {
+      "beat": 3,
+      "why": "Iniesta Barca kit, era approx"
+    }
+  ],
+  "beat1": "Messi in Barcelona Qatar-sponsor kit celebrating, arms raised (2013-14 era)",
+  "notes": "Beat 7 clip: Sky Sports broadcast of Real Madrid 3-4 Barcelona, Messi penalty run-up, keeper dive and goal celebration; clean, no watermark."
+}

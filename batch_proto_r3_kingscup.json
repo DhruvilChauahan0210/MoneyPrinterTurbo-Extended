@@ -1,0 +1,557 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Aleksandar Mitrovic",
+      "a real photograph of Yassine Bounou",
+      "a real photograph of David Ospina"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.36,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "varied",
+    "enable_color_grade": true,
+    "enable_hook_card": true,
+    "hook_text": "5-4 HEARTBREAK IN JEDDAH",
+    "hook_cover_term": "big close up of Cristiano Ronaldo crying, Al Nassr",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.35,
+    "hook_duration": 1.2,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "PASSION OR PRESSURE? 👇",
+    "enable_subscribe_button": false,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Aleksandar Mitrovic",
+      "a real photograph of Yassine Bounou",
+      "a real photograph of David Ospina"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Ronaldo sobbed after the King's Cup final. Al Hilal led from the seventh minute. Ospina's red card left Al Nassr with ten. Still, Aiman Yahya equalised in the eighty-eighth. One-one after extra time. Penalties. Ronaldo scored his penalty. Bounou saved Al Nassr's last two. Al Hilal won five-four. Ronaldo slumped to the turf, inconsolable. At thirty-nine, tears streamed down his face. His thirty-five goals didn't win the league. Are those tears passion, or pressure?",
+    "video_subject": "In the 31 May 2024 Saudi King's Cup final in Jeddah Al Nassr drew 1-1 with Al Hilal and lost 5-4 on penalties, Cristiano Ronaldo scoring his penalty before Yassine Bounou saved Al Nassr's last two, and Ronaldo wept on the pitch.",
+    "video_terms": "Ronaldo, Al Nassr, Al Hilal, King's Cup final 2024, penalties, Bounou, tears, Jeddah",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 2.4,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Ronaldo sobbed after the King's Cup final.",
+        "visual": "big close up of Cristiano Ronaldo crying in yellow Al Nassr kit",
+        "images": [
+          "Cristiano Ronaldo crying Al Nassr",
+          "Ronaldo tears King's Cup final"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Al Hilal led from the seventh minute.",
+        "visual": "Aleksandar Mitrovic Al Hilal celebrating",
+        "images": [
+          "Aleksandar Mitrovic Al Hilal",
+          "Mitrovic goal Al Nassr"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ospina's red card left Al Nassr with ten.",
+        "visual": "David Ospina Al Nassr goalkeeper",
+        "images": [
+          "David Ospina Al Nassr",
+          "Ospina red card"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Still, Aiman Yahya equalised in the eighty-eighth.",
+        "visual": "Aiman Yahya Al Nassr celebrating",
+        "images": [
+          "Aiman Yahya Al Nassr",
+          "Ayman Yahya goal"
+        ],
+        "clips": []
+      },
+      {
+        "says": "One-one after extra time. Penalties.",
+        "visual": "Cristiano Ronaldo Al Nassr serious face",
+        "images": [
+          "Cristiano Ronaldo Al Nassr",
+          "Ronaldo Al Nassr penalty"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo scored his penalty.",
+        "visual": "Cristiano Ronaldo taking a penalty Al Nassr",
+        "images": [
+          "Ronaldo penalty Al Nassr",
+          "Cristiano Ronaldo Al Nassr 2024"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Bounou saved Al Nassr's last two.",
+        "visual": "Yassine Bounou Al Hilal goalkeeper",
+        "images": [
+          "Yassine Bounou Al Hilal",
+          "Bounou penalty save"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Al Hilal won five-four.",
+        "visual": "Al Hilal players celebrating King's Cup",
+        "images": [
+          "Al Hilal King's Cup 2024",
+          "Al Hilal celebrate"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo slumped to the turf, inconsolable.",
+        "visual": "Cristiano Ronaldo crying on the pitch",
+        "images": [
+          "Ronaldo crying pitch Al Nassr",
+          "Ronaldo emotional Al Nassr"
+        ],
+        "clips": []
+      },
+      {
+        "says": "At thirty-nine, tears streamed down his face.",
+        "visual": "close up of Cristiano Ronaldo in tears",
+        "images": [
+          "Ronaldo tears Al Nassr",
+          "Cristiano Ronaldo sad Al Nassr"
+        ],
+        "clips": []
+      },
+      {
+        "says": "His thirty-five goals didn't win the league.",
+        "visual": "Cristiano Ronaldo Al Nassr portrait",
+        "images": [
+          "Cristiano Ronaldo Al Nassr portrait",
+          "Cristiano Ronaldo Al Nassr goal celebration"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Are those tears passion, or pressure?",
+        "visual": "close up of Cristiano Ronaldo in Al Nassr kit",
+        "images": [
+          "Cristiano Ronaldo Al Nassr close up",
+          "Cristiano Ronaldo face Al Nassr"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "In the 31 May 2024 Saudi King's Cup final in Jeddah Al Nassr drew 1-1 with Al Hilal and lost 5-4 on penalties, Cristiano Ronaldo scoring his penalty before Yassine Bounou saved Al Nassr's last two, and Ronaldo wept on the pitch.",
+      "video_script": "Ronaldo sobbed after the King's Cup final. Al Hilal led from the seventh minute. Ospina's red card left Al Nassr with ten. Still, Aiman Yahya equalised in the eighty-eighth. One-one after extra time. Penalties. Ronaldo scored his penalty. Bounou saved Al Nassr's last two. Al Hilal won five-four. Ronaldo slumped to the turf, inconsolable. At thirty-nine, tears streamed down his face. His thirty-five goals didn't win the league. Are those tears passion, or pressure?",
+      "video_terms": "Ronaldo, Al Nassr, Al Hilal, King's Cup final 2024, penalties, Bounou, tears, Jeddah",
+      "hook_text": "5-4 HEARTBREAK IN JEDDAH",
+      "cta_text": "PASSION OR PRESSURE? 👇",
+      "beat_plan": [
+        {
+          "says": "Ronaldo sobbed after the King's Cup final.",
+          "visual": "big close up of Cristiano Ronaldo crying in yellow Al Nassr kit",
+          "images": [
+            "Cristiano Ronaldo crying Al Nassr",
+            "Ronaldo tears King's Cup final"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b01/img-b3296f481f4b1b4967e2a5466f50e9d8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b01/img-844b8728c968a53ac44bd6424e4b81fb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b01/img-236071621716ee24438f4e208bd68f68.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b01/img-288e9de2f9d8705daab016a23e2d0ab5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b01/img-b7fe33be22780a3491ce631db8c98506.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b01/img-9d86f2c7e8c742e56db52992fcaf7112.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b01/img-5f1f5bb406164ba22297c631abb01713.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b01/img-3cc7b11869a46878f52ab85ced845eb6.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=jKwWBKF5lIk",
+          "start": 10.2,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b01/shot_03abf9e91c.mp4"
+        },
+        {
+          "says": "Al Hilal led from the seventh minute.",
+          "visual": "Aleksandar Mitrovic Al Hilal celebrating",
+          "images": [
+            "Aleksandar Mitrovic Al Hilal",
+            "Mitrovic goal Al Nassr"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b02/img-52aeb931488f7b1712e6be044c624dc8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b02/img-d01e9546e9d08b6fd8957a6192ebd59a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b02/img-fb7b4c4da382168a6832b4dfd6e64b69.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b02/img-4b73712ee99e611c2813e93115039639.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b02/img-c961536ba6ab8719b845dcac8e806811.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b02/img-784529afdeb6d1f3930f42b6c7085614.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b02/img-19a253803249b4b30d857799560505f1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b02/img-23e822c159c60e417cba1f3fa07a3713.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=BdIrTASrOKc",
+          "start": 629.5,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b02/shot_1b66fb1fce.mp4"
+        },
+        {
+          "says": "Ospina's red card left Al Nassr with ten.",
+          "visual": "David Ospina Al Nassr goalkeeper",
+          "images": [
+            "David Ospina Al Nassr",
+            "Ospina red card"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b03/img-2529d4f23164c1004018a9312a251b21.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b03/img-47cd6a766926ede9890a8b7da14940a4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b03/img-6785dd01e80f246aa8fc861758eeb95c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b03/img-06a41f9e7edc4d3630b87b382d4212c9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b03/img-f768dfe33d3d51303184d858ce3d3072.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b03/img-fa51daaa40d3c97d38910328aff596a3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b03/img-2633df1c560b4e65ee38f68cbed97705.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b03/img-3e1772bfd40cc51b27e338171ebdb596.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b03/img-6785dd01e80f246aa8fc861758eeb95c.jpg",
+          "url": "https://www.ogol.com.br/img/jogadores/new/02/20/1120220_david_ospina_20240408221348.jpg"
+        },
+        {
+          "says": "Still, Aiman Yahya equalised in the eighty-eighth.",
+          "visual": "Aiman Yahya Al Nassr celebrating",
+          "images": [
+            "Aiman Yahya Al Nassr",
+            "Ayman Yahya goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b04/img-fbfe82626f86bcda509c722784260966.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b04/img-b50e04fd2383f8b95b637a531076d348.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=BdIrTASrOKc",
+          "start": 426.5,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b04/shot_873238e5f2.mp4"
+        },
+        {
+          "says": "One-one after extra time. Penalties.",
+          "visual": "Cristiano Ronaldo Al Nassr serious face",
+          "images": [
+            "Cristiano Ronaldo Al Nassr",
+            "Ronaldo Al Nassr penalty"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b05/img-283fbce71135797edd384b959abc2757.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b05/img-dd7bb24f2113abf2a7db7736e03b8000.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b05/img-8f066a896c512e17373725ab533baa5d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b05/img-12230e7f19d6a6b9d6cac6c6683dc0e0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b05/img-936fb85ad383cccf149371a35d73da13.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b05/img-bf30e27381d51edf0850ef8dc061c266.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b05/img-861c429aedbf6be4b8d6b6c762d249da.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b05/img-d14a29e941f7d0fd4c95c0bd3c8b9c51.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=BdIrTASrOKc",
+          "start": 442.0,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b05/shot_32d8c6d1af.mp4"
+        },
+        {
+          "says": "Ronaldo scored his penalty.",
+          "visual": "Cristiano Ronaldo taking a penalty Al Nassr",
+          "images": [
+            "Ronaldo penalty Al Nassr",
+            "Cristiano Ronaldo Al Nassr 2024"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b06/img-8a597d8456290178c01d18710b8ab5ef.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b06/img-ecc31d6df0ae1cea7e9f5e1669a27e1a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b06/img-283fbce71135797edd384b959abc2757.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b06/img-e84103ac8b36d7dff72291c06cb5c93a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b06/img-ff03e8245bb66ebca27daaf7cc8af1bb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b06/img-a347e0b91916cbbb44ecbcb458975a25.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b06/img-d8d8f275c65232045444c767e4e417f2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b06/img-f9b4cf720ee1d7f942239803c0067ecd.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=BdIrTASrOKc",
+          "start": 645.5,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b06/shot_dd041fab73.mp4"
+        },
+        {
+          "says": "Bounou saved Al Nassr's last two.",
+          "visual": "Yassine Bounou Al Hilal goalkeeper",
+          "images": [
+            "Yassine Bounou Al Hilal",
+            "Bounou penalty save"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b07/img-105757ccb74ac0f1cd9eab88710e6652.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b07/img-14d99b4150686f813ebaafe0d74b958f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b07/img-5aa162bf4eeee372b920183b4445c4a4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b07/img-abfee683633b4bc13daa0c21b156512d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b07/img-452ea20485688772ca8aa158f520bb19.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b07/img-e873b6922c994cce6f54f291f2b95a85.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b07/img-ceaf799b90582d58f49a4a86cb1c9455.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=BdIrTASrOKc",
+          "start": 796.6,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b07/shot_6f0f67a623.mp4"
+        },
+        {
+          "says": "Al Hilal won five-four.",
+          "visual": "Al Hilal players celebrating King's Cup",
+          "images": [
+            "Al Hilal King's Cup 2024",
+            "Al Hilal celebrate"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b08/img-55df759a50040b9c541786437c6e5cb3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b08/img-ee11e6dba8d4ad437984eaf95337a728.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b08/img-406bbd1b00ff9b0fb44c9e4255afb79e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b08/img-14c3cd5f54c5ac0ac3ea2382e3bdd6da.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=BdIrTASrOKc",
+          "start": 830.0,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b08/shot_145dc676a4.mp4"
+        },
+        {
+          "says": "Ronaldo slumped to the turf, inconsolable.",
+          "visual": "Cristiano Ronaldo crying on the pitch",
+          "images": [
+            "Ronaldo crying pitch Al Nassr",
+            "Ronaldo emotional Al Nassr"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b09/img-a039c337bc4c4862e7d637987665a73c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b09/img-8644898914dfb081feead24b59e84ad3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b09/img-50a0c3462713fd46eb83dccfb5afe0c0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b09/img-f1ca4333a8b242617ddd6f3244d1957a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b09/img-bb02617542aa6b285da0c0a0dc91f55e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b09/img-633fa8603364131a2c22118f533a2080.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b09/img-31a52b2a6faad76fc99d52bff208af88.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b09/img-bea3fa1ecfeb4b0d941cf69062efb616.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=BdIrTASrOKc",
+          "start": 813.5,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b09/shot_ec3723039e.mp4"
+        },
+        {
+          "says": "At thirty-nine, tears streamed down his face.",
+          "visual": "close up of Cristiano Ronaldo in tears",
+          "images": [
+            "Ronaldo tears Al Nassr",
+            "Cristiano Ronaldo sad Al Nassr"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b10/img-f17aa54973c7cdb74c13b7bd2ffa3145.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b10/img-1af5908d1b594ac0f705b91cbe556cb1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b10/img-288e9de2f9d8705daab016a23e2d0ab5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b10/img-bb02617542aa6b285da0c0a0dc91f55e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b10/img-f0ed914e642f4c24af5efa9ab157def5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b10/img-c635a92873b4d7372774440cf7523408.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b10/img-e23b6e56081dffff3700bb7a7b9f1654.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b10/img-96757836dda6d1e12b3d092dd3587a2d.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=jKwWBKF5lIk",
+          "start": 13.5,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b10/shot_994d9cee4d.mp4"
+        },
+        {
+          "says": "His thirty-five goals didn't win the league.",
+          "visual": "Cristiano Ronaldo Al Nassr portrait",
+          "images": [
+            "Cristiano Ronaldo Al Nassr portrait",
+            "Cristiano Ronaldo Al Nassr goal celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b11/img-8933f4c7ade50a2a422e212073a34be4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b11/img-f2c0a291b8c60cf9725df411aa8763a5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b11/img-a510872d263eac434fc3a90330830146.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b11/img-7efc8b6740faeafaf624ca67ebe05001.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b11/img-5d1ab9420a97a1983f6510e8383c6f7f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b11/img-6a97706b07ee1aa3a548337d4109e867.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b11/img-3f6b493ee957f4fcb0e87ed8dcdbf56d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b11/img-9ce9f73cd3e808eedb8d7c8e61523d32.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=BdIrTASrOKc",
+          "start": 641.5,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b11/shot_3a53028479.mp4"
+        },
+        {
+          "says": "Are those tears passion, or pressure?",
+          "visual": "close up of Cristiano Ronaldo in Al Nassr kit",
+          "images": [
+            "Cristiano Ronaldo Al Nassr close up",
+            "Cristiano Ronaldo face Al Nassr"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b12/img-c6b491f4ff267d8a8d040e6a618df92a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b12/img-7baa0bc750c2a94635b8e6c584ab65cf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b12/img-7c84344c5b916455cfff86de0891a9eb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b12/img-fe471266cf70d1568e0c48722799d483.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b12/img-9f5d8dccfd60959d45dbb17a63266a03.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_31_may_2024_saudi_king_s_cup_fina/b12/shot_1fccad972d.mp4",
+          "url": "https://www.youtube.com/watch?v=BdIrTASrOKc",
+          "start": 637.3,
+          "len": 6.0
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

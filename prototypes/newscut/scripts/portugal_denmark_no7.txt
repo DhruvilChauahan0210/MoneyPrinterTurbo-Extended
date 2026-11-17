@@ -1,0 +1,13 @@
+KEY portugal_denmark_no7 | OUT NEWSCUT_portugal_no7_humiliation.mp4 | loopTail "Ronaldo retired from Portugal."
+Sentences (chunks split by |; display = ALL CAPS of the words; spoken = the words):
+S0: Every Portugal player | wore Ronaldo's | number 7 | for his tribute night, | and it turned into | a nightmare.
+S1: Nobody | expected this.
+S2: In Braga, | Denmark scored | a penalty | before half-time, | then Rasmus Højlund | scored twice | early in the second half.
+S3: Joachim Andersen | made it 4, | and Bernardo Silva's goal | came deep | in stoppage time.
+S4: Portugal 1, | Denmark 4, | called their heaviest | competitive home defeat, | and Jorge Jesus's | first loss | as coach.
+S5: Even the mascots | wore number 7, | but on the night | that was meant | to celebrate him, | Portugal found out | what life looks like | nine days after
+Display tweaks: "NUMBER 7", "PORTUGAL 1", "DENMARK 4", "MADE IT 4", "HØJLUND" (spoken "Hoylund").
+Source card (over S4 "Portugal 1" .. "as coach"): label RESULT, title "UEFA Nations League", lines ["14 Nov 2026 · Braga", "Portugal 1–4 Denmark"]
+Cover text: "WITHOUT RONALDO 💔"
+Footage ideas: Ronaldo face close-up in Portugal kit (shot 0, bright), Portugal team photo / players in No.7 shirts from 14 Nov (official Portugal FPF / UEFA / broadcaster clips of the tribute), Braga stadium, Denmark goals (official UEFA / DBU highlights of Portugal v Denmark 14 Nov 2026), Højlund celebrating, Andersen, Bernardo Silva, Jorge Jesus on the touchline, mascots in No.7, dejected Portugal players, Ronaldo again at the end. If no 14 Nov footage exists, use Ronaldo/Portugal official footage and say so in the report.
+Facts (verified, Gulf News / ESPN / AFP via Dawn): 14 Nov 2026, Estádio Municipal de Braga, Nations League League A Group 4. Every Portugal player wore No.7 in tribute; mascots too. Hojbjerg penalty shortly before half-time; Hojlund two early in the second half; Andersen 75'; Bernardo Silva consolation deep in stoppage time. Heaviest competitive home defeat (three-goal margin). Jorge Jesus's first loss as manager after four straight wins. Ronaldo announced international retirement on 5 Nov (the match was nine days later). "Heaviest competitive home defeat" is how commentators described it, so the script says "called".

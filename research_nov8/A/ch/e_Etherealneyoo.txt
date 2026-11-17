@@ -1,0 +1,9 @@
+WARNING: [youtube:tab] unable to extract yt initial data; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+WARNING: [youtube:tab] Incomplete yt initial data received. Retrying (1/3)...
+WARNING: [youtube:tab] unable to extract yt initial data; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+WARNING: [youtube:tab] Incomplete yt initial data received. Retrying (2/3)...
+WARNING: [youtube:tab] unable to extract yt initial data; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+WARNING: [youtube:tab] Incomplete yt initial data received. Retrying (3/3)...
+WARNING: [youtube:tab] unable to extract yt initial data; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+WARNING: [youtube:tab] Incomplete yt initial data received; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U. Giving up after 3 retries
+ERROR: [youtube:tab] @Etherealneyoo: This channel does not have a shorts tab

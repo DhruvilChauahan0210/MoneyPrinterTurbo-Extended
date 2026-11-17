@@ -1,0 +1,467 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Nani",
+      "a real photograph of Luka Modric",
+      "a real photograph of Sergio Ramos",
+      "a real photograph of Alvaro Arbeloa",
+      "a real photograph of Gonzalo Higuain",
+      "a real photograph of Jose Mourinho",
+      "a real photograph of Alex Ferguson"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "DID THE REFEREE DECIDE IT?",
+    "hook_cover_term": "Cristiano Ronaldo in Real Madrid kit at Old Trafford",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "DID THE RED CARD DECIDE THIS TIE? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Nani",
+      "a real photograph of Luka Modric",
+      "a real photograph of Sergio Ramos",
+      "a real photograph of Alvaro Arbeloa",
+      "a real photograph of Gonzalo Higuain",
+      "a real photograph of Jose Mourinho",
+      "a real photograph of Alex Ferguson"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Ronaldo knocked out Manchester United thirteen minutes after Nani's red card. Champions League, last sixteen, second leg at Old Trafford. It was one-one from the first leg. Ramos's own goal put United ahead after half-time. Nani's high challenge on Arbeloa earned a red card. Modric equalised with a curling shot. Three minutes later Ronaldo slid in at the far post. Real won two-one, three-two on aggregate. Did the red card decide this tie?",
+    "video_subject": "In the March 2013 Champions League last-16 second leg at Old Trafford Nani was sent off in the 56th minute for Manchester United, Luka Modric equalised in the 66th and Cristiano Ronaldo scored the winner in the 69th as Real Madrid won 2-1 and knocked out his former club 3-2 on aggregate.",
+    "video_terms": "Ronaldo, Real Madrid, Manchester United, Old Trafford, Champions League 2013, Nani red card, Modric, Mourinho, Ferguson",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Ronaldo knocked out Manchester United thirteen minutes after Nani's red card.",
+        "visual": "close up of Cristiano Ronaldo in white Real Madrid kit 2013",
+        "images": [
+          "Cristiano Ronaldo Real Madrid 2013",
+          "Ronaldo Old Trafford 2013"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Champions League, last sixteen, second leg at Old Trafford.",
+        "visual": "Old Trafford stadium Champions League night",
+        "images": [
+          "Old Trafford Champions League",
+          "Real Madrid Old Trafford"
+        ],
+        "clips": []
+      },
+      {
+        "says": "It was one-one from the first leg.",
+        "visual": "Real Madrid Manchester United first leg Bernabeu",
+        "images": [
+          "Real Madrid Manchester United 2013",
+          "Bernabeu 2013"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ramos's own goal put United ahead after half-time.",
+        "visual": "Sergio Ramos Real Madrid 2013",
+        "images": [
+          "Sergio Ramos Real Madrid",
+          "Sergio Ramos Manchester United"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Nani's high challenge on Arbeloa earned a red card.",
+        "visual": "Nani red card Manchester United Real Madrid",
+        "images": [
+          "Nani Manchester United",
+          "Alvaro Arbeloa Real Madrid"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Modric equalised with a curling shot.",
+        "visual": "Luka Modric Real Madrid 2013",
+        "images": [
+          "Luka Modric Real Madrid",
+          "Modric goal Manchester United"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Three minutes later Ronaldo slid in at the far post.",
+        "visual": "Cristiano Ronaldo scoring Old Trafford Real Madrid 2013",
+        "images": [
+          "Ronaldo goal Manchester United 2013",
+          "Gonzalo Higuain Real Madrid"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Real won two-one, three-two on aggregate.",
+        "visual": "Real Madrid players celebrating Old Trafford",
+        "images": [
+          "Real Madrid celebrating 2013",
+          "Jose Mourinho Real Madrid 2013"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Did the red card decide this tie?",
+        "visual": "Sir Alex Ferguson Old Trafford 2013",
+        "images": [
+          "Alex Ferguson 2013",
+          "Ronaldo Manchester United return"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "In the March 2013 Champions League last-16 second leg at Old Trafford Nani was sent off in the 56th minute for Manchester United, Luka Modric equalised in the 66th and Cristiano Ronaldo scored the winner in the 69th as Real Madrid won 2-1 and knocked out his former club 3-2 on aggregate.",
+      "video_script": "Ronaldo knocked out Manchester United thirteen minutes after Nani's red card. Champions League, last sixteen, second leg at Old Trafford. It was one-one from the first leg. Ramos's own goal put United ahead after half-time. Nani's high challenge on Arbeloa earned a red card. Modric equalised with a curling shot. Three minutes later Ronaldo slid in at the far post. Real won two-one, three-two on aggregate. Did the red card decide this tie?",
+      "video_terms": "Ronaldo, Real Madrid, Manchester United, Old Trafford, Champions League 2013, Nani red card, Modric, Mourinho, Ferguson",
+      "hook_text": "DID THE REFEREE DECIDE IT?",
+      "cta_text": "DID THE RED CARD DECIDE THIS TIE? 👇",
+      "beat_plan": [
+        {
+          "says": "Ronaldo knocked out Manchester United thirteen minutes after Nani's red card.",
+          "visual": "close up of Cristiano Ronaldo in white Real Madrid kit 2013",
+          "images": [
+            "Cristiano Ronaldo Real Madrid 2013 portrait",
+            "Cristiano Ronaldo Real Madrid bwin"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b01/img-c42ae31ac2ba3cf7cdb2fec2a6b6ab42.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b01/img-910bb6ba2cc789a693524e99ff97da81.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b01/img-e7d179d26b1bcf65fd47234bcb687405.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b01/img-e6abe4bc81cbac02b4888006c6b5b61b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b01/img-80bd33b3ac144f05be9ab53dc2a306f4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b01/img-f29e8de410eb78f0ef3b41080345563d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b01/img-b47f8dad2ee16dbb8818091d91b865ed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b01/img-16165c585c8b777613ba7e8034de0335.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b01/img-c42ae31ac2ba3cf7cdb2fec2a6b6ab42.jpg",
+          "url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/06/17/16/Cristiano-Ronaldo-9.jpg?quality=75&width=1200&auto=webp"
+        },
+        {
+          "says": "Champions League, last sixteen, second leg at Old Trafford.",
+          "visual": "Old Trafford stadium Champions League night",
+          "images": [
+            "Old Trafford Champions League",
+            "Real Madrid Old Trafford"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b02/img-582843389b23ec4100fc2ea149074f84.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b02/img-59208f1b764e32e4e52069f02094e1aa.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b02/img-12f647f3b4b132dd50a14d54a07da27f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b02/img-90799caad6dc848d2cd166bc7dc72d3c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b02/img-dc8e9e2b02844b0c1e7b134dd18a87be.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b02/img-f5d4fa124bb112fc07ed14f8d226e38b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b02/img-93975cfc8b71319b3eb9258e921fb970.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b02/img-780ce065f108e65fa7f73d3bbba4217e.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b02/img-582843389b23ec4100fc2ea149074f84.jpg",
+          "url": "https://i.ytimg.com/vi/MZYB2QHDkUg/maxresdefault.jpg"
+        },
+        {
+          "says": "It was one-one from the first leg.",
+          "visual": "Real Madrid Manchester United first leg Bernabeu",
+          "images": [
+            "Real Madrid Manchester United 2013 Bernabeu",
+            "Real Madrid Manchester United Champions League 2013"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b03/img-115aec92027791e23980a9185fa59151.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b03/img-f2ec67becf4bbdeadd6e2108adb84138.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b03/img-cd554e0b11346ec3e159016cede0ff1a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b03/img-362242aeb7a461623504c7bcc273edaf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b03/img-74e3b25ec8ab148204449bf9ff2cfbc0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b03/img-b13475f104a6f90f35f6876eba4b4b22.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b03/img-4f7d6ec50cfeabb10531b7e0752f36a7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b03/img-6179756ab565be9c165ad81c03c0c879.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b03/img-115aec92027791e23980a9185fa59151.jpg",
+          "url": "https://i2-prod.mirror.co.uk/incoming/article1708205.ece/ALTERNATES/s1227b/Real-Madrid-v-Manchester-United--UEFA-Champions-League-Round-of-16.jpg"
+        },
+        {
+          "says": "Ramos's own goal put United ahead after half-time.",
+          "visual": "Sergio Ramos Real Madrid 2013",
+          "images": [
+            "Sergio Ramos Real Madrid 2013",
+            "Sergio Ramos Real Madrid white kit"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b04/img-2db2a4914c9173da829f2d0a08c70070.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b04/img-5c717c372ec8388c6369b464f5e33e47.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b04/img-ca1ceb5e09b6f84682f78c01946844f7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b04/img-a703a67395ccc3992adc58555993cd3b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b04/img-527ad0f443b485eff6ef6e0e2debdec2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b04/img-1e798dfd3d81de53cb8ca0b5670281fb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b04/img-553d62ebae16f9263b6e99c425768bd6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b04/img-bb92ecf386bdfc0198d84e93a4b6f322.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b04/img-ca1ceb5e09b6f84682f78c01946844f7.jpg",
+          "url": "https://editorial.uefa.com/resources/0206-0e839aae001c-f9932078916d-1000/sergio_ramos_marshals_the_madrid_defence.jpeg"
+        },
+        {
+          "says": "Nani's high challenge on Arbeloa earned a red card.",
+          "visual": "Nani red card Manchester United Real Madrid",
+          "images": [
+            "Nani Manchester United",
+            "Alvaro Arbeloa Real Madrid"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b05/img-70ec9fe871e3e5d556315735f33c518c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b05/img-4bbad283dbaeb30b634363cac56bb7f6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b05/img-e3c121806ee6618bcd2422b17d06f944.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b05/img-8387685dd5eeffca49c87635f3119e2c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b05/img-6fbf993bb2a3421c1a431d4ae0935e81.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b05/img-9bb420566f4fa693f2c800bc64a64714.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b05/img-3055b332b5eaac030676b2da5b264ee3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b05/img-0f762a0741803d7645b3d60caa5345e8.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b05/img-70ec9fe871e3e5d556315735f33c518c.jpg",
+          "url": "https://i2-prod.manchestereveningnews.co.uk/incoming/article1328967.ece/ALTERNATES/s1227b/PA_SOCCER+Man+Utd+2145116_5883961.jpg"
+        },
+        {
+          "says": "Modric equalised with a curling shot.",
+          "visual": "Luka Modric Real Madrid 2013",
+          "images": [
+            "Luka Modric Real Madrid",
+            "Modric goal Manchester United"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b06/img-f77ba3b2d5710c666fac19e2f9406e60.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b06/img-9f025aa720ce6f014af03e44b5f1e6fa.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b06/img-a502a6db79c1b21b9e2e9ef3d1bc7edc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b06/img-7cb54972fb945705f8c63aa2e9d08817.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b06/img-0fbce33be2a45f015dede11b4c2f3f11.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b06/img-0d851dedce9ea585181d1728f2bc0524.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b06/img-ff66de295add3ef91e8d94e14b6238cf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b06/img-207e1d6f120ecb7e8708bebe1a078150.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b06/shot_8ccc625c89.mp4",
+          "url": "https://www.youtube.com/watch?v=LycyhjkmHEc",
+          "start": 187.0,
+          "len": 6.0
+        },
+        {
+          "says": "Three minutes later Ronaldo slid in at the far post.",
+          "visual": "Cristiano Ronaldo scoring Old Trafford Real Madrid 2013",
+          "images": [
+            "Cristiano Ronaldo celebrating Real Madrid Old Trafford",
+            "Ronaldo Real Madrid Manchester United 2013 goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b07/img-2dd37fede765c7af4f420bfc3e8eb716.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b07/img-92050a3b43cf6d24f4a637cf6db93ce4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b07/img-b6bac0b42f68bf3e097c905cbbc5532d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b07/img-f4ab729948b8d53724f3360abddf7271.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b07/shot_fd7217eca5.mp4",
+          "url": "https://www.youtube.com/watch?v=LycyhjkmHEc",
+          "start": 232.0,
+          "len": 6.0
+        },
+        {
+          "says": "Real won two-one, three-two on aggregate.",
+          "visual": "Real Madrid players celebrating Old Trafford",
+          "images": [
+            "Real Madrid celebrating 2013",
+            "Jose Mourinho Real Madrid 2013"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b08/img-17e2a862ad1a2aea1db1de6f6389f483.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b08/img-30dfffe1856d49b489156ff8901ef338.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b08/img-42ccad7bea97b4e3e172ddc1f2a0e843.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b08/img-b058c68b110541f828c33e168ef70b2a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b08/img-3f56ab94afb5f35a553f8d2093a795ca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b08/img-9bb47a2defb051bcbced3eed0771e85b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b08/img-e9e118ab71078eca37ae4eaa25850208.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b08/img-b1c9eb17245043b6c024b78444986800.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b08/img-17e2a862ad1a2aea1db1de6f6389f483.jpg",
+          "url": "https://editorial.uefa.com/resources/0253-0e871f8b1949-69d843076035-1000/2014445.jpeg"
+        },
+        {
+          "says": "Did the red card decide this tie?",
+          "visual": "Sir Alex Ferguson Old Trafford 2013",
+          "images": [
+            "Alex Ferguson 2013",
+            "Ronaldo Manchester United return"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b09/img-09571379ccb9b74feeb0c19a0e04a7d9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b09/img-9a5eacfed09651a16d254565d7ea763c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b09/img-40cfb3cbd9203ccf32708a551957de59.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b09/img-dc68ba3e768c54a48d75abb82aa2d4b2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b09/img-c44fd0d719a597f6c0a8c757345f52df.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b09/img-433ddac0a4fc376163ba3d89f7949d26.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b09/img-96f062e61b454f28ac5c18117fc60e88.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b09/img-adbd13f5f092a7a72a2b5abdc381fc45.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_march_2013_champions_league_last_/b09/img-9a5eacfed09651a16d254565d7ea763c.jpg",
+          "url": "https://i2-prod.irishmirror.ie/incoming/article2110815.ece/ALTERNATES/s1227b/2013-Premier-League-Alex-Ferguson.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

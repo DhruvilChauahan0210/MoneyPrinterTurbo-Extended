@@ -1,0 +1,376 @@
+################ stats1.py
+===== P1_pre29Oct 276 median 980.5
+         n  median    mean    p25     p75  share_lt300
+hour_g                                                
+13      76  1002.5  922.39  485.5  1156.5         0.16
+17      78   945.5  877.01  809.0  1052.0         0.15
+21      77   970.0  953.09  869.0  1052.0         0.06
+other   45  1009.0  980.49  714.0  1108.0         0.13
+KruskalResult(statistic=np.float64(1.1067835837392526), pvalue=np.float64(0.5749962316435656))
+            n  median     mean     p25      p75  share_lt300
+weekday                                                     
+Friday     38  1035.5   963.24  884.75  1157.50         0.13
+Monday     40   918.0   868.42  866.75  1080.25         0.15
+Saturday   40   975.0   932.60  876.00  1060.25         0.10
+Sunday     39   945.0   774.46  473.50  1041.50         0.18
+Thursday   39  1012.0  1041.97  770.50  1129.50         0.08
+Tuesday    40   968.0   917.00  671.25  1081.00         0.12
+Wednesday  40  1004.0   996.35  867.50  1112.00         0.12
+KruskalResult(statistic=np.float64(6.970814370865334), pvalue=np.float64(0.3235547128243439))
+              n  median     mean      p25     p75  share_lt300
+fmt                                                           
+15-25        68   956.5   861.75   354.75  1078.5         0.24
+25-35        78   952.5   861.76   809.00  1039.5         0.12
+35+           1  1003.0  1003.00  1003.00  1003.0         0.00
+short_lt15  127   990.0   999.94   879.50  1145.5         0.08
+whatif7s      2  1104.0  1104.00  1089.00  1119.0         0.00
+KruskalResult(statistic=np.float64(3.727815533571279), pvalue=np.float64(0.15506548509729814))
+              n  median     mean      p25      p75  share_lt300
+star                                                           
+bellingham    4  1030.0   936.00   892.75  1073.25         0.00
+haaland      11   965.0   920.27   526.50  1039.00         0.27
+kane          5  1042.0  1099.80  1027.00  1134.00         0.00
+mbappe       18   920.5   853.17   719.50  1125.50         0.22
+messi        66   997.5   963.62   861.25  1098.50         0.14
+neymar       12   900.0   765.50   465.50  1002.25         0.17
+other        35   929.0   875.37   816.50  1051.50         0.11
+ronaldo     111   990.0   958.83   832.00  1117.00         0.08
+salah         3   947.0   702.33   533.00   994.00         0.33
+vinicius      7   846.0   685.14   380.50  1011.00         0.29
+yamal         4  1067.0  1135.00   777.25  1424.75         0.25
+                    n  median     mean     p25      p75  share_lt300
+angle                                                               
+award_ballondor     3   920.0   695.33  539.50   963.50         0.33
+emotion_personal   27   989.0   935.96  836.00  1104.50         0.11
+number_record      65   971.0   994.31  882.00  1079.00         0.05
+other             149   990.0   907.95  815.00  1066.00         0.16
+rivalry_conflict   30   975.0   888.37  659.25  1097.25         0.13
+whatif              2  1048.0  1048.00  987.00  1109.00         0.00
+title_q {False: {'n': 272, 'median': 972.5, 'mean': 925.27, 'p25': 764.25, 'p75': 1087.5, 'share_lt300': 0.13}, True: {'n': 4, 'median': 1088.5, 'mean': 1086.5, 'p25': 1059.0, 'p75': 1116.0, 'share_lt300': 0.0}} 0.11539962190081565
+title_emoji {True: {'n': 276, 'median': 980.5, 'mean': 927.61, 'p25': 796.5, 'p75': 1090.25, 'share_lt300': 0.13}} NA
+title_has_number {False: {'n': 202, 'median': 989.0, 'mean': 923.76, 'p25': 748.25, 'p75': 1098.25, 'share_lt300': 0.15}, True: {'n': 74, 'median': 966.0, 'mean': 938.09, 'p25': 811.25, 'p75': 1066.0, 'share_lt300': 0.05}} 0.9518089899788627
+title_starts_number {False: {'n': 263, 'median': 988.0, 'mean': 931.52, 'p25': 790.0, 'p75': 1097.5, 'share_lt300': 0.13}, True: {'n': 13, 'median': 912.0, 'mean': 848.38, 'p25': 807.0, 'p75': 1036.0, 'share_lt300': 0.08}} 0.3338253343483808
+title_starts_name {False: {'n': 203, 'median': 939.0, 'mean': 882.4, 'p25': 638.5, 'p75': 1064.5, 'share_lt300': 0.15}, True: {'n': 73, 'median': 1035.0, 'mean': 1053.32, 'p25': 941.0, 'p75': 1113.0, 'share_lt300': 0.05}} 0.0004929432483600283
+halo {False: {'n': 112, 'median': 1005.5, 'mean': 1040.57, 'p25': 888.0, 'p75': 1171.75, 'share_lt300': 0.08}, True: {'n': 164, 'median': 942.0, 'mean': 850.46, 'p25': 621.5, 'p75': 1047.5, 'share_lt300': 0.16}} 0.004221532731101451
+title_has_series {False: {'n': 252, 'median': 994.0, 'mean': 933.12, 'p25': 786.75, 'p75': 1100.0, 'share_lt300': 0.14}, True: {'n': 24, 'median': 922.0, 'mean': 869.71, 'p25': 809.25, 'p75': 989.25, 'share_lt300': 0.0}} 0.1510372865997084
+title_len spearman SignificanceResult(statistic=np.float64(-0.05492180136737616), pvalue=np.float64(0.36336345848386226))
+title_caps_words spearman SignificanceResult(statistic=np.float64(-0.10990317187074483), pvalue=np.float64(0.068289999109863))
+title_words spearman SignificanceResult(statistic=np.float64(-0.11205605315829449), pvalue=np.float64(0.06302357319428233))
+duration spearman SignificanceResult(statistic=np.float64(-0.06639510444096891), pvalue=np.float64(0.2716609487227093))
+hour spearman SignificanceResult(statistic=np.float64(0.006905232214847317), pvalue=np.float64(0.9090800041868968))
+desc_len spearman SignificanceResult(statistic=np.float64(-0.11845343690002798), pvalue=np.float64(0.049311135153434174))
+n_tags spearman SignificanceResult(statistic=np.float64(-0.03146115802886904), pvalue=np.float64(0.6027647795055755))
+===== P2_post29Oct 32 median 180.0
+         n  median    mean     p25    p75  share_lt300
+hour_g                                                
+13      10   204.0  219.20   83.25  335.5         0.70
+17      11    83.0  301.73   77.50  344.0         0.64
+21      10   171.5  245.90  132.00  269.0         0.90
+other    1   225.0  225.00  225.00  225.0         1.00
+KruskalResult(statistic=np.float64(0.3841275659823964), pvalue=np.float64(0.8252542296297034))
+           n  median    mean    p25     p75  share_lt300
+weekday                                                 
+Friday     6   176.5  185.83   92.0  233.25         0.83
+Monday     3   173.0  633.67  119.0  918.00         0.67
+Saturday   6   121.5  211.00   87.0  313.50         0.67
+Sunday     5   194.0  274.60   22.0  232.00         0.80
+Thursday   6   233.5  236.33  116.5  376.00         0.67
+Tuesday    3   294.0  275.67  254.0  306.50         0.67
+Wednesday  3    81.0   98.33   62.5  125.50         1.00
+KruskalResult(statistic=np.float64(0.4021739130434696), pvalue=np.float64(0.9397930500400359))
+           n  median    mean     p25    p75  share_lt300
+fmt                                                     
+25-35     23   173.0  287.39   86.50  331.5         0.74
+35+        4   204.0  224.25  165.75  262.5         0.75
+whatif7s   5    83.0  137.60   77.00  187.0         0.80
+KruskalResult(statistic=np.float64(0.9796101949025342), pvalue=np.float64(0.32229506170889494))
+             n  median    mean     p25      p75  share_lt300
+star                                                        
+bellingham   1     3.0    3.00    3.00     3.00         1.00
+mbappe       3   437.0  707.33  229.50  1050.00         0.33
+messi       11   214.0  224.55  157.00   234.00         0.82
+neymar       2   198.5  198.50  138.25   258.75         0.50
+other        1    77.0   77.00   77.00    77.00         1.00
+ronaldo     12   157.5  223.00   76.25   283.50         0.83
+salah        1   369.0  369.00  369.00   369.00         0.00
+yamal        1    81.0   81.00   81.00    81.00         1.00
+                  n  median    mean     p25     p75  share_lt300
+angle                                                           
+emotion_personal  3    99.0  101.67   88.50  113.50         1.00
+number_record     9   225.0  314.33  144.00  408.00         0.56
+other             8   201.0  187.88   61.00  247.00         0.88
+rivalry_conflict  8   183.5  368.38   90.00  312.75         0.75
+whatif            4   135.0  152.75   67.75  220.00         0.75
+title_q {False: {'n': 26, 'median': 183.5, 'mean': 223.88, 'p25': 84.0, 'p75': 290.5, 'share_lt300': 0.77}, True: {'n': 6, 'median': 135.0, 'mean': 395.67, 'p25': 79.25, 'p75': 286.0, 'share_lt300': 0.67}} 0.8692881861680527
+title_emoji {True: {'n': 32, 'median': 180.0, 'mean': 256.09, 'p25': 80.75, 'p75': 300.25, 'share_lt300': 0.75}} NA
+title_has_number {False: {'n': 24, 'median': 157.0, 'mean': 166.38, 'p25': 80.75, 'p75': 226.75, 'share_lt300': 0.88}, True: {'n': 8, 'median': 388.5, 'mean': 525.25, 'p25': 236.75, 'p75': 558.25, 'share_lt300': 0.38}} 0.041287090119125715
+title_starts_number {False: {'n': 29, 'median': 170.0, 'mean': 221.66, 'p25': 80.0, 'p75': 236.0, 'share_lt300': 0.83}, True: {'n': 3, 'median': 437.0, 'mean': 589.0, 'p25': 422.5, 'p75': 679.5, 'share_lt300': 0.0}} 0.0064516129032258064
+title_starts_name {False: {'n': 18, 'median': 158.5, 'mean': 224.11, 'p25': 80.25, 'p75': 298.25, 'share_lt300': 0.72}, True: {'n': 14, 'median': 190.5, 'mean': 297.21, 'p25': 85.5, 'p75': 290.5, 'share_lt300': 0.79}} 0.8642702641586779
+halo {True: {'n': 32, 'median': 180.0, 'mean': 256.09, 'p25': 80.75, 'p75': 300.25, 'share_lt300': 0.75}} NA
+title_has_series {False: {'n': 32, 'median': 180.0, 'mean': 256.09, 'p25': 80.75, 'p75': 300.25, 'share_lt300': 0.75}} NA
+title_len spearman SignificanceResult(statistic=np.float64(-0.003316489758743526), pvalue=np.float64(0.9856272918669375))
+title_caps_words spearman SignificanceResult(statistic=np.float64(0.10993127832944438), pvalue=np.float64(0.5492104889344797))
+title_words spearman SignificanceResult(statistic=np.float64(0.23045641074727216), pvalue=np.float64(0.20445746567999087))
+duration spearman SignificanceResult(statistic=np.float64(0.15032473992728648), pvalue=np.float64(0.4115241543632514))
+hour spearman SignificanceResult(statistic=np.float64(-0.006378418153408941), pvalue=np.float64(0.9723616078326448))
+desc_len spearman SignificanceResult(statistic=np.float64(0.013380991715991948), pvalue=np.float64(0.942056095393848))
+n_tags spearman SignificanceResult(statistic=np.float64(0.3494470655463458), pvalue=np.float64(0.04994604559717643))
+################ stats2.py
+                                            count  median  <lambda_0>
+period pipeline       ps                                             
+P1     beat_plan      0% photo (all clips)      2  1269.0        0.00
+                      1-50%                     5  1154.0        0.00
+                      51-99%                   11  1079.0        0.00
+                      100% photo               18  1022.5        0.06
+       semantic_clips 0% photo (all clips)    185   929.0        0.15
+                      1-50%                    20   976.5        0.15
+                      51-99%                    9   930.0        0.11
+                      100% photo                2   975.0        0.00
+P2     beat_plan      51-99%                    3   170.0        1.00
+                      100% photo               23   194.0        0.74
+           date  hour  views  photo_share  n_photo  n_video                                                                            title
+250  2026-10-21    13   1253        0.504      5.0      6.0                             What Messi Told YAMAL 😳 #halo try this sound #shorts
+251  2026-10-21    17   1103        1.000     13.0      0.0                         Haaland's City Time OVER? 😳 #halo try this sound #shorts
+252  2026-10-21    21   1008        0.955      7.0      1.0              Ronaldo CRITICISED By Legends 😳 #halo try this sound #shorts #messi
+253  2026-10-22    13   1040        0.351      5.0      6.0                        Ronaldo's Message To MESSI 😳 #halo try this sound #shorts
+254  2026-10-22    17   1042        0.781     10.0      3.0         Kane Scored TWICE. Olise Ruined It 😳 #halo try this sound #shorts #messi
+255  2026-10-22    17   1054        0.753      8.0      2.0                    Messi 934 Ronaldo 980: The GAP 😳 #halo try this sound #shorts
+256  2026-10-23    13   1017        0.752     10.0      3.0                     Messi Didn't Score. He Won It 😳 #halo try this sound #shorts
+257  2026-10-23    17   1014        1.000     11.0      0.0  Bellingham Locked Until 2031? 😳 #halo try this sound #shorts #messi #realmadrid
+258  2026-10-23    21   1038        1.000     10.0      0.0                        Ronaldo's FAREWELL Promise 😳 #halo try this sound #shorts
+259  2026-10-24    13   1034        1.000      8.0      0.0                           Mbappe CRUSHED the vote 😳 #halo try this sound #shorts
+260  2026-10-24    17    988        0.000      0.0      8.0                         Ten Hag BROKE his silence 😳 #halo try this sound #shorts
+261  2026-10-24    21   1018        1.000      8.0      0.0                             Messi now OWNS a club 😳 #halo try this sound #shorts
+262  2026-10-25    13      4        1.000      8.0      0.0                      Barca COLLAPSED in 6 minutes 😳 #halo try this sound #shorts
+263  2026-10-25    17   1071        1.000      7.0      0.0                        Como HUMILIATED Man United 😳 #halo try this sound #shorts
+264  2026-10-25    21    995        1.000      8.0      0.0                       Liverpool's INSANE comeback 😳 #halo try this sound #shorts
+266  2026-10-26    13   1034        1.000      8.0      0.0                  Messi just made HISTORY in Spain 😳 #halo try this sound #shorts
+267  2026-10-26    17   1035        1.000      9.0      0.0                          Yamal just CAUGHT Mbappé 😳 #halo try this sound #shorts
+268  2026-10-26    21    869        1.000      9.0      0.0                        Ronaldo's BIGGEST move yet 😳 #halo try this sound #shorts
+269  2026-10-27    13   1003        1.000      8.0      0.0                          Ronaldo REPLIED to Kvara 😳 #halo try this sound #shorts
+271  2026-10-27    17   1027        1.000      9.0      0.0                  Kane is HUNTING Ronaldo's record 😳 #halo try this sound #shorts
+272  2026-10-27    21   1007        1.000      9.0      0.0                   Messi's coach made a BOLD claim 😳 #halo try this sound #shorts
+273  2026-10-28    13   1007        1.000      9.0      0.0                   TITLE100 GOALS AND NOT DONE YET 😳 #halo try this sound #shorts
+274  2026-10-28    17   1094        1.000      8.0      0.0                             50 GOALS AND COUNTING 😳 #halo try this sound #shorts
+275  2026-10-28    21    358        1.000      8.0      0.0                          RONALDO'S NEW ERA BEGINS 😳 #halo try this sound #shorts
+################ stats3.py
+                                                n  ...  share_gt1500
+era                                                ...              
+A Aug1-Sep5 (9-15s clips, no #halo)           109  ...          0.08
+B Sep6-Oct16 (20-30s clips, #halo)            129  ...          0.05
+C Oct17-28 (beat-plan, photos+clips)           38  ...          0.00
+D Oct29-Nov8 (all-photo beat-plan + What-If)   32  ...          0.03
+
+[4 rows x 10 columns]
+lag1 spearman P1 (log views): SignificanceResult(statistic=np.float64(0.2004282388974673), pvalue=np.float64(0.0008300697517673013))
+lag1 spearman all: SignificanceResult(statistic=np.float64(0.31848104300242885), pvalue=np.float64(1.1515001717884652e-08))
+daily median lag1 SignificanceResult(statistic=np.float64(0.5608019938526998), pvalue=np.float64(1.5700986559222142e-09))
+ICC by publish date, all 0.3107693502941937  P1 0.1881157272701704
+dip days (daily median<450): ['2026-08-31', '2026-09-03', '2026-09-15', '2026-09-16', '2026-09-19', '2026-09-20', '2026-10-10', '2026-10-11', '2026-10-12', '2026-10-13', '2026-10-14', '2026-10-29', '2026-10-30', '2026-10-31', '2026-11-01', '2026-11-02', '2026-11-03', '2026-11-04', '2026-11-05', '2026-11-06', '2026-11-07', '2026-11-08']
+P1 days with 3 slots 72 median by slot {13: 994.5, 17: 943.5, 21: 973.0} friedman 0.21511438569249575
+  share of days where slot2<slot1 0.5694444444444444 slot3<slot1 0.5277777777777778 slot3<slot2 0.4027777777777778
+  wilcoxon 17 vs 13 0.1355091454388861 21 vs 13 0.8838334364211222 21 vs 17 0.08045547347425623
+P2 days with 3 slots 9 median by slot {13: 214.0, 17: 187.0, 21: 173.0} friedman 0.4594258240359297
+  share of days where slot2<slot1 0.3333333333333333 slot3<slot1 0.3333333333333333 slot3<slot2 0.4444444444444444
+  wilcoxon 17 vs 13 0.8203125 21 vs 13 0.91015625 21 vs 17 0.91015625
+all days with 3 slots 81 median by slot {13: 956.0, 17: 919.0, 21: 935.0} friedman 0.32102929118530216
+  share of days where slot2<slot1 0.5432098765432098 slot3<slot1 0.5061728395061729 slot3<slot2 0.4074074074074074
+  wilcoxon 17 vs 13 0.1866074199076786 21 vs 13 0.742498402969288 21 vs 17 0.11258071478314428
+slot1->slot2 same-day spearman SignificanceResult(statistic=np.float64(0.21351068092845474), pvalue=np.float64(0.040997951115895256))
+################ stats4.py
+matched with cuts 278
+
+### A Aug1-Sep5 (9-15s clips, no #halo) 88
+  photo_share    n=88 rho=-0.14 p=0.180  median photo_share=0.0
+  cuts_per_10s   n=88 rho=+0.13 p=0.230  median cuts_per_10s=11.655000000000001
+  clips_per_10s  n=88 rho=-0.20 p=0.058  median clips_per_10s=14.665
+  n_video        n=88 rho=-0.05 p=0.631  median n_video=14.0
+  n_photo        n=88 rho=-0.14 p=0.201  median n_photo=0.0
+  duration       n=88 rho=+0.10 p=0.356  median duration=10.0
+  words          n=88 rho=-0.12 p=0.274  median words=28.0
+
+### B Sep6-Oct16 (20-30s clips, #halo) 128
+  photo_share    n=128 rho=+0.09 p=0.291  median photo_share=0.0
+  cuts_per_10s   n=128 rho=+0.05 p=0.610  median cuts_per_10s=5.205
+  clips_per_10s  n=128 rho=+0.04 p=0.670  median clips_per_10s=2.9850000000000003
+  n_video        n=128 rho=+0.06 p=0.517  median n_video=7.0
+  n_photo        n=128 rho=+0.09 p=0.287  median n_photo=0.0
+  duration       n=128 rho=+0.01 p=0.894  median duration=24.0
+  words          n=128 rho=+0.10 p=0.269  median words=68.0
+  nbeats         n=128 rho=+0.12 p=0.181  median nbeats=0.0
+
+### C Oct17-28 (beat-plan, photos+clips) 36
+  photo_share    n=36 rho=-0.61 p=0.000  median photo_share=0.9295
+  cuts_per_10s   n=36 rho=+0.65 p=0.000  median cuts_per_10s=3.01
+  clips_per_10s  n=36 rho=+0.70 p=0.000  median clips_per_10s=3.9050000000000002
+  n_video        n=36 rho=+0.64 p=0.000  median n_video=1.0
+  n_photo        n=36 rho=-0.30 p=0.081  median n_photo=8.0
+  duration       n=36 rho=-0.22 p=0.194  median duration=26.0
+  words          n=36 rho=-0.06 p=0.729  median words=68.5
+  nbeats         n=36 rho=+0.65 p=0.000  median nbeats=10.5
+
+### D Oct29-Nov8 (all-photo beat-plan + What-If) 26
+  photo_share    n=26 rho=+0.03 p=0.893  median photo_share=1.0
+  cuts_per_10s   n=26 rho=-0.12 p=0.559  median cuts_per_10s=2.0999999999999996
+  clips_per_10s  n=26 rho=+0.21 p=0.311  median clips_per_10s=2.875
+  n_video        n=26 rho=-0.03 p=0.879  median n_video=0.0
+  n_photo        n=26 rho=+0.08 p=0.686  median n_photo=9.0
+  duration       n=26 rho=-0.05 p=0.826  median duration=30.0
+  words          n=26 rho=+0.04 p=0.832  median words=77.5
+  nbeats         n=26 rho=-0.01 p=0.960  median nbeats=9.0
+              count  median  <lambda_0>  <lambda_1>
+cut_bin                                            
+(0.0, 3.5]       43  1007.0        0.12        0.00
+(3.5, 5.0]       44   869.5        0.20        0.02
+(5.0, 7.0]       28  1049.0        0.25        0.11
+(7.0, 10.0]      46   964.0        0.13        0.07
+(10.0, 40.0]     91   971.0        0.05        0.05
+              count  median  <lambda_0>  <lambda_1>
+ps                                                 
+(-0.01, 0.0]    187   933.0        0.14        0.06
+(0.0, 0.25]      12   954.0        0.17        0.00
+(0.25, 0.75]     27  1037.0        0.07        0.04
+(0.75, 1.0]      26  1025.5        0.04        0.00
+           date  hour  views  photo_share  cuts_per_10s  duration
+307  2026-11-08    17      3        1.000          2.02        30
+278  2026-10-29    21     13        1.000          2.49        25
+294  2026-11-04    13     44        1.000          2.24        31
+288  2026-11-02    13     65        1.000          1.81        33
+283  2026-10-31    17     78        1.000          2.49        28
+300  2026-11-06    13     80        1.000          3.16        29
+295  2026-11-04    17     81        1.000          1.70        35
+297  2026-11-05    13     93        0.835          2.36        30
+305  2026-11-07    21     99        1.000          2.52        28
+281  2026-10-30    21    128        1.000          2.17        32
+284  2026-10-31    21    144        1.000          1.68        30
+296  2026-11-04    21    170        0.687          0.98        31
+290  2026-11-02    21    173        1.000          2.31        30
+306  2026-11-08    13    194        1.000          1.27        39
+291  2026-11-03    13    214        1.000          1.79        39
+279  2026-10-30    14    225        1.000          1.04        29
+285  2026-11-01    13    232        1.000          1.32        30
+302  2026-11-06    21    236        0.664          2.50        32
+299  2026-11-05    21    280        1.000          2.05        29
+293  2026-11-03    21    294        1.000          2.35        30
+301  2026-11-06    17    369        1.000          3.19        28
+282  2026-10-31    13    370        1.000          1.62        31
+277  2026-10-29    17    437        1.000          1.80        32
+303  2026-11-07    13    492        1.000          1.68        30
+287  2026-11-01    21    922        1.000          2.15        28
+289  2026-11-02    17   1663        1.000          2.73        29
+                                              count      mean  median
+era                                                                  
+A Aug1-Sep5 (9-15s clips, no #halo)              88  0.097841  0.0000
+B Sep6-Oct16 (20-30s clips, #halo)              128  0.033211  0.0000
+C Oct17-28 (beat-plan, photos+clips)             36  0.743528  0.9295
+D Oct29-Nov8 (all-photo beat-plan + What-If)     26  0.968692  1.0000
+                                              count       mean  median
+era                                                                   
+A Aug1-Sep5 (9-15s clips, no #halo)              88  11.636591  11.655
+B Sep6-Oct16 (20-30s clips, #halo)              128   7.004688   5.205
+C Oct17-28 (beat-plan, photos+clips)             36   3.747778   3.010
+D Oct29-Nov8 (all-photo beat-plan + What-If)     26   2.054615   2.100
+                                              count       mean  median
+era                                                                   
+A Aug1-Sep5 (9-15s clips, no #halo)              88  10.386364    10.0
+B Sep6-Oct16 (20-30s clips, #halo)              128  22.242188    24.0
+C Oct17-28 (beat-plan, photos+clips)             36  26.250000    26.0
+D Oct29-Nov8 (all-photo beat-plan + What-If)     26  30.692308    30.0
+                                              count       mean  median
+era                                                                   
+A Aug1-Sep5 (9-15s clips, no #halo)              88  29.386364    28.0
+B Sep6-Oct16 (20-30s clips, #halo)              128  63.046875    68.0
+C Oct17-28 (beat-plan, photos+clips)             36  67.638889    68.5
+D Oct29-Nov8 (all-photo beat-plan + What-If)     26  76.846154    77.5
+################ stats5.py
+era C
+  date-FE photo_share (24, np.float64(-0.11), np.float64(0.605), np.float64(-0.013))
+  date-FE cuts_per_10s (36, np.float64(0.11), np.float64(0.508), np.float64(0.038))
+  date-FE n_video (24, np.float64(0.11), np.float64(0.616), np.float64(0.001))
+era C Oct21-28
+  date-FE photo_share (12, np.float64(-0.15), np.float64(0.637), np.float64(-0.011))
+  date-FE cuts_per_10s (24, np.float64(0.2), np.float64(0.353), np.float64(0.104))
+  date-FE n_video (12, np.float64(0.25), np.float64(0.442), np.float64(0.002))
+P1 all
+  date-FE photo_share (85, np.float64(-0.03), np.float64(0.778), np.float64(-0.023))
+  date-FE cuts_per_10s (249, np.float64(0.15), np.float64(0.016), np.float64(0.021))
+  date-FE n_video (207, np.float64(0.11), np.float64(0.11), np.float64(0.009))
+era D
+  date-FE photo_share (8, np.float64(-0.3), np.float64(0.464), np.float64(-0.559))
+  date-FE cuts_per_10s (26, np.float64(-0.33), np.float64(0.103), np.float64(-0.365))
+  date-FE n_video (8, np.float64(0.26), np.float64(0.532), np.float64(0.05))
+ALL matched
+  date-FE photo_share (93, np.float64(-0.05), np.float64(0.639), np.float64(-0.039))
+  date-FE cuts_per_10s (275, np.float64(0.13), np.float64(0.032), np.float64(0.02))
+  date-FE n_video (215, np.float64(0.11), np.float64(0.096), np.float64(0.009))
+C views vs date rho SignificanceResult(statistic=np.float64(-0.7533926054508352), pvalue=np.float64(1.1409420250519374e-07)) photo vs date SignificanceResult(statistic=np.float64(0.7821630956405358), pvalue=np.float64(1.7647788705750478e-08))
+Oct17-28 photo>=95% False 18 1123.0
+Oct17-28 photo>=95% True 18 1016.0
+Oct21-28 photo>=95% False 6 1041.0 988 1253
+Oct21-28 photo>=95% True 18 1016.0 4 1103
+################ stats6.py
+P1 only (before 29 Oct), date fixed effects. cols: feature | n_with | n_total | median views with | median without | adj % effect on views | p
+('money (million/billion/€/£/$)', 32, 276, 919, 988, np.float64(-10.8), np.float64(0.255))
+('refusal/rejection (no/refused/rejected/turned down/banned)', 42, 276, 984, 980, np.float64(26.9), np.float64(0.135))
+('emotion (cried/tears/dead/father/shaking)', 26, 276, 974, 980, np.float64(31.2), np.float64(0.212))
+('conflict/insult (slammed/booed/angry/fight/mock/criticis)', 29, 276, 914, 987, np.float64(-24.2), np.float64(0.022))
+('rivalry Messi-vs-Ronaldo both named', 8, 276, 1046, 972, np.float64(8.6), np.float64(0.705))
+('number in title', 193, 276, 971, 988, np.float64(6.7), np.float64(0.648))
+('question mark', 9, 276, 1065, 971, np.float64(-26.9), np.float64(0.21))
+('record/first/ever', 116, 276, 996, 966, np.float64(20.9), np.float64(0.045))
+('whatif/never left', 3, 276, None, None, None, None)
+('title_starts_name', 73, 276, 1035, 939, np.float64(-6.4), np.float64(0.479))
+('title_starts_number', 13, 276, 912, 988, np.float64(-15.8), np.float64(0.339))
+('title_has_number', 74, 276, 966, 989, np.float64(-4.7), np.float64(0.667))
+('title_q', 4, 276, None, None, None, None)
+('halo', 164, 276, None, None, None, None)
+('title_has_series', 24, 276, 922, 994, np.float64(16.7), np.float64(0.25))
+('>=2 all-caps words', 17, 276, 899, 987, np.float64(-51.7), np.float64(0.003))
+('title len>=30 chars', 157, 276, 956, 995, np.float64(-14.1), np.float64(0.167))
+('duration>=20s', 141, 276, 962, 990, np.float64(9.6), np.float64(0.828))
+('duration<15s', 129, 276, 993, 962, np.float64(-4.5), np.float64(0.817))
+('star Ronaldo', 111, 276, 990, 969, np.float64(19.5), np.float64(0.032))
+('star Messi', 66, 276, 998, 968, np.float64(-10.8), np.float64(0.23))
+('star other (not R/M)', 99, 276, 943, 997, np.float64(-9.0), np.float64(0.265))
+('slot 13:00', 76, 276, 1002, 972, np.float64(-14.4), np.float64(0.1))
+('slot 17:00', 78, 276, 946, 992, np.float64(-8.4), np.float64(0.347))
+('slot 21:00', 77, 276, 970, 987, np.float64(19.6), np.float64(0.054))
+
+money (million/billion/€/£/$) n 32 share>1300 0.188 vs 0.09  share<300 0.094 vs 0.131
+refusal/rejection (no/refused/rejected/turned down/banned) n 42 share>1300 0.238 vs 0.077  share<300 0.095 vs 0.132
+emotion (cried/tears/dead/father/shaking) n 26 share>1300 0.077 vs 0.104  share<300 0.115 vs 0.128
+conflict/insult (slammed/booed/angry/fight/mock/criticis) n 29 share>1300 0.069 vs 0.105  share<300 0.103 vs 0.13
+rivalry Messi-vs-Ronaldo both named n 8 share>1300 0.0 vs 0.104  share<300 0.125 vs 0.127
+number in title n 193 share>1300 0.119 vs 0.06  share<300 0.109 vs 0.169
+question mark n 9 share>1300 0.111 vs 0.101  share<300 0.111 vs 0.127
+record/first/ever n 116 share>1300 0.121 vs 0.088  share<300 0.121 vs 0.131
+whatif/never left n 3 share>1300 0.0 vs 0.103  share<300 0.0 vs 0.128
+
+P2 raw (n=32)
+conflict/insult (slammed/booed/angry/fight/mock/criticis) 3 81.0 194.0
+number in title 31 187.0 81.0
+question mark 9 81.0 214.0
+record/first/ever 22 190.5 171.5
+whatif/never left 5 83.0 194.0
+################ angle.py
+                           n  median  share_gt1300  share_lt300
+angle2                                                         
+award_ranking             20   996.0          0.10         0.05
+conflict_confrontation    41  1006.0          0.02         0.15
+match_moment              68  1013.5          0.10         0.12
+money_transfer_rejection  84   949.0          0.18         0.13
+other                     10   966.5          0.10         0.10
+personal_emotional        41   941.0          0.05         0.20
+record_number              9   962.0          0.00         0.00
+what_if                    3  1074.0          0.00         0.00
+KruskalResult(statistic=np.float64(2.89786077001293), pvalue=np.float64(0.821552926159184))
+                          count  median
+angle2                                 
+award_ranking                 4   233.5
+conflict_confrontation        5    93.0
+match_moment                  9   236.0
+money_transfer_rejection      4   180.0
+personal_emotional            3   144.0
+record_number                 2   325.0
+what_if                       5    83.0
+money_transfer_rejection >1300 15 69 13 179 SignificanceResult(statistic=np.float64(2.9933110367892977), pvalue=np.float64(0.008329541830618573))

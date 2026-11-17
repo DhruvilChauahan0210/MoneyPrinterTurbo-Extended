@@ -1,0 +1,459 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 4,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing for Inter Miami",
+      "a real photograph of Lionel Messi celebrating a goal"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "CAN MESSI STILL DO THIS?",
+    "hook_cover_term": "Lionel Messi celebrating a goal for Inter Miami",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "WILL MESSI HIT 1,000? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing for Inter Miami",
+      "a real photograph of Lionel Messi celebrating a goal"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Messi's manager has made a bold prediction. Inter Miami coach Kily González says Messi will reach one thousand career goals. He has nine hundred and thirty-six, so he still needs sixty-four. At thirty-nine, he leads MLS with twenty-five goals, and he has a goal or assist in thirteen straight matches. But he has already retired from Argentina, and he has hinted his career could end sooner rather than later. Can Messi still reach one thousand?",
+    "video_subject": "Inter Miami coach Kily Gonzalez said Lionel Messi will reach 1,000 career goals; Messi has 936 and has hinted at retiring sooner rather than later",
+    "video_terms": "Messi 1000 goals prediction Kily Gonzalez, Messi 936 career goals, Messi 25 MLS goals 2026",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "beat_plan": [
+      {
+        "says": "Messi's manager has made a bold prediction.",
+        "visual": "Lionel Messi in Inter Miami pink kit looking intense",
+        "images": [
+          "Lionel Messi Inter Miami 2026 close up",
+          "Messi Inter Miami intense"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Inter Miami coach Kily González says Messi will reach one thousand career goals.",
+        "visual": "Inter Miami coach Kily Gonzalez on the touchline",
+        "images": [
+          "Kily Gonzalez",
+          "Kily Gonzalez Inter Miami",
+          "Cristian Gonzalez Inter Miami coach"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He has nine hundred and thirty-six,",
+        "visual": "Lionel Messi celebrating a goal for Inter Miami",
+        "images": [
+          "Messi goal celebration Inter Miami 2026",
+          "Messi celebrates Inter Miami goal"
+        ],
+        "clips": []
+      },
+      {
+        "says": "so he still needs sixty-four.",
+        "visual": "Lionel Messi shooting the ball",
+        "images": [
+          "Messi shooting Inter Miami",
+          "Messi free kick Inter Miami 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "At thirty-nine, he leads MLS with twenty-five goals,",
+        "visual": "Lionel Messi scoring against Atlanta United",
+        "images": [
+          "Messi Atlanta United October 2026 goal",
+          "Messi Inter Miami Atlanta 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and he has a goal or assist in thirteen straight matches.",
+        "visual": "Lionel Messi celebrating with Inter Miami teammates",
+        "images": [
+          "Messi De Paul Inter Miami celebration",
+          "Messi Inter Miami teammates celebrate 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "But he has already retired from Argentina,",
+        "visual": "Lionel Messi waving goodbye in an Argentina shirt",
+        "images": [
+          "Messi Argentina farewell Benin October 2026",
+          "Messi last game Argentina goodbye"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and he has hinted his career could end sooner rather than later.",
+        "visual": "Lionel Messi looking thoughtful",
+        "images": [
+          "Messi thoughtful Inter Miami",
+          "Lionel Messi pensive 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Can Messi still reach one thousand?",
+        "visual": "Lionel Messi pointing to the sky",
+        "images": [
+          "Messi pointing to the sky Inter Miami",
+          "Messi celebration pointing up"
+        ],
+        "clips": []
+      }
+    ],
+    "intro_image_paths": [],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Inter Miami coach Kily Gonzalez said Lionel Messi will reach 1,000 career goals; Messi has 936 and has hinted at retiring sooner rather than later",
+      "video_script": "Messi's manager has made a bold prediction. Inter Miami coach Kily González says Messi will reach one thousand career goals. He has nine hundred and thirty-six, so he still needs sixty-four. At thirty-nine, he leads MLS with twenty-five goals, and he has a goal or assist in thirteen straight matches. But he has already retired from Argentina, and he has hinted his career could end sooner rather than later. Can Messi still reach one thousand?",
+      "video_terms": "Messi 1000 goals prediction Kily Gonzalez, Messi 936 career goals, Messi 25 MLS goals 2026",
+      "hook_text": "CAN MESSI STILL DO THIS?",
+      "cta_text": "WILL MESSI HIT 1,000? 👇",
+      "beat_plan": [
+        {
+          "says": "Messi's manager has made a bold prediction.",
+          "visual": "Lionel Messi in Inter Miami pink kit looking intense",
+          "images": [
+            "Lionel Messi Inter Miami 2026 close up",
+            "Messi Inter Miami intense"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b01/img-7c07cc177033f0aa4dbc7734441aea35.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b01/img-c9fab171f34eadf74210ef7afd9a10e6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b01/img-3fae82ea85a5780c52cfa3570a600b81.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b01/img-93c260b7b34538624bdfcb6fa9b1eec1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b01/img-a4cd4126840ad7745255c5e9e04a972e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b01/img-d0461b5872c069af2ff26d010c45812a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b01/img-071c1ed2c23c76c932674d519e8e5d2a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b01/img-3ff5d61aacd0b43a6f3de6ec2e5a6a2a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b01/img-c9fab171f34eadf74210ef7afd9a10e6.jpg",
+          "url": "https://static.foxnews.com/foxnews.com/content/uploads/2022/12/lionel-messi1.jpg"
+        },
+        {
+          "says": "Inter Miami coach Kily González says Messi will reach one thousand career goals.",
+          "visual": "Inter Miami coach Kily Gonzalez on the touchline",
+          "images": [
+            "Kily Gonzalez",
+            "Kily Gonzalez Inter Miami",
+            "Cristian Gonzalez Inter Miami coach"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b02/img-f5937d670846c5adacd8083b756d52e8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b02/img-a5fc78c759306b14df34cfc32cd49f49.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b02/img-b83a4e47d9c187731bcec4c7fad8021a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b02/img-f506e6a8fc8963926a697dfc60e3ada3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b02/img-ad866cb181bc4fc73b415024cb04300f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b02/img-0793fd4d9105d0143e62ce9e70c06b73.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b02/img-8e6d436dbd04c451ef8d19ad3ddc86a3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b02/img-25189beb626aaf4755146981d8c541dc.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b02/img-f5937d670846c5adacd8083b756d52e8.jpg",
+          "url": "https://s.yimg.com/lo/mysterio/api/c78d75a6dfcca251e769108d818b23761da6da54209b4dd062310b002381db96/lightyear_networkapi/resizefill_w1024_h576;quality_80;format_webp/https://media.zenfs.com/en/major_league_soccer_188/a16ad27e25e902c61d78957ff8255286.png"
+        },
+        {
+          "says": "He has nine hundred and thirty-six,",
+          "visual": "Lionel Messi celebrating a goal for Inter Miami",
+          "images": [
+            "Messi goal celebration Inter Miami 2026",
+            "Messi celebrates Inter Miami goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b03/img-0b30c32b9c55302b4e84d276253e6eac.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b03/img-27265c8224c949ce32b99c690bde1e24.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b03/img-254a6cf28e040f98085a919193da5bc8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b03/img-b6c1778ad9fb567a58cceec36d1104b6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b03/img-c9fab171f34eadf74210ef7afd9a10e6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b03/img-7c07cc177033f0aa4dbc7734441aea35.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b03/img-6cbd5af176aa2c8eb1f3b374ec5c6ddf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b03/img-8f77f30e9bdc38d5b1be5ed6e344b9d4.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b03/img-254a6cf28e040f98085a919193da5bc8.jpg",
+          "url": "https://nypost.com/wp-content/uploads/sites/2/2026/03/inter-miami-cf-forward-lionel-123021040.jpg?w=1024#"
+        },
+        {
+          "says": "so he still needs sixty-four.",
+          "visual": "Lionel Messi shooting the ball",
+          "images": [
+            "Messi shooting Inter Miami",
+            "Messi free kick Inter Miami 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b04/img-7c07cc177033f0aa4dbc7734441aea35.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b04/img-636ca26dc75af343759c0f11ee684212.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b04/img-436e1841332baa3a950e141243f5634c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b04/img-d0caa30efe999f6b72c3097de3b837c4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b04/img-bb5ae4c2ef376fe8224c1b1e111f9f8b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b04/img-a4cd4126840ad7745255c5e9e04a972e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b04/img-231624774f2af9f7f5749bb93c6232d8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b04/img-8c0ac2f0f95f65da0c04df7afdc00d02.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b04/img-d0caa30efe999f6b72c3097de3b837c4.jpg",
+          "url": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/RKKKIGSBCEI7DO2G5VLENCGZKM_size-normalized.jpg&w=916"
+        },
+        {
+          "says": "At thirty-nine, he leads MLS with twenty-five goals,",
+          "visual": "Lionel Messi scoring against Atlanta United",
+          "images": [
+            "Messi Atlanta United October 2026 goal",
+            "Messi Inter Miami Atlanta 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b05/img-7c07cc177033f0aa4dbc7734441aea35.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b05/img-92e812e85b86600cb2ef122a52423cff.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b05/img-cdac167daf4c66fb42a7e7eb31369e40.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b05/img-a4cd4126840ad7745255c5e9e04a972e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b05/img-374ca8f853e490d2777ce6901aa4e157.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b05/img-436e1841332baa3a950e141243f5634c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b05/img-52b721b9a0fe784ce0b79a35f47ee8b6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b05/img-0edcdf36cfb51ab735c20030a0c6af66.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b05/img-92e812e85b86600cb2ef122a52423cff.jpg",
+          "url": "https://phantom.estaticos-marca.com/4a0fe1f9eec76ff7dab39cefc8e2f9d7/resize/1320/f/jpg/assets/multimedia/imagenes/2026/03/02/17724244290325.jpg"
+        },
+        {
+          "says": "and he has a goal or assist in thirteen straight matches.",
+          "visual": "Lionel Messi celebrating with Inter Miami teammates",
+          "images": [
+            "Messi De Paul Inter Miami celebration",
+            "Messi Inter Miami teammates celebrate 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b06/img-f9b4cf720ee1d7f942239803c0067ecd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b06/img-bdb09ad038df249ca81dbef771a5fb5b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b06/img-be7d4fe05a7c936a385511befa8dba7f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b06/img-a023a803ad343a1aff5c444350ab4715.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b06/img-d332a5c26ba2baa5e9c8d2e914e3ce0a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b06/img-24f7af1e891de40f476b2395dd075566.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b06/img-93c260b7b34538624bdfcb6fa9b1eec1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b06/img-d0461b5872c069af2ff26d010c45812a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b06/img-bdb09ad038df249ca81dbef771a5fb5b.jpg",
+          "url": "https://i.pinimg.com/originals/ec/68/ee/ec68eeb2a943b91b572350cef06a6bb4.jpg"
+        },
+        {
+          "says": "But he has already retired from Argentina,",
+          "visual": "Lionel Messi waving goodbye in an Argentina shirt",
+          "images": [
+            "Messi Argentina farewell Benin October 2026",
+            "Messi last game Argentina goodbye"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b07/img-f023b766fb987e651d4c91c9ab5a6195.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b07/img-4a8dd3872cf1a7d3c69fed78966e3e16.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b07/img-2297652d4ab4a3370af2b8a04f0f8305.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b07/img-7b71d0c71f6ea6ed9c394d6a3f3c5e1b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b07/img-788f3a3645be8f7daf48c6623cefd836.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b07/img-1efc4e914ce3e892232078510c2a1b36.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b07/img-8b15a32237183c62a915ae60b37e1965.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b07/img-8e229202409a53470306183434aec9a7.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b07/img-4a8dd3872cf1a7d3c69fed78966e3e16.jpg",
+          "url": "https://www.101greatgoals.com/wp-content/uploads/2025/09/3CJ41HF-2-768x512.jpg"
+        },
+        {
+          "says": "and he has hinted his career could end sooner rather than later.",
+          "visual": "Lionel Messi looking thoughtful",
+          "images": [
+            "Messi thoughtful Inter Miami",
+            "Lionel Messi pensive 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b08/img-d912570a2b27d0081b753852c1cb0ddd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b08/img-4aa7c037968f4ea43446a82f4f48aaac.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b08/img-788f3a3645be8f7daf48c6623cefd836.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b08/img-7deffc8548dfbccc514ffe35539dfe2b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b08/img-7c07cc177033f0aa4dbc7734441aea35.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b08/img-5b2d3f015781fe70999b9c2895f73e23.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b08/img-3fae82ea85a5780c52cfa3570a600b81.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b08/img-071c1ed2c23c76c932674d519e8e5d2a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b08/img-d912570a2b27d0081b753852c1cb0ddd.jpg",
+          "url": "https://media.bolavip.com/wp-content/uploads/sites/10/2026/07/16182029/lionel-messi-6-2-1200x740.webp"
+        },
+        {
+          "says": "Can Messi still reach one thousand?",
+          "visual": "Lionel Messi pointing to the sky",
+          "images": [
+            "Messi pointing to the sky Inter Miami",
+            "Messi celebration pointing up"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b09/img-46b16123b67a867b97cdaccdbf295901.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b09/img-8009507f1b158f6e05848f14ff38f954.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b09/img-7c48d2040c2396388e4fc56948a30397.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b09/img-59ecf454c595f95aa2350e3e030c3641.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b09/img-ba90bd62fe717a9496e7cdac7c3f7023.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b09/img-668de0429b350179f74f9eb94599b5a2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b09/img-614a52bdba88af4eb95d1ca1051dff82.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b09/img-af076051d68be79cb43c34cc2df024fe.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/inter_miami_coach_kily_gonzalez_said_lio/b09/img-7c48d2040c2396388e4fc56948a30397.jpg",
+          "url": "https://i.pinimg.com/originals/72/5b/d1/725bd1a9df8187de05e0ebf732340ec8.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

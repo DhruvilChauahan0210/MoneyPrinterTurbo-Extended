@@ -1,0 +1,417 @@
+{
+ "key": "messi_fifpro39",
+ "out": "NEWSCUT_messi_fifpro_39.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_em106.wav",
+ "musicVol": 0.012,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Lionel Messi is thirty-nine.",
+ "sentences": [
+  [
+   [
+    "LIONEL MESSI",
+    "Lionel Messi"
+   ],
+   [
+    "IS 39",
+    "is thirty-nine,"
+   ],
+   [
+    "PLAYS IN AMERICA",
+    "plays in America,"
+   ],
+   [
+    "AND HE JUST BEAT",
+    "and he just beat"
+   ],
+   [
+    "THE BALLON D'OR WINNER",
+    "the Ballon d'Or winner"
+   ],
+   [
+    "INTO THE WORLD ELEVEN",
+    "into the World Eleven."
+   ]
+  ],
+  [
+   [
+    "AND NOBODY",
+    "And nobody"
+   ],
+   [
+    "SAW IT COMING",
+    "saw it coming."
+   ]
+  ],
+  [
+   [
+    "ALMOST 20,000",
+    "Almost twenty thousand"
+   ],
+   [
+    "PROFESSIONAL FOOTBALLERS",
+    "professional footballers"
+   ],
+   [
+    "VOTED",
+    "voted"
+   ],
+   [
+    "FOR FIFPRO'S",
+    "for FIFPRO's"
+   ],
+   [
+    "WORLD ELEVEN",
+    "World Eleven,"
+   ],
+   [
+    "AND MESSI",
+    "and Messi"
+   ],
+   [
+    "MADE IT",
+    "made it"
+   ],
+   [
+    "FOR THE 18TH TIME",
+    "for the eighteenth time,"
+   ],
+   [
+    "HIS FIRST",
+    "his first"
+   ],
+   [
+    "SINCE 2023",
+    "since twenty twenty-three."
+   ]
+  ],
+  [
+   [
+    "HARRY KANE",
+    "Harry Kane"
+   ],
+   [
+    "WON THE BALLON D'OR",
+    "won the Ballon d'Or,"
+   ],
+   [
+    "BUT HE WAS LEFT OUT",
+    "but he was left out,"
+   ],
+   [
+    "THE FIRST TIME",
+    "the first time"
+   ],
+   [
+    "A BALLON D'OR WINNER",
+    "a Ballon d'Or winner"
+   ],
+   [
+    "MISSED THE TEAM",
+    "missed the team"
+   ],
+   [
+    "IN THE SAME YEAR",
+    "in the same year."
+   ]
+  ],
+  [
+   [
+    "CRISTIANO RONALDO",
+    "Cristiano Ronaldo"
+   ],
+   [
+    "WAS LEFT OUT",
+    "was left out"
+   ],
+   [
+    "TOO",
+    "too."
+   ]
+  ],
+  [
+   [
+    "MESSI SCORED",
+    "Messi scored"
+   ],
+   [
+    "26 GOALS",
+    "twenty-six goals"
+   ],
+   [
+    "IN 31 GAMES",
+    "in thirty-one games"
+   ],
+   [
+    "FOR INTER MIAMI",
+    "for Inter Miami,"
+   ],
+   [
+    "WON A SECOND",
+    "won a second"
+   ],
+   [
+    "STRAIGHT",
+    "straight"
+   ],
+   [
+    "MLS GOLDEN BOOT",
+    "MLS Golden Boot,"
+   ],
+   [
+    "AND NOW LINES UP",
+    "and now lines up"
+   ],
+   [
+    "NEXT TO MBAPPÉ",
+    "next to Mbappay,"
+   ],
+   [
+    "HAALAND",
+    "Haaland"
+   ],
+   [
+    "AND YAMAL",
+    "and Yamal,"
+   ],
+   [
+    "PROVING ONCE AGAIN",
+    "proving once again"
+   ],
+   [
+    "THAT AT 39",
+    "that at thirty-nine"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "N2tINJ1Tnj8",
+   "start": 538.0,
+   "x": 737,
+   "h": 900
+  },
+  {
+   "at": 1,
+   "vid": "N2tINJ1Tnj8",
+   "start": 469.6,
+   "x": 740,
+   "h": 960
+  },
+  {
+   "at": 2,
+   "vid": "AWBTVCYHT3Q",
+   "start": 337.3,
+   "x": 780
+  },
+  {
+   "at": 3,
+   "vid": "N2tINJ1Tnj8",
+   "start": 432.0,
+   "x": 690
+  },
+  {
+   "at": 4,
+   "vid": "407tY1wz-w0",
+   "start": 73.0,
+   "x": 626
+  },
+  {
+   "at": 5,
+   "vid": "rAO8xk2l05Q",
+   "start": 48.5,
+   "x": 630
+  },
+  {
+   "at": 6,
+   "vid": "AWBTVCYHT3Q",
+   "start": 343.55,
+   "x": 850,
+   "h": 900
+  },
+  {
+   "at": 8,
+   "vid": "UJpuIXIJAHM",
+   "start": 9.0,
+   "x": 700
+  },
+  {
+   "at": 9,
+   "vid": "rAO8xk2l05Q",
+   "start": 62.3,
+   "x": 500
+  },
+  {
+   "at": 11,
+   "vid": "yPeEQitu_-o",
+   "start": 97.2,
+   "x": 690
+  },
+  {
+   "at": 12,
+   "vid": "yPeEQitu_-o",
+   "start": 41.0,
+   "x": 510
+  },
+  {
+   "at": 13,
+   "vid": "N2tINJ1Tnj8",
+   "start": 408.3,
+   "x": 690
+  },
+  {
+   "at": 15,
+   "vid": "N2tINJ1Tnj8",
+   "start": 579.5,
+   "x": 716
+  },
+  {
+   "at": 16,
+   "vid": "rAO8xk2l05Q",
+   "start": 296.0,
+   "x": 600
+  },
+  {
+   "at": 18,
+   "vid": "407tY1wz-w0",
+   "start": 70.9,
+   "x": 450
+  },
+  {
+   "at": 20,
+   "vid": "407tY1wz-w0",
+   "start": 548.0,
+   "x": 656
+  },
+  {
+   "at": 21,
+   "vid": "407tY1wz-w0",
+   "start": 52.0,
+   "x": 596
+  },
+  {
+   "at": 23,
+   "vid": "407tY1wz-w0",
+   "start": 599.0,
+   "x": 540
+  },
+  {
+   "at": 24,
+   "vid": "407tY1wz-w0",
+   "start": 60.0,
+   "x": 690
+  },
+  {
+   "at": 25,
+   "vid": "Doiq12y4078",
+   "start": 132.2,
+   "x": 600
+  },
+  {
+   "at": 26,
+   "vid": "Doiq12y4078",
+   "start": 556.0,
+   "x": 950
+  },
+  {
+   "at": 28,
+   "vid": "N2tINJ1Tnj8",
+   "start": 377.4,
+   "x": 600
+  },
+  {
+   "at": 29,
+   "vid": "N2tINJ1Tnj8",
+   "start": 4.3,
+   "x": 800
+  },
+  {
+   "at": 30,
+   "vid": "N2tINJ1Tnj8",
+   "start": 13.5,
+   "x": 990
+  },
+  {
+   "at": 31,
+   "vid": "AWBTVCYHT3Q",
+   "start": 259.0,
+   "x": 540
+  },
+  {
+   "at": 32,
+   "vid": "N2tINJ1Tnj8",
+   "start": 383.7,
+   "x": 540
+  },
+  {
+   "at": 34,
+   "vid": "N2tINJ1Tnj8",
+   "start": 222.0,
+   "x": 660
+  },
+  {
+   "at": 35,
+   "vid": "yPeEQitu_-o",
+   "start": 63.5,
+   "x": 690
+  },
+  {
+   "at": 36,
+   "vid": "IMtUJnD6SmY",
+   "start": 629.6,
+   "x": 880
+  },
+  {
+   "at": 37,
+   "vid": "ETHmJMvNgIY",
+   "start": 499.6,
+   "x": 716
+  },
+  {
+   "at": 38,
+   "vid": "UJpuIXIJAHM",
+   "start": 54.4,
+   "x": 550
+  },
+  {
+   "at": 39,
+   "vid": "N2tINJ1Tnj8",
+   "start": 269.0,
+   "x": 690
+  },
+  {
+   "at": 40,
+   "vid": "N2tINJ1Tnj8",
+   "start": 471.0,
+   "x": 880
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 8,
+   "toChunk": 18,
+   "label": "SOURCE",
+   "title": "FIFPRO",
+   "lines": [
+    "9 Nov 2026",
+    "19,806 players voted"
+   ]
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 12,
+   "t": 0.3
+  },
+  "text": "39 AND STILL HERE 🐐"
+ }
+}

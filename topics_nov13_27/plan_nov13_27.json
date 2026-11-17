@@ -1,0 +1,408 @@
+[
+ {
+  "day": 13,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "messi",
+  "name": "messi_ballondor2019_sevenpoints",
+  "out": "13NOV_slot1_1300_messi_ballondor2019_sevenpoints",
+  "cfg": "batch_messi_ballondor2019_sevenpoints.json"
+ },
+ {
+  "day": 13,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "whatif",
+  "name": "whatif_kane_france_penalty",
+  "out": "13NOV_slot2_1700_WHATIF_kane_france_penalty",
+  "cfg": null
+ },
+ {
+  "day": 13,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_villarreal95",
+  "out": "13NOV_slot3_2100_ronaldo_villarreal95",
+  "cfg": "batch_ronaldo_villarreal95.json"
+ },
+ {
+  "day": 14,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_hungary2016",
+  "out": "14NOV_slot1_1300_ronaldo_hungary2016",
+  "cfg": "batch_ronaldo_hungary2016.json"
+ },
+ {
+  "day": 14,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "other",
+  "name": "mbappe_argentina_2018",
+  "out": "14NOV_slot2_1700_mbappe_argentina_2018",
+  "cfg": "batch_mbappe_argentina_2018.json"
+ },
+ {
+  "day": 14,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "messi",
+  "name": "messi_ballondor2009_240pts",
+  "out": "14NOV_slot3_2100_messi_ballondor2009_240pts",
+  "cfg": "batch_messi_ballondor2009_240pts.json"
+ },
+ {
+  "day": 15,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "messi",
+  "name": "messi_courtois_benzema_2022",
+  "out": "15NOV_slot1_1300_messi_courtois_benzema_2022",
+  "cfg": "batch_messi_courtois_benzema_2022.json"
+ },
+ {
+  "day": 15,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "whatif",
+  "name": "whatif_mbappe_psg_ucl_final_2020",
+  "out": "15NOV_slot2_1700_WHATIF_mbappe_psg_ucl_final_2020",
+  "cfg": null
+ },
+ {
+  "day": 15,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_copa2011_header",
+  "out": "15NOV_slot3_2100_ronaldo_copa2011_header",
+  "cfg": "batch_ronaldo_copa2011_header.json"
+ },
+ {
+  "day": 16,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_ucl2016_penalty",
+  "out": "16NOV_slot1_1300_ronaldo_ucl2016_penalty",
+  "cfg": "batch_ronaldo_ucl2016_penalty.json"
+ },
+ {
+  "day": 16,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "other",
+  "name": "haaland_dortmund_debut_hattrick",
+  "out": "16NOV_slot2_1700_haaland_dortmund_debut_hattrick",
+  "cfg": "batch_haaland_dortmund_debut_hattrick.json"
+ },
+ {
+  "day": 16,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "messi",
+  "name": "messi_milan_2013_remontada",
+  "out": "16NOV_slot3_2100_messi_milan_2013_remontada",
+  "cfg": "batch_messi_milan_2013_remontada.json"
+ },
+ {
+  "day": 17,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "messi",
+  "name": "messi_iran_2014_91st",
+  "out": "17NOV_slot1_1300_messi_iran_2014_91st",
+  "cfg": "batch_messi_iran_2014_91st.json"
+ },
+ {
+  "day": 17,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "whatif",
+  "name": "whatif_messi_freekick_2014_final",
+  "out": "17NOV_slot2_1700_WHATIF_messi_freekick_2014_final",
+  "cfg": null
+ },
+ {
+  "day": 17,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_nationsleague2025_final",
+  "out": "17NOV_slot3_2100_ronaldo_nationsleague2025_final",
+  "cfg": "batch_ronaldo_nationsleague2025_final.json"
+ },
+ {
+  "day": 18,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_arabcup2023_final",
+  "out": "18NOV_slot1_1300_ronaldo_arabcup2023_final",
+  "cfg": "batch_ronaldo_arabcup2023_final.json"
+ },
+ {
+  "day": 18,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "other",
+  "name": "vinicius_supercup_hattrick_2024",
+  "out": "18NOV_slot2_1700_vinicius_supercup_hattrick_2024",
+  "cfg": "batch_vinicius_supercup_hattrick_2024.json"
+ },
+ {
+  "day": 18,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "messi",
+  "name": "messi_threefinals_zerogoals",
+  "out": "18NOV_slot3_2100_messi_threefinals_zerogoals",
+  "cfg": "batch_messi_threefinals_zerogoals.json"
+ },
+ {
+  "day": 19,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "messi",
+  "name": "messi_chelsea_2018_100goals",
+  "out": "19NOV_slot1_1300_messi_chelsea_2018_100goals",
+  "cfg": "batch_messi_chelsea_2018_100goals.json"
+ },
+ {
+  "day": 19,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "whatif",
+  "name": "whatif_salah_chelsea_stayed",
+  "out": "19NOV_slot2_1700_WHATIF_salah_chelsea_stayed",
+  "cfg": null
+ },
+ {
+  "day": 19,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_oldtrafford2013_knockout",
+  "out": "19NOV_slot3_2100_ronaldo_oldtrafford2013_knockout",
+  "cfg": "batch_ronaldo_oldtrafford2013_knockout.json"
+ },
+ {
+  "day": 20,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_espanyol_five_goals",
+  "out": "20NOV_slot1_1300_ronaldo_espanyol_five_goals",
+  "cfg": "batch_ronaldo_espanyol_five_goals.json"
+ },
+ {
+  "day": 20,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "other",
+  "name": "bellingham_slovakia_bicycle_kick",
+  "out": "20NOV_slot2_1700_bellingham_slovakia_bicycle_kick",
+  "cfg": "batch_bellingham_slovakia_bicycle_kick.json"
+ },
+ {
+  "day": 20,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "messi",
+  "name": "messi_australia_1000th_game",
+  "out": "20NOV_slot3_2100_messi_australia_1000th_game",
+  "cfg": "batch_messi_australia_1000th_game.json"
+ },
+ {
+  "day": 21,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "messi",
+  "name": "messi_mexico_2022_64th",
+  "out": "21NOV_slot1_1300_messi_mexico_2022_64th",
+  "cfg": "batch_messi_mexico_2022_64th.json"
+ },
+ {
+  "day": 21,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "whatif",
+  "name": "whatif_vinicius_ballondor_2024",
+  "out": "21NOV_slot2_1700_WHATIF_vinicius_ballondor_2024",
+  "cfg": null
+ },
+ {
+  "day": 21,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_clubworldcup2016_hattrick",
+  "out": "21NOV_slot3_2100_ronaldo_clubworldcup2016_hattrick",
+  "cfg": "batch_ronaldo_clubworldcup2016_hattrick.json"
+ },
+ {
+  "day": 22,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_cardiff2017_juventus",
+  "out": "22NOV_slot1_1300_ronaldo_cardiff2017_juventus",
+  "cfg": "batch_ronaldo_cardiff2017_juventus.json"
+ },
+ {
+  "day": 22,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "other",
+  "name": "neymar_remontada_barca_psg_2017",
+  "out": "22NOV_slot2_1700_neymar_remontada_barca_psg_2017",
+  "cfg": "batch_neymar_remontada_barca_psg_2017.json"
+ },
+ {
+  "day": 22,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "messi",
+  "name": "messi_nigeria_2018_rojo86",
+  "out": "22NOV_slot3_2100_messi_nigeria_2018_rojo86",
+  "cfg": "batch_messi_nigeria_2018_rojo86.json"
+ },
+ {
+  "day": 23,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "messi",
+  "name": "messi_panama_2016_subhattrick",
+  "out": "23NOV_slot1_1300_messi_panama_2016_subhattrick",
+  "cfg": "batch_messi_panama_2016_subhattrick.json"
+ },
+ {
+  "day": 23,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "whatif",
+  "name": "whatif_haaland_norway_worldcup_2022",
+  "out": "23NOV_slot2_1700_WHATIF_haaland_norway_worldcup_2022",
+  "cfg": null
+ },
+ {
+  "day": 23,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_euro2012_netherlands",
+  "out": "23NOV_slot3_2100_ronaldo_euro2012_netherlands",
+  "cfg": "batch_ronaldo_euro2012_netherlands.json"
+ },
+ {
+  "day": 24,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_nationsleague2019_swiss",
+  "out": "24NOV_slot1_1300_ronaldo_nationsleague2019_swiss",
+  "cfg": "batch_ronaldo_nationsleague2019_swiss.json"
+ },
+ {
+  "day": 24,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "other",
+  "name": "salah_2019_final_penalty",
+  "out": "24NOV_slot2_1700_salah_2019_final_penalty",
+  "cfg": "batch_salah_2019_final_penalty.json"
+ },
+ {
+  "day": 24,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "messi",
+  "name": "messi_redcard_copadelrey_2021",
+  "out": "24NOV_slot3_2100_messi_redcard_copadelrey_2021",
+  "cfg": "batch_messi_redcard_copadelrey_2021.json"
+ },
+ {
+  "day": 25,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "messi",
+  "name": "messi_clasico_2014_hattrick",
+  "out": "25NOV_slot1_1300_messi_clasico_2014_hattrick",
+  "cfg": "batch_messi_clasico_2014_hattrick.json"
+ },
+ {
+  "day": 25,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "whatif",
+  "name": "whatif_ronaldo_euro2004_final",
+  "out": "25NOV_slot2_1700_WHATIF_ronaldo_euro2004_final",
+  "cfg": null
+ },
+ {
+  "day": 25,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_euro2020_goldenboot_assist",
+  "out": "25NOV_slot3_2100_ronaldo_euro2020_goldenboot_assist",
+  "cfg": "batch_ronaldo_euro2020_goldenboot_assist.json"
+ },
+ {
+  "day": 26,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_tottenham2022_hattrick",
+  "out": "26NOV_slot1_1300_ronaldo_tottenham2022_hattrick",
+  "cfg": "batch_ronaldo_tottenham2022_hattrick.json",
+  "failed_original": "ronaldo_porto2009_40yards"
+ },
+ {
+  "day": 26,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "other",
+  "name": "kane_england_record_italy_2023",
+  "out": "26NOV_slot2_1700_kane_england_record_italy_2023",
+  "cfg": "batch_kane_england_record_italy_2023.json"
+ },
+ {
+  "day": 26,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "messi",
+  "name": "messi_roma_2018_collapse",
+  "out": "26NOV_slot3_2100_messi_roma_2018_collapse",
+  "cfg": "batch_messi_roma_2018_collapse.json"
+ },
+ {
+  "day": 27,
+  "slot": 1,
+  "time": "13:00",
+  "kind": "messi",
+  "name": "messi_leaguescup_2023_final",
+  "out": "27NOV_slot1_1300_messi_leaguescup_2023_final",
+  "cfg": "batch_messi_leaguescup_2023_final.json"
+ },
+ {
+  "day": 27,
+  "slot": 2,
+  "time": "17:00",
+  "kind": "whatif",
+  "name": "whatif_yamal_ballondor_2025",
+  "out": "27NOV_slot2_1700_WHATIF_yamal_ballondor_2025",
+  "cfg": null
+ },
+ {
+  "day": 27,
+  "slot": 3,
+  "time": "21:00",
+  "kind": "ronaldo",
+  "name": "ronaldo_sassuolo2018_firstgoals",
+  "out": "27NOV_slot3_2100_ronaldo_sassuolo2018_firstgoals",
+  "cfg": "batch_ronaldo_sassuolo2018_firstgoals.json"
+ }
+]

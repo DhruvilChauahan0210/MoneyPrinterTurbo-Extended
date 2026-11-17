@@ -17,5 +17,5 @@ $FF -v error -y -i /tmp/vo_$$.mp3 -ar 48000 -ac 2 $wav
 dur=$($FF -i $wav 2>&1 | grep -o 'Duration: [0-9:.]*' | awk -F: '{print $4}')
 total=$(printf "%.2f" $(( dur + 1.2 )))
 props=$(.venv/bin/python -c "import json,sys;print(json.dumps(dict(imageFile=sys.argv[1],voiceFile=sys.argv[2],musicFile=sys.argv[3],line1=sys.argv[4],line2=sys.argv[5],musicVolume=0.12,sfxFile='boom.mp3',ambienceFile='stadium.mp3',ambienceVolume=0.06,durationInSeconds=float(sys.argv[6]))))" $img vo_${out}.wav $music "$l1" "$l2" $total)
-(cd whatif-remotion && npx remotion render src/index.ts WhatIf out/$out.mp4 --props="$props" --log=error) \
+(cd whatif-remotion && npx remotion render src/index.ts WhatIf out/$out.mp4 --props="$props" --log=error --port=$((3400 + RANDOM % 500))) \
   && cp whatif-remotion/out/$out.mp4 ~/Desktop/$out.mp4 && echo "OK $out ${total}s"

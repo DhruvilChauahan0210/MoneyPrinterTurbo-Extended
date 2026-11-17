@@ -1,0 +1,13 @@
+KEY neymar_father_ceo | OUT NEWSCUT_neymar_father_ceo.mp4 | loopTail "Neymar's father is also his agent."
+Sentences (chunks split by |; display = ALL CAPS; spoken = the words):
+S0: Neymar's father | is also his agent, | and now | he's the CEO | of the club | Neymar plays for.
+S1: Yes, | really.
+S2: On November 6, | Santos named | Neymar Senior | chief executive, | standing next to | president Marcelo Teixeira.
+S3: His agency, | NR Sports, | holds the rights | to Neymar's name | and image, | and it has already | lent money | to the club.
+S4: Neymar's contract | reportedly runs out | at the end of 2026, | and the club election | is on December 12.
+S5: If Teixeira | wins again, | his father stays, | which means | the man on both sides | of Neymar's next contract | could be
+Display tweaks: "NOVEMBER 6", "DECEMBER 12", "NR SPORTS", "CEO".
+Source card (over S2 "On November 6" .. "president Marcelo Teixeira"): label SOURCE, title "Santos FC / Reuters", lines ["6 Nov 2026", "Neymar Sr named chief executive"]
+Cover text: "HIS DAD IS THE BOSS NOW 😳"
+Footage ideas: Neymar face close-up in Santos kit (shot 0, bright), Neymar Sr (Neymar's father) at Santos events / with Neymar (official Santos channel, broadcaster footage), Vila Belmiro stadium, Santos president Marcelo Teixeira, Neymar signing his Santos contract (Jan 2025 return / 2026 extension, official Santos video), Neymar celebrating for Santos, Neymar with his father hugging, money/contract imagery only as real footage (signing table). End on Neymar.
+Facts (verified: Reuters via bdnews24 7 Nov 2026, Primicias 6 Nov 2026): Santos named Neymar Sr chief executive on 6 Nov 2026, announced alongside president Marcelo Teixeira; he is Neymar's father and agent; founded NR Sports, which holds the rights to Neymar's name and image; through NR Sports father and son funded Vila Belmiro infrastructure work and lent money to the financially struggling club (Primicias). His role runs at least until December; continues if Teixeira is re-elected on 12 December. Neymar's contract runs to the end of 2026 and its renewal reportedly depends on the December election (AFP, July). Do NOT accuse anyone of wrongdoing; the script only states facts and a possibility.

@@ -1,0 +1,21 @@
+{
+  "cfg": "batch_messi_mexico_2022_64th.json",
+  "status": "ready",
+  "clip_beats": [],
+  "weak_beats": [
+    {
+      "beat": 6,
+      "why": "Enzo Fernandez with medal/trophy, not the goal celebration; other candidates were junk"
+    },
+    {
+      "beat": 2,
+      "why": "Saudi match action, not clearly dejection"
+    },
+    {
+      "beat": 8,
+      "why": "trophy close-up fine but generic"
+    }
+  ],
+  "beat1": "Messi arms-out celebration in Argentina kit vs Mexico (borrowed from beat 5 candidate 2)",
+  "notes": "No clip: only edit with Ultras Ahlawy watermark/titles and corner logos found; rejected."
+}

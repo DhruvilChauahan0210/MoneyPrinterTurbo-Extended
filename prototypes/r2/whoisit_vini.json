@@ -1,0 +1,70 @@
+{
+ "mode": "whoisit",
+ "key": "whoisit_vini",
+ "out": "15NOV_1900_WHOISIT_vinicius",
+ "voice": "en-US-GuyNeural",
+ "rate": "+8%",
+ "music": "music4.mp3",
+ "musicVolume": 0.22,
+ "headline": "WHO IS IT?",
+ "photos": {
+  "photo": {
+   "src": "prototypes/r2/photos/vini_src.jpg",
+   "box": [
+    110,
+    0,
+    625,
+    916
+   ]
+  }
+ },
+ "posX": 50,
+ "posY": 25,
+ "zoom": 1.0,
+ "shiftY": 120,
+ "clues": [
+  "Born in Brazil in 2000.",
+  "Scored in two Champions League finals.",
+  "FIFA's Best Men's Player of 2024."
+ ],
+ "name": "VINÍCIUS JR",
+ "fact": "Scored the only goal of the 2022 Champions League final",
+ "source": "Sources: Wikipedia (Vinícius Júnior)",
+ "segments": [
+  {
+   "id": "clue0",
+   "text": "Who is it? One: born in Brazil in 2000."
+  },
+  {
+   "id": "clue1",
+   "text": "Two: scored in two Champions League finals."
+  },
+  {
+   "id": "clue2",
+   "text": "Three: FIFA's best men's player of 2024."
+  },
+  {
+   "id": "reveal",
+   "text": "Vinícius Júnior! The winner in the 2022 final.",
+   "tts": "Vinny-see-us Junior! The winner in the 2022 final."
+  }
+ ],
+ "clips": [
+  {
+   "url": "https://www.youtube.com/watch?v=52W0VNzWBTA",
+   "start": 268.0
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=52W0VNzWBTA",
+   "start": 238.0
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=52W0VNzWBTA",
+   "start": 8.0
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=52W0VNzWBTA",
+   "start": 318.0
+  }
+ ]
+}

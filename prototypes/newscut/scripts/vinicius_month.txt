@@ -1,0 +1,13 @@
+KEY vinicius_month | OUT NEWSCUT_vinicius_one_month.mp4 | loopTail "Vinícius Junior has one goal."
+Sentences (chunks split by |; display = ALL CAPS; spoken = the words):
+S0: Vinícius Junior | has one goal | and one assist | in his last nine games, | and Real Madrid | are running out | of patience.
+S1: And it gets | even worse.
+S2: Spanish outlet | El Debate | reports | the club | has given him | about a month | to find his form | or risk | being dropped.
+S3: He hasn't finished | 90 minutes | in two months, | and his dribbles | are down | from 2.4 | to 1.8 | a game.
+S4: The club is even | studying | whether he's lost | his top speed.
+S5: And with | 125 million euro signing | Yan Diomande | wanting the same | left wing, | December's games | against Arsenal | and Athletic Bilbao | could decide | the future of
+Display tweaks: "€125 MILLION SIGNING", "2.4", "1.8", "90 MINUTES".
+Source card (over S2 "Spanish outlet" .. "being dropped"): label SOURCE, title "El Debate via FootballTransfers", lines ["6 Nov 2026", "One month to recover his form"]
+Cover text: "ONE MONTH LEFT? 😳"
+Footage ideas: Vinícius close-up (shot 0 bright face in Real Madrid kit), Vini frustrated / substituted, Mourinho on the touchline (Mourinho is Real Madrid coach in 2026), Vini dribbling (for dribbles), Vini sprinting (top speed), Yan Diomande (official Real Madrid / Leipzig footage), Arsenal, Athletic Bilbao, Bernabéu, ending on Vini.
+Facts (reported, attribute to El Debate where marked): 1 goal + 1 assist in last 9 appearances in all competitions; hasn't completed 90 minutes for the club in two months; dribbles per game 2.4 last season -> 1.8; club studying whether his top speed has dropped (El Debate); about a month to recover form or risk being dropped, deadline = December games v Arsenal and Athletic Bilbao (El Debate); Yan Diomande, €125m summer signing, also plays left wing. Never present the ultimatum as confirmed by the club.

@@ -1,0 +1,427 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Cristiano Ronaldo playing football",
+      "a real photograph of Lionel Messi"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "HE CALLED HIM A LIAR",
+    "hook_cover_term": "Cristiano Ronaldo looking angry",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "RIGHT TO BOYCOTT? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Cristiano Ronaldo playing football",
+      "a real photograph of Lionel Messi"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "In twenty twenty-one, a French editor made a claim about Cristiano Ronaldo. Pascal Ferré said Ronaldo wanted to retire with more Ballons d'Or than Messi. Ronaldo called him a liar on Instagram. He has not attended the Ballon d'Or ceremony since, not as a contender, a guest or a voter. This year he even skipped the Kopa Trophy vote. Yet he celebrated winning France Football's fan-voted Ballon d'Or of All Time. Is Ronaldo right to boycott the Ballon d'Or?",
+    "video_subject": "France Football editor Pascal Ferre said in 2021 that Ronaldo wanted to retire with more Ballons d'Or than Messi; Ronaldo called him a liar and has boycotted the ceremony ever since",
+    "video_terms": "Ronaldo Pascal Ferre liar 2021, Ronaldo Ballon d'Or boycott, skipped Kopa vote",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "In twenty twenty-one, a French editor made a claim about Cristiano Ronaldo.",
+        "visual": "Pascal Ferre France Football editor",
+        "images": [
+          "Pascal Ferre France Football",
+          "Pascal Ferre"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Pascal Ferré said Ronaldo wanted to retire with more Ballons d'Or than Messi.",
+        "visual": "Cristiano Ronaldo with the Ballon d'Or",
+        "images": [
+          "Cristiano Ronaldo Ballon d'Or",
+          "Ronaldo Ballon d'Or trophy"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo called him a liar on Instagram.",
+        "visual": "Cristiano Ronaldo looking angry",
+        "images": [
+          "Cristiano Ronaldo angry",
+          "Ronaldo angry face"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He has not attended the Ballon d'Or ceremony since,",
+        "visual": "the Ballon d'Or ceremony stage",
+        "images": [
+          "Ballon d'Or ceremony",
+          "Ballon d'Or gala stage"
+        ],
+        "clips": []
+      },
+      {
+        "says": "not as a contender, a guest or a voter.",
+        "visual": "Cristiano Ronaldo in a suit",
+        "images": [
+          "Cristiano Ronaldo suit",
+          "Ronaldo suit event"
+        ],
+        "clips": []
+      },
+      {
+        "says": "This year he even skipped the Kopa Trophy vote.",
+        "visual": "Cristiano Ronaldo serious",
+        "images": [
+          "Cristiano Ronaldo serious",
+          "Ronaldo serious face"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Yet he celebrated winning France Football's fan-voted Ballon d'Or of All Time.",
+        "visual": "Cristiano Ronaldo smiling",
+        "images": [
+          "Cristiano Ronaldo smiling",
+          "Ronaldo happy"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Is Ronaldo right to boycott the Ballon d'Or?",
+        "visual": "close up of Cristiano Ronaldo",
+        "images": [
+          "Cristiano Ronaldo close up",
+          "Cristiano Ronaldo face"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "France Football editor Pascal Ferre said in 2021 that Ronaldo wanted to retire with more Ballons d'Or than Messi; Ronaldo called him a liar and has boycotted the ceremony ever since",
+      "video_script": "In twenty twenty-one, a French editor made a claim about Cristiano Ronaldo. Pascal Ferré said Ronaldo wanted to retire with more Ballons d'Or than Messi. Ronaldo called him a liar on Instagram. He has not attended the Ballon d'Or ceremony since, not as a contender, a guest or a voter. This year he even skipped the Kopa Trophy vote. Yet he celebrated winning France Football's fan-voted Ballon d'Or of All Time. Is Ronaldo right to boycott the Ballon d'Or?",
+      "video_terms": "Ronaldo Pascal Ferre liar 2021, Ronaldo Ballon d'Or boycott, skipped Kopa vote",
+      "hook_text": "HE CALLED HIM A LIAR",
+      "cta_text": "RIGHT TO BOYCOTT? 👇",
+      "beat_plan": [
+        {
+          "says": "In twenty twenty-one, a French editor made a claim about Cristiano Ronaldo.",
+          "visual": "Pascal Ferre France Football editor",
+          "images": [
+            "Pascal Ferre France Football",
+            "Pascal Ferre"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b01/img-6ed96f29c7eaa042ed2026253f97b41e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b01/img-f9b8e5c64793b8a0f8dd7269f5240fa8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b01/img-89b6359bf4b437257576cf297e61a02d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b01/img-7bb1e9acdf26ef3d8832bd9e24d9415a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b01/img-ffe091029f8a5d27558f12f86f630f2a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b01/img-f9122a348af6cba848f8a61ba8477e8c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b01/img-45b65fcd8f1165de4467f26f211f2505.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b01/img-6ee2c9effe5beaeb3585830c524eebab.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b01/img-6ed96f29c7eaa042ed2026253f97b41e.jpg",
+          "url": "https://img.20mn.fr/y19qi0OiQvykMXFJlWoAxCk/1444x920_france-football-magazine-chief-editor-pascal-ferre-holds-the-ballon-da-tm-or-award-during-an-interview-with-the-associated-press-in-boulogne-billancourt-outside-paris-friday-july-17-2020-the-prestigious-ballon-da-tm-or-will-not-be-awarded-this-year-because-the-coronavirus-pandemic-has-disrupted-the-soccer-season-awarded-by-france-football-magazine-the-ballon-da-tm-or-has-been-given-out-every-year-since-stanley-matthews-won-the-first-one-in-1956-lionel-messi-has-won-it-a-record-six-times-a-one-more-than-longtime-rival-cristiano-ronaldo-ap-photo-kamil-zihnioglu-zih105-20202274268959-2007201610"
+        },
+        {
+          "says": "Pascal Ferré said Ronaldo wanted to retire with more Ballons d'Or than Messi.",
+          "visual": "Cristiano Ronaldo with the Ballon d'Or",
+          "images": [
+            "Cristiano Ronaldo Ballon d'Or",
+            "Ronaldo Ballon d'Or trophy"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b02/img-5a3fb20e5e7110179ff15d33cd93168e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b02/img-63741fc0c2f8d9f356b0409c8f0fd418.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b02/img-58111bddeb70342ca3ca08977711e228.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b02/img-b60e5477a7e2ff51a2693e115bc2e506.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b02/img-11239a9e385990f6e1b7b8077b160d23.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b02/img-2d3d999417eb5b2bcf3a321ec8d7bc0f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b02/img-fd3dc5f5267ca66017c0129e5c7b5de2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b02/img-982ee06599bc9c04362c8c475a747857.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b02/img-2d3d999417eb5b2bcf3a321ec8d7bc0f.jpg",
+          "url": "https://cdn.pmnewsnigeria.com/wp-content/uploads/2025/12/ronaldo.jpg"
+        },
+        {
+          "says": "Ronaldo called him a liar on Instagram.",
+          "visual": "Cristiano Ronaldo looking angry",
+          "images": [
+            "Cristiano Ronaldo angry",
+            "Ronaldo angry face"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b03/img-74086b2f238834424e6f3c8919986a8b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b03/img-91ef53a0d3f657ad830e3c706be7fa90.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b03/img-22c60946e23266f56884bbbc69f693f0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b03/img-2bf5f69a53dd2acfdad13a8de5dbddca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b03/img-855d2c4cc788cc19b5ad0ec06a407ee7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b03/img-c9b4ee7522b7ea7f41b263f4c62d7d84.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b03/img-5f78a486af641d5a4d5f2514e8051e9b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b03/img-e93ba3c502d9426c20294c86bc309ff4.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b03/img-2bf5f69a53dd2acfdad13a8de5dbddca.jpg",
+          "url": "https://e0.365dm.com/17/08/2048x1152/skysports-cristiano-ronaldo-ronaldo-real-madrid_4074482.jpg?20170816162700"
+        },
+        {
+          "says": "He has not attended the Ballon d'Or ceremony since,",
+          "visual": "the Ballon d'Or ceremony stage",
+          "images": [
+            "Ballon d'Or ceremony",
+            "Ballon d'Or gala stage"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b04/img-c2fc85c3fa2ca744c1075f964634c286.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b04/img-340a8c3da9023393eb762530634ccfc5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b04/img-d5a1baca0c70293816e683b66fcb38e6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b04/img-5cd2419c55ac2b8147eda0a2a28006f7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b04/img-f26eab3e8f8e7939c5e94739aabcb4bd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b04/img-7f4b74e100401a1e3cf4664b7e205a7c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b04/img-c4ffa2203d2d1239bfd41139ccc18339.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b04/img-1ed45a53566a771557e246ee02197082.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b04/img-f26eab3e8f8e7939c5e94739aabcb4bd.jpg",
+          "url": "https://awsimages.detik.net.id/community/media/visual/2024/10/29/soccer-ballon-1_43.jpeg?w=700&q=90"
+        },
+        {
+          "says": "not as a contender, a guest or a voter.",
+          "visual": "Cristiano Ronaldo in a suit",
+          "images": [
+            "Cristiano Ronaldo suit",
+            "Ronaldo suit event"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b05/img-ed01c8ee97f3bc781de63a4e783d87c5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b05/img-a03da18ab1c3194392209ac9630bac76.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b05/img-bed571d2d7a2d70ef4db3b4621607049.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b05/img-8592b8fd093898d5364341c56b5964d1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b05/img-dd138229b1328e5f078937ed4efd8512.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b05/img-ff45c69cbdd3590dd90bda17f40140f6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b05/img-f72632fef9062955fe395d0df2bdb443.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b05/img-22208a9c5d80c09e03604ed44f0ebf17.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b05/img-a03da18ab1c3194392209ac9630bac76.jpg",
+          "url": "https://i.pinimg.com/474x/61/e0/df/61e0dfcdcfb1556ff72fb1e4b1d4583f.jpg"
+        },
+        {
+          "says": "This year he even skipped the Kopa Trophy vote.",
+          "visual": "Cristiano Ronaldo serious",
+          "images": [
+            "Cristiano Ronaldo serious",
+            "Ronaldo serious face"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b06/img-f25a24304f77179a0e700b764e095758.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b06/img-8dc552b1b6e63d5250c78567eb0614b2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b06/img-33141fef2feaf6cf9119e9f2bb1ae83c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b06/img-e247226e0feee4a7ccad6794ad9c0e51.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b06/img-26715946f8ffbaf32445b69b7aae38ff.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b06/img-f9b4cf720ee1d7f942239803c0067ecd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b06/img-7b1bc93ec1cf20646867be313dee56f8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b06/img-cfa3be1dce616e1c5ba05264d8830873.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b06/img-e247226e0feee4a7ccad6794ad9c0e51.jpg",
+          "url": "https://s.yimg.com/ny/api/res/1.2/5._096LAt_enQFlEQ6tgRA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA7Y2Y9d2VicA--/https://media.zenfs.com/en/get_spanish_football_news_articles_403/5d9a20d7b589a132fd89d9059404307c"
+        },
+        {
+          "says": "Yet he celebrated winning France Football's fan-voted Ballon d'Or of All Time.",
+          "visual": "Cristiano Ronaldo smiling",
+          "images": [
+            "Cristiano Ronaldo smiling",
+            "Ronaldo happy"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b07/img-042f8f49f50322532809fc155ecc2271.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b07/img-1ac9a8cef02943601e686ddb23779bd4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b07/img-2a42eecf9d1a1d2c72b40796c497320e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b07/img-1b489c3f07d1a9924fec4437ab55c8c3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b07/img-510ab5153c7b17dbbb57a22b0e1c6784.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b07/img-633f6d6ee40512112785b948d087a5ee.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b07/img-ccbcf733b3b0706604bba1c33061f0eb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b07/img-8923187d15c37f28303aa15a6acf7dc9.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b07/img-042f8f49f50322532809fc155ecc2271.jpg",
+          "url": "https://wallpapercave.com/wp/wp9354156.jpg"
+        },
+        {
+          "says": "Is Ronaldo right to boycott the Ballon d'Or?",
+          "visual": "close up of Cristiano Ronaldo",
+          "images": [
+            "Cristiano Ronaldo close up",
+            "Cristiano Ronaldo face"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b08/img-0d072628fc8cc326bf502887a162b5b1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b08/img-6266892056fdcbb68c93efe42cd108e7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b08/img-979b814c3dd1fee3e9b9c2c526f7e9c5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b08/img-dcedc6869bee9da5fa58a71b86a8f5cc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b08/img-11c74d3f6cd1fee7a45a46490e90a483.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b08/img-badbf4beaeb5360a0c5182f24247a045.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b08/img-4e4ba4d6c9b1ffea815db93e95fe51bc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b08/img-4c8e3aed9a719ca2f2c102d64e61447f.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/france_football_editor_pascal_ferre_said/b08/img-979b814c3dd1fee3e9b9c2c526f7e9c5.jpg",
+          "url": "https://imgcdn.stablediffusionweb.com/2025/8/29/b887c2e7-b823-472d-9624-3539d035207d.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

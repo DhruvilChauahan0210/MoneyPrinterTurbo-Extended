@@ -1,0 +1,27 @@
+{
+  "cfg": "batch_messi_iran_2014_91st.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 6,
+      "url": "https://www.youtube.com/watch?v=n14XMqC4N8I",
+      "start": 5.5
+    }
+  ],
+  "weak_beats": [
+    {
+      "beat": 7,
+      "why": "no Man of the Match photo found (DDG returned toy trains); borrowed generic Messi portrait in Argentina kit"
+    },
+    {
+      "beat": 8,
+      "why": "borrowed Messi raising arm, so-so framing"
+    },
+    {
+      "beat": 2,
+      "why": "Argentina players applauding, not clearly frustration"
+    }
+  ],
+  "beat1": "Messi close-up in sky-blue/white Argentina 2014 kit, number 10 and armband",
+  "notes": "Beat 6 clip: Messi goal vs Iran from a broadcast upload (Edgar Davids channel, small scorebug), goal at ~1s in, then Messi celebrating arms out."
+}

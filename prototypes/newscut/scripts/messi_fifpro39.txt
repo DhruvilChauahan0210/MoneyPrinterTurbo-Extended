@@ -1,0 +1,12 @@
+KEY messi_fifpro39 | OUT NEWSCUT_messi_fifpro_39.mp4 | loopTail "Lionel Messi is 39."
+Sentences (chunks split by |; display = ALL CAPS; spoken = the words):
+S0: Lionel Messi | is 39, | plays in America, | and he just beat | the Ballon d'Or winner | into the World Eleven.
+S1: And nobody | saw it coming.
+S2: Almost 20,000 | professional footballers | voted | for FIFPRO's | World Eleven, | and Messi | made it | for the 18th time, | his first | since 2023.
+S3: Harry Kane | won the Ballon d'Or, | but he was left out, | the first time | a Ballon d'Or winner | missed the team | in the same year.
+S4: Cristiano Ronaldo | was left out | too.
+S5: Messi scored | 26 goals | in 31 games | for Inter Miami, | won a second | straight | MLS Golden Boot, | and now lines up | next to Mbappé, | Haaland | and Yamal, | proving once again | that at 39
+Display tweaks: "26 GOALS", "IN 31 GAMES", "18TH TIME", "20,000", "MBAPPÉ" (spoken "Mbappay" if edge-tts mangles it; check the word alignment).
+Source card (over S2 "Almost 20,000" .. "since 2023"): label SOURCE, title "FIFPRO", lines ["9 Nov 2026", "19,806 players voted"]
+Cover text: "39 AND STILL HERE 🐐"
+Facts (verified): FIFPRO Men's World 11 announced 9 Nov 2026, 19,806 players from 73 countries; XI = Raya; Hakimi, Nuno Mendes, Cubarsí; Rodri, Vitinha, Bellingham; Messi, Mbappé, Haaland, Yamal. Messi 18th selection, first since 2023, age 39. Kane (2026 Ballon d'Or winner) left out, first Ballon d'Or winner missing the XI in the year he won. Ronaldo left out. Messi 2026 MLS: 26 goals in 31 regular-season games, second straight Golden Boot.

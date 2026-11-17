@@ -299,6 +299,76 @@ if __name__ == "__main__":
     create(audio_file, subtitle_file)
 
 
+class _AW:
+    """Tiny word record (text/start/end) standing in for a faster-whisper Word."""
+    __slots__ = ("word", "start", "end")
+
+    def __init__(self, word, start, end):
+        self.word, self.start, self.end = word, start, end
+
+
+def _norm_tok(t):
+    import re as _re
+    return _re.sub(r"[^a-z0-9]", "", (t or "").lower())
+
+
+def align_words_to_script(words, script, overrides=None, min_ratio=0.6):
+    """Replace transcribed words by the script's own spelling, keeping the transcript's timing.
+
+    `words`: list of objects with .word/.start/.end (faster-whisper words). Equal words stay; a mismatching
+    span is re-spelled from the script (time split by letter count). Spans whose transcript words contain a
+    digit are kept as transcribed ('17', '47th') unless `overrides` names the script word ({"two-one": "2-1"}).
+    Returns a new list; returns `words` unchanged if less than `min_ratio` of the words match the script.
+    """
+    import difflib
+    ov = {_norm_tok(k): v for k, v in (overrides or {}).items()}
+    toks = [t for t in (script or "").split() if _norm_tok(t)]
+    ws = [w for w in words if _norm_tok(w.word)]
+    if not toks or not ws:
+        return list(words)
+    a = [_norm_tok(w.word) for w in ws]
+    b = [_norm_tok(t) for t in toks]
+    sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
+    matched = sum(bl.size for bl in sm.get_matching_blocks())
+    if matched / max(1, len(a)) < min_ratio:
+        return list(words)
+
+    def clean(t):
+        import re as _re
+        return _re.sub(r"^[^\w$]+|[^\w%$]+$", "", t)
+
+    out = []
+    for op, i1, i2, j1, j2 in sm.get_opcodes():
+        src, dst = ws[i1:i2], toks[j1:j2]
+        if op == "equal":
+            for w, t in zip(src, dst):
+                key = _norm_tok(t)
+                out.append(_AW(ov.get(key, w.word), w.start, w.end))
+        elif op == "replace":
+            has_digit = any(any(c.isdigit() for c in w.word) for w in src)
+            dst_keys = [_norm_tok(t) for t in dst]
+            if has_digit and not any(k in ov for k in dst_keys):
+                out.extend(_AW(w.word, w.start, w.end) for w in src)
+                continue
+            texts = [ov.get(k, clean(t)) for k, t in zip(dst_keys, dst)]
+            t0, t1 = src[0].start, src[-1].end
+            if len(src) == len(texts):
+                for w, tx in zip(src, texts):
+                    out.append(_AW(tx, w.start, w.end))
+            else:
+                weights = [max(1, len(_norm_tok(t))) for t in dst]
+                tot, cur = float(sum(weights)), t0
+                for tx, wt in zip(texts, weights):
+                    nxt = cur + (t1 - t0) * wt / tot
+                    out.append(_AW(tx, cur, nxt))
+                    cur = nxt
+        elif op == "delete":
+            out.extend(_AW(w.word, w.start, w.end) for w in src)
+        # 'insert' (script words the transcript missed): nothing to time, skip
+    return out
+
+
+
 def create_enhanced_subtitles(audio_file, subtitle_file: str = "", params=None):
     """
     Create enhanced subtitles with word-level timing for word highlighting
@@ -346,6 +416,16 @@ def create_enhanced_subtitles(audio_file, subtitle_file: str = "", params=None):
     logger.info(
         f"detected language: '{info.language}', probability: {info.language_probability:.2f}"
     )
+
+    segments = list(segments)
+    if getattr(params, 'caption_script_align', False):
+        _flat = [w for sg in segments if sg.words for w in sg.words]
+        _aligned = align_words_to_script(
+            _flat, getattr(params, 'video_script', '') or '', getattr(params, 'caption_text_overrides', None)
+        )
+        _n_changed = sum(1 for x, y in zip(_flat, _aligned) if x.word != y.word) if len(_flat) == len(_aligned) else -1
+        logger.info(f"caption script-align: {len(_flat)} transcribed -> {len(_aligned)} words (changed {_n_changed})")
+        segments = [type("_Seg", (), {"words": _aligned})()]
 
     enhanced_subtitles = []
     current_subtitle = None

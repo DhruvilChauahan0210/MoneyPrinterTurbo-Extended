@@ -1,0 +1,13 @@
+KEY kane_caps_record | OUT NEWSCUT_kane_caps_record.mp4 | loopTail "Harry Kane just broke a record."
+Sentences (chunks split by |; display = ALL CAPS; spoken = the words):
+S0: Harry Kane | just broke a record | that stood | since 1990, | and then | he won the game | himself.
+S1: Nobody in England | has ever done this.
+S2: Against Croatia | at Wembley, | Kane played | his 126th game | for England, | one more | than Peter Shilton.
+S3: Croatia | equalised | after the break, | then VAR | gave England | a penalty, | and Kane | scored it | in the 64th minute.
+S4: That's his 92nd | England goal, | and it sent them | into the Nations League | quarter-finals.
+S5: He's the Ballon d'Or winner, | England's top scorer | and now | their most capped player ever, | and the man | who did it all | is
+Display tweaks: "126TH GAME", "64TH MINUTE", "92ND", "SINCE 1990", "PETER SHILTON".
+Source card (over S2 "Against Croatia" .. "than Peter Shilton"): label RECORD, title "England 2–1 Croatia", lines ["12 Nov 2026 · Wembley", "Kane: 126 caps, passes Shilton (125)"]
+Cover text: "126 🏴"
+Footage ideas: Kane face close-up in England kit (shot 0, bright), Kane at Wembley, Peter Shilton (archive England footage / the pre-match presentation if it exists), England v Croatia 12 Nov 2026 official highlights (England FA, UEFA), Croatia goal, VAR check, Kane penalty and celebration, Kane with the Ballon d'Or (Oct 2026 ceremony, Bayern/official), Kane England goal celebrations, Kane at the end.
+Facts (verified: Yahoo Sports, CGTN, Taipei Times, Inquisitr): England 2-1 Croatia, Wembley, Thu 12 Nov 2026, Nations League. Kane's 126th cap made him England's most-capped men's player, passing Peter Shilton's 125 (1970-1990). Rogers opened the scoring, Sučić equalised after the break, Kane scored the winner from the spot in the 64th minute after a VAR review. 92nd England goal (record). Win sent England into the Nations League quarter-finals. Kane won the 2026 Ballon d'Or (26 Oct, London).

@@ -1,0 +1,427 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Ezequiel Lavezzi"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "WHAT SAVED ARGENTINA THEN?",
+    "hook_cover_term": "Lionel Messi celebrating for Argentina against Iran in 2014",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "MESSI'S MOST IMPORTANT GROUP GOAL? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Ezequiel Lavezzi"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Messi curled in a ninety-first minute winner against Iran at the two thousand fourteen World Cup. Argentina had struggled for ninety minutes in Belo Horizonte. Iran defended deep and kept it goalless. Ezequiel Lavezzi found Messi on the right. Messi dribbled inside and curled it past the keeper. One-nil, deep in stoppage time. Messi was Man of the Match in all three group games. Was that Messi's most important group-stage goal ever?",
+    "video_subject": "Lionel Messi curled in a 91st-minute winner against Iran in Belo Horizonte at the 2014 World Cup to give Argentina a 1-0 win, one of three Man of the Match awards in the group stage.",
+    "video_terms": "messi, argentina, iran, world cup 2014, belo horizonte, last minute winner, brazil 2014",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Messi curled in a ninety-first minute winner against Iran at the two thousand fourteen World Cup.",
+        "visual": "close up of Lionel Messi in Argentina kit at the 2014 World Cup",
+        "images": [
+          "Lionel Messi Argentina 2014",
+          "Messi World Cup 2014"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Argentina had struggled for ninety minutes in Belo Horizonte.",
+        "visual": "Argentina players frustrated at the Mineirao in 2014",
+        "images": [
+          "Argentina Iran 2014",
+          "Mineirao Argentina"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Iran defended deep and kept it goalless.",
+        "visual": "Iran players defending against Argentina in 2014",
+        "images": [
+          "Iran 2014 World Cup",
+          "Alireza Haghighi Iran"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ezequiel Lavezzi found Messi on the right.",
+        "visual": "Ezequiel Lavezzi in Argentina kit at the 2014 World Cup",
+        "images": [
+          "Ezequiel Lavezzi Argentina",
+          "Lavezzi Messi 2014"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi dribbled inside and curled it past the keeper.",
+        "visual": "Lionel Messi shooting a left-footed shot in 2014",
+        "images": [
+          "Messi goal Iran",
+          "Lionel Messi left foot 2014"
+        ],
+        "clips": []
+      },
+      {
+        "says": "One-nil, deep in stoppage time.",
+        "visual": "Argentina players celebrating the Messi goal against Iran",
+        "images": [
+          "Argentina celebrate Iran 2014",
+          "Messi celebration 2014"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi was Man of the Match in all three group games.",
+        "visual": "Lionel Messi holding a Man of the Match award in 2014",
+        "images": [
+          "Messi man of the match Iran 2014",
+          "Lionel Messi Argentina Iran 2014"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b05/img-86f2392510ecc17928884220d0115e77.jpg"
+      },
+      {
+        "says": "Was that Messi's most important group-stage goal ever?",
+        "visual": "Lionel Messi celebrating at the 2014 World Cup",
+        "images": [
+          "Lionel Messi 2014 celebration",
+          "Messi Belo Horizonte"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b01/img-022c855aea57bb4901af682b8fb23671.jpg"
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Lionel Messi curled in a 91st-minute winner against Iran in Belo Horizonte at the 2014 World Cup to give Argentina a 1-0 win, one of three Man of the Match awards in the group stage.",
+      "video_script": "Messi curled in a ninety-first minute winner against Iran at the two thousand fourteen World Cup. Argentina had struggled for ninety minutes in Belo Horizonte. Iran defended deep and kept it goalless. Ezequiel Lavezzi found Messi on the right. Messi dribbled inside and curled it past the keeper. One-nil, deep in stoppage time. Messi was Man of the Match in all three group games. Was that Messi's most important group-stage goal ever?",
+      "video_terms": "messi, argentina, iran, world cup 2014, belo horizonte, last minute winner, brazil 2014",
+      "hook_text": "WHAT SAVED ARGENTINA THEN?",
+      "cta_text": "MESSI'S MOST IMPORTANT GROUP GOAL? 👇",
+      "beat_plan": [
+        {
+          "says": "Messi curled in a ninety-first minute winner against Iran at the two thousand fourteen World Cup.",
+          "visual": "close up of Lionel Messi in Argentina kit at the 2014 World Cup",
+          "images": [
+            "Lionel Messi Argentina 2014",
+            "Messi World Cup 2014"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b01/img-fb4c782b7869a60fde9191f584d710b6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b01/img-cf6249b9c4546349ab38151246d21c3b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b01/img-83eb50a2d7e9d7c36ef831c083ade379.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b01/img-a4a662cb8fea3d7aca80d7e28143a945.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b01/img-022c855aea57bb4901af682b8fb23671.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b01/img-06e6c32c97cda1536b986978b412378e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b01/img-45367e4e96f9ec23fe817925bfbd747f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b01/img-98144cab18fa06727e9c7c1aa1c44e47.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b01/img-83eb50a2d7e9d7c36ef831c083ade379.jpg",
+          "url": "https://www.10wallpaper.com/wallpaper/1280x960/1407/Lionel_Messi-World_Cup_2014_Final_Argentina_HD_Wallpaper_06_1280x960.jpg"
+        },
+        {
+          "says": "Argentina had struggled for ninety minutes in Belo Horizonte.",
+          "visual": "Argentina players frustrated at the Mineirao in 2014",
+          "images": [
+            "Argentina Iran 2014",
+            "Mineirao Argentina"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b02/img-cef029e72b82beb3c0d10f03c6b84041.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b02/img-247d21b191331c63fecc3ce4a2eff238.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b02/img-278f9afd0f61313c912cf6e5cd642237.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b02/img-32dcf7c5719a8e8e911ed41ce58adb83.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b02/img-7526773f48a6352d8ae92c5d4046b26e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b02/img-b22921de0591188ed4dcad1c5e48a636.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b02/img-7b929d6631d7533209071fc4237f7fa7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b02/img-bfdb5bebbf627e58d4d3aff4d6133d6e.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b02/img-278f9afd0f61313c912cf6e5cd642237.jpg",
+          "url": "https://data1.ibtimes.co.in/en/full/524793/argentina-vs-iran.jpg"
+        },
+        {
+          "says": "Iran defended deep and kept it goalless.",
+          "visual": "Iran players defending against Argentina in 2014",
+          "images": [
+            "Iran 2014 World Cup",
+            "Alireza Haghighi Iran"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b03/img-2e6180b8f6d8b39fd0797e8021e5267d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b03/img-9d91f4d539883bee375047168010eadd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b03/img-c724a34b6709ab90c1bdefe9b27cb693.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b03/img-c7245e67a34468ba31a0778a9322b830.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b03/img-c3a388c08de82b9a2b65518e17b62003.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b03/img-01af39bd0cb085b7c7c9754fc204f995.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b03/img-2ecf0ae1a591ddd7db12825ab4fa9b31.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b03/img-da8e20615f8d5e95e78a8b07ed2de1ab.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b03/img-2e6180b8f6d8b39fd0797e8021e5267d.jpg",
+          "url": "https://data1.ibtimes.co.in/en/full/524796/argentina-vs-iran.jpg?w=1199&h=839&l=50&t=40"
+        },
+        {
+          "says": "Ezequiel Lavezzi found Messi on the right.",
+          "visual": "Ezequiel Lavezzi in Argentina kit at the 2014 World Cup",
+          "images": [
+            "Ezequiel Lavezzi Argentina",
+            "Lavezzi Messi 2014"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b04/img-74e3380913156e5273e511320425ecb3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b04/img-f2c6996747fb22ce9d2a18549f13dd3c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b04/img-8628a28ca0fa1dcf15896b9bd78cbcf6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b04/img-a4fc485e79edd0dd70f16130943b2527.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b04/img-3e8f1bbcc381d6c07647a56a68c6f3fb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b04/img-7585f8c4f0fe587e0e057741fe22e3db.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b04/img-7347b10391f788b7f7274308678b8362.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b04/img-8c24d0d158be2bbfe145f66f31d3a2fb.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b04/img-f2c6996747fb22ce9d2a18549f13dd3c.jpg",
+          "url": "https://i.pinimg.com/originals/7b/f0/ee/7bf0ee3fe7a00010a15b61b78e3d4080.png"
+        },
+        {
+          "says": "Messi dribbled inside and curled it past the keeper.",
+          "visual": "Lionel Messi shooting a left-footed shot in 2014",
+          "images": [
+            "Messi goal Iran",
+            "Lionel Messi left foot 2014"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b05/img-07026a449161facf596fc3e20545c74e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b05/img-ef998da1accba82f35de939384b7adb4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b05/img-024d8b74f182ba688d28c3a3d8434432.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b05/img-8d82932ac349b02a135c12f2f57088ad.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b05/img-b66f286aa776b8a24a3e6a06b9526541.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b05/img-86f2392510ecc17928884220d0115e77.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b05/img-75e72f41c2f89fc8118b0b25bcf81d51.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b05/img-b5561ec108b28000301de5d04e8bce85.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b05/img-8d82932ac349b02a135c12f2f57088ad.jpg",
+          "url": "https://cdn.mos.cms.futurecdn.net/nrGzhmY2JSrJpNjzom4e5b-864-80.jpg"
+        },
+        {
+          "says": "One-nil, deep in stoppage time.",
+          "visual": "Argentina players celebrating the Messi goal against Iran",
+          "images": [
+            "Argentina celebrate Iran 2014",
+            "Messi celebration 2014"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b06/img-ad13e855c44093398f65d45dcb3d11d2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b06/img-278f9afd0f61313c912cf6e5cd642237.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b06/img-187ab52bec44e883d5438a723384171c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b06/img-5c26e96ecc224c4cb499672f51b59784.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b06/img-41bda1be4eae96135bae9794b4573915.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b06/img-e2491cddbb7403e01506e32a5583ed85.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b06/img-4f59519f09120ea8ecaff109533d017d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b06/img-1f5efb8386d1ab2e68a44211e5e43c47.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=n14XMqC4N8I",
+          "start": 5.5,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b06/shot_f946a0ac50.mp4"
+        },
+        {
+          "says": "Messi was Man of the Match in all three group games.",
+          "visual": "Lionel Messi holding a Man of the Match award in 2014",
+          "images": [
+            "Messi man of the match Iran 2014",
+            "Lionel Messi Argentina Iran 2014"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b07/img-2310604ed749975931e197f90dd2439c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b07/img-91d8a574b1bece05eebfaa38ec17caa6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b07/img-c2c36210656be11757204711202a1a1a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b07/img-4966b673dd7ff38d36e3672d13e22781.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b07/img-3497e9ee29e419d5b58ad672bd416703.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b07/img-e0991f3321fd4a59dc81e2fee4b85e61.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b07/img-8fb1fdf2a88e56650a5144b219916213.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b07/img-8f5dce6b166fe0d79a4e0538a76a49a8.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b05/img-86f2392510ecc17928884220d0115e77.jpg"
+        },
+        {
+          "says": "Was that Messi's most important group-stage goal ever?",
+          "visual": "Lionel Messi celebrating at the 2014 World Cup",
+          "images": [
+            "Lionel Messi 2014 celebration",
+            "Messi Belo Horizonte"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b08/img-2310604ed749975931e197f90dd2439c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b08/img-91d8a574b1bece05eebfaa38ec17caa6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b08/img-c2c36210656be11757204711202a1a1a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b08/img-0163ee07b575a77a8df266a41f798fcc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b08/img-8fb1fdf2a88e56650a5144b219916213.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b08/img-3497e9ee29e419d5b58ad672bd416703.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b08/img-23dbe47c1f24b4749a16eca1560cbbd0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b08/img-e0991f3321fd4a59dc81e2fee4b85e61.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_curled_in_a_91st_minute_win/b01/img-022c855aea57bb4901af682b8fb23671.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

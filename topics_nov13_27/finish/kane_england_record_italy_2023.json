@@ -1,0 +1,21 @@
+{
+ "cfg": "batch_kane_england_record_italy_2023.json",
+ "status": "ready",
+ "clip_beats": [
+  {
+   "beat": 5,
+   "url": "https://www.youtube.com/watch?v=emAIEADXAYM",
+   "start": 81.0
+  },
+  {
+   "beat": 6,
+   "url": "https://www.youtube.com/watch?v=emAIEADXAYM",
+   "start": 100.0
+  }
+ ],
+ "weak_beats": [
+  2
+ ],
+ "beat1": "Harry Kane close-up in white England kit with captain's armband",
+ "notes": "Clips from official England channel Italy 1-2 England highlights. Beat 5 = Kane and Italy players around the handball penalty award (small lower-third 'potential penalty review' text appears briefly; cutter accepted at start 81, 82-84 rejected); beat 6 = penalty goal wide then Kane celebration close-ups and team hugs. Beat 2 is only a generic in-match photo (Italy v England, not clearly Naples)."
+}

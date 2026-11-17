@@ -1,0 +1,457 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 4,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Cristiano Ronaldo playing for Al Nassr",
+      "a real photograph of Cristiano Ronaldo in a suit"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "RONALDO'S BIGGEST MOVE YET",
+    "hook_cover_term": "Cristiano Ronaldo close up in Al Nassr kit",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "SHOULD RONALDO BUY IN? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Cristiano Ronaldo playing for Al Nassr",
+      "a real photograph of Cristiano Ronaldo in a suit"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Cristiano Ronaldo might not just play for Al Nassr. He could soon own part of it. Reports say AC Milan owners RedBird are in talks to buy seventy percent of the club for around two hundred and sixty-seven million dollars, with Ronaldo taking twenty percent. RedBird and Saudi Arabia's Public Investment Fund declined to comment, and one source says a deal might not happen. Should Ronaldo become an owner while he is still playing?",
+    "video_subject": "Reports say AC Milan owner RedBird is in early talks to buy 70 percent of Al Nassr for about $267 million, with Cristiano Ronaldo taking a 20 percent stake; nothing is agreed",
+    "video_terms": "Cristiano Ronaldo Al Nassr stake RedBird takeover, Ronaldo 20 percent Al Nassr, RedBird PIF Al Nassr talks October 2026",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Cristiano Ronaldo might not just play for Al Nassr.",
+        "visual": "Cristiano Ronaldo playing for Al Nassr in yellow",
+        "images": [
+          "Cristiano Ronaldo Al Nassr 2026",
+          "Ronaldo Al Nassr yellow kit close up"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He could soon own part of it.",
+        "visual": "Cristiano Ronaldo in a suit looking confident",
+        "images": [
+          "Cristiano Ronaldo suit businessman",
+          "Cristiano Ronaldo suit event 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Reports say AC Milan owners RedBird are in talks",
+        "visual": "RedBird Capital Gerry Cardinale AC Milan owner",
+        "images": [
+          "Gerry Cardinale RedBird AC Milan",
+          "Gerry Cardinale San Siro"
+        ],
+        "clips": []
+      },
+      {
+        "says": "to buy seventy percent of the club",
+        "visual": "Al Nassr stadium in Riyadh",
+        "images": [
+          "Al Nassr Al-Awwal Park stadium",
+          "Al Nassr stadium Riyadh fans"
+        ],
+        "clips": []
+      },
+      {
+        "says": "for around two hundred and sixty-seven million dollars,",
+        "visual": "Al Nassr club badge and fans",
+        "images": [
+          "Al Nassr fans Ronaldo banner",
+          "Al Nassr club logo"
+        ],
+        "clips": []
+      },
+      {
+        "says": "with Ronaldo taking twenty percent.",
+        "visual": "Cristiano Ronaldo smiling for Al Nassr",
+        "images": [
+          "Ronaldo smiling Al Nassr",
+          "Cristiano Ronaldo Al Nassr celebration 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "RedBird and Saudi Arabia's Public Investment Fund declined to comment,",
+        "visual": "Saudi Public Investment Fund headquarters in Riyadh",
+        "images": [
+          "Public Investment Fund PIF tower Riyadh",
+          "PIF Saudi Arabia headquarters"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and one source says a deal might not happen.",
+        "visual": "Cristiano Ronaldo looking serious",
+        "images": [
+          "Cristiano Ronaldo serious face Al Nassr",
+          "Ronaldo thinking Al Nassr bench"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Should Ronaldo become an owner while he is still playing?",
+        "visual": "Cristiano Ronaldo celebrating a goal for Al Nassr",
+        "images": [
+          "Ronaldo siu celebration Al Nassr",
+          "Cristiano Ronaldo goal celebration Al Nassr 2026"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Reports say AC Milan owner RedBird is in early talks to buy 70 percent of Al Nassr for about $267 million, with Cristiano Ronaldo taking a 20 percent stake; nothing is agreed",
+      "video_script": "Cristiano Ronaldo might not just play for Al Nassr. He could soon own part of it. Reports say AC Milan owners RedBird are in talks to buy seventy percent of the club for around two hundred and sixty-seven million dollars, with Ronaldo taking twenty percent. RedBird and Saudi Arabia's Public Investment Fund declined to comment, and one source says a deal might not happen. Should Ronaldo become an owner while he is still playing?",
+      "video_terms": "Cristiano Ronaldo Al Nassr stake RedBird takeover, Ronaldo 20 percent Al Nassr, RedBird PIF Al Nassr talks October 2026",
+      "hook_text": "RONALDO'S BIGGEST MOVE YET",
+      "cta_text": "SHOULD RONALDO BUY IN? 👇",
+      "beat_plan": [
+        {
+          "says": "Cristiano Ronaldo might not just play for Al Nassr.",
+          "visual": "Cristiano Ronaldo playing for Al Nassr in yellow",
+          "images": [
+            "Cristiano Ronaldo Al Nassr 2026",
+            "Ronaldo Al Nassr yellow kit close up"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b01/img-70f239cfebf8691c13388bca425956cc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b01/img-78ea0d68402507ef88f84004b4148001.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b01/img-d63de624aea7421a7c8d6b9de4d7931d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b01/img-bdaff4857890a23270f8484a46c3f013.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b01/img-d7260109731e601c0f1018778b6549a8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b01/img-584c33ab6e8ade7c00e4a21594c81fdf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b01/img-ef55fabe4e7dd2d8c8a42e06bd034630.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b01/img-55faea349dfed32cf15c4fedc72e6c4c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b01/img-70f239cfebf8691c13388bca425956cc.jpg",
+          "url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhluEX1gbdvvX1xh5mbqC01j3AMXKh-NYkBEjy7S5LftjBUdIIyG9YARDppiQfGoYXI7-vzRaS6mJD5wiNyJ6Fv_xVbFeyL_znhT6aRQMcbjw04JSNhw9c_OfI4iWOoxbeLI1PZU19uLNWeAYt_PUzCMx1mYY9D_765xIxctxALuqIKZ-1kzOo7qzmq09SN/s1600/al-nassr-long-sleeve-kits+(17).jpg"
+        },
+        {
+          "says": "He could soon own part of it.",
+          "visual": "Cristiano Ronaldo in a suit looking confident",
+          "images": [
+            "Cristiano Ronaldo suit businessman",
+            "Cristiano Ronaldo suit event 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b02/img-bed571d2d7a2d70ef4db3b4621607049.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b02/img-0d7e7187a75df25f7012b726095f261e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b02/img-4f20865f3414f522f211e9f5dfb3a1ef.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b02/img-5a04df93f0ec497205e54cf9fbf23e72.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b02/img-d2e3c689dd5aeab64ae1f808d0e5aaa6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b02/img-c7f57c4237875e1430424b0929a9c085.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b02/img-28cc3138b5866cd75750734fb79c5d7b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b02/img-ed44f154e0cc74d0a9e8d81cc866e21a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b02/img-bed571d2d7a2d70ef4db3b4621607049.jpg",
+          "url": "https://wallpapers.com/images/hd/elegant-sportsmanin-suit-vz088i3exs7elgsx.jpg"
+        },
+        {
+          "says": "Reports say AC Milan owners RedBird are in talks",
+          "visual": "RedBird Capital Gerry Cardinale AC Milan owner",
+          "images": [
+            "Gerry Cardinale RedBird AC Milan",
+            "Gerry Cardinale San Siro"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b03/img-0d363d14df6cd90a1ba18926a649c59b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b03/img-86f0b6da6abc1f7af079f2bf643a7681.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b03/img-2ece4c881cca1a71683f6f0250d3764d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b03/img-7378e4c84549964e1295b0d62dd7b143.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b03/img-ee321fc5ef0b963ad2f954ada710a33f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b03/img-28a4c1ddbe68adbda21bbee40c8f1f66.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b03/img-533a906c197cd63ed2835ef39b782a23.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b03/img-d104dc10160337c02b4214ce98c90b4e.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b03/img-d104dc10160337c02b4214ce98c90b4e.jpg",
+          "url": "https://milanreports.com/wp-content/uploads/2022/10/Downloader.la-6351029053323.jpg"
+        },
+        {
+          "says": "to buy seventy percent of the club",
+          "visual": "Al Nassr stadium in Riyadh",
+          "images": [
+            "Al Nassr Al-Awwal Park stadium",
+            "Al Nassr stadium Riyadh fans"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b04/img-d77a08920b751d28aa559211c7dd82d2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b04/img-e8470800d87c26c61aab9c5fc02a7539.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b04/img-c84293113a622026d5035af731877567.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b04/img-2f569e6fd42363ac086fdab1d2b36e26.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b04/img-5ebcd8802ed4831aea6d9cb7bcf19ddf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b04/img-c1d57719e8b7123003ab5dc6153aa13b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b04/img-3dc9e3dd51ff16b19fd326116bd37540.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b04/img-54b48bea29062dcaf1ffc79de328494c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b04/img-d77a08920b751d28aa559211c7dd82d2.jpg",
+          "url": "https://www.middleeasteye.net/sites/default/files/styles/max_2600x2600/public/images-story/nassr-fans-crowd-saudi-afp.jpg.jpg?itok=WLYW-cBG"
+        },
+        {
+          "says": "for around two hundred and sixty-seven million dollars,",
+          "visual": "Al Nassr club badge and fans",
+          "images": [
+            "Al Nassr fans Ronaldo banner",
+            "Al Nassr club logo"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b05/img-c88ef77c22e084ef51f6586af7e618c3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b05/img-1d79ffbfdb3ab671a9bef15d710942fb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b05/img-802099ac5a6036b17af4daacacef7958.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b05/img-f11127a6d570c30933ea2e5c3dc6ce8d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b05/img-1b6b49acb9cf107431ec34d6242689f7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b05/img-c0bb344d62558e9168b5e573fa845515.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b05/img-b0de3e30c972e33f81f7f281260a60a3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b05/img-1d3599d802da3e065df67b64e7afb37c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b05/img-1d79ffbfdb3ab671a9bef15d710942fb.jpg",
+          "url": "https://theflagshopp.com/wp-content/uploads/2024/12/11-al-naser-saudi-flag-3x5ft.jpg"
+        },
+        {
+          "says": "with Ronaldo taking twenty percent.",
+          "visual": "Cristiano Ronaldo smiling for Al Nassr",
+          "images": [
+            "Ronaldo smiling Al Nassr",
+            "Cristiano Ronaldo Al Nassr celebration 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b06/img-bef82b81cff45204ee75a6053a075d6e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b06/img-dd702e92fd53fe23ef3b4cd13f11a12a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b06/img-a81c3f59d2103b2e7d193b4f8a13b54f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b06/img-92bd955a2bbce832720eb708d383f65b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b06/img-e8f32be4aa7f0aac5208b4af8acb639c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b06/img-9005557a34b77d9ce14daa8146a08bf6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b06/img-d5b557e370a75b5f1989e6d04e9b6f25.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b06/img-bdaff4857890a23270f8484a46c3f013.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b06/img-dd702e92fd53fe23ef3b4cd13f11a12a.jpg",
+          "url": "https://i.pinimg.com/originals/7e/8c/6a/7e8c6a6300d974b2c37c5df37ef4a852.jpg"
+        },
+        {
+          "says": "RedBird and Saudi Arabia's Public Investment Fund declined to comment,",
+          "visual": "Saudi Public Investment Fund headquarters in Riyadh",
+          "images": [
+            "Public Investment Fund PIF tower Riyadh",
+            "PIF Saudi Arabia headquarters"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b07/img-e59a8a3f0953f44d1c9a5fff18430e66.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b07/img-40603225e237e50e8ee23a25ee51baf7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b07/img-bf750247f1c1b721b4cb6d26470ea54a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b07/img-3d65fc44a1f93df8a3ece852bf38bbc0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b07/img-daed6e7aa8b7ec0ed7063e391f39332c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b07/img-a6dfa89f3bcbfe2baad7c8b31284be05.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b07/img-97e1b45ebd0721902019d7a9a487a075.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b07/img-818395b5b3085ad1b6e812d1fac4b89c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b07/img-e59a8a3f0953f44d1c9a5fff18430e66.jpg",
+          "url": "https://www.trillionairedaily.com/img/articles/2026-05-03-saudi-pif-2026-2030-strategy.webp"
+        },
+        {
+          "says": "and one source says a deal might not happen.",
+          "visual": "Cristiano Ronaldo looking serious",
+          "images": [
+            "Cristiano Ronaldo serious face Al Nassr",
+            "Ronaldo thinking Al Nassr bench"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b08/img-4598997f15c10410f01c1af035bbb6e7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b08/img-5ca4d818bb6110e121aaefcb562e6a34.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b08/img-7c387e903a8aa36535fc14c4f20d864f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b08/img-b7d9d61cbae457d9657da503b8716dca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b08/img-3a7004e99b5b25c3caf946784f5fc781.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b08/img-26179bb5d540bb2553d71269b25b3223.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b08/img-e0130653f4aa2166fc9fa7bafefe3290.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b08/img-9225d0c1bc8ad790000e883f4d28a0f1.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b08/img-3a7004e99b5b25c3caf946784f5fc781.jpg",
+          "url": "https://cdn.radioafrica.digital/image/2026/09/afffdcdb-f6a4-4a31-84a7-b62280ebf79b.jfif?1792445633219"
+        },
+        {
+          "says": "Should Ronaldo become an owner while he is still playing?",
+          "visual": "Cristiano Ronaldo celebrating a goal for Al Nassr",
+          "images": [
+            "Ronaldo siu celebration Al Nassr",
+            "Cristiano Ronaldo goal celebration Al Nassr 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b09/img-816701b9546e24b9356e4e6151093d02.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b09/img-21f316acbe033c30e92cdcf75416fc03.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b09/img-3f6b493ee957f4fcb0e87ed8dcdbf56d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b09/img-e0130653f4aa2166fc9fa7bafefe3290.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b09/img-9225d0c1bc8ad790000e883f4d28a0f1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b09/img-5d1ab9420a97a1983f6510e8383c6f7f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b09/img-bd22b88cfe48ffedc25405b6e97c3edb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b09/img-26179bb5d540bb2553d71269b25b3223.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/reports_say_ac_milan_owner_redbird_is_in/b09/img-bd22b88cfe48ffedc25405b6e97c3edb.jpg",
+          "url": "https://assets.goal.com/images/v3/blt51f003b1b0c65925/GOAL_-_Blank_WEB_-_Facebook_-_2024-03-17T144600.950.png?auto=webp&format=pjpg&width=3840&quality=60"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

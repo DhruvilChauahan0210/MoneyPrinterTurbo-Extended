@@ -1,0 +1,23 @@
+{
+  "cfg": "batch_messi_ballondor2019_sevenpoints.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 2,
+      "url": "https://www.youtube.com/watch?v=ucQaPfjufIQ",
+      "start": 440.0
+    }
+  ],
+  "weak_beats": [
+    {
+      "beat": 7,
+      "why": "generic stage lights, no Chatelet/Paris specifics"
+    },
+    {
+      "beat": 6,
+      "why": "gold-bg Messi with trophy, generic"
+    }
+  ],
+  "beat1": "Messi in black suit holding the 2019 Ballon d'Or (portrait close-up, no Barca kit)",
+  "notes": "Beat 2 clip: FC Barcelona official ceremony upload, Messi at podium with trophy (small FCB corner bug). Beat 8 clip not possible: Messi+Van Dijk shared shot lasts under 6s."
+}

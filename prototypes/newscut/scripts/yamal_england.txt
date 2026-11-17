@@ -1,0 +1,11 @@
+KEY yamal_england | OUT NEWSCUT_yamal_england.mp4 | loopTail "Lamine Yamal."
+Sentences (chunks split by |; display = ALL CAPS of the words; spoken = the words):
+S0: Lamine Yamal | was ruled out | of Spain's last game | with a knee problem, | and England | started to dream.
+S1: But that dream | may be over.
+S2: After Barcelona | beat Atlético, | a scan found | inflammation | and fluid | in his right knee, | and he missed | Thursday's trip | to Czechia.
+S3: Even Czechia's coach | admitted | they wanted Lamine | to be there.
+S4: And this week | he became | the first player | to make | the FIFPRO World Eleven | twice | before turning 20.
+S5: Now reports say | Yamal | has been cleared | to play | the full 90 minutes | on Sunday | at the Metropolitano, | where England | were hoping | to face Spain | without
+Source card (over S5 "Now reports say" .. "the full 90 minutes"): label SOURCE, title "Spanish FA / Tribuna", lines ["13 Nov 2026", "Cleared for Spain v England"]
+Cover text: "YAMAL IS BACK 😳"
+Facts (verified): knee inflammation + fluid after Barcelona beat Atlético; missed Spain v Czechia (Thu 12 Nov, Prague); Czechia coach Santi Denia: "We wanted Lamine to be there"; FIFPRO World XI 9 Nov 2026, first player with two selections before 20; Spain v England, UEFA Nations League, Sunday 15 Nov, Metropolitano, Madrid.

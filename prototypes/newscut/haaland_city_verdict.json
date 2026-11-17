@@ -1,0 +1,391 @@
+{
+ "key": "haaland_city_verdict",
+ "out": "NEWSCUT_haaland_city_verdict.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_em106.wav",
+ "musicVol": 0.012,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Erling Haaland is signed until twenty thirty-four.",
+ "sentences": [
+  [
+   [
+    "ERLING HAALAND",
+    "Erling Haaland"
+   ],
+   [
+    "IS SIGNED",
+    "is signed"
+   ],
+   [
+    "UNTIL 2034",
+    "until twenty thirty-four,"
+   ],
+   [
+    "BUT MANCHESTER CITY",
+    "but Manchester City"
+   ],
+   [
+    "HAVE JUST BEEN",
+    "have just been"
+   ],
+   [
+    "FOUND GUILTY",
+    "found guilty,"
+   ],
+   [
+    "AND NOBODY KNOWS",
+    "and nobody knows"
+   ],
+   [
+    "THE PUNISHMENT",
+    "the punishment."
+   ]
+  ],
+  [
+   [
+    "SO WHAT HAPPENS",
+    "So what happens"
+   ],
+   [
+    "TO HAALAND?",
+    "to Haaland?"
+   ]
+  ],
+  [
+   [
+    "ON SEPTEMBER 29",
+    "On September twenty-ninth,"
+   ],
+   [
+    "AN INDEPENDENT COMMISSION",
+    "an independent commission"
+   ],
+   [
+    "FOUND CITY GUILTY",
+    "found City guilty"
+   ],
+   [
+    "OF SERIOUS BREACHES",
+    "of serious breaches"
+   ],
+   [
+    "OF THE PREMIER LEAGUE'S",
+    "of the Premier League's"
+   ],
+   [
+    "FINANCIAL RULES",
+    "financial rules"
+   ],
+   [
+    "OVER NINE SEASONS",
+    "over nine seasons."
+   ]
+  ],
+  [
+   [
+    "CITY APPEALED",
+    "City appealed"
+   ],
+   [
+    "ON OCTOBER 1",
+    "on October first,"
+   ],
+   [
+    "AND THE APPEAL HEARING",
+    "and the appeal hearing"
+   ],
+   [
+    "IS EXPECTED",
+    "is expected"
+   ],
+   [
+    "IN DECEMBER",
+    "in December."
+   ]
+  ],
+  [
+   [
+    "THE SANCTION",
+    "The sanction"
+   ],
+   [
+    "HASN'T BEEN DECIDED",
+    "hasn't been decided,"
+   ],
+   [
+    "BUT THE COMMISSION'S POWERS",
+    "but the commission's powers"
+   ],
+   [
+    "GO ALL THE WAY",
+    "go all the way"
+   ],
+   [
+    "TO EXPULSION",
+    "to expulsion"
+   ],
+   [
+    "FROM THE LEAGUE",
+    "from the league."
+   ]
+  ],
+  [
+   [
+    "ACCORDING TO AS",
+    "According to A.S.,"
+   ],
+   [
+    "HAALAND'S CAMP",
+    "Haaland's camp"
+   ],
+   [
+    "WON'T DISCUSS",
+    "won't discuss"
+   ],
+   [
+    "HIS FUTURE",
+    "his future"
+   ],
+   [
+    "UNTIL THEY KNOW",
+    "until they know"
+   ],
+   [
+    "THE PUNISHMENT",
+    "the punishment,"
+   ],
+   [
+    "AND PAUL SCHOLES",
+    "and Paul Scholes"
+   ],
+   [
+    "ALREADY SAYS",
+    "already says"
+   ],
+   [
+    "HE'D PICK BARCELONA",
+    "he'd pick Barcelona,"
+   ],
+   [
+    "WHICH IS WHY",
+    "which is why"
+   ],
+   [
+    "THE WHOLE WORLD",
+    "the whole world"
+   ],
+   [
+    "IS NOW WATCHING",
+    "is now watching"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "9zl3oYyi3do",
+   "start": 30.0,
+   "x": 330
+  },
+  {
+   "at": 2,
+   "vid": "qpArX_hBiow",
+   "start": 5.5,
+   "x": 300
+  },
+  {
+   "at": 3,
+   "vid": "bF7jXT5c4nE",
+   "start": 30.0,
+   "x": 656
+  },
+  {
+   "at": 4,
+   "vid": "5FFXksByBd8",
+   "start": 273.0,
+   "x": 700
+  },
+  {
+   "at": 6,
+   "vid": "yrcrQLl6_0Y",
+   "start": 49.3,
+   "x": 836
+  },
+  {
+   "at": 8,
+   "vid": "9zl3oYyi3do",
+   "start": 71.0,
+   "x": 300
+  },
+  {
+   "at": 10,
+   "vid": "bF7jXT5c4nE",
+   "start": 21.8,
+   "x": 746
+  },
+  {
+   "at": 11,
+   "vid": "B9EarfqddBM",
+   "start": 60.0,
+   "x": 610
+  },
+  {
+   "at": 12,
+   "vid": "bF7jXT5c4nE",
+   "start": 23.6,
+   "x": 790
+  },
+  {
+   "at": 13,
+   "vid": "5FFXksByBd8",
+   "start": 290.0,
+   "x": 690
+  },
+  {
+   "at": 14,
+   "vid": "0pv3rtRqR0k",
+   "start": 36.4,
+   "x": 500
+  },
+  {
+   "at": 15,
+   "vid": "5FFXksByBd8",
+   "start": 82.0,
+   "x": 490
+  },
+  {
+   "at": 16,
+   "vid": "mUzGY77a-cA",
+   "start": 448.0,
+   "x": 460,
+   "srcH": 720
+  },
+  {
+   "at": 17,
+   "vid": "5FFXksByBd8",
+   "start": 3.1,
+   "x": 400
+  },
+  {
+   "at": 18,
+   "vid": "yrcrQLl6_0Y",
+   "start": 24.3,
+   "x": 836
+  },
+  {
+   "at": 19,
+   "vid": "5FFXksByBd8",
+   "start": 5.6,
+   "x": 440
+  },
+  {
+   "at": 21,
+   "vid": "bF7jXT5c4nE",
+   "start": 176.0,
+   "x": 506
+  },
+  {
+   "at": 23,
+   "vid": "B9EarfqddBM",
+   "start": 100.0,
+   "x": 610
+  },
+  {
+   "at": 24,
+   "vid": "5FFXksByBd8",
+   "start": 98.0,
+   "x": 746
+  },
+  {
+   "at": 25,
+   "vid": "bF7jXT5c4nE",
+   "start": 190.0,
+   "x": 820
+  },
+  {
+   "at": 26,
+   "vid": "bF7jXT5c4nE",
+   "start": 163.0,
+   "x": 656
+  },
+  {
+   "at": 28,
+   "vid": "9zl3oYyi3do",
+   "start": 5.0,
+   "x": 430
+  },
+  {
+   "at": 29,
+   "vid": "qpArX_hBiow",
+   "start": 20.0,
+   "x": 470,
+   "h": 760,
+   "y": 40
+  },
+  {
+   "at": 31,
+   "vid": "9zl3oYyi3do",
+   "start": 300.6,
+   "x": 505
+  },
+  {
+   "at": 33,
+   "vid": "yrcrQLl6_0Y",
+   "start": 30.0,
+   "x": 836
+  },
+  {
+   "at": 34,
+   "vid": "ikyxiLcUpyM",
+   "start": 190.0,
+   "x": 760,
+   "h": 800,
+   "y": 40
+  },
+  {
+   "at": 36,
+   "vid": "Xcjof8vf9gg",
+   "start": 60.0,
+   "x": 1250
+  },
+  {
+   "at": 37,
+   "vid": "eWpDO6w362Q",
+   "start": 341.35,
+   "x": 1050
+  },
+  {
+   "at": 39,
+   "vid": "eWpDO6w362Q",
+   "start": 199.0,
+   "x": 760
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 10,
+   "toChunk": 17,
+   "label": "SOURCE",
+   "title": "Premier League statement",
+   "lines": [
+    "29 Sep 2026",
+    "City found guilty · appeal lodged 1 Oct"
+   ]
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 3,
+   "t": 0.3
+  },
+  "text": "WHAT HAPPENS TO HAALAND? 😳"
+ }
+}

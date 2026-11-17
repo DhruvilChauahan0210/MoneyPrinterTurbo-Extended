@@ -1,0 +1,351 @@
+{
+ "key": "portugal_denmark_no7",
+ "out": "NEWSCUT_portugal_no7_humiliation.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_em106.wav",
+ "musicVol": 0.012,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Ronaldo retired from Portugal.",
+ "sentences": [
+  [
+   [
+    "EVERY PORTUGAL PLAYER",
+    "Every Portugal player"
+   ],
+   [
+    "WORE RONALDO'S",
+    "wore Ronaldo's"
+   ],
+   [
+    "NUMBER 7",
+    "number seven"
+   ],
+   [
+    "FOR HIS TRIBUTE NIGHT,",
+    "for his tribute night,"
+   ],
+   [
+    "AND IT TURNED INTO",
+    "and it turned into"
+   ],
+   [
+    "A NIGHTMARE",
+    "a nightmare."
+   ]
+  ],
+  [
+   [
+    "NOBODY",
+    "Nobody"
+   ],
+   [
+    "EXPECTED THIS",
+    "expected this."
+   ]
+  ],
+  [
+   [
+    "IN BRAGA,",
+    "In Braga,"
+   ],
+   [
+    "DENMARK SCORED",
+    "Denmark scored"
+   ],
+   [
+    "A PENALTY",
+    "a penalty"
+   ],
+   [
+    "BEFORE HALF-TIME,",
+    "before half-time,"
+   ],
+   [
+    "THEN RASMUS HØJLUND",
+    "then Rasmus Hoylund"
+   ],
+   [
+    "SCORED TWICE",
+    "scored twice"
+   ],
+   [
+    "EARLY IN THE SECOND HALF",
+    "early in the second half."
+   ]
+  ],
+  [
+   [
+    "JOACHIM ANDERSEN",
+    "Joachim Andersen"
+   ],
+   [
+    "MADE IT 4,",
+    "made it four,"
+   ],
+   [
+    "AND BERNARDO SILVA'S GOAL",
+    "and Bernardo Silva's goal"
+   ],
+   [
+    "CAME DEEP",
+    "came deep"
+   ],
+   [
+    "IN STOPPAGE TIME",
+    "in stoppage time."
+   ]
+  ],
+  [
+   [
+    "PORTUGAL 1,",
+    "Portugal one,"
+   ],
+   [
+    "DENMARK 4,",
+    "Denmark four,"
+   ],
+   [
+    "CALLED THEIR HEAVIEST",
+    "called their heaviest"
+   ],
+   [
+    "COMPETITIVE HOME DEFEAT,",
+    "competitive home defeat,"
+   ],
+   [
+    "AND JORGE JESUS'S",
+    "and Jorge Jesus's"
+   ],
+   [
+    "FIRST LOSS",
+    "first loss"
+   ],
+   [
+    "AS COACH",
+    "as coach."
+   ]
+  ],
+  [
+   [
+    "EVEN THE MASCOTS",
+    "Even the mascots"
+   ],
+   [
+    "WORE NUMBER 7,",
+    "wore number seven,"
+   ],
+   [
+    "BUT ON THE NIGHT",
+    "but on the night"
+   ],
+   [
+    "THAT WAS MEANT",
+    "that was meant"
+   ],
+   [
+    "TO CELEBRATE HIM,",
+    "to celebrate him,"
+   ],
+   [
+    "PORTUGAL FOUND OUT",
+    "Portugal found out"
+   ],
+   [
+    "WHAT LIFE LOOKS LIKE",
+    "what life looks like"
+   ],
+   [
+    "NINE DAYS AFTER",
+    "nine days after"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "is8JWdOeinI",
+   "start": 122.45,
+   "x": 600
+  },
+  {
+   "at": 1,
+   "vid": "-d53u__DDn4",
+   "start": 5.8,
+   "x": 450
+  },
+  {
+   "at": 3,
+   "vid": "-d53u__DDn4",
+   "start": 8.35,
+   "x": 650
+  },
+  {
+   "at": 4,
+   "vid": "-d53u__DDn4",
+   "start": 67.8,
+   "x": 850
+  },
+  {
+   "at": 6,
+   "vid": "-d53u__DDn4",
+   "start": 37.85,
+   "x": 600
+  },
+  {
+   "at": 8,
+   "vid": "-d53u__DDn4",
+   "start": 39.8,
+   "x": 656
+  },
+  {
+   "at": 10,
+   "vid": "-d53u__DDn4",
+   "start": 45.5,
+   "x": 150
+  },
+  {
+   "at": 12,
+   "vid": "-d53u__DDn4",
+   "start": 61.65,
+   "x": 690
+  },
+  {
+   "at": 13,
+   "vid": "-d53u__DDn4",
+   "start": 82.8,
+   "x": 350
+  },
+  {
+   "at": 14,
+   "vid": "-d53u__DDn4",
+   "start": 77.45,
+   "x": 420
+  },
+  {
+   "at": 15,
+   "vid": "-d53u__DDn4",
+   "start": 95.75,
+   "x": 450
+  },
+  {
+   "at": 16,
+   "vid": "-d53u__DDn4",
+   "start": 97.15,
+   "x": 800
+  },
+  {
+   "at": 17,
+   "vid": "-d53u__DDn4",
+   "start": 111.1,
+   "x": 800
+  },
+  {
+   "at": 18,
+   "vid": "-d53u__DDn4",
+   "start": 106.3,
+   "x": 1100
+  },
+  {
+   "at": 20,
+   "vid": "-d53u__DDn4",
+   "start": 116.9,
+   "x": 500
+  },
+  {
+   "at": 21,
+   "vid": "-d53u__DDn4",
+   "start": 92.3,
+   "x": 650
+  },
+  {
+   "at": 23,
+   "vid": "-d53u__DDn4",
+   "start": 118.9,
+   "x": 420
+  },
+  {
+   "at": 24,
+   "vid": "-d53u__DDn4",
+   "start": 112.9,
+   "x": 230
+  },
+  {
+   "at": 25,
+   "vid": "RljMM6hdg40",
+   "start": 20.4,
+   "x": 615,
+   "srcH": 720
+  },
+  {
+   "at": 27,
+   "vid": "-d53u__DDn4",
+   "start": 4.0,
+   "x": 0
+  },
+  {
+   "at": 28,
+   "vid": "-d53u__DDn4",
+   "start": 4.6,
+   "x": 500
+  },
+  {
+   "at": 29,
+   "vid": "-d53u__DDn4",
+   "start": 9.65,
+   "x": 900
+  },
+  {
+   "at": 31,
+   "vid": "is8JWdOeinI",
+   "start": 124.4,
+   "x": 600
+  },
+  {
+   "at": 32,
+   "vid": "-d53u__DDn4",
+   "start": 120.7,
+   "x": 420
+  },
+  {
+   "at": 33,
+   "vid": "RljMM6hdg40",
+   "start": 58.6,
+   "x": 615,
+   "srcH": 720
+  },
+  {
+   "at": 34,
+   "vid": "a_-JGb7asE0",
+   "start": 6.6,
+   "x": 636,
+   "h": 960
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 20,
+   "toChunk": 26,
+   "label": "RESULT",
+   "title": "UEFA Nations League",
+   "lines": [
+    "14 Nov 2026 · Braga",
+    "Portugal 1–4 Denmark"
+   ]
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 16,
+   "t": 0.3
+  },
+  "text": "WITHOUT RONALDO 💔"
+ }
+}

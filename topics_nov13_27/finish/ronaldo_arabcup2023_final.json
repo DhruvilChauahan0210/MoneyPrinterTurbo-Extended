@@ -1,0 +1,27 @@
+{
+  "cfg": "batch_ronaldo_arabcup2023_final.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 4,
+      "url": "https://www.youtube.com/watch?v=2WBiqAnXYuY",
+      "start": 429.0
+    }
+  ],
+  "weak_beats": [
+    {
+      "beat": 2,
+      "why": "Al Hilal players clapping, not Michael"
+    },
+    {
+      "beat": 5,
+      "why": "night stadium, probably Riyadh not Taif"
+    },
+    {
+      "beat": 8,
+      "why": "Ronaldo smiling in white away kit, no trophy in shot"
+    }
+  ],
+  "beat1": "Ronaldo smiling portrait in yellow Al Nassr kit (borrowed from beat 9)",
+  "notes": "Beat 4 clip from Saudi Sport broadcast highlights: Al Nassr goal beats keeper then Ronaldo celebrates (exact minute 74 vs 98 not verified). SSC logo only."
+}

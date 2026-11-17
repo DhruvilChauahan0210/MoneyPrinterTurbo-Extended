@@ -30,3 +30,39 @@ venv/
 .env
 .env.*
 !.env.example
+upload_nov/
+upload_batch/
+
+# Rendered output, raw research dumps and source images stay on this machine
+*.mp4
+*.mov
+*.wav
+*.mp3
+node_modules/
+out/
+research_nov8/**/raw*.jsonl
+what if images /
+
+# Local tool state, and notes from other (UnifyApps) work that landed in this folder
+.nebula/
+.sessions/
+memory.md
+entities/
+entity-manifests/
+feedbacks/
+docs/applications/
+docs/automations/
+Maintenance-Work-Orders-Handover.md
+*.webm
+*.mkv
+*.log
+*.pkl
+# Player photos, frames and mosaics used for renders: third-party images, kept local
+prototypes/**/*.jpg
+prototypes/**/*.png
+research_nov8/**/*.jpg
+research_nov8/**/*.png
+whatif-remotion/public/
+records/
+*maintenance-work-order*
+docs/README.md

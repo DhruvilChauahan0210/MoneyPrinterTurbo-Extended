@@ -1,0 +1,416 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Jude Bellingham",
+      "a real photograph of Harry Kane",
+      "a real photograph of Kyle Walker",
+      "a real photograph of Marc Guehi",
+      "a real photograph of Ivan Schranz"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "ENGLAND'S GREATEST RESCUE EVER?",
+    "hook_cover_term": "Jude Bellingham celebrating for England at Euro 2024",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "IS THIS ENGLAND'S GREATEST LATE GOAL? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Jude Bellingham",
+      "a real photograph of Harry Kane",
+      "a real photograph of Kyle Walker",
+      "a real photograph of Marc Guehi",
+      "a real photograph of Ivan Schranz"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Ninety-fifth minute. England were going out. Then Bellingham leapt. Gelsenkirchen, June two thousand and twenty-four. England against Slovakia, last sixteen. Slovakia have led since the twenty-fifth minute. England have not scored, and they are seconds from elimination. Walker's long throw, Guehi flicks it on. Bellingham hits an overhead kick. One-one. In extra time, Kane heads the winner. Two-one. Is that the greatest late goal in England's history?",
+    "video_subject": "Jude Bellingham scored a 95th-minute overhead kick for England against Slovakia in the Euro 2024 last sixteen with England 1-0 down, and Harry Kane headed the winner in extra time.",
+    "video_terms": "Bellingham, England, Slovakia, Euro 2024, overhead kick, bicycle kick, Kane, Gelsenkirchen",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Ninety-fifth minute. England were going out. Then Bellingham leapt.",
+        "visual": "close up of Jude Bellingham in white England kit Euro 2024",
+        "images": [
+          "Jude Bellingham England 2024",
+          "Bellingham Euro 2024"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b08/img-c08d067718615818d7d3d1677467d6a8.jpg"
+      },
+      {
+        "says": "Gelsenkirchen, June two thousand and twenty-four. England against Slovakia, last sixteen.",
+        "visual": "England players at Gelsenkirchen stadium",
+        "images": [
+          "England Slovakia Euro 2024",
+          "Arena AufSchalke Euro 2024"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Slovakia have led since the twenty-fifth minute.",
+        "visual": "Slovakia players celebrating Schranz goal",
+        "images": [
+          "Ivan Schranz Slovakia",
+          "Slovakia Euro 2024"
+        ],
+        "clips": []
+      },
+      {
+        "says": "England have not scored, and they are seconds from elimination.",
+        "visual": "England players looking dejected",
+        "images": [
+          "England Euro 2024 Southgate",
+          "Southgate Euro 2024"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Walker's long throw, Guehi flicks it on.",
+        "visual": "Kyle Walker long throw into the box",
+        "images": [
+          "Kyle Walker England 2024",
+          "Marc Guehi England"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Bellingham hits an overhead kick. One-one.",
+        "visual": "Bellingham overhead bicycle kick scoring",
+        "images": [
+          "Bellingham bicycle kick",
+          "Bellingham overhead kick England"
+        ],
+        "clips": []
+      },
+      {
+        "says": "In extra time, Kane heads the winner. Two-one.",
+        "visual": "Harry Kane celebrating for England",
+        "images": [
+          "Harry Kane England 2024",
+          "Kane Slovakia"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Is that the greatest late goal in England's history?",
+        "visual": "Bellingham arms wide celebrating in England kit",
+        "images": [
+          "Bellingham celebration England",
+          "Jude Bellingham arms wide"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Jude Bellingham scored a 95th-minute overhead kick for England against Slovakia in the Euro 2024 last sixteen with England 1-0 down, and Harry Kane headed the winner in extra time.",
+      "video_script": "Ninety-fifth minute. England were going out. Then Bellingham leapt. Gelsenkirchen, June two thousand and twenty-four. England against Slovakia, last sixteen. Slovakia have led since the twenty-fifth minute. England have not scored, and they are seconds from elimination. Walker's long throw, Guehi flicks it on. Bellingham hits an overhead kick. One-one. In extra time, Kane heads the winner. Two-one. Is that the greatest late goal in England's history?",
+      "video_terms": "Bellingham, England, Slovakia, Euro 2024, overhead kick, bicycle kick, Kane, Gelsenkirchen",
+      "hook_text": "ENGLAND'S GREATEST RESCUE EVER?",
+      "cta_text": "IS THIS ENGLAND'S GREATEST LATE GOAL? 👇",
+      "beat_plan": [
+        {
+          "says": "Ninety-fifth minute. England were going out. Then Bellingham leapt.",
+          "visual": "close up of Jude Bellingham in white England kit Euro 2024",
+          "images": [
+            "Jude Bellingham England 2024",
+            "Bellingham Euro 2024"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b01/img-93caf53fa9f7f025b8b66878c4636f64.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b01/img-0f1e93139650dc981b356267c11a79c6.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b08/img-c08d067718615818d7d3d1677467d6a8.jpg",
+          "url": "https://e3.365dm.com/24/06/1600x900/skynews-jude-bellingham-england_6583594.jpg?20240617020846"
+        },
+        {
+          "says": "Gelsenkirchen, June two thousand and twenty-four. England against Slovakia, last sixteen.",
+          "visual": "England players at Gelsenkirchen stadium",
+          "images": [
+            "England Slovakia Euro 2024",
+            "Arena AufSchalke Euro 2024"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b02/img-a0b391448347ecd20dcceb3ca726c040.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b02/img-9f1ae81b03f9413adb69552ed08ab520.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b02/img-dd14f6169566c5f1f38f55201867f4dd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b02/img-67498e03d6925e1f4beb4d25a5bbac81.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b02/img-4fcb207fb09def894f2e9061fd826675.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b02/img-6a1e18737cc47b9eacb94f6b38ee05b3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b02/img-776a19ccbbfd11f629b02bd9becf72fd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b02/img-e68c26feffb6e6f9388be3cb0c683207.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b02/img-a0b391448347ecd20dcceb3ca726c040.jpg",
+          "url": "https://stadiumdb.com/pictures/tournaments/euro_2024/arena_auf_schalke/arena_auf_schalke05.jpg"
+        },
+        {
+          "says": "Slovakia have led since the twenty-fifth minute.",
+          "visual": "Slovakia players celebrating Schranz goal",
+          "images": [
+            "Ivan Schranz Slovakia",
+            "Slovakia Euro 2024"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b03/img-c9481fd4f64c2e199b200e02a3457658.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b03/img-fc6d170c3f6a3e48bca540c5070356bc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b03/img-efdd50d43c86916040ec725bf5ab6d19.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b03/img-8eeba5c568331b5887f770d0634faef4.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b03/img-c9481fd4f64c2e199b200e02a3457658.jpg",
+          "url": "https://english.ahram.org.eg/Media/News/2024/6/21/2024-638545839680127577-12.jpg"
+        },
+        {
+          "says": "England have not scored, and they are seconds from elimination.",
+          "visual": "England players looking dejected",
+          "images": [
+            "England Euro 2024 Southgate",
+            "Southgate Euro 2024"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b04/img-c183c935b4f1c9ddacae9cfc7e719246.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b04/img-fc1389e4363e1099dedf19dd30774d5d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b04/img-6fdb7adedf056c494f3b506739767493.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b04/img-8cdbf0604daa3b4fe4a7299b13fab0ed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b04/img-e8f20f573258bdcb644c375f146ec73f.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b04/img-c183c935b4f1c9ddacae9cfc7e719246.jpg",
+          "url": "https://ichef.bbci.co.uk/ace/standard/3840/cpsprodpb/9971/live/2bb0b3e0-4040-11ef-99ab-5f9a13f60112.jpg"
+        },
+        {
+          "says": "Walker's long throw, Guehi flicks it on.",
+          "visual": "Kyle Walker long throw into the box",
+          "images": [
+            "Kyle Walker England Euro 2024",
+            "Marc Guehi England Slovakia"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b05/img-90dfe3a9ccff167b1b9e0f190a5af207.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b05/img-7a895b2cba2f8d91132d69af39417c31.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b05/shot_b1b8353300.mp4",
+          "url": "https://www.youtube.com/watch?v=-pmB7TZRfRQ",
+          "start": 266.0,
+          "len": 6.0
+        },
+        {
+          "says": "Bellingham hits an overhead kick. One-one.",
+          "visual": "Bellingham overhead bicycle kick scoring",
+          "images": [
+            "Bellingham bicycle kick",
+            "Bellingham overhead kick England"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b06/img-bfc5327df42c5a829f9caef7da3d538b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b06/img-2ce09ed7fa245be2aa55308bc622cef1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b06/img-6e727a8e04d11563b8f39db7fe93ad81.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b06/img-057d2cb83490d4d4a262c1306f350386.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b06/img-39439395b763a1128d881ae9e8e161b1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b06/img-4bd4f6d00fae84dd44f3471bf8a35cb3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b06/img-53adceb39c5580cf2599c13ecf0e5a07.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b06/img-ccf75b67285078c168a599b0643f2e25.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b06/shot_24db42e5a4.mp4",
+          "url": "https://www.youtube.com/watch?v=-pmB7TZRfRQ",
+          "start": 340.0,
+          "len": 6.0
+        },
+        {
+          "says": "In extra time, Kane heads the winner. Two-one.",
+          "visual": "Harry Kane celebrating for England",
+          "images": [
+            "Harry Kane England 2024",
+            "Kane Slovakia"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b07/img-f977bac88d895e48e957a84a0fee9847.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b07/img-38160262b5e2d19ce82822c055988896.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b07/img-3d29d05be7efd5a0465af9adbc914ec5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b07/img-eb850ff5dd0bb84be37ad42d8ad04268.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b07/img-c5d93443910b336b9f1076fccc36b639.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b07/img-8884da1ca6eb2160e87611839df29aea.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b07/img-88d6eeb0afc9c1c4f4930896c9cc9892.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b07/img-f977bac88d895e48e957a84a0fee9847.jpg",
+          "url": "https://www.insideworldfootball.com/app/uploads/2024/06/England-v-Slovakia-Round-of-16-UEFA-EURO-2024-18.jpg"
+        },
+        {
+          "says": "Is that the greatest late goal in England's history?",
+          "visual": "Bellingham arms wide celebrating in England kit",
+          "images": [
+            "Bellingham celebration England",
+            "Jude Bellingham arms wide"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b08/img-7768405bd9bc92843b3b382b1fb2ec6d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b08/img-4617beab08207344b5047aaf46b42eb3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b08/img-62f2d12a302b7360b4614717f2d094fd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b08/img-151a22dd6be90c2e0239f433c3feb814.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b08/img-c24a9d9615ebe0fa26537b71e29ec826.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b08/img-c08d067718615818d7d3d1677467d6a8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b08/img-93caf53fa9f7f025b8b66878c4636f64.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b08/img-bdb613a5d545a33fdcbc4d41d2218da6.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/jude_bellingham_scored_a_95th_minute_ove/b08/img-93caf53fa9f7f025b8b66878c4636f64.jpg",
+          "url": "https://e3.365dm.com/24/06/1600x900/skynews-jude-bellingham-england_6583594.jpg?20240617020846"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

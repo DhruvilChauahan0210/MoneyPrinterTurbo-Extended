@@ -1,0 +1,441 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Gaku Shibasaki",
+      "a real photograph of Karim Benzema",
+      "a real photograph of Zinedine Zidane",
+      "a real photograph of Toni Kroos"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "HIS MOST CLUTCH FINAL?",
+    "hook_cover_term": "Cristiano Ronaldo celebrating hat-trick for Real Madrid",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "WAS THIS RONALDO'S MOST CLUTCH FINAL? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Gaku Shibasaki",
+      "a real photograph of Karim Benzema",
+      "a real photograph of Zinedine Zidane",
+      "a real photograph of Toni Kroos"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Ronaldo scored a hat-trick to rescue Real Madrid in Yokohama. Shibasaki scored twice for Kashima Antlers to lead two-one. The Japanese hosts were beating Real Madrid. Ronaldo's penalty made it two-two in the sixtieth minute. Extra time began tied. In the ninety-eighth minute Ronaldo scored again. Six minutes later, he completed the hat-trick. Real Madrid won four-two and Ronaldo took the Golden Ball. Was this Ronaldo's most clutch final?",
+    "video_subject": "In the 18 December 2016 Club World Cup final in Yokohama Cristiano Ronaldo scored a hat-trick, a 60th-minute penalty plus goals in the 98th and 104th, as Real Madrid beat Kashima Antlers 4-2 after extra time having trailed 2-1 to two goals from Gaku Shibasaki.",
+    "video_terms": "Ronaldo, Real Madrid, Kashima Antlers, Club World Cup 2016, hat-trick, Yokohama, Shibasaki, Benzema, Zidane",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Ronaldo scored a hat-trick to rescue Real Madrid in Yokohama.",
+        "visual": "close up of Cristiano Ronaldo in white Real Madrid kit 2016",
+        "images": [
+          "Cristiano Ronaldo Real Madrid 2016",
+          "Ronaldo Club World Cup"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Shibasaki scored twice for Kashima Antlers to lead two-one.",
+        "visual": "Gaku Shibasaki Kashima Antlers",
+        "images": [
+          "Gaku Shibasaki Kashima",
+          "Kashima Antlers 2016"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b03/img-947ce0e417c154c401ee789c817005bc.jpg"
+      },
+      {
+        "says": "The Japanese hosts were beating Real Madrid.",
+        "visual": "Kashima Antlers players celebrating Yokohama",
+        "images": [
+          "Kashima Antlers Real Madrid",
+          "Yokohama stadium final"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo's penalty made it two-two in the sixtieth minute.",
+        "visual": "Cristiano Ronaldo penalty Real Madrid Kashima",
+        "images": [
+          "Ronaldo penalty Kashima",
+          "Ronaldo Yokohama"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Extra time began tied.",
+        "visual": "Zinedine Zidane Real Madrid touchline",
+        "images": [
+          "Zinedine Zidane Real Madrid",
+          "Real Madrid Club World Cup 2016"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b03/img-921a1c7fcf8c184b29aa28a096aa69a1.jpg"
+      },
+      {
+        "says": "In the ninety-eighth minute Ronaldo scored again.",
+        "visual": "Karim Benzema and Ronaldo Real Madrid 2016",
+        "images": [
+          "Karim Benzema Real Madrid",
+          "Ronaldo goal Kashima"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Six minutes later, he completed the hat-trick.",
+        "visual": "Cristiano Ronaldo celebrating hat-trick Kashima",
+        "images": [
+          "Ronaldo hat-trick Kashima",
+          "Toni Kroos Real Madrid 2016"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Real Madrid won four-two and Ronaldo took the Golden Ball.",
+        "visual": "Real Madrid players lifting Club World Cup 2016",
+        "images": [
+          "Real Madrid Club World Cup trophy",
+          "Ronaldo Golden Ball"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Was this Ronaldo's most clutch final?",
+        "visual": "Cristiano Ronaldo with Club World Cup trophy",
+        "images": [
+          "Ronaldo Club World Cup trophy",
+          "Ronaldo Real Madrid 2016"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b01/img-c2661601957c9f231a3417dd9b775c0e.jpg"
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "In the 18 December 2016 Club World Cup final in Yokohama Cristiano Ronaldo scored a hat-trick, a 60th-minute penalty plus goals in the 98th and 104th, as Real Madrid beat Kashima Antlers 4-2 after extra time having trailed 2-1 to two goals from Gaku Shibasaki.",
+      "video_script": "Ronaldo scored a hat-trick to rescue Real Madrid in Yokohama. Shibasaki scored twice for Kashima Antlers to lead two-one. The Japanese hosts were beating Real Madrid. Ronaldo's penalty made it two-two in the sixtieth minute. Extra time began tied. In the ninety-eighth minute Ronaldo scored again. Six minutes later, he completed the hat-trick. Real Madrid won four-two and Ronaldo took the Golden Ball. Was this Ronaldo's most clutch final?",
+      "video_terms": "Ronaldo, Real Madrid, Kashima Antlers, Club World Cup 2016, hat-trick, Yokohama, Shibasaki, Benzema, Zidane",
+      "hook_text": "HIS MOST CLUTCH FINAL?",
+      "cta_text": "WAS THIS RONALDO'S MOST CLUTCH FINAL? 👇",
+      "beat_plan": [
+        {
+          "says": "Ronaldo scored a hat-trick to rescue Real Madrid in Yokohama.",
+          "visual": "close up of Cristiano Ronaldo in white Real Madrid kit 2016",
+          "images": [
+            "Cristiano Ronaldo Real Madrid Club World Cup 2016",
+            "Ronaldo Club World Cup trophy Golden Ball"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b01/img-bf15cb1feb28160aad179a06b2eaae0e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b01/img-c2661601957c9f231a3417dd9b775c0e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b01/img-117dc96c2d6e7eb4b1e2ffc2391b3196.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b01/img-f0a96dee55111164afcb36ed4245d5ab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b01/img-e69f0e7c6fff41a9229b064e0e9e05aa.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b01/img-117dc96c2d6e7eb4b1e2ffc2391b3196.jpg",
+          "url": "http://p1.img.cctvpic.com/photoworkspace/contentimg/2016/12/19/2016121909592075705.jpg"
+        },
+        {
+          "says": "Shibasaki scored twice for Kashima Antlers to lead two-one.",
+          "visual": "Gaku Shibasaki Kashima Antlers",
+          "images": [
+            "Shibasaki Kashima",
+            "Gaku Shibasaki"
+          ],
+          "clips": [],
+          "candidates": [],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b03/img-947ce0e417c154c401ee789c817005bc.jpg"
+        },
+        {
+          "says": "The Japanese hosts were beating Real Madrid.",
+          "visual": "Kashima Antlers players celebrating Yokohama",
+          "images": [
+            "Kashima Antlers Real Madrid",
+            "Yokohama stadium final"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b03/img-947ce0e417c154c401ee789c817005bc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b03/img-65b0ce50bd96981e6fca2d38ba30fe83.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b03/img-96a71180820761357a974466c0d29dca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b03/img-67c439c327758d06e76d3a94b4adf102.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b03/img-921a1c7fcf8c184b29aa28a096aa69a1.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b03/img-65b0ce50bd96981e6fca2d38ba30fe83.jpg",
+          "url": "https://i2-prod.mirror.co.uk/incoming/article9478663.ece/ALTERNATES/s1227b/Real-Madrid-v-Kashima-Antlers-FIFA-Club-World-Cup-Final.jpg"
+        },
+        {
+          "says": "Ronaldo's penalty made it two-two in the sixtieth minute.",
+          "visual": "Cristiano Ronaldo penalty Real Madrid Kashima",
+          "images": [
+            "Ronaldo penalty Kashima",
+            "Ronaldo Yokohama"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b04/img-85d316758b6f3c530e481b3c608d4e92.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b04/img-3a1d8f0c73478a494a1f7f9118f4a353.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b04/img-1eff27827972c7a8fff322abdc5c995e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b04/img-f67de786bdcc631f0276200c4869c2a0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b04/img-5ba551d653f8abbfd84d9110e59a5f17.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b04/img-99731e0e99a24fc68320f81947089380.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b04/img-3a1d8f0c73478a494a1f7f9118f4a353.jpg",
+          "url": "https://i.ytimg.com/vi/a55JAdwKFe0/hqdefault.jpg"
+        },
+        {
+          "says": "Extra time began tied.",
+          "visual": "Zinedine Zidane Real Madrid touchline",
+          "images": [
+            "Zidane Real Madrid",
+            "Zinedine Zidane coach Real Madrid 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b05/img-7b0acaff569124c4ff1b3f6141da0315.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b05/img-4b9f60f02cf020d70f68dc798cac4bf2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b05/img-b0e043d7a11f8c80cfec575e3dbcbc13.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b03/img-921a1c7fcf8c184b29aa28a096aa69a1.jpg",
+          "url": "https://images.performgroup.com/di/library/goal_es/dd/15/zinedine-zidane-real-madrid_19huo9trfu7zj1b289izq6h6uj.jpg?t=1065516801"
+        },
+        {
+          "says": "In the ninety-eighth minute Ronaldo scored again.",
+          "visual": "Karim Benzema and Ronaldo Real Madrid 2016",
+          "images": [
+            "Karim Benzema Real Madrid",
+            "Ronaldo goal Kashima"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b06/img-c4f8712eaf92e08381cc7236709ceb4c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b06/img-39071db49e8d0960b6dc6fa6b0cda14f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b06/img-4c1dc4da340d7fcd54ed53a0489389e7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b06/img-200c4ab03004b9121c0b05bdd92c2c24.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b06/img-e33d4a6b624aa549ac1a1e83840e4f92.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b06/shot_35d75caf44.mp4",
+          "url": "https://www.youtube.com/watch?v=qkq7SLeMxoA",
+          "start": 82.0,
+          "len": 6.0
+        },
+        {
+          "says": "Six minutes later, he completed the hat-trick.",
+          "visual": "Cristiano Ronaldo celebrating hat-trick Kashima",
+          "images": [
+            "Ronaldo hat-trick Kashima",
+            "Toni Kroos Real Madrid 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b07/img-cbdcffeeb233e7a7da0d8ce4672dc385.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b07/img-d004c39a5387ca6d62f3c9933e7a8cda.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b07/img-4ed67555e19b0d8d5bb861be1448ce67.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b07/img-48b18056347de528d4a01df37dc7f8f5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b07/img-f83ccff855f8a6cbe28e0b5a9bee384b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b07/img-c264767d44a129cacda25ebb7f5fd2cf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b07/img-9798aac6583104e58c4da4b9f59ddd26.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b07/img-daac6b7ae200e23741406e17672225b4.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b07/shot_eacabec52a.mp4",
+          "url": "https://www.youtube.com/watch?v=qkq7SLeMxoA",
+          "start": 95.0,
+          "len": 6.0
+        },
+        {
+          "says": "Real Madrid won four-two and Ronaldo took the Golden Ball.",
+          "visual": "Real Madrid players lifting Club World Cup 2016",
+          "images": [
+            "Real Madrid Club World Cup 2016 champions",
+            "Ronaldo Golden Ball Club World Cup 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b08/img-f7a0e82fac3c00f99bf10d69386d8799.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b08/img-e4136e66169bd428333bf0462482b890.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b08/img-55174d4e7e03ff8d76ce9c7c2798ee05.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b08/img-6fa59583d2c5e7264400f494b1ac97cb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b08/img-117dc96c2d6e7eb4b1e2ffc2391b3196.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b08/img-a59ed5941578288b354b3fea648c7146.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b08/img-e73bfc37aebbe2a30f2967a61a34d774.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b08/img-3f2a41c64ca163ddc1c9ab083d64ae13.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b08/img-a59ed5941578288b354b3fea648c7146.jpg",
+          "url": "https://i.pinimg.com/originals/13/65/75/136575bf9745b428f82059a594817040.jpg"
+        },
+        {
+          "says": "Was this Ronaldo's most clutch final?",
+          "visual": "Cristiano Ronaldo with Club World Cup trophy",
+          "images": [
+            "Ronaldo Club World Cup trophy",
+            "Ronaldo Real Madrid 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b09/img-d66f6ac8d16131e26442caac32dbcb74.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b09/img-cbdcffeeb233e7a7da0d8ce4672dc385.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b09/img-4ed67555e19b0d8d5bb861be1448ce67.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b09/img-daac6b7ae200e23741406e17672225b4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b09/img-f83ccff855f8a6cbe28e0b5a9bee384b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b09/img-d004c39a5387ca6d62f3c9933e7a8cda.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b09/img-c264767d44a129cacda25ebb7f5fd2cf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b09/img-48b18056347de528d4a01df37dc7f8f5.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_18_december_2016_club_world_cup_f/b01/img-c2661601957c9f231a3417dd9b775c0e.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

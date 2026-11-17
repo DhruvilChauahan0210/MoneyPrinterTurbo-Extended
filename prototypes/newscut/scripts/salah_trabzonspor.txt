@@ -1,0 +1,13 @@
+KEY salah_trabzonspor | OUT NEWSCUT_salah_trabzon_revenge.mp4 | loopTail "Liverpool let Mohamed Salah go."
+Sentences (chunks split by |; display = ALL CAPS; spoken = the words):
+S0: Liverpool | let Mohamed Salah go | after seven league goals | and a falling out | with Arne Slot, | and now look at him.
+S1: He's back.
+S2: In August | he joined Trabzonspor | in Turkey, | and he's already scored | 11 goals | with 5 assists | in 16 games.
+S3: Against champions | Galatasaray | he scored a hat-trick | and an assist | in a 4-0 win.
+S4: Trabzonspor | have won six | in a row | and they're second, | three points | off the top.
+S5: He's 34, | and the player | Liverpool decided | they didn't need anymore | is suddenly | the most dangerous man | in Turkey, and
+Display tweaks: "7 LEAGUE GOALS" for "seven league goals", "11 GOALS", "5 ASSISTS", "16 GAMES", "HAT-TRICK", "4-0", "SIX IN A ROW", "34".
+Source card (over S2 "In August" .. "in 16 games"): label STATS, title "The National", lines ["13 Nov 2026", "Salah: 11 goals, 5 assists in 16 games"]
+Cover text: "LIVERPOOL WERE WRONG? 😳"
+Footage ideas: Salah face close-up (shot 0, bright, Trabzonspor kit if possible, else Liverpool), Salah frustrated at Liverpool / Arne Slot on the touchline (Liverpool official, Premier League), Salah's Trabzonspor unveiling (6 Aug 2026, fans, fireworks), Salah scoring for Trabzonspor, the hat-trick vs Galatasaray (20 Sep 2026, Süper Lig / beIN / Trabzonspor official), Trabzonspor celebrations, Papara Park stadium, Salah close-up at the end.
+Facts (verified, The National 13 Nov 2026 + Al Jazeera 20 Sep 2026): Salah left Liverpool after his final contract year was cancelled; public falling out with Arne Slot; scored seven Premier League goals last season (his previous lowest at Liverpool was 18). Unveiled by Trabzonspor 6 Aug 2026. 11 goals and 5 assists in 16 games in all competitions (9 goals 3 assists in 11 league games). Hat-trick + assist in 4-0 win over Galatasaray (defending champions). Trabzonspor second, three points behind Galatasaray, after six straight wins. Age 34. Note: the loop line ends "...in Turkey, and" then loops into "Liverpool let Mohamed Salah go".

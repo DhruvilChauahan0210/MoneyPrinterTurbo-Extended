@@ -1,0 +1,427 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 4,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Khvicha Kvaratskhelia playing for PSG",
+      "a real photograph of Khvicha Kvaratskhelia"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "THE MESSAGE HE NEEDED MOST",
+    "hook_cover_term": "Khvicha Kvaratskhelia injured and emotional in PSG kit",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "CAN KVARA COME BACK STRONGER? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Khvicha Kvaratskhelia playing for PSG",
+      "a real photograph of Khvicha Kvaratskhelia"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Khvicha Kvaratskhelia tore his ACL against Barcelona. He said he prayed before every match to leave the pitch safely, and asked one question: why me? Then his idol answered. Cristiano Ronaldo wrote that the toughest battles in football are often the ones nobody sees. He told Kvara not to let a difficult moment make him doubt how far he can go. PSG say surgery will happen in the coming days. Can Kvara come back even stronger?",
+    "video_subject": "Cristiano Ronaldo publicly sent Khvicha Kvaratskhelia a message of support after the PSG winger ruptured his ACL in the Champions League win over Barcelona",
+    "video_terms": "Ronaldo message Kvaratskhelia ACL injury, Kvaratskhelia ACL PSG Barcelona, Ronaldo toughest battles nobody sees",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Khvicha Kvaratskhelia tore his ACL against Barcelona.",
+        "visual": "Khvicha Kvaratskhelia injured on the ground in a PSG shirt",
+        "images": [
+          "Kvaratskhelia injury PSG Barcelona October 2026",
+          "Kvaratskhelia injured knee PSG"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He said he prayed before every match to leave the pitch safely,",
+        "visual": "Khvicha Kvaratskhelia looking emotional in PSG kit",
+        "images": [
+          "Kvaratskhelia emotional PSG",
+          "Kvaratskhelia sad PSG 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and asked one question: why me?",
+        "visual": "close up of Khvicha Kvaratskhelia looking down",
+        "images": [
+          "Kvaratskhelia dejected",
+          "Kvaratskhelia head down PSG"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Then his idol answered.",
+        "visual": "close up of Cristiano Ronaldo looking intense",
+        "images": [
+          "Cristiano Ronaldo face",
+          "Cristiano Ronaldo Al Nassr portrait"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Cristiano Ronaldo wrote that the toughest battles in football are often the ones nobody sees.",
+        "visual": "Cristiano Ronaldo training alone in the gym",
+        "images": [
+          "Cristiano Ronaldo injury recovery gym",
+          "Cristiano Ronaldo training alone"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He told Kvara not to let a difficult moment make him doubt how far he can go.",
+        "visual": "Cristiano Ronaldo and Khvicha Kvaratskhelia together",
+        "images": [
+          "Ronaldo Kvaratskhelia",
+          "Ronaldo Kvaratskhelia Portugal Georgia Euro 2024"
+        ],
+        "clips": []
+      },
+      {
+        "says": "PSG say surgery will happen in the coming days.",
+        "visual": "Khvicha Kvaratskhelia in PSG kit at the Parc des Princes",
+        "images": [
+          "Khvicha Kvaratskhelia PSG",
+          "Kvaratskhelia PSG 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Can Kvara come back even stronger?",
+        "visual": "Khvicha Kvaratskhelia celebrating a goal for PSG",
+        "images": [
+          "Kvaratskhelia celebration",
+          "Kvaratskhelia PSG goal"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Cristiano Ronaldo publicly sent Khvicha Kvaratskhelia a message of support after the PSG winger ruptured his ACL in the Champions League win over Barcelona",
+      "video_script": "Khvicha Kvaratskhelia tore his ACL against Barcelona. He said he prayed before every match to leave the pitch safely, and asked one question: why me? Then his idol answered. Cristiano Ronaldo wrote that the toughest battles in football are often the ones nobody sees. He told Kvara not to let a difficult moment make him doubt how far he can go. PSG say surgery will happen in the coming days. Can Kvara come back even stronger?",
+      "video_terms": "Ronaldo message Kvaratskhelia ACL injury, Kvaratskhelia ACL PSG Barcelona, Ronaldo toughest battles nobody sees",
+      "hook_text": "THE MESSAGE HE NEEDED MOST",
+      "cta_text": "CAN KVARA COME BACK STRONGER? 👇",
+      "beat_plan": [
+        {
+          "says": "Khvicha Kvaratskhelia tore his ACL against Barcelona.",
+          "visual": "Khvicha Kvaratskhelia injured on the ground in a PSG shirt",
+          "images": [
+            "Kvaratskhelia injury PSG Barcelona October 2026",
+            "Kvaratskhelia injured knee PSG"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b01/img-1b6549cab017779d4f3a3393e7382a51.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b01/img-fc049c280792188b6e53e4151a4dc4dc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b01/img-92f6e9fbb0db927b57f5e4537b8a3258.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b01/img-880583cf7dfa3e903e746fe58504dfbd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b01/img-0694a05d0273545716cd97f4357cd4c6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b01/img-fce79420a4e57ffacb128e05cfa359b9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b01/img-7ec36e3705b2c6d3e09d5640ba9bee23.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b01/img-9d876c6def0724a4c7c628f8d43c5346.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b01/img-1b6549cab017779d4f3a3393e7382a51.jpg",
+          "url": "https://pictures.tribuna.com/image/8603115e-b603-4978-8740-e1b8ba7589ba?width=1920&quality=70"
+        },
+        {
+          "says": "He said he prayed before every match to leave the pitch safely,",
+          "visual": "Khvicha Kvaratskhelia looking emotional in PSG kit",
+          "images": [
+            "Kvaratskhelia emotional PSG",
+            "Kvaratskhelia sad PSG 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b02/img-d32bb61b85535a084d6485486727290f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b02/img-3adf57a0709f88676a68c4bd4db62c51.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b02/img-e6411cea3b348b8988018f612f0dd2a0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b02/img-194a0b9e988b03e12cc388aa8ab2cd30.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b02/img-519027f6758603e4e2940fa4260d318a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b02/img-89460f1944f5b282aaa434a45817c970.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b02/img-f9b4cf720ee1d7f942239803c0067ecd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b02/img-0c90059843824928bb0a979395c5dedc.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b02/img-e6411cea3b348b8988018f612f0dd2a0.jpg",
+          "url": "https://r.testifier.nl/Acbs8526SDKI/resizing_type:fit/width:3840/height:2560/plain/https://s3-newsifier.ams3.digitaloceanspaces.com/foot01.com/images/2026-05/iconsport-365289-0008-69fb436e10905.jpg@webp"
+        },
+        {
+          "says": "and asked one question: why me?",
+          "visual": "close up of Khvicha Kvaratskhelia looking down",
+          "images": [
+            "Kvaratskhelia dejected",
+            "Kvaratskhelia head down PSG"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b03/img-87788a5cde6efb87a09d9d2c124e07ed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b03/img-c23234ed4781c35fb8ab93cf13ac858d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b03/img-89460f1944f5b282aaa434a45817c970.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b03/img-d0caa30efe999f6b72c3097de3b837c4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b03/img-519027f6758603e4e2940fa4260d318a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b03/img-d32bb61b85535a084d6485486727290f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b03/img-194a0b9e988b03e12cc388aa8ab2cd30.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b03/img-0278670561c6db1cfb8f8c1d86e69123.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b03/img-d32bb61b85535a084d6485486727290f.jpg",
+          "url": "https://icdn.psgtalk.com/wp-content/uploads/2025/02/Kvaratskhelia-PSG-v-Brest-UCL-2025.jpg"
+        },
+        {
+          "says": "Then his idol answered.",
+          "visual": "close up of Cristiano Ronaldo looking intense",
+          "images": [
+            "Cristiano Ronaldo face",
+            "Cristiano Ronaldo Al Nassr portrait"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b04/img-6266892056fdcbb68c93efe42cd108e7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b04/img-bd24eecb0d8335840253b65342fae385.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b04/img-badbf4beaeb5360a0c5182f24247a045.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b04/img-d9e4aa2ae7e143579b4db4e942b9b7c8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b04/img-1ac9a8cef02943601e686ddb23779bd4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b04/img-7ed4053d6a89f5f64501b7ea3b386211.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b04/img-dd982308835fb6877a934b7acd065d74.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b04/img-b25115dc7b094ef69f208781c685853a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b04/img-dd982308835fb6877a934b7acd065d74.jpg",
+          "url": "https://wallpapercave.com/wp/wp13129863.jpg"
+        },
+        {
+          "says": "Cristiano Ronaldo wrote that the toughest battles in football are often the ones nobody sees.",
+          "visual": "Cristiano Ronaldo training alone in the gym",
+          "images": [
+            "Cristiano Ronaldo injury recovery gym",
+            "Cristiano Ronaldo training alone"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b05/img-8ebd6fc7947a06dce50022cf54f5b65b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b05/img-d1a74504184ccfa1a2f6ff67cf1f31cb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b05/img-f520ebec078f39582a464f29c4481eed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b05/img-bbe3a419adcc2230c14cf228301dced9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b05/img-85f4803d53b070545bdc80b29e8ce029.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b05/img-3ac31012c4c5d4907a61947ac77944a2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b05/img-42f0d5a075cbc17ad94e72f2daf6843a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b05/img-0a10a3f3dbdfd906bf01c5cb9322b248.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b05/img-8ebd6fc7947a06dce50022cf54f5b65b.jpg",
+          "url": "http://i.dailymail.co.uk/i/pix/2016/04/30/00/33AB059D00000578-0-image-a-47_1461973088740.jpg"
+        },
+        {
+          "says": "He told Kvara not to let a difficult moment make him doubt how far he can go.",
+          "visual": "Cristiano Ronaldo and Khvicha Kvaratskhelia together",
+          "images": [
+            "Ronaldo Kvaratskhelia",
+            "Ronaldo Kvaratskhelia Portugal Georgia Euro 2024"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b06/img-4289ac0ce6f4e5ba1ef83f93ee6d0989.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b06/img-9904bf0e33403d276da2ea9b383c91dd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b06/img-193575bc3eca92c72f886f703c5643aa.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b06/img-b2523a4f7497a409332272c4b76f0a0d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b06/img-74fae182a2b91be462a45b098f003c78.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b06/img-c778e5cf305fea5d48f9fed55901bd92.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b06/img-ee60aa61c95ceb3db33fa694b622ef31.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b06/img-82a35b4d2c21434032354341506bd3eb.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b06/img-4289ac0ce6f4e5ba1ef83f93ee6d0989.jpg",
+          "url": "https://imgcdn.stablediffusionweb.com/2025/8/25/f0b4526a-da63-45fe-828e-421a667789ad.jpg"
+        },
+        {
+          "says": "PSG say surgery will happen in the coming days.",
+          "visual": "Khvicha Kvaratskhelia in PSG kit at the Parc des Princes",
+          "images": [
+            "Khvicha Kvaratskhelia PSG",
+            "Kvaratskhelia PSG 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b07/img-f77dcd796bbc968c0bae91b9b862080d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b07/img-6c0281a97f9767caebc6936fccc2d3c5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b07/img-4563726da2ea8776a28a8cdf71fa7966.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b07/img-6dc73090000d979f3e059c41d6ebaafe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b07/img-733f9c0db5db28cbeececb0ae2ac3524.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b07/img-6b5f0dbf53c49e500771d4501e8d86f9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b07/img-799875e2c2358435d2b4590f9c0891fc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b07/img-425dc446a8686fb6e22bd99ca82aaf87.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b07/img-4563726da2ea8776a28a8cdf71fa7966.jpg",
+          "url": "https://www.planetepsg.com/photos/iconsport/Kvaratskhelia_psg_0910020751.webp"
+        },
+        {
+          "says": "Can Kvara come back even stronger?",
+          "visual": "Khvicha Kvaratskhelia celebrating a goal for PSG",
+          "images": [
+            "Kvaratskhelia celebration",
+            "Kvaratskhelia PSG goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b08/img-3e10c77fa92572e2bb8e8c4525e10880.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b08/img-5cf00ab488661985196e59f2da114066.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b08/img-72f2f76ba0fa7d83de5f82a51317850d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b08/img-9c7487c62d5a154f75862ae2164d1505.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b08/img-d32bb61b85535a084d6485486727290f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b08/img-5a705d4ca7c06fa709312f89e6f208dd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b08/img-baeee31a1fe4a1bc81e00476c8607f7d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b08/img-9a74dd28addc4afdf550c2bb3035d4ab.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_publicly_sent_khvicha_/b08/img-9c7487c62d5a154f75862ae2164d1505.jpg",
+          "url": "https://www.bendigoadvertiser.com.au/images/transform/v1/crop/frm/silverstone-feed-data/08ac401c-5dc4-40eb-b99e-45b1edf0c99e.jpg/r0_0_800_600_w1200_h678_fmax.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

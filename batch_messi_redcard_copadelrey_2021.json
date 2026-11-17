@@ -1,0 +1,423 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "HOW DID HE ANSWER?",
+    "hook_cover_term": "Lionel Messi lifting the Copa del Rey for Barcelona in 2021",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "MESSI'S SWEETEST REVENGE? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Messi was sent off in January two thousand twenty-one, then scored twice against the same club. His first red card in seven hundred and fifty-three Barcelona games. Athletic Bilbao won that Supercopa final three-two. Messi's red card came in the final minute of extra time. Three months later, Barcelona met Athletic in the Copa del Rey final. Messi scored in the sixty-eighth and seventy-second minutes. Barcelona won four-nil. Was that Messi's sweetest revenge?",
+    "video_subject": "Lionel Messi was sent off in the final minute of extra time of Barcelona's 3-2 Supercopa final loss to Athletic Bilbao in January 2021, his first red card in 753 Barcelona games, then scored twice in the 68th and 72nd minutes of the 4-0 Copa del Rey final win over Athletic three months later.",
+    "video_terms": "messi, barcelona, athletic bilbao, supercopa, copa del rey 2021, red card, seville",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Messi was sent off in January two thousand twenty-one, then scored twice against the same club.",
+        "visual": "close up of Lionel Messi in Barcelona kit in 2021",
+        "images": [
+          "Lionel Messi Barcelona 2021",
+          "Messi Athletic Bilbao 2021"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b02/img-47f1a90aff9498b564679a3459a9e8b1.jpg"
+      },
+      {
+        "says": "His first red card in seven hundred and fifty-three Barcelona games.",
+        "visual": "Lionel Messi walking off after a red card",
+        "images": [
+          "Messi red card Barcelona",
+          "Messi Supercopa 2021"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Athletic Bilbao won that Supercopa final three-two.",
+        "visual": "Athletic Bilbao players celebrating the 2021 Supercopa",
+        "images": [
+          "Athletic Bilbao Supercopa 2021",
+          "Inaki Williams Athletic"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi's red card came in the final minute of extra time.",
+        "visual": "Lionel Messi looking dejected in Seville",
+        "images": [
+          "Messi dejected Barcelona Supercopa 2021",
+          "Messi sad Barcelona January 2021"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Three months later, Barcelona met Athletic in the Copa del Rey final.",
+        "visual": "La Cartuja stadium Seville Copa del Rey final 2021",
+        "images": [
+          "Copa del Rey final 2021",
+          "Barcelona Athletic 2021"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi scored in the sixty-eighth and seventy-second minutes.",
+        "visual": "Lionel Messi scoring in the Copa del Rey final",
+        "images": [
+          "Messi goal Copa del Rey",
+          "Lionel Messi celebrating 2021"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Barcelona won four-nil.",
+        "visual": "Barcelona players celebrating in an empty stadium in Seville",
+        "images": [
+          "Barcelona Copa del Rey 2021",
+          "Barcelona celebrate 2021"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Was that Messi's sweetest revenge?",
+        "visual": "Lionel Messi lifting the Copa del Rey trophy",
+        "images": [
+          "Lionel Messi Copa del Rey trophy",
+          "Messi Copa del Rey 2021"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Lionel Messi was sent off in the final minute of extra time of Barcelona's 3-2 Supercopa final loss to Athletic Bilbao in January 2021, his first red card in 753 Barcelona games, then scored twice in the 68th and 72nd minutes of the 4-0 Copa del Rey final win over Athletic three months later.",
+      "video_script": "Messi was sent off in January two thousand twenty-one, then scored twice against the same club. His first red card in seven hundred and fifty-three Barcelona games. Athletic Bilbao won that Supercopa final three-two. Messi's red card came in the final minute of extra time. Three months later, Barcelona met Athletic in the Copa del Rey final. Messi scored in the sixty-eighth and seventy-second minutes. Barcelona won four-nil. Was that Messi's sweetest revenge?",
+      "video_terms": "messi, barcelona, athletic bilbao, supercopa, copa del rey 2021, red card, seville",
+      "hook_text": "HOW DID HE ANSWER?",
+      "cta_text": "MESSI'S SWEETEST REVENGE? 👇",
+      "beat_plan": [
+        {
+          "says": "Messi was sent off in January two thousand twenty-one, then scored twice against the same club.",
+          "visual": "close up of Lionel Messi in Barcelona kit in 2021",
+          "images": [
+            "Lionel Messi Barcelona 2021",
+            "Messi Athletic Bilbao 2021"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b01/img-cdac167daf4c66fb42a7e7eb31369e40.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b01/img-2509c529139149b448420d566a9b8bdf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b01/img-7a82d453b9652cec2c35ecdc506f1944.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b01/img-c776cfe270994895185132797f731879.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b01/img-15fbda4ceb72a8c1b9e07171fc047859.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b01/img-7306a0e9aeb0b1c63adc6f19e870325c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b01/img-af67b440cc304adf51701406f73b4ecb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b01/img-df5ea3fc81dd377cdcf412b4eebaf4b5.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b02/img-47f1a90aff9498b564679a3459a9e8b1.jpg"
+        },
+        {
+          "says": "His first red card in seven hundred and fifty-three Barcelona games.",
+          "visual": "Lionel Messi walking off after a red card",
+          "images": [
+            "Messi red card Barcelona",
+            "Messi Supercopa 2021"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b02/img-121c9552a6bd7e1cb0cfe31d807f4ffe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b02/img-0984e04a5dfa99b50933e4357067f273.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b02/img-3ffeda587252ca7755cfb60f16468fe3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b02/img-05e0d46be1b092665be93d4bc4d0301e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b02/img-47f1a90aff9498b564679a3459a9e8b1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b02/img-670ee4b4443ad60f89f3f506b4522685.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b02/img-d573bc8239ee65e363e82b63fd90f92e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b02/img-5ccb782245c563456ce83a9911bdad54.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b02/img-121c9552a6bd7e1cb0cfe31d807f4ffe.jpg",
+          "url": "https://static.india.com/wp-content/uploads/2021/01/Lionel-Messi-Red-Card.jpg"
+        },
+        {
+          "says": "Athletic Bilbao won that Supercopa final three-two.",
+          "visual": "Athletic Bilbao players celebrating the 2021 Supercopa",
+          "images": [
+            "Athletic Bilbao Supercopa 2021",
+            "Inaki Williams Athletic"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b03/img-83263eb25b322e2767dbe6853d4255f9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b03/img-a9054fa355ecbe09979c0db95d0fa5eb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b03/img-54f3404328de010d5d234ff4be3618b4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b03/img-320479602b667cc0ffefd3182ed41e8b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b03/img-46fefa6a6938f993cfd15f29fce42cbb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b03/img-121c2b4b494e498945ad101d63f611ab.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b03/img-54f3404328de010d5d234ff4be3618b4.jpg",
+          "url": "https://www.wdeportes.com/resizer/v2/BGBP22FFXRHF7E4MV2TPQBEJ5I.jpg?auth=ff0a87435e7f54df86a49de9e61d4482a2bfa7c421ad002cce8843b4e90c3999&width=768&height=576&quality=70&smart=true"
+        },
+        {
+          "says": "Messi's red card came in the final minute of extra time.",
+          "visual": "Lionel Messi looking dejected in Seville",
+          "images": [
+            "Messi dejected Barcelona Supercopa 2021",
+            "Messi sad Barcelona January 2021"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b04/img-279fecafcc81f9a629bb73395e77fae9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b04/img-faa93b7dc7cb1f2ea152ba6ab76d9633.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b04/img-0d7431b2dd89c192115ce287e67fb0fb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b04/img-f1310e6780a8674e6c3a0fe84dd0564e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b04/img-4e231ced1b35b04ccdf66a08fdf9280c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b04/img-b9897552f5c81dee48a17cdf633bf4c9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b04/img-8e26f2f2bb0d6ab938dddb66eebcf637.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b04/img-ccded9106b8c9ae6404390c48e9f2d18.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b04/img-279fecafcc81f9a629bb73395e77fae9.jpg",
+          "url": "https://news.cgtn.com/news/2021-01-18/Messi-sent-off-as-Barca-lose-Super-Cup-to-Bilbao-X93t8HD2Ny/img/cc6dc618842a44be9ea7b44a2d82ffc6/cc6dc618842a44be9ea7b44a2d82ffc6.png"
+        },
+        {
+          "says": "Three months later, Barcelona met Athletic in the Copa del Rey final.",
+          "visual": "La Cartuja stadium Seville Copa del Rey final 2021",
+          "images": [
+            "Copa del Rey final 2021",
+            "Barcelona Athletic 2021"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b05/img-d7b2152d917fd3d8c4d99521a124fa6a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b05/img-4ff1835e788e6df56a6730262284f9bb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b05/img-1a1a0b008a5b948f0c497b5668806e79.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b05/img-070e8194b8ab4504d1a3b6ddef20420a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b05/img-096267876fa6350333650ac799db115d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b05/img-790d1fbd6b7c3aac05be45a4086656ca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b05/img-b8bcd4b44eaaed13e85c17f492509670.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b05/img-da84b8a9fb3467d244fd01e88a0aa9f3.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b05/img-1a1a0b008a5b948f0c497b5668806e79.jpg",
+          "url": "https://cdn.athletic-club.eus/uploads/2021/08/WEB-1920x1079.jpg"
+        },
+        {
+          "says": "Messi scored in the sixty-eighth and seventy-second minutes.",
+          "visual": "Lionel Messi scoring in the Copa del Rey final",
+          "images": [
+            "Messi goal Copa del Rey",
+            "Lionel Messi celebrating 2021"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b06/img-635bb2f1f797a2649f42d371230da175.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b06/img-e1112bbe9979f92e1dae59ffe5ee1896.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b06/img-66f30954bb14b882d7cdc98c7029a0f7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b06/img-483acd1c4a04f489ba34d355885bf5a3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b06/img-9a0e2e74c079f07d24da592548282f19.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b06/img-17a76c56b5a1c8d5cf53cf569db8be03.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b06/img-3720f45c0f754eaff6eec461a72270eb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b06/img-f6c4751ec967c2b53f63917a7e2b3741.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b06/shot_b2e9b6f6c0.mp4",
+          "url": "https://www.youtube.com/watch?v=euUOJ_FZb1A",
+          "start": 253.0,
+          "len": 6.0
+        },
+        {
+          "says": "Barcelona won four-nil.",
+          "visual": "Barcelona players celebrating in an empty stadium in Seville",
+          "images": [
+            "Barcelona Copa del Rey 2021",
+            "Barcelona celebrate 2021"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b07/img-80226e26d62856502e1c7810dcace49d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b07/img-5b8cea40ce425b93983d5db60f0b997a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b07/img-f271c8662f07a7ab13630782e36b6f70.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b07/img-3e939b932864c4614ef4815f1953930b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b07/img-8a0c3bce28f4affdbefc201d138f8254.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b07/img-276d3ebccd60be5f09cb1d6110c43715.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b07/img-9a2c7b68ce57dbd9abed02232dcb14f1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b07/img-d5eb7df97341c601638968165dc58229.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b07/img-80226e26d62856502e1c7810dcace49d.jpg",
+          "url": "https://www.fcbarcelona.com/photo-resources/2021/04/17/823fcff7-94ed-45e3-b8bb-db6e72dc6d91/mini_2021-04-17-ATHLETIC-BARCELONA-76.JPG?width=3200&height=2000"
+        },
+        {
+          "says": "Was that Messi's sweetest revenge?",
+          "visual": "Lionel Messi lifting the Copa del Rey trophy",
+          "images": [
+            "Lionel Messi Copa del Rey trophy",
+            "Messi Copa del Rey 2021"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b08/img-72bd717b926b3ed093e9756356176794.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b08/img-88ca4bed977a2c4770163214bf5289f8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b08/img-1c9c38f153a05bc844d1f7d44599801e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b08/img-5231f9c64629e630485bddbeb65c85b6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b08/img-d2858a1d46b2b93ed42f6717fb0ca5c0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b08/img-374412d1629e34c7bb0813b78f17813b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b08/img-e11c583e9ea97099c801776ffbdf6abc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b08/img-7bdd82edab52e956a75e0333b78d671e.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_was_sent_off_in_the_final_m/b08/img-72bd717b926b3ed093e9756356176794.jpg",
+          "url": "https://s7d2.scene7.com/is/image/TWCNews/Spain_Soccer_Copa_del_Rey_Final_98866"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

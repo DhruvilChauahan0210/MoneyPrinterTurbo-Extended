@@ -1,0 +1,12 @@
+KEY haaland_city_verdict | OUT NEWSCUT_haaland_city_verdict.mp4 | loopTail "Erling Haaland is signed until 2034."
+Sentences (chunks split by |; display = ALL CAPS of the words; spoken = the words):
+S0: Erling Haaland | is signed | until 2034, | but Manchester City | have just been | found guilty, | and nobody knows | the punishment.
+S1: So what happens | to Haaland?
+S2: On September 29, | an independent commission | found City guilty | of serious breaches | of the Premier League's | financial rules | over nine seasons.
+S3: City appealed | on October 1, | and the appeal hearing | is expected | in December.
+S4: The sanction | hasn't been decided, | but the commission's powers | go all the way | to expulsion | from the league.
+S5: According to AS, | Haaland's camp | won't discuss | his future | until they know | the punishment, | and Paul Scholes | already says | he'd pick Barcelona, | which is why | the whole world | is now watching
+Source card (over S2 "On September 29" .. "over nine seasons"): label SOURCE, title "Premier League statement", lines ["29 Sep 2026", "City found guilty · appeal lodged 1 Oct"]
+Cover text: "WHAT HAPPENS TO HAALAND? 😳"
+Footage ideas: Haaland close-ups (shot 0 bright face), Haaland contract signing (Jan 2025 10-year deal video), Man City crest/Etihad, Premier League trophy/logo, Pep Guardiola, City celebrations, courtroom/legal imagery is NOT available as clips -> use Etihad exterior, Premier League logo, news-style City footage; Scholes on a podcast/TV; Barcelona Camp Nou; Haaland celebrating at the end.
+Facts (verified): commission verdict published 29 Sep 2026, guilty of serious breaches of PL financial rules over nine seasons (2009-10 to 2017-18) plus non-cooperation; City appealed 1 Oct; appeal hearing reportedly mid-December; sanction decided separately, not yet set; commission powers range from fines and points deductions to expulsion. Haaland contract to June 2034 (signed Jan 2025). AS: sources close to Haaland won't discuss an exit until the sanction is known. Scholes (The Good, The Bad & The Football podcast): predicted Barcelona.

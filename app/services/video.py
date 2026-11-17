@@ -988,7 +988,7 @@ def create_enhanced_subtitle_clips(enhanced_subtitle_path, params, video_width, 
                     text_clips.append(clip)
 
             # Emoji sticker pop on power words (spaced ≥1.2s apart so it doesn't clutter)
-            emoji = _word_emoji(word_text)
+            emoji = _word_emoji(word_text) if getattr(params, 'enable_emoji_stickers', True) else None
             if emoji and word_start - last_emoji_end >= 1.2:
                 em_img = _render_emoji_img(emoji, int(video_height * 0.11))
                 if em_img is not None:
@@ -1187,6 +1187,23 @@ def create_hook_clip(
     font_path = os.path.join(utils.font_dir(), getattr(params, 'font_name', 'STHeitiMedium.ttc'))
     font_size = int(video_width * 0.082)
     font_size = font_size if font_size % 2 == 0 else font_size + 1
+
+    # --- OVERLAY-ONLY hook: veil + hook text drawn over the live first shot (no frozen still).
+    #     The shot underneath keeps playing, so the opening is real motion, not a held photo. ---
+    if getattr(params, 'hook_overlay_only', False):
+        hook_opacity = max(0.0, min(0.8, float(getattr(params, 'hook_overlay_opacity', 0.45))))
+        veil_text = Image.new("RGBA", (video_width, video_height), (0, 0, 0, int(255 * hook_opacity)))
+        text_layer = _render_text_card(
+            hook_text, font_path, font_size, video_width, video_height,
+            y_center_ratio=0.42, bg_alpha=0,
+        )
+        veil_text = Image.alpha_composite(veil_text, text_layer)
+        return (
+            ImageClip(np.array(veil_text))
+            .with_duration(hook_dur)
+            .with_position("center")
+            .with_start(0)
+        )
 
     # --- MOVING-VIDEO hook: play the real footage clip the cover came from, with
     #     a dark veil + hook text on top. Far more thumb-stopping than a still. ---

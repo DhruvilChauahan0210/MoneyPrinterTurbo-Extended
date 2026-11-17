@@ -1,0 +1,121 @@
+{
+ "mode": "duel",
+ "key": "duel_dembele_yamal",
+ "out": "DUEL_dembele_yamal_v2",
+ "voice": "en-US-GuyNeural",
+ "rate": "+8%",
+ "music": "music2.mp3",
+ "musicVolume": 0.22,
+ "headline": "PICK ONE",
+ "countdownSeconds": 5,
+ "photos": {
+  "left": {
+   "src": "prototypes/r2/photos/dembele_src.jpg",
+   "box": [
+    975,
+    0,
+    1920,
+    1008
+   ]
+  },
+  "right": {
+   "src": "prototypes/r2/photos/yamal_src.jpg",
+   "box": [
+    340,
+    0,
+    900,
+    597
+   ]
+  }
+ },
+ "left": {
+  "name": "DEMBÉLÉ",
+  "sub": "PSG",
+  "color": "#2f7bff",
+  "posX": 50,
+  "posY": 30,
+  "zoom": 1
+ },
+ "right": {
+  "name": "YAMAL",
+  "sub": "BARCELONA",
+  "color": "#d4204a",
+  "posX": 50,
+  "posY": 30,
+  "zoom": 1
+ },
+ "rows": [
+  {
+   "label": "Ballon d'Or points",
+   "a": 1380,
+   "b": 1059,
+   "fmt": "comma",
+   "win": "a"
+  },
+  {
+   "label": "Age on ceremony night",
+   "a": 28,
+   "b": 18
+  },
+  {
+   "label": "Goals 2024-25, all comps",
+   "a": 35,
+   "b": 18,
+   "win": "a"
+  },
+  {
+   "label": "Assists 2024-25, all comps",
+   "a": 16,
+   "b": 25,
+   "win": "b"
+  },
+  {
+   "label": "Champions League goals 24-25",
+   "a": 8,
+   "b": 5,
+   "win": "a"
+  }
+ ],
+ "reveal": {
+  "number": 321,
+  "label": "POINTS BETWEEN 1ST AND 2ND",
+  "detail": "1,380 vs 1,059  |  22 Sep 2025, Paris",
+  "question": "WHO DID YOU PICK?"
+ },
+ "source": "Sources: Transfermarkt (2024-25 stats), Wikipedia (2025 Ballon d'Or)",
+ "segments": [
+  {
+   "id": "intro",
+   "text": "Pick one. Dembélé, or Yamal? Pick before the bar ends.",
+   "tts": "Pick one. Dem-bay-lay, or Yah-mal? Pick before the bar ends."
+  },
+  {
+   "id": "row0",
+   "text": "Ballon d'Or votes: 1,380, to 1,059.",
+   "minStart": 4.8,
+   "tts": "Ballon d'Or votes: 1,380, to 1,059."
+  },
+  {
+   "id": "row1",
+   "text": "Age that night: 28, and 18."
+  },
+  {
+   "id": "row2",
+   "text": "Goals in 2024-25: 35, to 18."
+  },
+  {
+   "id": "row3",
+   "text": "Assists: 16, to 25. Yamal fights back."
+  },
+  {
+   "id": "row4",
+   "text": "Champions League goals: 8, to 5."
+  },
+  {
+   "id": "reveal",
+   "text": "Dembélé won by 321 points. Who's your pick?",
+   "tts": "Dem-bay-lay won by 321 points. Who's your pick?"
+  }
+ ],
+ "tail": 0.6
+}

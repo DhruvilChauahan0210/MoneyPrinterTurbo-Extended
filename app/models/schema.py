@@ -257,6 +257,17 @@ class VideoParams(BaseModel):
     enable_hook_card: Optional[bool] = True
     hook_text: Optional[str] = ""
     hook_duration: Optional[float] = 1.5
+    # Sprint-recipe options (all default to the previous behaviour):
+    # hook_overlay_only: draw only the veil + hook text over the moving first shot instead of
+    # freezing a still of it for hook_duration seconds.
+    hook_overlay_only: Optional[bool] = False
+    # enable_emoji_stickers: the auto emoji pop on power words (broke -> bandage face, etc.).
+    enable_emoji_stickers: Optional[bool] = True
+    # caption_script_align: replace each caption word with the script's own spelling by aligning the
+    # transcription to video_script (fixes 'Oyarzabal' -> 'O years', 'two-one' -> '21').
+    caption_script_align: Optional[bool] = False
+    # caption_text_overrides: script word (lowercase, no punctuation) -> caption display text, e.g. {"two-one": "2-1"}.
+    caption_text_overrides: Optional[dict] = None
     # Cover/opening frame selection. The first frame decides swipe-away rate, so
     # it must be a thumb-stopper (the recognizable star's FACE / an action shot),
     # NOT a literal match to the hook text (which can land on a boring object like

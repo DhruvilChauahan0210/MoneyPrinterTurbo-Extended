@@ -1,0 +1,341 @@
+{
+ "key": "salah_trabzonspor",
+ "out": "NEWSCUT_salah_trabzon_revenge.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_em106.wav",
+ "musicVol": 0.012,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Liverpool let Mohamed Salah go.",
+ "sentences": [
+  [
+   [
+    "LIVERPOOL",
+    "Liverpool"
+   ],
+   [
+    "LET MOHAMED SALAH GO",
+    "let Mohamed Salah go"
+   ],
+   [
+    "AFTER 7 LEAGUE GOALS",
+    "after seven league goals"
+   ],
+   [
+    "AND A FALLING OUT",
+    "and a falling out"
+   ],
+   [
+    "WITH ARNE SLOT,",
+    "with Arnuh Slot,"
+   ],
+   [
+    "AND NOW LOOK AT HIM",
+    "and now look at him."
+   ]
+  ],
+  [
+   [
+    "HE'S BACK",
+    "He's back."
+   ]
+  ],
+  [
+   [
+    "IN AUGUST",
+    "In August"
+   ],
+   [
+    "HE JOINED TRABZONSPOR",
+    "he joined Trabzonspor"
+   ],
+   [
+    "IN TURKEY,",
+    "in Turkey,"
+   ],
+   [
+    "AND HE'S ALREADY SCORED",
+    "and he's already scored"
+   ],
+   [
+    "11 GOALS",
+    "eleven goals"
+   ],
+   [
+    "WITH 5 ASSISTS",
+    "with five assists"
+   ],
+   [
+    "IN 16 GAMES",
+    "in sixteen games."
+   ]
+  ],
+  [
+   [
+    "AGAINST CHAMPIONS",
+    "Against champions"
+   ],
+   [
+    "GALATASARAY",
+    "Galatasaray"
+   ],
+   [
+    "HE SCORED A HAT-TRICK",
+    "he scored a hat-trick"
+   ],
+   [
+    "AND AN ASSIST",
+    "and an assist"
+   ],
+   [
+    "IN A 4-0 WIN",
+    "in a four nil win."
+   ]
+  ],
+  [
+   [
+    "TRABZONSPOR",
+    "Trabzonspor"
+   ],
+   [
+    "HAVE WON SIX",
+    "have won six"
+   ],
+   [
+    "IN A ROW",
+    "in a row"
+   ],
+   [
+    "AND THEY'RE SECOND,",
+    "and they're second,"
+   ],
+   [
+    "THREE POINTS",
+    "three points"
+   ],
+   [
+    "OFF THE TOP",
+    "off the top."
+   ]
+  ],
+  [
+   [
+    "HE'S 34,",
+    "He's thirty-four,"
+   ],
+   [
+    "AND THE PLAYER",
+    "and the player"
+   ],
+   [
+    "LIVERPOOL DECIDED",
+    "Liverpool decided"
+   ],
+   [
+    "THEY DIDN'T NEED ANYMORE",
+    "they didn't need anymore"
+   ],
+   [
+    "IS SUDDENLY",
+    "is suddenly"
+   ],
+   [
+    "THE MOST DANGEROUS MAN",
+    "the most dangerous man"
+   ],
+   [
+    "IN TURKEY, AND",
+    "in Turkey, and"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "VTd8yCz-05Y",
+   "start": 12.95,
+   "x": 740
+  },
+  {
+   "at": 2,
+   "vid": "Ev5eZenx6G0",
+   "start": 190.3,
+   "x": 680
+  },
+  {
+   "at": 3,
+   "vid": "xrAWHkgvmkc",
+   "start": 27.0,
+   "x": 790,
+   "h": 740,
+   "y": 70
+  },
+  {
+   "at": 4,
+   "vid": "FwO-TaqrXYM",
+   "start": 24.0,
+   "x": 740
+  },
+  {
+   "at": 5,
+   "vid": "ROGrIc015To",
+   "start": 20.4,
+   "x": 540
+  },
+  {
+   "at": 6,
+   "vid": "VTd8yCz-05Y",
+   "start": 89.4,
+   "x": 656
+  },
+  {
+   "at": 7,
+   "vid": "BW3cxn9LB8s",
+   "start": 30.0,
+   "x": 600
+  },
+  {
+   "at": 9,
+   "vid": "1AHBRUSoDak",
+   "start": 115.3,
+   "x": 1470,
+   "h": 800,
+   "y": 100,
+   "srcH": 1012
+  },
+  {
+   "at": 10,
+   "vid": "ROGrIc015To",
+   "start": 56.6,
+   "x": 800
+  },
+  {
+   "at": 11,
+   "vid": "VTd8yCz-05Y",
+   "start": 168.0,
+   "x": 850
+  },
+  {
+   "at": 12,
+   "vid": "VTd8yCz-05Y",
+   "start": 120.4,
+   "x": 656
+  },
+  {
+   "at": 13,
+   "vid": "VTd8yCz-05Y",
+   "start": 63.0,
+   "x": 480
+  },
+  {
+   "at": 14,
+   "vid": "rycfvFKgL-c",
+   "start": 31.4,
+   "x": 600
+  },
+  {
+   "at": 15,
+   "vid": "ROGrIc015To",
+   "start": 185.95,
+   "x": 780
+  },
+  {
+   "at": 16,
+   "vid": "ROGrIc015To",
+   "start": 50.3,
+   "x": 760
+  },
+  {
+   "at": 17,
+   "vid": "ROGrIc015To",
+   "start": 113.4,
+   "x": 500
+  },
+  {
+   "at": 18,
+   "vid": "rycfvFKgL-c",
+   "start": 518.8,
+   "x": 690
+  },
+  {
+   "at": 19,
+   "vid": "ROGrIc015To",
+   "start": 182.2,
+   "x": 656
+  },
+  {
+   "at": 21,
+   "vid": "ROGrIc015To",
+   "start": 119.1,
+   "x": 650
+  },
+  {
+   "at": 23,
+   "vid": "ROGrIc015To",
+   "start": 192.3,
+   "x": 800
+  },
+  {
+   "at": 25,
+   "vid": "VTd8yCz-05Y",
+   "start": 137.7,
+   "x": 780
+  },
+  {
+   "at": 26,
+   "vid": "Ev5eZenx6G0",
+   "start": 305.4,
+   "x": 550
+  },
+  {
+   "at": 28,
+   "vid": "Ev5eZenx6G0",
+   "start": 263.7,
+   "x": 420
+  },
+  {
+   "at": 29,
+   "vid": "ROGrIc015To",
+   "start": 207.0,
+   "x": 250
+  },
+  {
+   "at": 30,
+   "vid": "ROGrIc015To",
+   "start": 221.4,
+   "x": 700
+  },
+  {
+   "at": 31,
+   "vid": "rycfvFKgL-c",
+   "start": 513.15,
+   "x": 950
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 7,
+   "toChunk": 13,
+   "label": "STATS",
+   "title": "The National",
+   "lines": [
+    "13 Nov 2026",
+    "Salah: 11 goals, 5 assists in 16 games"
+   ]
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 5,
+   "t": 0.3
+  },
+  "text": "LIVERPOOL WERE WRONG? 😳"
+ }
+}

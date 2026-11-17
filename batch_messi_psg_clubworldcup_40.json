@@ -1,0 +1,458 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing football",
+      "a real photograph of Luis Enrique",
+      "a real photograph of PSG players"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "HIS OLD CLUB SHOWED NO MERCY",
+    "hook_cover_term": "Lionel Messi in Inter Miami kit",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "REVENGE FOR PARIS? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing football",
+      "a real photograph of Luis Enrique",
+      "a real photograph of PSG players"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "June twenty twenty-five: Messi faced his old club for the first time. At the Club World Cup, Inter Miami met Paris Saint-Germain, coached by Luis Enrique, who won the treble with Messi at Barcelona. More than sixty-five thousand fans watched in Atlanta. João Neves scored twice, there was an own goal, and Achraf Hakimi made it four before half-time. Gianluigi Donnarumma even saved Messi's header. Did his old club show him any mercy?",
+    "video_subject": "At the 2025 Club World Cup, Lionel Messi faced his former club PSG for the first time and Luis Enrique's side beat Inter Miami 4-0 in Atlanta",
+    "video_terms": "PSG 4-0 Inter Miami Club World Cup 2025, Messi former club, Luis Enrique Joao Neves",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "beat_plan": [
+      {
+        "says": "June twenty twenty-five: Messi faced his old club for the first time.",
+        "visual": "Lionel Messi in Inter Miami kit",
+        "images": [
+          "Messi PSG Inter Miami Club World Cup",
+          "Messi Inter Miami 2025"
+        ],
+        "clips": []
+      },
+      {
+        "says": "At the Club World Cup, Inter Miami met Paris Saint-Germain,",
+        "visual": "PSG players at the Club World Cup",
+        "images": [
+          "PSG Inter Miami Club World Cup",
+          "PSG Club World Cup 2025"
+        ],
+        "clips": []
+      },
+      {
+        "says": "coached by Luis Enrique, who won the treble with Messi at Barcelona.",
+        "visual": "Luis Enrique on the touchline",
+        "images": [
+          "Luis Enrique PSG",
+          "Luis Enrique"
+        ],
+        "clips": []
+      },
+      {
+        "says": "More than sixty-five thousand fans watched in Atlanta.",
+        "visual": "a packed football stadium",
+        "images": [
+          "Mercedes-Benz Stadium Club World Cup",
+          "Mercedes-Benz Stadium Atlanta football"
+        ],
+        "clips": []
+      },
+      {
+        "says": "João Neves scored twice,",
+        "visual": "Joao Neves celebrating for PSG",
+        "images": [
+          "Joao Neves PSG goal",
+          "Joao Neves"
+        ],
+        "clips": []
+      },
+      {
+        "says": "there was an own goal,",
+        "visual": "Inter Miami players dejected",
+        "images": [
+          "Inter Miami players dejected",
+          "Inter Miami PSG"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and Achraf Hakimi made it four before half-time.",
+        "visual": "Achraf Hakimi celebrating",
+        "images": [
+          "Achraf Hakimi goal",
+          "Achraf Hakimi PSG"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Gianluigi Donnarumma even saved Messi's header.",
+        "visual": "Gianluigi Donnarumma making a save",
+        "images": [
+          "Donnarumma save",
+          "Gianluigi Donnarumma PSG"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Did his old club show him any mercy?",
+        "visual": "Lionel Messi looking disappointed",
+        "images": [
+          "Lionel Messi disappointed Inter Miami",
+          "Messi sad Inter Miami"
+        ],
+        "clips": []
+      }
+    ],
+    "intro_image_paths": [],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "At the 2025 Club World Cup, Lionel Messi faced his former club PSG for the first time and Luis Enrique's side beat Inter Miami 4-0 in Atlanta",
+      "video_script": "June twenty twenty-five: Messi faced his old club for the first time. At the Club World Cup, Inter Miami met Paris Saint-Germain, coached by Luis Enrique, who won the treble with Messi at Barcelona. More than sixty-five thousand fans watched in Atlanta. João Neves scored twice, there was an own goal, and Achraf Hakimi made it four before half-time. Gianluigi Donnarumma even saved Messi's header. Did his old club show him any mercy?",
+      "video_terms": "PSG 4-0 Inter Miami Club World Cup 2025, Messi former club, Luis Enrique Joao Neves",
+      "hook_text": "HIS OLD CLUB SHOWED NO MERCY",
+      "cta_text": "REVENGE FOR PARIS? 👇",
+      "beat_plan": [
+        {
+          "says": "June twenty twenty-five: Messi faced his old club for the first time.",
+          "visual": "Lionel Messi in Inter Miami kit",
+          "images": [
+            "Messi PSG Inter Miami Club World Cup",
+            "Messi Inter Miami 2025"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b01/img-cb5d5f4133abcd487dac2b26326ab1b1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b01/img-98a998ddf30ab2af06e7f5e576400614.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b01/img-047a43f840fea29f8b1bd0331fd70e38.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b01/img-8a8cad7d3c6baf4a512878d0d0c7ce63.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b01/img-ddd2a03d1699adc7a44190bf5bade474.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b01/img-8183f01fec9685eeda1a84eda6f57b08.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b01/img-65b059f6bf145a4a4114adf9df52f7e6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b01/img-89e1733bfb87ee77f9d4136d28b38ccf.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b01/img-047a43f840fea29f8b1bd0331fd70e38.jpg",
+          "url": "https://livesport-ott-images.ssl.cdn.cra.cz/r900xfq60/2d64f86f-f5d7-4584-934e-69fe3771027d.jpeg"
+        },
+        {
+          "says": "At the Club World Cup, Inter Miami met Paris Saint-Germain,",
+          "visual": "PSG players at the Club World Cup",
+          "images": [
+            "PSG Inter Miami Club World Cup",
+            "PSG Club World Cup 2025"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b02/img-963792fcbbec179ee534371c0dcb3843.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b02/img-045a666d324ce3a96a806a1dcd3d1c3a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b02/img-2371a11fa59a71681fb3de6a9b90b6c8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b02/img-e8127714720814c306d48e0415689a28.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b02/img-76a90368ad384041039ed7c28c17ea81.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b02/img-ae2b408655a827ba49e8d88c5e917116.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b02/img-5664ed00c29d160d63c9aad0ad409a7d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b02/img-1ed476bfabc0684f44e3a0caa50c8655.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b02/img-ae2b408655a827ba49e8d88c5e917116.jpg",
+          "url": "https://en.parisfans.fr/wp-content/uploads/2025/07/paris-saint-germain-v-inter-miami-cf-round-of-16-fifa-club-world-cup-2025-6-1-TbaQll.jpg"
+        },
+        {
+          "says": "coached by Luis Enrique, who won the treble with Messi at Barcelona.",
+          "visual": "Luis Enrique on the touchline",
+          "images": [
+            "Luis Enrique PSG",
+            "Luis Enrique"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b03/img-920ff384d403e242c1ac4f37b2dc9e5b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b03/img-b0ff3d22ef27271b14519200f2a68150.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b03/img-c44c6df28cdcb1941a0f026436afe66b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b03/img-5e8b83dc8aa328d7003c6645cbda1522.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b03/img-1b1e8cf8bf5d9de8550a08d0502bc0f0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b03/img-a7aa8c6b7e5981341f25ee0df4fd6377.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b03/img-8f8e806cedbfdd41a74322674db86cd2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b03/img-1542ac5d23b910ff4edc8e3a8802c75c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b03/img-b0ff3d22ef27271b14519200f2a68150.jpg",
+          "url": "https://lncimg.lance.com.br/cdn-cgi/image/width=950,quality=75,fit=pad,format=webp/uploads/2025/10/Luis-Enrique-reage-durante-partida-entre-Barcelona-e-PSG-pela-Champions-League-aspect-ratio-512-320-1.jpg"
+        },
+        {
+          "says": "More than sixty-five thousand fans watched in Atlanta.",
+          "visual": "a packed football stadium",
+          "images": [
+            "Mercedes-Benz Stadium Club World Cup",
+            "Mercedes-Benz Stadium Atlanta football"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b04/img-31ea8248c40a83f8900180e001ef87ac.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b04/img-d08ba01c9f063266b92b951809a1d026.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b04/img-a5195093d2f6c436862e79c420b9ae7d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b04/img-bb5a1ae8c18089daa0562f9d7fe6b856.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b04/img-85bf3b13f1a64506874466bbefa330ac.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b04/img-bff53d35574b224a6bc593a5fb9f29bc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b04/img-2905d16cfe2e339e6e0c0bdc1c594c78.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b04/img-33cc5bba39852cd8abd0aaba173df090.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b04/img-d08ba01c9f063266b92b951809a1d026.jpg",
+          "url": "https://amtravel.co.uk/wp-content/uploads/2023/07/Atlanta-Falcons-Roof-Open-1920x1280.jpg"
+        },
+        {
+          "says": "João Neves scored twice,",
+          "visual": "Joao Neves celebrating for PSG",
+          "images": [
+            "Joao Neves PSG goal",
+            "Joao Neves"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b05/img-c5898255537b3601677378adc06efb57.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b05/img-4247fead2a446652bb320809e538e0c2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b05/img-8bb8a89b751996ca21b3414be0f35e26.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b05/img-c54611cbcb20890b917ceb39edd4e718.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b05/img-29f578df687e9a3e8f53c3dbb10f940b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b05/img-5aa5a8fd978216c719b25f4799a3c5c3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b05/img-8f2db226814d3ad728084d94ddb80319.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b05/img-ad3788f1ce84322ee51bfd5afc4e296f.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b05/img-c5898255537b3601677378adc06efb57.jpg",
+          "url": "https://icdn.psgtalk.com/wp-content/uploads/2024/12/joao-neves-paris-saint-germain-v-toulouse-fc-ligue-1-mcdonalds-2024.jpg"
+        },
+        {
+          "says": "there was an own goal,",
+          "visual": "Inter Miami players dejected",
+          "images": [
+            "Inter Miami players dejected",
+            "Inter Miami PSG"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b06/img-2d053f5eb9e15053076b209ec9d21507.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b06/img-a747f82672ffc20e729ffe58b7d7663e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b06/img-2371a11fa59a71681fb3de6a9b90b6c8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b06/img-eda87ef737c07a9c478fae51fda58e72.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b06/img-5aaebb77195dd464a87ed26712b5171e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b06/img-ca69215e627cfd30f59b2b31660cef94.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b06/img-045a666d324ce3a96a806a1dcd3d1c3a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b06/img-761569562aace27d7cfa2709e3a27719.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b06/img-eda87ef737c07a9c478fae51fda58e72.jpg",
+          "url": "https://cdn-media.theathletic.com/cdn-cgi/image/width=1248,quality=70,format=auto/https://cdn-media.theathletic.com/gSGzEnx6zSIh_JB9KnLO41AEa_1440x960.jpg"
+        },
+        {
+          "says": "and Achraf Hakimi made it four before half-time.",
+          "visual": "Achraf Hakimi celebrating",
+          "images": [
+            "Achraf Hakimi goal",
+            "Achraf Hakimi PSG"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b07/img-8c231cf6141152b71e087c397313ea4e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b07/img-1f687c8d1c1c49907fd3cbf1e63fa4a2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b07/img-b1c86838b6b85eb29470d1983540931b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b07/img-cc74f544456e25e5372d0a6c8ccc9100.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b07/img-2482c9d87e4123a9af106bb33901298a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b07/img-12d2d3828f8fb214bc4f3540f721458c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b07/img-d2220bcbf89b88d9348af871c4cd9c65.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b07/img-b1c86838b6b85eb29470d1983540931b.jpg",
+          "url": "https://s.hdnux.com/photos/01/54/73/53/28555977/3/rawImage.jpg"
+        },
+        {
+          "says": "Gianluigi Donnarumma even saved Messi's header.",
+          "visual": "Gianluigi Donnarumma making a save",
+          "images": [
+            "Donnarumma save",
+            "Gianluigi Donnarumma PSG"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b08/img-e43e193fc340f151e1a8d782e091f6dd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b08/img-f42018b3d6dbb3e51676ea301701f427.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b08/img-12f3ab0e6a0e6350251c1c147db2424b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b08/img-c2554b8de693ed19b1e0583137839fd7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b08/img-2322849b5a272d9f26d311dfd5531b89.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b08/img-01b341cc09ffc8c267c3be41a7c8966c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b08/img-6b0295977c9ff3177c5b60f9c4ca9be0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b08/img-b2cc8eceea6ce5550f85002c897fedf2.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b08/img-12f3ab0e6a0e6350251c1c147db2424b.jpg",
+          "url": "https://citisportsonline.com/wp-content/uploads/2021/07/Donna.jpg"
+        },
+        {
+          "says": "Did his old club show him any mercy?",
+          "visual": "Lionel Messi looking disappointed",
+          "images": [
+            "Lionel Messi disappointed Inter Miami",
+            "Messi sad Inter Miami"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b09/img-4507a356fda83e0ed81ab781ef3b246b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b09/img-3d58b2cd350f229c29e8c1378455465d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b09/img-5d959646f675ff018525eca1a5d8db9f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b09/img-b3dffe06979d5c3a76c08cc7ff9d89ba.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b09/img-d6da3a225b56f8bb0291cf966c33403c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b09/img-7b79fada43e300e9efb2073145ec5af7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b09/img-f9f599c768c56552219a82f06e296bb9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b09/img-863522ba62d1ff1a8513b1dcb84bf8a3.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2025_club_world_cup_lionel_messi_/b09/img-b3dffe06979d5c3a76c08cc7ff9d89ba.jpg",
+          "url": "https://nypost.com/wp-content/uploads/sites/2/2024/03/10-inter-miami-cf-reacts-78328157.jpg?resize=375"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

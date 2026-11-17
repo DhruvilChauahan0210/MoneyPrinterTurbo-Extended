@@ -1,0 +1,29 @@
+{
+  "cfg": "batch_ronaldo_hungary2016.json",
+  "status": "ready",
+  "clip_beats": [],
+  "weak_beats": [
+    {
+      "beat": 2,
+      "why": "Hungary player in red, not confirmed as Gera"
+    },
+    {
+      "beat": 3,
+      "why": "Nani portrait, fine"
+    },
+    {
+      "beat": 4,
+      "why": "generic Hungary squad celebration in red (no Dzsudzsak photo findable)"
+    },
+    {
+      "beat": 5,
+      "why": "Ronaldo in green away kit running, small"
+    },
+    {
+      "beat": 6,
+      "why": "stadium crowd, generic"
+    }
+  ],
+  "beat1": "Ronaldo close-up smiling, Portugal red kit, with Euro 2016 trophy",
+  "notes": "No clip: only fan-uploaded highlight edits with watermarks (Classic Match, TYFC, AB project) or effect-heavy edits; the cutter's centre crop lost the goals."
+}

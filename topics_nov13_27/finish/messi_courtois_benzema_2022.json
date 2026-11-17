@@ -1,0 +1,28 @@
+{
+  "cfg": "batch_messi_courtois_benzema_2022.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 3,
+      "url": "https://www.youtube.com/watch?v=OdPvIJ_Agvk",
+      "start": 12.5
+    },
+    {
+      "beat": 6,
+      "url": "https://www.youtube.com/watch?v=KjC2ywJpulI",
+      "start": 88.0
+    }
+  ],
+  "weak_beats": [
+    {
+      "beat": 4,
+      "why": "Mbappe PSG celebration photo, not clearly the 94th-minute goal"
+    },
+    {
+      "beat": 7,
+      "why": "Real Madrid pitch celebration, wide"
+    }
+  ],
+  "beat1": "Messi in PSG kit, hand on face dejected (borrowed from beat 8 candidates)",
+  "notes": "Beat 3 clip: Pickx Sports broadcast of Courtois penalty save (small pickx logo corner). Beat 6 clip: Real Madrid official highlights, Benzema 3-1 goal build-up and finish."
+}

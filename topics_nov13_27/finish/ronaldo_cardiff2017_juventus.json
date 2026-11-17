@@ -1,0 +1,28 @@
+{
+  "cfg": "batch_ronaldo_cardiff2017_juventus.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 3,
+      "url": "https://www.youtube.com/watch?v=yTSpu7tV01Q",
+      "start": 168.0
+    },
+    {
+      "beat": 6,
+      "url": "https://www.youtube.com/watch?v=yTSpu7tV01Q",
+      "start": 424.0
+    }
+  ],
+  "weak_beats": [
+    {
+      "beat": 4,
+      "why": "Mandzukic in Juventus kit, not celebrating"
+    },
+    {
+      "beat": 7,
+      "why": "Asensio in white kit, not a Cardiff goal shot"
+    }
+  ],
+  "beat1": "Ronaldo big close-up holding Champions League trophy, white Real kit with medal and Emirates sponsor",
+  "notes": "Clips from FOX Soccer broadcast: beat 3 = Ronaldo 20' goal build-up plus celebration, 'MADRID' lower-third remnant top-left; beat 6 = attack then Ronaldo celebration close-ups in purple kit."
+}

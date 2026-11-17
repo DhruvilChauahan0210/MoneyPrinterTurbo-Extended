@@ -1,0 +1,408 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Nicolas Otamendi",
+      "a real photograph of Nicolas Gaitan",
+      "a real photograph of Sergio Aguero"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "IS THAT EVEN POSSIBLE?",
+    "hook_cover_term": "Lionel Messi celebrating a hat-trick for Argentina in 2016",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "BEST IMPACT SUBSTITUTE EVER: MESSI? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Nicolas Otamendi",
+      "a real photograph of Nicolas Gaitan",
+      "a real photograph of Sergio Aguero"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Messi came off the bench in the sixty-first minute and scored a hat-trick in nineteen minutes. Copa America Centenario, Chicago, June two thousand sixteen. Nicolas Otamendi had opened the scoring in the seventh minute. Messi replaced Nicolas Gaitan after sixty-one minutes. He scored in the sixty-eighth, seventy-eighth and eighty-seventh minutes. Sergio Aguero added a fifth in stoppage time. Argentina won five-nil. Has any substitute ever matched Messi's nineteen minutes?",
+    "video_subject": "Lionel Messi came off the bench in the 61st minute against Panama at the 2016 Copa America Centenario and scored a hat-trick in the 68th, 78th and 87th minutes as Argentina won 5-0 in Chicago.",
+    "video_terms": "messi, argentina, panama, copa america centenario, 2016, hat-trick, substitute, chicago",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Messi came off the bench in the sixty-first minute and scored a hat-trick in nineteen minutes.",
+        "visual": "close up of Lionel Messi in Argentina kit in 2016",
+        "images": [
+          "Lionel Messi Argentina 2016",
+          "Messi Panama 2016"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Copa America Centenario, Chicago, June two thousand sixteen.",
+        "visual": "Soldier Field Chicago Argentina vs Panama",
+        "images": [
+          "Argentina Panama 2016",
+          "Soldier Field Argentina"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Nicolas Otamendi had opened the scoring in the seventh minute.",
+        "visual": "Nicolas Otamendi celebrating for Argentina in 2016",
+        "images": [
+          "Nicolas Otamendi Argentina",
+          "Otamendi Panama 2016"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi replaced Nicolas Gaitan after sixty-one minutes.",
+        "visual": "Lionel Messi coming on as a substitute for Argentina",
+        "images": [
+          "Lionel Messi Copa America Centenario 2016",
+          "Messi Argentina Copa America 2016"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He scored in the sixty-eighth, seventy-eighth and eighty-seventh minutes.",
+        "visual": "Lionel Messi scoring a free kick for Argentina in 2016",
+        "images": [
+          "Messi goal Panama",
+          "Lionel Messi hat-trick 2016"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Sergio Aguero added a fifth in stoppage time.",
+        "visual": "Sergio Aguero celebrating for Argentina in 2016",
+        "images": [
+          "Sergio Aguero Argentina 2016",
+          "Aguero Panama 2016"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Argentina won five-nil.",
+        "visual": "Argentina players celebrating a big win in Chicago",
+        "images": [
+          "Argentina celebrate 2016",
+          "Argentina Copa America 2016"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Has any substitute ever matched Messi's nineteen minutes?",
+        "visual": "Lionel Messi celebrating a hat-trick in 2016",
+        "images": [
+          "Messi hat-trick Argentina Panama",
+          "Messi Copa America Centenario goal"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b01/img-6cbadfd224bd8a6ddc1a5589f7f3c029.jpg"
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Lionel Messi came off the bench in the 61st minute against Panama at the 2016 Copa America Centenario and scored a hat-trick in the 68th, 78th and 87th minutes as Argentina won 5-0 in Chicago.",
+      "video_script": "Messi came off the bench in the sixty-first minute and scored a hat-trick in nineteen minutes. Copa America Centenario, Chicago, June two thousand sixteen. Nicolas Otamendi had opened the scoring in the seventh minute. Messi replaced Nicolas Gaitan after sixty-one minutes. He scored in the sixty-eighth, seventy-eighth and eighty-seventh minutes. Sergio Aguero added a fifth in stoppage time. Argentina won five-nil. Has any substitute ever matched Messi's nineteen minutes?",
+      "video_terms": "messi, argentina, panama, copa america centenario, 2016, hat-trick, substitute, chicago",
+      "hook_text": "IS THAT EVEN POSSIBLE?",
+      "cta_text": "BEST IMPACT SUBSTITUTE EVER: MESSI? 👇",
+      "beat_plan": [
+        {
+          "says": "Messi came off the bench in the sixty-first minute and scored a hat-trick in nineteen minutes.",
+          "visual": "close up of Lionel Messi in Argentina kit in 2016",
+          "images": [
+            "Lionel Messi Argentina 2016",
+            "Messi Panama 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b01/img-6cbadfd224bd8a6ddc1a5589f7f3c029.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b01/img-195b1b3c6a73bb01090af361f2c0a897.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b01/img-5f357d4b7e952a8b08a04b5cffefb756.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b01/img-195b1b3c6a73bb01090af361f2c0a897.jpg",
+          "url": "https://cdnph.upi.com/svc/sv/upi/9301465623770/2016/1/b7c1eb0676afe8817a4b1eca3a67295a/Copa-America-2016-Lionel-Messi-scores-three-goals-as-sub-for-Argentina.jpg"
+        },
+        {
+          "says": "Copa America Centenario, Chicago, June two thousand sixteen.",
+          "visual": "Soldier Field Chicago Argentina vs Panama",
+          "images": [
+            "Argentina Panama 2016",
+            "Soldier Field Argentina"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b02/img-a5c8f81466014ce1022c72187cbc187d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b02/img-730fbce56a78b7c2185b4839232e7c57.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b02/img-eccbe3c082c5b0d94d9971bb6ccf0413.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b02/img-15c612cd378dccadbd1f0d7caf06748f.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b02/img-a5c8f81466014ce1022c72187cbc187d.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Soldier_Field_Chicago_aerial_view.jpg/500px-Soldier_Field_Chicago_aerial_view.jpg"
+        },
+        {
+          "says": "Nicolas Otamendi had opened the scoring in the seventh minute.",
+          "visual": "Nicolas Otamendi celebrating for Argentina in 2016",
+          "images": [
+            "Nicolas Otamendi Argentina",
+            "Otamendi Panama 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b03/img-b3a3e5bd9046200a41c4812196014e6c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b03/img-f920c4dfecac905cd6a93e477c8abeb6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b03/img-6ad9e18a44d8c69dd31960471901ceb2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b03/img-db568437573b9e37c2c31732637e492d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b03/img-c176b0f3be65f2092736f4506e71929b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b03/img-a49938d0a6918cffda46f6ed031acf83.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b03/img-517f006902c676c1087c6eede78c6404.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b03/img-0ad76f6ce75610a782a6b7c3e14be45b.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b03/img-f920c4dfecac905cd6a93e477c8abeb6.jpg",
+          "url": "https://fotos.perfil.com/2024/03/20/trim/1140/641/nicolas-otamendi-seleccion-argentina-1773516.jpg"
+        },
+        {
+          "says": "Messi replaced Nicolas Gaitan after sixty-one minutes.",
+          "visual": "Lionel Messi coming on as a substitute for Argentina",
+          "images": [
+            "Lionel Messi Copa America Centenario 2016",
+            "Messi Argentina Copa America 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b04/img-79d429aa78a601d63821058e41523628.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b04/img-79d429aa78a601d63821058e41523628.jpg",
+          "url": "https://www.4to40.com/wp-content/uploads/2016/06/Argentina-midfielder-Lionel-Messi-during-the-2016-Copa-America-Centenario-final-against-Chile.jpg"
+        },
+        {
+          "says": "He scored in the sixty-eighth, seventy-eighth and eighty-seventh minutes.",
+          "visual": "Lionel Messi scoring a free kick for Argentina in 2016",
+          "images": [
+            "Messi goal Panama",
+            "Lionel Messi hat-trick 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b05/img-bf1211644277df622879a5e63ccdb52e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b05/img-43b533f66df6e141470b0ac080a0fe4d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b05/img-f1e85d32813f5382f541b689984001e0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b05/img-02501987727251ad2e17846dcc602274.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b05/img-42797710e5990c218a8c6b38b7fa66d2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b05/img-fe780193521c6065cd7833b3dde6a1db.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b05/img-e087b657345049d4085a6f7e59956b87.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b05/img-4db755af3ba3b1377bacfe79b880b09b.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b05/img-bf1211644277df622879a5e63ccdb52e.jpg",
+          "url": "https://media.airedesantafe.com.ar/p/9fe1012085428d430e07bd2a06d959df/adjuntos/268/imagenes/003/729/0003729241/1200x0/smart/argentina-panama-amistoso-lionel-messi.jpg"
+        },
+        {
+          "says": "Sergio Aguero added a fifth in stoppage time.",
+          "visual": "Sergio Aguero celebrating for Argentina in 2016",
+          "images": [
+            "Sergio Aguero Argentina 2016",
+            "Aguero Panama 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b06/img-dbd010bca50227db3b8ae2f2fbed9a25.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b06/img-5a111694d1d56b5e622c7bd2c79c6fff.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b06/img-0b9a78a1e044c3b38bcb03bede3b08f8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b06/img-310d988e3174b598db57a541ac144e97.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b06/img-112939496e9d56cc56686d22a65bb786.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b06/img-a039c337bc4c4862e7d637987665a73c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b06/img-9379e92110da4ced360b1e3d5562603e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b06/img-f9502b5c803850bba73354c33d0783b5.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b06/img-5a111694d1d56b5e622c7bd2c79c6fff.jpg",
+          "url": "https://d.ibtimes.com/en/full/2344247/sergio-aguero-argentina-2016.jpg?w=736&f=af43c8cf83cfad4580987b9430e5c90f",
+          "len": 6.0
+        },
+        {
+          "says": "Argentina won five-nil.",
+          "visual": "Argentina players celebrating a big win in Chicago",
+          "images": [
+            "Argentina celebrate 2016",
+            "Argentina Copa America 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b07/img-d94d794ed9a4086e395e0900904b6847.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b07/img-f72972a6b84ef418874baf40042e76f9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b07/img-e6ac35af3396ff398053d6de214edcd6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b07/img-f2b1ea28db696bb3d80165b42415e6a5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b07/img-2174d83ac383e480219f117004f914d6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b07/img-0bf05ec953328db1742b5674c34c8a8b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b07/img-1cff4607416e39ebb3068c77a2c2b0e8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b07/img-8b923c26dc39660a895420e70ed01a2a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b07/img-2174d83ac383e480219f117004f914d6.jpg",
+          "url": "https://img.vavel.com/argentina-chile-copa-america-centenario-usa-2016-grupo-d-zimbiocom-8-7291351598.jpg"
+        },
+        {
+          "says": "Has any substitute ever matched Messi's nineteen minutes?",
+          "visual": "Lionel Messi celebrating a hat-trick in 2016",
+          "images": [
+            "Messi hat-trick Argentina Panama",
+            "Messi Copa America Centenario goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b08/img-87a00c36739ad5a34b0a84b99d7e88f1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b08/img-085b0e45ec33c8190c37e47eaba49a7a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_came_off_the_bench_in_the_6/b01/img-6cbadfd224bd8a6ddc1a5589f7f3c029.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

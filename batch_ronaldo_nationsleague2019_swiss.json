@@ -1,0 +1,448 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Ricardo Rodriguez",
+      "a real photograph of Goncalo Guedes"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "WAS IT ALL HIM?",
+    "hook_cover_term": "Cristiano Ronaldo celebrating hat-trick for Portugal",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "DID RONALDO WIN THE TITLE SINGLE-HANDEDLY? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Ricardo Rodriguez",
+      "a real photograph of Goncalo Guedes"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Ronaldo scored a hat-trick, two goals in the last three minutes. Nations League semi-final, Portugal against Switzerland, Porto. Ronaldo scored first in the twenty-fifth minute. Rodriguez equalised from a penalty. The match stayed level until the eighty-eighth minute. Then Ronaldo scored twice in two minutes. Portugal won three-one. Four days later he captained them to the title against the Dutch. Did Ronaldo make Portugal champions single-handedly?",
+    "video_subject": "In the 5 June 2019 Nations League semi-final in Porto Cristiano Ronaldo scored a hat-trick, in the 25th, 88th and 90th minutes, as Portugal beat Switzerland 3-1, then captained Portugal to the title against the Netherlands four days later.",
+    "video_terms": "Ronaldo, Portugal, Switzerland, Nations League 2019, hat-trick, Porto, captain, Netherlands final",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Ronaldo scored a hat-trick, two goals in the last three minutes.",
+        "visual": "close up of Cristiano Ronaldo in red Portugal kit 2019",
+        "images": [
+          "Cristiano Ronaldo Portugal 2019",
+          "Ronaldo Switzerland Nations League"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Nations League semi-final, Portugal against Switzerland, Porto.",
+        "visual": "Estadio do Dragao Porto 2019",
+        "images": [
+          "Estadio do Dragao Porto",
+          "Portugal Switzerland 2019"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo scored first in the twenty-fifth minute.",
+        "visual": "Cristiano Ronaldo scoring Portugal Nations League 2019",
+        "images": [
+          "Ronaldo goal Switzerland",
+          "Ronaldo Portugal 2019"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Rodriguez equalised from a penalty.",
+        "visual": "Ricardo Rodriguez Switzerland penalty",
+        "images": [
+          "Ricardo Rodriguez Switzerland",
+          "Switzerland Portugal penalty"
+        ],
+        "clips": []
+      },
+      {
+        "says": "The match stayed level until the eighty-eighth minute.",
+        "visual": "Portugal Switzerland tense match 2019",
+        "images": [
+          "Portugal fans Porto 2019",
+          "Portugal bench 2019"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Then Ronaldo scored twice in two minutes.",
+        "visual": "Cristiano Ronaldo celebrating hat-trick Portugal",
+        "images": [
+          "Ronaldo hat-trick Portugal",
+          "Ronaldo celebrating Nations League"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Portugal won three-one.",
+        "visual": "Portugal players celebrating Porto",
+        "images": [
+          "Portugal celebrating Nations League",
+          "Portugal Switzerland 3-1"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Four days later he captained them to the title against the Dutch.",
+        "visual": "Cristiano Ronaldo captain lifting Nations League trophy 2019",
+        "images": [
+          "Ronaldo Nations League trophy 2019",
+          "Gonçalo Guedes Portugal"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Did Ronaldo make Portugal champions single-handedly?",
+        "visual": "Cristiano Ronaldo with Nations League trophy",
+        "images": [
+          "Ronaldo trophy Portugal",
+          "Ronaldo captain Portugal 2019"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "In the 5 June 2019 Nations League semi-final in Porto Cristiano Ronaldo scored a hat-trick, in the 25th, 88th and 90th minutes, as Portugal beat Switzerland 3-1, then captained Portugal to the title against the Netherlands four days later.",
+      "video_script": "Ronaldo scored a hat-trick, two goals in the last three minutes. Nations League semi-final, Portugal against Switzerland, Porto. Ronaldo scored first in the twenty-fifth minute. Rodriguez equalised from a penalty. The match stayed level until the eighty-eighth minute. Then Ronaldo scored twice in two minutes. Portugal won three-one. Four days later he captained them to the title against the Dutch. Did Ronaldo make Portugal champions single-handedly?",
+      "video_terms": "Ronaldo, Portugal, Switzerland, Nations League 2019, hat-trick, Porto, captain, Netherlands final",
+      "hook_text": "WAS IT ALL HIM?",
+      "cta_text": "DID RONALDO WIN THE TITLE SINGLE-HANDEDLY? 👇",
+      "beat_plan": [
+        {
+          "says": "Ronaldo scored a hat-trick, two goals in the last three minutes.",
+          "visual": "close up of Cristiano Ronaldo in red Portugal kit 2019",
+          "images": [
+            "Cristiano Ronaldo Portugal 2019",
+            "Ronaldo Switzerland Nations League"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b01/img-4f912eb1e404b9630105e4dc4aea1b91.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b01/img-dde66860e313e9c18badf4b5defb203d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b01/img-23259f905cc7fad7fa76c5e1b8163abb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b01/img-4f37725322a017e672697f41475d412a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b01/img-f3ff0fd9fb0bea9fc791e64022432500.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b01/img-ee38960d85aa2b38b7e16d6572874178.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b01/img-ef6b03f58c794ed16f28e2aaeacabc8b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b01/img-40200061aa606b504111ee8f0c799669.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b01/img-23259f905cc7fad7fa76c5e1b8163abb.jpg",
+          "url": "https://images.daznservices.com/di/library/GOAL/4b/13/cristiano-ronaldo-portugal-2019_1cfj3we72l79e1uscwlcifl8a6.jpg?t=-869788611&w={width}&quality=80"
+        },
+        {
+          "says": "Nations League semi-final, Portugal against Switzerland, Porto.",
+          "visual": "Estadio do Dragao Porto 2019",
+          "images": [
+            "Estadio do Dragao Porto",
+            "Portugal Switzerland 2019"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b02/img-c31b04324a14692889858c845b785690.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b02/img-e8256db0818141bbb684f24fd614ed51.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b02/img-e7208292acd85fc0c73c9e60a648c9a7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b02/img-056740aa6a539ba6ffce383b59bbb167.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b02/img-1857e22c15ca99c14eebf00126e2b4b4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b02/img-a698c9aa3967bac4e37d7caccf251c85.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b02/img-95253ec8c2d55bbcbdd3d204624b18e8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b02/img-fe43369a850924ff5672e7f8dc57ee23.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b02/img-e7208292acd85fc0c73c9e60a648c9a7.jpg",
+          "url": "https://www.beportugal.com/wp-content/uploads/2019/06/Porto-gallery-1.png"
+        },
+        {
+          "says": "Ronaldo scored first in the twenty-fifth minute.",
+          "visual": "Cristiano Ronaldo scoring Portugal Nations League 2019",
+          "images": [
+            "Ronaldo goal Switzerland",
+            "Ronaldo Portugal 2019"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b03/img-e8cd45319902231c0a9aa0ee8df0e42c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b03/img-70c6e85fb299a4bfa9eebffc2dcb694f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b03/img-b5b40a2dc685ccc22b1e626d6ffa4f8c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b03/img-97c9849fdec84512ba9aeebd7b5c9235.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b03/img-96bc1a12fc58fc1d158fe8db08112872.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b03/img-fd788b7442686994bc4086b69d518db0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b03/img-bb3c0b37f396cd70d807d62f81001fee.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b03/img-c3bbed5c30afa67cd64080e9605ee212.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b03/img-fd788b7442686994bc4086b69d518db0.jpg",
+          "url": "https://img.theweek.in/content/dam/week/week/news/sports/images/2024/11/18/portugal-cristiano-ronaldo-reu.jpg?w=1248&h=650"
+        },
+        {
+          "says": "Rodriguez equalised from a penalty.",
+          "visual": "Ricardo Rodriguez Switzerland penalty",
+          "images": [
+            "Ricardo Rodriguez Switzerland",
+            "Switzerland Portugal penalty"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b04/img-c29ed2f6630b4a163c94df10367fa058.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b04/img-9bd6c3375d7c511969438533c4dd11e5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b04/img-b5f2e3c5b6be6f3a603b55e8b820d90a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b04/img-05647b8191056389e824bb95d2a0fe6b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b04/img-7b456d7ee74078a49e330adeed7ed46a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b04/img-97050da131abb648e0c0858fa35bff56.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b04/img-9be763ffd59e440852d6a0f006e14220.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b04/img-8b83f9494849f3de3eed1b591bb9b203.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b04/img-c29ed2f6630b4a163c94df10367fa058.jpg",
+          "url": "https://www.rtl.de/img/1719857/1721200569/c16_9/1200/dusseldorf-ricardo-rodriguez-of-switzerland-during-the-uefa-euro-em-europameisterschaftfussball-2024-quarter-final-match-between-england-and-switzerland-at-the-dusseldorf-arena-on-july-6-2024-in-dusseldorf-germany.webp"
+        },
+        {
+          "says": "The match stayed level until the eighty-eighth minute.",
+          "visual": "Portugal Switzerland tense match 2019",
+          "images": [
+            "Portugal fans Porto 2019",
+            "Portugal bench 2019"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b05/img-6a2984fa5096b448e81297485e4baee5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b05/img-bc23a29896bffde93f17fafddb9dfe95.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b05/img-a88abcfca77ef023d5f0607adbb3b4e9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b05/img-54868fec9f400b1b505ff120da0cbc33.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b05/img-402e41dbb4cf2602376aa7760a995c60.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b05/img-7e835b0a8b84d67226e6b6bd39d16a43.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b05/img-a96ded80bbd4b51b628d50890e836011.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b05/img-6a2984fa5096b448e81297485e4baee5.jpg",
+          "url": "https://wp.clutchpoints.com/wp-content/uploads/2026/06/Why-Portugal-must-bench-Cristiano-Ronaldo.jpg?w=1200"
+        },
+        {
+          "says": "Then Ronaldo scored twice in two minutes.",
+          "visual": "Cristiano Ronaldo celebrating hat-trick Portugal",
+          "images": [
+            "Ronaldo hat-trick Portugal",
+            "Ronaldo celebrating Nations League"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b06/img-e51ebeb4e5b3372b448933c9f919dbbb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b06/img-711f3ae10e1632b7c9ce764ce36070cb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b06/img-01598a787bb38a68e97bf44f9cc98934.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b06/img-abf5df396d6550aeb486624786678989.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b06/img-aaa3e2658d62c1a4d8ccd8334bb2fae0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b06/img-836b2a06aa8c057c020a2718205019f2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b06/img-6a4c9b311d54043ea29628d394c2377d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b06/img-e5282706ac2a999c5d43ad9d7aed05fb.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b06/img-01598a787bb38a68e97bf44f9cc98934.jpg",
+          "url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/11/20/08/Ronaldo.jpg"
+        },
+        {
+          "says": "Portugal won three-one.",
+          "visual": "Portugal players celebrating Porto",
+          "images": [
+            "Portugal celebrating Nations League",
+            "Portugal Switzerland 3-1"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b07/img-d7b022b3d99ac8ef626b1dd5021395e1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b07/img-c9f3430452dcdfbc480a32689a6ef429.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b07/img-5cfd2f4f07ea327af37ca2bbb6517db8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b07/img-9875059de4f512496de3e7b85fac1bdd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b07/img-89e1931a0595b09be132ab304dd989b1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b07/img-a701a3ba263bafcd8593b6e207377f9c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b07/img-2d779164e8975a78f91b1df971415bec.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b07/img-cdbf388761d6e0055edc31611b469a94.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b07/img-d7b022b3d99ac8ef626b1dd5021395e1.jpg",
+          "url": "https://www.reuters.com/resizer/v2/CBQ2R42TPNLMTGML5IHV5WDWQA.jpg?auth=cc9d2e35968446249c29184ea31de6f46d364fe81a83dbf1dccb109635e02bd5&width=1200&quality=80"
+        },
+        {
+          "says": "Four days later he captained them to the title against the Dutch.",
+          "visual": "Cristiano Ronaldo captain lifting Nations League trophy 2019",
+          "images": [
+            "Ronaldo Nations League trophy 2019",
+            "Gonçalo Guedes Portugal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b08/img-d7f573988afaa0e93f8361eb745a9293.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b08/img-86ea6c98c5599efd7099f240e427c6b2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b08/img-e1fa08220e13a6e746ea4ff21aa84ad7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b08/img-f9a31cf742bb657649b84d8847d4e426.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b08/img-fad1c3747b376e970d8c791f4e0114da.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b08/img-d7f573988afaa0e93f8361eb745a9293.jpg",
+          "url": "https://pictures.tribuna.com/image/6ae8c5d8-d62f-4b71-b277-4962aed6c775?width=1920&quality=70"
+        },
+        {
+          "says": "Did Ronaldo make Portugal champions single-handedly?",
+          "visual": "Cristiano Ronaldo with Nations League trophy",
+          "images": [
+            "Ronaldo trophy Portugal",
+            "Ronaldo captain Portugal 2019"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b09/img-0937576c439476a229c89be07a54c155.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b09/img-2faa8457735de6a680f2b1b0ff8f4a64.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b09/img-46e6c62a251d5f4834e2184c58791013.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_5_june_2019_nations_league_semi_f/b09/img-46e6c62a251d5f4834e2184c58791013.jpg",
+          "url": "https://www.chicagotribune.com/wp-content/uploads/2026/11/Cristiano_Ronaldo_Portugal_Soccer__62_8-1.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

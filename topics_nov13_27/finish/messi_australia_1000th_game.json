@@ -1,0 +1,25 @@
+{
+ "cfg": "batch_messi_australia_1000th_game.json",
+ "status": "ready",
+ "clip_beats": [],
+ "weak_beats": [
+  {
+   "beat": 2,
+   "why": "wide Argentina vs Australia pitch shot, players small"
+  },
+  {
+   "beat": 5,
+   "why": "Enzo Fernandez photo is generic Argentina 2022 (not this match)"
+  },
+  {
+   "beat": 6,
+   "why": "Argentina celebration may be from another match"
+  },
+  {
+   "beat": 7,
+   "why": "Messi arms-up celebration borrowed from beat 8 row, no Man of the Match trophy visible"
+  }
+ ],
+ "beat1": "Messi arms wide, Argentina 2022 kit, big close-up",
+ "notes": "Tried clips from GoalDen highlight (Messi goal 143s, Alvarez 153s): vertical crop with GOALDEN watermark, wrong action, so reverted to photos. check_config prints a warning (not the green check): subject alvarez is on the CLIP-weak list (subject gate); all 8 beats already have media on disk so it should not matter for a pinned render, but flag it."
+}

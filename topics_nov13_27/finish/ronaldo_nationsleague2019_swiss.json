@@ -1,0 +1,25 @@
+{
+  "cfg": "batch_ronaldo_nationsleague2019_swiss.json",
+  "status": "ready",
+  "clip_beats": [],
+  "weak_beats": [
+    {
+      "beat": 3,
+      "why": "Ronaldo kicking in red, era/opponent unverified"
+    },
+    {
+      "beat": 5,
+      "why": "Ronaldo with teammate, generic"
+    },
+    {
+      "beat": 6,
+      "why": "Ronaldo arms-out celebration, era unverified"
+    },
+    {
+      "beat": 7,
+      "why": "Portugal celebrating, possibly later title"
+    }
+  ],
+  "beat1": "Ronaldo close-up with ball in Portugal red kit, 2019 era",
+  "notes": "No clip: available uploads carry FGMH TV / QQAM Sport watermarks and caption overlays."
+}

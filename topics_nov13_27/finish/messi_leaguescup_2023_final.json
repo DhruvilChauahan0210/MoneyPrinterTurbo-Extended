@@ -1,0 +1,32 @@
+{
+  "cfg": "batch_messi_leaguescup_2023_final.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 3,
+      "url": "https://www.youtube.com/watch?v=ZMqM06J8heo",
+      "start": 94.5
+    },
+    {
+      "beat": 4,
+      "url": "https://www.youtube.com/watch?v=ZMqM06J8heo",
+      "start": 163.5
+    }
+  ],
+  "weak_beats": [
+    {
+      "beat": 5,
+      "why": "keeper-dive photo from the shootout, not clearly the final"
+    },
+    {
+      "beat": 6,
+      "why": "Messi hugging Callender, fine but not mid-shootout"
+    },
+    {
+      "beat": 2,
+      "why": "champions confetti rather than Nashville stadium"
+    }
+  ],
+  "beat1": "Messi arms out in pink Inter Miami kit (Leagues Cup, photo)",
+  "notes": "Clips from official MLS highlights (clean broadcast, small scorebug): beat 3 Messi solo goal vs Nashville, beat 4 Nashville equaliser goalmouth scramble + celebration."
+}

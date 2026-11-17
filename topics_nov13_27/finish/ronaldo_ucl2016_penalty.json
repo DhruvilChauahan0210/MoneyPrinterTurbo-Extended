@@ -1,0 +1,32 @@
+{
+  "cfg": "batch_ronaldo_ucl2016_penalty.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 6,
+      "url": "https://www.youtube.com/watch?v=-ESiktHRw9Y",
+      "start": 316.0
+    },
+    {
+      "beat": 7,
+      "url": "https://www.youtube.com/watch?v=-ESiktHRw9Y",
+      "start": 330.0
+    }
+  ],
+  "weak_beats": [
+    {
+      "beat": 3,
+      "why": "Ramos with Fernando Torres, not a goal shot"
+    },
+    {
+      "beat": 4,
+      "why": "Atletico players celebrating, Carrasco likely"
+    },
+    {
+      "beat": 5,
+      "why": "generic shootout photo"
+    }
+  ],
+  "beat1": "Ronaldo big portrait, white Real Madrid kit holding the Champions League trophy",
+  "notes": "Clips from GugaTV full-match upload (small corner logo cropped out). Beat 6 = Juanfran penalty hits post, keeper dive, Juanfran face; beat 7 = Ronaldo run-up, shot, ball in net (Ronaldo partly cropped by centre crop). Rejected 'PIADI BAIQ 07' watermarked upload."
+}

@@ -1,0 +1,193 @@
+uid=7_0 RootWebArea "Channel analytics - YouTube Studio" busy url="https://studio.youtube.com/channel/UCfLjJwaxD7VhKwfSmTDQv3Q/analytics/tab-content/period-default"
+  uid=7_1 generic atomic live="polite" relevant="additions text"
+  uid=7_2 generic live="polite" relevant="additions text"
+    uid=7_3 "Channel analytics"
+  uid=7_4 banner
+    uid=7_5 button "Collapse menu"
+    uid=7_6 link "YouTube Studio dashboard" description="YouTube Studio dashboard" url="https://studio.youtube.com/channel/UCfLjJwaxD7VhKwfSmTDQv3Q"
+      uid=7_7 image "YouTube Studio dashboard" url="https://www.gstatic.com/youtube/img/creator/yt_studio_logo_v2_darkmode.svg"
+    uid=7_8 generic
+      uid=7_9 button "Skip navigation"
+    uid=7_10 generic
+      uid=7_11 form
+        uid=7_12 textbox "Search across your channel"
+    uid=7_13 button "Help"
+    uid=7_14 button "Notifications"
+    uid=7_15 button "Ask Studio"
+    uid=7_16 generic
+      uid=7_17 button "Create"
+    uid=7_18 button "Account" haspopup="menu"
+  uid=7_19 navigation
+    uid=7_20 generic
+    uid=7_21 image "CD PHANTOM" url="https://yt3.ggpht.com/InoDR_CtCgI9vxSAxmiqmliv0UuEWKpSU9cRfUHVRbUV0CRhjnTcjlq7DcRQ2oW42FciNCcM0w=s176-c-k-c0x00ffffff-no-rj"
+    uid=7_22 "Your channel"
+    uid=7_23 "CD PHANTOM"
+    uid=7_24 menu orientation="vertical"
+      uid=7_25 menuitem "Dashboard"
+        uid=7_26 generic
+      uid=7_27 menuitem "Content"
+        uid=7_28 generic
+      uid=7_29 menuitem "Analytics"
+        uid=7_30 generic
+      uid=7_31 menuitem "Community"
+        uid=7_32 generic
+      uid=7_33 menuitem "Languages"
+        uid=7_34 generic
+      uid=7_35 menuitem "Content detection"
+        uid=7_36 generic
+      uid=7_37 menuitem "Earn"
+        uid=7_38 generic
+      uid=7_39 menuitem "Customisation"
+        uid=7_40 generic
+      uid=7_41 menuitem "Audio library"
+        uid=7_42 generic
+    uid=7_43 button "Settings"
+    uid=7_44 generic
+      uid=7_45 button "Send feedback"
+  uid=7_46 main
+    uid=7_47 heading "Channel analytics" level="1"
+    uid=7_48 link "Advanced mode" url="https://studio.youtube.com/channel/UCfLjJwaxD7VhKwfSmTDQv3Q/analytics/tab-content/period-default/explore?entity_type=CHANNEL&entity_id=UCfLjJwaxD7VhKwfSmTDQv3Q&time_period=4_weeks&explore_type=TABLE_AND_CHART&metric=EXTERNAL_VIEWS&granularity=DAY&t_metrics=EXTERNAL_VIEWS&t_metrics=EXTERNAL_WATCH_TIME&t_metrics=SUBSCRIBERS_NET_CHANGE&t_metrics=TOTAL_ESTIMATED_EARNINGS&t_metrics=VIDEO_THUMBNAIL_IMPRESSIONS&t_metrics=VIDEO_THUMBNAIL_IMPRESSIONS_VTR&dimension=VIDEO&o_column=EXTERNAL_VIEWS&o_direction=ANALYTICS_ORDER_DIRECTION_DESC"
+      uid=7_49 generic description="Access groups, comparisons, filters and more customisable charts"
+        uid=7_50 button "Advanced mode" description="Access groups, comparisons, filters and more customisable charts"
+    uid=7_51 generic
+      uid=7_52 button "How did viewers find my content?"
+    uid=7_53 generic
+      uid=7_54 button "How many new viewers did I reach?"
+    uid=7_55 generic
+      uid=7_56 button "Summarise my latest video performance"
+    uid=7_57 generic "Open overflow menu to dismiss suggestions"
+      uid=7_58 button "Open overflow menu to dismiss suggestions"
+    uid=7_59 tablist orientation="horizontal"
+      uid=7_60 tab "Overview " selectable
+      uid=7_61 tab "Content " focusable focused selectable selected
+      uid=7_62 tab "Audience " selectable
+      uid=7_63 tab "Trends " selectable
+    uid=7_64 button "11 Oct – 7 Nov 2026 Last 28 days"
+      uid=7_65 button "11 Oct – 7 Nov 2026 Last 28 days"
+    uid=7_66 radio "All"
+      uid=7_67 generic
+    uid=7_68 radio "Videos"
+      uid=7_69 generic
+    uid=7_70 radio "Shorts" checked
+      uid=7_71 generic
+    uid=7_72 radio "Posts"
+      uid=7_73 generic
+    uid=7_74 radio "Playlists"
+      uid=7_75 generic
+    uid=7_76 "Views"
+    uid=7_77 listbox orientation="vertical"
+      uid=7_78 option "Views 60.9K Views 60,898 Compared to the previous 28 days 14% less Channel views compared with the previous period. Over time, this can help you spot high-performing videos, anticipate seasonal changes and determine when to upload new videos. This includes public, private, unlisted and deleted videos. 14% less than previous 28 days Channel views compared with the previous period. Over time, this can help you spot high-performing videos, anticipate seasonal changes and determine when to upload new videos. This includes public, private, unlisted and deleted videos." selected
+        uid=7_79 generic
+        uid=7_80 generic
+        uid=7_81 generic
+        uid=7_82 generic
+      uid=7_83 option "Engaged views 24K Engaged views 23,991 Compared to the previous 28 days About the same How many times viewers stay to watch past the initial seconds. Please press L to learn more. About the same as previous 28 days How many times viewers stay to watch past the initial seconds."
+        uid=7_84 generic
+        uid=7_85 generic
+        uid=7_86 generic
+        uid=7_87 generic
+      uid=7_88 option "Likes 1.6K Likes 1,604 Compared to the previous 28 days 7% more The change in total likes found by subtracting 'likes removed' from 'likes added' for the selected date range, region and other filters. Prior to 1 September 2012, 'likes removed' were not subtracted. 7% more than previous 28 days The change in total likes found by subtracting 'likes removed' from 'likes added' for the selected date range, region and other filters. Prior to 1 September 2012, 'likes removed' were not subtracted."
+        uid=7_89 generic
+        uid=7_90 generic
+        uid=7_91 generic
+        uid=7_92 generic
+      uid=7_93 option "Subscribers +178 Subscribers +178 Compared to the previous 28 days 19% less Change in subscribers compared with the previous period. Over time, this can help you understand what causes viewers to subscribe or unsubscribe to your channel. Please press L to learn more. 19% less than previous 28 days Change in subscribers compared with the previous period. Over time, this can help you understand what causes viewers to subscribe or unsubscribe to your channel."
+        uid=7_94 generic
+        uid=7_95 generic
+        uid=7_96 generic
+        uid=7_97 generic
+    uid=7_98 generic
+      uid=7_99 "Views"
+    uid=7_100 link "See more" url="https://studio.youtube.com/channel/UCfLjJwaxD7VhKwfSmTDQv3Q/analytics/tab-content/period-default/explore?entity_type=CHANNEL&entity_id=UCfLjJwaxD7VhKwfSmTDQv3Q&ur_dimensions=CREATOR_CONTENT_TYPE&ur_values=%27SHORTS%27&ur_inclusive_starts=&ur_exclusive_ends=&time_period=4_weeks&explore_type=TABLE_AND_CHART&metrics_computation_type=DELTA&metric=EXTERNAL_VIEWS&granularity=DAY&t_metrics=EXTERNAL_VIEWS&t_metrics=ENGAGED_VIEWS&t_metrics=RATINGS_LIKES&t_metrics=SHARINGS&t_metrics=SUBSCRIBERS_NET_CHANGE&v_metrics=EXTERNAL_VIEWS&v_metrics=ENGAGED_VIEWS&v_metrics=RATINGS_LIKES&v_metrics=SHARINGS&v_metrics=SUBSCRIBERS_NET_CHANGE&dimension=VIDEO&o_column=EXTERNAL_VIEWS&o_direction=ANALYTICS_ORDER_DIRECTION_DESC"
+      uid=7_101 generic "See more"
+        uid=7_102 button "See more"
+    uid=7_103 heading "How viewers find your Shorts" level="2"
+    uid=7_104 generic
+    uid=7_105 "Views · Last 28 days"
+    uid=7_106 radio "Overall" checked description="How viewers find your Shorts"
+      uid=7_107 generic
+    uid=7_108 radio "External" description="External sites or apps"
+      uid=7_109 generic
+    uid=7_110 radio "YouTube search" description="YouTube search terms"
+      uid=7_111 generic
+    uid=7_112 radio "Suggested videos" description="Not enough data to show this report."
+      uid=7_113 generic
+    uid=7_114 radio "Playlists" description="Not enough data to show this report."
+      uid=7_115 generic
+    uid=7_116 LayoutTableRow
+      uid=7_117 "Shorts feed"
+      uid=7_118 "95.1%"
+    uid=7_119 LayoutTableRow
+      uid=7_120 "YouTube search"
+      uid=7_121 "4.1%"
+    uid=7_122 LayoutTableRow
+      uid=7_123 "Channel pages"
+      uid=7_124 "0.3%"
+    uid=7_125 LayoutTableRow
+      uid=7_126 "Other YouTube features"
+      uid=7_127 "0.2%"
+    uid=7_128 LayoutTableRow
+      uid=7_129 "Browse features"
+      uid=7_130 "0.2%"
+    uid=7_131 LayoutTableRow
+      uid=7_132 "Others"
+      uid=7_133 "0.1%"
+    uid=7_134 link "See more" url="https://studio.youtube.com/channel/UCfLjJwaxD7VhKwfSmTDQv3Q/analytics/tab-content/period-default/explore?entity_type=CHANNEL&entity_id=UCfLjJwaxD7VhKwfSmTDQv3Q&ur_dimensions=CREATOR_CONTENT_TYPE&ur_values=%27SHORTS%27&ur_inclusive_starts=&ur_exclusive_ends=&time_period=4_weeks&explore_type=TABLE_AND_CHART&metric=EXTERNAL_VIEWS&granularity=DAY&t_metrics=VIDEO_THUMBNAIL_IMPRESSIONS&t_metrics=VIDEO_THUMBNAIL_IMPRESSIONS_VTR&t_metrics=EXTERNAL_VIEWS&t_metrics=AVERAGE_WATCH_TIME&t_metrics=EXTERNAL_WATCH_TIME&dimension=TRAFFIC_SOURCE_TYPE&o_column=EXTERNAL_VIEWS&o_direction=ANALYTICS_ORDER_DIRECTION_DESC"
+      uid=7_135 generic "See more"
+        uid=7_136 button "See more"
+    uid=7_137 heading "How viewers engaged" level="2"
+    uid=7_138 generic
+    uid=7_139 "Last 28 days"
+    uid=7_140 "39.1%"
+    uid=7_141 "60.9%"
+    uid=7_142 "Stayed to watch"
+    uid=7_143 "Swiped away"
+    uid=7_144 link "See more" url="https://studio.youtube.com/channel/UCfLjJwaxD7VhKwfSmTDQv3Q/analytics/tab-content/period-default/explore?entity_type=CHANNEL&entity_id=UCfLjJwaxD7VhKwfSmTDQv3Q&ur_dimensions=CREATOR_CONTENT_TYPE&ur_values=%27SHORTS%27&ur_inclusive_starts=&ur_exclusive_ends=&time_period=4_weeks&explore_type=TABLE_AND_CHART&metric=EXTERNAL_VIEWS&granularity=DAY&t_metrics=SHORTS_FEED_IMPRESSIONS_VTR&t_metrics=EXTERNAL_VIEWS&dimension=VIDEO&o_column=EXTERNAL_VIEWS&o_direction=ANALYTICS_ORDER_DIRECTION_DESC"
+      uid=7_145 generic "See more"
+        uid=7_146 button "See more"
+    uid=7_147 heading "Top Shorts" level="2"
+    uid=7_148 generic
+    uid=7_149 "Views · Last 28 days"
+    uid=7_150 LayoutTableRow
+      uid=7_151 link "Nobody Wore Spain's Shirt MORE 😳 #halo try this sound #shorts" url="https://studio.youtube.com/video/DIMr5LxtfzY/analytics/tab-overview/period-default"
+        uid=7_152 generic
+        uid=7_153 "Nobody Wore Spain's Shirt MORE 😳 #halo try this sound #shorts"
+      uid=7_154 "2K"
+    uid=7_155 LayoutTableRow
+      uid=7_156 link "Mbappé was ROBBED by 28 points? 😳 #halo try this sound #shorts" url="https://studio.youtube.com/video/Cnfh4YYxOV4/analytics/tab-overview/period-default"
+        uid=7_157 generic
+        uid=7_158 "Mbappé was ROBBED by 28 points? 😳 #halo try this sound #shorts"
+      uid=7_159 "1.7K"
+    uid=7_160 LayoutTableRow
+      uid=7_161 link "Ronaldo Asked To Be PUNISHED 😳 #halo try this sound #shorts" url="https://studio.youtube.com/video/lhYBcs87hFQ/analytics/tab-overview/period-default"
+        uid=7_162 generic
+        uid=7_163 "Ronaldo Asked To Be PUNISHED 😳 #halo try this sound #shorts"
+      uid=7_164 "1.4K"
+    uid=7_165 LayoutTableRow
+      uid=7_166 link "Messi NOT Invited To Present 😳 #halo try this sound #shorts" url="https://studio.youtube.com/video/NA4BPRxDGd0/analytics/tab-overview/period-default"
+        uid=7_167 generic
+        uid=7_168 "Messi NOT Invited To Present 😳 #halo try this sound #shorts"
+      uid=7_169 "1.4K"
+    uid=7_170 LayoutTableRow
+      uid=7_171 link "Ronaldo 19 GOALS From 1,000 😳 #halo try this sound #shorts" url="https://studio.youtube.com/video/AjjVMyA9X_I/analytics/tab-overview/period-default"
+        uid=7_172 generic
+        uid=7_173 "Ronaldo 19 GOALS From 1,000 😳 #halo try this sound #shorts"
+      uid=7_174 "1.3K"
+    uid=7_175 link "See more" url="https://studio.youtube.com/channel/UCfLjJwaxD7VhKwfSmTDQv3Q/analytics/tab-content/period-default/explore?entity_type=CHANNEL&entity_id=UCfLjJwaxD7VhKwfSmTDQv3Q&ur_dimensions=CREATOR_CONTENT_TYPE&ur_values=%27SHORTS%27&ur_inclusive_starts=&ur_exclusive_ends=&time_period=4_weeks&explore_type=TABLE_AND_CHART&metric=EXTERNAL_VIEWS&granularity=DAY&t_metrics=VIDEO_THUMBNAIL_IMPRESSIONS&t_metrics=VIDEO_THUMBNAIL_IMPRESSIONS_VTR&t_metrics=EXTERNAL_VIEWS&t_metrics=AVERAGE_WATCH_TIME&t_metrics=EXTERNAL_WATCH_TIME&dimension=VIDEO&o_column=EXTERNAL_VIEWS&o_direction=ANALYTICS_ORDER_DIRECTION_DESC"
+      uid=7_176 generic "See more"
+        uid=7_177 button "See more"
+    uid=7_178 heading "Top remixed" level="2"
+    uid=7_179 generic
+    uid=7_180 "Your content used to create Shorts · Last 28 days"
+    uid=7_181 "13"
+    uid=7_182 "Remix views"
+    uid=7_183 "0"
+    uid=7_184 "Remixes"
+    uid=7_185 image "Ronaldo QUIT Portugal forever 😳 #halo try this sound #shorts" url="https://i9.ytimg.com/vi/5WXSfpxLpYM/mq2.jpg?sqp=CJSRwtcG-oaymwEoCMACELQB8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYciBZKEAwDw==&rs=AOn4CLD6ddOB9ByCfZ-GsLYwzGICBzo-6w"
+    uid=7_186 "Ronaldo QUIT Portugal forever 😳 #halo try this sound #shorts"
+    uid=7_187 "13 remix views · 0 remixes"
+    uid=7_188 link "See more" url="https://studio.youtube.com/channel/UCfLjJwaxD7VhKwfSmTDQv3Q/analytics/tab-content/period-default/explore?entity_type=CHANNEL&entity_id=UCfLjJwaxD7VhKwfSmTDQv3Q&ur_dimensions=CREATOR_CONTENT_TYPE&ur_values=%27SHORTS%27&ur_inclusive_starts=&ur_exclusive_ends=&time_period=4_weeks&explore_type=TABLE_AND_CHART&metric=SHORTS_REMIX_VIEWS&granularity=DAY&t_metrics=SHORTS_REMIX_VIEWS&t_metrics=SHORTS_REMIX_COUNT&dimension=VIDEO&o_column=SHORTS_REMIX_VIEWS&o_direction=ANALYTICS_ORDER_DIRECTION_DESC"
+      uid=7_189 generic "See more"
+        uid=7_190 button "See more"
+  uid=7_191 generic
+    uid=7_192 generic live="polite" relevant="additions text"

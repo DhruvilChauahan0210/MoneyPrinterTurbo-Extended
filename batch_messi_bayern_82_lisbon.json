@@ -1,0 +1,460 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing football",
+      "a real photograph of Thomas Muller",
+      "a real photograph of Philippe Coutinho"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "THEIR OWN PLAYER FINISHED THEM",
+    "hook_cover_term": "Lionel Messi looking devastated",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "HIS WORST NIGHT? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing football",
+      "a real photograph of Thomas Muller",
+      "a real photograph of Philippe Coutinho"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "August twenty twenty: the night Messi's world collapsed. In a Champions League quarter-final in Lisbon, Barcelona faced Bayern Munich. Thomas Müller scored after four minutes. Messi's best chance went straight at Manuel Neuer. By half-time, it was four-one. Joshua Kimmich and Robert Lewandowski added more. Then Philippe Coutinho, on loan from Barcelona, scored twice. Bayern won eight-two. Was this Messi's worst night?",
+    "video_subject": "Bayern Munich beat Lionel Messi's Barcelona 8-2 in the 2020 Champions League quarter-final in Lisbon, with Barcelona loanee Philippe Coutinho scoring twice",
+    "video_terms": "Barcelona 2-8 Bayern Lisbon 2020, Coutinho on loan scores twice, Messi worst night",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "beat_plan": [
+      {
+        "says": "August twenty twenty: the night Messi's world collapsed.",
+        "visual": "Lionel Messi looking devastated in Barcelona kit",
+        "images": [
+          "Messi Bayern 8-2",
+          "Messi devastated Barcelona"
+        ],
+        "clips": []
+      },
+      {
+        "says": "In a Champions League quarter-final in Lisbon, Barcelona faced Bayern Munich.",
+        "visual": "Bayern Munich players",
+        "images": [
+          "Bayern Barcelona Lisbon 2020",
+          "Bayern Munich 2020"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Thomas Müller scored after four minutes.",
+        "visual": "Thomas Muller celebrating",
+        "images": [
+          "Thomas Muller Barcelona 2020",
+          "Thomas Muller celebration"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi's best chance went straight at Manuel Neuer.",
+        "visual": "Manuel Neuer making a save",
+        "images": [
+          "Manuel Neuer save",
+          "Manuel Neuer"
+        ],
+        "clips": []
+      },
+      {
+        "says": "By half-time, it was four-one.",
+        "visual": "Bayern players celebrating",
+        "images": [
+          "Bayern celebrate Barcelona 2020",
+          "Bayern Munich celebration"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Joshua Kimmich and Robert Lewandowski added more.",
+        "visual": "Robert Lewandowski celebrating for Bayern",
+        "images": [
+          "Lewandowski goal Barcelona 2020",
+          "Robert Lewandowski Bayern"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Then Philippe Coutinho, on loan from Barcelona, scored twice.",
+        "visual": "Philippe Coutinho playing for Bayern",
+        "images": [
+          "Coutinho Bayern Barcelona",
+          "Philippe Coutinho Bayern"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Bayern won eight-two.",
+        "visual": "Barcelona players dejected",
+        "images": [
+          "Barcelona players dejected 2020",
+          "Barcelona 8-2"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Was this Messi's worst night?",
+        "visual": "close up of Lionel Messi looking sad",
+        "images": [
+          "Lionel Messi sad",
+          "Messi Barcelona sad"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b01/img-839a4a12e97347863197959236c932f1.jpg"
+      }
+    ],
+    "intro_image_paths": [],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Bayern Munich beat Lionel Messi's Barcelona 8-2 in the 2020 Champions League quarter-final in Lisbon, with Barcelona loanee Philippe Coutinho scoring twice",
+      "video_script": "August twenty twenty: the night Messi's world collapsed. In a Champions League quarter-final in Lisbon, Barcelona faced Bayern Munich. Thomas Müller scored after four minutes. Messi's best chance went straight at Manuel Neuer. By half-time, it was four-one. Joshua Kimmich and Robert Lewandowski added more. Then Philippe Coutinho, on loan from Barcelona, scored twice. Bayern won eight-two. Was this Messi's worst night?",
+      "video_terms": "Barcelona 2-8 Bayern Lisbon 2020, Coutinho on loan scores twice, Messi worst night",
+      "hook_text": "THEIR OWN PLAYER FINISHED THEM",
+      "cta_text": "HIS WORST NIGHT? 👇",
+      "beat_plan": [
+        {
+          "says": "August twenty twenty: the night Messi's world collapsed.",
+          "visual": "Lionel Messi looking devastated in Barcelona kit",
+          "images": [
+            "Messi Bayern 8-2",
+            "Messi devastated Barcelona"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b01/img-17e7f4d62c01c702ea9f91d340318b38.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b01/img-e4daa4f374a6ceed758dced8ce2a4aac.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b01/img-839a4a12e97347863197959236c932f1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b01/img-541dd263d0b8eebc934d50e85e5681f4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b01/img-cb2895ecad2929ad67bbc8e83f8ab82a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b01/img-c6e69e81f55ab26b0e3c2ab169d1c588.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b01/img-871660d5a00e9e992ce94075b869acc3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b01/img-e5efa178d3591628abdc5680a6da8c7c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b01/img-17e7f4d62c01c702ea9f91d340318b38.jpg",
+          "url": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2020/08/15/15974443788949.jpg"
+        },
+        {
+          "says": "In a Champions League quarter-final in Lisbon, Barcelona faced Bayern Munich.",
+          "visual": "Bayern Munich players",
+          "images": [
+            "Bayern Barcelona Lisbon 2020",
+            "Bayern Munich 2020"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b02/img-f82a72d045f1d5a1fadb36c874eb0807.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b02/img-9c0cde43d08c0bd4d5e285eaee28eb78.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b02/img-e8c8cae7bde30b4220e2d652cffa536c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b02/img-4cbd1187a1a7ca7e112b8adc97ae9c8d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b02/img-49926d3e011b9c94191aec7476c0d459.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b02/img-ceba4792fc003226cf50bb4a4340e86f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b02/img-130fd195496a1d2931c67670d40a9b64.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b02/img-e7a7fc8f192eff4e02273c8c4f73480d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b02/img-ceba4792fc003226cf50bb4a4340e86f.jpg",
+          "url": "https://cdn.vox-cdn.com/thumbor/aJQFxLQeybTXqIqdOnpeHX6qXbA=/0x0:4232x2835/1200x800/filters:focal(1778x1080:2454x1756)/cdn.vox-cdn.com/uploads/chorus_image/image/67283113/1268076129.jpg.0.jpg"
+        },
+        {
+          "says": "Thomas Müller scored after four minutes.",
+          "visual": "Thomas Muller celebrating",
+          "images": [
+            "Thomas Muller Barcelona 2020",
+            "Thomas Muller celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b03/img-19b80f93fefd76c8bec0fa3bc14f2960.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b03/img-66ca922512d59ccd050e00e1ab6a6a1b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b03/img-0db2aa14a29dfa36847da555955bd910.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b03/img-08b4795494fe235914407f995d41f076.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b03/img-4ce08ba78977a4ae9fc7bdd4b0406129.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b03/img-2c3387fc2bc968a96356bd3402613e67.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b03/img-3f145952929e4b43148c33cbca32c4b1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b03/img-c618e85c13259c7ad32bea053274de73.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b03/img-2c3387fc2bc968a96356bd3402613e67.jpg",
+          "url": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2020/08/15/15974927380189.jpg"
+        },
+        {
+          "says": "Messi's best chance went straight at Manuel Neuer.",
+          "visual": "Manuel Neuer making a save",
+          "images": [
+            "Manuel Neuer save",
+            "Manuel Neuer"
+          ],
+          "clips": [],
+          "url": "https://www.youtube.com/watch?v=8UYK0lRI-hY",
+          "start": 112.0,
+          "len": 3.5,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b04/shot_cb60290774.mp4",
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b04/img-883052723baea4e7f98f1e7993d6c600.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b04/img-8888ffbe3f134f51514e016c2a564f65.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b04/img-61a2be9381a5fe0e958aa78d16866f28.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b04/img-b8eb3d38059d9bcf1dc82ee727fd349e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b04/img-ba3b4acd49b141bb65936809d238cc18.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b04/img-50e34e0874e5fc9523c3b6fe3f6b421a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b04/img-79deb54d0dcc010a69745cc2a76c1d55.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b04/img-0e26b4c1ec7b060c3d893658b58396cc.jpg"
+          ]
+        },
+        {
+          "says": "By half-time, it was four-one.",
+          "visual": "Bayern players celebrating",
+          "images": [
+            "Bayern celebrate Barcelona 2020",
+            "Bayern Munich celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b05/img-79f6d59f31edf0f9e889f88ebff247cf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b05/img-a016ba77dd7f6c0e995a8f3fc66e1305.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b05/img-a97c663567987a026c451a7c32942d7f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b05/img-3d28945a72f57c4a8a7dda49e81c7f17.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b05/img-a20ac0014fd0a8f13ee460573000a35c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b05/img-a6b8e12d1f65cf299d1b51da204568dc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b05/img-a59ce8b28506bca197049bb82ba716ca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b05/img-31626132bd4ec1a4b3f9c29371c1cca2.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b05/img-a20ac0014fd0a8f13ee460573000a35c.jpg",
+          "url": "https://www.fcbarcelona.com/photo-resources/2020/08/14/c9e5503d-d522-4b6f-9df5-8bc1cefb4acb/mini_2020-08-14-BAYERN-BARCELONA-45.JPG?width=3200&height=2000"
+        },
+        {
+          "says": "Joshua Kimmich and Robert Lewandowski added more.",
+          "visual": "Robert Lewandowski celebrating for Bayern",
+          "images": [
+            "Lewandowski goal Barcelona 2020",
+            "Robert Lewandowski Bayern"
+          ],
+          "clips": [],
+          "url": "https://www.youtube.com/watch?v=8UYK0lRI-hY",
+          "start": 304.0,
+          "len": 4.4,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b06/shot_2d14e64aad.mp4",
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b06/img-5e02fad3fabd817a6bb99602ec7b6f02.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b06/img-0ba35ca2e27c6027bfb2004c93e9f208.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b06/img-3144335409445e68377def4f05d26395.jpg"
+          ]
+        },
+        {
+          "says": "Then Philippe Coutinho, on loan from Barcelona, scored twice.",
+          "visual": "Philippe Coutinho playing for Bayern",
+          "images": [
+            "Coutinho Bayern Barcelona",
+            "Philippe Coutinho Bayern"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b07/img-f2d7f3b67cb9509049304eff4911ddbb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b07/img-38fa0daea81fe787834df5988d08e79a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b07/img-4ef599aa22a74aa2d170912e513d97f5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b07/img-bef8ffd7eef42210c37953644c5f18cf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b07/img-8a7aac9bf991fc8befb97f4ef4c7a8e0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b07/img-931e15947234c8a57ad68a33e34878f3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b07/img-e274e43254917633f7d7613b06bc87b9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b07/img-a91c6e3593807f97f60bf58e35b765cb.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b07/img-bef8ffd7eef42210c37953644c5f18cf.jpg",
+          "url": "https://wallpapercave.com/wp/wp5734737.jpg"
+        },
+        {
+          "says": "Bayern won eight-two.",
+          "visual": "Barcelona players dejected",
+          "images": [
+            "Barcelona players dejected 2020",
+            "Barcelona 8-2"
+          ],
+          "clips": [],
+          "url": "https://www.youtube.com/watch?v=8UYK0lRI-hY",
+          "start": 250.0,
+          "len": 4.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b08/shot_f9424942b1.mp4",
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b08/img-e79f00254ac89cf3c15de886be077289.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b08/img-30b35715a17d09208c83a648c41c48da.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b08/img-a37ed7b34ce0abe3909daa94687d125a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b08/img-f7b07b54715e82eb50d171b385627060.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b08/img-e3fb3adb955f80526ef6cc4e70a05d11.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b08/img-95aaa4e2a306efbfd80e1af501fc096e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b08/img-62d18f12e97d7040303e1127ab70a567.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b08/img-6dd2064dd4ff73827914737ecd2cfa5e.jpg"
+          ]
+        },
+        {
+          "says": "Was this Messi's worst night?",
+          "visual": "close up of Lionel Messi looking sad",
+          "images": [
+            "Lionel Messi sad",
+            "Messi Barcelona sad"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b09/img-58d8fe8de93271be374f6ac65d094be5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b09/img-b9897552f5c81dee48a17cdf633bf4c9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b09/img-6c2bb5de4391b496c9349aada13c0779.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b09/img-bc97968dcd14aa7d5911431c072b7dc8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b09/img-f2192ec22382fa442c01dc4f052d3525.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b09/img-11e6e73061296418068f8382cf1a71e1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b09/img-6500bd99e818b7ae533e8989d08bd77b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b09/img-c6915c04409497e637d76049b12fa313.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/bayern_munich_beat_lionel_messi_s_barcel/b01/img-839a4a12e97347863197959236c932f1.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

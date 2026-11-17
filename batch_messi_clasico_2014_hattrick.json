@@ -1,0 +1,430 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Andres Iniesta",
+      "a real photograph of Karim Benzema",
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Sergio Ramos"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "HOW DID TEN MEN LOSE?",
+    "hook_cover_term": "Lionel Messi celebrating a hat-trick at the Bernabeu in 2014",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "GREATEST CLASICO OF THE MESSI-RONALDO ERA? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Andres Iniesta",
+      "a real photograph of Karim Benzema",
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Sergio Ramos"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Messi scored a hat-trick as Barcelona beat Real Madrid four-three at the Bernabeu. March two thousand fourteen, a Clasico with seven goals. Andres Iniesta opened the scoring after seven minutes. Karim Benzema scored twice in four minutes for Madrid. Messi levelled before half-time. Ronaldo then made it three-two. Sergio Ramos was sent off in the sixty-third minute. Messi then scored penalties in the sixty-fifth and eighty-fourth. Was that the greatest Clasico of the Messi-Ronaldo era?",
+    "video_subject": "Lionel Messi scored a hat-trick, including penalties in the 65th and 84th minutes, as Barcelona beat 10-man Real Madrid 4-3 at the Bernabeu on 23 March 2014 after Ronaldo had put Madrid 3-2 up.",
+    "video_terms": "messi, real madrid, barcelona, clasico, 2014, hat-trick, bernabeu, ronaldo, ramos",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Messi scored a hat-trick as Barcelona beat Real Madrid four-three at the Bernabeu.",
+        "visual": "close up of Lionel Messi in Barcelona kit in 2014",
+        "images": [
+          "Lionel Messi Barcelona",
+          "Messi Barcelona Clasico goal"
+        ],
+        "clips": []
+      },
+      {
+        "says": "March two thousand fourteen, a Clasico with seven goals.",
+        "visual": "Santiago Bernabeu Clasico Real Madrid vs Barcelona 2014",
+        "images": [
+          "Santiago Bernabeu stadium",
+          "Bernabeu El Clasico stadium"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Andres Iniesta opened the scoring after seven minutes.",
+        "visual": "Andres Iniesta celebrating for Barcelona in 2014",
+        "images": [
+          "Andres Iniesta Barcelona",
+          "Iniesta Clasico 2014"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Karim Benzema scored twice in four minutes for Madrid.",
+        "visual": "Karim Benzema celebrating for Real Madrid in 2014",
+        "images": [
+          "Karim Benzema Real Madrid 2014",
+          "Benzema Clasico 2014"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi levelled before half-time. Ronaldo then made it three-two.",
+        "visual": "Cristiano Ronaldo celebrating at the Bernabeu in 2014",
+        "images": [
+          "Cristiano Ronaldo Real Madrid 2014",
+          "Ronaldo penalty Clasico"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Sergio Ramos was sent off in the sixty-third minute.",
+        "visual": "Sergio Ramos walking off after a red card",
+        "images": [
+          "Sergio Ramos red card Clasico",
+          "Sergio Ramos 2014"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi then scored penalties in the sixty-fifth and eighty-fourth.",
+        "visual": "Lionel Messi celebrating a penalty at the Bernabeu",
+        "images": [
+          "Messi penalty Bernabeu",
+          "Lionel Messi Clasico hat-trick"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Was that the greatest Clasico of the Messi-Ronaldo era?",
+        "visual": "Lionel Messi and Cristiano Ronaldo in a Clasico",
+        "images": [
+          "Messi Ronaldo Clasico",
+          "Lionel Messi Bernabeu 2014"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Lionel Messi scored a hat-trick, including penalties in the 65th and 84th minutes, as Barcelona beat 10-man Real Madrid 4-3 at the Bernabeu on 23 March 2014 after Ronaldo had put Madrid 3-2 up.",
+      "video_script": "Messi scored a hat-trick as Barcelona beat Real Madrid four-three at the Bernabeu. March two thousand fourteen, a Clasico with seven goals. Andres Iniesta opened the scoring after seven minutes. Karim Benzema scored twice in four minutes for Madrid. Messi levelled before half-time. Ronaldo then made it three-two. Sergio Ramos was sent off in the sixty-third minute. Messi then scored penalties in the sixty-fifth and eighty-fourth. Was that the greatest Clasico of the Messi-Ronaldo era?",
+      "video_terms": "messi, real madrid, barcelona, clasico, 2014, hat-trick, bernabeu, ronaldo, ramos",
+      "hook_text": "HOW DID TEN MEN LOSE?",
+      "cta_text": "GREATEST CLASICO OF THE MESSI-RONALDO ERA? 👇",
+      "beat_plan": [
+        {
+          "says": "Messi scored a hat-trick as Barcelona beat Real Madrid four-three at the Bernabeu.",
+          "visual": "close up of Lionel Messi in Barcelona kit in 2014",
+          "images": [
+            "Lionel Messi Barcelona",
+            "Messi Barcelona Clasico goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b01/img-f917c82a7504f393247009067be0438d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b01/img-2cb4ee7bab8b09e13f8ecd585d1a5a95.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b01/img-a625a1d328dd0d901a09942bee4653dd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b01/img-f4523492425cbb7f854acc635677cf92.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b01/img-ddeb7863e1ab67123c651c882497c7eb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b01/img-08c45546b4f7d09564a177ecb1b6587e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b01/img-5b26b9a8a794738414524b3b89bb945d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b01/img-52d566df83b84aeb4996ab1bb89f210b.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b01/img-ddeb7863e1ab67123c651c882497c7eb.jpg",
+          "url": "https://www.fcbarcelona.com/fcbarcelona/photo/2019/10/16/8917e546-9ad0-4b7f-8a3d-d692ce34471b/Messi.jpg"
+        },
+        {
+          "says": "March two thousand fourteen, a Clasico with seven goals.",
+          "visual": "Santiago Bernabeu Clasico Real Madrid vs Barcelona 2014",
+          "images": [
+            "Santiago Bernabeu stadium",
+            "Bernabeu El Clasico stadium"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b02/img-b7786cdc81a4b36f0a17b2274c1caf4d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b02/img-d99356d766d467ddbad120a969f86e56.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b02/img-943bb20b3f796e51196f75fa889489ed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b02/img-13b07320b172b1b2af1ac32f16115ea3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b02/img-6de901f54193b0b1a143c81f153168db.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b02/img-6c7ceca0f7eb27c6421d5396ba1eb343.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b02/img-6079a3c586cadc97ae8be8c6a37457b3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b02/img-b37e85cb91b1e8a7e9428352dc4fbf71.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b02/img-6de901f54193b0b1a143c81f153168db.jpg",
+          "url": "https://i.pinimg.com/originals/43/99/b4/4399b40e45c841e52aa04f672ab76595.jpg"
+        },
+        {
+          "says": "Andres Iniesta opened the scoring after seven minutes.",
+          "visual": "Andres Iniesta celebrating for Barcelona in 2014",
+          "images": [
+            "Andres Iniesta Barcelona",
+            "Iniesta Clasico 2014"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b03/img-3fded9b4672826baf7f0b7a57d136a3a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b03/img-412084bc5a4227071a6dad3857045347.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b03/img-02ae637e462730937759f97bc35f315d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b03/img-d4d23c77fc54c7fa6960ba978d1618fc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b03/img-b424b5ebe5a1d391712659ff79a35069.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b03/img-232e42f2f27b479450d28e1964161c88.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b03/img-7ef166713f634e7874b1028b82e3dcfd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b03/img-540843006f837e3861fdd6128e65ae26.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b03/img-d4d23c77fc54c7fa6960ba978d1618fc.jpg",
+          "url": "https://www.foottheball.com/wp-content/uploads/2017/03/Iniesta-3.jpg"
+        },
+        {
+          "says": "Karim Benzema scored twice in four minutes for Madrid.",
+          "visual": "Karim Benzema celebrating for Real Madrid in 2014",
+          "images": [
+            "Karim Benzema Real Madrid 2014",
+            "Benzema Clasico 2014"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b04/img-c986705ee58a7ee02daf8fa843e974ab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b04/img-251df73288888640f04a4175d1b0838e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b04/img-9928c661ed1b8c6f451591148b917fd0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b04/img-f61a808285b73734c5c97f8d449f5230.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b04/img-d4872269ae8814e63ad31c881098b9b5.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b04/img-c986705ee58a7ee02daf8fa843e974ab.jpg",
+          "url": "https://editorial.uefa.com/resources/0250-0c510563b9d2-009be91cc561-1000/karim_benzema_real_madrid_cf_.jpeg"
+        },
+        {
+          "says": "Messi levelled before half-time. Ronaldo then made it three-two.",
+          "visual": "Cristiano Ronaldo celebrating at the Bernabeu in 2014",
+          "images": [
+            "Cristiano Ronaldo Real Madrid 2014",
+            "Ronaldo penalty Clasico"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b05/img-7607cfe0562c1c613047215081df3dd1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b05/img-65caa3b40d4ffc826e09c62f9c6fcab9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b05/img-d6bdbe39e779c1eb32bfce2d74cc723a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b05/img-2e71f2a8804d9f63f1accb8de52938b9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b05/img-eb6cc4273c77975892589bde6786a0b5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b05/img-69009808857ef24834fbfe6343961f9c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b05/img-ed014a77e4a1f0ac73e3827157ea9aae.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b05/img-a2d1d98269e763df1e858202234482a0.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b05/img-d6bdbe39e779c1eb32bfce2d74cc723a.jpg",
+          "url": "https://imagenes.elpais.com/resizer/v2/JMBZER54KCRS6ZL2YB3MGHFKTQ.jpg?auth=6e907aee056ada10e0d42c08353e0525fd052a63444a0ffc5471ab94b38ce263&width=1200"
+        },
+        {
+          "says": "Sergio Ramos was sent off in the sixty-third minute.",
+          "visual": "Sergio Ramos walking off after a red card",
+          "images": [
+            "Sergio Ramos red card Clasico",
+            "Sergio Ramos 2014"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b06/img-cf19ba3a8af593eff6b52d95ddfc7bf9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b06/img-fc69e21ad35fdcb28fe780a8fa2a6bf1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b06/img-e3f2549ee72aa629e1ce470710c87d53.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b06/img-6b065ead47bf3a5827f920f67d32ca2c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b06/img-33c026b301a4d45649bde683381101fa.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b06/img-cbfd7b3e53ac5cdeb8600f64ef0173d5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b06/img-3e4e23639cc06884fa925db788538274.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b06/img-329190d0a85fb12363434fb13e03784c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b06/img-cbfd7b3e53ac5cdeb8600f64ef0173d5.jpg",
+          "url": "https://i.dailymail.co.uk/i/pix/2016/04/03/11/32C8257B00000578-3521327-image-a-1_1459679530913.jpg"
+        },
+        {
+          "says": "Messi then scored penalties in the sixty-fifth and eighty-fourth.",
+          "visual": "Lionel Messi celebrating a penalty at the Bernabeu",
+          "images": [
+            "Messi penalty Bernabeu",
+            "Lionel Messi Clasico hat-trick"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b07/img-ea0d2fc6122ab1ede2b554b3e98fac33.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b07/img-b5bf0de34cf1f9f19fa854429b37634e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b07/img-aa40ba67d658bb0ba34673467e373ea2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b07/img-e659f82b2b4aa5890a4f2884093bfa81.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b07/img-96cacdef01be0b127cdd780a48265601.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b07/img-dff9ff8c551dca002e9c8cff66494ce1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b07/img-06baefdd07b1c52ae0a229e9ee47064c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b07/img-3aea26103a2be6f538cd1775dd648ab9.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=Qq45BuVSmi8",
+          "start": 935.5,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b07/shot_7778e1efe4.mp4"
+        },
+        {
+          "says": "Was that the greatest Clasico of the Messi-Ronaldo era?",
+          "visual": "Lionel Messi and Cristiano Ronaldo in a Clasico",
+          "images": [
+            "Messi Ronaldo Clasico",
+            "Lionel Messi Bernabeu 2014"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b08/img-b04b3ec1690ce211beeddd6d086d9002.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b08/img-849945b20d7a035849bad538228ca74b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b08/img-60e06cdbe42d078811414cebe1daf76a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b08/img-218838963c7f917aae072a8d8eaf7cf9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b08/img-592ef6c005264a4e00b8878e35fdc102.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b08/img-d3dc98b42bfcf52a7c925f2b2dc96925.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b08/img-4550bae63df5736c0e561339c85e4068.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b08/img-e8b00acb117a21a5d78e26a190c9dd9b.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_scored_a_hat_trick_includin/b08/img-b04b3ec1690ce211beeddd6d086d9002.jpg",
+          "url": "https://cdn.legit.ng/images/1200x675/7df125a74776d3f6.jpeg?v=1"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

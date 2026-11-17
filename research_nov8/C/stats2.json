@@ -1,0 +1,759 @@
+{
+ "n_rec60": 309,
+ "overall": {
+  "n": 309,
+  "median": 446837,
+  "p90": 6365278,
+  "mean": 2488103
+ },
+ "by_primary_angle": {
+  "skill_moment": {
+   "n": 24,
+   "median": 3307477,
+   "p90": 17777188,
+   "mean": 7455514
+  },
+  "quiz_ranking": {
+   "n": 4,
+   "median": 2154948,
+   "p90": 5395826,
+   "mean": 2794740
+  },
+  "rivalry_head2head": {
+   "n": 39,
+   "median": 1429045,
+   "p90": 9000319,
+   "mean": 2900906
+  },
+  "other_unclassified": {
+   "n": 59,
+   "median": 943060,
+   "p90": 5981007,
+   "mean": 2409660
+  },
+  "funny_meme": {
+   "n": 11,
+   "median": 830028,
+   "p90": 5888460,
+   "mean": 8248213
+  },
+  "records_numbers": {
+   "n": 21,
+   "median": 348518,
+   "p90": 1412125,
+   "mean": 846216
+  },
+  "news_event_retire": {
+   "n": 18,
+   "median": 346965,
+   "p90": 3354783,
+   "mean": 1051500
+  },
+  "kids_fans_cute": {
+   "n": 33,
+   "median": 343344,
+   "p90": 4204915,
+   "mean": 1304646
+  },
+  "emotion_respect": {
+   "n": 12,
+   "median": 300815,
+   "p90": 6400748,
+   "mean": 2117865
+  },
+  "family_partner_gift": {
+   "n": 58,
+   "median": 154786,
+   "p90": 6118853,
+   "mean": 2011113
+  },
+  "story_origin_evolution": {
+   "n": 29,
+   "median": 13543,
+   "p90": 931100,
+   "mean": 374604
+  },
+  "transfer_contract": {
+   "n": 1,
+   "median": 3581,
+   "p90": 3581,
+   "mean": 3581
+  }
+ },
+ "by_star_multi": {
+  "ronaldo": {
+   "n": 151,
+   "median": 558126,
+   "p90": 4865633,
+   "mean": 2112162
+  },
+  "yamal": {
+   "n": 82,
+   "median": 1640522,
+   "p90": 12978339,
+   "mean": 5548825
+  },
+  "messi": {
+   "n": 40,
+   "median": 106560,
+   "p90": 3183626,
+   "mean": 1037781
+  },
+  "(no star named)": {
+   "n": 31,
+   "median": 180343,
+   "p90": 1845330,
+   "mean": 778703
+  },
+  "mbappe": {
+   "n": 20,
+   "median": 685181,
+   "p90": 9816868,
+   "mean": 2840600
+  },
+  "kane": {
+   "n": 13,
+   "median": 282248,
+   "p90": 1781884,
+   "mean": 1219405
+  },
+  "neymar": {
+   "n": 12,
+   "median": 261724,
+   "p90": 5469386,
+   "mean": 7199801
+  },
+  "haaland": {
+   "n": 9,
+   "median": 2328602,
+   "p90": 15944618,
+   "mean": 6052605
+  },
+  "vinicius": {
+   "n": 9,
+   "median": 112584,
+   "p90": 668872,
+   "mean": 308705
+  },
+  "bellingham": {
+   "n": 4,
+   "median": 1038615,
+   "p90": 2969372,
+   "mean": 1442380
+  },
+  "salah": {
+   "n": 2,
+   "median": 7,
+   "p90": 10,
+   "mean": 7
+  },
+  "pele": {
+   "n": 1,
+   "median": 594806,
+   "p90": 594806,
+   "mean": 594806
+  }
+ },
+ "by_star_single": {
+  "ronaldo": {
+   "n": 117,
+   "median": 280990,
+   "p90": 4792840,
+   "mean": 1889297
+  },
+  "yamal": {
+   "n": 51,
+   "median": 1407339,
+   "p90": 13002147,
+   "mean": 4641030
+  },
+  "messi": {
+   "n": 18,
+   "median": 1185,
+   "p90": 1426111,
+   "mean": 519974
+  },
+  "kane": {
+   "n": 9,
+   "median": 165495,
+   "p90": 484500,
+   "mean": 214262
+  },
+  "mbappe": {
+   "n": 8,
+   "median": 422790,
+   "p90": 745251,
+   "mean": 401033
+  },
+  "vinicius": {
+   "n": 8,
+   "median": 74393,
+   "p90": 360244,
+   "mean": 152666
+  },
+  "haaland": {
+   "n": 4,
+   "median": 160,
+   "p90": 23069,
+   "mean": 8285
+  },
+  "bellingham": {
+   "n": 4,
+   "median": 1038615,
+   "p90": 2969372,
+   "mean": 1442380
+  },
+  "neymar": {
+   "n": 4,
+   "median": 149634,
+   "p90": 289264,
+   "mean": 149316
+  },
+  "salah": {
+   "n": 2,
+   "median": 7,
+   "p90": 10,
+   "mean": 7
+  },
+  "pele": {
+   "n": 1,
+   "median": 594806,
+   "p90": 594806,
+   "mean": 594806
+  }
+ },
+ "by_duration": {
+  "31-45s": {
+   "n": 72,
+   "median": 109728,
+   "p90": 8070552,
+   "mean": 2445643
+  },
+  "<=15s": {
+   "n": 71,
+   "median": 945224,
+   "p90": 8800790,
+   "mean": 3911812
+  },
+  "16-30s": {
+   "n": 89,
+   "median": 558126,
+   "p90": 6430707,
+   "mean": 2241244
+  },
+  "46-61s": {
+   "n": 77,
+   "median": 232139,
+   "p90": 4727029,
+   "mean": 1500365
+  }
+ },
+ "title_cues": {
+  "has_emoji": {
+   "with": {
+    "n": 216,
+    "median": 591962,
+    "p90": 7950748,
+    "mean": 2945174
+   },
+   "without": {
+    "n": 93,
+    "median": 125493,
+    "p90": 3196728,
+    "mean": 1426518
+   }
+  },
+  "hashtag": {
+   "with": {
+    "n": 131,
+    "median": 558126,
+    "p90": 4799356,
+    "mean": 2020914
+   },
+   "without": {
+    "n": 178,
+    "median": 388995,
+    "p90": 7932157,
+    "mean": 2831933
+   }
+  },
+  "question": {
+   "with": {
+    "n": 18,
+    "median": 659471,
+    "p90": 9155382,
+    "mean": 2759924
+   },
+   "without": {
+    "n": 291,
+    "median": 402592,
+    "p90": 6163731,
+    "mean": 2471289
+   }
+  },
+  "starts_digit": {
+   "with": {
+    "n": 4,
+    "median": 35994,
+    "p90": 8057503,
+    "mean": 2895128
+   },
+   "without": {
+    "n": 305,
+    "median": 451005,
+    "p90": 6283270,
+    "mean": 2482765
+   }
+  },
+  "allcaps_word": {
+   "with": {
+    "n": 61,
+    "median": 382989,
+    "p90": 3677027,
+    "mean": 1728450
+   },
+   "without": {
+    "n": 248,
+    "median": 458645,
+    "p90": 7834973,
+    "mean": 2674953
+   }
+  },
+  "starts_lower": {
+   "with": {
+    "n": 3,
+    "median": 4788497,
+    "p90": 9166670,
+    "mean": 5945240
+   },
+   "without": {
+    "n": 306,
+    "median": 414789,
+    "p90": 6263347,
+    "mean": 2454209
+   }
+  },
+  "ellipsis": {
+   "with": {
+    "n": 30,
+    "median": 659471,
+    "p90": 9691771,
+    "mean": 3222046
+   },
+   "without": {
+    "n": 279,
+    "median": 389204,
+    "p90": 5563604,
+    "mean": 2409184
+   }
+  },
+  "quote": {
+   "with": {
+    "n": 13,
+    "median": 106249,
+    "p90": 805806,
+    "mean": 426581
+   },
+   "without": {
+    "n": 296,
+    "median": 464450,
+    "p90": 6459189,
+    "mean": 2578643
+   }
+  },
+  "colon_pipe": {
+   "with": {
+    "n": 72,
+    "median": 99507,
+    "p90": 2071558,
+    "mean": 566968
+   },
+   "without": {
+    "n": 237,
+    "median": 626381,
+    "p90": 8658797,
+    "mean": 3071739
+   }
+  },
+  "POV": {
+   "with": {
+    "n": 4,
+    "median": 2292258,
+    "p90": 3351003,
+    "mean": 2109899
+   },
+   "without": {
+    "n": 305,
+    "median": 426986,
+    "p90": 6369909,
+    "mean": 2493063
+   }
+  }
+ },
+ "title_len_buckets": {
+  "<=25": {
+   "n": 5,
+   "median": 297994,
+   "p90": 3127259,
+   "mean": 1153048
+  },
+  "26-40": {
+   "n": 47,
+   "median": 3047836,
+   "p90": 12185746,
+   "mean": 6676376
+  },
+  "41-60": {
+   "n": 93,
+   "median": 558126,
+   "p90": 7469384,
+   "mean": 2869423
+  },
+  "61+": {
+   "n": 164,
+   "median": 163286,
+   "p90": 3174559,
+   "mean": 1112271
+  }
+ },
+ "top40": {
+  "pattern_counts_of_40": {
+   "has_emoji": 34,
+   "name_first": 25,
+   "hashtag": 12,
+   "allcaps_word": 3,
+   "ellipsis": 8,
+   "question": 2,
+   "starts_digit": 1,
+   "starts_lower": 1
+  },
+  "len_median": 42.0,
+  "len_mean": 47.5,
+  "len_min": 26,
+  "len_max": 100,
+  "titles": [
+   {
+    "views": 73683096,
+    "age": 31,
+    "dur": 13,
+    "ch": "FunBall",
+    "title": "Neymar and Yamal having funn! 🤣😭"
+   },
+   {
+    "views": 33742277,
+    "age": 1,
+    "dur": 14,
+    "ch": "GOATZVERSE",
+    "title": "Haaland Shows Lamine Yamal Fun Oreo Magic 🍪"
+   },
+   {
+    "views": 30002363,
+    "age": 29,
+    "dur": 33,
+    "ch": "TIER",
+    "title": "Ranking Funniest Unusual Ronaldo Goals"
+   },
+   {
+    "views": 24640615,
+    "age": 10,
+    "dur": 13,
+    "ch": "Mr Muzu",
+    "title": "Lamine Yamal vs Ronaldo Dressing Challenge 😱🔥 #viral"
+   },
+   {
+    "views": 24443554,
+    "age": 9,
+    "dur": 29,
+    "ch": "hexa axp",
+    "title": "Lamine Yamal’s Sweetest Moments With Ines! 🥹❤️"
+   },
+   {
+    "views": 22492611,
+    "age": 12,
+    "dur": 43,
+    "ch": "ElaFrame",
+    "title": "Wait for Lamine YAMAL!!  😱🔥 #football"
+   },
+   {
+    "views": 17963787,
+    "age": 15,
+    "dur": 34,
+    "ch": "217aep",
+    "title": "Ronaldo & Animals Have The Same Skills...🤯😂"
+   },
+   {
+    "views": 17341791,
+    "age": 25,
+    "dur": 9,
+    "ch": "UEFA",
+    "title": "What do we call this Lamine Yamal skill? 🤯"
+   },
+   {
+    "views": 17170271,
+    "age": 24,
+    "dur": 17,
+    "ch": "Ramo Akh",
+    "title": "The TRUTH about Lamine Yamal’s Crazy Skill Moves 🤯"
+   },
+   {
+    "views": 16505042,
+    "age": 20,
+    "dur": 59,
+    "ch": "R3SOCCER⚽",
+    "title": "Lamine yamal skill is everywhere. 💀🪄"
+   },
+   {
+    "views": 13002147,
+    "age": 21,
+    "dur": 38,
+    "ch": "217aep",
+    "title": "Yamal Really Loves His Girlfriend...🥹❤️"
+   },
+   {
+    "views": 12764070,
+    "age": 7,
+    "dur": 16,
+    "ch": "Mischief Time",
+    "title": "Mbappé Was NOT Ready for Yamal's Next Move! 😳😂 #parody #football #yamal"
+   },
+   {
+    "views": 11641480,
+    "age": 9,
+    "dur": 27,
+    "ch": "Super_7",
+    "title": "Ronaldo effect 🥶 #football #edits"
+   },
+   {
+    "views": 11495204,
+    "age": 6,
+    "dur": 6,
+    "ch": "KickSack",
+    "title": "99.9% Will Fail to Fit challenge 🔥 Haaland, Harry Kane, Ronaldo #shorts"
+   },
+   {
+    "views": 11307937,
+    "age": 22,
+    "dur": 30,
+    "ch": "Footy Focus",
+    "title": "Lamine Yamal's Heartwarming Moment.."
+   },
+   {
+    "views": 10370932,
+    "age": 23,
+    "dur": 9,
+    "ch": "KAISER FC",
+    "title": "Lamine Yamal Nutmeg Skill 🥶👑"
+   },
+   {
+    "views": 10261214,
+    "age": 23,
+    "dur": 51,
+    "ch": "Minsa Saim Omer",
+    "title": "papa ne omer ko kis terha ka football la diya #shorts #short #shortvideo #viral #viralvideo"
+   },
+   {
+    "views": 9982764,
+    "age": 31,
+    "dur": 13,
+    "ch": "ElaFrame",
+    "title": "Can Mbappe destroy Lamine Yamal?! 🤣"
+   },
+   {
+    "views": 9798436,
+    "age": 14,
+    "dur": 19,
+    "ch": "FIBRE FC  and KAISER FC",
+    "title": "Lamine yamal traps kylian Mbappe 🤣🥶☠️"
+   },
+   {
+    "views": 9512197,
+    "age": 11,
+    "dur": 33,
+    "ch": "217aep",
+    "title": "Yamal Truly Loves His Girlfriend & Mom...🥹❤️"
+   },
+   {
+    "views": 9126229,
+    "age": 25,
+    "dur": 61,
+    "ch": "CANDU BOLA",
+    "title": "Lamine Yamal's Fake Rabona Skill Is Absolutely Mind-Blowing!"
+   },
+   {
+    "views": 8914478,
+    "age": 13,
+    "dur": 43,
+    "ch": "ElaFrame",
+    "title": "Wait for Lamine Yamal!! ⚽️🏆"
+   },
+   {
+    "views": 8834414,
+    "age": 28,
+    "dur": 51,
+    "ch": "Futbolbox",
+    "title": "Imagine receiving this gift at Christmas 🎄🥺 #cr7 #realmadrid #cristianoronaldo"
+   },
+   {
+    "views": 8564135,
+    "age": 28,
+    "dur": 34,
+    "ch": "217aep",
+    "title": "Yamal Always Respects His Family..🥹❤️‍🩹"
+   },
+   {
+    "views": 8386599,
+    "age": 28,
+    "dur": 24,
+    "ch": "VØLT Cristiano",
+    "title": "Little Fan Ignore Ishowspeed...#cr7#cristianoronald #ronaldo"
+   },
+   {
+    "views": 8240187,
+    "age": 30,
+    "dur": 45,
+    "ch": "Futbolelite",
+    "title": "Messi and Ronaldo fight for a little fan's heart 😱#ronaldo #cr7 #soccer #football #edit"
+   },
+   {
+    "views": 7661310,
+    "age": 12,
+    "dur": 18,
+    "ch": "FlowFC",
+    "title": "Lamine Yamal & His Family At Ballon d'Or 😍"
+   },
+   {
+    "views": 6701683,
+    "age": 22,
+    "dur": 19,
+    "ch": "Yahairosilva and Yahairosilva Plus",
+    "title": "The TRUTH about Lamine Yamal's Rabona🤯⚽️#soccer"
+   },
+   {
+    "views": 6543839,
+    "age": 8,
+    "dur": 34,
+    "ch": "CoziePie",
+    "title": "Ronaldo Rewarded his Kindness ❤️😭"
+   },
+   {
+    "views": 6374540,
+    "age": 21,
+    "dur": 47,
+    "ch": "Ara y Fer ",
+    "title": "Finish the Cristiano Ronaldo phrase or get hit with the ball ⚽️ #arayfer #cristianoronaldo #cr7 #..."
+   },
+   {
+    "views": 6362963,
+    "age": 24,
+    "dur": 30,
+    "ch": "KAISER FC",
+    "title": "Lamine Yamal Is Not Human 🤯🤖🔥"
+   },
+   {
+    "views": 6163731,
+    "age": 7,
+    "dur": 29,
+    "ch": "A7 EDITZ",
+    "title": "Bro Couldn't Handle Ronaldo's Aura"
+   },
+   {
+    "views": 6056264,
+    "age": 15,
+    "dur": 12,
+    "ch": "Goal Pulse",
+    "title": "Lamine Yamal is destined for the Ballon d'Or! 🪄⚽"
+   },
+   {
+    "views": 5935327,
+    "age": 7,
+    "dur": 9,
+    "ch": "FunBall",
+    "title": "Yamal and Ronaldo average day 😅😆"
+   },
+   {
+    "views": 5888460,
+    "age": 9,
+    "dur": 33,
+    "ch": "217aep",
+    "title": "Ronaldo Imitates Animals...🤯😂"
+   },
+   {
+    "views": 5470674,
+    "age": 7,
+    "dur": 14,
+    "ch": "FunBall",
+    "title": "Yamal triggered Neymar! 😡🤣"
+   },
+   {
+    "views": 5457800,
+    "age": 8,
+    "dur": 6,
+    "ch": "𝙏𝙊𝙇𝙇 𝙋𝘼𝙍 𝙂𝘼𝙈𝙀𝙍",
+    "title": "Neymar jr vs C.Ronaldo Skills Goal 🤯 #fcmobile #football #soccer #trending #shorts"
+   },
+   {
+    "views": 5285935,
+    "age": 24,
+    "dur": 47,
+    "ch": "LegacyNaldo",
+    "title": "When Ronaldo gets his revenge on the Moroccan girl 💀"
+   },
+   {
+    "views": 5173341,
+    "age": 31,
+    "dur": 35,
+    "ch": "sensei",
+    "title": "Messi & Enzo’s Friendship ❤️‍🩹"
+   },
+   {
+    "views": 5112929,
+    "age": 5,
+    "dur": 20,
+    "ch": "T7F",
+    "title": "After that play, Lamine Yamal had to apologize to Lewa ❤️‍🩹"
+   }
+  ],
+  "channels_in_top40": [
+   [
+    "217aep",
+    5
+   ],
+   [
+    "FunBall",
+    3
+   ],
+   [
+    "ElaFrame",
+    3
+   ],
+   [
+    "KAISER FC",
+    2
+   ],
+   [
+    "GOATZVERSE",
+    1
+   ],
+   [
+    "TIER",
+    1
+   ],
+   [
+    "Mr Muzu",
+    1
+   ],
+   [
+    "hexa axp",
+    1
+   ]
+  ]
+ },
+ "facty_28s+": {
+  "n": 34,
+  "median": 20693,
+  "p90": 574344,
+  "mean": 304819
+ },
+ "under1000_views_share": 0.091,
+ "n_under1000": 28
+}

@@ -1,0 +1,423 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Patrik Schick",
+      "a real photograph of Karim Benzema",
+      "a real photograph of Thorgan Hazard"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "IS THAT FAIR?",
+    "hook_cover_term": "Cristiano Ronaldo at Euro 2020 for Portugal",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "SHOULD AN ASSIST DECIDE THE GOLDEN BOOT? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Patrik Schick",
+      "a real photograph of Karim Benzema",
+      "a real photograph of Thorgan Hazard"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Five goals each, but Ronaldo won the Golden Boot. Patrik Schick also scored five at Euro twenty twenty. The tiebreaker was assists, and Ronaldo had one. Ronaldo scored two against Hungary, one against Germany, two against France. Two of his five goals were penalties against France. Portugal then lost to Belgium in the last sixteen. Ronaldo still went home with the Golden Boot. Should a single assist decide the Golden Boot?",
+    "video_subject": "At Euro 2020 Cristiano Ronaldo and Czech striker Patrik Schick both scored five goals, but Ronaldo won the Golden Boot because he had one assist, as Portugal lost to Belgium in the last 16.",
+    "video_terms": "Ronaldo, Portugal, Euro 2020, Golden Boot, Patrik Schick, assist tiebreak, Czech Republic, Belgium",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Five goals each, but Ronaldo won the Golden Boot.",
+        "visual": "close up of Cristiano Ronaldo in red Portugal kit Euro 2020",
+        "images": [
+          "Cristiano Ronaldo Portugal 2021",
+          "Ronaldo Golden Boot Euro 2020"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Patrik Schick also scored five at Euro twenty twenty.",
+        "visual": "Patrik Schick Czech Republic celebrating",
+        "images": [
+          "Patrik Schick Czech Republic",
+          "Schick Euro 2020"
+        ],
+        "clips": []
+      },
+      {
+        "says": "The tiebreaker was assists, and Ronaldo had one.",
+        "visual": "Euro 2020 Golden Boot award",
+        "images": [
+          "Euro 2020 Golden Boot",
+          "Ronaldo Golden Boot"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo scored two against Hungary, one against Germany, two against France.",
+        "visual": "Cristiano Ronaldo scoring Portugal Euro 2020",
+        "images": [
+          "Ronaldo goal Euro 2020",
+          "Ronaldo France Euro 2020"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Two of his five goals were penalties against France.",
+        "visual": "Cristiano Ronaldo penalty France Euro 2020",
+        "images": [
+          "Ronaldo penalty France",
+          "Karim Benzema France Euro 2020"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Portugal then lost to Belgium in the last sixteen.",
+        "visual": "Belgium Portugal Euro 2020 Seville",
+        "images": [
+          "Belgium Portugal Euro 2020",
+          "Thorgan Hazard Belgium"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo still went home with the Golden Boot.",
+        "visual": "Cristiano Ronaldo dejected Euro 2020 Belgium",
+        "images": [
+          "Ronaldo dejected Euro 2020",
+          "Ronaldo Golden Boot Euro"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Should a single assist decide the Golden Boot?",
+        "visual": "Cristiano Ronaldo Golden Boot Euro 2020",
+        "images": [
+          "Ronaldo Euro 2020",
+          "Ronaldo Euro 2020 Golden Boot trophy"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "At Euro 2020 Cristiano Ronaldo and Czech striker Patrik Schick both scored five goals, but Ronaldo won the Golden Boot because he had one assist, as Portugal lost to Belgium in the last 16.",
+      "video_script": "Five goals each, but Ronaldo won the Golden Boot. Patrik Schick also scored five at Euro twenty twenty. The tiebreaker was assists, and Ronaldo had one. Ronaldo scored two against Hungary, one against Germany, two against France. Two of his five goals were penalties against France. Portugal then lost to Belgium in the last sixteen. Ronaldo still went home with the Golden Boot. Should a single assist decide the Golden Boot?",
+      "video_terms": "Ronaldo, Portugal, Euro 2020, Golden Boot, Patrik Schick, assist tiebreak, Czech Republic, Belgium",
+      "hook_text": "IS THAT FAIR?",
+      "cta_text": "SHOULD AN ASSIST DECIDE THE GOLDEN BOOT? 👇",
+      "beat_plan": [
+        {
+          "says": "Five goals each, but Ronaldo won the Golden Boot.",
+          "visual": "close up of Cristiano Ronaldo in red Portugal kit Euro 2020",
+          "images": [
+            "Cristiano Ronaldo Portugal 2021",
+            "Ronaldo Golden Boot Euro 2020"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b01/img-4ec28cf4d55b61772a667e56dec94798.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b01/img-5427c9750fed0198f4d92e5e2e4a608e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b01/img-7ce7a0c8f803415e9ae3f9a6da9ecec0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b01/img-35165ebeb8de220d600d3a84eb2b0f8b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b01/img-50e69826de9946d11d1c7af39fceed92.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b01/img-505ac2e5f4c1120cab19729d67485201.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b01/img-3c744738030763f7c8df66ef3466d7bb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b01/img-88a75a3ae1638cc60894c469317f3d2c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b01/img-4ec28cf4d55b61772a667e56dec94798.jpg",
+          "url": "https://cdn-media.theathletic.com/cdn-cgi/image/width=1920,format=auto,quality=75/https://cdn-media.theathletic.com/jT2CMtS90RaB_jT2CMtS90RaB_UGE7QnurFkqm_original_1440x960.jpg"
+        },
+        {
+          "says": "Patrik Schick also scored five at Euro twenty twenty.",
+          "visual": "Patrik Schick Czech Republic celebrating",
+          "images": [
+            "Patrik Schick Czech Republic",
+            "Schick Euro 2020"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b02/img-233234db1433bbee506f98b4ad879d5e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b02/img-5987dad562140b7e773c5283ce7dcb05.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b02/img-56f0e7417973f5f80c113cb0bce72d04.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b02/img-2b7e241f49b200a7a62e35a7b6cc328e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b02/img-5613c6f78bc23abbee3fc45e7db2b292.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b02/img-c3744c543072f3ec3d97e895f5631ddc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b02/img-4248e34213f51fb5a1c5bd78c5d9c441.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b02/img-233234db1433bbee506f98b4ad879d5e.jpg",
+          "url": "https://idsb.tmgrup.com.tr/ly/uploads/images/2021/06/14/121975.jpg"
+        },
+        {
+          "says": "The tiebreaker was assists, and Ronaldo had one.",
+          "visual": "Euro 2020 Golden Boot award",
+          "images": [
+            "Euro 2020 Golden Boot",
+            "Ronaldo Golden Boot"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b03/img-0cbc86b5495e5c6f85089764a8a3b9e9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b03/img-56915ad053991c853345f1854261b8ad.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b03/img-22353bd0c547cb2beff2f3cb51a00c86.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b03/img-758c862c65b54b727fa24fed7ebcf1c3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b03/img-dadd9315e27d74720898b012c1e1de65.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b03/img-670175656b5026418ae576add9ebdebe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b03/img-94e1531ac3180be3fb356ab04e3125c0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b03/img-500bcbf1d78895c310910af6cca80d26.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b03/img-670175656b5026418ae576add9ebdebe.jpg",
+          "url": "https://talksport.com/wp-content/uploads/sites/5/2021/02/NINTCHDBPICT000638147300.jpg"
+        },
+        {
+          "says": "Ronaldo scored two against Hungary, one against Germany, two against France.",
+          "visual": "Cristiano Ronaldo scoring Portugal Euro 2020",
+          "images": [
+            "Ronaldo goal Euro 2020",
+            "Ronaldo France Euro 2020"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b04/img-c0a386f99d8a277e6051262fee009e05.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b04/img-8d1fa1832c60bab3515746634c390cd5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b04/img-cd71c1f1e339a74224ab083da4ceeaf6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b04/img-89518cb52aa3d06ff3a6c22e6b9f114f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b04/img-7d78e2f720026f38c5af3de55e3c8b2b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b04/img-08f700f15e43db752ff60a8f3824226b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b04/img-d4d5baf3d86e1f9027272cdf72f38a28.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b04/img-e0df1239452b5dee91c4ccf510de9575.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b04/shot_b3878ca056.mp4",
+          "url": "https://www.youtube.com/watch?v=bvts0M0D20c",
+          "start": 223.0,
+          "len": 6.0
+        },
+        {
+          "says": "Two of his five goals were penalties against France.",
+          "visual": "Cristiano Ronaldo penalty France Euro 2020",
+          "images": [
+            "Ronaldo penalty France",
+            "Karim Benzema France Euro 2020"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b05/img-7139b8fa8347443074576cd0a251d89e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b05/img-ee661d1b0f4006f8ac2a1436f880d8a2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b05/img-ada5148ee7be25828cfd985321d01a19.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b05/img-7139b8fa8347443074576cd0a251d89e.jpg",
+          "url": "https://img.theepochtimes.com/assets/uploads/2024/07/05/id5681163-Ronaldo-1080x720.jpg"
+        },
+        {
+          "says": "Portugal then lost to Belgium in the last sixteen.",
+          "visual": "Belgium Portugal Euro 2020 Seville",
+          "images": [
+            "Belgium Portugal Euro 2020",
+            "Thorgan Hazard Belgium"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b06/img-972fa3da6d11aaa1cb2e91dfe7a9636c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b06/img-a6da018b13f308b2de6f7818b7002e9e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b06/img-143246aa1eee8963fcce69c829195573.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b06/img-a845896611b899f4f9d77492ec0cda2a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b06/img-1ce4582f755c126e16d7a7dbe1a018a1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b06/img-374d61b08f805401683d3610ea708358.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b06/img-a3db587120a1ab12ba37a3a82e481aff.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b06/img-4fbc3caaaa2416d565743d233a521761.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b06/img-a6da018b13f308b2de6f7818b7002e9e.jpg",
+          "url": "https://s7d2.scene7.com/is/image/TWCNews/APTOPIX_Spain_Belgium_Portugal_Euro_2020_Soccer_56593"
+        },
+        {
+          "says": "Ronaldo still went home with the Golden Boot.",
+          "visual": "Cristiano Ronaldo dejected Euro 2020 Belgium",
+          "images": [
+            "Ronaldo dejected Euro 2020",
+            "Ronaldo Golden Boot Euro"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b07/img-5427c9750fed0198f4d92e5e2e4a608e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b07/img-3c744738030763f7c8df66ef3466d7bb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b07/img-88a75a3ae1638cc60894c469317f3d2c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b07/img-9d00bf98af2184ca85d172253ce1cd53.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b07/img-f9582efbd3141efb4b981281b603e554.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b07/img-b8aa19acfffef7600bae076f886c92d0.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b07/img-5427c9750fed0198f4d92e5e2e4a608e.jpg",
+          "url": "https://images1.wionews.com/images/wion/900x1600/2023/10/18/1697638939018_CristianoRonaldo2.jpg"
+        },
+        {
+          "says": "Should a single assist decide the Golden Boot?",
+          "visual": "Cristiano Ronaldo Golden Boot Euro 2020",
+          "images": [
+            "Ronaldo Euro 2020",
+            "Ronaldo Euro 2020 Golden Boot trophy"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b08/img-3c744738030763f7c8df66ef3466d7bb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b08/img-9adea2e0dff01c75c8070276ebc752f6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b08/img-04eac2cabc1147cec9501b41a810b83d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b08/img-f83ccff855f8a6cbe28e0b5a9bee384b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b08/img-cbdcffeeb233e7a7da0d8ce4672dc385.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b08/img-0272f6e1e0a46ef911f2d14558a732ff.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b08/img-fc3b8d07d4a9b655f40d9cbee460ce0b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b08/img-1b60e65c90731e217e2da005d897f9e4.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_euro_2020_cristiano_ronaldo_and_czech/b08/img-04eac2cabc1147cec9501b41a810b83d.jpg",
+          "url": "https://i.dailymail.co.uk/1s/2021/07/12/00/45327165-9778773-image-a-58_1626047997778.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

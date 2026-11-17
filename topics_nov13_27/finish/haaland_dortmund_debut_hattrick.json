@@ -1,0 +1,21 @@
+{
+ "cfg": "batch_haaland_dortmund_debut_hattrick.json",
+ "status": "ready",
+ "clip_beats": [
+  {
+   "beat": 4,
+   "url": "https://www.youtube.com/watch?v=AGLHZZGdimg",
+   "start": 560.5
+  },
+  {
+   "beat": 5,
+   "url": "https://www.youtube.com/watch?v=AGLHZZGdimg",
+   "start": 605.5
+  }
+ ],
+ "weak_beats": [
+  2
+ ],
+ "beat1": "Haaland in yellow Dortmund kit, smiling close-up with fist raised",
+ "notes": "Clips from FOX Sports MX broadcast of Augsburg 3-5 Dortmund (small FOX logo/score bug in corner). Beat 4 = Haaland #17 celebrating a goal; beat 5 = Haaland shot and goal, celebration. Beat 2 is only a generic Dortmund squad photo (no dejected Augsburg photo found)."
+}

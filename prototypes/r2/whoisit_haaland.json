@@ -1,0 +1,52 @@
+{
+ "mode": "whoisit",
+ "key": "whoisit_haaland",
+ "out": "PROTO_R2_whoisit_haaland",
+ "voice": "en-US-GuyNeural",
+ "rate": "+8%",
+ "music": "music4.mp3",
+ "musicVolume": 0.22,
+ "headline": "WHO IS IT?",
+ "photos": {
+  "photo": {
+   "src": "prototypes/r2/photos/haaland_src.jpg",
+   "box": [
+    264,
+    0,
+    1416,
+    2048
+   ]
+  }
+ },
+ "posX": 50,
+ "posY": 25,
+ "zoom": 1.0,
+ "shiftY": 230,
+ "clues": [
+  "Born in Leeds in 2000. Plays for Norway.",
+  "His dad played for Leeds and Man City.",
+  "36 Premier League goals in a season: a record."
+ ],
+ "name": "ERLING HAALAND",
+ "fact": "5 goals in one Champions League game (2023): ties Messi's record",
+ "source": "Sources: Wikipedia (Erling Haaland, Alf-Inge Haaland, 2022-23 Premier League)",
+ "segments": [
+  {
+   "id": "clue0",
+   "text": "Who is it? One: born in Leeds in 2000. Plays for Norway."
+  },
+  {
+   "id": "clue1",
+   "text": "Two: his dad played for Leeds and Man City."
+  },
+  {
+   "id": "clue2",
+   "text": "Three: 36 Premier League goals in one season. A record."
+  },
+  {
+   "id": "reveal",
+   "text": "Erling Haaland! Five goals in one Champions League game.",
+   "tts": "Erling Howland! Five goals in one Champions League game."
+  }
+ ]
+}

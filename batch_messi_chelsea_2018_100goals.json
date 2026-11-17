@@ -1,0 +1,447 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Ousmane Dembele",
+      "a real photograph of Cristiano Ronaldo"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "WHO WINS EUROPE'S DEBATE?",
+    "hook_cover_term": "Lionel Messi celebrating for Barcelona against Chelsea in 2018",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "BETTER CHAMPIONS LEAGUE SCORER: MESSI OR RONALDO? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Ousmane Dembele",
+      "a real photograph of Cristiano Ronaldo"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "One hundred Champions League goals. Messi got there in a hundred and twenty-three games. March two thousand eighteen, Camp Nou, against Chelsea. The first leg at Stamford Bridge had finished one-one. Messi scored within three minutes. Ousmane Dembele made it two-nil in the twentieth minute. Messi added a second after the hour mark. Barcelona won three-nil, four-one on aggregate. Cristiano Ronaldo needed a hundred and thirty-seven games. Who was the better Champions League scorer?",
+    "video_subject": "Lionel Messi reached 100 Champions League goals in his 123rd game, 14 fewer than Ronaldo's 137, scoring twice in Barcelona's 3-0 win over Chelsea at the Camp Nou on 14 March 2018 (4-1 on aggregate).",
+    "video_terms": "messi, ronaldo, champions league, 100 goals, barcelona, chelsea, 2018, dembele, camp nou",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "One hundred Champions League goals. Messi got there in a hundred and twenty-three games.",
+        "visual": "close up of Lionel Messi in Barcelona kit in 2018",
+        "images": [
+          "Lionel Messi Barcelona portrait",
+          "Messi Barca Champions League"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b06/img-044c46c5fbe153e34e18b1ccedae1c6e.jpg"
+      },
+      {
+        "says": "March two thousand eighteen, Camp Nou, against Chelsea.",
+        "visual": "Camp Nou stadium Barcelona vs Chelsea 2018",
+        "images": [
+          "Barcelona Chelsea 2018",
+          "Camp Nou Champions League 2018"
+        ],
+        "clips": []
+      },
+      {
+        "says": "The first leg at Stamford Bridge had finished one-one.",
+        "visual": "Stamford Bridge Chelsea vs Barcelona 2018",
+        "images": [
+          "Stamford Bridge Chelsea stadium",
+          "Chelsea FC Stamford Bridge"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi scored within three minutes.",
+        "visual": "Lionel Messi celebrating an early goal at Camp Nou",
+        "images": [
+          "Messi goal Camp Nou celebration",
+          "Messi celebrates Barcelona Champions League"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ousmane Dembele made it two-nil in the twentieth minute.",
+        "visual": "Ousmane Dembele celebrating for Barcelona in 2018",
+        "images": [
+          "Ousmane Dembele Barcelona",
+          "Dembele Chelsea 2018"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi added a second after the hour mark.",
+        "visual": "Lionel Messi scoring his hundredth Champions League goal",
+        "images": [
+          "Messi scoring Barcelona Champions League",
+          "Messi Barcelona goal Chelsea"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Barcelona won three-nil, four-one on aggregate.",
+        "visual": "Barcelona players celebrating a win over Chelsea",
+        "images": [
+          "Barcelona beat Chelsea 2018",
+          "Barcelona quarter-final 2018"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Cristiano Ronaldo needed a hundred and thirty-seven games.",
+        "visual": "Cristiano Ronaldo in Real Madrid kit in 2018",
+        "images": [
+          "Cristiano Ronaldo Real Madrid",
+          "Cristiano Ronaldo Real Madrid Champions League"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Who was the better Champions League scorer?",
+        "visual": "Lionel Messi and Cristiano Ronaldo side by side",
+        "images": [
+          "Messi Ronaldo",
+          "Messi Ronaldo El Clasico"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Lionel Messi reached 100 Champions League goals in his 123rd game, 14 fewer than Ronaldo's 137, scoring twice in Barcelona's 3-0 win over Chelsea at the Camp Nou on 14 March 2018 (4-1 on aggregate).",
+      "video_script": "One hundred Champions League goals. Messi got there in a hundred and twenty-three games. March two thousand eighteen, Camp Nou, against Chelsea. The first leg at Stamford Bridge had finished one-one. Messi scored within three minutes. Ousmane Dembele made it two-nil in the twentieth minute. Messi added a second after the hour mark. Barcelona won three-nil, four-one on aggregate. Cristiano Ronaldo needed a hundred and thirty-seven games. Who was the better Champions League scorer?",
+      "video_terms": "messi, ronaldo, champions league, 100 goals, barcelona, chelsea, 2018, dembele, camp nou",
+      "hook_text": "WHO WINS EUROPE'S DEBATE?",
+      "cta_text": "BETTER CHAMPIONS LEAGUE SCORER: MESSI OR RONALDO? 👇",
+      "beat_plan": [
+        {
+          "says": "One hundred Champions League goals. Messi got there in a hundred and twenty-three games.",
+          "visual": "close up of Lionel Messi in Barcelona kit in 2018",
+          "images": [
+            "Lionel Messi Barcelona portrait",
+            "Messi Barca Champions League"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b01/img-2657a2043a09b3aa647393299f82b071.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b01/img-f6a7dac0cfcdde62ad938025ad023054.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b01/img-baf7dce6128dc5308d44f6f90c3d9460.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b01/img-654879d310281f142e5a042ef2368991.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b06/img-044c46c5fbe153e34e18b1ccedae1c6e.jpg"
+        },
+        {
+          "says": "March two thousand eighteen, Camp Nou, against Chelsea.",
+          "visual": "Camp Nou stadium Barcelona vs Chelsea 2018",
+          "images": [
+            "Barcelona Chelsea 2018",
+            "Camp Nou Champions League 2018"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b02/img-364e828bf61f11b044d2c8752c27eafd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b02/img-bd63f9984b5622a606fdfc8e499ad276.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b02/img-e2cc5fb998971ba1790852c057c1eaeb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b02/img-b8c9e3ac2d10b541702ec90851058cd4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b02/img-59111f46498b79bec5522d8d75f65c1a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b02/img-55ff365c80bf3f156f4783776be50d07.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b02/img-3136f700760b3cfbb5ffcc1cf864fd88.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b02/img-d322a6dcaf6519fcad5fffd304fbea6d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b02/img-364e828bf61f11b044d2c8752c27eafd.jpg",
+          "url": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/04/14/15552658083298.jpg"
+        },
+        {
+          "says": "The first leg at Stamford Bridge had finished one-one.",
+          "visual": "Stamford Bridge Chelsea vs Barcelona 2018",
+          "images": [
+            "Stamford Bridge Chelsea stadium",
+            "Chelsea FC Stamford Bridge"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b03/img-579c1961d8eb4227c7649c7d5b6e4a17.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b03/img-fa6ba1cee3300d81f4e9a88090f4c803.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b03/img-579c1961d8eb4227c7649c7d5b6e4a17.jpg",
+          "url": "http://www.e-architect.co.uk/wp-content/uploads/2009/07/stamford-bridge-stadium-chelsea-c170515-w.jpg"
+        },
+        {
+          "says": "Messi scored within three minutes.",
+          "visual": "Lionel Messi celebrating an early goal at Camp Nou",
+          "images": [
+            "Messi goal Camp Nou celebration",
+            "Messi celebrates Barcelona Champions League"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b04/img-3cf64fd0cccc984b52ffa8a9bf182aab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b04/img-bf768216f0abaf5afbfc68b142f6db41.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b04/img-9d2b8484c48e45be37acf683ba1be539.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b04/img-1d212fbaabba4f0c055c81eece243edf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b04/img-249f60f169f1870bb46e8cb992973880.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b04/img-c57c35b64c6c21594c10342771e08237.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b04/img-2ebb619c0ca8e8a4d6d4ab33dfcf1064.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b04/img-bf768216f0abaf5afbfc68b142f6db41.jpg",
+          "url": "https://www.webuildvalue.com/wp-content/uploads/2024/02/Messi-Camp-Nou.jpg"
+        },
+        {
+          "says": "Ousmane Dembele made it two-nil in the twentieth minute.",
+          "visual": "Ousmane Dembele celebrating for Barcelona in 2018",
+          "images": [
+            "Ousmane Dembele Barcelona",
+            "Dembele Chelsea 2018"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b05/img-80ed180b6ca4c4b752fedfb06a97ea5f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b05/img-8323f06329897436dd9d4f57b1694079.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b05/img-a172bf467481134147d72b40782e1219.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b05/img-e8aa08946ea40b503546449b1edcd0d1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b05/img-6efc7cfe6faf4f60452186e64e939554.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b05/img-3640290f60874e5c5bfd5bc74668e9dc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b05/img-8971c65b2e5e0191fe264d4689010f67.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b05/img-03ce540e286feab1a5ba2fbd86986324.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b05/img-8323f06329897436dd9d4f57b1694079.jpg",
+          "url": "https://e0.365dm.com/22/10/1600x900/skysports-ousmane-dembele-barcelona_5941175.jpg?20221023222612"
+        },
+        {
+          "says": "Messi added a second after the hour mark.",
+          "visual": "Lionel Messi scoring his hundredth Champions League goal",
+          "images": [
+            "Messi scoring Barcelona Champions League",
+            "Messi Barcelona goal Chelsea"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b06/img-27efa757850f475173222b1f3348f7a0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b06/img-73a8aa5d38ec6bc7f37c3694f157e21d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b06/img-044c46c5fbe153e34e18b1ccedae1c6e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b06/img-126704d52414f04ea9f07eb1ab228996.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b06/img-ad6c274fec0d1f0e985a494c684db3a9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b06/img-d8976167fae12c6347e983f4647318b0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b06/img-135f85f59136f08b77579de1ec3df9c1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b06/img-53dcce5ec468fe4c8a32c6c006df0710.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b06/img-73a8aa5d38ec6bc7f37c3694f157e21d.jpg",
+          "url": "https://editorial.uefa.com/resources/01fc-0e7d9b081b1c-07327c114eab-1000/lionel_messi_fc_barcelona_.jpeg",
+          "len": 6.0
+        },
+        {
+          "says": "Barcelona won three-nil, four-one on aggregate.",
+          "visual": "Barcelona players celebrating a win over Chelsea",
+          "images": [
+            "Barcelona beat Chelsea 2018",
+            "Barcelona quarter-final 2018"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b07/img-b568fc4f617facc5d56cd72e1f0a0761.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b07/img-41dc47b259080be0a11bb4e3c5eedb0b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b07/img-8b0b1855072ceeaaaedf1bd95c61b6d1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b07/img-86aaffbc9a273e28eac7a6eab22566dd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b07/img-b77ca6f7333c6985c4de756d788ad7aa.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b07/img-0d93af592cab618e75db50efcd1c7175.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b07/img-c058c76337ba37e50c7b59582cadf8aa.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b07/img-e8f0224f7ee9f62e3247b6989cc164ab.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b07/img-b568fc4f617facc5d56cd72e1f0a0761.jpg",
+          "url": "https://assets.laliga.com/assets/2020/01/08/large/72e8d381b327221618_pma4576.jpeg"
+        },
+        {
+          "says": "Cristiano Ronaldo needed a hundred and thirty-seven games.",
+          "visual": "Cristiano Ronaldo in Real Madrid kit in 2018",
+          "images": [
+            "Cristiano Ronaldo Real Madrid",
+            "Cristiano Ronaldo Real Madrid Champions League"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b08/img-a66363051067a79b54f697ba95667d5c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b08/img-8e20db6712a8cb9e7bdd1d7b727fa37b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b08/img-c04ae4b4eb7ef6de8f7352a6f38f8c93.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b08/img-55e6ca612e569a7fcbb6ed95a443fbe1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b08/img-5d9a20d7b589a132fd89d9059404307c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b08/img-4c699922503c80fce058669c8fbe76ae.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b08/img-d004c39a5387ca6d62f3c9933e7a8cda.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b08/img-0b8407b07823cde5567be6b6df8355d4.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b08/img-c04ae4b4eb7ef6de8f7352a6f38f8c93.jpg",
+          "url": "https://www.natliver.com/contents-distribution/video/681/real-madrid-and-cristiano-ronaldo-say-goodbye-54320.jpg"
+        },
+        {
+          "says": "Who was the better Champions League scorer?",
+          "visual": "Lionel Messi and Cristiano Ronaldo side by side",
+          "images": [
+            "Messi Ronaldo",
+            "Messi Ronaldo El Clasico"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b09/img-8b7daa1f3f4530fec743e93fad38050b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b09/img-8272873a02bbc311f5e4176e3893d92a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b09/img-4c7343daf82dc105583033b5e969dbf0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b09/img-849945b20d7a035849bad538228ca74b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b09/img-acfbf1ddae412b537056cccd71ac925c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b09/img-b94bb886ad722292b22f32bd59b835e4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b09/img-5f5117eff6579eb00791e3bd931d0f7f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b09/img-9dcf7cf33d70f31c667920d0181f1f87.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_reached_100_champions_leagu/b09/img-4c7343daf82dc105583033b5e969dbf0.jpg",
+          "url": "https://e0.365dm.com/17/07/2048x1152/skysports-cristiano-ronaldo-lionel-messi-la-liga-fixtures_4007124.jpg?20170721141023"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

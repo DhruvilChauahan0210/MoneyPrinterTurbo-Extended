@@ -1,0 +1,409 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Harry Kane",
+      "a real photograph of Wayne Rooney",
+      "a real photograph of Harry Kane playing for England"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "THE GREATEST NUMBER NINE EVER?",
+    "hook_cover_term": "Harry Kane celebrating for England after breaking the record",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "IS KANE ENGLAND'S GREATEST STRIKER EVER? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Harry Kane",
+      "a real photograph of Wayne Rooney",
+      "a real photograph of Harry Kane playing for England"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Fifty-four goals. Harry Kane needed eighty-one games to break England's record. Naples, March two thousand and twenty-three. England away at Italy. In December, Kane missed a penalty against France in Qatar. England went out. Kane carried that miss for months. Forty-fourth minute in Naples, Italy concede a penalty. Kane steps up and scores. Fifty-four, one more than Wayne Rooney. England win two-one. Kane has the record. Is Kane the greatest England striker of all time?",
+    "video_subject": "In March 2023 in Naples, Harry Kane scored a 44th-minute penalty in England's 2-1 win over Italy for his 54th goal in his 81st cap, passing Wayne Rooney's 53 to become England's all-time top scorer, three months after missing a penalty against France at the World Cup.",
+    "video_terms": "Harry Kane, England, Italy, Naples, record, Wayne Rooney, 54 goals, penalty, Euro 2024 qualifier",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Fifty-four goals. Harry Kane needed eighty-one games to break England's record.",
+        "visual": "close up of Harry Kane in white England kit 2023",
+        "images": [
+          "Harry Kane England 2023",
+          "Kane England record"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Naples, March two thousand and twenty-three. England away at Italy.",
+        "visual": "England and Italy players in Naples",
+        "images": [
+          "Italy England Naples 2023",
+          "Stadio Diego Armando Maradona 2023"
+        ],
+        "clips": []
+      },
+      {
+        "says": "In December, Kane missed a penalty against France in Qatar.",
+        "visual": "Kane dejected after missing penalty against France",
+        "images": [
+          "Harry Kane France 2022",
+          "Kane penalty miss"
+        ],
+        "clips": []
+      },
+      {
+        "says": "England went out. Kane carried that miss for months.",
+        "visual": "Kane with head in hands at the World Cup",
+        "images": [
+          "Kane World Cup 2022",
+          "Harry Kane Qatar"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Forty-fourth minute in Naples, Italy concede a penalty.",
+        "visual": "Referee pointing to penalty spot in Italy England",
+        "images": [
+          "Italy England penalty 2023",
+          "Di Lorenzo handball"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Kane steps up and scores. Fifty-four, one more than Wayne Rooney.",
+        "visual": "Harry Kane scoring penalty against Italy",
+        "images": [
+          "Harry Kane Italy 2023",
+          "Wayne Rooney England"
+        ],
+        "clips": []
+      },
+      {
+        "says": "England win two-one. Kane has the record.",
+        "visual": "Kane celebrating with England teammates",
+        "images": [
+          "Kane celebration England",
+          "Harry Kane record celebration"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Is Kane the greatest England striker of all time?",
+        "visual": "Harry Kane lifting arm in England shirt",
+        "images": [
+          "Harry Kane Three Lions",
+          "Harry Kane captain England"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "In March 2023 in Naples, Harry Kane scored a 44th-minute penalty in England's 2-1 win over Italy for his 54th goal in his 81st cap, passing Wayne Rooney's 53 to become England's all-time top scorer, three months after missing a penalty against France at the World Cup.",
+      "video_script": "Fifty-four goals. Harry Kane needed eighty-one games to break England's record. Naples, March two thousand and twenty-three. England away at Italy. In December, Kane missed a penalty against France in Qatar. England went out. Kane carried that miss for months. Forty-fourth minute in Naples, Italy concede a penalty. Kane steps up and scores. Fifty-four, one more than Wayne Rooney. England win two-one. Kane has the record. Is Kane the greatest England striker of all time?",
+      "video_terms": "Harry Kane, England, Italy, Naples, record, Wayne Rooney, 54 goals, penalty, Euro 2024 qualifier",
+      "hook_text": "THE GREATEST NUMBER NINE EVER?",
+      "cta_text": "IS KANE ENGLAND'S GREATEST STRIKER EVER? 👇",
+      "beat_plan": [
+        {
+          "says": "Fifty-four goals. Harry Kane needed eighty-one games to break England's record.",
+          "visual": "close up of Harry Kane in white England kit 2023",
+          "images": [
+            "Harry Kane England 2023",
+            "Kane England record"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b01/img-0a4b4d614529527b994a69821e9b551d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b01/img-f400e823ff6bdc864d98cef109ecd904.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b01/img-068fcf1fba88ecc533ed0450a7e5caba.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b01/img-c97f5abaa72ed40df203f15137a52ca6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b01/img-f1314877bda51243a2add4fd61c913a0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b01/img-ea8468e1e1245e4caeaeedce39836c8a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b01/img-98779cdd88aa08ac8c183ed13669c297.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b01/img-0b4637af2288d0f1c6613defa16cd738.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b01/img-068fcf1fba88ecc533ed0450a7e5caba.jpg",
+          "url": "https://static.independent.co.uk/2022/12/16/06/d4303f64ddbad251468bed8e560cf513Y29udGVudHNlYXJjaGFwaSwxNjcxMTkzNjg3-2.70200407.jpg"
+        },
+        {
+          "says": "Naples, March two thousand and twenty-three. England away at Italy.",
+          "visual": "England and Italy players in Naples",
+          "images": [
+            "Italy England Naples 2023 stadium Maradona",
+            "England Italy Euro 2024 qualifier Naples"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b02/img-4b90c6212c606722238a23623ba37080.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b02/img-378a51e639100066e93b3922fa2e6dd7.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b02/img-378a51e639100066e93b3922fa2e6dd7.jpg",
+          "url": "https://icdn.football-italia.net/wp-content/uploads/2023/03/Leonardo-Spinazzola-Kalvin-Phillips-Italy-England.jpg"
+        },
+        {
+          "says": "In December, Kane missed a penalty against France in Qatar.",
+          "visual": "Kane dejected after missing penalty against France",
+          "images": [
+            "Harry Kane France 2022",
+            "Kane penalty miss"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b03/img-ce3e10b08a5a94143824ef637dd93b4f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b03/img-d2876db9d9458357254bc488e3def7f2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b03/img-b851c6666d3f9be7aabec8558abd2087.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b03/img-58221164e2f288316c7fdc7968be2b6f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b03/img-87a26c86ced281dea3cfc677c3911aa6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b03/img-a8ef7966143da79444bc4179389d8b52.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b03/img-51a90a464dbdb91d30630776ba1ceb2e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b03/img-ebbe762bc872897e447fdd344e72f230.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b03/img-ce3e10b08a5a94143824ef637dd93b4f.jpg",
+          "url": "https://idsb.tmgrup.com.tr/ly/uploads/images/2023/01/06/250376.jpg"
+        },
+        {
+          "says": "England went out. Kane carried that miss for months.",
+          "visual": "Kane with head in hands at the World Cup",
+          "images": [
+            "Harry Kane dejected France World Cup 2022",
+            "Kane after penalty miss France Qatar"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b04/img-4730a43659f35a6308fc6236f5c5e4fa.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b04/img-22dc7d69caef26f533ab2aee34015f8d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b04/img-53211b13bea12d8991dbad05c51449b6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b04/img-11a1f6784ca15fa7b3b1a20ca622e67f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b04/img-f08a6517e2e2f93064973746482fa072.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b04/img-53211b13bea12d8991dbad05c51449b6.jpg",
+          "url": "https://i.dailymail.co.uk/1s/2022/12/10/21/65455833-11524285-image-a-164_1670707220343.jpg"
+        },
+        {
+          "says": "Forty-fourth minute in Naples, Italy concede a penalty.",
+          "visual": "Referee pointing to penalty spot in Italy England",
+          "images": [
+            "Italy England Naples March 2023 penalty",
+            "Kane penalty Italy Naples"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b05/img-485c76d7fd48074217d55fd7f141a701.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b05/shot_0555835605.mp4",
+          "url": "https://www.youtube.com/watch?v=emAIEADXAYM",
+          "start": 81.0,
+          "len": 6.0
+        },
+        {
+          "says": "Kane steps up and scores. Fifty-four, one more than Wayne Rooney.",
+          "visual": "Harry Kane scoring penalty against Italy",
+          "images": [
+            "Harry Kane penalty Italy England 2023",
+            "Harry Kane scores Naples record goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b06/img-9061d983cd23675f2289e5ced898ad04.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b06/img-ab21f1b0be7a839abab9afc13b7d4003.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b06/img-1f0c9114acdc2e2b802159f59aaae863.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b06/shot_1b5998cda5.mp4",
+          "url": "https://www.youtube.com/watch?v=emAIEADXAYM",
+          "start": 100.0,
+          "len": 6.0
+        },
+        {
+          "says": "England win two-one. Kane has the record.",
+          "visual": "Kane celebrating with England teammates",
+          "images": [
+            "Kane celebration England",
+            "Harry Kane record celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b07/img-1f43bae02418d6e99f4da760ef3e74d1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b07/img-068fcf1fba88ecc533ed0450a7e5caba.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b07/img-6438877ffefc41081010e06d46cefa54.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b07/img-01b23ae52ac1310a0157ec9fe694e317.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b07/img-1ac56f3053f51a9144cd81e2a4ff7766.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b07/img-a0e8e4d61c4dc57fde06193a3e48d36a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b07/img-295fa95380db3199aa4416c91228c5ea.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b07/img-01b23ae52ac1310a0157ec9fe694e317.jpg",
+          "url": "https://images.news9live.com/wp-content/uploads/2026/07/Harry-Kane.jpg?w=1280&enlarge=true"
+        },
+        {
+          "says": "Is Kane the greatest England striker of all time?",
+          "visual": "Harry Kane lifting arm in England shirt",
+          "images": [
+            "Harry Kane Three Lions",
+            "Harry Kane captain England"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b08/img-d379503b41df38f629cfc75ab2e7210e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b08/img-e325620952d3f16e6605f27c2bd94019.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b08/img-c6af3afb7285c65d89de985fe8dc7bfb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b08/img-ba0f22159711eb5c353feae82d24e808.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b08/img-0dfce090cc5baeec72fc8ff8c96a7abf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b08/img-99504e267872476ab0145055a5979bef.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b08/img-f6d01b58171f7e110428ce2f7312e464.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b08/img-308bbb3b1d57ef68c4544bdf3856c9cf.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_march_2023_in_naples_harry_kane_score/b08/img-c6af3afb7285c65d89de985fe8dc7bfb.jpg",
+          "url": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA26ZUzN.img?w=768&h=512&m=6&x=269&y=185&s=553&d=323"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

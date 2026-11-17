@@ -1,0 +1,3 @@
+ERROR: [youtube:tab] @Schteiny: This channel does not have a shorts tab
+ERROR: [youtube:tab] @BarcaCore-t2p: This channel does not have a shorts tab
+ERROR: [youtube:tab] @Etherealneyoo: This channel does not have a shorts tab

@@ -1,0 +1,24 @@
+{
+  "cfg": "batch_ronaldo_clubworldcup2016_hattrick.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 6,
+      "url": "https://www.youtube.com/watch?v=qkq7SLeMxoA",
+      "start": 82.0
+    },
+    {
+      "beat": 7,
+      "url": "https://www.youtube.com/watch?v=qkq7SLeMxoA",
+      "start": 95.0
+    }
+  ],
+  "weak_beats": [
+    "2: Shibasaki - no photo found, uses Kashima-vs-Real action photo from beat 3 pool",
+    "4: letterboxed low-res frame of Ronaldo back #7 facing Kashima keeper from a video, right match but soft",
+    "5: Zidane not found in era; generic Real v Kashima goalmouth photo",
+    "9: Ronaldo with CWC trophy borrowed from beat 1 pool (different photo)"
+  ],
+  "beat1": "Ronaldo in white Real Madrid kit holding the Club World Cup trophy with medal (portrait)",
+  "notes": "Clips from official Real Madrid CWC final highlights (small crest + small top-left tournament text). Beat 6 = 98th-min goal 83-86s + celebration; beat 7 = third goal ~95-98s + celebration 99-101s."
+}

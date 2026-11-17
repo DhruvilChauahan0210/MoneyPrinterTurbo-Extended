@@ -1,0 +1,18 @@
+{
+  "cfg": "batch_ronaldo_copa2011_header.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 6,
+      "url": "https://www.youtube.com/watch?v=RvNsqU_T7yI",
+      "start": 1.5
+    }
+  ],
+  "weak_beats": [
+    "4: borrowed Ronaldo vs Barcelona action photo (no usable Pinto photo exists)",
+    "9: borrowed Ronaldo celebration photo from beat 6 pool",
+    "5: Copa final crowd photo, generic"
+  ],
+  "beat1": "Close portrait of Ronaldo in white Real Madrid kit (eyes closed, ~2011-12 era)",
+  "notes": "Clip beat 6 is a clean 4K Ronaldo-vs-Barcelona header goal reupload (Rankify); channel not official broadcast but no burned-in text. Possible this is the 2011 La Liga/Copa goal reupload - shows Ronaldo 7 header and celebration with Arbeloa."
+}

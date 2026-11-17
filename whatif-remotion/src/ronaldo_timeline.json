@@ -1,0 +1,2105 @@
+{
+ "total": 611.139,
+ "scenes": [
+  {
+   "text": "Thursday. November the fifth. Twenty twenty-six.",
+   "shot": "ronaldo_2026_portrait",
+   "ov": [
+    {
+     "k": "date",
+     "t": "THU · 5 NOV 2026",
+     "at": 0.2
+    }
+   ],
+   "kb": "in",
+   "sfx": "impact",
+   "i": 0,
+   "start": 0.25,
+   "end": 5.598,
+   "voice_at": 0.33,
+   "vd": 4.968
+  },
+  {
+   "text": "A video appears on Cristiano Ronaldo's Instagram.",
+   "shot": "ronaldo_closeup_a",
+   "ov": [
+    {
+     "k": "chip",
+     "t": "NEW POST · INSTAGRAM",
+     "c": "red",
+     "at": 0.4,
+     "pos": "tl"
+    }
+   ],
+   "kb": "left",
+   "sfx": null,
+   "i": 1,
+   "start": 5.598,
+   "end": 9.626,
+   "voice_at": 5.678,
+   "vd": 3.648
+  },
+  {
+   "text": "In it, he says he will hand back the number seven shirt.",
+   "shot": "ronaldo_portugal_7",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "NUMBER 7",
+     "c": "gold",
+     "at": 0.2,
+     "size": 170,
+     "y": 0.5
+    }
+   ],
+   "kb": "in",
+   "sfx": "whoosh",
+   "i": 2,
+   "start": 9.626,
+   "end": 13.558,
+   "voice_at": 9.706,
+   "vd": 3.552
+  },
+  {
+   "text": "Two hundred and thirty-four caps. A hundred and forty-six goals. Twenty-three years.",
+   "shot": "ronaldo_captain_armband",
+   "ov": [
+    {
+     "k": "stats",
+     "items": [
+      {
+       "v": 234,
+       "l": "CAPS"
+      },
+      {
+       "v": 146,
+       "l": "GOALS"
+      },
+      {
+       "v": 23,
+       "l": "YEARS"
+      }
+     ],
+     "at": 0.2
+    }
+   ],
+   "kb": "out",
+   "sfx": null,
+   "i": 3,
+   "start": 13.558,
+   "end": 20.418,
+   "voice_at": 13.638,
+   "vd": 6.48
+  },
+  {
+   "text": "And now, it's over.",
+   "shot": "ronaldo_walking_away",
+   "ov": [
+    {
+     "k": "flash",
+     "at": 0.0
+    },
+    {
+     "k": "slam",
+     "t": "IT'S OVER",
+     "c": "red",
+     "at": 0.2,
+     "size": 170,
+     "y": 0.5
+    }
+   ],
+   "kb": "in",
+   "sfx": "impact",
+   "i": 4,
+   "start": 20.418,
+   "end": 22.958,
+   "voice_at": 20.498,
+   "vd": 2.16
+  },
+  {
+   "text": "But the strangest part isn't that he's leaving.",
+   "shot": "ronaldo_closeup_b",
+   "ov": [],
+   "kb": "right",
+   "sfx": null,
+   "i": 5,
+   "start": 22.958,
+   "end": 26.122,
+   "voice_at": 23.038,
+   "vd": 2.784
+  },
+  {
+   "text": "It's how it started. With a bench in Norway.",
+   "shot": "ronaldo_bench_2022",
+   "ov": [
+    {
+     "k": "date",
+     "t": "OCT 4 · NORWAY",
+     "at": 0.2
+    }
+   ],
+   "kb": "in",
+   "sfx": "whoosh",
+   "i": 6,
+   "start": 26.122,
+   "end": 30.222,
+   "voice_at": 26.202,
+   "vd": 3.72
+  },
+  {
+   "text": "Stay until the end. Because there is one number that explains everything that happens next.",
+   "shot": "ronaldo_closeup_c",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "ONE NUMBER",
+     "c": "gold",
+     "at": 0.2,
+     "size": 190,
+     "y": 0.5
+    }
+   ],
+   "kb": "out",
+   "sfx": "riser",
+   "i": 7,
+   "start": 30.222,
+   "end": 36.434,
+   "voice_at": 30.302,
+   "vd": 5.832
+  },
+  {
+   "text": "In the next ten minutes: the bench, the records, the tears, and the goal that is still ahead.",
+   "shot": "ronaldo_free_kick",
+   "ov": [],
+   "kb": "in",
+   "sfx": "whoosh",
+   "i": 8,
+   "start": 36.434,
+   "end": 42.43,
+   "voice_at": 36.514,
+   "vd": 5.616
+  },
+  {
+   "ch": 1,
+   "title": "THE BENCH",
+   "text": "Chapter one. The bench.",
+   "shot": "ronaldo_bench_2022",
+   "ov": [],
+   "kb": "in",
+   "sfx": "riser",
+   "i": 9,
+   "start": 42.43,
+   "end": 46.76,
+   "voice_at": 42.98,
+   "vd": 2.88
+  },
+  {
+   "text": "Go back to September. Portugal have a new manager: Jorge Jesus, the same man who coached Ronaldo at Al Nassr.",
+   "shot": "jorge_jesus",
+   "ov": [
+    {
+     "k": "chip",
+     "t": "NEW MANAGER",
+     "c": "red",
+     "at": 0.4,
+     "pos": "tl"
+    }
+   ],
+   "kb": "in",
+   "sfx": null,
+   "i": 10,
+   "start": 46.76,
+   "end": 54.772,
+   "voice_at": 46.84,
+   "vd": 7.632
+  },
+  {
+   "text": "September twenty-fourth. Lisbon. Portugal beat Wales, one-nil, and Ronaldo plays.",
+   "shot": "portugal_stadium",
+   "ov": [
+    {
+     "k": "date",
+     "t": "SEP 24 · LISBON",
+     "at": 0.2
+    },
+    {
+     "k": "slam",
+     "t": "1–0",
+     "c": "white",
+     "at": 1.8,
+     "size": 170,
+     "y": 0.5
+    }
+   ],
+   "kb": "out",
+   "sfx": null,
+   "i": 11,
+   "start": 54.772,
+   "end": 62.208,
+   "voice_at": 54.852,
+   "vd": 7.056
+  },
+  {
+   "text": "Nobody knows it yet, but it is his last match for Portugal.",
+   "shot": "ronaldo_free_kick",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "HIS LAST",
+     "c": "gold",
+     "at": 0.2,
+     "size": 170,
+     "y": 0.5
+    }
+   ],
+   "kb": "in",
+   "sfx": "impact",
+   "i": 12,
+   "start": 62.208,
+   "end": 66.404,
+   "voice_at": 62.288,
+   "vd": 3.816
+  },
+  {
+   "text": "Next game. Jesus leaves him on the bench.",
+   "shot": "ronaldo_training",
+   "ov": [],
+   "kb": "right",
+   "sfx": null,
+   "i": 13,
+   "start": 66.404,
+   "end": 70.552,
+   "voice_at": 66.484,
+   "vd": 3.768
+  },
+  {
+   "text": "October fourth. Norway. Portugal win two-one, and Ronaldo never leaves the bench.",
+   "shot": "portugal_squad",
+   "ov": [
+    {
+     "k": "date",
+     "t": "OCT 4 · NORWAY",
+     "at": 0.2
+    }
+   ],
+   "kb": "in",
+   "sfx": null,
+   "i": 14,
+   "start": 70.552,
+   "end": 77.7,
+   "voice_at": 70.632,
+   "vd": 6.768
+  },
+  {
+   "text": "For the first time in eighteen years, he was available and didn't play.",
+   "shot": "ronaldo_bench_2022",
+   "ov": [
+    {
+     "k": "stat",
+     "v": 18,
+     "l": "YEARS",
+     "sub": "FIRST TIME HE WAS AVAILABLE AND DIDN'T PLAY",
+     "c": "red",
+     "at": 0.2,
+     "suf": "",
+     "dec": 0
+    }
+   ],
+   "kb": "out",
+   "sfx": "impact",
+   "i": 15,
+   "start": 77.7,
+   "end": 82.208,
+   "voice_at": 77.78,
+   "vd": 4.128
+  },
+  {
+   "text": "Jesus says he won't start him in the next game either.",
+   "shot": "jorge_jesus",
+   "ov": [],
+   "kb": "left",
+   "sfx": null,
+   "i": 16,
+   "start": 82.208,
+   "end": 85.78,
+   "voice_at": 82.288,
+   "vd": 3.192
+  },
+  {
+   "text": "So Ronaldo does something nobody expected. He walks out of the national team camp.",
+   "shot": "ronaldo_walking_away",
+   "ov": [
+    {
+     "k": "flash",
+     "at": 0.0
+    },
+    {
+     "k": "slam",
+     "t": "WALKED OUT",
+     "c": "red",
+     "at": 0.2,
+     "size": 170,
+     "y": 0.5
+    }
+   ],
+   "kb": "in",
+   "sfx": "whoosh",
+   "i": 17,
+   "start": 85.78,
+   "end": 91.776,
+   "voice_at": 85.86,
+   "vd": 5.616
+  },
+  {
+   "text": "The federation answers with a thirty-day suspension.",
+   "shot": "ronaldo_training",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "30-DAY BAN",
+     "c": "red",
+     "at": 0.2,
+     "size": 170,
+     "y": 0.5
+    }
+   ],
+   "kb": "right",
+   "sfx": null,
+   "i": 18,
+   "start": 91.776,
+   "end": 95.492,
+   "voice_at": 91.856,
+   "vd": 3.336
+  },
+  {
+   "text": "Ronaldo apologises to his teammates, but not to the coach.",
+   "shot": "ronaldo_training",
+   "ov": [],
+   "kb": "in",
+   "sfx": null,
+   "i": 19,
+   "start": 95.492,
+   "end": 99.856,
+   "voice_at": 95.572,
+   "vd": 3.984
+  },
+  {
+   "text": "He says Jesus broke his promises about playing time.",
+   "shot": "jorge_jesus",
+   "ov": [
+    {
+     "k": "chip",
+     "t": "'BROKEN PROMISES'",
+     "c": "red",
+     "at": 0.4,
+     "pos": "bl"
+    }
+   ],
+   "kb": "out",
+   "sfx": null,
+   "i": 20,
+   "start": 99.856,
+   "end": 103.74,
+   "voice_at": 99.936,
+   "vd": 3.504
+  },
+  {
+   "text": "Jesus replies that the door is open, and the decision belongs to Ronaldo.",
+   "shot": "ronaldo_closeup_c",
+   "ov": [],
+   "kb": "in",
+   "sfx": null,
+   "i": 21,
+   "start": 103.74,
+   "end": 108.56,
+   "voice_at": 103.82,
+   "vd": 4.44
+  },
+  {
+   "text": "And now, that decision has been made.",
+   "shot": "ronaldo_2026_portrait",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "DECISION MADE",
+     "c": "gold",
+     "at": 0.2,
+     "size": 150,
+     "y": 0.5
+    }
+   ],
+   "kb": "out",
+   "sfx": "impact",
+   "i": 22,
+   "start": 108.56,
+   "end": 111.748,
+   "voice_at": 108.64,
+   "vd": 2.808
+  },
+  {
+   "text": "Forty-two days. That is how long it took to go from his last match for Portugal to goodbye.",
+   "shot": "ronaldo_closeup_b",
+   "ov": [
+    {
+     "k": "stat",
+     "v": 42,
+     "l": "DAYS",
+     "sub": "FROM HIS LAST MATCH TO GOODBYE",
+     "c": "red",
+     "at": 0.2,
+     "suf": "",
+     "dec": 0
+    }
+   ],
+   "kb": "in",
+   "sfx": "riser",
+   "i": 23,
+   "start": 111.748,
+   "end": 117.96,
+   "voice_at": 111.828,
+   "vd": 5.832
+  },
+  {
+   "ch": 2,
+   "title": "THE NUMBERS",
+   "text": "Chapter two. The numbers.",
+   "shot": "ronaldo_captain_armband",
+   "ov": [],
+   "kb": "in",
+   "sfx": "riser",
+   "i": 24,
+   "start": 117.96,
+   "end": 122.434,
+   "voice_at": 118.51,
+   "vd": 3.024
+  },
+  {
+   "text": "Two hundred and thirty-four caps. The most of any man in the history of international football.",
+   "shot": "ronaldo_portugal_7",
+   "ov": [
+    {
+     "k": "stat",
+     "v": 234,
+     "l": "CAPS",
+     "sub": "MOST EVER",
+     "c": "gold",
+     "at": 0.2,
+     "suf": "",
+     "dec": 0
+    }
+   ],
+   "kb": "out",
+   "sfx": "impact",
+   "i": 25,
+   "start": 122.434,
+   "end": 128.598,
+   "voice_at": 122.514,
+   "vd": 5.784
+  },
+  {
+   "text": "A hundred and forty-six goals. Also the most. Ever.",
+   "shot": "ronaldo_siuu",
+   "ov": [
+    {
+     "k": "stat",
+     "v": 146,
+     "l": "GOALS",
+     "sub": "ALL-TIME RECORD",
+     "c": "gold",
+     "at": 0.2,
+     "suf": "",
+     "dec": 0
+    }
+   ],
+   "kb": "in",
+   "sfx": "impact",
+   "i": 26,
+   "start": 128.598,
+   "end": 134.21,
+   "voice_at": 128.678,
+   "vd": 5.232
+  },
+  {
+   "text": "Forty-one goals in World Cup qualifying. Another record.",
+   "shot": "ronaldo_free_kick",
+   "ov": [
+    {
+     "k": "stat",
+     "v": 41,
+     "l": "QUALIFYING GOALS",
+     "sub": "WORLD CUP RECORD",
+     "c": "white",
+     "at": 0.2,
+     "suf": "",
+     "dec": 0
+    }
+   ],
+   "kb": "right",
+   "sfx": null,
+   "i": 27,
+   "start": 134.21,
+   "end": 139.126,
+   "voice_at": 134.29,
+   "vd": 4.536
+  },
+  {
+   "text": "Thirty matches at the European Championship. Fourteen goals. Both records.",
+   "shot": "ronaldo_euro2020",
+   "ov": [
+    {
+     "k": "stats",
+     "items": [
+      {
+       "v": 30,
+       "l": "EURO MATCHES"
+      },
+      {
+       "v": 14,
+       "l": "EURO GOALS"
+      }
+     ],
+     "at": 0.2
+    }
+   ],
+   "kb": "out",
+   "sfx": null,
+   "i": 28,
+   "start": 139.126,
+   "end": 145.89,
+   "voice_at": 139.206,
+   "vd": 6.384
+  },
+  {
+   "text": "The only player to score at five European Championships.",
+   "shot": "ronaldo_euro2016_trophy",
+   "ov": [
+    {
+     "k": "stat",
+     "v": 5,
+     "l": "EUROS",
+     "sub": "ONLY PLAYER EVER",
+     "c": "gold",
+     "at": 0.2,
+     "suf": "",
+     "dec": 0
+    }
+   ],
+   "kb": "in",
+   "sfx": "impact",
+   "i": 29,
+   "start": 145.89,
+   "end": 150.014,
+   "voice_at": 145.97,
+   "vd": 3.744
+  },
+  {
+   "text": "And the only player to score at six World Cups.",
+   "shot": "ronaldo_wc2026",
+   "ov": [
+    {
+     "k": "stat",
+     "v": 6,
+     "l": "WORLD CUPS",
+     "sub": "ONLY PLAYER EVER",
+     "c": "gold",
+     "at": 0.2,
+     "suf": "",
+     "dec": 0
+    }
+   ],
+   "kb": "left",
+   "sfx": "impact",
+   "i": 30,
+   "start": 150.014,
+   "end": 153.778,
+   "voice_at": 150.094,
+   "vd": 3.384
+  },
+  {
+   "text": "He captained Portugal to Euro 2016, the 2019 Nations League and the 2025 Nations League.",
+   "shot": "ronaldo_nl2025_trophy",
+   "ov": [
+    {
+     "k": "stats",
+     "items": [
+      {
+       "v": 2016,
+       "l": "EURO",
+       "raw": 1
+      },
+      {
+       "v": 2019,
+       "l": "NATIONS LEAGUE",
+       "raw": 1
+      },
+      {
+       "v": 2025,
+       "l": "NATIONS LEAGUE",
+       "raw": 1
+      }
+     ],
+     "at": 0.2
+    }
+   ],
+   "kb": "out",
+   "sfx": null,
+   "i": 31,
+   "start": 153.778,
+   "end": 161.046,
+   "voice_at": 153.858,
+   "vd": 6.888
+  },
+  {
+   "text": "Three trophies. But one is still missing: the World Cup.",
+   "shot": "ronaldo_wc2026_sad",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "NO WORLD CUP",
+     "c": "red",
+     "at": 0.2,
+     "size": 150,
+     "y": 0.5
+    }
+   ],
+   "kb": "in",
+   "sfx": "riser",
+   "i": 32,
+   "start": 161.046,
+   "end": 166.13,
+   "voice_at": 161.126,
+   "vd": 4.704
+  },
+  {
+   "ch": 3,
+   "title": "THE BOY FROM MADEIRA",
+   "text": "Chapter three. The boy from Madeira.",
+   "shot": "ronaldo_young_2003",
+   "ov": [],
+   "kb": "in",
+   "sfx": "riser",
+   "i": 33,
+   "start": 166.13,
+   "end": 171.036,
+   "voice_at": 166.68,
+   "vd": 3.456
+  },
+  {
+   "text": "He was born on the island of Madeira, and left home at twelve to join Sporting's academy in Lisbon.",
+   "shot": "ronaldo_young_2003",
+   "ov": [
+    {
+     "k": "date",
+     "t": "FUNCHAL, MADEIRA · 1985",
+     "at": 0.2
+    }
+   ],
+   "kb": "in",
+   "sfx": null,
+   "i": 34,
+   "start": 171.036,
+   "end": 176.96,
+   "voice_at": 171.116,
+   "vd": 5.544
+  },
+  {
+   "text": "That summer of 2003, Manchester United signed him from Sporting. He was eighteen.",
+   "shot": "ronaldo_manutd_2008",
+   "ov": [],
+   "kb": "out",
+   "sfx": null,
+   "i": 35,
+   "start": 176.96,
+   "end": 183.46,
+   "voice_at": 177.04,
+   "vd": 6.12
+  },
+  {
+   "text": "Rewind twenty-three years. August twentieth, 2003.",
+   "shot": "ronaldo_young_2003",
+   "ov": [
+    {
+     "k": "date",
+     "t": "20 AUG 2003",
+     "at": 0.2
+    }
+   ],
+   "kb": "in",
+   "sfx": null,
+   "i": 36,
+   "start": 183.46,
+   "end": 188.856,
+   "voice_at": 183.54,
+   "vd": 5.016
+  },
+  {
+   "text": "An eighteen-year-old comes off the bench against Kazakhstan, and a legend begins.",
+   "shot": "ronaldo_young_2003",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "AGE 18",
+     "c": "gold",
+     "at": 0.2,
+     "size": 170,
+     "y": 0.5
+    }
+   ],
+   "kb": "out",
+   "sfx": "whoosh",
+   "i": 37,
+   "start": 188.856,
+   "end": 193.964,
+   "voice_at": 188.936,
+   "vd": 4.728
+  },
+  {
+   "text": "Summer, 2004. Euro 2004, at home. Portugal reach the final.",
+   "shot": "ronaldo_fans_portugal",
+   "ov": [
+    {
+     "k": "date",
+     "t": "EURO 2004 · PORTUGAL",
+     "at": 0.2
+    }
+   ],
+   "kb": "left",
+   "sfx": null,
+   "i": 38,
+   "start": 193.964,
+   "end": 201.448,
+   "voice_at": 194.044,
+   "vd": 7.104
+  },
+  {
+   "text": "They lose to Greece. And the teenager cries on the pitch.",
+   "shot": "ronaldo_euro2004_tears",
+   "ov": [],
+   "kb": "in",
+   "sfx": "impact",
+   "i": 39,
+   "start": 201.448,
+   "end": 206.196,
+   "voice_at": 201.528,
+   "vd": 4.368
+  },
+  {
+   "text": "Twelve years later. Euro 2016. The final, against France.",
+   "shot": "ronaldo_captain_armband",
+   "ov": [
+    {
+     "k": "date",
+     "t": "JULY 10 · PARIS",
+     "at": 0.2
+    }
+   ],
+   "kb": "right",
+   "sfx": null,
+   "i": 40,
+   "start": 206.196,
+   "end": 212.984,
+   "voice_at": 206.276,
+   "vd": 6.408
+  },
+  {
+   "text": "But Ronaldo scored in the semi-final, a header against Wales, to put them in the final.",
+   "shot": "ronaldo_euro2016_trophy",
+   "ov": [],
+   "kb": "out",
+   "sfx": null,
+   "i": 41,
+   "start": 212.984,
+   "end": 218.428,
+   "voice_at": 213.064,
+   "vd": 5.064
+  },
+  {
+   "text": "Twenty-five minutes in, Ronaldo is forced off, in tears.",
+   "shot": "ronaldo_euro2016_injured",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "25 MINUTES",
+     "c": "red",
+     "at": 0.2,
+     "size": 170,
+     "y": 0.5
+    }
+   ],
+   "kb": "in",
+   "sfx": "impact",
+   "i": 42,
+   "start": 218.428,
+   "end": 223.056,
+   "voice_at": 218.508,
+   "vd": 4.248
+  },
+  {
+   "text": "Then he is on the touchline, shouting instructions like a coach.",
+   "shot": "ronaldo_euro2016_injured",
+   "ov": [],
+   "kb": "out",
+   "sfx": null,
+   "i": 43,
+   "start": 223.056,
+   "end": 227.396,
+   "voice_at": 223.136,
+   "vd": 3.96
+  },
+  {
+   "text": "Extra time. Eder scores. One-nil Portugal.",
+   "shot": "portugal_stadium",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "1–0",
+     "c": "gold",
+     "at": 0.2,
+     "size": 240,
+     "y": 0.5
+    }
+   ],
+   "kb": "in",
+   "sfx": "whoosh",
+   "i": 44,
+   "start": 227.396,
+   "end": 232.72,
+   "voice_at": 227.476,
+   "vd": 4.944
+  },
+  {
+   "text": "Portugal are champions of Europe, and Ronaldo lifts the trophy.",
+   "shot": "ronaldo_euro2016_trophy",
+   "ov": [
+    {
+     "k": "flash",
+     "at": 0.0
+    },
+    {
+     "k": "confetti",
+     "at": 0.3
+    }
+   ],
+   "kb": "out",
+   "sfx": "sparkle",
+   "i": 45,
+   "start": 232.72,
+   "end": 237.036,
+   "voice_at": 232.8,
+   "vd": 3.936
+  },
+  {
+   "text": "The boy who cried in 2004 had finally won.",
+   "shot": "ronaldo_euro2004_tears",
+   "ov": [
+    {
+     "k": "chip",
+     "t": "2004  →  2016",
+     "c": "gold",
+     "at": 0.4,
+     "pos": "tl"
+    }
+   ],
+   "kb": "in",
+   "sfx": null,
+   "i": 46,
+   "start": 237.036,
+   "end": 240.92,
+   "voice_at": 237.116,
+   "vd": 3.504
+  },
+  {
+   "ch": 4,
+   "title": "THE RECORD BREAKER",
+   "text": "Chapter four. The record breaker.",
+   "shot": "ronaldo_daei_record",
+   "ov": [],
+   "kb": "in",
+   "sfx": "riser",
+   "i": 47,
+   "start": 240.92,
+   "end": 245.73,
+   "voice_at": 241.47,
+   "vd": 3.36
+  },
+  {
+   "text": "The goals keep coming. June 2021. Euro 2020. France.",
+   "shot": "ronaldo_euro2020",
+   "ov": [
+    {
+     "k": "date",
+     "t": "23 JUN 2021 · EURO 2020",
+     "at": 0.2
+    }
+   ],
+   "kb": "in",
+   "sfx": null,
+   "i": 48,
+   "start": 245.73,
+   "end": 253.286,
+   "voice_at": 245.81,
+   "vd": 7.176
+  },
+  {
+   "text": "He scores twice and equals the record of the Iranian legend Ali Daei: a hundred and nine.",
+   "shot": "ali_daei",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "109",
+     "c": "gold",
+     "at": 0.2,
+     "size": 240,
+     "y": 0.5
+    }
+   ],
+   "kb": "out",
+   "sfx": "impact",
+   "i": 49,
+   "start": 253.286,
+   "end": 258.898,
+   "voice_at": 253.366,
+   "vd": 5.232
+  },
+  {
+   "text": "Two months later, against Ireland, the record is his alone.",
+   "shot": "ronaldo_daei_record",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "RECORD BROKEN",
+     "c": "gold",
+     "at": 0.2,
+     "size": 140,
+     "y": 0.5
+    }
+   ],
+   "kb": "in",
+   "sfx": "whoosh",
+   "i": 50,
+   "start": 258.898,
+   "end": 263.214,
+   "voice_at": 258.978,
+   "vd": 3.936
+  },
+  {
+   "text": "He finishes that tournament as top scorer and wins the Golden Boot.",
+   "shot": "ronaldo_closeup_b",
+   "ov": [
+    {
+     "k": "chip",
+     "t": "EURO 2020 GOLDEN BOOT",
+     "c": "gold",
+     "at": 0.4,
+     "pos": "tl"
+    }
+   ],
+   "kb": "left",
+   "sfx": null,
+   "i": 51,
+   "start": 263.214,
+   "end": 267.554,
+   "voice_at": 263.294,
+   "vd": 3.96
+  },
+  {
+   "text": "November 2022. Qatar. A penalty against Ghana, and he becomes the first man to score at five World Cups.",
+   "shot": "ronaldo_ghana_2022",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "FIRST EVER",
+     "c": "gold",
+     "at": 0.2,
+     "size": 160,
+     "y": 0.5
+    },
+    {
+     "k": "chip",
+     "t": "5 WORLD CUPS",
+     "c": "gold",
+     "at": 0.4,
+     "pos": "bl"
+    }
+   ],
+   "kb": "in",
+   "sfx": "impact",
+   "i": 52,
+   "start": 267.554,
+   "end": 276.382,
+   "voice_at": 267.634,
+   "vd": 8.448
+  },
+  {
+   "text": "Then comes the fall. Benched for the round of sixteen.",
+   "shot": "ronaldo_bench_2022",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "BENCHED",
+     "c": "red",
+     "at": 0.2,
+     "size": 170,
+     "y": 0.5
+    }
+   ],
+   "kb": "out",
+   "sfx": null,
+   "i": 53,
+   "start": 276.382,
+   "end": 280.89,
+   "voice_at": 276.462,
+   "vd": 4.128
+  },
+  {
+   "text": "Portugal win six-one without him.",
+   "shot": "portugal_squad",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "6–1",
+     "c": "white",
+     "at": 0.2,
+     "size": 230,
+     "y": 0.5
+    }
+   ],
+   "kb": "in",
+   "sfx": "impact",
+   "i": 54,
+   "start": 280.89,
+   "end": 283.815,
+   "voice_at": 280.97,
+   "vd": 2.544
+  },
+  {
+   "text": "Then Morocco. A quarter-final lost, and Ronaldo walks down the tunnel in tears.",
+   "shot": "ronaldo_morocco_tears",
+   "ov": [],
+   "kb": "right",
+   "sfx": "riser",
+   "i": 55,
+   "start": 283.815,
+   "end": 290.075,
+   "voice_at": 283.894,
+   "vd": 5.88
+  },
+  {
+   "text": "Euro 2024. A missed penalty in extra time against Slovenia, and more tears.",
+   "shot": "ronaldo_euro2024_tears",
+   "ov": [
+    {
+     "k": "date",
+     "t": "EURO 2024 · SLOVENIA",
+     "at": 0.2
+    }
+   ],
+   "kb": "in",
+   "sfx": null,
+   "i": 56,
+   "start": 290.075,
+   "end": 296.887,
+   "voice_at": 290.154,
+   "vd": 6.432
+  },
+  {
+   "text": "But goalkeeper Diogo Costa saves three penalties, and Portugal survive.",
+   "shot": "diogo_costa",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "3 SAVES",
+     "c": "gold",
+     "at": 0.2,
+     "size": 170,
+     "y": 0.5
+    }
+   ],
+   "kb": "out",
+   "sfx": "whoosh",
+   "i": 57,
+   "start": 296.887,
+   "end": 302.259,
+   "voice_at": 296.967,
+   "vd": 4.992
+  },
+  {
+   "ch": 5,
+   "title": "THE LAST DANCE",
+   "text": "Chapter five. The last dance.",
+   "shot": "ronaldo_nl2025_trophy",
+   "ov": [],
+   "kb": "in",
+   "sfx": "riser",
+   "i": 58,
+   "start": 302.259,
+   "end": 307.117,
+   "voice_at": 302.809,
+   "vd": 3.408
+  },
+  {
+   "text": "June eighth, 2025. Munich. The Nations League final against Spain.",
+   "shot": "ronaldo_nl2025_trophy",
+   "ov": [
+    {
+     "k": "date",
+     "t": "8 JUN 2025 · MUNICH",
+     "at": 0.2
+    }
+   ],
+   "kb": "in",
+   "sfx": null,
+   "i": 59,
+   "start": 307.117,
+   "end": 314.073,
+   "voice_at": 307.197,
+   "vd": 6.576
+  },
+  {
+   "text": "Spain score. Nuno Mendes levels it. Spain lead again before half-time.",
+   "shot": "ronaldo_closeup_a",
+   "ov": [
+    {
+     "k": "chip",
+     "t": "SPAIN 2–1 PORTUGAL",
+     "c": "red",
+     "at": 0.4,
+     "pos": "bl"
+    }
+   ],
+   "kb": "right",
+   "sfx": null,
+   "i": 60,
+   "start": 314.073,
+   "end": 320.813,
+   "voice_at": 314.153,
+   "vd": 6.36
+  },
+  {
+   "text": "Then, in the sixty-first minute, forty-year-old Cristiano Ronaldo equalises.",
+   "shot": "ronaldo_free_kick",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "61'",
+     "c": "gold",
+     "at": 0.2,
+     "size": 240,
+     "y": 0.5
+    },
+    {
+     "k": "chip",
+     "t": "40 YEARS OLD",
+     "c": "gold",
+     "at": 0.4,
+     "pos": "tl"
+    }
+   ],
+   "kb": "in",
+   "sfx": "impact",
+   "i": 61,
+   "start": 320.813,
+   "end": 326.401,
+   "voice_at": 320.893,
+   "vd": 5.208
+  },
+  {
+   "text": "Two-two. Extra time. Penalties.",
+   "shot": "ronaldo_closeup_c",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "2–2",
+     "c": "white",
+     "at": 0.2,
+     "size": 250,
+     "y": 0.5
+    }
+   ],
+   "kb": "out",
+   "sfx": "riser",
+   "i": 62,
+   "start": 326.401,
+   "end": 331.125,
+   "voice_at": 326.481,
+   "vd": 4.344
+  },
+  {
+   "text": "Diogo Costa saves from Morata. Rúben Neves scores. Portugal win five-three.",
+   "shot": "diogo_costa",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "5–3",
+     "c": "gold",
+     "at": 0.2,
+     "size": 250,
+     "y": 0.5
+    },
+    {
+     "k": "flash",
+     "at": 0.0
+    }
+   ],
+   "kb": "in",
+   "sfx": "impact",
+   "i": 63,
+   "start": 331.125,
+   "end": 338.201,
+   "voice_at": 331.205,
+   "vd": 6.696
+  },
+  {
+   "text": "Another trophy for Ronaldo, at forty.",
+   "shot": "ronaldo_nl2025_trophy",
+   "ov": [
+    {
+     "k": "confetti",
+     "at": 0.3
+    }
+   ],
+   "kb": "out",
+   "sfx": "sparkle",
+   "i": 64,
+   "start": 338.201,
+   "end": 341.629,
+   "voice_at": 338.281,
+   "vd": 3.048
+  },
+  {
+   "text": "He had warned us. In November 2025, he said the 2026 World Cup would be his last tournament.",
+   "shot": "ronaldo_closeup_b",
+   "ov": [],
+   "kb": "in",
+   "sfx": null,
+   "i": 65,
+   "start": 341.629,
+   "end": 349.065,
+   "voice_at": 341.709,
+   "vd": 7.056
+  },
+  {
+   "text": "Then comes his sixth and final World Cup. Summer 2026. North America.",
+   "shot": "ronaldo_wc2026",
+   "ov": [
+    {
+     "k": "date",
+     "t": "WORLD CUP 2026",
+     "at": 0.2
+    }
+   ],
+   "kb": "left",
+   "sfx": null,
+   "i": 66,
+   "start": 349.065,
+   "end": 356.189,
+   "voice_at": 349.145,
+   "vd": 6.744
+  },
+  {
+   "text": "He scores three goals, and becomes the only player ever to score at six World Cups.",
+   "shot": "ronaldo_wc2026",
+   "ov": [
+    {
+     "k": "stat",
+     "v": 3,
+     "l": "GOALS",
+     "sub": "ONLY PLAYER EVER TO SCORE AT 6 WORLD CUPS",
+     "c": "gold",
+     "at": 0.2,
+     "suf": "",
+     "dec": 0
+    }
+   ],
+   "kb": "in",
+   "sfx": "impact",
+   "i": 67,
+   "start": 356.189,
+   "end": 361.921,
+   "voice_at": 356.269,
+   "vd": 5.352
+  },
+  {
+   "text": "July sixth. Arlington, Texas. The round of sixteen. Spain, again.",
+   "shot": "ronaldo_closeup_b",
+   "ov": [
+    {
+     "k": "date",
+     "t": "6 JUL · ARLINGTON, TEXAS",
+     "at": 0.2
+    }
+   ],
+   "kb": "right",
+   "sfx": null,
+   "i": 68,
+   "start": 361.921,
+   "end": 369.789,
+   "voice_at": 362.001,
+   "vd": 7.488
+  },
+  {
+   "text": "Nil-nil. The ninety-first minute. Mikel Merino scores.",
+   "shot": "ronaldo_wc2026_sad",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "90+1'",
+     "c": "red",
+     "at": 0.2,
+     "size": 240,
+     "y": 0.5
+    }
+   ],
+   "kb": "in",
+   "sfx": "impact",
+   "i": 69,
+   "start": 369.789,
+   "end": 375.473,
+   "voice_at": 369.869,
+   "vd": 5.304
+  },
+  {
+   "text": "Spain win one-nil, and Portugal are out.",
+   "shot": "ronaldo_wc2026_sad",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "1–0",
+     "c": "red",
+     "at": 0.2,
+     "size": 250,
+     "y": 0.5
+    }
+   ],
+   "kb": "out",
+   "sfx": null,
+   "i": 70,
+   "start": 375.473,
+   "end": 379.069,
+   "voice_at": 375.553,
+   "vd": 3.216
+  },
+  {
+   "text": "Ronaldo's World Cup story is over, and manager Roberto Martínez steps down.",
+   "shot": "ronaldo_closeup_c",
+   "ov": [],
+   "kb": "in",
+   "sfx": null,
+   "i": 71,
+   "start": 379.069,
+   "end": 384.513,
+   "voice_at": 379.149,
+   "vd": 5.064
+  },
+  {
+   "text": "In comes Jorge Jesus.",
+   "shot": "jorge_jesus",
+   "ov": [],
+   "kb": "out",
+   "sfx": "whoosh",
+   "i": 72,
+   "start": 384.513,
+   "end": 387.149,
+   "voice_at": 384.593,
+   "vd": 2.256
+  },
+  {
+   "ch": 6,
+   "title": "THE GOODBYE",
+   "text": "Chapter six. The goodbye.",
+   "shot": "ronaldo_2026_portrait",
+   "ov": [],
+   "kb": "in",
+   "sfx": "riser",
+   "i": 73,
+   "start": 387.149,
+   "end": 391.695,
+   "voice_at": 387.699,
+   "vd": 3.096
+  },
+  {
+   "text": "So on Thursday, the message lands. A video, posted on Instagram, with a message to the whole country.",
+   "shot": "ronaldo_2026_portrait",
+   "ov": [
+    {
+     "k": "date",
+     "t": "NOV 5 · INSTAGRAM",
+     "at": 0.2
+    }
+   ],
+   "kb": "in",
+   "sfx": null,
+   "i": 74,
+   "start": 391.695,
+   "end": 399.323,
+   "voice_at": 391.775,
+   "vd": 7.248
+  },
+  {
+   "text": "'It was not an easy decision, because there are decisions that are not made solely with the head.'",
+   "shot": "ronaldo_closeup_a",
+   "ov": [
+    {
+     "k": "quote",
+     "t": "It was not an easy decision, because there are decisions that are not made solely with the head.",
+     "who": "CRISTIANO RONALDO",
+     "at": 0.2
+    }
+   ],
+   "kb": "out",
+   "sfx": null,
+   "i": 75,
+   "start": 399.323,
+   "end": 404.647,
+   "voice_at": 399.403,
+   "vd": 4.944
+  },
+  {
+   "text": "He calls his twenty-three years with Portugal a journey that changed his life forever.",
+   "shot": "ronaldo_euro2016_trophy",
+   "ov": [],
+   "kb": "in",
+   "sfx": null,
+   "i": 76,
+   "start": 404.647,
+   "end": 409.659,
+   "voice_at": 404.727,
+   "vd": 4.632
+  },
+  {
+   "text": "He says Portugal will always be a part of him.",
+   "shot": "ronaldo_portugal_7",
+   "ov": [
+    {
+     "k": "quote",
+     "t": "Portugal will always be a part of me.",
+     "who": "CRISTIANO RONALDO",
+     "at": 0.2
+    }
+   ],
+   "kb": "right",
+   "sfx": null,
+   "i": 77,
+   "start": 409.659,
+   "end": 412.991,
+   "voice_at": 409.739,
+   "vd": 2.952
+  },
+  {
+   "text": "He admits there were failures along the way, but says he never gave up on representing Portugal.",
+   "shot": "ronaldo_morocco_tears",
+   "ov": [],
+   "kb": "in",
+   "sfx": null,
+   "i": 78,
+   "start": 412.991,
+   "end": 418.555,
+   "voice_at": 413.071,
+   "vd": 5.184
+  },
+  {
+   "text": "The federation calls him the greatest player of all time, and promises a tribute so the fans can celebrate him again.",
+   "shot": "ronaldo_fans_portugal",
+   "ov": [
+    {
+     "k": "chip",
+     "t": "FPF · 'THE GREATEST PLAYER OF ALL TIME'",
+     "c": "gold",
+     "at": 0.4,
+     "pos": "bl"
+    }
+   ],
+   "kb": "out",
+   "sfx": null,
+   "i": 79,
+   "start": 418.555,
+   "end": 425.247,
+   "voice_at": 418.635,
+   "vd": 6.312
+  },
+  {
+   "text": "Jorge Jesus says he asked Ronaldo to stay, and accepts the decision.",
+   "shot": "jorge_jesus",
+   "ov": [],
+   "kb": "in",
+   "sfx": null,
+   "i": 80,
+   "start": 425.247,
+   "end": 430.115,
+   "voice_at": 425.327,
+   "vd": 4.488
+  },
+  {
+   "text": "Manchester United, Sporting and Juventus all pay tribute.",
+   "shot": "ronaldo_manutd_2008",
+   "ov": [
+    {
+     "k": "chip",
+     "t": "MANCHESTER UNITED · SPORTING · JUVENTUS",
+     "c": "white",
+     "at": 0.4,
+     "pos": "bl"
+    }
+   ],
+   "kb": "left",
+   "sfx": null,
+   "i": 81,
+   "start": 430.115,
+   "end": 434.455,
+   "voice_at": 430.195,
+   "vd": 3.96
+  },
+  {
+   "text": "And just last month, Lionel Messi said goodbye to Argentina.",
+   "shot": "messi_argentina_farewell",
+   "ov": [
+    {
+     "k": "date",
+     "t": "MESSI · FAREWELL",
+     "at": 0.2
+    }
+   ],
+   "kb": "in",
+   "sfx": "whoosh",
+   "i": 82,
+   "start": 434.455,
+   "end": 438.915,
+   "voice_at": 434.535,
+   "vd": 4.08
+  },
+  {
+   "text": "The two greatest players of their generation, leaving the national stage within weeks of each other.",
+   "shot": "ronaldo_closeup_c",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "AN ERA ENDS",
+     "c": "gold",
+     "at": 0.2,
+     "size": 170,
+     "y": 0.5
+    }
+   ],
+   "kb": "out",
+   "sfx": "riser",
+   "i": 83,
+   "start": 438.915,
+   "end": 444.503,
+   "voice_at": 438.995,
+   "vd": 5.208
+  },
+  {
+   "text": "And one question hangs over Portugal now. Who wears the number seven?",
+   "shot": "ronaldo_portugal_7",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "WHO WEARS 7?",
+     "c": "white",
+     "at": 0.2,
+     "size": 160,
+     "y": 0.5
+    }
+   ],
+   "kb": "in",
+   "sfx": "impact",
+   "i": 84,
+   "start": 444.503,
+   "end": 449.707,
+   "voice_at": 444.583,
+   "vd": 4.824
+  },
+  {
+   "ch": 7,
+   "title": "BOTH SIDES",
+   "text": "Chapter seven. Both sides.",
+   "shot": "jorge_jesus",
+   "ov": [],
+   "kb": "in",
+   "sfx": "riser",
+   "i": 85,
+   "start": 449.707,
+   "end": 454.349,
+   "voice_at": 450.257,
+   "vd": 3.192
+  },
+  {
+   "text": "Here is the question everyone is arguing about. Who was right?",
+   "shot": "ronaldo_closeup_c",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "WHO WAS RIGHT?",
+     "c": "gold",
+     "at": 0.2,
+     "size": 150,
+     "y": 0.5
+    }
+   ],
+   "kb": "in",
+   "sfx": "riser",
+   "i": 86,
+   "start": 454.349,
+   "end": 459.073,
+   "voice_at": 454.429,
+   "vd": 4.344
+  },
+  {
+   "text": "The case for Jorge Jesus. He is the manager, and a manager picks the team.",
+   "shot": "jorge_jesus",
+   "ov": [
+    {
+     "k": "chip",
+     "t": "THE CASE FOR JESUS",
+     "c": "white",
+     "at": 0.4,
+     "pos": "tl"
+    }
+   ],
+   "kb": "right",
+   "sfx": null,
+   "i": 87,
+   "start": 459.073,
+   "end": 464.949,
+   "voice_at": 459.153,
+   "vd": 5.496
+  },
+  {
+   "text": "And when Ronaldo walked out of camp, the federation backed its manager and suspended its captain.",
+   "shot": "portugal_stadium",
+   "ov": [],
+   "kb": "out",
+   "sfx": null,
+   "i": 88,
+   "start": 464.949,
+   "end": 470.777,
+   "voice_at": 465.029,
+   "vd": 5.448
+  },
+  {
+   "text": "The case for Ronaldo. He is the most capped and the highest-scoring international of all time.",
+   "shot": "ronaldo_portugal_7",
+   "ov": [
+    {
+     "k": "chip",
+     "t": "THE CASE FOR RONALDO",
+     "c": "gold",
+     "at": 0.4,
+     "pos": "tl"
+    }
+   ],
+   "kb": "in",
+   "sfx": "whoosh",
+   "i": 89,
+   "start": 470.777,
+   "end": 476.989,
+   "voice_at": 470.857,
+   "vd": 5.832
+  },
+  {
+   "text": "And he says he was promised playing time that never came.",
+   "shot": "ronaldo_training",
+   "ov": [],
+   "kb": "in",
+   "sfx": null,
+   "i": 90,
+   "start": 476.989,
+   "end": 480.705,
+   "voice_at": 477.069,
+   "vd": 3.336
+  },
+  {
+   "text": "Then there is the part nobody can argue with. Jesus asked him to stay, and Ronaldo said no.",
+   "shot": "ronaldo_walking_away",
+   "ov": [],
+   "kb": "out",
+   "sfx": null,
+   "i": 91,
+   "start": 480.705,
+   "end": 487.277,
+   "voice_at": 480.785,
+   "vd": 6.192
+  },
+  {
+   "text": "Maybe the truth sits somewhere in the middle: a proud captain, and a manager who would not bend.",
+   "shot": "ronaldo_closeup_a",
+   "ov": [],
+   "kb": "in",
+   "sfx": null,
+   "i": 92,
+   "start": 487.277,
+   "end": 492.793,
+   "voice_at": 487.357,
+   "vd": 5.136
+  },
+  {
+   "text": "What neither side can deny is this. Portugal lost its greatest ever player, and he lost his national team.",
+   "shot": "ronaldo_closeup_b",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "NO WINNER",
+     "c": "gold",
+     "at": 0.2,
+     "size": 170,
+     "y": 0.5
+    }
+   ],
+   "kb": "out",
+   "sfx": "impact",
+   "i": 93,
+   "start": 492.793,
+   "end": 500.013,
+   "voice_at": 492.873,
+   "vd": 6.84
+  },
+  {
+   "ch": 8,
+   "title": "WHAT HAPPENS NEXT",
+   "text": "Chapter eight. What happens next.",
+   "shot": "ronaldo_alnassr",
+   "ov": [],
+   "kb": "in",
+   "sfx": "riser",
+   "i": 94,
+   "start": 500.013,
+   "end": 504.871,
+   "voice_at": 500.563,
+   "vd": 3.408
+  },
+  {
+   "text": "But this is not the end of Ronaldo. It is only the end of Ronaldo and Portugal.",
+   "shot": "ronaldo_alnassr",
+   "ov": [],
+   "kb": "in",
+   "sfx": null,
+   "i": 95,
+   "start": 504.871,
+   "end": 510.507,
+   "voice_at": 504.951,
+   "vd": 5.256
+  },
+  {
+   "text": "Look at what is left of his career. Five Ballon d'Or awards.",
+   "shot": "ronaldo_ballondor",
+   "ov": [
+    {
+     "k": "stat",
+     "v": 5,
+     "l": "BALLON D'OR",
+     "sub": "",
+     "c": "gold",
+     "at": 0.2,
+     "suf": "",
+     "dec": 0
+    }
+   ],
+   "kb": "out",
+   "sfx": "impact",
+   "i": 96,
+   "start": 510.507,
+   "end": 515.663,
+   "voice_at": 510.587,
+   "vd": 4.776
+  },
+  {
+   "text": "Five Champions League titles, across Manchester United and Real Madrid.",
+   "shot": "ronaldo_realmadrid_ucl",
+   "ov": [
+    {
+     "k": "stat",
+     "v": 5,
+     "l": "CHAMPIONS LEAGUES",
+     "sub": "",
+     "c": "white",
+     "at": 0.2,
+     "suf": "",
+     "dec": 0
+    }
+   ],
+   "kb": "in",
+   "sfx": null,
+   "i": 97,
+   "start": 515.663,
+   "end": 520.747,
+   "voice_at": 515.743,
+   "vd": 4.704
+  },
+  {
+   "text": "At Real Madrid alone, nine years, and four hundred and fifty goals in four hundred and thirty-eight games.",
+   "shot": "ronaldo_manutd_2008",
+   "ov": [
+    {
+     "k": "stats",
+     "items": [
+      {
+       "v": 450,
+       "l": "GOALS"
+      },
+      {
+       "v": 438,
+       "l": "GAMES"
+      }
+     ],
+     "at": 0.2
+    }
+   ],
+   "kb": "left",
+   "sfx": null,
+   "i": 98,
+   "start": 520.747,
+   "end": 527.271,
+   "voice_at": 520.827,
+   "vd": 6.144
+  },
+  {
+   "text": "Portugal go on without him. Jorge Jesus named his squad for Nations League games against Denmark and Wales the very next day.",
+   "shot": "portugal_squad",
+   "ov": [],
+   "kb": "in",
+   "sfx": null,
+   "i": 99,
+   "start": 527.271,
+   "end": 535.307,
+   "voice_at": 527.351,
+   "vd": 7.656
+  },
+  {
+   "text": "He will keep playing for Al Nassr, where his contract runs until June 2027.",
+   "shot": "ronaldo_2026_portrait",
+   "ov": [
+    {
+     "k": "chip",
+     "t": "AL NASSR · UNTIL JUNE 2027",
+     "c": "gold",
+     "at": 0.4,
+     "pos": "tl"
+    }
+   ],
+   "kb": "right",
+   "sfx": null,
+   "i": 100,
+   "start": 535.307,
+   "end": 540.751,
+   "voice_at": 535.387,
+   "vd": 5.064
+  },
+  {
+   "text": "But reports say he is expected to finish his club career at the end of this season.",
+   "shot": "ronaldo_alnassr",
+   "ov": [],
+   "kb": "in",
+   "sfx": null,
+   "i": 101,
+   "start": 540.751,
+   "end": 545.571,
+   "voice_at": 540.831,
+   "vd": 4.44
+  },
+  {
+   "text": "In a recent Vogue interview, he said: 'This is probably my last year of football, and I want to leave a spectacular legacy.'",
+   "shot": "ronaldo_closeup_b",
+   "ov": [
+    {
+     "k": "quote",
+     "t": "This is probably my last year of football, and I want to leave a spectacular legacy.",
+     "who": "CRISTIANO RONALDO · VOGUE",
+     "at": 0.2
+    }
+   ],
+   "kb": "out",
+   "sfx": null,
+   "i": 102,
+   "start": 545.571,
+   "end": 552.743,
+   "voice_at": 545.651,
+   "vd": 6.792
+  },
+  {
+   "text": "He is forty-one years old.",
+   "shot": "ronaldo_closeup_c",
+   "ov": [
+    {
+     "k": "stat",
+     "v": 41,
+     "l": "YEARS OLD",
+     "sub": "",
+     "c": "white",
+     "at": 0.2,
+     "suf": "",
+     "dec": 0
+    }
+   ],
+   "kb": "in",
+   "sfx": null,
+   "i": 103,
+   "start": 552.743,
+   "end": 555.355,
+   "voice_at": 552.823,
+   "vd": 2.232
+  },
+  {
+   "text": "And he has nine hundred and eighty-five career goals.",
+   "shot": "ronaldo_free_kick",
+   "ov": [
+    {
+     "k": "stat",
+     "v": 985,
+     "l": "CAREER GOALS",
+     "sub": "",
+     "c": "gold",
+     "at": 0.2,
+     "suf": "",
+     "dec": 0
+    }
+   ],
+   "kb": "out",
+   "sfx": "impact",
+   "i": 104,
+   "start": 555.355,
+   "end": 558.975,
+   "voice_at": 555.435,
+   "vd": 3.24
+  },
+  {
+   "text": "Fifteen more, and he reaches one thousand.",
+   "shot": "ronaldo_ballondor",
+   "ov": [
+    {
+     "k": "stat",
+     "v": 15,
+     "l": "GOALS TO 1,000",
+     "sub": "",
+     "c": "red",
+     "at": 0.2,
+     "suf": "",
+     "dec": 0
+    },
+    {
+     "k": "flash",
+     "at": 0.0
+    }
+   ],
+   "kb": "in",
+   "sfx": "riser",
+   "i": 105,
+   "start": 558.975,
+   "end": 562.499,
+   "voice_at": 559.055,
+   "vd": 3.144
+  },
+  {
+   "text": "That is the number. Fifteen.",
+   "shot": "ronaldo_closeup_a",
+   "ov": [
+    {
+     "k": "slam",
+     "t": "15",
+     "c": "gold",
+     "at": 0.2,
+     "size": 420,
+     "y": 0.45
+    }
+   ],
+   "kb": "out",
+   "sfx": "impact",
+   "i": 106,
+   "start": 562.499,
+   "end": 565.975,
+   "voice_at": 562.579,
+   "vd": 3.096
+  },
+  {
+   "text": "So remember three things. One: he leaves as the all-time record holder for both caps and goals.",
+   "shot": "ronaldo_portugal_7",
+   "ov": [],
+   "kb": "in",
+   "sfx": null,
+   "i": 107,
+   "start": 565.975,
+   "end": 573.051,
+   "voice_at": 566.055,
+   "vd": 6.696
+  },
+  {
+   "text": "Two: it did not end with a farewell tour. It ended with a bench, a walkout and a suspension.",
+   "shot": "ronaldo_walking_away",
+   "ov": [],
+   "kb": "out",
+   "sfx": null,
+   "i": 108,
+   "start": 573.051,
+   "end": 580.031,
+   "voice_at": 573.131,
+   "vd": 6.6
+  },
+  {
+   "text": "And three: there is still one number left to chase.",
+   "shot": "ronaldo_free_kick",
+   "ov": [],
+   "kb": "in",
+   "sfx": "riser",
+   "i": 109,
+   "start": 580.031,
+   "end": 583.867,
+   "voice_at": 580.111,
+   "vd": 3.456
+  },
+  {
+   "text": "Portugal's chapter is closed. This one is still being written.",
+   "shot": "ronaldo_2026_portrait",
+   "ov": [],
+   "kb": "out",
+   "sfx": null,
+   "i": 110,
+   "start": 583.867,
+   "end": 588.831,
+   "voice_at": 583.947,
+   "vd": 4.584
+  },
+  {
+   "text": "So tell me in the comments: did Portugal handle this the right way?",
+   "shot": "ronaldo_portugal_7",
+   "ov": [],
+   "kb": "left",
+   "sfx": null,
+   "i": 111,
+   "start": 588.831,
+   "end": 593.147,
+   "voice_at": 588.911,
+   "vd": 3.936
+  },
+  {
+   "text": "Was Jesus wrong, or was Ronaldo? Drop your answer below.",
+   "shot": "ronaldo_closeup_b",
+   "ov": [],
+   "kb": "right",
+   "sfx": null,
+   "i": 112,
+   "start": 593.147,
+   "end": 598.279,
+   "voice_at": 593.227,
+   "vd": 4.752
+  },
+  {
+   "text": "And if you want the full story of Ronaldo and Messi, watch Messi versus Ronaldo, the final answer, next. Subscribe, so you don't miss the thousandth goal.",
+   "shot": "ronaldo_2026_portrait",
+   "ov": [
+    {
+     "k": "chip",
+     "t": "SUBSCRIBE · CD PHANTOM",
+     "c": "red",
+     "at": 0.4,
+     "pos": "bl"
+    }
+   ],
+   "kb": "out",
+   "sfx": "whoosh",
+   "i": 113,
+   "start": 598.279,
+   "end": 608.139,
+   "voice_at": 598.359,
+   "vd": 9.48
+  }
+ ]
+}

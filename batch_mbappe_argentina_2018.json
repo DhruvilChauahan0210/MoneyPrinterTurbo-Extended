@@ -1,0 +1,422 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Kylian Mbappe",
+      "a real photograph of Lionel Messi",
+      "a real photograph of Marcos Rojo",
+      "a real photograph of Benjamin Pavard",
+      "a real photograph of Sergio Aguero"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "WHO KNOCKED OUT MESSI?",
+    "hook_cover_term": "Kylian Mbappe celebrating for France at the 2018 World Cup",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "MBAPPE OR MESSI: WHO OWNED THAT DAY? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Kylian Mbappe",
+      "a real photograph of Lionel Messi",
+      "a real photograph of Marcos Rojo",
+      "a real photograph of Benjamin Pavard",
+      "a real photograph of Sergio Aguero"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Two goals in four minutes. Mbappe was only nineteen. Kazan, June two thousand and eighteen. France against Argentina, last sixteen. Mbappe is brought down in the box by Rojo. Penalty. Argentina fight back and lead. Then Pavard levels it. Sixty-fourth minute, Mbappe scores. Sixty-eighth minute, again. Four-two. Aguero pulls one back in stoppage time. Four-three. Messi, aged thirty-one, goes home. Mbappe, a teenager, goes on. Did a teenager really outplay Messi that day?",
+    "video_subject": "At the 2018 World Cup in Kazan, nineteen-year-old Kylian Mbappe won a penalty and scored twice in four minutes as France beat Messi's Argentina 4-3 in the last sixteen.",
+    "video_terms": "Mbappe, Messi, France, Argentina, World Cup 2018, Kazan, Pavard, Aguero, 4-3",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Two goals in four minutes. Mbappe was only nineteen.",
+        "visual": "close up of Kylian Mbappe in France blue kit 2018 World Cup",
+        "images": [
+          "Kylian Mbappe France 2018",
+          "Mbappe World Cup 2018"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Kazan, June two thousand and eighteen. France against Argentina, last sixteen.",
+        "visual": "France players lining up in Kazan Arena",
+        "images": [
+          "France Argentina 2018",
+          "Kazan Arena World Cup"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Mbappe is brought down in the box by Rojo. Penalty.",
+        "visual": "Mbappe fouled in the penalty area",
+        "images": [
+          "Mbappe Rojo 2018",
+          "Mbappe penalty Argentina"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Argentina fight back and lead. Then Pavard levels it.",
+        "visual": "Argentina players celebrating then Pavard goal",
+        "images": [
+          "Argentina France 2018",
+          "Benjamin Pavard 2018"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Sixty-fourth minute, Mbappe scores. Sixty-eighth minute, again.",
+        "visual": "Mbappe celebrating a goal for France",
+        "images": [
+          "Mbappe goal France",
+          "Mbappe celebration 2018"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Four-two. Aguero pulls one back in stoppage time. Four-three.",
+        "visual": "Sergio Aguero scoring header for Argentina",
+        "images": [
+          "Sergio Aguero Argentina 2018",
+          "Argentina France 4-3"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi, aged thirty-one, goes home. Mbappe, a teenager, goes on.",
+        "visual": "Lionel Messi dejected after elimination",
+        "images": [
+          "Lionel Messi Argentina 2018",
+          "Messi Kazan"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Did a teenager really outplay Messi that day?",
+        "visual": "Mbappe and Messi together at the end of the match",
+        "images": [
+          "Mbappe Messi 2018",
+          "Messi Mbappe handshake"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "At the 2018 World Cup in Kazan, nineteen-year-old Kylian Mbappe won a penalty and scored twice in four minutes as France beat Messi's Argentina 4-3 in the last sixteen.",
+      "video_script": "Two goals in four minutes. Mbappe was only nineteen. Kazan, June two thousand and eighteen. France against Argentina, last sixteen. Mbappe is brought down in the box by Rojo. Penalty. Argentina fight back and lead. Then Pavard levels it. Sixty-fourth minute, Mbappe scores. Sixty-eighth minute, again. Four-two. Aguero pulls one back in stoppage time. Four-three. Messi, aged thirty-one, goes home. Mbappe, a teenager, goes on. Did a teenager really outplay Messi that day?",
+      "video_terms": "Mbappe, Messi, France, Argentina, World Cup 2018, Kazan, Pavard, Aguero, 4-3",
+      "hook_text": "WHO KNOCKED OUT MESSI?",
+      "cta_text": "MBAPPE OR MESSI: WHO OWNED THAT DAY? 👇",
+      "beat_plan": [
+        {
+          "says": "Two goals in four minutes. Mbappe was only nineteen.",
+          "visual": "close up of Kylian Mbappe in France blue kit 2018 World Cup",
+          "images": [
+            "Kylian Mbappe France 2018 World Cup portrait",
+            "Mbappe France 2018 face"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b01/img-07b6be102de3fbc9599e77c75c1d7498.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b01/img-a4ba76976273b882b41d7fd61e57b5ef.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b01/img-8380635d288a26bd195a77027929d59d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b01/img-07b6be102de3fbc9599e77c75c1d7498.jpg",
+          "url": "https://s.abcnews.com/images/International/kylian-mbappe-world-cup-win-rt-jef-180716_hpEmbed_15x16_992.jpg"
+        },
+        {
+          "says": "Kazan, June two thousand and eighteen. France against Argentina, last sixteen.",
+          "visual": "France players lining up in Kazan Arena",
+          "images": [
+            "France Argentina World Cup 2018 players",
+            "Kazan Arena France Argentina match"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b02/img-12625ec4aa912cc91f8ded368c79afc8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b02/img-88595467e9bf0feb02d2fd3dcaee3e61.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b02/img-a7123646bfafd5fc51688258e77b5b1f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b02/img-28d9e7fb5ca8225752de6d0863368cbd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b02/img-56be8d7f8669b4e20b5f0679d8913d03.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b02/img-ea096f9b0080d09e4aa0ab1b60d8a246.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b02/img-0110401e20e8767981971b3c1725dffe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b02/img-e9adaa77dc6117c6de5905764d768109.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b02/img-12625ec4aa912cc91f8ded368c79afc8.jpg",
+          "url": "https://static0.givemesportimages.com/wordpress/wp-content/uploads/2022/11/team.jpg"
+        },
+        {
+          "says": "Mbappe is brought down in the box by Rojo. Penalty.",
+          "visual": "Mbappe fouled in the penalty area",
+          "images": [
+            "Mbappe Rojo 2018",
+            "Mbappe penalty Argentina"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b03/img-b8e793fdf6b3657d14d1f24ddaea667c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b03/img-bc348d8c3e94cfd554d658968abcc1cb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b03/img-f03a5d9909e118c4d8dffb6d0b5fb09d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b03/img-e40e01f694ba44a9609b6588deb2d37f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b03/img-0b4123e2d7d5fb11e16acc0a1e91e7db.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b03/img-6128a26da0d5a4071921176d7f43f47c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b03/img-3f7d98671c161d1ae1b55af9a0156682.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b03/img-01351ca7cdd72887288b68e18be86b09.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b03/img-b8e793fdf6b3657d14d1f24ddaea667c.jpg",
+          "url": "https://vnn-imgs-f.vgcloud.vn/2018/06/30/23/mbappe-rojo.jpg?width=260&s=soU0qBHmd7D4U0q8zzk1Aw"
+        },
+        {
+          "says": "Argentina fight back and lead. Then Pavard levels it.",
+          "visual": "Argentina players celebrating then Pavard goal",
+          "images": [
+            "Argentina France 2018",
+            "Benjamin Pavard 2018"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b04/img-45b5364cccefda64d4589af46ac62ac5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b04/img-158dfda42116a39ff92dc885f9e6b3fe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b04/img-dfdfa7da0f2dcd99a2d23033b393faab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b04/img-3b3432280d0d22a5243660f70c9695bb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b04/img-8a80182f1d92818b503b9d93bbbe9d6a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b04/img-72282407e2d98d5782d7df6af02dd20d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b04/img-45b5364cccefda64d4589af46ac62ac5.jpg",
+          "url": "https://images.rtl.fr/~c/2000v2000/rtl/www/1311322-benjamin-pavard-le-30-juin-2018-a-kazan.jpg"
+        },
+        {
+          "says": "Sixty-fourth minute, Mbappe scores. Sixty-eighth minute, again.",
+          "visual": "Mbappe celebrating a goal for France",
+          "images": [
+            "Mbappe goal France",
+            "Mbappe celebration 2018"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b05/img-37b916caca74b16dd71f0d2f4a33f80f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b05/img-53bd0ae7f2ede419256626ae718af871.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b05/img-cad24f4ac27f6f276c3ec70cfde5792d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b05/img-b68ce7cbfe8a235981d446605916ae2b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b05/img-f2fd6420d6138ee513f3616fbd0e3277.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b05/img-b04601b76f28b3815074b79d6b604e2e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b05/img-bedddcbe51ff9166c8543b9fa7396f83.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b05/img-affc54680f9d75a0fb6ca8e51dd0d2fc.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b05/shot_50faf37dec.mp4",
+          "url": "https://www.youtube.com/watch?v=cV3F3U1880M",
+          "start": 477.0,
+          "len": 6.0
+        },
+        {
+          "says": "Four-two. Aguero pulls one back in stoppage time. Four-three.",
+          "visual": "Sergio Aguero scoring header for Argentina",
+          "images": [
+            "Aguero Argentina header France 2018",
+            "Sergio Aguero France 2018 World Cup goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b06/img-b5b32e357f319d8a6720f1d43617e1a5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b06/img-7b85cedc858ff5560e577532e498eae2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b06/img-f6ab49dff9c7f3a95b490de28487cb00.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b06/img-185d047e3f384791d74e5f21949fdee3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b06/img-e38bb3050e11bda3a5204d011aa38638.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b06/img-c5a3102e36183571eacda5c521e43cff.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b06/img-c073082e2466bfdb3cfc222660a6f5c7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b06/img-91ffd03b28c29d2b812986fa74c89ccb.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b06/img-7b85cedc858ff5560e577532e498eae2.jpg",
+          "url": "https://www.10wallpaper.com/wallpaper/3840x2400/1806/FIFA_World_Cup_2018_Argentina_Sergio_Aguero_3840x2400.jpg"
+        },
+        {
+          "says": "Messi, aged thirty-one, goes home. Mbappe, a teenager, goes on.",
+          "visual": "Lionel Messi dejected after elimination",
+          "images": [
+            "Messi dejected Argentina France 2018 World Cup",
+            "Messi sad after elimination Russia 2018"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b07/img-911170d836a6e0887521fe6bb9d0dff7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b07/img-63597c37d49506a083e194da62060cab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b07/img-76e444b0d04938ad6046a4644ea1fc21.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b07/img-03fe9dae22d649e66807a336daf15ee7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b07/img-38280fd13af0ed05b91e1319542ab757.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b07/img-6cded9d704efa43fafa305422635c23b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b07/img-e4875e37942644e46c08fd66c0eba62f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b07/img-66c8e6e32212d8ee43f78b830d53ec01.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b07/shot_7b41531255.mp4",
+          "url": "https://www.youtube.com/watch?v=cV3F3U1880M",
+          "start": 487.5,
+          "len": 6.0
+        },
+        {
+          "says": "Did a teenager really outplay Messi that day?",
+          "visual": "Mbappe and Messi together at the end of the match",
+          "images": [
+            "Messi Mbappe 2018 World Cup France Argentina Kazan",
+            "Mbappe Messi shake hands Russia 2018 round of 16"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b08/img-fc1fb47b5da0b6737d3445349111e852.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b08/img-8cd105c373d38a6e1b0a48c4aa3ec43a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/at_the_2018_world_cup_in_kazan_nineteen_/b08/img-fc1fb47b5da0b6737d3445349111e852.jpg",
+          "url": "https://globalnews.ca/wp-content/uploads/2018/07/19342480-e1530652667905.jpg?quality=65&strip=all"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+ "cfg": "batch_neymar_remontada_barca_psg_2017.json",
+ "status": "ready",
+ "clip_beats": [
+  {
+   "beat": 5,
+   "url": "https://www.youtube.com/watch?v=h4m68r8kWAc",
+   "start": 182.0
+  },
+  {
+   "beat": 6,
+   "url": "https://www.youtube.com/watch?v=h4m68r8kWAc",
+   "start": 257.0
+  }
+ ],
+ "weak_beats": [
+  1,
+  2
+ ],
+ "beat1": "Neymar big close-up in Barcelona blue-garnet Qatar Airways kit pointing to the sky (looks like the 2015-16 kit, not exact 2016-17)",
+ "notes": "Clips from official FC Barcelona 6-1 highlights. Beat 5 = Neymar with ball and celebration close-ups (penalty moment); beat 6 = Sergi Roberto goal and bench reaction. Beat 2 is a generic Camp Nou night photo. Clips pinned via fetch_exact_clip script because of earlier --replace ffmpeg issue seen on another config; this config used the same direct cut."
+}

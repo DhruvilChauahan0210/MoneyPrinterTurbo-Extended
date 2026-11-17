@@ -1,0 +1,458 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Cristiano Ronaldo playing football",
+      "a real photograph of Ange Postecoglou",
+      "a real photograph of Sadio Mane"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "TAKEN OFF. THEN THIS HAPPENED",
+    "hook_cover_term": "Cristiano Ronaldo angry in Al Nassr kit",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "WAS THE COACH RIGHT? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Cristiano Ronaldo playing football",
+      "a real photograph of Ange Postecoglou",
+      "a real photograph of Sadio Mane"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Al Nassr were losing two-nil with ten men. At half-time against Al Ettifaq, Cristiano Ronaldo threw his captain's armband to the floor, and Ange Postecoglou took him off. He left shaking his head, snubbed the bench and went straight down the tunnel. Then Al Nassr came back without him. Sadio Mané scored twice in the last seventeen minutes, and they won three-two. Ronaldo later posted: what a comeback. Was Postecoglou right to take him off?",
+    "video_subject": "Cristiano Ronaldo threw his captain's armband to the floor and was taken off at half-time away at Al Ettifaq in August 2026, then Al Nassr came back from 2-0 down with ten men to win 3-2",
+    "video_terms": "Ronaldo armband half-time Al Ettifaq August 2026, Postecoglou substitution, Mane comeback 3-2",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Al Nassr were losing two-nil with ten men.",
+        "visual": "Al Nassr players looking dejected",
+        "images": [
+          "Al Nassr players dejected",
+          "Al Nassr team 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "At half-time against Al Ettifaq, Cristiano Ronaldo threw his captain's armband to the floor,",
+        "visual": "Cristiano Ronaldo angry in Al Nassr kit",
+        "images": [
+          "Cristiano Ronaldo armband",
+          "Ronaldo angry Al Nassr"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and Ange Postecoglou took him off.",
+        "visual": "Ange Postecoglou on the touchline",
+        "images": [
+          "Ange Postecoglou Al Nassr",
+          "Ange Postecoglou touchline"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He left shaking his head, snubbed the bench and went straight down the tunnel.",
+        "visual": "Cristiano Ronaldo walking off frustrated",
+        "images": [
+          "Ronaldo walking off",
+          "Cristiano Ronaldo frustrated walking"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Then Al Nassr came back without him.",
+        "visual": "Al Nassr players celebrating",
+        "images": [
+          "Al Nassr celebration",
+          "Al Nassr players celebrate goal"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Sadio Mané scored twice in the last seventeen minutes,",
+        "visual": "Sadio Mane celebrating for Al Nassr",
+        "images": [
+          "Sadio Mane Al Nassr goal",
+          "Sadio Mane Al Nassr"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and they won three-two.",
+        "visual": "Sadio Mane celebrating",
+        "images": [
+          "Sadio Mane celebration",
+          "Mane Al Nassr celebrate"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo later posted: what a comeback.",
+        "visual": "Cristiano Ronaldo smiling in Al Nassr kit",
+        "images": [
+          "Cristiano Ronaldo smiling Al Nassr",
+          "Ronaldo Al Nassr happy"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Was Postecoglou right to take him off?",
+        "visual": "close up of Cristiano Ronaldo",
+        "images": [
+          "Cristiano Ronaldo close up",
+          "Cristiano Ronaldo face"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Cristiano Ronaldo threw his captain's armband to the floor and was taken off at half-time away at Al Ettifaq in August 2026, then Al Nassr came back from 2-0 down with ten men to win 3-2",
+      "video_script": "Al Nassr were losing two-nil with ten men. At half-time against Al Ettifaq, Cristiano Ronaldo threw his captain's armband to the floor, and Ange Postecoglou took him off. He left shaking his head, snubbed the bench and went straight down the tunnel. Then Al Nassr came back without him. Sadio Mané scored twice in the last seventeen minutes, and they won three-two. Ronaldo later posted: what a comeback. Was Postecoglou right to take him off?",
+      "video_terms": "Ronaldo armband half-time Al Ettifaq August 2026, Postecoglou substitution, Mane comeback 3-2",
+      "hook_text": "TAKEN OFF. THEN THIS HAPPENED",
+      "cta_text": "WAS THE COACH RIGHT? 👇",
+      "beat_plan": [
+        {
+          "says": "Al Nassr were losing two-nil with ten men.",
+          "visual": "Al Nassr players looking dejected",
+          "images": [
+            "Al Nassr players dejected",
+            "Al Nassr team 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b01/img-c3b21085fe3216b3f1dd53f389562e36.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b01/img-3bd89a8c72582cce282fa7266c14f7a7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b01/img-a7e624c619a8c272328e800929251f73.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b01/img-1caf8a6b19fa68f6866bbdecf24dafb7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b01/img-242a1e5de6678cc5bf31c0da8b7a017b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b01/img-c88c0d4df8de7e945ffef05fc576411a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b01/img-9dae7c82a671fbf2d75a4b3e77cc1360.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b01/img-9c633d98e4d7006619f6cb2f8136932e.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b01/img-c3b21085fe3216b3f1dd53f389562e36.jpg",
+          "url": "https://www.aljazeera.com/wp-content/uploads/2025/08/2025-08-23T150344Z_1235028255_UP1EL8N15U7EZ_RTRMADP_3_SOCCER-SAUDI-NSR-AHL-1755969454.jpg?w=770&resize=770,488&quality=80"
+        },
+        {
+          "says": "At half-time against Al Ettifaq, Cristiano Ronaldo threw his captain's armband to the floor,",
+          "visual": "Cristiano Ronaldo angry in Al Nassr kit",
+          "images": [
+            "Cristiano Ronaldo armband",
+            "Ronaldo angry Al Nassr"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b02/img-78e3d20f9b7be2744dba01da261fda39.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b02/img-6036ad26dfdc9d778de24d5c3a8fb94b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b02/img-b98e011251280033389ee651402899f0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b02/img-ac2d0f2a5cf9a35970889e76636e2e2a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b02/img-26287abced0f4a19fbc38560ea9a7d39.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b02/img-d0a2c95e04fcb568c2e762b91ef66826.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b02/img-b00a6a2e44fb45e6955bda5502f28c00.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b02/img-aa7108611938dc6d2bfd618520129e62.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b02/img-6036ad26dfdc9d778de24d5c3a8fb94b.jpg",
+          "url": "https://talksport.com/wp-content/uploads/sites/5/2023/08/Ronaldo-angry-1.jpg?w=1920"
+        },
+        {
+          "says": "and Ange Postecoglou took him off.",
+          "visual": "Ange Postecoglou on the touchline",
+          "images": [
+            "Ange Postecoglou Al Nassr",
+            "Ange Postecoglou touchline"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b03/img-a2bbae1f517de0fe0c6449aa7bbb4fd9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b03/img-4f614d8a4aa9faddac072ec76dce6c7b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b03/img-caf29a1e5bfbd8995c5e93174125ad8f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b03/img-76414354b9faad979b3ee81bc6c3aac5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b03/img-aea27109cdd74825e63ec4c14656f83a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b03/img-9d2ffb6cfd8c7b01e3200ea4044ca706.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b03/img-76c86c4641e3c9d13439586a53fb7019.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b03/img-b73f4fbf638e0ac5204f58e97cecfbce.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b03/img-76414354b9faad979b3ee81bc6c3aac5.jpg",
+          "url": "https://pictures.tribuna.com/image/b9150bde-d9a4-446a-a819-55dd9db8e381?width=1920&quality=70"
+        },
+        {
+          "says": "He left shaking his head, snubbed the bench and went straight down the tunnel.",
+          "visual": "Cristiano Ronaldo walking off frustrated",
+          "images": [
+            "Ronaldo walking off",
+            "Cristiano Ronaldo frustrated walking"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b04/img-b6571c2189a41c0cd9e5669d07141cd7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b04/img-230698fc0b7c11b78e560f11f671bdb7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b04/img-57b34abbf4d6de7652b7e18fa1d1825c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b04/img-ca32c0c159970219961fb469756bb376.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b04/img-e485459cf4f2bb6abcb199a883de2655.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b04/img-f7f40835bdaa30d981dc4ff2162edde4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b04/img-75bbb3b48f4c03761ac95e693112a6ca.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b04/img-b6571c2189a41c0cd9e5669d07141cd7.jpg",
+          "url": "https://i2-prod.dailystar.co.uk/article29669434.ece/ALTERNATES/s615/0_Cristiano-Ronaldo-appeared-to-get-into-a-verbal-altercation-as-he-left-the-pitch-following-his-Al-Na.jpg"
+        },
+        {
+          "says": "Then Al Nassr came back without him.",
+          "visual": "Al Nassr players celebrating",
+          "images": [
+            "Al Nassr celebration",
+            "Al Nassr players celebrate goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b05/img-73b2b61b7fccfb296c72a5a0ae0c6bb9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b05/img-a6d3ccc5eee1ca8a3e14334cccf3909f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b05/img-3fa3ec144d6bee467937b1d99e40abcf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b05/img-485c76d7fd48074217d55fd7f141a701.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b05/img-f103c910bc799d7a2bf2cd0e01a0463d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b05/img-557b2313c42fe429b3a91d0d9ccc9fcb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b05/img-83e11e903b0fd86c6c22e2aaee8d9324.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b05/img-5d1ab9420a97a1983f6510e8383c6f7f.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b05/img-557b2313c42fe429b3a91d0d9ccc9fcb.jpg",
+          "url": "https://livesport-ott-images.ssl.cdn.cra.cz/r900xfq60/55d6f177-5cda-4c75-b54b-72fdffb27ae9.jpeg"
+        },
+        {
+          "says": "Sadio Mané scored twice in the last seventeen minutes,",
+          "visual": "Sadio Mane celebrating for Al Nassr",
+          "images": [
+            "Sadio Mane Al Nassr goal",
+            "Sadio Mane Al Nassr"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b06/img-ecc31d6df0ae1cea7e9f5e1669a27e1a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b06/img-bd068964c3d10bc2e9b1b63805069e82.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b06/img-8e9de3d84185e36a4ea53fa3e857797e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b06/img-f8982dcd1d98ac0188dab093108e7590.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b06/img-a2076209dc4e8c4d967de5201e36bd1c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b06/img-6dc903c07131fd35be2c999f702a4348.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b06/img-3ee13c17577eb37115ec0586ed400c9f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b06/img-a658adce4d0fd56334bbc239469200b9.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b06/img-8e9de3d84185e36a4ea53fa3e857797e.jpg",
+          "url": "https://www.iraqinews.com/wp-content/uploads/2024/09/Sadio-Mane-of-Saudi-Arabias-Al-Nassr.-Photo-Al-Nassr-FC.jpg"
+        },
+        {
+          "says": "and they won three-two.",
+          "visual": "Sadio Mane celebrating",
+          "images": [
+            "Sadio Mane celebration",
+            "Mane Al Nassr celebrate"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b07/img-72b63992e3d75760698536171d13b9f0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b07/img-abbde2788a6e0ac0b7c40eb4a11685d3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b07/img-a68608ee6cf2cc49d591e796b9863d42.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b07/img-47dba9c349159148f69c2bdfac6dcde4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b07/img-4311badc477cf9d4c103e59d347d42f9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b07/img-f8982dcd1d98ac0188dab093108e7590.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b07/img-6aa4f87c49bdf1e127d781f7b0529e95.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b07/img-0e288a96638d8b4d6d1f07892798345c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b07/img-f8982dcd1d98ac0188dab093108e7590.jpg",
+          "url": "https://senego.com/wp-content/uploads/2024/05/Sadio-Mane-brille-et-propulse-Al-Nassr-en-finale-de-la-coupe-du-roi-en-Arabie-Saoudite_thumbnail.jpg"
+        },
+        {
+          "says": "Ronaldo later posted: what a comeback.",
+          "visual": "Cristiano Ronaldo smiling in Al Nassr kit",
+          "images": [
+            "Cristiano Ronaldo smiling Al Nassr",
+            "Ronaldo Al Nassr happy"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b08/img-a81c3f59d2103b2e7d193b4f8a13b54f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b08/img-bef82b81cff45204ee75a6053a075d6e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b08/img-b0c225bd492d413841b46d10ad7b2da0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b08/img-2274895b5158a9ae491088bb65c8ed4c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b08/img-9005557a34b77d9ce14daa8146a08bf6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b08/img-4b347e5a3b7b5f5d3d90d2c31a2ad2f0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b08/img-bdaff4857890a23270f8484a46c3f013.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b08/img-7c84344c5b916455cfff86de0891a9eb.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b08/img-2274895b5158a9ae491088bb65c8ed4c.jpg",
+          "url": "https://i.pinimg.com/736x/be/f9/f7/bef9f7e6d0d63c324590cdd708f135da.jpg"
+        },
+        {
+          "says": "Was Postecoglou right to take him off?",
+          "visual": "close up of Cristiano Ronaldo",
+          "images": [
+            "Cristiano Ronaldo close up",
+            "Cristiano Ronaldo face"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b09/img-29d10f9cea2aa514eecdb64baf1b4185.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b09/img-6266892056fdcbb68c93efe42cd108e7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b09/img-48cffa8485e565dfc62bcb0cccc989bd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b09/img-979b814c3dd1fee3e9b9c2c526f7e9c5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b09/img-b43574c3014c68a32d33898dbb7f9115.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b09/img-4c8e3aed9a719ca2f2c102d64e61447f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b09/img-45325662cc80e4a4d1bf9ee39bf3ffe0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b09/img-1ac9a8cef02943601e686ddb23779bd4.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_threw_his_captain_s_ar/b09/img-48cffa8485e565dfc62bcb0cccc989bd.jpg",
+          "url": "https://i.pinimg.com/originals/b7/a2/d6/b7a2d62f0332cba18de991526f4b5197.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

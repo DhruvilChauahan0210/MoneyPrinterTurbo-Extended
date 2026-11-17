@@ -1,0 +1,21 @@
+{
+ "cfg": "batch_vinicius_supercup_hattrick_2024.json",
+ "status": "ready",
+ "clip_beats": [
+  {
+   "beat": 4,
+   "url": "https://www.youtube.com/watch?v=e3bswcippP0",
+   "start": 17.0
+  },
+  {
+   "beat": 5,
+   "url": "https://www.youtube.com/watch?v=e3bswcippP0",
+   "start": 52.0
+  }
+ ],
+ "weak_beats": [
+  6
+ ],
+ "beat1": "Big close-up of Vinicius in white Real Madrid kit with Supercopa Riyadh badge, finger to cheek (borrowed from beat 8 candidate 7)",
+ "notes": "Clips from the official Real Madrid 97s highlights (small score bug + club crest only). Beat 4 = 7th/10th-minute goals and celebration; beat 5 = penalty hat-trick and celebration. Beat 6 uses a Rodrygo photo (only 3 candidates, no Lewandowski/Rodrygo goal shot). Beat 8 pointing photo."
+}

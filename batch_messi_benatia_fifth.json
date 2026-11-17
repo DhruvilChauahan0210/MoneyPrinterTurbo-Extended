@@ -1,0 +1,429 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing football",
+      "a real photograph of Mehdi Benatia",
+      "a real photograph of Michael Olise"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "TOO HIGH AT FIFTH?",
+    "hook_cover_term": "close up of Lionel Messi",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "TOO HIGH OR TOO LOW? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing football",
+      "a real photograph of Mehdi Benatia",
+      "a real photograph of Michael Olise"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Mehdi Benatia has a problem with Messi's Ballon d'Or ranking. Messi finished fifth at thirty-nine, despite eight World Cup goals. But Benatia said: you spend the entire year in Miami and finish fifth? He asked if European fans had seen Messi more than Michael Olise, who finished ninth. All respect to him, Benatia said, but how can you tell me Messi is fifth? He also questioned Rodri finishing fourth after four months of football. Was fifth too high for Messi?",
+    "video_subject": "Mehdi Benatia attacked Lionel Messi's fifth place in the 2026 Ballon d'Or, asking how a year in Miami could rank him above Michael Olise",
+    "video_terms": "Benatia Messi fifth Ballon d'Or 2026, Messi Miami Olise, Benatia Rodri fourth",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "beat_plan": [
+      {
+        "says": "Mehdi Benatia has a problem with Messi's Ballon d'Or ranking.",
+        "visual": "Mehdi Benatia speaking",
+        "images": [
+          "Mehdi Benatia",
+          "Mehdi Benatia Morocco"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi finished fifth at thirty-nine, despite eight World Cup goals.",
+        "visual": "Lionel Messi in Inter Miami kit",
+        "images": [
+          "Lionel Messi Inter Miami 2026",
+          "Lionel Messi portrait"
+        ],
+        "clips": []
+      },
+      {
+        "says": "But Benatia said: you spend the entire year in Miami and finish fifth?",
+        "visual": "Lionel Messi playing for Inter Miami",
+        "images": [
+          "Messi Inter Miami",
+          "Messi Inter Miami match"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He asked if European fans had seen Messi more than Michael Olise,",
+        "visual": "Michael Olise playing for Bayern",
+        "images": [
+          "Michael Olise Bayern",
+          "Michael Olise"
+        ],
+        "clips": []
+      },
+      {
+        "says": "who finished ninth.",
+        "visual": "Michael Olise celebrating a goal",
+        "images": [
+          "Michael Olise celebration",
+          "Olise Bayern Munich goal"
+        ],
+        "clips": []
+      },
+      {
+        "says": "All respect to him, Benatia said, but how can you tell me Messi is fifth?",
+        "visual": "Mehdi Benatia",
+        "images": [
+          "Mehdi Benatia pundit",
+          "Mehdi Benatia Marseille"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He also questioned Rodri finishing fourth after four months of football.",
+        "visual": "Rodri playing for Manchester City",
+        "images": [
+          "Rodri Manchester City",
+          "Rodri Spain"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Was fifth too high for Messi?",
+        "visual": "close up of Lionel Messi",
+        "images": [
+          "Lionel Messi close up",
+          "Lionel Messi serious"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b02/img-c793e9a6c6954a49e5a0a73c5645b6d4.jpg"
+      }
+    ],
+    "intro_image_paths": [],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Mehdi Benatia attacked Lionel Messi's fifth place in the 2026 Ballon d'Or, asking how a year in Miami could rank him above Michael Olise",
+      "video_script": "Mehdi Benatia has a problem with Messi's Ballon d'Or ranking. Messi finished fifth at thirty-nine, despite eight World Cup goals. But Benatia said: you spend the entire year in Miami and finish fifth? He asked if European fans had seen Messi more than Michael Olise, who finished ninth. All respect to him, Benatia said, but how can you tell me Messi is fifth? He also questioned Rodri finishing fourth after four months of football. Was fifth too high for Messi?",
+      "video_terms": "Benatia Messi fifth Ballon d'Or 2026, Messi Miami Olise, Benatia Rodri fourth",
+      "hook_text": "TOO HIGH AT FIFTH?",
+      "cta_text": "TOO HIGH OR TOO LOW? 👇",
+      "beat_plan": [
+        {
+          "says": "Mehdi Benatia has a problem with Messi's Ballon d'Or ranking.",
+          "visual": "Mehdi Benatia speaking",
+          "images": [
+            "Mehdi Benatia",
+            "Mehdi Benatia Morocco"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b01/img-f78f389f1401a81a67ec44e1670c1fdd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b01/img-528a24ad7daaff66f77e859ea0727776.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b01/img-3a08e449139dec63540297d7096ebf31.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b01/img-177625ac36611e0768110fb5b4473503.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b01/img-8ada30afb95b3ad08a567be19f71e003.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b01/img-5d1e26376ab30dbee059a6dcd4d1bf30.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b01/img-930fe3e511fe4578a2365f32d14de17a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b01/img-86eb142ba21015454b632b51d27fc340.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b01/img-5d1e26376ab30dbee059a6dcd4d1bf30.jpg",
+          "url": "https://www.coeurmarseillais.fr/wp-content/uploads/2025/08/Mehdi-Benatia-2.jpg"
+        },
+        {
+          "says": "Messi finished fifth at thirty-nine, despite eight World Cup goals.",
+          "visual": "Lionel Messi in Inter Miami kit",
+          "images": [
+            "Lionel Messi Inter Miami 2026",
+            "Lionel Messi portrait"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b02/img-c793e9a6c6954a49e5a0a73c5645b6d4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b02/img-81952dcec6b7a4568c0be6dfa8163d7f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b02/img-e785f8c48f1eaaccbd3924898350ae9d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b02/img-fa260987364bd4366648d2ec011047df.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b02/img-48f7554e6d36b45fee919bf04d6f56b3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b02/img-e4f1e6a59a0137818bb62b4581597641.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b02/img-d5913dfb19b7a9f2aa8334d95cd835a5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b02/img-57758cc64e3ca0d4b2fc1e042f0f70f1.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b02/img-81952dcec6b7a4568c0be6dfa8163d7f.jpg",
+          "url": "https://i.pinimg.com/736x/d2/5b/1b/d25b1b4ce730a596e3ed31179dc54e16.jpg"
+        },
+        {
+          "says": "But Benatia said: you spend the entire year in Miami and finish fifth?",
+          "visual": "Lionel Messi playing for Inter Miami",
+          "images": [
+            "Messi Inter Miami",
+            "Messi Inter Miami match"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b03/img-6b235f7c36559b7689c731058eeb2ef9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b03/img-c821ee1e8330cc7480c72340c4940a5d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b03/img-86285d415b5471922d925c72c4693778.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b03/img-0c856a90e06d0ed0cc18150d2030783f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b03/img-fe4fd353291c2659380da26163dd564e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b03/img-abb3bd03f4d14bf09e408554aea44e08.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b03/img-c554ccf7c83da99f10dda1c96c8f3898.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b03/img-d3477ca5b32cf8b35a5615d11b4e9e81.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b03/img-6b235f7c36559b7689c731058eeb2ef9.jpg",
+          "url": "https://static.independent.co.uk/2023/08/07/13/SEI166832567.jpg"
+        },
+        {
+          "says": "He asked if European fans had seen Messi more than Michael Olise,",
+          "visual": "Michael Olise playing for Bayern",
+          "images": [
+            "Michael Olise Bayern",
+            "Michael Olise"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b04/img-52a29d4d625fec1ed07ef1d311da3092.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b04/img-f114b7c829a524127f88ca82584792d6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b04/img-668c742124041283f2bbe6e220d6c8c9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b04/img-31fcd74b311ff92f1434a3d26405ce1f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b04/img-c80e3186b3c29543c73abe7e7fc823b5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b04/img-095bf1d5fd9ff2d376590633a0e1ec58.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b04/img-49673e3b1c7fd55d2965a15a3b878ef5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b04/img-7b47552eee9f4fc0e6d1fc0c591a15c8.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b04/img-f114b7c829a524127f88ca82584792d6.jpg",
+          "url": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1Z7zVt.img?w=4206&h=2804&m=4&q=80"
+        },
+        {
+          "says": "who finished ninth.",
+          "visual": "Michael Olise celebrating a goal",
+          "images": [
+            "Michael Olise celebration",
+            "Olise Bayern Munich goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b05/img-05950d34164feaf7d160cc67b3dd8189.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b05/img-a8e65b5a904a272685f50c205ce4aaeb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b05/img-f161c2cf86e892b8ec5ef84924be4143.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b05/img-e7f446e632297f19180d65dca0e8436e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b05/img-9f2b1ab521f68567cf63dd4f2f68c64c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b05/img-e4e9e056b4eb2a9309a4ad01c3e80132.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b05/img-c5d45784a2def5025212ec68eb083483.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b05/img-c133837ff22e466e03d0cd65e2e7d7ad.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b05/img-a8e65b5a904a272685f50c205ce4aaeb.jpg",
+          "url": "https://s.yimg.com/ny/api/res/1.2/uT6Pa9u3roMlTUGSxlyHdw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTYwNTtjZj13ZWJw/https://media.zenfs.com/en/fourfourtwo_376/fe9ca16f977d20afffbf884d66290c8b"
+        },
+        {
+          "says": "All respect to him, Benatia said, but how can you tell me Messi is fifth?",
+          "visual": "Mehdi Benatia",
+          "images": [
+            "Mehdi Benatia pundit",
+            "Mehdi Benatia Marseille"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b06/img-c4fb58237eae535050a3b329161346d9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b06/img-889d07de02c10b728406247d1179288e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b06/img-ae272c5f9bf8b254bb266933824c8e6e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b06/img-930fe3e511fe4578a2365f32d14de17a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b06/img-ed6808dcd9186b5ccb140f2fff07632a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b06/img-25a5e8721f09d64c751a29f12e9003be.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b06/img-82d0c5e4ed5cccbfbd82ffefea42a892.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b06/img-fd7666e8f1c1f27032e61d85fc4e2459.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b06/img-930fe3e511fe4578a2365f32d14de17a.jpg",
+          "url": "https://pictures.tribuna.com/image/c7b386f4-bb11-45f3-83a6-125cd4248d5b?width=1920&quality=70"
+        },
+        {
+          "says": "He also questioned Rodri finishing fourth after four months of football.",
+          "visual": "Rodri playing for Manchester City",
+          "images": [
+            "Rodri Manchester City",
+            "Rodri Spain"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b07/img-706fcaf7bc4d942b8bbcf31ebb3b94ae.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b07/img-3fa049732fdf887a234f7d856234055a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b07/img-20445726720b6eada10831224847b020.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b07/img-910418780312427ee4bf28697ab2dbb9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b07/img-8d7d00e71f3e0051f4d7e0eb25e94fce.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b07/img-f39dd0c0c5dd58de0fc95dac09d8985f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b07/img-d39175f13d2f63956804dc313c58756a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b07/img-0b848cbfe899817fc9a405bad57cd6fc.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b07/img-910418780312427ee4bf28697ab2dbb9.jpg",
+          "url": "https://cdn.mos.cms.futurecdn.net/tpvZAScR5VPZo98HDxyh2c.jpg"
+        },
+        {
+          "says": "Was fifth too high for Messi?",
+          "visual": "close up of Lionel Messi",
+          "images": [
+            "Lionel Messi close up",
+            "Lionel Messi serious"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b08/img-80f1436cd12264d9c48fa07c4a77bff3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b08/img-a1931ec7abc591302c4dc62abcf71e19.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b08/img-5f6910e703c6e71df7e1d27038dd9340.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b08/img-7561afa8b0bbea478485c3382b75e89a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b08/img-296be52ddcf473ad2fe61a8724df7c84.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b08/img-8fb5d96ce867c8e12dc84d3c61281519.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b08/img-96c6788c4bc2962f24917d79db403f69.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b08/img-352b3559415300bc832cb79925afaba3.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mehdi_benatia_attacked_lionel_messi_s_fi/b02/img-c793e9a6c6954a49e5a0a73c5645b6d4.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

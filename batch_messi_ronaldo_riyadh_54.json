@@ -1,0 +1,460 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing football",
+      "a real photograph of Cristiano Ronaldo"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "THEIR FINAL BATTLE ENDED 5-4",
+    "hook_cover_term": "Lionel Messi and Cristiano Ronaldo shaking hands",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "MESSI OR RONALDO? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing football",
+      "a real photograph of Cristiano Ronaldo"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "January twenty twenty-three: Messi and Ronaldo met one last time. In Riyadh, Paris Saint-Germain played a Saudi all-star team captained by Cristiano Ronaldo. Messi scored after three minutes, set up by Neymar. Ronaldo answered with a penalty, then scored again before half-time. Kylian Mbappé scored a penalty too. It ended five-four to PSG, nine goals in one night. They have not faced each other since. Who won the rivalry?",
+    "video_subject": "The last Messi versus Ronaldo match was a 5-4 PSG win over a Riyadh all-star team in January 2023, with Messi scoring early and Ronaldo scoring twice",
+    "video_terms": "Messi Ronaldo last match Riyadh 2023 PSG 5-4, Riyadh all stars, Ronaldo two goals",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "beat_plan": [
+      {
+        "says": "January twenty twenty-three: Messi and Ronaldo met one last time.",
+        "visual": "Lionel Messi and Cristiano Ronaldo shaking hands",
+        "images": [
+          "Messi Ronaldo Riyadh 2023",
+          "Messi Ronaldo handshake"
+        ],
+        "clips": []
+      },
+      {
+        "says": "In Riyadh, Paris Saint-Germain played a Saudi all-star team captained by Cristiano Ronaldo.",
+        "visual": "Cristiano Ronaldo captain Riyadh all stars",
+        "images": [
+          "Ronaldo Riyadh Season Cup",
+          "Ronaldo Riyadh XI PSG"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi scored after three minutes, set up by Neymar.",
+        "visual": "Lionel Messi celebrating for PSG",
+        "images": [
+          "Messi goal Riyadh PSG",
+          "Messi PSG celebration"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo answered with a penalty,",
+        "visual": "Cristiano Ronaldo taking a penalty",
+        "images": [
+          "Ronaldo penalty PSG Riyadh",
+          "Ronaldo goal PSG"
+        ],
+        "clips": []
+      },
+      {
+        "says": "then scored again before half-time.",
+        "visual": "Cristiano Ronaldo celebrating",
+        "images": [
+          "Ronaldo celebration Riyadh 2023",
+          "Cristiano Ronaldo celebration"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Kylian Mbappé scored a penalty too.",
+        "visual": "Kylian Mbappe playing for PSG",
+        "images": [
+          "Mbappe PSG Riyadh",
+          "Kylian Mbappe PSG 2023"
+        ],
+        "clips": []
+      },
+      {
+        "says": "It ended five-four to PSG, nine goals in one night.",
+        "visual": "Messi and Ronaldo on the same pitch",
+        "images": [
+          "Messi Ronaldo same pitch",
+          "Messi Ronaldo 2023"
+        ],
+        "clips": []
+      },
+      {
+        "says": "They have not faced each other since.",
+        "visual": "Lionel Messi and Cristiano Ronaldo together",
+        "images": [
+          "Messi Ronaldo together",
+          "Ronaldo Messi smiling"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Who won the rivalry?",
+        "visual": "close up of Lionel Messi",
+        "images": [
+          "Lionel Messi close up",
+          "Lionel Messi face"
+        ],
+        "clips": []
+      }
+    ],
+    "intro_image_paths": [],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "The last Messi versus Ronaldo match was a 5-4 PSG win over a Riyadh all-star team in January 2023, with Messi scoring early and Ronaldo scoring twice",
+      "video_script": "January twenty twenty-three: Messi and Ronaldo met one last time. In Riyadh, Paris Saint-Germain played a Saudi all-star team captained by Cristiano Ronaldo. Messi scored after three minutes, set up by Neymar. Ronaldo answered with a penalty, then scored again before half-time. Kylian Mbappé scored a penalty too. It ended five-four to PSG, nine goals in one night. They have not faced each other since. Who won the rivalry?",
+      "video_terms": "Messi Ronaldo last match Riyadh 2023 PSG 5-4, Riyadh all stars, Ronaldo two goals",
+      "hook_text": "THEIR FINAL BATTLE ENDED 5-4",
+      "cta_text": "MESSI OR RONALDO? 👇",
+      "beat_plan": [
+        {
+          "says": "January twenty twenty-three: Messi and Ronaldo met one last time.",
+          "visual": "Lionel Messi and Cristiano Ronaldo shaking hands",
+          "images": [
+            "Messi Ronaldo Riyadh 2023",
+            "Messi Ronaldo handshake"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b01/img-3556eeec9f010a31af5e146369cfde5a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b01/img-81d79eca55e4eed1ace81c5b29371c92.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b01/img-e0c65be982b6d4794329cc420e03011b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b01/img-a7850391244598c17027af3f772a4cde.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b01/img-7d9a494509a9f65a7e0864a41b9c314b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b01/img-b98d0f6f152f6a336727b5ed02750514.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b01/img-d1012de98a76e04bd1911430df8c080e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b01/img-577414466db95092e217bf29c0eab61e.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b01/img-81d79eca55e4eed1ace81c5b29371c92.jpg",
+          "url": "https://wallpapers.com/images/hd/messi-ronaldo-handshake-moment-zxd59vhkyp4s3qts.jpg"
+        },
+        {
+          "says": "In Riyadh, Paris Saint-Germain played a Saudi all-star team captained by Cristiano Ronaldo.",
+          "visual": "Cristiano Ronaldo captain Riyadh all stars",
+          "images": [
+            "Ronaldo Riyadh Season Cup",
+            "Ronaldo Riyadh XI PSG"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b02/img-cc1248a6060608744859509dc7ce5551.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b02/img-b89f0ffd2a9f0483cae8442a140e9ff3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b02/img-797e64fb8af137a25b9eab1b904efb70.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b02/img-13cf0e0fc18e2959269b9cdbe3c1bad3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b02/img-5068c9756e12636777ca7f7282e46774.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b02/img-5add61b76549d4dedffaa29bf0d9ce61.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b02/img-5f51c40654a08ce75c58fc5431f2e92d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b02/img-5068c9756e12636777ca7f7282e46774.jpg",
+          "url": "https://media.rpctv.com/p/6482c4d83ccc832b9fa4c66eeef00430/adjuntos/314/imagenes/018/161/0018161207/855x0/smart/imagepng.png"
+        },
+        {
+          "says": "Messi scored after three minutes, set up by Neymar.",
+          "visual": "Lionel Messi celebrating for PSG",
+          "images": [
+            "Messi goal Riyadh PSG",
+            "Messi PSG celebration"
+          ],
+          "clips": [],
+          "url": "https://www.youtube.com/watch?v=JprbvZD6EeQ",
+          "start": 166.0,
+          "len": 4.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b03/shot_b99719e01d.mp4",
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b03/img-5b4f3e5968e7cf6af7eab05377e2c3ed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b03/img-ad9625b3ee69656f0604e697cf06db55.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b03/img-9bcf331eae70d521f8e9530063a6464c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b03/img-00612b0fe8a0c1ba37e071fafaf26e18.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b03/img-b2ece6adf1211ebe5eedbeb49dbab331.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b03/img-17fe787ea2baf05a74c11deae63ff998.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b03/img-b89f0ffd2a9f0483cae8442a140e9ff3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b03/img-095641769bcfb1c7ab63b49b8ce45db0.jpg"
+          ]
+        },
+        {
+          "says": "Ronaldo answered with a penalty,",
+          "visual": "Cristiano Ronaldo taking a penalty",
+          "images": [
+            "Ronaldo penalty PSG Riyadh",
+            "Ronaldo goal PSG"
+          ],
+          "clips": [],
+          "url": "https://www.youtube.com/watch?v=JprbvZD6EeQ",
+          "start": 54.0,
+          "len": 4.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b04/shot_64144d5b56.mp4",
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b04/img-f06a4100a6569a8c8ef52c133ffa615c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b04/img-1bdbf0ae13c7647b43a392e4a12c30bf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b04/img-467afa7b0dfb63b6243329f088b04c9c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b04/img-dcc97edc1573240d4fa47a3fe5372149.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b04/img-ad5424584ea2e5fa0adcb2b68005a551.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b04/img-38d25dc80212bdf0398921fa83390879.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b04/img-a42ca8c7720c33b478bbaa07c9df3c79.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b04/img-6697c37c5afefe069ce85fb2bda16037.jpg"
+          ]
+        },
+        {
+          "says": "then scored again before half-time.",
+          "visual": "Cristiano Ronaldo celebrating",
+          "images": [
+            "Ronaldo celebration Riyadh 2023",
+            "Cristiano Ronaldo celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b05/img-b2edd15aebb3a368cd51dd85bd544ccb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b05/img-00e2189092416b664546a9ceb6cac5b2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b05/img-f0d68ce2b77750dd5b4a4f6a1f2f9c39.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b05/img-ca993b7965c8ff38bafb62ca864af596.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b05/img-efcd633405d569d2ce10488385af7fab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b05/img-b350e4c218ce9521f87d077631870eae.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b05/img-72319f2f7aa59d11cbbbb30bbc1f63bd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b05/img-d01a471bce1c0c568447be8bbe6c7408.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b05/img-ca993b7965c8ff38bafb62ca864af596.jpg",
+          "url": "https://cdn.satukanal.com/2023/03/ronaldo-hat-trick.jpg"
+        },
+        {
+          "says": "Kylian Mbappé scored a penalty too.",
+          "visual": "Kylian Mbappe playing for PSG",
+          "images": [
+            "Mbappe PSG Riyadh",
+            "Kylian Mbappe PSG 2023"
+          ],
+          "clips": [],
+          "url": "https://www.youtube.com/watch?v=JprbvZD6EeQ",
+          "start": 285.0,
+          "len": 4.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b06/shot_d425fdbc43.mp4",
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b06/img-714461cfbb90140147fa05cdf39c44ee.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b06/img-43a2c6f73f94567597f0166edcc1df18.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b06/img-9ea1e304ab22acdfa4b1ced1b453ba66.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b06/img-cb084e4266213f361cac960abd75417e.jpg"
+          ]
+        },
+        {
+          "says": "It ended five-four to PSG, nine goals in one night.",
+          "visual": "Messi and Ronaldo on the same pitch",
+          "images": [
+            "Messi Ronaldo same pitch",
+            "Messi Ronaldo 2023"
+          ],
+          "clips": [],
+          "url": "https://www.youtube.com/watch?v=JprbvZD6EeQ",
+          "start": 306.0,
+          "len": 4.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b07/shot_11297eaa1a.mp4",
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b07/img-e1fccb26a53b8989b8abd6230e371d5f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b07/img-6a748c9414e425bdf1737a84d52239a7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b07/img-749f13cfc50dd244b90b4a007e3834b3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b07/img-4c284f9373912ea3a67895254c3e10fc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b07/img-60fb3e8fd7c0b9d07b458c11b13e110f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b07/img-4d4e757cb5be4cc3be5f01634cde29e7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b07/img-5d5d661b7feb581a6b0e7783e1c25a05.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b07/img-45806d0794d8a813efcf157ab7a6bf41.jpg"
+          ]
+        },
+        {
+          "says": "They have not faced each other since.",
+          "visual": "Lionel Messi and Cristiano Ronaldo together",
+          "images": [
+            "Messi Ronaldo together",
+            "Ronaldo Messi smiling"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b08/img-83c1d1f5a43a56cf463bcc14518f068d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b08/img-c9dd8c4feea9845113db1d8ceb998fe2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b08/img-32df84d5d877c2adcd53a0e93abbd60c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b08/img-89f9dd7850ef93c2cf83b411130854ad.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b08/img-20e6c425c6983fe8c4a1e7d1f2355e83.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b08/img-a48992fe82c874cefd75dcd7d39b99aa.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b08/img-c26db3679506f25d6aef956aebd9203a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b08/img-e97482e468838bce5374e61afc7f087b.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b08/img-89f9dd7850ef93c2cf83b411130854ad.jpg",
+          "url": "https://imgcdn.stablediffusionweb.com/2024/4/21/78aa7eca-579a-49fa-bb6b-c0ca7eafc808.jpg"
+        },
+        {
+          "says": "Who won the rivalry?",
+          "visual": "close up of Lionel Messi",
+          "images": [
+            "Lionel Messi close up",
+            "Lionel Messi face"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b09/img-6e6eba8a4419b703982e75045341b7ff.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b09/img-ddd9ac2dde43bdf22ba6b2c6c7180f00.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b09/img-d1afae5a82203438b6f94805cd010bd6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b09/img-fbdfaf411719d4272f865802a320ef7c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b09/img-94f06fee662b63c4ba971a90364de5f3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b09/img-16713235b7bce8f3169b52f0c5954790.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b09/img-8baa0382bc20e33c32d38ca306f16b4f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b09/img-da9594cf7f46baa0a9805594502bc4a7.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/the_last_messi_versus_ronaldo_match_was_/b09/img-fbdfaf411719d4272f865802a320ef7c.jpg",
+          "url": "https://i.pinimg.com/736x/6f/f9/61/6ff961ff1c4b211c42bf96aaebf23998.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

@@ -1,0 +1,446 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Raul Gonzalez",
+      "a real photograph of Rafa Benitez"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "HIS MOST DOMINANT NIGHT?",
+    "hook_cover_term": "Cristiano Ronaldo celebrating a goal for Real Madrid",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "IS THIS RONALDO'S MOST DOMINANT NIGHT FOR MADRID? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Raul Gonzalez",
+      "a real photograph of Rafa Benitez"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Five goals in one game: Ronaldo destroyed Espanyol six-nil. Ronaldo started the day three goals behind Raul. Raul's Madrid league record stood at two hundred and twenty-eight. Ronaldo scored in the seventh minute. He had a hat-trick inside twenty minutes. He added two more after half-time. He finished on two hundred and thirty league goals. That was his second five-goal game after Granada. Is that Ronaldo's most dominant night for Madrid?",
+    "video_subject": "In September 2015 Cristiano Ronaldo scored five goals in Real Madrid's 6-0 win at Espanyol, starting the day three goals behind Raul's La Liga record for the club of 228 and finishing on 230.",
+    "video_terms": "Ronaldo, Real Madrid, Espanyol, five goals, Raul record, La Liga 2015, hat-trick, Rafa Benitez",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Five goals in one game: Ronaldo destroyed Espanyol six-nil.",
+        "visual": "close up of Cristiano Ronaldo in white Real Madrid kit 2015",
+        "images": [
+          "Cristiano Ronaldo Real Madrid 2015",
+          "Ronaldo Espanyol"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo started the day three goals behind Raul.",
+        "visual": "Raul Real Madrid legend",
+        "images": [
+          "Raul Real Madrid",
+          "Raul Gonzalez"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b03/img-289b313bc7cdeaae5013a931c523c49f.jpg"
+      },
+      {
+        "says": "Raul's Madrid league record stood at two hundred and twenty-eight.",
+        "visual": "Raul Real Madrid goal celebration",
+        "images": [
+          "Raul Gonzalez Real Madrid",
+          "Raul Bernabeu"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo scored in the seventh minute.",
+        "visual": "Cristiano Ronaldo scoring Real Madrid 2015",
+        "images": [
+          "Ronaldo goal Real Madrid 2015",
+          "Ronaldo penalty Real Madrid"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He had a hat-trick inside twenty minutes.",
+        "visual": "Cristiano Ronaldo hat-trick ball Real Madrid",
+        "images": [
+          "Ronaldo hat-trick Real Madrid",
+          "Ronaldo celebrating Espanyol"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He added two more after half-time.",
+        "visual": "Cristiano Ronaldo celebrating Real Madrid Rafa Benitez",
+        "images": [
+          "Ronaldo celebrating 2015",
+          "Rafa Benitez Real Madrid"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b05/img-740881ba9ce9f6f80501636f3f963153.jpg"
+      },
+      {
+        "says": "He finished on two hundred and thirty league goals.",
+        "visual": "Cristiano Ronaldo with match ball Real Madrid",
+        "images": [
+          "Ronaldo match ball",
+          "Ronaldo record Real Madrid"
+        ],
+        "clips": []
+      },
+      {
+        "says": "That was his second five-goal game after Granada.",
+        "visual": "Cristiano Ronaldo Granada Real Madrid April 2015",
+        "images": [
+          "Ronaldo Granada",
+          "Real Madrid Granada 9-1"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Is that Ronaldo's most dominant night for Madrid?",
+        "visual": "Cristiano Ronaldo pointing Real Madrid fans",
+        "images": [
+          "Ronaldo Real Madrid fans",
+          "Ronaldo Bernabeu"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b05/img-dba7d079d4b6c67f825c96c961cd8aaf.jpg"
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "In September 2015 Cristiano Ronaldo scored five goals in Real Madrid's 6-0 win at Espanyol, starting the day three goals behind Raul's La Liga record for the club of 228 and finishing on 230.",
+      "video_script": "Five goals in one game: Ronaldo destroyed Espanyol six-nil. Ronaldo started the day three goals behind Raul. Raul's Madrid league record stood at two hundred and twenty-eight. Ronaldo scored in the seventh minute. He had a hat-trick inside twenty minutes. He added two more after half-time. He finished on two hundred and thirty league goals. That was his second five-goal game after Granada. Is that Ronaldo's most dominant night for Madrid?",
+      "video_terms": "Ronaldo, Real Madrid, Espanyol, five goals, Raul record, La Liga 2015, hat-trick, Rafa Benitez",
+      "hook_text": "HIS MOST DOMINANT NIGHT?",
+      "cta_text": "IS THIS RONALDO'S MOST DOMINANT NIGHT FOR MADRID? 👇",
+      "beat_plan": [
+        {
+          "says": "Five goals in one game: Ronaldo destroyed Espanyol six-nil.",
+          "visual": "close up of Cristiano Ronaldo in white Real Madrid kit 2015",
+          "images": [
+            "Cristiano Ronaldo Real Madrid 2015",
+            "Ronaldo Espanyol"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b01/img-34e21d15b3051bad1f45b95b05d5a95e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b01/img-99a87e90f764fe3f909027ecfc6e9a35.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b01/img-34e21d15b3051bad1f45b95b05d5a95e.jpg",
+          "url": "https://static.posters.cz/image/750/posters/real-madrid-2015-2016-cristiano-ronaldo-i34931.jpg"
+        },
+        {
+          "says": "Ronaldo started the day three goals behind Raul.",
+          "visual": "Raul Real Madrid legend",
+          "images": [
+            "Raul Real Madrid",
+            "Raul Gonzalez"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b02/img-c859ba9aefe8734cddef594dc1edb1b6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b02/img-1c83879dd84b9f6546895f5d1a766c65.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b03/img-289b313bc7cdeaae5013a931c523c49f.jpg",
+          "url": "https://facts.net/wp-content/uploads/2023/10/13-extraordinary-facts-about-raul-gonzalez-blanco-1698602296.jpg"
+        },
+        {
+          "says": "Raul's Madrid league record stood at two hundred and twenty-eight.",
+          "visual": "Raul Real Madrid goal celebration",
+          "images": [
+            "Raul Gonzalez Real Madrid",
+            "Raul Bernabeu"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b03/img-54d9c706c27dc8515af7afad80d3f4e0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b03/img-289b313bc7cdeaae5013a931c523c49f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b03/img-dc7a37b2e56ff611fd5e80d439f0989b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b03/img-cc6d56132cc6cfc9065616609e44f4f2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b03/img-e2b6c42d998068111423eb703869d423.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b03/img-1609c76b50a0cd6cdd28932455c92f31.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b03/img-cc6d56132cc6cfc9065616609e44f4f2.jpg",
+          "url": "https://www.realtotal.de/wp-content/uploads/2016/09/2016-09-11-raul-gonzalez-blanco-real-madrid.jpg"
+        },
+        {
+          "says": "Ronaldo scored in the seventh minute.",
+          "visual": "Cristiano Ronaldo scoring Real Madrid 2015",
+          "images": [
+            "Ronaldo goal Real Madrid 2015",
+            "Ronaldo penalty Real Madrid"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b04/img-66695aa3d328193c83cdd951b34f7b32.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b04/img-03731d801a06d8c3c364acaf804e0781.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b04/img-6a7c0d84ecc0a3c3fcef74e26a79f65b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b04/img-2e71f2a8804d9f63f1accb8de52938b9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b04/img-c9ab1c9eb039ac918451a8151adb9a35.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b04/img-ccc09097a8550acc08b903173c1a39df.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b04/img-b5ce52adfbe7c3c17718660fd2fae5cc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b04/img-5ae15873df986fe14fb19f5b47b1da3d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b04/img-03731d801a06d8c3c364acaf804e0781.jpg",
+          "url": "https://i2-prod.mirror.co.uk/incoming/article7046985.ece/ALTERNATES/s1227b/Real-Madrid-vs-Rayo-Vallecano.jpg"
+        },
+        {
+          "says": "He had a hat-trick inside twenty minutes.",
+          "visual": "Cristiano Ronaldo hat-trick ball Real Madrid",
+          "images": [
+            "Ronaldo hat-trick Real Madrid",
+            "Ronaldo celebrating Espanyol"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b05/img-740881ba9ce9f6f80501636f3f963153.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b05/img-a8b6cce07434ae8c0e69460d68053b60.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b05/img-649ce84f6f1add3aeecd078644defb1f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b05/img-ea77e5241bdc8379497c54a9357490c5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b05/img-77d3f324c6e0f22445777c0bf5303373.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b05/img-dba7d079d4b6c67f825c96c961cd8aaf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b05/img-bf6987734526bdf43c28915e6d0ee16f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b05/img-8a0d54c631edce2194e0707311d850b4.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b05/img-77d3f324c6e0f22445777c0bf5303373.jpg",
+          "url": "https://staticg.sportskeeda.com/wp-content/uploads/2016/04/cristiano-ronaldo-hat-trick-goals-real-madrid-wolfsburg-highlights-1460493298-800.jpg"
+        },
+        {
+          "says": "He added two more after half-time.",
+          "visual": "Cristiano Ronaldo celebrating Real Madrid Rafa Benitez",
+          "images": [
+            "Ronaldo celebrating 2015",
+            "Rafa Benitez Real Madrid"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b06/img-d004c39a5387ca6d62f3c9933e7a8cda.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b06/img-5fe0f8fb39a19d7b462bd05f44cd6e35.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b06/img-75e8d6371c1a8ee1c5a9fa7db0ba234a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b06/img-daf7f9ee45a39a5ccb4830f2ea0df236.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b06/img-cbdcffeeb233e7a7da0d8ce4672dc385.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b06/img-c264767d44a129cacda25ebb7f5fd2cf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b06/img-4ed67555e19b0d8d5bb861be1448ce67.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b06/img-48b18056347de528d4a01df37dc7f8f5.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b05/img-740881ba9ce9f6f80501636f3f963153.jpg",
+          "url": "https://talksport.com/wp-content/uploads/sites/5/2023/12/cristiano-ronaldo-real-madrid-cf-864218238.jpg?strip=all&quality=100&w=1920&h=1080&crop=1"
+        },
+        {
+          "says": "He finished on two hundred and thirty league goals.",
+          "visual": "Cristiano Ronaldo with match ball Real Madrid",
+          "images": [
+            "Ronaldo match ball",
+            "Ronaldo record Real Madrid"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b07/img-23ab360227e6267cb24b18f6b6231cf5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b07/img-332362c1e84ab7c4f7a4ad0a56ff9121.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b07/img-1f4682ef5749c34cd377c75bbe468900.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b07/img-cbdcffeeb233e7a7da0d8ce4672dc385.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b07/img-bea80f6d7e3f1498cf67c60d886419aa.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b07/img-d004c39a5387ca6d62f3c9933e7a8cda.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b07/img-daac6b7ae200e23741406e17672225b4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b07/img-e513adb8a722800d0be079c3cb4c4bf3.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b07/img-332362c1e84ab7c4f7a4ad0a56ff9121.jpg",
+          "url": "https://images.alphacoders.com/466/466447.jpg"
+        },
+        {
+          "says": "That was his second five-goal game after Granada.",
+          "visual": "Cristiano Ronaldo Granada Real Madrid April 2015",
+          "images": [
+            "Ronaldo Granada",
+            "Real Madrid Granada 9-1"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b08/img-2938d94fa19b4e289b88c89ac4b2005b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b08/img-d004c39a5387ca6d62f3c9933e7a8cda.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b08/img-4d8577b839af13ea300eaa901209580d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b08/img-4ed67555e19b0d8d5bb861be1448ce67.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b08/img-cbdcffeeb233e7a7da0d8ce4672dc385.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b08/img-309c92dd7ce645c44aa9aa80880be8c3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b08/img-591e4115f5e214d2883dcddd5bbe9100.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b08/img-f83ccff855f8a6cbe28e0b5a9bee384b.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b08/img-4d8577b839af13ea300eaa901209580d.jpg",
+          "url": "https://i.ytimg.com/vi/6cE4MoDAIo8/maxresdefault.jpg"
+        },
+        {
+          "says": "Is that Ronaldo's most dominant night for Madrid?",
+          "visual": "Cristiano Ronaldo pointing Real Madrid fans",
+          "images": [
+            "Ronaldo Real Madrid fans",
+            "Ronaldo Bernabeu"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b09/img-d004c39a5387ca6d62f3c9933e7a8cda.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b09/img-c264767d44a129cacda25ebb7f5fd2cf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b09/img-cbdcffeeb233e7a7da0d8ce4672dc385.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b09/img-f83ccff855f8a6cbe28e0b5a9bee384b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b09/img-4ed67555e19b0d8d5bb861be1448ce67.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b09/img-48b18056347de528d4a01df37dc7f8f5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b09/img-9798aac6583104e58c4da4b9f59ddd26.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b09/img-654cdf67298c1f8dd4c276936b6b446c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_september_2015_cristiano_ronaldo_scor/b05/img-dba7d079d4b6c67f825c96c961cd8aaf.jpg",
+          "url": "https://talksport.com/wp-content/uploads/sites/5/2023/12/cristiano-ronaldo-real-madrid-cf-864218238.jpg?strip=all&quality=100&w=1920&h=1080&crop=1"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

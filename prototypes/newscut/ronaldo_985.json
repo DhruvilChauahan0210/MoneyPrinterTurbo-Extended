@@ -1,0 +1,311 @@
+{
+ "key": "ronaldo_985",
+ "out": "NEWSCUT_ronaldo_15_to_1000.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_em106.wav",
+ "musicVol": 0.012,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Cristiano Ronaldo has nine hundred eighty-five goals.",
+ "sentences": [
+  [
+   [
+    "CRISTIANO RONALDO",
+    "Cristiano Ronaldo"
+   ],
+   [
+    "HAS 985 GOALS,",
+    "has nine hundred eighty-five goals,"
+   ],
+   [
+    "HE NEEDS 15 MORE",
+    "he needs fifteen more"
+   ],
+   [
+    "FOR 1,000,",
+    "for one thousand,"
+   ],
+   [
+    "AND HE JUST MADE IT",
+    "and he just made it"
+   ],
+   [
+    "EVEN HARDER",
+    "even harder."
+   ]
+  ],
+  [
+   [
+    "HERE'S WHY",
+    "Here's why."
+   ]
+  ],
+  [
+   [
+    "146 OF THOSE GOALS",
+    "One hundred forty-six of those goals"
+   ],
+   [
+    "CAME FOR PORTUGAL,",
+    "came for Portugal,"
+   ],
+   [
+    "BUT ON NOVEMBER 5",
+    "but on November fifth"
+   ],
+   [
+    "HE RETIRED",
+    "he retired"
+   ],
+   [
+    "FROM INTERNATIONAL FOOTBALL",
+    "from international football."
+   ]
+  ],
+  [
+   [
+    "THAT LEAVES",
+    "That leaves"
+   ],
+   [
+    "ONLY AL NASSR,",
+    "only Al Nassr,"
+   ],
+   [
+    "AND ABOUT 11 GAMES",
+    "and about eleven games"
+   ],
+   [
+    "LEFT IN 2026",
+    "left in twenty twenty-six."
+   ]
+  ],
+  [
+   [
+    "HE'S 41,",
+    "He's forty-one,"
+   ],
+   [
+    "HE'S SCORED 27 GOALS",
+    "he's scored twenty-seven goals"
+   ],
+   [
+    "THIS YEAR,",
+    "this year,"
+   ],
+   [
+    "AND NOW HE NEEDS",
+    "and now he needs"
+   ],
+   [
+    "MORE THAN A GOAL",
+    "more than a goal"
+   ],
+   [
+    "EVERY SINGLE GAME",
+    "every single game."
+   ]
+  ],
+  [
+   [
+    "15 GOALS,",
+    "Fifteen goals,"
+   ],
+   [
+    "11 GAMES,",
+    "eleven games,"
+   ],
+   [
+    "AND ONE QUESTION",
+    "and one question"
+   ],
+   [
+    "THAT EVERY FOOTBALL FAN",
+    "that every football fan"
+   ],
+   [
+    "IS ASKING ABOUT",
+    "is asking about"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "Doiq12y4078",
+   "start": 437.6,
+   "x": 640
+  },
+  {
+   "at": 1,
+   "vid": "WaCeChWKwW8",
+   "start": 192.0,
+   "x": 600
+  },
+  {
+   "at": 2,
+   "vid": "Doiq12y4078",
+   "start": 359.2,
+   "x": 560
+  },
+  {
+   "at": 3,
+   "vid": "is8JWdOeinI",
+   "start": 123.5,
+   "x": 666
+  },
+  {
+   "at": 4,
+   "vid": "Doiq12y4078",
+   "start": 132.0,
+   "x": 500
+  },
+  {
+   "at": 6,
+   "vid": "a_-JGb7asE0",
+   "start": 4.4,
+   "x": 592,
+   "h": 900
+  },
+  {
+   "at": 7,
+   "vid": "is8JWdOeinI",
+   "start": 108.4,
+   "x": 718
+  },
+  {
+   "at": 8,
+   "vid": "is8JWdOeinI",
+   "start": 282.3,
+   "x": 593
+  },
+  {
+   "at": 9,
+   "vid": "BUtBWVaq9gU",
+   "start": 21.8,
+   "x": 546,
+   "h": 960
+  },
+  {
+   "at": 10,
+   "vid": "BUtBWVaq9gU",
+   "start": 247.0,
+   "x": 630,
+   "h": 960
+  },
+  {
+   "at": 11,
+   "vid": "a_-JGb7asE0",
+   "start": 0.3,
+   "x": 404,
+   "h": 800,
+   "y": 150
+  },
+  {
+   "at": 12,
+   "vid": "Qt3e51qFVQM",
+   "start": 7.0,
+   "x": 640
+  },
+  {
+   "at": 14,
+   "vid": "WaCeChWKwW8",
+   "start": 13.0,
+   "x": 608
+  },
+  {
+   "at": 15,
+   "vid": "Doiq12y4078",
+   "start": 5.5,
+   "x": 704
+  },
+  {
+   "at": 16,
+   "vid": "Eh6WSL1j8Q4",
+   "start": 22.25,
+   "x": 560
+  },
+  {
+   "at": 17,
+   "vid": "WaCeChWKwW8",
+   "start": 162.5,
+   "x": 703,
+   "h": 900,
+   "y": 180
+  },
+  {
+   "at": 18,
+   "vid": "Doiq12y4078",
+   "start": 425.85,
+   "x": 640
+  },
+  {
+   "at": 19,
+   "vid": "Doiq12y4078",
+   "start": 372.6,
+   "x": 777
+  },
+  {
+   "at": 21,
+   "vid": "Eh6WSL1j8Q4",
+   "start": 40.0,
+   "x": 671
+  },
+  {
+   "at": 22,
+   "vid": "WaCeChWKwW8",
+   "start": 483.7,
+   "x": 608
+  },
+  {
+   "at": 23,
+   "vid": "Doiq12y4078",
+   "start": 25.0,
+   "x": 656
+  },
+  {
+   "at": 24,
+   "vid": "Doiq12y4078",
+   "start": 409.5,
+   "x": 650
+  },
+  {
+   "at": 25,
+   "vid": "Doiq12y4078",
+   "start": 431.4,
+   "x": 656
+  },
+  {
+   "at": 26,
+   "vid": "WaCeChWKwW8",
+   "start": 154.3,
+   "x": 1000
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 12,
+   "toChunk": 18,
+   "label": "COUNT",
+   "title": "beIN Sports",
+   "lines": [
+    "30 Oct 2026",
+    "985 goals · 15 to go · 41 years old"
+   ]
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 2,
+   "t": 0.3
+  },
+  "text": "15 TO GO 😳"
+ }
+}

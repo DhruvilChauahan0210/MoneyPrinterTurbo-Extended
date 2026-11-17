@@ -1,0 +1,24 @@
+{
+  "cfg": "batch_ronaldo_euro2012_netherlands.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 5,
+      "url": "https://www.youtube.com/watch?v=ho5-SOj7KFY",
+      "start": 149.0
+    },
+    {
+      "beat": 6,
+      "url": "https://www.youtube.com/watch?v=ho5-SOj7KFY",
+      "start": 264.0
+    }
+  ],
+  "weak_beats": [
+    "1: Ronaldo in Portugal 2012 kit next to Dutch player - face clear but medium size, not a tight portrait",
+    "4: no Van der Vaart photo found (DDG returned only watermarked); generic Netherlands action photo borrowed from beat 3 pool",
+    "9: borrowed Ronaldo kneeling Euro-era photo from beat 7 pool",
+    "2,3,8: generic team/fan photos"
+  ],
+  "beat1": "Ronaldo in red Portugal 2012 kit beside a Dutch player (face visible, medium close-up)",
+  "notes": "Clips from clean Dutch broadcast summary (OnsOranje) with no logo: beat 5 = Ronaldo 28th-min goal with close-up celebration; beat 6 = Ronaldo 74th-min goal. DDG re-sourcing returned mostly watermarked results, so candidates for beats 1 and 4 are thin."
+}

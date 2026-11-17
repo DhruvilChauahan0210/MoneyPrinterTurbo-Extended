@@ -1,0 +1,456 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Harry Kane",
+      "a real photograph of Harry Kane playing for England",
+      "a real photograph of Kylian Mbappé",
+      "a real photograph of Romelu Lukaku"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "NO MEDAL FOR THE TOP SCORER?",
+    "hook_cover_term": "Harry Kane in an England shirt",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "GOLDEN BOOT OR TROPHY? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Harry Kane",
+      "a real photograph of Harry Kane playing for England",
+      "a real photograph of Kylian Mbappé",
+      "a real photograph of Romelu Lukaku"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Six goals at the 2018 World Cup. One Golden Boot. England still finished fourth. Harry Kane scored twice against Tunisia, then a hat-trick against Panama. Three of his six goals were penalties. His only knockout goal was a penalty against Colombia. Mbappé, Ronaldo and Lukaku all finished on four. England lost the semi-final to Croatia in extra time, then lost the third-place game to Belgium. Does a Golden Boot make up for fourth place?",
+    "video_subject": "Harry Kane won the 2018 World Cup Golden Boot with six goals, three of them penalties, five in England's first two games, but England lost the semi-final to Croatia and the third-place game to Belgium and finished fourth",
+    "video_terms": "Harry Kane 2018 World Cup Golden Boot, England fourth, Panama hat-trick, Colombia penalty",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Six goals at the 2018 World Cup. One Golden Boot. England still finished fourth.",
+        "visual": "close up of Harry Kane in an England shirt",
+        "images": [
+          "Harry Kane",
+          "Harry Kane England 2018 World Cup"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Harry Kane scored twice against Tunisia,",
+        "visual": "Harry Kane celebrating a goal for England",
+        "images": [
+          "Harry Kane Tunisia 2018",
+          "Harry Kane celebrating England 2018"
+        ],
+        "clips": []
+      },
+      {
+        "says": "then a hat-trick against Panama.",
+        "visual": "Harry Kane scoring a hat-trick for England",
+        "images": [
+          "Harry Kane Panama hat-trick",
+          "Harry Kane Panama 2018 World Cup goal"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Three of his six goals were penalties.",
+        "visual": "Harry Kane taking a penalty for England",
+        "images": [
+          "Harry Kane penalty World Cup 2018",
+          "Harry Kane penalty Colombia"
+        ],
+        "clips": []
+      },
+      {
+        "says": "His only knockout goal was a penalty against Colombia.",
+        "visual": "Harry Kane against Colombia at the World Cup",
+        "images": [
+          "Harry Kane Colombia 2018",
+          "Harry Kane Colombia penalty shootout England"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b03/img-a69ee2ccf8c80dd48b7d5a7f38e9c3fa.jpg"
+      },
+      {
+        "says": "Mbappé, Ronaldo and Lukaku all finished on four.",
+        "visual": "Kylian Mbappé at the 2018 World Cup",
+        "images": [
+          "Kylian Mbappe 2018 World Cup",
+          "Romelu Lukaku 2018 World Cup"
+        ],
+        "clips": []
+      },
+      {
+        "says": "England lost the semi-final to Croatia in extra time,",
+        "visual": "Harry Kane dejected after losing to Croatia",
+        "images": [
+          "Harry Kane Croatia semi-final 2018",
+          "Harry Kane dejected England 2018"
+        ],
+        "clips": []
+      },
+      {
+        "says": "then lost the third-place game to Belgium.",
+        "visual": "Harry Kane after the Belgium defeat",
+        "images": [
+          "Harry Kane Belgium 2018",
+          "England Belgium third place 2018"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Does a Golden Boot make up for fourth place?",
+        "visual": "Harry Kane holding the Golden Boot trophy",
+        "images": [
+          "Harry Kane Golden Boot",
+          "Harry Kane Golden Boot 2018 trophy"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Harry Kane won the 2018 World Cup Golden Boot with six goals, three of them penalties, five in England's first two games, but England lost the semi-final to Croatia and the third-place game to Belgium and finished fourth",
+      "video_script": "Six goals at the 2018 World Cup. One Golden Boot. England still finished fourth. Harry Kane scored twice against Tunisia, then a hat-trick against Panama. Three of his six goals were penalties. His only knockout goal was a penalty against Colombia. Mbappé, Ronaldo and Lukaku all finished on four. England lost the semi-final to Croatia in extra time, then lost the third-place game to Belgium. Does a Golden Boot make up for fourth place?",
+      "video_terms": "Harry Kane 2018 World Cup Golden Boot, England fourth, Panama hat-trick, Colombia penalty",
+      "hook_text": "NO MEDAL FOR THE TOP SCORER?",
+      "cta_text": "GOLDEN BOOT OR TROPHY? 👇",
+      "beat_plan": [
+        {
+          "says": "Six goals at the 2018 World Cup. One Golden Boot. England still finished fourth.",
+          "visual": "close up of Harry Kane in an England shirt",
+          "images": [
+            "Harry Kane",
+            "Harry Kane England 2018 World Cup"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b01/img-c3226ffe48b72d41e05ac28bb6c00699.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b01/img-de6d77ce9c6cf23ea5aed077be898f09.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b01/img-af242835b14103069017613ccaca8fc5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b01/img-66cab7aec16583c9a0aa5cebc0574d48.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b01/img-c3aeccda8bff3891f86634f9f4f99772.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b01/img-713cafea15fa04203f6614cd1a279d04.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b01/img-32df84d5d877c2adcd53a0e93abbd60c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b01/img-49484bbab39f890a1e296824b06f4098.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b01/img-c3226ffe48b72d41e05ac28bb6c00699.jpg",
+          "url": "https://i0.wp.com/political.org/wp-content/uploads/2026/10/577d26093927_person.jpg?fit=1154,1600&ssl=1"
+        },
+        {
+          "says": "Harry Kane scored twice against Tunisia,",
+          "visual": "Harry Kane celebrating a goal for England",
+          "images": [
+            "Harry Kane England",
+            "Harry Kane celebrates"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b02/img-664ca264d8ca7ce94a46e09a5b5d6a17.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b02/img-611d25375c9f69545dcf23b1f379e10a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b02/img-f1b01500dfe78a263b93f218ae5745ad.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b02/img-751621ebcab3d1e5b09a747e63babb44.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b02/img-f3eab00f7ba2322e2f05f2a619954da9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b02/img-315e92ff06f7ed1536c9f623f22a9ec9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b02/img-73b4ce5016d4b71b4da0382d445fe5d9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b02/img-fb1df737bbaeeab3d157cd0e38b0e360.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b02/img-664ca264d8ca7ce94a46e09a5b5d6a17.jpg",
+          "url": "https://www.sporf.com/wp-content/uploads/2026/04/2f623479-harry-kane.jpg"
+        },
+        {
+          "says": "then a hat-trick against Panama.",
+          "visual": "Harry Kane scoring a hat-trick for England",
+          "images": [
+            "Harry Kane Panama hat-trick",
+            "Harry Kane Panama 2018 World Cup goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b03/img-72cf6f9fdf233d2b46aa74c3dc9e0d07.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b03/img-5251cfb3105718f35328070762f9d28d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b03/img-a69ee2ccf8c80dd48b7d5a7f38e9c3fa.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b03/img-2b9df6d8150490797befda1021edab7f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b03/img-3565e33ff59fe8a1dd95cf75a247822d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b03/img-00729596c3bf24793065bff2fd8f5cec.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b03/img-3bc106f609e89801e915781f16ff67a3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b03/img-7a2fd6b4baf81db4ab92daf87330f4d6.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b03/shot_62c17ae824.mp4",
+          "url": "https://www.youtube.com/watch?v=HLkTkrdZMMQ",
+          "start": 232.0,
+          "len": 6.0
+        },
+        {
+          "says": "Three of his six goals were penalties.",
+          "visual": "Harry Kane taking a penalty for England",
+          "images": [
+            "Harry Kane penalty World Cup 2018",
+            "Harry Kane penalty Colombia"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b04/img-6541a836b64ad58d1bf48d10e04b9bcb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b04/img-01f2b6196e5744675109f13343cde764.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b04/img-3094d31f0d321f7d6a214f7cec2f070b.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b04/img-6541a836b64ad58d1bf48d10e04b9bcb.jpg",
+          "url": "https://i.pinimg.com/736x/0c/82/b6/0c82b6a4dbdc9234e2cff90539c4c5c7.jpg"
+        },
+        {
+          "says": "His only knockout goal was a penalty against Colombia.",
+          "visual": "Harry Kane against Colombia at the World Cup",
+          "images": [
+            "Harry Kane penalty",
+            "Harry Kane England goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b05/img-c1a0d8acfe096807e27c544d4bc71afc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b05/img-47133d6ff9541ec4676d1560d80c0f42.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b05/img-ffc64f2877403e8bb6c21585f5b761a3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b05/img-bd631d670457eca938f2fbc9bd3ff70b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b05/img-fe5bf194755b738c4ccbb99452bce429.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b05/img-736f9a04ca45ae672b35a6c89e3cc73e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b05/img-e5a4cae37311d4a979ea7aba812097e1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b05/img-a05a623cb06a128abc71796eeb0a59e8.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b03/img-a69ee2ccf8c80dd48b7d5a7f38e9c3fa.jpg"
+        },
+        {
+          "says": "Mbappé, Ronaldo and Lukaku all finished on four.",
+          "visual": "Kylian Mbappé at the 2018 World Cup",
+          "images": [
+            "Kylian Mbappe 2018 World Cup",
+            "Romelu Lukaku 2018 World Cup"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b06/img-f2a86bd4a9a16207cef9d0cef6739243.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b06/img-8380635d288a26bd195a77027929d59d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b06/img-828ef42bf6a39194eb5eff5e3190b889.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b06/img-8708cd37124cb314355d0eaad8a7891c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b06/img-ea14ef9a3ffffb76921e77c0d5c2d441.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b06/img-59585b7838f67e3abaa765b7d9a69be5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b06/img-f8e27b4336504cbf20901b6e51885c37.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b06/img-3f9577d91caece66883655ea29978dc5.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b06/img-f2a86bd4a9a16207cef9d0cef6739243.jpg",
+          "url": "https://i.pinimg.com/736x/73/e6/a8/73e6a8c835fa3d394ff0ae7ed028ee05.jpg"
+        },
+        {
+          "says": "England lost the semi-final to Croatia in extra time,",
+          "visual": "Harry Kane dejected after losing to Croatia",
+          "images": [
+            "Harry Kane sad",
+            "Harry Kane England disappointed"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b07/img-27026e2c8cd176c0939bdb0361a9076f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b07/img-f598764818102c4b244a19d21eb78c41.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b07/img-a042fc2b7e6122da367cd4ae32cad619.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b07/img-de7d86def63e5530aee140e2d784fc78.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b07/img-704be0082dcc43739f2155ad54cf1d6f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b07/img-6da786454e7660af440d004d6ae439c0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b07/img-64293f2b3951cb62d49f41ba79561f16.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b07/img-be2ccb100ffe65976895f01d5440ad67.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b07/img-27026e2c8cd176c0939bdb0361a9076f.jpg",
+          "url": "https://e3.365dm.com/22/12/1600x900/skynews-harry-kane-world-cup_5992695.jpg?20221210212242"
+        },
+        {
+          "says": "then lost the third-place game to Belgium.",
+          "visual": "Harry Kane after the Belgium defeat",
+          "images": [
+            "Harry Kane Belgium 2018",
+            "England Belgium third place 2018"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b08/img-aa93dcf3634933db4aaca5da661a44e4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b08/img-89ad9bca7fd58f024dbfde7ba07c1585.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b08/img-fc0cbbda51b5c265df6a02b0c2165c7f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b08/img-31e74b26c6be287144ea08c5196eeab3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b08/img-5a0fc1fb29e561a26d28f6bedb5be488.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b08/img-2c1aa6c52d4c4f044027f9252c8ae020.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b08/img-b5076bf6f017ccb96a3efb2efe1e31a6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b08/img-92ca4957b6fcfc4c7931e9320569780c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b08/img-5a0fc1fb29e561a26d28f6bedb5be488.jpg",
+          "url": "http://www.ecns.cn/hd/2018/07/15/2b8acf1616fe48e9bdc1fbd7fb4df3fb.jpg"
+        },
+        {
+          "says": "Does a Golden Boot make up for fourth place?",
+          "visual": "Harry Kane holding the Golden Boot trophy",
+          "images": [
+            "Harry Kane Golden Boot",
+            "Harry Kane Golden Boot 2018 trophy"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b09/img-b9fc259fe18b72dd5d4b9628b38c5bbb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b09/img-78f2a7c9734f546142eb88e376e02a15.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b09/img-90e5b32cdc199e2c3db0fc34c7ea6bba.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b09/img-6872c5da81e26a55561d8eb3bcc2da83.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b09/img-b35b70d262377131adbd0ddee6fdb478.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b09/img-063c1bab5663a52fa869d4b66f90c80a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b09/img-b2b32d0634e1726bc4f30f58057366b6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b09/img-6b13d3d7c0b5c7e8eabfdba2fbab2f24.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/harry_kane_won_the_2018_world_cup_golden/b09/img-b9fc259fe18b72dd5d4b9628b38c5bbb.jpg",
+          "url": "https://cdn.mos.cms.futurecdn.net/PN9sLVmhroh6Zic7wt4MT7.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

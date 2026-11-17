@@ -1,0 +1,13 @@
+KEY ronaldo_985 | OUT NEWSCUT_ronaldo_15_to_1000.mp4 | loopTail "Cristiano Ronaldo has 985 goals."
+Sentences (chunks split by |; display = ALL CAPS of the words; spoken = the words):
+S0: Cristiano Ronaldo | has 985 goals, | he needs 15 more | for 1,000, | and he just made it | even harder.
+S1: Here's why.
+S2: 146 of those goals | came for Portugal, | but on November 5 | he retired | from international football.
+S3: That leaves | only Al Nassr, | and about 11 games | left in 2026.
+S4: He's 41, | he's scored 27 goals | this year, | and now he needs | more than a goal | every single game.
+S5: Fifteen goals, | eleven games, | and one question | that every football fan | is asking about
+Display tweaks: "985 GOALS", "15 MORE", "1,000", "146 OF THOSE GOALS", "NOVEMBER 5", "11 GAMES", "41", "27 GOALS", "FIFTEEN GOALS" -> "15 GOALS", "ELEVEN GAMES" -> "11 GAMES".
+Source card (over S3/S4 "That leaves" .. "this year"): label COUNT, title "beIN Sports", lines ["30 Oct 2026", "985 goals · 15 to go · 41 years old"]
+Cover text: "15 TO GO 😳"
+Footage ideas: Ronaldo face close-up (shot 0, bright, Al Nassr or Portugal kit), Ronaldo goals and SIU celebrations (Al Nassr official / SPL official), Portugal goals (FPF / UEFA) for "came for Portugal", the Portugal farewell / "Obrigado Capitão" FPF video for "retired from international football", Al Nassr stadium / Al Nassr kit for "only Al Nassr", Ronaldo training / running for "he's 41", Ronaldo celebrating at the end.
+Facts (verified): beIN Sports 30 Oct 2026: 985 official career goals, 15 short of 1,000, 41 years old, 27 goals in 2026, up to 11 scheduled Al Nassr matches left in 2026 (plus two Portugal games that are now gone after his retirement). 146 Portugal goals in 234 caps (Portugal retirement, announced 5 Nov 2026). Al Nassr is his club.

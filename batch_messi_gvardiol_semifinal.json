@@ -1,0 +1,424 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing football",
+      "a real photograph of Josko Gvardiol",
+      "a real photograph of Julian Alvarez"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "HE TURNED HIM INSIDE OUT",
+    "hook_cover_term": "Lionel Messi dribbling against Croatia",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "HIS GREATEST ASSIST? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing football",
+      "a real photograph of Josko Gvardiol",
+      "a real photograph of Julian Alvarez"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "World Cup semi-final: Croatia's best young defender against a thirty-five-year-old. Lionel Messi had already scored a penalty, and Julián Álvarez had made it two-nil. Then Messi picked up the ball on the right, ran past Gvardiol, checked back, and beat him again on the outside. He cut it back, and Álvarez scored again. Argentina won three-nil and reached the final, and that penalty made Messi Argentina's top World Cup scorer. Was this his greatest assist?",
+    "video_subject": "In the 2022 World Cup semi-final, Lionel Messi beat Croatia's Josko Gvardiol twice in one run to set up Julian Alvarez as Argentina won 3-0",
+    "video_terms": "Messi Gvardiol dribble World Cup semi final 2022, Messi assist Alvarez Croatia",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "beat_plan": [
+      {
+        "says": "World Cup semi-final: Croatia's best young defender against a thirty-five-year-old.",
+        "visual": "Josko Gvardiol playing for Croatia",
+        "images": [
+          "Josko Gvardiol Croatia 2022",
+          "Josko Gvardiol"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Lionel Messi had already scored a penalty, and Julián Álvarez had made it two-nil.",
+        "visual": "Lionel Messi celebrating against Croatia",
+        "images": [
+          "Messi penalty Croatia 2022",
+          "Messi Croatia World Cup semi final"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Then Messi picked up the ball on the right,",
+        "visual": "Lionel Messi dribbling against Croatia",
+        "images": [
+          "Messi Gvardiol",
+          "Messi dribble Croatia 2022"
+        ],
+        "clips": []
+      },
+      {
+        "says": "ran past Gvardiol, checked back, and beat him again on the outside.",
+        "visual": "Lionel Messi beating Gvardiol",
+        "images": [
+          "Messi vs Gvardiol",
+          "Messi Gvardiol dribble"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He cut it back, and Álvarez scored again.",
+        "visual": "Julian Alvarez celebrating a goal for Argentina",
+        "images": [
+          "Julian Alvarez goal Croatia 2022",
+          "Julian Alvarez Argentina celebration"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Argentina won three-nil and reached the final,",
+        "visual": "Argentina players celebrating",
+        "images": [
+          "Argentina celebrate Croatia 2022",
+          "Argentina win semi final 2022"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and that penalty made Messi Argentina's top World Cup scorer.",
+        "visual": "Lionel Messi celebrating for Argentina",
+        "images": [
+          "Messi Argentina celebration 2022",
+          "Lionel Messi World Cup 2022"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Was this his greatest assist?",
+        "visual": "close up of Lionel Messi in Argentina shirt",
+        "images": [
+          "Lionel Messi Argentina close up",
+          "Messi Argentina 2022 portrait"
+        ],
+        "clips": []
+      }
+    ],
+    "intro_image_paths": [],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "In the 2022 World Cup semi-final, Lionel Messi beat Croatia's Josko Gvardiol twice in one run to set up Julian Alvarez as Argentina won 3-0",
+      "video_script": "World Cup semi-final: Croatia's best young defender against a thirty-five-year-old. Lionel Messi had already scored a penalty, and Julián Álvarez had made it two-nil. Then Messi picked up the ball on the right, ran past Gvardiol, checked back, and beat him again on the outside. He cut it back, and Álvarez scored again. Argentina won three-nil and reached the final, and that penalty made Messi Argentina's top World Cup scorer. Was this his greatest assist?",
+      "video_terms": "Messi Gvardiol dribble World Cup semi final 2022, Messi assist Alvarez Croatia",
+      "hook_text": "HE TURNED HIM INSIDE OUT",
+      "cta_text": "HIS GREATEST ASSIST? 👇",
+      "beat_plan": [
+        {
+          "says": "World Cup semi-final: Croatia's best young defender against a thirty-five-year-old.",
+          "visual": "Josko Gvardiol playing for Croatia",
+          "images": [
+            "Josko Gvardiol Croatia 2022",
+            "Josko Gvardiol"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b01/img-d901adc15a852fed719489a1d63dde28.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b01/img-ad81d9f8207f401de08d2c2657f60561.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b01/img-1f39318eeff8d9507477d59b9400572c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b01/img-c4f5fe9b6011f4d3e7086fc1fda2f108.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b01/img-35149d3fe6a8846be389199bd3918445.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b01/img-1f39318eeff8d9507477d59b9400572c.jpg",
+          "url": "https://e0.365dm.com/23/08/1600x900/skysports-josko-gvardiol-rb-leipzig_6241053.jpg?20230805102031"
+        },
+        {
+          "says": "Lionel Messi had already scored a penalty, and Julián Álvarez had made it two-nil.",
+          "visual": "Lionel Messi celebrating against Croatia",
+          "images": [
+            "Messi penalty Croatia 2022",
+            "Messi Croatia World Cup semi final"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b02/img-a937f4bae07f868c422fe42687bd7883.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b02/img-7763ae9a26bb954012b18c32bab795ec.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b02/img-a937f4bae07f868c422fe42687bd7883.jpg",
+          "url": "https://static0.givemesportimages.com/wordpress/wp-content/uploads/2022/12/2022-12-13T211637Z_693754851_UP1EICD1N3N2W_RTRMADP_3_SOCCER-WORLDCUP-ARG-CRO-REPORT-scaled.jpg"
+        },
+        {
+          "says": "Then Messi picked up the ball on the right,",
+          "visual": "Lionel Messi dribbling against Croatia",
+          "images": [
+            "Messi Gvardiol",
+            "Messi dribble Croatia 2022"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b03/img-3f40bc9a2c426058fb82f4c021b329ed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b03/img-2888f3baba1e88dea405fd81fb5008a2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b03/img-82ff6e0e487ea0d831f0f35c89d98c08.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b03/img-f4f937c160f334f663f1d2a66e2c8709.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b03/img-9da19efd07728ed408c257205f5620f8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b03/img-f5e351c9468f8f02aa80f5748378de3d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b03/shot_7611420852.mp4",
+          "url": "https://www.youtube.com/watch?v=4eMMbDBZfWo",
+          "start": 4.0,
+          "len": 6.0
+        },
+        {
+          "says": "ran past Gvardiol, checked back, and beat him again on the outside.",
+          "visual": "Lionel Messi beating Gvardiol",
+          "images": [
+            "Messi vs Gvardiol",
+            "Messi Gvardiol dribble"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b04/img-a63cacb8b77398dc5071fb85e8d39a9d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b04/img-30af87070a71905e4d1286bc74b14f11.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b04/img-6bedbda786597de1c6a96c7fec47c542.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b04/img-0e17fa2e59ba0bc76c835ee4e3c97c43.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b04/img-7caaae5a31b16da1e79e80595971b36a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b04/img-7f69a548002796b10c46fa5b4dd054a2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b04/img-348ea10d5b09ae5f573e47d3f1720775.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b04/img-9da19efd07728ed408c257205f5620f8.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b04/shot_ae0d215eb5.mp4",
+          "url": "https://www.youtube.com/watch?v=4eMMbDBZfWo",
+          "start": 13.0,
+          "len": 6.0
+        },
+        {
+          "says": "He cut it back, and Álvarez scored again.",
+          "visual": "Julian Alvarez celebrating a goal for Argentina",
+          "images": [
+            "Julian Alvarez goal Croatia 2022",
+            "Julian Alvarez Argentina celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b05/img-5eb6c06528d4c062be671cd590cdd1ee.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b05/img-e9ad210c3835ccb0725a2aa7d452df1d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b05/img-0a91f997f768e23e58a1054a248ac9b9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b05/img-f9b4cf720ee1d7f942239803c0067ecd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b05/img-8e8af6b5d5e12dc5e12d048f0aea28f8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b05/img-b4ad60c47e9625d10367f852db88b0e0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b05/img-fe1307e7f6436cef67a1a6ac6260c85a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b05/img-f386914c87c392f9dfb5bce8cac07971.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b05/shot_3ef2cc7951.mp4",
+          "url": "https://www.youtube.com/watch?v=4eMMbDBZfWo",
+          "start": 8.0,
+          "len": 6.0
+        },
+        {
+          "says": "Argentina won three-nil and reached the final,",
+          "visual": "Argentina players celebrating",
+          "images": [
+            "Argentina celebrate Croatia 2022",
+            "Argentina win semi final 2022"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b06/img-6067849b236004d8d3111157dc351cb6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b06/img-a3e8652e7075b738a9c6b27f4214304e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b06/img-06adbfb28da27e7b7eff404fec188358.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b06/img-397bdef54dc224a60b80ac389c411cbe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b06/img-ee24b3604f745b132f2abe2e7a559576.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b06/img-8d5630f3c3e64f8d4cc3c530b7083633.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b06/img-635bc5d14e46ddf165f05d8228fdc12e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b06/img-0bdcc667eca561e6ea00fbdf24fc2949.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b06/img-a3e8652e7075b738a9c6b27f4214304e.jpg",
+          "url": "https://www.aljazeera.com/wp-content/uploads/2022/12/SOR1937.jpg?resize=1920,1440"
+        },
+        {
+          "says": "and that penalty made Messi Argentina's top World Cup scorer.",
+          "visual": "Lionel Messi celebrating for Argentina",
+          "images": [
+            "Messi Argentina celebration 2022",
+            "Lionel Messi World Cup 2022"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b07/img-2663e88cc7abeb24788e0dc88f189c12.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b07/img-d80aa0b9979de600e6291842db469737.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b07/img-ca225577cf1d3a7d16a1222deb97defd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b07/img-0fda233c20805e65b1f178b9e3c6e212.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b07/img-8c51ce7698f63ee6483f2a4a9cb2cc9e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b07/img-2e46c636b204a6faca8d3438bef20e71.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b07/img-3c05a54db681bb8cf96fe029290dde9a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b07/img-c9fab171f34eadf74210ef7afd9a10e6.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b07/img-8c51ce7698f63ee6483f2a4a9cb2cc9e.jpg",
+          "url": "https://wallpaperaccess.com/full/8625680.jpg"
+        },
+        {
+          "says": "Was this his greatest assist?",
+          "visual": "close up of Lionel Messi in Argentina shirt",
+          "images": [
+            "Lionel Messi Argentina close up",
+            "Messi Argentina 2022 portrait"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b08/img-9c5d7e37ba2f39a56271f4375372edfa.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b08/img-fde413ff049371863b054c5ef56275fe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b08/img-d46a4f9d0b41860e70f458da035909c4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b08/img-a4189f938c1284a4b4a1b01ca1abf4ea.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b08/img-aedf8dcb2ecf12409820951abe20fb4c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b08/img-062eae23ec09c9751737b2d6f7c559e3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b08/img-91ca6cce0487b2805a3aa0278d8bc17b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b08/img-3cbc659f6d51bbb09432eab24e244f8e.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/in_the_2022_world_cup_semi_final_lionel_/b08/img-a4189f938c1284a4b4a1b01ca1abf4ea.jpg",
+          "url": "https://i.pinimg.com/originals/f1/d6/ac/f1d6ac95a2ff1e03aff9b4fe5777f869.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

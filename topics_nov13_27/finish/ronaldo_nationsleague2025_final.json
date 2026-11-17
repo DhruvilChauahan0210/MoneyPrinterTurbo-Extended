@@ -1,0 +1,23 @@
+{
+  "cfg": "batch_ronaldo_nationsleague2025_final.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 5,
+      "url": "https://www.youtube.com/watch?v=pm-YNwjxfKU",
+      "start": 233.0
+    },
+    {
+      "beat": 7,
+      "url": "https://www.youtube.com/watch?v=pm-YNwjxfKU",
+      "start": 487.0
+    }
+  ],
+  "weak_beats": [
+    "3: Nuno Mendes shown in Portugal kit but face small",
+    "9: Ronaldo in Portugal turquoise away kit (final was in red) - generic hero shot",
+    "6: generic Allianz Arena exterior"
+  ],
+  "beat1": "Clean portrait of Ronaldo in red Portugal kit, dark background (DAZN image)",
+  "notes": "Clips from Sony LIV broadcast highlights (small SonyLIV corner logo + broadcaster score bug). Beat 5 = Ronaldo goal and ball pickup, beat 7 = Spain penalty and Costa dive-save (Morata ID not verified visually)."
+}

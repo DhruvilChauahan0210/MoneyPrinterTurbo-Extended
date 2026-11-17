@@ -1,0 +1,457 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Cristiano Ronaldo playing football",
+      "a real photograph of Ivan Toney"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "THE ENGLISHMAN STOLE HIS CROWN",
+    "hook_cover_term": "Ivan Toney playing in Saudi Arabia",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "TONEY OR RONALDO? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Cristiano Ronaldo playing football",
+      "a real photograph of Ivan Toney"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Ivan Toney took something from Cristiano Ronaldo. Ronaldo had won the last two Saudi Pro League Golden Boots, but last season he finished third in the scoring race. Julián Quiñones scored thirty-three, Toney thirty-two, and Ronaldo twenty-eight. This season, Toney started ahead again. But Ronaldo just took back one record, with his seventh Saudi Pro League hat-trick, one more than Toney. The race is on. Who finishes top this season?",
+    "video_subject": "Ivan Toney beat Cristiano Ronaldo in the 2025-26 Saudi Pro League scoring race, ending his Golden Boot run, and started this season ahead again before Ronaldo took his hat-trick record",
+    "video_terms": "Ronaldo Toney Saudi Golden Boot race, Quinones 33 Toney 32 Ronaldo 28, Ronaldo seventh hat-trick",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Ivan Toney took something from Cristiano Ronaldo.",
+        "visual": "Ivan Toney playing in Saudi Arabia",
+        "images": [
+          "Ivan Toney Al Ahli",
+          "Ivan Toney"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Ronaldo had won the last two Saudi Pro League Golden Boots,",
+        "visual": "Cristiano Ronaldo with a trophy",
+        "images": [
+          "Cristiano Ronaldo Golden Boot Saudi",
+          "Ronaldo award Al Nassr"
+        ],
+        "clips": []
+      },
+      {
+        "says": "but last season he finished third in the scoring race.",
+        "visual": "Cristiano Ronaldo looking disappointed",
+        "images": [
+          "Cristiano Ronaldo disappointed",
+          "Ronaldo sad Al Nassr"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Julián Quiñones scored thirty-three, Toney thirty-two, and Ronaldo twenty-eight.",
+        "visual": "Ivan Toney celebrating a goal",
+        "images": [
+          "Ivan Toney celebration",
+          "Ivan Toney goal Al Ahli"
+        ],
+        "clips": []
+      },
+      {
+        "says": "This season, Toney started ahead again.",
+        "visual": "Ivan Toney close up",
+        "images": [
+          "Ivan Toney close up",
+          "Ivan Toney portrait"
+        ],
+        "clips": []
+      },
+      {
+        "says": "But Ronaldo just took back one record,",
+        "visual": "Cristiano Ronaldo celebrating a goal for Al Nassr",
+        "images": [
+          "Cristiano Ronaldo goal Al Nassr 2026",
+          "Ronaldo celebration Al Nassr"
+        ],
+        "clips": []
+      },
+      {
+        "says": "with his seventh Saudi Pro League hat-trick, one more than Toney.",
+        "visual": "Cristiano Ronaldo siu celebration",
+        "images": [
+          "Ronaldo siu",
+          "Cristiano Ronaldo hat-trick"
+        ],
+        "clips": []
+      },
+      {
+        "says": "The race is on.",
+        "visual": "Cristiano Ronaldo running",
+        "images": [
+          "Cristiano Ronaldo running Al Nassr",
+          "Ronaldo sprint"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Who finishes top this season?",
+        "visual": "close up of Cristiano Ronaldo",
+        "images": [
+          "Cristiano Ronaldo close up",
+          "Cristiano Ronaldo face"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Ivan Toney beat Cristiano Ronaldo in the 2025-26 Saudi Pro League scoring race, ending his Golden Boot run, and started this season ahead again before Ronaldo took his hat-trick record",
+      "video_script": "Ivan Toney took something from Cristiano Ronaldo. Ronaldo had won the last two Saudi Pro League Golden Boots, but last season he finished third in the scoring race. Julián Quiñones scored thirty-three, Toney thirty-two, and Ronaldo twenty-eight. This season, Toney started ahead again. But Ronaldo just took back one record, with his seventh Saudi Pro League hat-trick, one more than Toney. The race is on. Who finishes top this season?",
+      "video_terms": "Ronaldo Toney Saudi Golden Boot race, Quinones 33 Toney 32 Ronaldo 28, Ronaldo seventh hat-trick",
+      "hook_text": "THE ENGLISHMAN STOLE HIS CROWN",
+      "cta_text": "TONEY OR RONALDO? 👇",
+      "beat_plan": [
+        {
+          "says": "Ivan Toney took something from Cristiano Ronaldo.",
+          "visual": "Ivan Toney playing in Saudi Arabia",
+          "images": [
+            "Ivan Toney Al Ahli",
+            "Ivan Toney"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b01/img-981faf153f61f9ab77ddd853c77a7652.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b01/img-1bfaf907d03c01f525e03344ed93cf9b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b01/img-0efc8737c95a36f0b9c4c1c2ae9ea170.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b01/img-420d0a55952fa9f92dd1da07dc60d260.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b01/img-0cf6431b2980a9c19f1cfebe6f901d9e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b01/img-581a9515ea7de4b3f98b281ed62bb419.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b01/img-a094b86ded222a834827fdb81f5e819f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b01/img-eb8f98c16cb4484cc99fd8d5d092e6d8.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b01/img-0cf6431b2980a9c19f1cfebe6f901d9e.jpg",
+          "url": "https://library.sportingnews.com/styles/twitter_card_120x120/s3/2024-09/Ivan+Toney+Al+Ahli+092824.jpg?itok=QvhDoqv9"
+        },
+        {
+          "says": "Ronaldo had won the last two Saudi Pro League Golden Boots,",
+          "visual": "Cristiano Ronaldo with a trophy",
+          "images": [
+            "Cristiano Ronaldo Golden Boot Saudi",
+            "Ronaldo award Al Nassr"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b02/img-919e28c546343d7c646c6b6ad5e79ecb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b02/img-ca3d29897917a6b81d23648c0b521a9a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b02/img-d8f6922836e85529fec022d0ddd9366e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b02/img-9005557a34b77d9ce14daa8146a08bf6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b02/img-1ff6023ae8d9c49a6d27d1937782f602.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b02/img-7fa9cdf89856035e124168e0febe48b4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b02/img-adf4885af2f8b69939ea931768778240.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b02/img-fbdc4b9fe9a14d78d53debb5c11b7475.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b02/img-919e28c546343d7c646c6b6ad5e79ecb.jpg",
+          "url": "https://www.leaders-mena.com/leaders/uploads/2024/05/chbdcxna.png"
+        },
+        {
+          "says": "but last season he finished third in the scoring race.",
+          "visual": "Cristiano Ronaldo looking disappointed",
+          "images": [
+            "Cristiano Ronaldo disappointed",
+            "Ronaldo sad Al Nassr"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b03/img-3dce7158059c816e24a270d887e3de5e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b03/img-3d0409cc6f662c8d85ddc9d8cdf2e9a9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b03/img-96757836dda6d1e12b3d092dd3587a2d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b03/img-ee27540653957f974aa3cec27ce68d7d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b03/img-c8c99e12c5ed6b3c251928c2b9557eac.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b03/img-3bd89a8c72582cce282fa7266c14f7a7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b03/img-b7fe33be22780a3491ce631db8c98506.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b03/img-798483f9b05f0506e897b32aa3ca9058.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b03/img-3bd89a8c72582cce282fa7266c14f7a7.jpg",
+          "url": "https://news.cgtn.com/news/2024-03-12/Ronaldo-s-Al-Nassr-exit-ACL-with-shoot-out-loss-to-Al-Ain-1rUmbeYLYAg/img/41c70f46856544ec92d4016a61bfebde/41c70f46856544ec92d4016a61bfebde.png"
+        },
+        {
+          "says": "Julián Quiñones scored thirty-three, Toney thirty-two, and Ronaldo twenty-eight.",
+          "visual": "Ivan Toney celebrating a goal",
+          "images": [
+            "Ivan Toney celebration",
+            "Ivan Toney goal Al Ahli"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b04/img-ecc31d6df0ae1cea7e9f5e1669a27e1a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b04/img-98f6956f5a3e711e55479be98470f1c7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b04/img-9e5f726a93d5bb6f7a3df84e1ad0fd33.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b04/img-a094b86ded222a834827fdb81f5e819f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b04/img-75d797984005b97ef7a2d1641fc75902.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b04/img-0fbb6e25e3d620d4ea6c30275c29f7a2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b04/img-06887cfbc603d7b7daa05c4f3c33687b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b04/img-02b23b8dc30ff50e8d77fc142303136d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b04/img-75d797984005b97ef7a2d1641fc75902.jpg",
+          "url": "https://cassette.sphdigital.com.sg/image/straitstimes/0d79f0029e537de5b70f8de7caedb750fc64b95cbb04a6d26b76e0872f76f759"
+        },
+        {
+          "says": "This season, Toney started ahead again.",
+          "visual": "Ivan Toney close up",
+          "images": [
+            "Ivan Toney close up",
+            "Ivan Toney portrait"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b05/img-45b8b1d9b5ce724febd820974c8f151a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b05/img-ca16f10dd59eb23fd54eee8374dac12b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b05/img-95b3f04a7bdfbee55e5dff42c2726044.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b05/img-8b021394d141b8fad1983ca254dea23c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b05/img-56a3753e3b48ec66d9e3c6a09c6435a7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b05/img-1083afc1836bb3279e55665987c78d94.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b05/img-f298884c4d74821e5e977f9208f94880.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b05/img-5a5829ed9e922d2670740847a74e31f8.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b05/img-1083afc1836bb3279e55665987c78d94.jpg",
+          "url": "https://www.playmakerstats.com/img/jogadores/new/93/48/299348_ivan_toney_20251228010131.png"
+        },
+        {
+          "says": "But Ronaldo just took back one record,",
+          "visual": "Cristiano Ronaldo celebrating a goal for Al Nassr",
+          "images": [
+            "Cristiano Ronaldo goal Al Nassr 2026",
+            "Ronaldo celebration Al Nassr"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b06/img-dd702e92fd53fe23ef3b4cd13f11a12a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b06/img-9c73684eae31b8e22cdeed4d911063d5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b06/img-64934f052be9a4ce3dc8754fb74d6ba4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b06/img-bdaff4857890a23270f8484a46c3f013.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b06/img-4b0c339d399360623d9ff435626ee8dc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b06/img-b2523a4f7497a409332272c4b76f0a0d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b06/img-d762a44272f61d396c2e534844d70e7e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b06/img-7efc8b6740faeafaf624ca67ebe05001.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b06/img-b2523a4f7497a409332272c4b76f0a0d.jpg",
+          "url": "https://ichef.bbci.co.uk/ace/standard/3840/cpsprodpb/2700/live/0cfb5290-6460-11ef-a7d8-61cd67f3fb31.jpg"
+        },
+        {
+          "says": "with his seventh Saudi Pro League hat-trick, one more than Toney.",
+          "visual": "Cristiano Ronaldo siu celebration",
+          "images": [
+            "Ronaldo siu",
+            "Cristiano Ronaldo hat-trick"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b07/img-3bbfaf9bfb2c07f5ed5f22cd82b67786.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b07/img-e5a2f911e4186bb51baba7c2bf9a6c2b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b07/img-11d1699dacd6112dcd415ec64da94361.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b07/img-2d2bc69a56fba2bfdf9a7b1f502d6315.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b07/img-efcd633405d569d2ce10488385af7fab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b07/img-e50a96ade82bcdc79628adb411cc9e4e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b07/img-3f96d5ec5ba6b6a4fd22b7bce8ab1da1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b07/img-b7dc12d53fe0c95a10dd84ce68b8b145.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b07/img-e5a2f911e4186bb51baba7c2bf9a6c2b.jpg",
+          "url": "https://wallpapercave.com/wp/wp2271188.jpg"
+        },
+        {
+          "says": "The race is on.",
+          "visual": "Cristiano Ronaldo running",
+          "images": [
+            "Cristiano Ronaldo running Al Nassr",
+            "Ronaldo sprint"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b08/img-aa6b57c1caa77b3d0f8a2716f343ed48.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b08/img-ed47a21058aabd6fe57d369d286b5048.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b08/img-9a1fed6e20a366caf8c47c3b9cfcaf23.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b08/img-e06ddb9f38bd3e8c8847b4e43be4e2d4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b08/img-25f03b2cfb784df5eb58caaae027012d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b08/img-9c73684eae31b8e22cdeed4d911063d5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b08/img-f0abe67e1dde1a21da2ace90c42e1dbb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b08/img-7730bae98812cf137d7c1b0948eff877.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b08/img-9c73684eae31b8e22cdeed4d911063d5.jpg",
+          "url": "https://cdn.punchng.com/wp-content/uploads/2025/05/26222528/Ronaldo-Al-Nassr.jpeg"
+        },
+        {
+          "says": "Who finishes top this season?",
+          "visual": "close up of Cristiano Ronaldo",
+          "images": [
+            "Cristiano Ronaldo close up",
+            "Cristiano Ronaldo face"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b09/img-0d072628fc8cc326bf502887a162b5b1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b09/img-6266892056fdcbb68c93efe42cd108e7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b09/img-979b814c3dd1fee3e9b9c2c526f7e9c5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b09/img-dcedc6869bee9da5fa58a71b86a8f5cc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b09/img-11c74d3f6cd1fee7a45a46490e90a483.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b09/img-badbf4beaeb5360a0c5182f24247a045.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b09/img-4e4ba4d6c9b1ffea815db93e95fe51bc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b09/img-4c8e3aed9a719ca2f2c102d64e61447f.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/ivan_toney_beat_cristiano_ronaldo_in_the/b09/img-11c74d3f6cd1fee7a45a46490e90a483.jpg",
+          "url": "https://i.pinimg.com/originals/24/48/5c/24485c9ba0e6a70ebf8e00b96f4466b1.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

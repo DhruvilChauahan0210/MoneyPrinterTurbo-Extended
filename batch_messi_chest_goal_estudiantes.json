@@ -1,0 +1,449 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing football",
+      "a real photograph of Juan Sebastian Veron"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "HE SCORED WITH HIS CHEST",
+    "hook_cover_term": "Lionel Messi celebrating a goal for Barcelona",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "THE GREATEST TEAM EVER? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing football",
+      "a real photograph of Juan Sebastian Veron"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "December twenty oh nine: extra time, and an Argentine club stood in Messi's way. In the Club World Cup final, Barcelona faced Estudiantes, captained by his Argentina teammate Juan Sebastián Verón. Estudiantes led until Pedro equalised in the eighty-ninth minute. Then, in extra time, Dani Alves crossed, and Messi chested the ball into the net. Barcelona won two-one, completing six trophies in one year. Was this Barcelona's greatest team?",
+    "video_subject": "Lionel Messi chested in the extra-time winner against Argentina's Estudiantes, captained by Juan Sebastian Veron, in the 2009 Club World Cup final to complete Barcelona's six trophies in a year",
+    "video_terms": "Messi chest goal Estudiantes Club World Cup 2009, Veron, Barcelona six trophies",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "beat_plan": [
+      {
+        "says": "December twenty oh nine: extra time, and an Argentine club stood in Messi's way.",
+        "visual": "young Lionel Messi in Barcelona kit",
+        "images": [
+          "Messi Estudiantes 2009",
+          "Lionel Messi Barcelona 2009"
+        ],
+        "clips": []
+      },
+      {
+        "says": "In the Club World Cup final, Barcelona faced Estudiantes,",
+        "visual": "Estudiantes players",
+        "images": [
+          "Estudiantes Barcelona Club World Cup 2009",
+          "Estudiantes de La Plata 2009"
+        ],
+        "clips": []
+      },
+      {
+        "says": "captained by his Argentina teammate Juan Sebastián Verón.",
+        "visual": "Juan Sebastian Veron in Estudiantes kit",
+        "images": [
+          "Juan Sebastian Veron Estudiantes",
+          "Juan Sebastian Veron"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Estudiantes led until Pedro equalised in the eighty-ninth minute.",
+        "visual": "Pedro celebrating for Barcelona",
+        "images": [
+          "Pedro Barcelona 2009 goal",
+          "Pedro Rodriguez Barcelona celebration"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Then, in extra time, Dani Alves crossed,",
+        "visual": "Dani Alves playing for Barcelona",
+        "images": [
+          "Dani Alves Barcelona 2009",
+          "Dani Alves"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and Messi chested the ball into the net.",
+        "visual": "Lionel Messi celebrating a goal for Barcelona",
+        "images": [
+          "Messi chest goal Estudiantes",
+          "Messi goal Club World Cup 2009"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Barcelona won two-one,",
+        "visual": "Barcelona players celebrating the Club World Cup",
+        "images": [
+          "Barcelona Club World Cup 2009",
+          "Barcelona celebrate 2009"
+        ],
+        "clips": []
+      },
+      {
+        "says": "completing six trophies in one year.",
+        "visual": "Barcelona team with six trophies",
+        "images": [
+          "Barcelona six trophies 2009",
+          "Barcelona sextuple Guardiola"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Was this Barcelona's greatest team?",
+        "visual": "Pep Guardiola and Lionel Messi",
+        "images": [
+          "Guardiola Messi 2009",
+          "Pep Guardiola Barcelona 2009"
+        ],
+        "clips": []
+      }
+    ],
+    "intro_image_paths": [],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Lionel Messi chested in the extra-time winner against Argentina's Estudiantes, captained by Juan Sebastian Veron, in the 2009 Club World Cup final to complete Barcelona's six trophies in a year",
+      "video_script": "December twenty oh nine: extra time, and an Argentine club stood in Messi's way. In the Club World Cup final, Barcelona faced Estudiantes, captained by his Argentina teammate Juan Sebastián Verón. Estudiantes led until Pedro equalised in the eighty-ninth minute. Then, in extra time, Dani Alves crossed, and Messi chested the ball into the net. Barcelona won two-one, completing six trophies in one year. Was this Barcelona's greatest team?",
+      "video_terms": "Messi chest goal Estudiantes Club World Cup 2009, Veron, Barcelona six trophies",
+      "hook_text": "HE SCORED WITH HIS CHEST",
+      "cta_text": "THE GREATEST TEAM EVER? 👇",
+      "beat_plan": [
+        {
+          "says": "December twenty oh nine: extra time, and an Argentine club stood in Messi's way.",
+          "visual": "young Lionel Messi in Barcelona kit",
+          "images": [
+            "Messi Estudiantes 2009",
+            "Lionel Messi Barcelona 2009"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b01/img-f1b8c9366e8ab467c86c8b45c2ee6f87.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b01/img-8a2d3b94386c1701554345fab706547e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b01/img-178c2f8fbcd57eda74ad0dc78607b8f3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b01/img-394036a1d14440ddf9c4454947eea824.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b01/img-05e071ade653c3bac83ec3c155e84eb8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b01/img-a7c2878126574475604a7620e40e0120.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b01/img-4b4475ebcdb8f07bc096845b07b0f92f.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b01/img-8a2d3b94386c1701554345fab706547e.jpg",
+          "url": "https://i.pinimg.com/736x/46/85/c3/4685c35a603bda80a28c8af8a4d43539.jpg"
+        },
+        {
+          "says": "In the Club World Cup final, Barcelona faced Estudiantes,",
+          "visual": "Estudiantes players",
+          "images": [
+            "Estudiantes Barcelona Club World Cup 2009",
+            "Estudiantes de La Plata 2009"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b02/img-400c469b0854d021618dbfe9632d4812.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b02/img-fb6f48ca6c6e64b2ceef61f8603d6978.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b02/img-91bedb9690e25fde0f4bc9928c4a2d76.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b02/img-acd8e0825ef44e8018f0e569415ce574.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b02/img-fff56d849e3c3fa0fc9f7824193a6345.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b02/img-3f7c26fd97cc21657f6cddb404b6ddb1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b02/img-eedfedd6b4923f9bf79171de6f24d825.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b02/img-d65d257b3d0d7929d9583b04b887b8c1.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b02/img-400c469b0854d021618dbfe9632d4812.jpg",
+          "url": "https://i.pinimg.com/736x/2e/f4/e7/2ef4e786f3bca39d32b7eaa0ba873a49.jpg"
+        },
+        {
+          "says": "captained by his Argentina teammate Juan Sebastián Verón.",
+          "visual": "Juan Sebastian Veron in Estudiantes kit",
+          "images": [
+            "Juan Sebastian Veron Estudiantes",
+            "Juan Sebastian Veron"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b03/img-fe3b7c426306954b5ba7c88fced60a83.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b03/img-b0da07f935a21f4bf33480724626f587.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b03/img-cba936f9596639f61426bab9bc1340fb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b03/img-05d94d58a14958d51493f4f0c0564ff4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b03/img-3c6cf55b0596723a80ce32a3dbacf376.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b03/img-45e11ce76d324b8ad71d876fbce6e330.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b03/img-68fc18666f1cfef76112fe3735621d03.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b03/img-8c4a2d4d3629cde90a68239648442084.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b03/img-cba936f9596639f61426bab9bc1340fb.jpg",
+          "url": "https://i.pinimg.com/originals/2e/0c/89/2e0c896520e067a4bea3d47ce19458eb.jpg"
+        },
+        {
+          "says": "Estudiantes led until Pedro equalised in the eighty-ninth minute.",
+          "visual": "Pedro celebrating for Barcelona",
+          "images": [
+            "Pedro Barcelona 2009 goal",
+            "Pedro Rodriguez Barcelona celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b04/img-ef3603ffdfd0c5ead88ab8d483b08dca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b04/img-bb5c23671ff9b47ed9fb5c2c37461867.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b04/img-ce9b8363b6cb931cbe41518a42f1f603.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b04/img-4f599c54451e77667553523b41485108.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b04/img-f649b7b3adaa6b4253c08cd39a84a663.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b04/img-58a94fbe38bd0b3737f0e74156f4854f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b04/img-9e19ccdd179b5e90857117b61cdb5854.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b04/img-ce9b8363b6cb931cbe41518a42f1f603.jpg",
+          "url": "https://www.fcbarcelona.com/photo-resources/2019/03/26/fef5f028-ab9a-4e1e-bec0-51ff3a721a46/JKngRUGp.jpg?width=1200&height=750"
+        },
+        {
+          "says": "Then, in extra time, Dani Alves crossed,",
+          "visual": "Dani Alves playing for Barcelona",
+          "images": [
+            "Dani Alves Barcelona 2009",
+            "Dani Alves"
+          ],
+          "clips": [],
+          "url": "https://www.youtube.com/watch?v=NEB4YhJ9QAw",
+          "start": 1.0,
+          "len": 3.5,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b05/shot_18681fd6a1.mp4",
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b05/img-1b7dba2c2a96efab3db507c052480665.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b05/img-7ba6ac726639cc46beb79f0d8b2abcf5.jpg"
+          ]
+        },
+        {
+          "says": "and Messi chested the ball into the net.",
+          "visual": "Lionel Messi celebrating a goal for Barcelona",
+          "images": [
+            "Messi chest goal Estudiantes",
+            "Messi goal Club World Cup 2009"
+          ],
+          "clips": [],
+          "url": "https://www.youtube.com/watch?v=NEB4YhJ9QAw",
+          "start": 9.0,
+          "len": 4.4,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b06/shot_90f6295956.mp4",
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b06/img-2f611f2c7054218c53b35e440092d855.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b06/img-1c01e64aecd7a6d2c98a0a8d3fca84a7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b06/img-0aa4ff88fd6850423b047a82527df5a7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b06/img-362262ff7897e1843a3e84df59ebac79.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b06/img-c6fed5afbd8c6de7dabb5b57c6b54437.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b06/img-dda89802bae6964eb201540894601f33.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b06/img-05542949cae944b20917200b9ebb2872.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b06/img-f3ee6094126e89c99b295d690a177338.jpg"
+          ]
+        },
+        {
+          "says": "Barcelona won two-one,",
+          "visual": "Barcelona players celebrating the Club World Cup",
+          "images": [
+            "Barcelona Club World Cup 2009",
+            "Barcelona celebrate 2009"
+          ],
+          "clips": [],
+          "url": "https://www.youtube.com/watch?v=NEB4YhJ9QAw",
+          "start": 5.0,
+          "len": 3.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b07/shot_bdfc4fc15c.mp4",
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b07/img-620130966a6c275a0880662bd4dc1f49.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b07/img-79fc973a53d6536cfd20f82f4022a369.jpg"
+          ]
+        },
+        {
+          "says": "completing six trophies in one year.",
+          "visual": "Barcelona team with six trophies",
+          "images": [
+            "Barcelona six trophies 2009",
+            "Barcelona sextuple Guardiola"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b08/img-c62574384544a580250c315cbf5f4a4a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b08/img-dcf67bc503e79059b78f853a2aaa5d9f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b08/img-c91577518625bda1bc4427a65df88181.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b08/img-789ca0e7ca62c5fa6b9d9b4d4982f823.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b08/img-0eb7c9158dfbb4cea844fa43a7ca4f9a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b08/img-833efe1ab84820ef93432ea4520eb257.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b08/img-feedd484d8ee73ecd3d078367c911ef3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b08/img-1b9b89b19b3b67ff25baebcdbd06f6f1.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b08/img-c62574384544a580250c315cbf5f4a4a.jpg",
+          "url": "https://i.pinimg.com/originals/c9/d1/ba/c9d1baed79c7c3756f1c93ab506fded5.jpg"
+        },
+        {
+          "says": "Was this Barcelona's greatest team?",
+          "visual": "Pep Guardiola and Lionel Messi",
+          "images": [
+            "Guardiola Messi 2009",
+            "Pep Guardiola Barcelona 2009"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b09/img-94264218177ad610950c6a04e8892c71.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b09/img-48686562160b7e344aaf71b200af64b4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b09/img-c634f7894bbe62b6871d2a54617df6bb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b09/img-78c218954484824b2d1fa6fbe29f33b2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b09/img-1decdbeb830f84e82f1793516ebe37a0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b09/img-14c5ed72e64def38359a4d7b857ab597.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b09/img-dca4e219561ec10614889886b758d282.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b09/img-41d926ded0e1d9c8fdb0d8c093357935.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_chested_in_the_extra_time_w/b09/img-94264218177ad610950c6a04e8892c71.jpg",
+          "url": "https://www.elpuntavui.cat/imatges/61/55/alta/780_0008_6155790_954d6dea769da5bcbf817440f5aaebc0.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "cfg": "batch_ronaldo_espanyol_five_goals.json",
+  "status": "ready",
+  "clip_beats": [],
+  "weak_beats": [
+    {
+      "beat": 1,
+      "why": "full-length Ronaldo, white kit (real match was grey away kit)"
+    },
+    {
+      "beat": 5,
+      "why": "generic Ronaldo celebration"
+    },
+    {
+      "beat": 6,
+      "why": "Ronaldo with crowd, not Espanyol-specific"
+    },
+    {
+      "beat": 7,
+      "why": "Clasico photo, no match ball"
+    },
+    {
+      "beat": 8,
+      "why": "generic, not Granada"
+    },
+    {
+      "beat": 9,
+      "why": "Ronaldo pointing, ok"
+    }
+  ],
+  "beat1": "Ronaldo full-body in white Real Madrid kit with ball, no close-up available",
+  "notes": "Candidate pool thin. No clip: broadcast available only as vk.com/lifesport watermarked grey-kit upload or vignette fan edit."
+}

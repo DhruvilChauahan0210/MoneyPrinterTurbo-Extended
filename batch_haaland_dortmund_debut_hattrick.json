@@ -1,0 +1,426 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Erling Haaland",
+      "a real photograph of Erling Haaland playing for Borussia Dortmund",
+      "a real photograph of Pierre-Emerick Aubameyang"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "HAS ANYONE STARTED BETTER?",
+    "hook_cover_term": "Erling Haaland celebrating for Borussia Dortmund",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "GREATEST DEBUT EVER: HAALAND OR SOMEONE ELSE? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Erling Haaland",
+      "a real photograph of Erling Haaland playing for Borussia Dortmund",
+      "a real photograph of Pierre-Emerick Aubameyang"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Twenty-three minutes. That is all Haaland needed for a debut hat-trick. January two thousand and twenty, away at Augsburg. Dortmund trail three-one. The new signing waits on the bench for fifty-six minutes. He comes on and pulls one back within minutes. Then a second. Then a third. Dortmund win five-three. He was nineteen, signed that winter from Salzburg. Only Aubameyang had scored three on a Dortmund Bundesliga debut. Is this the greatest debut football has ever seen?",
+    "video_subject": "Erling Haaland came off the bench for Borussia Dortmund on his debut at Augsburg in January 2020 with his side 3-1 down and scored a hat-trick in 23 minutes in a 5-3 win.",
+    "video_terms": "Haaland, Dortmund, Augsburg, debut, hat-trick, Bundesliga, 2020, Salzburg, Aubameyang",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Twenty-three minutes. That is all Haaland needed for a debut hat-trick.",
+        "visual": "close up of Erling Haaland in yellow Borussia Dortmund kit 2020",
+        "images": [
+          "Erling Haaland Dortmund 2020",
+          "Haaland Dortmund debut"
+        ],
+        "clips": []
+      },
+      {
+        "says": "January two thousand and twenty, away at Augsburg. Dortmund trail three-one.",
+        "visual": "Dortmund players dejected at Augsburg",
+        "images": [
+          "Augsburg Dortmund 2020",
+          "Dortmund Bundesliga January 2020"
+        ],
+        "clips": []
+      },
+      {
+        "says": "The new signing waits on the bench for fifty-six minutes.",
+        "visual": "Haaland on the Dortmund bench ready to come on",
+        "images": [
+          "Haaland Dortmund bench",
+          "Haaland Dortmund substitute"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He comes on and pulls one back within minutes.",
+        "visual": "Haaland scoring his first Dortmund goal",
+        "images": [
+          "Haaland first goal Dortmund",
+          "Haaland Augsburg goal"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Then a second. Then a third. Dortmund win five-three.",
+        "visual": "Haaland celebrating hat-trick with teammates",
+        "images": [
+          "Haaland hat-trick Dortmund",
+          "Haaland Reus Sancho 2020"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He was nineteen, signed that winter from Salzburg.",
+        "visual": "Haaland in Dortmund shirt as a new signing",
+        "images": [
+          "Haaland Salzburg",
+          "Haaland unveiled Dortmund"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Only Aubameyang had scored three on a Dortmund Bundesliga debut.",
+        "visual": "Pierre-Emerick Aubameyang in Dortmund kit",
+        "images": [
+          "Aubameyang Dortmund",
+          "Aubameyang Haaland"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Is this the greatest debut football has ever seen?",
+        "visual": "Haaland roaring celebration in Dortmund kit",
+        "images": [
+          "Haaland celebration Dortmund",
+          "Haaland Dortmund 2020"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Erling Haaland came off the bench for Borussia Dortmund on his debut at Augsburg in January 2020 with his side 3-1 down and scored a hat-trick in 23 minutes in a 5-3 win.",
+      "video_script": "Twenty-three minutes. That is all Haaland needed for a debut hat-trick. January two thousand and twenty, away at Augsburg. Dortmund trail three-one. The new signing waits on the bench for fifty-six minutes. He comes on and pulls one back within minutes. Then a second. Then a third. Dortmund win five-three. He was nineteen, signed that winter from Salzburg. Only Aubameyang had scored three on a Dortmund Bundesliga debut. Is this the greatest debut football has ever seen?",
+      "video_terms": "Haaland, Dortmund, Augsburg, debut, hat-trick, Bundesliga, 2020, Salzburg, Aubameyang",
+      "hook_text": "HAS ANYONE STARTED BETTER?",
+      "cta_text": "GREATEST DEBUT EVER: HAALAND OR SOMEONE ELSE? 👇",
+      "beat_plan": [
+        {
+          "says": "Twenty-three minutes. That is all Haaland needed for a debut hat-trick.",
+          "visual": "close up of Erling Haaland in yellow Borussia Dortmund kit 2020",
+          "images": [
+            "Erling Haaland Dortmund 2020",
+            "Haaland Dortmund debut"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b01/img-7bb1a5d05b482568820b36cd7e3bd1cc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b01/img-6b07be489dae3da53424e67ef9e32a76.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b01/img-aba0abb8347619c27987eef89a505588.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b01/img-c00a9cdca5aca92d59e471bcf165c8d9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b01/img-8eeebb2b77e4e94e5bbbc3e340b95a9a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b01/img-0322e388d5ea5306f9589f8cddd05334.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b01/img-362590bb001bae378432efdbd0fd3f0c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b01/img-81a79ac2bf8ff0fb38d3e31827b2438f.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b01/img-8eeebb2b77e4e94e5bbbc3e340b95a9a.jpg",
+          "url": "https://images.daznservices.com/di/library/GOAL/8/e4/erling-haaland-borussia-dortmund-2020-21_63kjizy43ug412uab1ncvhrjs.jpg?t=-1448075772&quality=100"
+        },
+        {
+          "says": "January two thousand and twenty, away at Augsburg. Dortmund trail three-one.",
+          "visual": "Dortmund players dejected at Augsburg",
+          "images": [
+            "Dortmund players dejected Augsburg 2020",
+            "Augsburg Dortmund January 2020"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b02/img-32ccbeea34f3a1e8bd4bac87ac7f19f5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b02/img-cbc95c2535dca164be11c7f2179b579c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b02/img-a4a11d3c2596171f5c87a8e425fff672.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b02/img-a4a11d3c2596171f5c87a8e425fff672.jpg",
+          "url": "https://dims.apnews.com/dims4/default/be50e6f/2147483647/strip/true/crop/5406x3604+0+0/resize/599x399!/quality/90/?url=https://assets.apnews.com/2f/ee/2333d415566ed359796d259949f7/d43216d487e4400ca2c429f6e232817c"
+        },
+        {
+          "says": "The new signing waits on the bench for fifty-six minutes.",
+          "visual": "Haaland on the Dortmund bench ready to come on",
+          "images": [
+            "Haaland Dortmund bench 2020",
+            "Erling Haaland substitute Dortmund"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b03/img-1a8a389901f7b0e7fc95507f76bda22c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b03/img-3b3d08e4c02978c95a9416855bbced5d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b03/img-ebb1e9830c74763f12ba95b215f0a858.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b03/img-7bb1a5d05b482568820b36cd7e3bd1cc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b03/img-1d3521a7d524c1d2592be1fde3bda5cc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b03/img-273b4ca2efcccc8cdd159e056f03b7b0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b03/img-143499751534c4c1e77827bf9afc1149.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b03/img-f1a784905a7a1f27ae673e22160b10a0.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b03/img-1a8a389901f7b0e7fc95507f76bda22c.jpg",
+          "url": "https://i2-prod.irishmirror.ie/incoming/article23257650.ece/ALTERNATES/s615b/1_Bundesliga-Borussia-Dortmund-v-VfL-Wolfsburg.jpg"
+        },
+        {
+          "says": "He comes on and pulls one back within minutes.",
+          "visual": "Haaland scoring his first Dortmund goal",
+          "images": [
+            "Haaland first goal Dortmund",
+            "Haaland Augsburg goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b04/img-f11dfd7fd86e31385fdc92710c51818a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b04/img-c38e2d6e3c0708af3abfcb0f401fef35.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b04/img-d164da46694e51f6c849d7e35b24b3e2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b04/img-53edfad58b87d4d093daa214e1a711c8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b04/img-6f5b7198b6d5114b81a2ec886f3d4f66.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b04/img-fb24eff8930a09046920b155c807f80c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b04/img-483284ed89707642387f1b11c59073bf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b04/img-e40a2ae59c813118788d2e50e517a493.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b04/shot_30add24026.mp4",
+          "url": "https://www.youtube.com/watch?v=AGLHZZGdimg",
+          "start": 560.5,
+          "len": 6.0
+        },
+        {
+          "says": "Then a second. Then a third. Dortmund win five-three.",
+          "visual": "Haaland celebrating hat-trick with teammates",
+          "images": [
+            "Haaland hat-trick Dortmund",
+            "Haaland Reus Sancho 2020"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b05/img-196bdbec03417cf6e2993d65152105eb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b05/img-b22aa582ffdf4078c50cd5e1de5a5f76.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b05/img-e14f8963493214a6f68f585e61b8c2b7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b05/img-53edfad58b87d4d093daa214e1a711c8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b05/img-57f33dbd3c0af533876887c08af73cd6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b05/img-2a586590d93545f594fba974dbd0313f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b05/img-3b534a0652ce92e092326aaa8f713fd0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b05/img-ffafc48ed62b992b042cb4e7ab5343f9.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b05/shot_ad5d3edf2e.mp4",
+          "url": "https://www.youtube.com/watch?v=AGLHZZGdimg",
+          "start": 605.5,
+          "len": 6.0
+        },
+        {
+          "says": "He was nineteen, signed that winter from Salzburg.",
+          "visual": "Haaland in Dortmund shirt as a new signing",
+          "images": [
+            "Haaland Dortmund signing 2020 Salzburg",
+            "Erling Haaland Dortmund presentation"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b06/img-591b17eff14219cc654c7c858c682212.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b06/img-2eb730332ed166583dfe2b74f93f2900.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b06/img-cc0ff7430c94b55cc662a7d1f8e16d8f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b06/img-360f54bdb15e2c2069a719057f6e0801.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b06/img-31547a0049fbd2e8193bea2822bad2f7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b06/img-f51b3171695ee56876bc2cc9b08b293b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b06/img-fd993c502d097072d50345e80c922358.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b06/img-28ea033ddca968d7c7773b0c63c1c3f8.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b06/img-591b17eff14219cc654c7c858c682212.jpg",
+          "url": "https://ecdn.dhakatribune.net/contents/cache/images/1200x630x1xxxxx1/uploads/dten/2019/12/em9jdg4wwaaer-x-1577632197982.jpg"
+        },
+        {
+          "says": "Only Aubameyang had scored three on a Dortmund Bundesliga debut.",
+          "visual": "Pierre-Emerick Aubameyang in Dortmund kit",
+          "images": [
+            "Aubameyang Dortmund",
+            "Pierre-Emerick Aubameyang Borussia Dortmund yellow"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b07/img-62428495b9039baec9b2326435b29cbd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b07/img-4f325c4a76f452f227fa8af37379fb87.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b07/img-a23aca02c6ce9d6c4d50195adec9f4c0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b07/img-97492523758f48c5dae49096973f04ec.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b07/img-fa6e64dcc3b7c8102b00f76a54d688e0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b07/img-2fe2ed3aca5aafbf446c70d14cc19219.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b07/img-1e9ee2cff65c68684a033dfe0aa8973b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b07/img-c558b3a255d9ee9176c0d866d1daffd8.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b07/img-fa6e64dcc3b7c8102b00f76a54d688e0.jpg",
+          "url": "https://e0.365dm.com/18/01/1600x900/skysports-pierre-emerick-aubameyang-aubameyang-dortmund_4214412.jpg?20180125125032"
+        },
+        {
+          "says": "Is this the greatest debut football has ever seen?",
+          "visual": "Haaland roaring celebration in Dortmund kit",
+          "images": [
+            "Haaland celebration Dortmund",
+            "Haaland Dortmund 2020"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b08/img-931a60d9b68d1cefa4973b9abb9a1b03.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b08/img-92d2213d667080e8dd7a17850c4f701f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b08/img-28b4ff1ce92eb9957ada692458de3d50.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b08/img-251fcd63ab9737df3eb048dd1c958429.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b08/img-53edfad58b87d4d093daa214e1a711c8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b08/img-6f5b7198b6d5114b81a2ec886f3d4f66.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b08/img-fb24eff8930a09046920b155c807f80c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b08/img-e40a2ae59c813118788d2e50e517a493.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/erling_haaland_came_off_the_bench_for_bo/b08/img-28b4ff1ce92eb9957ada692458de3d50.jpg",
+          "url": "https://d3nfwcxd527z59.cloudfront.net/content/uploads/2020/02/19102646/erling-haaland-celebration-dortmund.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

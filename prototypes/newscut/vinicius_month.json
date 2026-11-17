@@ -1,0 +1,364 @@
+{
+ "key": "vinicius_month",
+ "out": "NEWSCUT_vinicius_one_month.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_em106.wav",
+ "musicVol": 0.012,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Vinícius Junior has one goal.",
+ "sentences": [
+  [
+   [
+    "VINÍCIUS JUNIOR",
+    "Vinícius Junior"
+   ],
+   [
+    "HAS ONE GOAL",
+    "has one goal"
+   ],
+   [
+    "AND ONE ASSIST",
+    "and one assist"
+   ],
+   [
+    "IN HIS LAST NINE GAMES",
+    "in his last nine games,"
+   ],
+   [
+    "AND REAL MADRID",
+    "and Real Madrid"
+   ],
+   [
+    "ARE RUNNING OUT",
+    "are running out"
+   ],
+   [
+    "OF PATIENCE",
+    "of patience."
+   ]
+  ],
+  [
+   [
+    "AND IT GETS",
+    "And it gets"
+   ],
+   [
+    "EVEN WORSE",
+    "even worse."
+   ]
+  ],
+  [
+   [
+    "SPANISH OUTLET",
+    "Spanish outlet"
+   ],
+   [
+    "EL DEBATE",
+    "El Debate"
+   ],
+   [
+    "REPORTS",
+    "reports"
+   ],
+   [
+    "THE CLUB",
+    "the club"
+   ],
+   [
+    "HAS GIVEN HIM",
+    "has given him"
+   ],
+   [
+    "ABOUT A MONTH",
+    "about a month"
+   ],
+   [
+    "TO FIND HIS FORM",
+    "to find his form"
+   ],
+   [
+    "OR RISK",
+    "or risk"
+   ],
+   [
+    "BEING DROPPED",
+    "being dropped."
+   ]
+  ],
+  [
+   [
+    "HE HASN'T FINISHED",
+    "He hasn't finished"
+   ],
+   [
+    "90 MINUTES",
+    "ninety minutes"
+   ],
+   [
+    "IN TWO MONTHS",
+    "in two months,"
+   ],
+   [
+    "AND HIS DRIBBLES",
+    "and his dribbles"
+   ],
+   [
+    "ARE DOWN",
+    "are down"
+   ],
+   [
+    "FROM 2.4",
+    "from two point four"
+   ],
+   [
+    "TO 1.8",
+    "to one point eight"
+   ],
+   [
+    "A GAME",
+    "a game."
+   ]
+  ],
+  [
+   [
+    "THE CLUB IS EVEN",
+    "The club is even"
+   ],
+   [
+    "STUDYING",
+    "studying"
+   ],
+   [
+    "WHETHER HE'S LOST",
+    "whether he's lost"
+   ],
+   [
+    "HIS TOP SPEED",
+    "his top speed."
+   ]
+  ],
+  [
+   [
+    "AND WITH",
+    "And with"
+   ],
+   [
+    "€125 MILLION SIGNING",
+    "one hundred twenty-five million euro signing"
+   ],
+   [
+    "YAN DIOMANDE",
+    "Yan Diomahndeh"
+   ],
+   [
+    "WANTING THE SAME",
+    "wanting the same"
+   ],
+   [
+    "LEFT WING",
+    "left wing,"
+   ],
+   [
+    "DECEMBER'S GAMES",
+    "December's games"
+   ],
+   [
+    "AGAINST ARSENAL",
+    "against Arsenal"
+   ],
+   [
+    "AND ATHLETIC BILBAO",
+    "and Athletic Bilbao"
+   ],
+   [
+    "COULD DECIDE",
+    "could decide"
+   ],
+   [
+    "THE FUTURE OF",
+    "the future of"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "xsBrbHJ9Jj8",
+   "start": 17.85,
+   "x": 640
+  },
+  {
+   "at": 1,
+   "vid": "UKMBwOtpNvg",
+   "start": 46.5,
+   "x": 860
+  },
+  {
+   "at": 2,
+   "vid": "yNwctUm30Ik",
+   "start": 423.1,
+   "x": 1230
+  },
+  {
+   "at": 3,
+   "vid": "0RZt3iClLjg",
+   "start": 127.17,
+   "x": 525
+  },
+  {
+   "at": 4,
+   "vid": "yNwctUm30Ik",
+   "start": 24.2,
+   "x": 850
+  },
+  {
+   "at": 6,
+   "vid": "yNwctUm30Ik",
+   "start": 459.6,
+   "x": 860
+  },
+  {
+   "at": 7,
+   "vid": "xsBrbHJ9Jj8",
+   "start": 342.35,
+   "x": 560
+  },
+  {
+   "at": 9,
+   "vid": "0RZt3iClLjg",
+   "start": 27.0,
+   "x": 680
+  },
+  {
+   "at": 12,
+   "vid": "-8hbtFIlpOw",
+   "start": 67.3,
+   "x": 1020
+  },
+  {
+   "at": 15,
+   "vid": "Jkwzk0_u-DY",
+   "start": 45.8,
+   "x": 500
+  },
+  {
+   "at": 16,
+   "vid": "yNwctUm30Ik",
+   "start": 471.9,
+   "x": 630
+  },
+  {
+   "at": 18,
+   "vid": "0RZt3iClLjg",
+   "start": 140.6,
+   "x": 666
+  },
+  {
+   "at": 20,
+   "vid": "0RZt3iClLjg",
+   "start": 137.1,
+   "x": 680
+  },
+  {
+   "at": 21,
+   "vid": "0RZt3iClLjg",
+   "start": 118.2,
+   "x": 450
+  },
+  {
+   "at": 23,
+   "vid": "xsBrbHJ9Jj8",
+   "start": 10.6,
+   "x": 180
+  },
+  {
+   "at": 24,
+   "vid": "0RZt3iClLjg",
+   "start": 123.35,
+   "x": 330
+  },
+  {
+   "at": 26,
+   "vid": "-8hbtFIlpOw",
+   "start": 55.85,
+   "x": 900
+  },
+  {
+   "at": 28,
+   "vid": "UKMBwOtpNvg",
+   "start": 40.0,
+   "x": 700
+  },
+  {
+   "at": 31,
+   "vid": "kqJDaqsQ6Tc",
+   "start": 0.1,
+   "x": 790,
+   "h": 810,
+   "y": 270
+  },
+  {
+   "at": 32,
+   "vid": "kqJDaqsQ6Tc",
+   "start": 6.5,
+   "x": 700
+  },
+  {
+   "at": 33,
+   "vid": "kqJDaqsQ6Tc",
+   "start": 211.0,
+   "x": 1180
+  },
+  {
+   "at": 35,
+   "vid": "yNwctUm30Ik",
+   "start": 20.0,
+   "x": 560
+  },
+  {
+   "at": 36,
+   "vid": "rZKOrIiw_rg",
+   "start": 116.6,
+   "x": 480
+  },
+  {
+   "at": 37,
+   "vid": "9nUOarnRrKE",
+   "start": 116.8,
+   "x": 1000
+  },
+  {
+   "at": 38,
+   "vid": "0RZt3iClLjg",
+   "start": 110.1,
+   "x": 660
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 9,
+   "toChunk": 17,
+   "label": "SOURCE",
+   "title": "El Debate via FootballTransfers",
+   "lines": [
+    "6 Nov 2026",
+    "One month to recover his form"
+   ]
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 6,
+   "t": 0.3
+  },
+  "text": "ONE MONTH LEFT? 😳"
+ }
+}

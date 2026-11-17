@@ -1,0 +1,69 @@
+{
+ "mode": "whoisit",
+ "key": "whoisit_salah",
+ "out": "13NOV_1900_WHOISIT_salah",
+ "voice": "en-US-GuyNeural",
+ "rate": "+8%",
+ "music": "music4.mp3",
+ "musicVolume": 0.22,
+ "headline": "WHO IS IT?",
+ "photos": {
+  "photo": {
+   "src": "prototypes/r2/photos/salah_src.jpg",
+   "box": [
+    21,
+    0,
+    537,
+    918
+   ]
+  }
+ },
+ "posX": 50,
+ "posY": 25,
+ "zoom": 1.0,
+ "shiftY": 120,
+ "clues": [
+  "Born in Egypt in 1992.",
+  "Played for Basel, Fiorentina and Roma.",
+  "Four Premier League Golden Boots."
+ ],
+ "name": "MOHAMED SALAH",
+ "fact": "4 Golden Boots: level with Thierry Henry's record",
+ "source": "Sources: Wikipedia (Mohamed Salah)",
+ "segments": [
+  {
+   "id": "clue0",
+   "text": "Who is it? One: born in Egypt in 1992."
+  },
+  {
+   "id": "clue1",
+   "text": "Two: played for Basel, Fiorentina and Roma."
+  },
+  {
+   "id": "clue2",
+   "text": "Three: four Premier League Golden Boots."
+  },
+  {
+   "id": "reveal",
+   "text": "Mohamed Salah! Level with Thierry Henry's record."
+  }
+ ],
+ "clips": [
+  {
+   "url": "https://www.youtube.com/watch?v=t5PtlOA0Ksc",
+   "start": 0.5
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=t5PtlOA0Ksc",
+   "start": 208.0
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=t5PtlOA0Ksc",
+   "start": 418.0
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=t5PtlOA0Ksc",
+   "start": 488.0
+  }
+ ]
+}

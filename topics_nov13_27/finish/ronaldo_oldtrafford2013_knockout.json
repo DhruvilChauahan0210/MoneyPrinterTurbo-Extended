@@ -1,0 +1,24 @@
+{
+  "cfg": "batch_ronaldo_oldtrafford2013_knockout.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 6,
+      "url": "https://www.youtube.com/watch?v=LycyhjkmHEc",
+      "start": 187.0
+    },
+    {
+      "beat": 7,
+      "url": "https://www.youtube.com/watch?v=LycyhjkmHEc",
+      "start": 232.0
+    }
+  ],
+  "weak_beats": [
+    "3: Real vs Man United match action (not specifically first leg)",
+    "7 and 6: clips are low-res (blurry mundogoltv upload) but no watermark/text",
+    "2: YouTube thumbnail of Old Trafford UCL pitch, generic",
+    "4: Ramos in Real kit, bwin era"
+  ],
+  "beat1": "Close-up of Ronaldo in white Real Madrid bwin kit (2012-13 era)",
+  "notes": "Real wore green away kit in the actual match; photos are white home kit (unavoidable). Clip source is Spanish-language highlights upload, Modric goal 190-192s and Ronaldo slide goal 235-238s; Ronaldo goal window ends as keeper is beaten."
+}

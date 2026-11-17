@@ -1,0 +1,18 @@
+{
+  "cfg": "batch_ronaldo_euro2020_goldenboot_assist.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 4,
+      "url": "https://www.youtube.com/watch?v=bvts0M0D20c",
+      "start": 223.0
+    }
+  ],
+  "weak_beats": [
+    "4: clip source (CN10HD Ronaldo-vs-Hungary compilation) has baked-in black letterbox bars ~12% top and bottom in the 9:16 cut, penalty vs Hungary 87th min (keeper dive + Ronaldo celebration); consider dropping to a photo if bars look bad",
+    "3: Ronaldo holding golden boot (red kit) OK",
+    "only 1 clip: no clean broadcast source found for the France penalties (TheFootballForce has faint watermark, fan clips rejected)"
+  ],
+  "beat1": "Tight close-up of Ronaldo smiling with arm raised in red Portugal Euro 2020 kit",
+  "notes": "Photos are strong across all beats. Single clip beat."
+}

@@ -1,0 +1,22 @@
+{
+ "cfg": "batch_salah_2019_final_penalty.json",
+ "status": "ready",
+ "clip_beats": [
+  {
+   "beat": 5,
+   "url": "https://www.youtube.com/watch?v=8gh3F-pEXK0",
+   "start": 52.0
+  },
+  {
+   "beat": 6,
+   "url": "https://www.youtube.com/watch?v=8gh3F-pEXK0",
+   "start": 58.0
+  }
+ ],
+ "weak_beats": [
+  1,
+  4
+ ],
+ "beat1": "Salah in red Liverpool 2017-18 kit celebrating with hands together next to Firmino (medium close-up, borrowed from beat 6 candidate 3); era slightly earlier than 2019 final",
+ "notes": "Clips from official Liverpool FC 221s final highlights (small CCTV logo + score bug in corners). Beat 5 = penalty run-up and kick; beat 6 = Liverpool players celebrating the goal incl. Salah. Beat 4 (Sissoko handball) is just a Sissoko portrait. Beat 1 is not a tight face close-up."
+}

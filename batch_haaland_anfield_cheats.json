@@ -1,0 +1,425 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Erling Haaland",
+      "a real photograph of Manchester City players",
+      "a real photograph of Liverpool fans at Anfield"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "HE SILENCED THE BOOS",
+    "hook_cover_term": "Erling Haaland celebrating a goal at Anfield",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "DID HE SILENCE ANFIELD? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Erling Haaland",
+      "a real photograph of Manchester City players",
+      "a real photograph of Liverpool fans at Anfield"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Anfield had one word for Manchester City: cheats. Days after the verdict in City's financial rules case, Liverpool fans booed them. Then Ryan Gravenberch was sent off, and three minutes later, Erling Haaland broke the deadlock in front of his father. Jérémy Doku and Rayan Cherki added more. City won three-nil, their first back-to-back league wins at Anfield since nineteen fifty-three. Did Haaland silence Anfield?",
+    "video_subject": "Liverpool fans booed Manchester City and chanted cheats at Anfield on 11 October 2026, and Erling Haaland opened the scoring in City's 3-0 win in front of his father",
+    "video_terms": "Haaland Anfield goal October 2026, Liverpool 0-3 Man City cheats chants, Haaland father Anfield",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Anfield had one word for Manchester City: cheats.",
+        "visual": "Liverpool fans at Anfield",
+        "images": [
+          "Anfield crowd Liverpool fans",
+          "Liverpool fans Anfield Kop"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Days after the verdict in City's financial rules case, Liverpool fans booed them.",
+        "visual": "Manchester City players at Anfield",
+        "images": [
+          "Manchester City players Anfield",
+          "Man City Liverpool Anfield 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Then Ryan Gravenberch was sent off,",
+        "visual": "Ryan Gravenberch red card",
+        "images": [
+          "Ryan Gravenberch Liverpool",
+          "Gravenberch red card"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and three minutes later, Erling Haaland broke the deadlock in front of his father.",
+        "visual": "Erling Haaland celebrating a goal at Anfield",
+        "images": [
+          "Haaland goal Anfield celebration",
+          "Erling Haaland celebration Liverpool"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Jérémy Doku and Rayan Cherki added more.",
+        "visual": "Manchester City players celebrating a goal",
+        "images": [
+          "Doku Cherki Manchester City celebration",
+          "Man City players celebrate goal 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "City won three-nil,",
+        "visual": "Erling Haaland celebrating with teammates",
+        "images": [
+          "Haaland celebrate teammates Man City",
+          "Erling Haaland Man City celebration"
+        ],
+        "clips": []
+      },
+      {
+        "says": "their first back-to-back league wins at Anfield since nineteen fifty-three.",
+        "visual": "Erling Haaland looking intense",
+        "images": [
+          "Erling Haaland intense",
+          "Erling Haaland close up Man City"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Did Haaland silence Anfield?",
+        "visual": "Erling Haaland shushing the crowd",
+        "images": [
+          "Haaland silence celebration",
+          "Erling Haaland roar celebration"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Liverpool fans booed Manchester City and chanted cheats at Anfield on 11 October 2026, and Erling Haaland opened the scoring in City's 3-0 win in front of his father",
+      "video_script": "Anfield had one word for Manchester City: cheats. Days after the verdict in City's financial rules case, Liverpool fans booed them. Then Ryan Gravenberch was sent off, and three minutes later, Erling Haaland broke the deadlock in front of his father. Jérémy Doku and Rayan Cherki added more. City won three-nil, their first back-to-back league wins at Anfield since nineteen fifty-three. Did Haaland silence Anfield?",
+      "video_terms": "Haaland Anfield goal October 2026, Liverpool 0-3 Man City cheats chants, Haaland father Anfield",
+      "hook_text": "HE SILENCED THE BOOS",
+      "cta_text": "DID HE SILENCE ANFIELD? 👇",
+      "beat_plan": [
+        {
+          "says": "Anfield had one word for Manchester City: cheats.",
+          "visual": "Liverpool fans at Anfield",
+          "images": [
+            "Anfield crowd Liverpool fans",
+            "Liverpool fans Anfield Kop"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b01/img-a1959b40a9c9c9b8f0853bcbcc0433b2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b01/img-9dbf0d591341e99e20eda5f81bb9fb4a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b01/img-42bdd15d1cbf2f43a3d0960e7a2ee332.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b01/img-8e702b168eec6b48037179cc5d06b157.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b01/img-3b5754f6fe79bd1ea045fc2d2d51e987.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b01/img-b0b5b7511147feaf0df9f6484f780391.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b01/img-9dbf0d591341e99e20eda5f81bb9fb4a.jpg",
+          "url": "https://i2-prod.liverpoolecho.co.uk/incoming/article10749137.ece/ALTERNATES/s1227b/kop.jpg"
+        },
+        {
+          "says": "Days after the verdict in City's financial rules case, Liverpool fans booed them.",
+          "visual": "Manchester City players at Anfield",
+          "images": [
+            "Manchester City players Anfield",
+            "Man City Liverpool Anfield 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b02/img-b28acb8924adf75f2fa0b1ecb97c9c20.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b02/img-ed13f39e1a9d6b2cf72234e1566c797c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b02/img-c4e5fcde4e39a7ea9dcb7b4f9a78cb43.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b02/img-825cb1695acf5e536ae5b751b48cd4ff.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b02/img-045b1b07e3ae32ef903dfdcdb29bd6fe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b02/img-b784fca978e6fb16847e7d28c60ef043.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b02/img-98caf920e47c6ada7c46f70860121abb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b02/img-c1df4394ae1c1d323eba4ba054faac63.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b02/img-c4e5fcde4e39a7ea9dcb7b4f9a78cb43.jpg",
+          "url": "https://assets.thevocket.com/sites/1/2026/02/HApuVhibMAASxil-1280x837.jpg"
+        },
+        {
+          "says": "Then Ryan Gravenberch was sent off,",
+          "visual": "Ryan Gravenberch red card",
+          "images": [
+            "Ryan Gravenberch Liverpool",
+            "Gravenberch red card"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b03/img-c0ef896b0f6eb563e2c49483faf3b78e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b03/img-d6ee5404aebe1a2eaa9dc59940656cac.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b03/img-980dd5d0ed29b7db18d5296e8f89134a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b03/img-35f446f07bc7e70d4cabfa0b0d3edaf9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b03/img-71426e9736b6ce8f2a92402785fb2023.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b03/img-e0a4e7b9b4ce932f1fefe9f3b6af242b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b03/img-913ff13ab3710bc895bfb90d072c8f44.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b03/img-9f4724cc62c5fe552000f1ea30c6ac87.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b03/img-d6ee5404aebe1a2eaa9dc59940656cac.jpg",
+          "url": "https://www.daveockop.com/wp-content/uploads/2025/05/dl.beatsnoop.com-final-db8GEqnZir-1024x704.webp"
+        },
+        {
+          "says": "and three minutes later, Erling Haaland broke the deadlock in front of his father.",
+          "visual": "Erling Haaland celebrating a goal at Anfield",
+          "images": [
+            "Haaland goal Anfield celebration",
+            "Erling Haaland celebration Liverpool"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b04/img-33a758b9863733bbc72fdee87c6e0ade.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b04/img-02dec0ff9e5dee63d5aa43b63a7e2d50.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b04/img-7630d315f1d604b1ef89e0aaed459d80.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b04/img-f1c29fbc43a0122e26e2c3a15b3fed22.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b04/img-2697885651ae6afef86bca3b660537cb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b04/img-867310e79ba3b6c950e0cbd093d55f3c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b04/img-c77b478b64e8d2e6e8fc9a39530811b2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b04/img-eb2703deb36aff54c5c31ebda945652d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b04/img-02dec0ff9e5dee63d5aa43b63a7e2d50.jpg",
+          "url": "https://www.thesun.ie/wp-content/uploads/sites/3/2026/02/erling-haaland-manchester-city-celebrates-1057609996.webp?w=1024"
+        },
+        {
+          "says": "Jérémy Doku and Rayan Cherki added more.",
+          "visual": "Manchester City players celebrating a goal",
+          "images": [
+            "Doku Cherki Manchester City celebration",
+            "Man City players celebrate goal 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b05/img-b73cfd8b4a15960a2f051eb053f867e3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b05/img-7d2ffecc7d15be30a1c5b948877e4c40.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b05/img-8976dc6e9e46a44338b7c1f7dcaa04af.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b05/img-b8fb2e3c9a0e1d610cd4b863baf849fd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b05/img-5a6ff8bb7de38e9e1185a1ae5b494332.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b05/img-a52170ae594c09de4dad8fad98f4ead4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b05/img-7f59750158db5db7e4259eda1dece048.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b05/img-41002f6f3768388ae896d3c9cf20c111.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b05/img-b8fb2e3c9a0e1d610cd4b863baf849fd.jpg",
+          "url": "https://cdn.ohmyfootball.com/mediafiles/uploads/posts/manchester-city-trio-goal-celebration.webp"
+        },
+        {
+          "says": "City won three-nil,",
+          "visual": "Erling Haaland celebrating with teammates",
+          "images": [
+            "Haaland celebrate teammates Man City",
+            "Erling Haaland Man City celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b06/img-6edab4d8bd27c729005486d9ddf7b323.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b06/img-0db983c4aa265b148e3ee5aa15c9f9b5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b06/img-fb24eff8930a09046920b155c807f80c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b06/img-6f5b7198b6d5114b81a2ec886f3d4f66.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b06/img-efc0b44fac83452265bceadf263ec785.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b06/img-74a55745e31c87e42176bf82a981fb4e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b06/img-a5ee39062d4b1c8ca0d3b3d879276113.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b06/img-01507428c42f12a7cc7eda3993c4a87d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b06/img-fb24eff8930a09046920b155c807f80c.jpg",
+          "url": "https://talksport.com/wp-content/uploads/sites/5/2022/09/75c32b0c-791c-49da-8c26-e7201bfc9637.jpg"
+        },
+        {
+          "says": "their first back-to-back league wins at Anfield since nineteen fifty-three.",
+          "visual": "Erling Haaland looking intense",
+          "images": [
+            "Erling Haaland intense",
+            "Erling Haaland close up Man City"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b07/img-7de8969adb243cfccf98e2fc7f5592ef.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b07/img-6edab4d8bd27c729005486d9ddf7b323.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b07/img-03d15fe414e143106937b06368306112.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b07/img-865ea395a996835f489795bd58dff3ac.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b07/img-6d57e713ef092ec2d1fd50cdfd17679f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b07/img-92628d60b7583bed8ac9b730bf78dc12.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b07/img-3e2c3e7463abfc23c0d2c7a1126ce175.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b07/img-c0892f56608e543c2b915bd87cde8004.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b07/img-6d57e713ef092ec2d1fd50cdfd17679f.jpg",
+          "url": "https://e0.365dm.com/22/08/2048x1152/skysports-haaland-man-city_5878567.jpg?20220827185731"
+        },
+        {
+          "says": "Did Haaland silence Anfield?",
+          "visual": "Erling Haaland shushing the crowd",
+          "images": [
+            "Haaland silence celebration",
+            "Erling Haaland roar celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b08/img-9f5be100023a549f1ad8613c05d7b7fe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b08/img-f299d54b77dd8b0b78ab8f69e498e30d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b08/img-258009c614596c81db30ca0a4400636b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b08/img-2b5c91627eac366a1c6f385d09a8991c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b08/img-f1ec3864464235ab7cbef6258c4768b5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b08/img-27e584dc59644112520bc6073bb29a5a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b08/img-8ad87162c42db5319d0896dfe4ddd1de.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b08/img-9e3571854e949fb287747ef4f94ad578.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/liverpool_fans_booed_manchester_city_and/b08/img-27e584dc59644112520bc6073bb29a5a.jpg",
+          "url": "https://cdn.ohmyfootball.com/mediafiles/uploads/posts/haaland-meditation.webp"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

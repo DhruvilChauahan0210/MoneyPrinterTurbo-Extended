@@ -1,0 +1,459 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Cristiano Ronaldo playing for Real Madrid",
+      "a real photograph of Bayern Munich players"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "THE GOAL BAYERN NEVER ACCEPTED",
+    "hook_cover_term": "Cristiano Ronaldo celebrating for Real Madrid",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "DID HE DESERVE IT? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Cristiano Ronaldo playing for Real Madrid",
+      "a real photograph of Bayern Munich players"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "April twenty seventeen: Real Madrid against Bayern Munich. Robert Lewandowski scored a penalty, Cristiano Ronaldo equalised, then a Sergio Ramos own goal forced extra time. Then Arturo Vidal was sent off. In extra time, Ronaldo scored twice more, becoming the first player to score one hundred Champions League goals. Replays showed one of those goals was offside, and Bayern were furious. Real Madrid won four-two, then won the whole tournament. Did Ronaldo deserve that hundredth goal?",
+    "video_subject": "Cristiano Ronaldo scored a hat-trick as Real Madrid beat Bayern Munich 4-2 after extra time in the April 2017 Champions League quarter-final, becoming the first player to reach 100 Champions League goals",
+    "video_terms": "Real Madrid 4-2 Bayern 2017, Ronaldo hat-trick 100 Champions League goals, Vidal red card offside",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "April twenty seventeen: Real Madrid against Bayern Munich.",
+        "visual": "Real Madrid against Bayern Munich",
+        "images": [
+          "Real Madrid Bayern 2017 Champions League",
+          "Real Madrid vs Bayern Munich 2017"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Robert Lewandowski scored a penalty, Cristiano Ronaldo equalised,",
+        "visual": "Cristiano Ronaldo celebrating for Real Madrid",
+        "images": [
+          "Ronaldo goal Bayern 2017",
+          "Cristiano Ronaldo Real Madrid 2017 celebration"
+        ],
+        "clips": []
+      },
+      {
+        "says": "then a Sergio Ramos own goal forced extra time.",
+        "visual": "Sergio Ramos looking frustrated",
+        "images": [
+          "Sergio Ramos Bayern 2017",
+          "Sergio Ramos frustrated"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Then Arturo Vidal was sent off.",
+        "visual": "Arturo Vidal shown a red card",
+        "images": [
+          "Arturo Vidal red card Real Madrid 2017",
+          "Arturo Vidal Bayern"
+        ],
+        "clips": []
+      },
+      {
+        "says": "In extra time, Ronaldo scored twice more,",
+        "visual": "Cristiano Ronaldo scoring for Real Madrid",
+        "images": [
+          "Ronaldo hat-trick Bayern",
+          "Cristiano Ronaldo goal Real Madrid"
+        ],
+        "clips": []
+      },
+      {
+        "says": "becoming the first player to score one hundred Champions League goals.",
+        "visual": "Cristiano Ronaldo celebrating a historic goal",
+        "images": [
+          "Ronaldo 100 Champions League goals",
+          "Cristiano Ronaldo Champions League celebration"
+        ],
+        "clips": [],
+        "media": null
+      },
+      {
+        "says": "Replays showed one of those goals was offside, and Bayern were furious.",
+        "visual": "Bayern Munich players protesting to the referee",
+        "images": [
+          "Bayern players protest referee Real Madrid 2017",
+          "Bayern Munich players angry"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Real Madrid won four-two, then won the whole tournament.",
+        "visual": "Cristiano Ronaldo with the Champions League trophy 2017",
+        "images": [
+          "Ronaldo Champions League trophy 2017 Cardiff",
+          "Real Madrid Champions League 2017 champions"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Did Ronaldo deserve that hundredth goal?",
+        "visual": "close up of Cristiano Ronaldo in Real Madrid kit",
+        "images": [
+          "Cristiano Ronaldo Real Madrid close up",
+          "Cristiano Ronaldo Real Madrid portrait"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Cristiano Ronaldo scored a hat-trick as Real Madrid beat Bayern Munich 4-2 after extra time in the April 2017 Champions League quarter-final, becoming the first player to reach 100 Champions League goals",
+      "video_script": "April twenty seventeen: Real Madrid against Bayern Munich. Robert Lewandowski scored a penalty, Cristiano Ronaldo equalised, then a Sergio Ramos own goal forced extra time. Then Arturo Vidal was sent off. In extra time, Ronaldo scored twice more, becoming the first player to score one hundred Champions League goals. Replays showed one of those goals was offside, and Bayern were furious. Real Madrid won four-two, then won the whole tournament. Did Ronaldo deserve that hundredth goal?",
+      "video_terms": "Real Madrid 4-2 Bayern 2017, Ronaldo hat-trick 100 Champions League goals, Vidal red card offside",
+      "hook_text": "THE GOAL BAYERN NEVER ACCEPTED",
+      "cta_text": "DID HE DESERVE IT? 👇",
+      "beat_plan": [
+        {
+          "says": "April twenty seventeen: Real Madrid against Bayern Munich.",
+          "visual": "Real Madrid against Bayern Munich",
+          "images": [
+            "Real Madrid Bayern 2017 Champions League",
+            "Real Madrid vs Bayern Munich 2017"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b01/img-49ffff8e4e4c7f484196dec59fb4ff1b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b01/img-609f2fe5411aee5f6f82a14ccff0402e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b01/img-32e7b383b757fca6e3405197c8b611b2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b01/img-e0d9dbcf321938bfd552312df02a49fc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b01/img-345f41a1e8a5d520680b7de7f458b9ad.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b01/img-c92982be8b606838a0753af47e038c93.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b01/img-de6b287c8ca7c196f58f458bc52f2719.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b01/img-9521477c21d057e4834027b415d78cd6.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b01/img-c92982be8b606838a0753af47e038c93.jpg",
+          "url": "https://images.mykhel.com/img/2018/05/real-madrid-vs-bayern-munich-1525179828.jpg"
+        },
+        {
+          "says": "Robert Lewandowski scored a penalty, Cristiano Ronaldo equalised,",
+          "visual": "Cristiano Ronaldo celebrating for Real Madrid",
+          "images": [
+            "Ronaldo goal Bayern 2017",
+            "Cristiano Ronaldo Real Madrid 2017 celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b02/img-bbe11ccad2aa2ea861eed7d402b7f2f1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b02/img-aca7bb6b00754d273108a76a930cafef.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b02/img-514d90079ea19ed68cf32aa2c7873530.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b02/img-6e97254e76357f78751039253a63b5f9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b02/img-49408838534e0eb21339be44234345d3.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=rhHDAzQf6oo",
+          "start": 87.0,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b02/shot_6fcc7f3b6b.mp4"
+        },
+        {
+          "says": "then a Sergio Ramos own goal forced extra time.",
+          "visual": "Sergio Ramos looking frustrated",
+          "images": [
+            "Sergio Ramos Bayern 2017",
+            "Sergio Ramos frustrated"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b03/img-95a92e27e5ee9e493739b3d480f24356.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b03/img-63ff2c40016a72c3103f46c7e5e42d8c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b03/img-4c375eeed0fce64dcd30104ffc4538d2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b03/img-1b53ca6348796dba2e7966f990d093f0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b03/img-ebb97042e75a66f93809f60ff36b6cbe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b03/img-278397ce6d1d5163819aa36d14cd48be.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b03/img-295b01d0119bb79be5a3826cfa36ba9b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b03/img-a95e56de481a685706d52a150bd5bf35.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b03/img-63ff2c40016a72c3103f46c7e5e42d8c.jpg",
+          "url": "https://static.ffx.io/images/$zoom_1,$multiply_1,$ratio_1.777778,$width_1396,$x_0,$y_0/t_crop_custom/c_scale,w_1200,q_88,f_auto/5e60b0d48af6fe7c3f06232cb806fd12be4223c2"
+        },
+        {
+          "says": "Then Arturo Vidal was sent off.",
+          "visual": "Arturo Vidal shown a red card",
+          "images": [
+            "Arturo Vidal red card Real Madrid 2017",
+            "Arturo Vidal Bayern"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b04/img-892740c02ca378f95f1c5c2cef995231.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b04/img-af9d5584add3f3aef5500b89e882457e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b04/img-c6c052766346ade764b016a32f19103a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b04/img-9bc7c58456edd22258a7f78f40ceea43.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b04/img-4da1a516ab2cb9896957d53a913443cc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b04/img-ef9225cc13d91328669b723b9e223c3c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b04/img-fe4db52e721069763c5d813458c7d572.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b04/img-bacedf41791715fe0d332c887335db00.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=rhHDAzQf6oo",
+          "start": 110.0,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b04/shot_135dd819f8.mp4"
+        },
+        {
+          "says": "In extra time, Ronaldo scored twice more,",
+          "visual": "Cristiano Ronaldo scoring for Real Madrid",
+          "images": [
+            "Ronaldo hat-trick Bayern",
+            "Cristiano Ronaldo goal Real Madrid"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b05/img-b4b31f5058a32ae6f7f6694ecedfbae6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b05/img-e66c42400ba876fa2684518b4315b866.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b05/img-20667265d801c4aedfd4a37473332eff.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b05/img-5c3ef4c55e1aa5d0eb48b29b4bbb5387.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b05/img-f04125517a479fc2e51ec0ba812dfd1f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b05/img-e2adc74189a8ff91de9735a5e629af14.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b05/img-514d90079ea19ed68cf32aa2c7873530.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b05/img-87a52a994658efa68bcfc6a65526eb27.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=rhHDAzQf6oo",
+          "start": 146.0,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b05/shot_2aaee25868.mp4"
+        },
+        {
+          "says": "becoming the first player to score one hundred Champions League goals.",
+          "visual": "Cristiano Ronaldo celebrating a historic goal",
+          "images": [
+            "Ronaldo 100 Champions League goals",
+            "Cristiano Ronaldo Champions League celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b06/img-ed31b9549f267dd274d11b74765ba994.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b06/img-ce11cedf7b7cd2866cd911a94fd5bf52.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b06/img-958afa26f7f50744e227380883532745.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b06/img-cc7abb027ab3bd7b982702a6ba111fd5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b06/img-c25790aee71e34c4b9a04652fe918d8e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b06/img-6706b236de3ad439ededb6e5a6fa6522.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b06/img-a3fdb70a0d4d5378635346078550d7b6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b06/img-149aaa5c314f0f25bd9509a5c1211345.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b06/img-958afa26f7f50744e227380883532745.jpg",
+          "url": "https://i.pinimg.com/originals/6e/57/4f/6e574f372a0cf317f418635dfe468b84.jpg"
+        },
+        {
+          "says": "Replays showed one of those goals was offside, and Bayern were furious.",
+          "visual": "Bayern Munich players protesting to the referee",
+          "images": [
+            "Bayern players protest referee Real Madrid 2017",
+            "Bayern Munich players angry"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b07/img-9fc4a6018370c1a778720f021b7fce49.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b07/img-4ae7cc77aec1cbf241ebb63d7408f81c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b07/img-86083199cf1085f20900d16c5ee3b21b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b07/img-8a1394cecbfd56622cc3acb7f2a5507c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b07/img-b906804b514755950ffb3c9549d18bd8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b07/img-c1a9fa31f6717a8d74fdf2170d409d8e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b07/img-f94ac1c47803bfd2c923a523ab6d2d2c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b07/img-aca05e8cf238088d3df6da539a0be2fe.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b07/img-4ae7cc77aec1cbf241ebb63d7408f81c.jpg",
+          "url": "https://dailypost.ng/wp-content/uploads/2017/04/1492556064_228205_1492556225_noticia_normal.jpg"
+        },
+        {
+          "says": "Real Madrid won four-two, then won the whole tournament.",
+          "visual": "Cristiano Ronaldo with the Champions League trophy 2017",
+          "images": [
+            "Ronaldo Champions League trophy 2017 Cardiff",
+            "Real Madrid Champions League 2017 champions"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b08/img-208236f75e7b245bc93c0e85366bfbf4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b08/img-888eafc223d1e489e065138e6975694e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b08/img-4a07189967d08888b30936e195853f72.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b08/img-6fa1d62c99a9e26842db6c900f821c63.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b08/img-9a8de0b270281ccb1a52b879fe47679d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b08/img-02deaabc2b020234e838c51ded626072.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b08/img-0a007d75426b92013377ac1e8f787328.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b08/img-f9828f9a8f096f19b9fdc2c6b70ec1fc.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b08/img-888eafc223d1e489e065138e6975694e.jpg",
+          "url": "https://i.pinimg.com/originals/b6/8d/6b/b68d6b5cdc956a945c02b853793f4c80.jpg"
+        },
+        {
+          "says": "Did Ronaldo deserve that hundredth goal?",
+          "visual": "close up of Cristiano Ronaldo in Real Madrid kit",
+          "images": [
+            "Cristiano Ronaldo Real Madrid close up",
+            "Cristiano Ronaldo Real Madrid portrait"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b09/img-e685187271411b2f8eaba8af32c107a7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b09/img-e35c7ec199572c252ae51b675945fae8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b09/img-f2fba9049a7aa557b71c08b03b6c1db8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b09/img-77cb1d7ff0f14f4c8efdf4e71c3a6fc2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b09/img-b0107b9b0f0076064e413b4660bbf35c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b09/img-8ecd05e797db57bacbbed87d0615f93b.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_scored_a_hat_trick_as_/b09/img-e685187271411b2f8eaba8af32c107a7.jpg",
+          "url": "https://i.pinimg.com/736x/97/8d/fe/978dfe2eed24660a344f07c8784065c8.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

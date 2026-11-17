@@ -1,0 +1,554 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lamine Yamal",
+      "a real photograph of Nico Williams",
+      "a real photograph of Mikel Oyarzabal"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.34,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "varied",
+    "enable_color_grade": true,
+    "enable_hook_card": true,
+    "hook_text": "17 YEARS, 1 DAY, EURO RECORD",
+    "hook_cover_term": "big close up of Lamine Yamal, Spain Euro 2024",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.35,
+    "hook_duration": 1.2,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": false,
+    "cta_text": "GREATEST TEENAGE FINAL EVER? 👇",
+    "enable_subscribe_button": false,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lamine Yamal",
+      "a real photograph of Nico Williams",
+      "a real photograph of Mikel Oyarzabal"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Yamal turned seventeen. Then, a European final. Berlin. Spain against England. Euro final. He became the youngest Euro finalist ever. Seventeen years and one day old. Yamal got behind Shaw and crossed low. Nico Williams scored in the forty-seventh minute. Cole Palmer equalised in the seventy-third. Oyarzabal won it in the eighty-sixth. Spain won two-one, a record fourth title. He also broke Pele's age record. He won Young Player of the Tournament. Greatest teenage final performance ever?",
+    "video_subject": "Lamine Yamal turned 17 on 13 July 2024, the day before the Euro 2024 final in Berlin, became the youngest player ever to appear in a European Championship final as Spain beat England 2-1 (Williams 47, Palmer 73, Oyarzabal 86), and crossed for Nico Williams's opening goal.",
+    "video_terms": "Lamine Yamal Euro 2024 final, Spain England 2-1 Berlin, Nico Williams goal, youngest finalist",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 2.4,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Yamal turned seventeen. Then, a European final.",
+        "visual": "big close up of Lamine Yamal face, Spain kit, Euro 2024",
+        "images": [
+          "Lamine Yamal Spain Euro 2024",
+          "Lamine Yamal close up"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Berlin. Spain against England. Euro final.",
+        "visual": "Olympiastadion Berlin Euro 2024 final",
+        "images": [
+          "Euro 2024 final Berlin Spain England",
+          "Spain England Euro 2024 final"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He became the youngest Euro finalist ever.",
+        "visual": "Lamine Yamal Spain walking out",
+        "images": [
+          "Lamine Yamal Euro 2024 final",
+          "Lamine Yamal Spain"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Seventeen years and one day old.",
+        "visual": "Lamine Yamal portrait Spain",
+        "images": [
+          "Lamine Yamal portrait",
+          "Lamine Yamal face Spain"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Yamal got behind Shaw and crossed low.",
+        "visual": "Lamine Yamal dribbling past Luke Shaw",
+        "images": [
+          "Yamal cross Nico Williams goal",
+          "Lamine Yamal assist final"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Nico Williams scored in the forty-seventh minute.",
+        "visual": "Nico Williams celebrating goal Spain",
+        "images": [
+          "Nico Williams Spain Euro 2024 goal",
+          "Nico Williams celebrating"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Cole Palmer equalised in the seventy-third.",
+        "visual": "Cole Palmer England goal celebration",
+        "images": [
+          "Cole Palmer Euro 2024 final goal",
+          "Cole Palmer England"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Oyarzabal won it in the eighty-sixth.",
+        "visual": "Mikel Oyarzabal celebrating Spain",
+        "images": [
+          "Mikel Oyarzabal Euro 2024 final goal",
+          "Oyarzabal Spain celebrating"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Spain won two-one, a record fourth title.",
+        "visual": "Spain players lifting the Euro 2024 trophy",
+        "images": [
+          "Spain Euro 2024 trophy",
+          "Spain win Euro 2024"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He also broke Pele's age record.",
+        "visual": "Lamine Yamal celebrating with trophy",
+        "images": [
+          "Lamine Yamal Euro 2024 trophy",
+          "Lamine Yamal celebrating"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He won Young Player of the Tournament.",
+        "visual": "Lamine Yamal with young player award",
+        "images": [
+          "Lamine Yamal young player of the tournament",
+          "Lamine Yamal award Euro 2024"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Greatest teenage final performance ever?",
+        "visual": "close up of Lamine Yamal Spain",
+        "images": [
+          "Lamine Yamal smiling Spain",
+          "Lamine Yamal Barcelona portrait"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Lamine Yamal turned 17 on 13 July 2024, the day before the Euro 2024 final in Berlin, became the youngest player ever to appear in a European Championship final as Spain beat England 2-1 (Williams 47, Palmer 73, Oyarzabal 86), and crossed for Nico Williams's opening goal.",
+      "video_script": "Yamal turned seventeen. Then, a European final. Berlin. Spain against England. Euro final. He became the youngest Euro finalist ever. Seventeen years and one day old. Yamal got behind Shaw and crossed low. Nico Williams scored in the forty-seventh minute. Cole Palmer equalised in the seventy-third. Oyarzabal won it in the eighty-sixth. Spain won two-one, a record fourth title. He also broke Pele's age record. He won Young Player of the Tournament. Greatest teenage final performance ever?",
+      "video_terms": "Lamine Yamal Euro 2024 final, Spain England 2-1 Berlin, Nico Williams goal, youngest finalist",
+      "hook_text": "17 YEARS, 1 DAY, EURO RECORD",
+      "cta_text": "GREATEST TEENAGE FINAL EVER? 👇",
+      "beat_plan": [
+        {
+          "says": "Yamal turned seventeen. Then, a European final.",
+          "visual": "big close up of Lamine Yamal face, Spain kit, Euro 2024",
+          "images": [
+            "Lamine Yamal Spain Euro 2024",
+            "Lamine Yamal close up"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b01/img-f9b4cf720ee1d7f942239803c0067ecd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b01/img-0db50c01ac1bcdc7327f6b91795fee07.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b01/img-2144a817d2cc60cb5394b565cc415148.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b01/img-590ef27998c4493f73531130adef92ab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b01/img-6c837fb55e0a156d3d78825e951c866c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b01/img-7a678d71a3ed11803bb06cd9b8a17b6c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b01/img-f9b4cf720ee1d7f942239803c0067ecd.jpg",
+          "url": "https://ds-images.bolavip.com/news/image?src=https://images.bolavip.com/jpg/en/full/BUS_20240709_BUS_142999_Lamine-Yamal-of-Spain-celebrates-scoring-his-teams-first-goal-during-the-UEFA-EURO-2024-Semi-Final.jpg&width=1200&height=740"
+        },
+        {
+          "says": "Berlin. Spain against England. Euro final.",
+          "visual": "Olympiastadion Berlin Euro 2024 final",
+          "images": [
+            "Euro 2024 final Berlin Spain England",
+            "Spain England Euro 2024 final"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b02/img-c0086df06e48cdc6fe43cc350dacbf2d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b02/img-291c8e5d1041871d37e9db50e78e0c40.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b02/img-d07549f589dffc353e0253952a2f00f0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b02/img-8d4c97af10e8c69f1389fb0e80a48a1a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b02/img-cb3c27e5fd92871f886059bc1418c2f7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b02/img-6185bd3c9aca4b5c32529e42e460ebe4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b02/img-0e6c27a84bbee6119de4443b903c4004.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b02/img-1a4a0fd742a29d4d7d753f318eba600f.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=O15L1ZzsKdw",
+          "start": 51.5,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b02/shot_3e6c5a91c8.mp4"
+        },
+        {
+          "says": "He became the youngest Euro finalist ever.",
+          "visual": "Lamine Yamal Spain walking out",
+          "images": [
+            "Lamine Yamal Euro 2024 final",
+            "Lamine Yamal Spain"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b03/img-e99574e7456de6e12fa37921284c4371.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b03/img-df844171ffeb89f8a1f877a702bff63b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b03/img-7c27e1d1ab4e438527f55a05d1ba411a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b03/img-dea1a37760a291390f07642977768b8c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b03/img-1b4bcbdcca397cda2097e02ba6e07db8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b03/img-6679345c27c19a43b961f549ea49caa2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b03/img-b2784f08cefc069028d2e4854e3f210d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b03/img-4bf1aaff75a7047a56df4620d77a71db.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=lBOS43RWfY0",
+          "start": 239.0,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b03/shot_4886649f4c.mp4"
+        },
+        {
+          "says": "Seventeen years and one day old.",
+          "visual": "Lamine Yamal portrait Spain",
+          "images": [
+            "Lamine Yamal portrait",
+            "Lamine Yamal face Spain"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b04/img-afbdc2b1bfb9ddb2902e2dad85c47d07.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b04/img-cad57172d4bcb1d31a029dbd8dc95402.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b04/img-fd8e899875f317f245a48a9e83983052.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b04/img-921fc3b9872cc38b981ad2b026fc7195.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b04/img-bda70fec5991d6e2765d5bc44bf1aa61.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b04/img-be303c860963f3e5b5bd8ee02f87ec55.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b04/img-a191efb393cdef4d9ca79991a1c529a4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b04/img-635d39e641a440f18ca53bfb23c2f0f1.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=O15L1ZzsKdw",
+          "start": 57.8,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b04/shot_2529c37dba.mp4"
+        },
+        {
+          "says": "Yamal got behind Shaw and crossed low.",
+          "visual": "Lamine Yamal dribbling past Luke Shaw",
+          "images": [
+            "Yamal cross Nico Williams goal",
+            "Lamine Yamal assist final"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b05/img-4428cda49f0ce372f6841e31d8532064.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b05/img-91fa2879e48241678e583ef610c553c6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b05/img-2ac8a0be2ffc919ceeee5b4bb8581ffd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b05/img-8ccbda9cb20a1df09ce500b989591690.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b05/img-3ef68fb73f7a820deb41ac255dbffb63.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b05/img-39a96f6291a0ecf31a9ade841d944bd5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b05/img-73d3b5bae05bb12b33e1b123411742b4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b05/img-23bf3be528993eaf2eb65dfd75d470c7.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=lBOS43RWfY0",
+          "start": 117.5,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b05/shot_85b06d0571.mp4"
+        },
+        {
+          "says": "Nico Williams scored in the forty-seventh minute.",
+          "visual": "Nico Williams celebrating goal Spain",
+          "images": [
+            "Nico Williams Spain Euro 2024 goal",
+            "Nico Williams celebrating"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b06/img-79faec0c8ce160c4f60c829352f8aee9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b06/img-36662040ec93993184a68c6f599385e7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b06/img-e38cd8cbb663a0b5e66891bf915188d7.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=lBOS43RWfY0",
+          "start": 123.0,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b06/shot_e7261479b8.mp4"
+        },
+        {
+          "says": "Cole Palmer equalised in the seventy-third.",
+          "visual": "Cole Palmer England goal celebration",
+          "images": [
+            "Cole Palmer Euro 2024 final goal",
+            "Cole Palmer England"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b07/img-ab66d60f25f963db22f1178110396724.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b07/img-6d0a1be39f8d18cfdd5a302218d2b414.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b07/img-4d9c21b652a94a9253f185c2a34a1038.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b07/img-ff2d480be99a465bc58a7c1bf0096a92.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b07/img-5fb922d111cb9d0edd576e9b89a5c367.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b07/img-53b34cc3d9e73038b992914292c5830d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b07/img-b1eb5dab09aa4dedabc3fcbd094513a5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b07/img-aef1a1a12ea4556d42503ac5449c0ee1.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=lBOS43RWfY0",
+          "start": 333.5,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b07/shot_03894565b3.mp4"
+        },
+        {
+          "says": "Oyarzabal won it in the eighty-sixth.",
+          "visual": "Mikel Oyarzabal celebrating Spain",
+          "images": [
+            "Mikel Oyarzabal Euro 2024 final goal",
+            "Oyarzabal Spain celebrating"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b08/img-f9b4cf720ee1d7f942239803c0067ecd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b08/img-33be994459047ddfbd2b63ebc95fe813.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=lBOS43RWfY0",
+          "start": 387.5,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b08/shot_6e5be00ba2.mp4"
+        },
+        {
+          "says": "Spain won two-one, a record fourth title.",
+          "visual": "Spain players lifting the Euro 2024 trophy",
+          "images": [
+            "Spain Euro 2024 trophy",
+            "Spain win Euro 2024"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b09/img-668770739237bf037e73609e97233ecd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b09/img-8da3b90df0090f784d7f0a5aa42d8006.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b09/img-0e6c27a84bbee6119de4443b903c4004.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b09/img-a3e19ff63349f1830fac4e68b76b8382.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b09/img-0c14d3f4d8edeba96dca91da80046bce.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b09/img-3e319769537cd38df95da7fbc33bdf1b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b09/img-ee6dce08b898689c7f55a0572eaae900.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b09/img-cb3c27e5fd92871f886059bc1418c2f7.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=O15L1ZzsKdw",
+          "start": 226.5,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b09/shot_d5c61e4a98.mp4"
+        },
+        {
+          "says": "He also broke Pele's age record.",
+          "visual": "Lamine Yamal celebrating with trophy",
+          "images": [
+            "Lamine Yamal Euro 2024 trophy",
+            "Lamine Yamal celebrating"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b10/img-3480414f4addee7676fb88ee73dd06cb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b10/img-6c837fb55e0a156d3d78825e951c866c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b10/img-590ef27998c4493f73531130adef92ab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b10/img-2b6e85deef9dfe97dd8990d6ea61a783.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b10/img-598735a271b061022f5efea719431246.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b10/img-0e7aae206bafdb8ff0cb69e025908688.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b10/img-7274cce7e5c7a2e2bb4b6bfd4762479b.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=O15L1ZzsKdw",
+          "start": 63.4,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b10/shot_a25caa962c.mp4"
+        },
+        {
+          "says": "He won Young Player of the Tournament.",
+          "visual": "Lamine Yamal with young player award",
+          "images": [
+            "Lamine Yamal young player of the tournament",
+            "Lamine Yamal award Euro 2024"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b11/img-32482cbb684da8841ec52c06721a65e2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b11/img-d4d3e76d697a0009ced21c8a08e41b5c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b11/img-793193bd52519df9346eb612ee2d99f6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b11/img-50c5973e7b95a539e24ec51c3aff8bdd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b11/img-7670026814309e9317565b74c1172625.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b11/img-49c139717a7f92e76a675f6b96e413d9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b11/img-b3d1f3e141644f1ebbf735aea99ed2de.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b11/img-8113f1d55675141c920bd82bff3d56a8.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=O15L1ZzsKdw",
+          "start": 233.0,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b11/shot_42ebcb3d2b.mp4"
+        },
+        {
+          "says": "Greatest teenage final performance ever?",
+          "visual": "close up of Lamine Yamal Spain",
+          "images": [
+            "Lamine Yamal smiling Spain",
+            "Lamine Yamal Barcelona portrait"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b12/img-e99574e7456de6e12fa37921284c4371.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b12/img-6d839c9f22c653546849da37131ee8c1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b12/img-3dada910f38cf1cfe8caa5143bd13773.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b12/img-d53f04b4b9a16fa183ec971512545d09.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b12/img-3f6ba05527c30b3a48b688c949d1d17c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b12/img-8525606bb4845aeb33cffd693d13c3ba.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b12/img-24400822dd5e5801309eb1e1e94e0e9c.jpg"
+          ],
+          "url": "https://www.youtube.com/watch?v=lBOS43RWfY0",
+          "start": 300.5,
+          "len": 6.0,
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lamine_yamal_turned_17_on_13_july_2024_t/b12/shot_d523969257.mp4"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

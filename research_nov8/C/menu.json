@@ -1,0 +1,1307 @@
+[
+ {
+  "working_title": "Kane Ended England's 25-Year Ballon d'Or Wait",
+  "chars": 45,
+  "star": "Kane",
+  "angle": "record/number + national pride",
+  "title_pattern": "name-first, concrete number",
+  "why_it_should_work": "Fresh news (26 Oct 2026); numbers-first records are the CD hook that broke out; 'first Englishman since Owen 2001' is a hard number plus a named predecessor. Kane in our sample: only 13 recent Shorts (median 282K) = under-supplied; and BdO night is the big event just before the window.",
+  "photo_clip_risk": "med",
+  "evergreen_or_dated": "dated",
+  "date_tie": "Ballon d'Or 26 Oct 2026, London Palladium",
+  "sources": [
+   "https://www.news4jax.com/sports/2026/10/26/harry-kane-becomes-first-englishman-in-25-years-to-win-ballon-dor/",
+   "https://www.radiox.co.uk/news/uk-world/harry-kane-ends-englands-25-year-wait-for-bal/",
+   "https://www.wunc.org/2026-10-27/harry-kane-becomes-first-englishman-in-25-years-to-win-ballon-dor"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "kane.{0,80}ballon d.or|ballon d.or.{0,80}kane|first englishman",
+  "key_facts_to_script": "Ceremony 26 Oct 2026 London Palladium; first Englishman since Michael Owen 2001; first Bayern winner since Rummenigge 1981. Podium order NOT confirmed - do not state 2nd/3rd.",
+  "priority": "A",
+  "n": 1,
+  "already_covered_in": [
+   "mbappe_clasico_ballondor_28pts"
+  ]
+ },
+ {
+  "working_title": "Four Loans, Then Harry Kane Won The Ballon d'Or",
+  "chars": 47,
+  "star": "Kane",
+  "angle": "origin/redemption",
+  "title_pattern": "number-led story, curiosity",
+  "why_it_should_work": "Redemption arc around a live news peg; story/origin Shorts are heavy-tailed (median 14K but several 10M+ outliers like 'Even Messi was Bullied' 13.7M, 'Why Messi Never Forgot His Grandma?!' 12.9M). Photos of Kane at Orient/Millwall/Norwich/Leicester are plentiful (Getty/Alamy).",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "Ballon d'Or aftermath; 28 Nov-6 Dec",
+  "sources": [
+   "https://www.skysports.com/football/news/11096/9734189/from-leyton-orient-to-tottenhams-first-team-via-millwall-charting-the-rise-of-harry-kane",
+   "https://en.wikipedia.org/wiki/Harry_Kane"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "leyton orient|millwall.{0,40}kane|kane.{0,60}loan",
+  "key_facts_to_script": "Loans: Leyton Orient (Jan 2011), Millwall (2011-12), Norwich (2012-13), Leicester (2013). Appearance/goal totals differ between Sky and Wikipedia: do NOT quote totals.",
+  "priority": "A",
+  "n": 2,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Kane Is Bayern's First Ballon d'Or Winner Since 1981",
+  "chars": 52,
+  "star": "Kane",
+  "angle": "record/number",
+  "title_pattern": "name-first + year",
+  "why_it_should_work": "Same news peg, different hard number (45-year gap). Bayern fans + Germany/India football followers. Rummenigge/Muller/Beckenbauer photos exist.",
+  "photo_clip_risk": "med",
+  "evergreen_or_dated": "dated",
+  "date_tie": "Ballon d'Or aftermath",
+  "sources": [
+   "https://www.news4jax.com/sports/2026/10/26/harry-kane-becomes-first-englishman-in-25-years-to-win-ballon-dor/",
+   "https://www.beinsports.com/en-mena/football/articles-video/kane-says-ballon-d-or-win-feels-like-a-dream-as-tributes-pour-in-2026-10-27"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "rummenigge",
+  "key_facts_to_script": "First Bayern player since Karl-Heinz Rummenigge 1981; Kane named Beckenbauer, Muller, Rummenigge in his speech (beIN/Prothom Alo report). Say 'reports say' for quotes.",
+  "priority": "B",
+  "n": 3,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Owen Won The Ballon d'Or At 21. Kane Won It At 33",
+  "chars": 49,
+  "star": "Kane",
+  "angle": "record/number + contrast",
+  "title_pattern": "two-number contrast",
+  "why_it_should_work": "Two ages = instant curiosity; Owen born 14 Dec 1979 (birthday inside window). England-Spain/UK 7% audience. Owen 2001 photos easy.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "Owen birthday 14 Dec; Ballon d'Or aftermath",
+  "sources": [
+   "https://www.news4jax.com/sports/2026/10/26/harry-kane-becomes-first-englishman-in-25-years-to-win-ballon-dor/",
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "michael owen|\bowen\b.{0,40}ballon",
+  "key_facts_to_script": "Owen won 2001 (Liverpool, age 21); Kane born 28 Jul 1993 so 33 at the 26 Oct 2026 ceremony. Confirm Owen age on France Football.",
+  "priority": "B",
+  "n": 4,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Kane Is Still Spurs' All-Time Top Scorer With 280",
+  "chars": 49,
+  "star": "Kane",
+  "angle": "record/number",
+  "title_pattern": "name-first, number",
+  "why_it_should_work": "Rides the 5 Dec north London derby (Spurs v Arsenal, Spurs home per Tottenham site; Sky lists Arsenal away). Kane left Spurs 2023 for Bayern; record stands. 'Still' implies suspense without accusing anyone.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "5 Dec 2026 (3pm, Spurs v Arsenal)",
+  "sources": [
+   "https://www.tottenhamhotspur.com/news/1074194/fixtures-202627-list-in-full/",
+   "https://www.skysports.com/football/news/11670/13555674/arsenal-premier-league-2026-27-fixtures-and-schedule"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting; fixture VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "\\b280\\b",
+  "key_facts_to_script": "Kane 280 goals for Spurs in all comps (Tottenham FC/BBC). Re-check the number: if he is not still top scorer by 5 Dec, drop.",
+  "priority": "A",
+  "n": 5,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Rodri Took The Golden Ball Over Messi's 8 Goals",
+  "chars": 47,
+  "star": "Rodri / Messi",
+  "angle": "rivalry + award numbers",
+  "title_pattern": "name-first, number",
+  "why_it_should_work": "Messi in the title (the biggest subject by search supply) but fresh WC2026 news; multi-star titles had 1.8M median vs 311K single-star in our 309-Short sample. Neutral framing (no insult).",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "WC 2026 aftermath",
+  "sources": [
+   "https://global.espn.com/football/story/_/id/49024760/2026-world-cup-awards-golden-ball-golden-boot-golden-glove-trophies-revealed",
+   "https://www.theweek.in/news/sports/2026/07/20/fifa-world-cup-2026-awards-from-mbappe-to-rodri-who-won-what-full-list-of-winners.html",
+   "https://www.nbcsports.com/soccer/news/2026-world-cup-award-winners-golden-boot-golden-ball-best-young-player-golden-glove"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "golden ball.{0,60}rodri|rodri.{0,60}golden ball",
+  "key_facts_to_script": "Rodri Golden Ball; Messi Silver Ball (8 goals, 4 assists per ESPN); Bellingham 7 goals per ESPN snippet (single source, skip).",
+  "priority": "A",
+  "n": 6,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Messi Reached A World Cup Final At 39",
+  "chars": 37,
+  "star": "Messi",
+  "angle": "record/age",
+  "title_pattern": "name-first, number",
+  "why_it_should_work": "Age numbers are the new hook (Yamal 17/ Messi 39). Spain beat Argentina 1-0 aet (Ferran Torres 106') per several sources; keep the script on Messi's run, not on the result accusation. Messi photo supply is huge.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "WC 2026 aftermath; 18 Dec = 4th anniversary of 2022 final",
+  "sources": [
+   "https://global.espn.com/football/story/_/id/49024760/2026-world-cup-awards-golden-ball-golden-boot-golden-glove-trophies-revealed",
+   "https://www.nbcnewyork.com/world-cup/lionel-messi-world-cup-stats-argentina/6496148/?amp=1"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch) (final score from 3+ outlets, but the stat details are mixed 2022/2026 on NBC pages - keep to age/result/awards)",
+  "dup_check_regex": "messi.{0,40}(at 39|aged 39|thirty-nine)",
+  "key_facts_to_script": "Born 24 Jun 1987 = 39 at the tournament. Result: Spain 1-0 Argentina aet, 19 Jul 2026 MetLife. Silver Ball, 8 goals.",
+  "priority": "B",
+  "n": 7,
+  "already_covered_in": [
+   "messi_mls_record",
+   "messi_nashville_solo_phonk",
+   "messi_benatia_fifth"
+  ]
+ },
+ {
+  "working_title": "Mbappé Won The Golden Boot Twice In A Row",
+  "chars": 41,
+  "star": "Mbappe",
+  "angle": "record",
+  "title_pattern": "name-first",
+  "why_it_should_work": "Two consecutive tournaments (8 goals 2022, 10 goals 2026). Mbappe is mid-supply (20 recent Shorts, median 685K). ESPN/The Week agree on 10 goals.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "WC 2026 aftermath",
+  "sources": [
+   "https://global.espn.com/football/story/_/id/49024760/2026-world-cup-awards-golden-ball-golden-boot-golden-glove-trophies-revealed",
+   "https://www.theweek.in/news/sports/2026/07/20/fifa-world-cup-2026-awards-from-mbappe-to-rodri-who-won-what-full-list-of-winners.html"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "mbappe.{0,100}(consecutive|twice in a row|back.to.back)",
+  "key_facts_to_script": "10 goals in 8 games (2026), 8 goals (2022). 'First ever to win consecutive' appeared in ONE source only: do not claim it.",
+  "priority": "A",
+  "n": 8,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Mbappé Turns 28 With Two World Cup Golden Boots",
+  "chars": 47,
+  "star": "Mbappe",
+  "angle": "record/age",
+  "title_pattern": "name-first, age",
+  "why_it_should_work": "Birthday 20 Dec 1998 is the last day of the window; ride it on the day. Compare nothing, state two facts.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "20 Dec 2026 (28th birthday)",
+  "sources": [
+   "https://www.theweek.in/news/sports/2026/07/20/fifa-world-cup-2026-awards-from-mbappe-to-rodri-who-won-what-full-list-of-winners.html",
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting; Golden Boot VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "mbappe.{0,40}(28th|turns 28)",
+  "key_facts_to_script": "Born 20 Dec 1998 (Bondy). Golden Boots 2022 and 2026.",
+  "priority": "A",
+  "n": 9,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Unai Simón Won The Golden Glove And The Yashin Trophy",
+  "chars": 53,
+  "star": "Unai Simon",
+  "angle": "award/number",
+  "title_pattern": "name-first, two awards",
+  "why_it_should_work": "Spanish keeper had a record WC (7 clean sheets per ESPN snippet - verify) + Yashin Trophy at the 26 Oct ceremony (beIN). Under-served subject = low saturation.",
+  "photo_clip_risk": "med",
+  "evergreen_or_dated": "dated",
+  "date_tie": "WC 2026 + Ballon d'Or aftermath",
+  "sources": [
+   "https://www.beinsports.com/en-us/soccer/articles/live-ballon-d-or-2026-winners-and-all-awards-2026-10-26?Vz=Qx",
+   "https://global.espn.com/football/story/_/id/49024760/2026-world-cup-awards-golden-ball-golden-boot-golden-glove-trophies-revealed"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "unai sim|yashin",
+  "key_facts_to_script": "Yashin Trophy 2026 and World Cup Golden Glove; only goal conceded was De Ketelaere's (one source).",
+  "priority": "B",
+  "n": 10,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Cubarsí Is 19 And The World Cup's Best Young Player",
+  "chars": 51,
+  "star": "Cubarsi",
+  "angle": "record/age",
+  "title_pattern": "name-first, age",
+  "why_it_should_work": "Defender, born 22 Jan 2007; age hook. Pau Cubarsi is also Barcelona (Yamal teammate) so Barca audience.",
+  "photo_clip_risk": "med",
+  "evergreen_or_dated": "dated",
+  "date_tie": "WC 2026 aftermath",
+  "sources": [
+   "https://global.espn.com/football/story/_/id/49024760/2026-world-cup-awards-golden-ball-golden-boot-golden-glove-trophies-revealed",
+   "https://www.nbcsports.com/soccer/news/2026-world-cup-award-winners-golden-boot-golden-ball-best-young-player-golden-glove"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "cubars",
+  "key_facts_to_script": "Best Young Player of WC 2026 (ESPN, NBC Sports).",
+  "priority": "B",
+  "n": 11,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Alexia Putellas Won Her Third Ballon d'Or",
+  "chars": 41,
+  "star": "Putellas",
+  "angle": "record",
+  "title_pattern": "name-first",
+  "why_it_should_work": "Ballon d'Or night 26 Oct 2026 (beIN, Complex). Women's football is under-supplied in our sample (0 recent Shorts).",
+  "photo_clip_risk": "med",
+  "evergreen_or_dated": "dated",
+  "date_tie": "Ballon d'Or aftermath",
+  "sources": [
+   "https://www.beinsports.com/en-us/soccer/articles/live-ballon-d-or-2026-winners-and-all-awards-2026-10-26?Vz=Qx"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "putellas",
+  "key_facts_to_script": "Third Ballon d'Or Feminin (2021, 2022, 2026 per beIN).",
+  "priority": "B",
+  "n": 12,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Athletic Only Signs Basque Players, Like Unai Simón",
+  "chars": 51,
+  "star": "Unai Simon",
+  "angle": "origin/identity",
+  "title_pattern": "name + hook fact",
+  "why_it_should_work": "Athletic's Basque-only policy is a rare-fact hook; Simón is the 2026 Yashin Trophy winner (beIN). Under-served subject.",
+  "photo_clip_risk": "med",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "WC/Ballon d'Or aftermath",
+  "sources": [
+   "https://www.beinsports.com/en-us/soccer/articles/live-ballon-d-or-2026-winners-and-all-awards-2026-10-26?Vz=Qx",
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "Yashin VERIFIED this session (WebSearch/WebFetch); policy WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "athletic club|basque",
+  "key_facts_to_script": "Athletic Club policy (club site/BBC); Simón Yashin Trophy 2026.",
+  "priority": "B",
+  "n": 13,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Ronaldo's Portugal Career Began Against Kazakhstan",
+  "chars": 50,
+  "star": "Ronaldo",
+  "angle": "origin/history",
+  "title_pattern": "name-first",
+  "why_it_should_work": "Retirement news 5 Nov 2026: Shorts about it did 2.1M-3.8M in the first 3 days; by 28 Nov the first spike is gone so go for the evergreen origin of the story. Debut: 20 Aug 2003 friendly, 1-0, sub for Figo.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "Ronaldo Portugal retirement 5 Nov 2026",
+  "sources": [
+   "https://www.republicworld.com/sports/football/ronaldo-portugal-debut-17-years-ago-otd-heres-what-happened-since",
+   "https://www.itv.com/news/2026-11-05/portugals-cristiano-ronaldo-has-announced-his-retirement-from-international-soccer"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "kazakh",
+  "key_facts_to_script": "Debut 20 Aug 2003 v Kazakhstan; replaced Luis Figo (FIFA account; some say Rui Costa).",
+  "priority": "B",
+  "n": 14,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Ronaldo Leaves Portugal With 234 Caps And 146 Goals",
+  "chars": 51,
+  "star": "Ronaldo",
+  "angle": "record/number",
+  "title_pattern": "name-first, two numbers",
+  "why_it_should_work": "Hard numbers in the hook, but 'ronaldo_tribute' already mentions the caps: use a different second half (record list, not tribute). Retirement 5 Nov: ITV, AP, Gulf News.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "Ronaldo Portugal retirement; PFF tribute planned",
+  "sources": [
+   "https://www.itv.com/news/2026-11-05/portugals-cristiano-ronaldo-has-announced-his-retirement-from-international-soccer"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch) (AP-sourced numbers: 234 caps/146 goals; one outlet disagrees on timing)",
+  "dup_check_regex": "234 caps|146 (international )?goals",
+  "key_facts_to_script": "234 caps, 146 goals, six World Cups, European title; handed back the No.7; PFF plans a tribute. Timing of effective retirement conflicts across sources.",
+  "priority": "B",
+  "n": 15,
+  "already_covered_in": [
+   "ronaldo_tribute",
+   "ronaldo_tribute_p1"
+  ]
+ },
+ {
+  "working_title": "Neymar Returned To Brazil's Squad After Three Years",
+  "chars": 51,
+  "star": "Neymar",
+  "angle": "redemption",
+  "title_pattern": "name-first, duration",
+  "why_it_should_work": "Named by Ancelotti 18 May 2026, first call-up since 2023 (Al Jazeera/Statesman). India audience skews Neymar/Brazil (inference from channel geo, not measured here).",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "WC 2026 aftermath",
+  "sources": [
+   "https://www.aljazeera.com/amp/sports/2026/5/18/brazil-call-up-neymar-to-world-cup-2026-squad"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "neymar.{0,60}(brazil squad|ancelotti|call.?up)",
+  "key_facts_to_script": "Named in 26-man list 18 May 2026; had not played for Brazil since 2023.",
+  "priority": "B",
+  "n": 16,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Haaland Wears 'Braut' On His Norway Shirt For His Mum",
+  "chars": 53,
+  "star": "Haaland",
+  "angle": "family/personal",
+  "title_pattern": "name-first, quoted word",
+  "why_it_should_work": "Family/personal drama is the pattern CD already knows; zero coverage in our batches (grep 'braut' = 0). Verified by Goal/Hello/Khaleej Times/SI at WC 2026.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "Norway at WC 2026 (aftermath); evergreen",
+  "sources": [
+   "https://www.khaleejtimes.com/sports/fifa-world-cup/why-erling-haaland-wears-braut-on-his-norway-shirt-instead-of-haaland",
+   "https://www.si.com/onsi/athlete-lifestyle/who-are-erling-haaland-s-parents-meet-the-2-athletes-behind-norway-s-new-world-cup-hero-01kxccdebw00"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "braut",
+  "key_facts_to_script": "'Braut Haaland' on the shirt = mother Gry Marita Braut's surname; born Leeds 21 Jul 2000.",
+  "priority": "A",
+  "n": 17,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Haaland's Mum Was Norway's Heptathlon Champion",
+  "chars": 46,
+  "star": "Haaland",
+  "angle": "family/personal",
+  "title_pattern": "name-first, role",
+  "why_it_should_work": "Pairs with the Braut item but a separate angle (athletic genes). SI/Goal confirm Gry Marita Braut as a former national heptathlon champion.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "28 Nov Arsenal v Man City / 8 Dec Barca v Man City (Haaland in the news)",
+  "sources": [
+   "https://www.si.com/onsi/athlete-lifestyle/who-are-erling-haaland-s-parents-meet-the-2-athletes-behind-norway-s-new-world-cup-hero-01kxccdebw00"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "heptathl",
+  "key_facts_to_script": "Gry Marita Braut: Norwegian heptathlon champion (1990s). Dates vary across low-quality sites; use SI/Goal only.",
+  "priority": "B",
+  "n": 18,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Rice's Two Free Kicks Beat Real Madrid At The Emirates",
+  "chars": 54,
+  "star": "Rice",
+  "angle": "rare moment/number",
+  "title_pattern": "name-first, number",
+  "why_it_should_work": "Arsenal v Real Madrid is on 9 Dec (UCL MD6, SI listing). Apr 2025 first leg 3-0 with two Rice free kicks (SI preview + match reports). Real Madrid/Rice both in-demand.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "9 Dec 2026 Arsenal v Real Madrid (UCL MD6)",
+  "sources": [
+   "https://www.si.com/soccer/2026-27-champions-league-dates-kickoff-times-all-league-phase-fixtures",
+   "https://www.si.com/soccer/arsenal-vs-real-madrid-team-news-predictions-lineups-4-8-25"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "free.?kicks?.{0,60}real madrid|rice.{0,60}real madrid",
+  "key_facts_to_script": "8 Apr 2025, Emirates, 3-0; Rice scored two free kicks. 2nd leg 15-16 Apr Bernabeu (check score: aggregate 5-1).",
+  "priority": "A",
+  "n": 19,
+  "already_covered_in": [
+   "ronaldo_wolfsburg_hattrick",
+   "ronaldo_freekickdrought"
+  ]
+ },
+ {
+  "working_title": "Guardiola Won 14 Trophies In 4 Years At Barcelona",
+  "chars": 49,
+  "star": "Guardiola",
+  "angle": "record/number",
+  "title_pattern": "name-first, number",
+  "why_it_should_work": "Barcelona v Man City, 8 Dec (UCL MD6, SI): Guardiola returns to the club where he won 14 trophies in 2008-12. Hard number + Barca/City/Haaland/Yamal crossover.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "8 Dec 2026 Barcelona v Man City",
+  "sources": [
+   "https://www.si.com/soccer/2026-27-champions-league-dates-kickoff-times-all-league-phase-fixtures",
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "fixture VERIFIED this session (WebSearch/WebFetch); 14 trophies: WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "14 trophies|fourteen trophies",
+  "key_facts_to_script": "Barcelona 2008-12: 14 trophies (6 in 2009). Check against FC Barcelona honours page.",
+  "priority": "A",
+  "n": 20,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Yamal Debuted For Barcelona At 15 Years And 290 Days",
+  "chars": 52,
+  "star": "Yamal",
+  "angle": "record/age",
+  "title_pattern": "name-first, age",
+  "why_it_should_work": "Same 8 Dec Barca-City tie. Yamal is the highest-median star (1.41M). Age hooks.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "8 Dec 2026 Barcelona v Man City",
+  "sources": [
+   "https://www.si.com/soccer/2026-27-champions-league-dates-kickoff-times-all-league-phase-fixtures",
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "290 days|15 years",
+  "key_facts_to_script": "29 Apr 2023 v Real Betis, youngest ever Barca league player (15y 290d). Existing 'yamal_notnormal' may mention: read it first.",
+  "priority": "B",
+  "n": 21,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Arteta Learned Under Guardiola Before Facing Him",
+  "chars": 48,
+  "star": "Arteta / Guardiola",
+  "angle": "rivalry/mentor",
+  "title_pattern": "name-first",
+  "why_it_should_work": "28 Nov Arsenal v Man City (Sky: Arsenal home, City away, 3pm). Teacher v pupil is a rivalry frame without insult. Both photo-rich.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "28 Nov 2026 Arsenal v Man City",
+  "sources": [
+   "https://www.skysports.com/football/news/11670/13555674/arsenal-premier-league-2026-27-fixtures-and-schedule",
+   "https://www.skysports.com/football/news/12040/13555661/man-city-premier-league-2026-27-fixtures-and-schedule"
+  ],
+  "fact_status": "fixture VERIFIED this session (WebSearch/WebFetch); assistant years: WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "arteta",
+  "key_facts_to_script": "Arteta was Guardiola's assistant 2016-19 (City). Sources conflict on 28 vs 29 Nov in some listings; Sky says 28 Nov.",
+  "priority": "B",
+  "n": 22,
+  "already_covered_in": [
+   "recap_rice_week"
+  ]
+ },
+ {
+  "working_title": "Torres Cost Chelsea £50m, A British Record",
+  "chars": 42,
+  "star": "Torres",
+  "angle": "record/number",
+  "title_pattern": "name-first, money",
+  "why_it_should_work": "5 Dec Chelsea v Liverpool (Sky Liverpool page: Chelsea home). Money records get saves; Torres photos in both shirts.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "5 Dec 2026 Chelsea v Liverpool",
+  "sources": [
+   "https://www.skysports.com/football/news/11669/13555667/liverpool-premier-league-2026-27-fixtures-and-schedule",
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "fixture VERIFIED this session (WebSearch/WebFetch); fee: WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "torres.{0,60}(50|record)",
+  "key_facts_to_script": "Jan 2011, Liverpool to Chelsea, £50m British record at the time.",
+  "priority": "B",
+  "n": 23,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Palmer Left Man City For Chelsea. Now They Face Him",
+  "chars": 51,
+  "star": "Palmer",
+  "angle": "revenge/ex-club (neutral)",
+  "title_pattern": "name-first, tension",
+  "why_it_should_work": "12 Dec Man City v Chelsea (Sky: City home 3pm). Ex-club frame; keep away from 'accused/slammed'. One batch (palmer_cold) exists.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "12 Dec 2026 Man City v Chelsea",
+  "sources": [
+   "https://www.skysports.com/football/news/12040/13555661/man-city-premier-league-2026-27-fixtures-and-schedule"
+  ],
+  "fact_status": "fixture VERIFIED this session (WebSearch/WebFetch); fee £42.5m Sep 2023: WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "palmer",
+  "key_facts_to_script": "Sep 2023 Man City to Chelsea, £42.5m. Check palmer_cold overlap.",
+  "priority": "B",
+  "n": 24,
+  "already_covered_in": [
+   "palmer_cold"
+  ]
+ },
+ {
+  "working_title": "Man United Ended Arsenal's 49-Game Unbeaten Run",
+  "chars": 47,
+  "star": "Arsenal/Man Utd",
+  "angle": "rivalry/history",
+  "title_pattern": "team-first, number",
+  "why_it_should_work": "19 Dec Arsenal v Man United at the Emirates (Sky/Arsenal). 49 = hard number; 'Battle of the Buffet' is optional.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "19 Dec 2026 Arsenal v Man United",
+  "sources": [
+   "https://www.skysports.com/football/news/11670/13555674/arsenal-premier-league-2026-27-fixtures-and-schedule",
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "fixture VERIFIED this session (WebSearch/WebFetch); 49 games: WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "49.game|49 game|invincibles",
+  "key_facts_to_script": "24 Oct 2004, United 2-0 Arsenal ended the 49-match unbeaten run.",
+  "priority": "B",
+  "n": 25,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Van Dijk's £75m Was A World Record For A Defender",
+  "chars": 49,
+  "star": "Van Dijk",
+  "angle": "record/money",
+  "title_pattern": "name-first, number",
+  "why_it_should_work": "19 Dec Liverpool v Spurs (Sky/Spurs sites agree on date). Liverpool + Salah audiences.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "19 Dec 2026 Liverpool v Spurs",
+  "sources": [
+   "https://www.skysports.com/football/news/11669/13555667/liverpool-premier-league-2026-27-fixtures-and-schedule",
+   "https://www.tottenhamhotspur.com/news/1074194/fixtures-202627-list-in-full/"
+  ],
+  "fact_status": "fixture VERIFIED this session (WebSearch/WebFetch); fee: WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "van dijk.{0,40}(75|record)",
+  "key_facts_to_script": "Dec 2017 announced, joined 1 Jan 2018, £75m, then world record for a defender.",
+  "priority": "B",
+  "n": 26,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Son's 70-Yard Run Against Burnley Won The Puskás",
+  "chars": 48,
+  "star": "Son",
+  "angle": "rare moment",
+  "title_pattern": "name-first, distance",
+  "why_it_should_work": "7 Dec 2019 goal = anniversary 7 Dec. Rare-moment angle; clip risk is high (match footage) so build as photo story.",
+  "photo_clip_risk": "high",
+  "evergreen_or_dated": "dated",
+  "date_tie": "7 Dec anniversary (2019)",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "burnley|puskas",
+  "key_facts_to_script": "Spurs 5-0 Burnley, 7 Dec 2019; Puskas Award 2020. Only 2 batches mention Son at all.",
+  "priority": "B",
+  "n": 27,
+  "already_covered_in": [
+   "topics_nov13_27/ronaldo"
+  ]
+ },
+ {
+  "working_title": "Argentina Waited 36 Years Between World Cups",
+  "chars": 44,
+  "star": "Messi/Argentina",
+  "angle": "record/history",
+  "title_pattern": "team-first, number",
+  "why_it_should_work": "18 Dec 2026 = 4th anniversary of the 2022 final (Scotsman/CNBC/TNT report). 1986 to 2022 = 36 years. Evergreen-feeling anniversary; avoid the already-built final-moment angles.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "18 Dec 2026 (4th anniversary of Lusail final)",
+  "sources": [
+   "https://www.scotsman.com/sport/football/argentina-win-incredible-2022-world-cup-final-on-penalties-against-france-as-lionel-messi-inspires-and-kylian-mbappe-scores-hat-trick-3958281"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch) (final date/score); 1986 gap arithmetic",
+  "dup_check_regex": "36 years",
+  "key_facts_to_script": "B",
+  "priority": "B",
+  "n": 28,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Messi Visited 4 Indian Cities In 3 Days",
+  "chars": 39,
+  "star": "Messi",
+  "angle": "India fan angle",
+  "title_pattern": "name-first, number",
+  "why_it_should_work": "India is 25% of CD's audience. GOAT Tour 13-15 Dec 2025 (Kolkata, Hyderabad, Mumbai, Delhi) = 1-year anniversary 13-15 Dec 2026. Zero India/Kolkata coverage in our batches. Photo risk low (Getty/PTI).",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "13-15 Dec 2026 (1 year since GOAT Tour)",
+  "sources": [
+   "https://www.theweek.in/news/sports/2025/12/11/lionel-messi-s-goat-india-tour-dates-venue-and-full-schedule.html",
+   "https://www.thestatesman.com/sports/lionel-messis-goat-india-tour-schedule-set-for-kolkata-hyderabad-mumbai-and-delhi-1503524362.html/amp"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch) (dates); statue and venue details conflicted - keep to cities/dates",
+  "dup_check_regex": "india|kolkata",
+  "key_facts_to_script": "13 Dec Kolkata + Hyderabad, 14 Dec Mumbai, 15 Dec Delhi (2025). Avoid unverified details (statue, crowd issues).",
+  "priority": "A",
+  "n": 29,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Morocco Became Africa's First World Cup Semi-Finalist",
+  "chars": 53,
+  "star": "Hakimi/Morocco",
+  "angle": "record/history",
+  "title_pattern": "team-first",
+  "why_it_should_work": "10 Dec 2022 Morocco 1-0 Portugal (QF), 14 Dec semi v France = anniversary 10-14 Dec. Ronaldo cried that night: crossover with Portugal retirement. Yamal/Hakimi Moroccan roots.",
+  "photo_clip_risk": "med",
+  "evergreen_or_dated": "dated",
+  "date_tie": "10-14 Dec anniversary (2022)",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "morocco.{0,60}semi",
+  "key_facts_to_script": "Morocco first African team in a WC semi-final (2022). Confirm dates on FIFA.",
+  "priority": "B",
+  "n": 30,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Ronaldo Beat Messi 745 To 316 In The 2016 Ballon d'Or",
+  "chars": 53,
+  "star": "Ronaldo/Messi",
+  "angle": "rivalry/number",
+  "title_pattern": "name-first, two numbers",
+  "why_it_should_work": "12 Dec 2016 ceremony anniversary. Existing batch covers 2017 (276 pts); 2016 not covered. Numbers rivalry in the title.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "12 Dec anniversary (2016)",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "\\b745\\b",
+  "key_facts_to_script": "2016 BdO: Ronaldo 745, Messi 316, Griezmann 198 (France Football). Verify before scripting.",
+  "priority": "B",
+  "n": 31,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Why Yamal Shows 3-0-4 After Every Goal",
+  "chars": 38,
+  "star": "Yamal",
+  "angle": "origin/personal",
+  "title_pattern": "'why' curiosity",
+  "why_it_should_work": "Verified: 304 = Rocafonda (Mataro) postal code 08304 (CBS/beIN/FourFourTwo/FootballTransfers). Zero 'rocafonda' in our batches. 'Why ...' title pattern appears in 12.9M Short 'Why Messi Never Forgot His Grandma?!'.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any / 8 Dec Barca v City",
+  "sources": [
+   "https://www.beinsports.com/en-us/soccer/la-liga/articles-video/why-does-lamine-yamal-celebrate-his-goals-with-a-304-2024-09-24",
+   "https://www.footballtransfers.com/us/transfer-news/es-primera-division/2025/12/lamine-yamal-celebration-meaning-304-rocafonda-mataro-barcelona"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "rocafonda|\\b304\\b",
+  "key_facts_to_script": "304 = 08304 postal code of Rocafonda, Mataro. Born Esplugues de Llobregat.",
+  "priority": "A",
+  "n": 32,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Yamal Turned 17 The Day Before The Euro Final",
+  "chars": 45,
+  "star": "Yamal",
+  "angle": "rare moment/age",
+  "title_pattern": "name-first, age",
+  "why_it_should_work": "Born 13 Jul 2007; Euro 2024 final 14 Jul 2024. Age + final = the kind of hard number CD's breakouts had. Zero hits for 'turned 17'.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "turned 17|day before the (euro )?final",
+  "key_facts_to_script": "Yamal 17th birthday 13 Jul 2024; final 14 Jul 2024 Spain 2-1 England. Young Player of the Tournament.",
+  "priority": "A",
+  "n": 33,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Yamal Is The Youngest Scorer In Euros History",
+  "chars": 45,
+  "star": "Yamal",
+  "angle": "record/age",
+  "title_pattern": "name-first",
+  "why_it_should_work": "Semi-final v France 9 Jul 2024 aged 16y 362d (UEFA). yamal_notnormal / yamal_mbappe_teen_record may overlap: read them and use a different second half.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "youngest.{0,40}(euro|scorer)",
+  "key_facts_to_script": "UEFA record: youngest scorer in Euro history.",
+  "priority": "B",
+  "n": 34,
+  "already_covered_in": [
+   "haaland_genk_champions_league_debut",
+   "yamal_notnormal",
+   "yamal_inter_semifinal_2025",
+   "topics_nov13_27/other"
+  ]
+ },
+ {
+  "working_title": "Yamal's Parents Come From Morocco And Equatorial Guinea",
+  "chars": 55,
+  "star": "Yamal",
+  "angle": "family/personal",
+  "title_pattern": "name-first, 2 places",
+  "why_it_should_work": "Family/origin is CD's proven angle; 0 hits for Nasraoui/Ebana. Keep to origins, not the 2025 family incidents.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports",
+   "https://www.cbsnews.com/news/spanish-soccer-star-lamine-yamal-the-face-of-the-new-spain-60-minutes/"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "nasraoui|equatorial guinea|ebana",
+  "key_facts_to_script": "Father Mounir Nasraoui (Moroccan), mother Sheila Ebana (Equatorial Guinea). Born Esplugues, raised Mataro.",
+  "priority": "B",
+  "n": 35,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Yamal Inherited Messi's No. 10 At Barcelona",
+  "chars": 43,
+  "star": "Yamal",
+  "angle": "rivalry/passing the torch",
+  "title_pattern": "name-first",
+  "why_it_should_work": "Messi x Yamal is the most-viewed cross-star pairing in our data (Yamal+Messi/Ronaldo edits). Verify announcement date in Aug 2025.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "inherit.{0,30}(no\\.? ?10|number 10)|yamal.{0,60}(no\\.? ?10|number 10)",
+  "key_facts_to_script": "Yamal wore 27, 19, then No.10 for 2025-26 (FC Barcelona). Check the exact date.",
+  "priority": "B",
+  "n": 36,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Why Salah Kneels After Scoring",
+  "chars": 30,
+  "star": "Salah",
+  "angle": "personal/faith",
+  "title_pattern": "'why' curiosity",
+  "why_it_should_work": "Salah has only 6 batches but is a top India/Egypt/UK name; sample shows 2 recent Shorts in 60 days = supply gap. Respectful framing only.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any / 19 Dec Liverpool v Spurs",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports",
+   "https://www.bbc.co.uk/sport/football"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "prayer|prostrat|sujood",
+  "key_facts_to_script": "Salah's sujood celebration; confirm quotes on BBC/Liverpool FC.",
+  "priority": "B",
+  "n": 37,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Saka Has Been At Arsenal Since He Was Seven",
+  "chars": 43,
+  "star": "Saka",
+  "angle": "origin",
+  "title_pattern": "name-first, age",
+  "why_it_should_work": "Saka: 1 batch (letter). Arsenal home games 28 Nov, 12 Dec, 19 Dec in the window. Photos: Arsenal academy pics via Getty/Alamy.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "28 Nov / 12 Dec / 19 Dec Arsenal home games",
+  "sources": [
+   "https://www.skysports.com/football/news/11670/13555674/arsenal-premier-league-2026-27-fixtures-and-schedule",
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting; fixtures VERIFIED this session (WebSearch/WebFetch)",
+  "dup_check_regex": "saka",
+  "key_facts_to_script": "Joined Hale End academy aged 7 (Arsenal.com).",
+  "priority": "B",
+  "n": 38,
+  "already_covered_in": [
+   "saka_letter"
+  ]
+ },
+ {
+  "working_title": "Chelsea Let Declan Rice Go At 14. Arsenal Paid £105m",
+  "chars": 52,
+  "star": "Rice",
+  "angle": "redemption",
+  "title_pattern": "contrast, 2 numbers",
+  "why_it_should_work": "Arsenal v Real Madrid 9 Dec (Rice was the hero last time). 'Released at 14' redemption angle; rice_105m exists, read it for overlap.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "9 Dec Arsenal v Real Madrid",
+  "sources": [
+   "https://www.si.com/soccer/2026-27-champions-league-dates-kickoff-times-all-league-phase-fixtures",
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "fixture VERIFIED this session (WebSearch/WebFetch); released at 14: WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "released.{0,30}chelsea",
+  "key_facts_to_script": "Released by Chelsea age 14; West Ham 2015; Arsenal £105m 2023 (record British fee at the time).",
+  "priority": "A",
+  "n": 39,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Musiala Played For England Before Choosing Germany",
+  "chars": 50,
+  "star": "Musiala",
+  "angle": "origin/choice",
+  "title_pattern": "name-first",
+  "why_it_should_work": "Fits Kane at Bayern. 1 batch only. Neutral facts, no accusation.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "musiala",
+  "key_facts_to_script": "Played England youth up to U21, switched to Germany 2021 (Bayern/BBC).",
+  "priority": "B",
+  "n": 40,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Pogba's Twin Brothers Are Footballers Too",
+  "chars": 41,
+  "star": "Pogba",
+  "angle": "family/personal",
+  "title_pattern": "name-first",
+  "why_it_should_work": "Pogba story Shorts are the all-time top in our data (169M, 16.6M: 'The Story of Pogba'). Family angle, 1 batch (pogba_ban).",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "mathias|florentin",
+  "key_facts_to_script": "Florentin and Mathias Pogba (twins), Guinea-born parents (Transfermarkt).",
+  "priority": "B",
+  "n": 41,
+  "already_covered_in": [
+   "mbappe_2022uturn"
+  ]
+ },
+ {
+  "working_title": "R9 Scored 8 At The 2002 World Cup After Knee Surgery",
+  "chars": 52,
+  "star": "Ronaldo Nazario",
+  "angle": "redemption",
+  "title_pattern": "name-first, number",
+  "why_it_should_work": "Redemption + number. 0 batches on R9. Brazil nostalgia fits Indian audience (inference).",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports",
+   "https://www.fifa.com"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "nazario|2002 world cup",
+  "key_facts_to_script": "8 goals, Golden Boot, two in the final v Germany; long knee injuries 1999-2001.",
+  "priority": "B",
+  "n": 42,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Maradona Gave Napoli Its First Two Serie A Titles",
+  "chars": 49,
+  "star": "Maradona",
+  "angle": "origin/legacy",
+  "title_pattern": "name-first",
+  "why_it_should_work": "Maradona has 8 mentions, Napoli ones are few (osimhen/kvara). Photos plentiful.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "napoli|scudetto",
+  "key_facts_to_script": "Serie A 1986-87 and 1989-90.",
+  "priority": "B",
+  "n": 43,
+  "already_covered_in": [
+   "osimhen_tiktok",
+   "kvara_war"
+  ]
+ },
+ {
+  "working_title": "Zlatan's Overhead Kick Against England Won The Puskás",
+  "chars": 53,
+  "star": "Zlatan",
+  "angle": "rare moment",
+  "title_pattern": "name-first",
+  "why_it_should_work": "0 'Zlatan' scripts as subject. Rare-moment angle, but clip risk high so use photos.",
+  "photo_clip_risk": "high",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "zlatan",
+  "key_facts_to_script": "14 Nov 2012, Sweden 4-2 England, ~30 yards; Puskas 2013.",
+  "priority": "B",
+  "n": 44,
+  "already_covered_in": [
+   "ronaldo_ep40_ibra",
+   "messi_ibra",
+   "zlatan_petition"
+  ]
+ },
+ {
+  "working_title": "Liverpool Were 3-0 Down At Half-Time In Istanbul",
+  "chars": 48,
+  "star": "Gerrard/Liverpool",
+  "angle": "comeback",
+  "title_pattern": "team-first, number",
+  "why_it_should_work": "0 'Istanbul' scripts. Liverpool audience + 19 Dec Liverpool v Spurs. Comebacks are CD's own strong class (liverpool_villarreal_comeback built).",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "19 Dec Liverpool match",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports",
+   "https://www.uefa.com"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "gerrard|istanbul",
+  "key_facts_to_script": "25 May 2005, 3-3 aet, 3-2 pens; 3-0 down at half-time.",
+  "priority": "B",
+  "n": 45,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Totti Spent 25 Years At Roma And Never Left",
+  "chars": 43,
+  "star": "Totti",
+  "angle": "origin/loyalty",
+  "title_pattern": "name-first, number",
+  "why_it_should_work": "0 Totti scripts. Loyalty/legacy story, photo-rich.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "totti",
+  "key_facts_to_script": "1992-2017 at Roma (AS Roma).",
+  "priority": "B",
+  "n": 46,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Drogba Won The 2012 Champions League With A Penalty",
+  "chars": 51,
+  "star": "Drogba",
+  "angle": "rare moment/redemption",
+  "title_pattern": "name-first",
+  "why_it_should_work": "0 Drogba scripts. Late equaliser + winning penalty v Bayern in Munich.",
+  "photo_clip_risk": "med",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "5 Dec Chelsea v Liverpool",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports",
+   "https://www.uefa.com"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "drogba",
+  "key_facts_to_script": "19 May 2012, 88' equaliser, scored the decisive penalty.",
+  "priority": "B",
+  "n": 47,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Pirlo's Panenka Against Joe Hart At Euro 2012",
+  "chars": 45,
+  "star": "Pirlo",
+  "angle": "rare moment",
+  "title_pattern": "name-first",
+  "why_it_should_work": "1 hit only (ramos_panenka2016). England audience (UK 7%).",
+  "photo_clip_risk": "med",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "pirlo",
+  "key_facts_to_script": "24 Jun 2012, QF, Italy won on penalties.",
+  "priority": "B",
+  "n": 48,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Iniesta's Secret Message After The 2010 World Cup Goal",
+  "chars": 54,
+  "star": "Iniesta",
+  "angle": "emotion/respect",
+  "title_pattern": "name-first, secret",
+  "why_it_should_work": "Emotion/respect is a strong recent angle ('Lamine Yamal had to apologize to Lewa' 5.1M, 'Messi & Enzo's Friendship' 5.2M). Iniesta undershirt tribute to Dani Jarque; 0 'Jarque' in our batches.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any / Spain just won WC 2026",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports",
+   "https://www.fifa.com"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "jarque|iniesta",
+  "key_facts_to_script": "116' winner v Netherlands, undershirt message for Dani Jarque (Espanyol captain, died 2009).",
+  "priority": "A",
+  "n": 49,
+  "already_covered_in": [
+   "messi_clasico_2014_hattrick",
+   "topics_nov13_27/messi",
+   "topics_nov13_27/finish/messi_clasico_2014_hattrick"
+  ]
+ },
+ {
+  "working_title": "Cruyff Turn Was Born Against Sweden At The 1974 World Cup",
+  "chars": 57,
+  "star": "Cruyff",
+  "angle": "origin/history",
+  "title_pattern": "name-first",
+  "why_it_should_work": "0 Cruyff scripts; 'origin of X' (like ronaldo_siuu) is a known CD angle.",
+  "photo_clip_risk": "med",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "cruyff",
+  "key_facts_to_script": "1974 World Cup, Netherlands v Sweden.",
+  "priority": "B",
+  "n": 50,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Rooney Scored At 16 To End Arsenal's Unbeaten Run",
+  "chars": 49,
+  "star": "Rooney",
+  "angle": "record/age",
+  "title_pattern": "name-first, age",
+  "why_it_should_work": "Arsenal v Man United 19 Dec tie. Age hook.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "19 Dec 2026 Arsenal v Man United",
+  "sources": [
+   "https://www.skysports.com/football/news/11670/13555674/arsenal-premier-league-2026-27-fixtures-and-schedule",
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "fixture VERIFIED this session (WebSearch/WebFetch); goal: WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "unbeaten run|ended arsenal",
+  "key_facts_to_script": "19 Oct 2002, Everton 2-1 Arsenal, ended 30-match unbeaten league run; Rooney 16y 360d.",
+  "priority": "B",
+  "n": 51,
+  "already_covered_in": [
+   "messi_saudi2022"
+  ]
+ },
+ {
+  "working_title": "Dembélé Won The Ballon d'Or After Years Of Injuries",
+  "chars": 51,
+  "star": "Dembele",
+  "angle": "redemption",
+  "title_pattern": "name-first",
+  "why_it_should_work": "Redemption. 2025 winner (Yamal second). Dembele has 2 mentions.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any / Ballon d'Or aftermath",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "dembele|dembélé",
+  "key_facts_to_script": "22 Sep 2025 ceremony, Paris. Do not quote injury days without a source.",
+  "priority": "B",
+  "n": 52,
+  "already_covered_in": [
+   "messi_chelsea_2018_100goals",
+   "ballondor_london26",
+   "topics_nov13_27/whatif",
+   "topics_nov13_27/messi"
+  ]
+ },
+ {
+  "working_title": "Rodri Tore His ACL, Then Won The World Cup's Golden Ball",
+  "chars": 56,
+  "star": "Rodri",
+  "angle": "redemption",
+  "title_pattern": "name-first, contrast",
+  "why_it_should_work": "ACL Sep 2024, BdO 2024, WC 2026 Golden Ball (ESPN). Redemption + numbers. Rodri: only 'boycott' batches.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "WC 2026 aftermath",
+  "sources": [
+   "https://global.espn.com/football/story/_/id/49024760/2026-world-cup-awards-golden-ball-golden-boot-golden-glove-trophies-revealed",
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch) (Golden Ball); ACL: WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "\\bACL\\b|golden ball.{0,60}rodri",
+  "key_facts_to_script": "Sept 2024 ACL (v Arsenal), Ballon d'Or 2024.",
+  "priority": "A",
+  "n": 53,
+  "already_covered_in": [
+   "ronaldo_kvara_message",
+   "neymar_sevengames",
+   "recap_rodrygo_week"
+  ]
+ },
+ {
+  "working_title": "Norway Reached Its First World Cup Since 1998",
+  "chars": 45,
+  "star": "Haaland",
+  "angle": "record/history",
+  "title_pattern": "team-first, year",
+  "why_it_should_work": "SI calls Haaland Norway's 'new World Cup hero'. Last Norway WC was 1998 (K). Pairs with Braut item.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "WC 2026 aftermath",
+  "sources": [
+   "https://www.si.com/onsi/athlete-lifestyle/who-are-erling-haaland-s-parents-meet-the-2-athletes-behind-norway-s-new-world-cup-hero-01kxccdebw00"
+  ],
+  "fact_status": "VERIFIED this session (WebSearch/WebFetch) (participation) / WELL-DOCUMENTED, check number before scripting (1998)",
+  "dup_check_regex": "first world cup since 1998",
+  "key_facts_to_script": "Norway at WC 2026; previous 1998. Do not state results.",
+  "priority": "B",
+  "n": 54,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "Brazil Still Has More World Cups Than Anyone: Five",
+  "chars": 50,
+  "star": "Brazil",
+  "angle": "record",
+  "title_pattern": "team-first",
+  "why_it_should_work": "Spain just won its second; Brazil 5 (1958,62,70,94,2002). Brazil/India audience. Quiz style.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports",
+   "https://www.fifa.com"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "five world cups",
+  "key_facts_to_script": "Brazil 5, Germany 4, Italy 4, Argentina 3 (after 2026, Spain 2).",
+  "priority": "B",
+  "n": 55,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "How Many Ballon d'Ors Do Messi And Ronaldo Have?",
+  "chars": 48,
+  "star": "Messi/Ronaldo",
+  "angle": "quiz",
+  "title_pattern": "question + numbers",
+  "why_it_should_work": "Quiz/ranking primary-angle median 2.15M (n=4, tiny sample); explicit comment-bait question. Messi 8, Ronaldo 5.",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "five.{0,20}ballon|8 ballon|eight ballon",
+  "key_facts_to_script": "Messi 8 (2009,10,11,12,15,19,21,23), Ronaldo 5. Check the 2025 and 2026 winners.",
+  "priority": "B",
+  "n": 56,
+  "already_covered_in": [
+   "messi_farewell_hype",
+   "ronaldo_noworldcup_control",
+   "messi_ballondor2023",
+   "messi_napkin",
+   "ronaldo_noworldcup",
+   "ronaldo_ballonboycott"
+  ]
+ },
+ {
+  "working_title": "Guess The Star From His Childhood Photo",
+  "chars": 39,
+  "star": "Messi/Ronaldo/Yamal",
+  "angle": "quiz/childhood",
+  "title_pattern": "'guess' + photo",
+  "why_it_should_work": "Format test #1: photo-only reveal in the final beat. Childhood photos are the one thing our photo pipeline sources cheaply. Run max 2, standalone (no Part N).",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "any",
+  "sources": [
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "format test, no facts at risk",
+  "dup_check_regex": "guess the (star|player|footballer)",
+  "key_facts_to_script": "Use only licensed/agency childhood photos; reveal on last beat.",
+  "priority": "C",
+  "n": 57,
+  "already_covered_in": []
+ },
+ {
+  "working_title": "PSG Beat Inter 5-0 In The 2025 Champions League Final",
+  "chars": 53,
+  "star": "PSG/Dembele",
+  "angle": "record/number",
+  "title_pattern": "club-first, score",
+  "why_it_should_work": "8 Dec Aston Villa v PSG (UCL MD6, SI); PSG named Club of the Year 2026 (beIN). Biggest final margin (K). Photos plentiful.",
+  "photo_clip_risk": "med",
+  "evergreen_or_dated": "dated",
+  "date_tie": "8 Dec 2026 Aston Villa v PSG",
+  "sources": [
+   "https://www.si.com/soccer/2026-27-champions-league-dates-kickoff-times-all-league-phase-fixtures",
+   "https://www.beinsports.com/en-us/soccer/articles/live-ballon-d-or-2026-winners-and-all-awards-2026-10-26?Vz=Qx"
+  ],
+  "fact_status": "fixture+Club of Year VERIFIED this session (WebSearch/WebFetch); 5-0 final: WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "psg.{0,60}(5.0|inter)",
+  "key_facts_to_script": "31 May 2025 Munich, 5-0 v Inter, PSG first UCL title. Check 'biggest margin' wording on UEFA.",
+  "priority": "B",
+  "n": 58,
+  "already_covered_in": [
+   "messi_psg_clubworldcup_40",
+   "mbappe_lyon_four_in_13",
+   "topics_nov13_27/other"
+  ]
+ },
+ {
+  "working_title": "Mbappé Won The Kopa At 19. Yamal Won It At 17",
+  "chars": 45,
+  "star": "Mbappe/Yamal",
+  "angle": "rivalry/record",
+  "title_pattern": "two-star + two ages",
+  "why_it_should_work": "Multi-star titles: 1.81M median vs 311K single-star in our sample; Kopa 2026 win for Yamal is in the news (beIN).",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "dated",
+  "date_tie": "Ballon d'Or aftermath",
+  "sources": [
+   "https://www.beinsports.com/en-us/soccer/articles/live-ballon-d-or-2026-winners-and-all-awards-2026-10-26?Vz=Qx",
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "Kopa 2026 VERIFIED this session (WebSearch/WebFetch); ages/years WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "kopa",
+  "key_facts_to_script": "Mbappe Kopa Dec 2018 (age 19); Yamal first Kopa Oct 2024 (age 17), then 2025 and 2026: our own batch yamal_henry_kopa_jab says record third in a row (beIN lists 2026). Overlaps that batch: use ages only, no Henry jab.",
+  "priority": "B",
+  "n": 59,
+  "already_covered_in": [
+   "yamal_henry_kopa_jab",
+   "ronaldo_ferre_liar_boycott"
+  ]
+ },
+ {
+  "working_title": "Ancelotti Won The Champions League Seven Times",
+  "chars": 46,
+  "star": "Ancelotti",
+  "angle": "record/number",
+  "title_pattern": "name-first, number",
+  "why_it_should_work": "Ancelotti coaches Brazil (named Neymar 18 May 2026: Al Jazeera). 2 as player (Milan 1989, 1990) + 5 as manager (2003, 2007, 2014, 2022, 2024).",
+  "photo_clip_risk": "low",
+  "evergreen_or_dated": "evergreen",
+  "date_tie": "Brazil / WC aftermath",
+  "sources": [
+   "https://www.aljazeera.com/amp/sports/2026/5/18/brazil-call-up-neymar-to-world-cup-2026-squad",
+   "Wikipedia + club/UEFA/FIFA match reports"
+  ],
+  "fact_status": "Brazil job VERIFIED this session (WebSearch/WebFetch); titles WELL-DOCUMENTED, check number before scripting",
+  "dup_check_regex": "ancelotti",
+  "key_facts_to_script": "Verify count on UEFA.com.",
+  "priority": "B",
+  "n": 60,
+  "already_covered_in": [
+   "vinicius_supercup_hattrick_2024",
+   "topics_nov13_27/other"
+  ]
+ }
+]

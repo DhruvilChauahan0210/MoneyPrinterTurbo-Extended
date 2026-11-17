@@ -1,0 +1,429 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Thibaut Courtois",
+      "a real photograph of Karim Benzema",
+      "a real photograph of Kylian Mbappe"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "WHERE DID PARIS COLLAPSE?",
+    "hook_cover_term": "Lionel Messi dejected for PSG in 2022",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "DID MESSI'S MISS DECIDE THE TIE? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Thibaut Courtois",
+      "a real photograph of Karim Benzema",
+      "a real photograph of Kylian Mbappe"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Messi's penalty was saved by Courtois, and Real Madrid scored three in seventeen minutes. February two thousand twenty-two, Parc des Princes, PSG against Real Madrid. Thibaut Courtois saved Messi's second-half penalty. Mbappe still won it for PSG in the ninety-fourth minute. The second leg was at the Bernabeu. Karim Benzema scored in the sixty-first, seventy-sixth and seventy-eighth minutes. Real Madrid won three-one, three-two on aggregate. Did that missed penalty cost PSG the tie?",
+    "video_subject": "Lionel Messi's second-half penalty was saved by Thibaut Courtois in PSG's 1-0 first-leg win over Real Madrid in February 2022, then Karim Benzema scored three goals in 17 minutes (61, 76, 78) as Madrid won 3-1 at the Bernabeu and 3-2 on aggregate.",
+    "video_terms": "messi, courtois, benzema, psg, real madrid, champions league, 2022, mbappe, penalty",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Messi's penalty was saved by Courtois, and Real Madrid scored three in seventeen minutes.",
+        "visual": "close up of Lionel Messi in PSG kit looking dejected",
+        "images": [
+          "Lionel Messi PSG 2022",
+          "Messi Courtois penalty"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b08/img-7626da13f7a94d39272c5a900e22266e.jpg"
+      },
+      {
+        "says": "February two thousand twenty-two, Parc des Princes, PSG against Real Madrid.",
+        "visual": "Parc des Princes stadium PSG vs Real Madrid",
+        "images": [
+          "PSG Real Madrid 2022",
+          "Parc des Princes Champions League"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Thibaut Courtois saved Messi's second-half penalty.",
+        "visual": "Thibaut Courtois saving a penalty from Lionel Messi",
+        "images": [
+          "Courtois saves Messi penalty",
+          "Thibaut Courtois Real Madrid"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Mbappe still won it for PSG in the ninety-fourth minute.",
+        "visual": "Kylian Mbappe celebrating a late goal for PSG",
+        "images": [
+          "Kylian Mbappe PSG",
+          "Mbappe Real Madrid 2022"
+        ],
+        "clips": []
+      },
+      {
+        "says": "The second leg was at the Bernabeu.",
+        "visual": "Santiago Bernabeu stadium night Champions League",
+        "images": [
+          "Santiago Bernabeu stadium",
+          "Bernabeu Champions League night"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Karim Benzema scored in the sixty-first, seventy-sixth and seventy-eighth minutes.",
+        "visual": "Karim Benzema celebrating a hat-trick for Real Madrid",
+        "images": [
+          "Karim Benzema Real Madrid",
+          "Benzema hat-trick PSG"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Real Madrid won three-one, three-two on aggregate.",
+        "visual": "Real Madrid players celebrating at the Bernabeu",
+        "images": [
+          "Real Madrid celebrate PSG Bernabeu",
+          "Real Madrid players celebrating Champions League 2022"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Did that missed penalty cost PSG the tie?",
+        "visual": "Lionel Messi hands on head after a missed penalty",
+        "images": [
+          "Lionel Messi PSG penalty",
+          "Messi disappointed PSG"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Lionel Messi's second-half penalty was saved by Thibaut Courtois in PSG's 1-0 first-leg win over Real Madrid in February 2022, then Karim Benzema scored three goals in 17 minutes (61, 76, 78) as Madrid won 3-1 at the Bernabeu and 3-2 on aggregate.",
+      "video_script": "Messi's penalty was saved by Courtois, and Real Madrid scored three in seventeen minutes. February two thousand twenty-two, Parc des Princes, PSG against Real Madrid. Thibaut Courtois saved Messi's second-half penalty. Mbappe still won it for PSG in the ninety-fourth minute. The second leg was at the Bernabeu. Karim Benzema scored in the sixty-first, seventy-sixth and seventy-eighth minutes. Real Madrid won three-one, three-two on aggregate. Did that missed penalty cost PSG the tie?",
+      "video_terms": "messi, courtois, benzema, psg, real madrid, champions league, 2022, mbappe, penalty",
+      "hook_text": "WHERE DID PARIS COLLAPSE?",
+      "cta_text": "DID MESSI'S MISS DECIDE THE TIE? 👇",
+      "beat_plan": [
+        {
+          "says": "Messi's penalty was saved by Courtois, and Real Madrid scored three in seventeen minutes.",
+          "visual": "close up of Lionel Messi in PSG kit looking dejected",
+          "images": [
+            "Lionel Messi PSG 2022",
+            "Messi Courtois penalty"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b01/img-3fae82ea85a5780c52cfa3570a600b81.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b01/img-2ad9047b3d07885de34c113913e6c15f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b01/img-d0461b5872c069af2ff26d010c45812a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b01/img-071c1ed2c23c76c932674d519e8e5d2a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b01/img-7caa7a4586d2e8e6c3edf0fe4e0c184d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b01/img-91d8a574b1bece05eebfaa38ec17caa6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b01/img-2310604ed749975931e197f90dd2439c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b01/img-c2c36210656be11757204711202a1a1a.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b08/img-7626da13f7a94d39272c5a900e22266e.jpg"
+        },
+        {
+          "says": "February two thousand twenty-two, Parc des Princes, PSG against Real Madrid.",
+          "visual": "Parc des Princes stadium PSG vs Real Madrid",
+          "images": [
+            "PSG Real Madrid 2022",
+            "Parc des Princes Champions League"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b02/img-0485a1c497452a571a42f528d2d4a5ca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b02/img-85d5216c447a740bbed8d96b5a76fe79.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b02/img-06936bff71035b85b52bdc0e2e012731.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b02/img-7523e9d5106e2a6ba8fe752674fc1bc2.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b02/img-06936bff71035b85b52bdc0e2e012731.jpg",
+          "url": "https://icdn.psgtalk.com/wp-content/uploads/2020/07/Parc-des-Princes-PSG-vs-Napoli-Champions-League-2018.jpg"
+        },
+        {
+          "says": "Thibaut Courtois saved Messi's second-half penalty.",
+          "visual": "Thibaut Courtois saving a penalty from Lionel Messi",
+          "images": [
+            "Courtois saves Messi penalty",
+            "Thibaut Courtois Real Madrid"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b03/img-46bfd70ce51cb8ee26f88cce580a871a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b03/img-b8f1990d6f8f4b035bde02c7891ec246.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b03/img-a44d058c811e37ac557168563a7847e5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b03/img-b4cf214fd0e164026f8cabdba26eded5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b03/img-88b71332f48713d34665b63aeb1a9530.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b03/img-6ba3036a944ad4b7d7a8a165bfb62875.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b03/img-35441d272249c8c3683186dfbdbf69c9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b03/img-8541e0ca4e7fbba62916ef8977252872.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b03/shot_ad302767da.mp4",
+          "url": "https://www.youtube.com/watch?v=OdPvIJ_Agvk",
+          "start": 12.5,
+          "len": 6.0
+        },
+        {
+          "says": "Mbappe still won it for PSG in the ninety-fourth minute.",
+          "visual": "Kylian Mbappe celebrating a late goal for PSG",
+          "images": [
+            "Kylian Mbappe PSG",
+            "Mbappe Real Madrid 2022"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b04/img-19f7c3e3574cba7b2835f30d5db99ce4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b04/img-bd05ed43029d2d8c9dac07ff52a28abb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b04/img-98883fbb2e8aaaffddfa567b8b0d3aea.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b04/img-185b551c84808562b5593aca6cdc23f7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b04/img-6558dae121408517779bbddc798e0b62.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b04/img-a18d1bce223a19d9415c270102996e13.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b04/img-619e0797fadc3f2e9dd30639433ab746.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b04/img-4065a41d07a05a08befb0483793d3b04.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b04/img-bd05ed43029d2d8c9dac07ff52a28abb.jpg",
+          "url": "https://icdn.psgtalk.com/wp-content/uploads/2023/11/kylian-mbappe-psg-newcastle-ucl-2023.jpg"
+        },
+        {
+          "says": "The second leg was at the Bernabeu.",
+          "visual": "Santiago Bernabeu stadium night Champions League",
+          "images": [
+            "Santiago Bernabeu stadium",
+            "Bernabeu Champions League night"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b05/img-01c688c4775839bc4cb2a436aaa4d0e4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b05/img-8de2a7b5db1d40405c95eb3460301a25.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b05/img-339fb41e9bbb0d0c94347fbc30a9277c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b05/img-943bb20b3f796e51196f75fa889489ed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b05/img-6c7ceca0f7eb27c6421d5396ba1eb343.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b05/img-d6ee78f8e92bcc9102d6bb608d23e901.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b05/img-7fa5fc2c2bf93e691a22dca4d7f8c58a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b05/img-b7786cdc81a4b36f0a17b2274c1caf4d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b05/img-339fb41e9bbb0d0c94347fbc30a9277c.jpg",
+          "url": "https://i.pinimg.com/originals/dd/fb/78/ddfb78f731f0145d76dfe4ed7a3c2466.jpg"
+        },
+        {
+          "says": "Karim Benzema scored in the sixty-first, seventy-sixth and seventy-eighth minutes.",
+          "visual": "Karim Benzema celebrating a hat-trick for Real Madrid",
+          "images": [
+            "Karim Benzema Real Madrid",
+            "Benzema hat-trick PSG"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b06/img-afb8ca8d9af54a057058b2fa137dd011.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b06/img-06f08b51b6d03b8419322ed568ff9a74.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b06/img-b5bbd902ba6312a0a572524e182438f5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b06/img-87e42425adecc7c08dbf9e7acd29e654.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b06/img-4d4734ce8e3f19d24d3b795105c885b1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b06/img-fc2f84fde9dabff2942ecea77cae593a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b06/img-f5dc23dd1583712784d81c70cdee70e0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b06/img-0af7eba123926ac8199dfb3d689bb265.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b06/shot_cecd3574fa.mp4",
+          "url": "https://www.youtube.com/watch?v=KjC2ywJpulI",
+          "start": 88.0,
+          "len": 6.0
+        },
+        {
+          "says": "Real Madrid won three-one, three-two on aggregate.",
+          "visual": "Real Madrid players celebrating at the Bernabeu",
+          "images": [
+            "Real Madrid celebrate PSG Bernabeu",
+            "Real Madrid players celebrating Champions League 2022"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b07/img-c6213f659f0c8a4b10bd57f2c916ab6f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b07/img-226d3bb0be92d206cfe3fe707db03e9c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b07/img-25df848ed674543fa4858e7dfc478f14.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b07/img-ed6bbf7927db1edf9cedf6ea8a98cfde.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b07/img-352b12272db5795005250dd95d4cfbd9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b07/img-d1464cfe7b14d3a8b23a1e8214f74209.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b07/img-fd338cd30f3ae437a809f2aa2f7b5875.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b07/img-9bdd14228bc886fb35d3e83a3143c420.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b07/img-c6213f659f0c8a4b10bd57f2c916ab6f.jpg",
+          "url": "https://news.cgtn.com/news/2024-05-09/Real-Madrid-the-Champions-League-zombie-that-won-t-accept-death-1tsmhnVJCRa/img/2d6b2b597ca249058f68a6f3fef0b801/2d6b2b597ca249058f68a6f3fef0b801.jpeg"
+        },
+        {
+          "says": "Did that missed penalty cost PSG the tie?",
+          "visual": "Lionel Messi hands on head after a missed penalty",
+          "images": [
+            "Lionel Messi PSG penalty",
+            "Messi disappointed PSG"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b08/img-1522f6522e08f2c9b5305e92b2ce5e01.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b08/img-7626da13f7a94d39272c5a900e22266e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b08/img-23550644d8e086791f83e7a37b14c429.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b08/img-cad76d58c6fa71f655be735472864682.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b08/img-2310604ed749975931e197f90dd2439c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b08/img-91d8a574b1bece05eebfaa38ec17caa6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b08/img-c2c36210656be11757204711202a1a1a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b08/img-3497e9ee29e419d5b58ad672bd416703.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/lionel_messi_s_second_half_penalty_was_s/b08/img-1522f6522e08f2c9b5305e92b2ce5e01.jpg",
+          "url": "https://e0.365dm.com/23/03/1600x900/skysports-lionel-messi-psg_6094508.jpg?20230319200411"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

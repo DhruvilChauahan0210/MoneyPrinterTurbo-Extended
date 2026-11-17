@@ -1,0 +1,453 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Cristiano Ronaldo playing football",
+      "a real photograph of Cristiano Ronaldo playing for Portugal",
+      "a real photograph of Lamine Yamal"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "THE KID WHO COMFORTED HIM",
+    "hook_cover_term": "Cristiano Ronaldo crying in a Portugal shirt",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "END OF AN ERA? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Cristiano Ronaldo",
+      "a real photograph of Cristiano Ronaldo playing football",
+      "a real photograph of Cristiano Ronaldo playing for Portugal",
+      "a real photograph of Lamine Yamal"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Cristiano Ronaldo said this would be his final World Cup. In the last sixteen, Portugal faced Spain in Texas. In the ninety-first minute, Mikel Merino came off the bench and scored. Spain won one-nil, and Ronaldo left in tears. He went to thank Portugal's fans, and Spain's teenage star Lamine Yamal came over to comfort him. Two weeks later, Spain beat Messi's Argentina in the final too. One generation ended, and another began. Was this the end of an era?",
+    "video_subject": "Cristiano Ronaldo's last World Cup ended in a 1-0 last-16 defeat to Spain in 2026, Mikel Merino scoring in the 91st minute, and Lamine Yamal comforted him afterwards",
+    "video_terms": "Ronaldo last World Cup Spain 2026 Merino, Yamal comforts Ronaldo, Portugal out last 16",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Cristiano Ronaldo said this would be his final World Cup.",
+        "visual": "Cristiano Ronaldo in a Portugal shirt",
+        "images": [
+          "Cristiano Ronaldo Portugal 2026",
+          "Ronaldo Portugal World Cup 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "In the last sixteen, Portugal faced Spain in Texas.",
+        "visual": "Portugal against Spain",
+        "images": [
+          "Portugal Spain World Cup 2026",
+          "Portugal vs Spain"
+        ],
+        "clips": []
+      },
+      {
+        "says": "In the ninety-first minute, Mikel Merino came off the bench and scored.",
+        "visual": "Mikel Merino celebrating for Spain",
+        "images": [
+          "Mikel Merino goal Portugal",
+          "Mikel Merino Spain celebration"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Spain won one-nil, and Ronaldo left in tears.",
+        "visual": "Cristiano Ronaldo crying",
+        "images": [
+          "Cristiano Ronaldo crying Portugal",
+          "Ronaldo tears World Cup"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He went to thank Portugal's fans,",
+        "visual": "Cristiano Ronaldo applauding fans",
+        "images": [
+          "Ronaldo applauds fans Portugal",
+          "Cristiano Ronaldo thanks fans"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and Spain's teenage star Lamine Yamal came over to comfort him.",
+        "visual": "Lamine Yamal hugging Cristiano Ronaldo",
+        "images": [
+          "Lamine Yamal Ronaldo hug",
+          "Yamal comforts Ronaldo"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Two weeks later, Spain beat Messi's Argentina in the final too.",
+        "visual": "Spain players celebrating with the World Cup trophy",
+        "images": [
+          "Spain World Cup 2026 champions",
+          "Spain win World Cup 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "One generation ended, and another began.",
+        "visual": "Lamine Yamal in a Spain shirt",
+        "images": [
+          "Lamine Yamal Spain",
+          "Lamine Yamal Spain 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Was this the end of an era?",
+        "visual": "close up of Cristiano Ronaldo",
+        "images": [
+          "Cristiano Ronaldo close up",
+          "Cristiano Ronaldo face"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Cristiano Ronaldo's last World Cup ended in a 1-0 last-16 defeat to Spain in 2026, Mikel Merino scoring in the 91st minute, and Lamine Yamal comforted him afterwards",
+      "video_script": "Cristiano Ronaldo said this would be his final World Cup. In the last sixteen, Portugal faced Spain in Texas. In the ninety-first minute, Mikel Merino came off the bench and scored. Spain won one-nil, and Ronaldo left in tears. He went to thank Portugal's fans, and Spain's teenage star Lamine Yamal came over to comfort him. Two weeks later, Spain beat Messi's Argentina in the final too. One generation ended, and another began. Was this the end of an era?",
+      "video_terms": "Ronaldo last World Cup Spain 2026 Merino, Yamal comforts Ronaldo, Portugal out last 16",
+      "hook_text": "THE KID WHO COMFORTED HIM",
+      "cta_text": "END OF AN ERA? 👇",
+      "beat_plan": [
+        {
+          "says": "Cristiano Ronaldo said this would be his final World Cup.",
+          "visual": "Cristiano Ronaldo in a Portugal shirt",
+          "images": [
+            "Cristiano Ronaldo Portugal 2026",
+            "Ronaldo Portugal World Cup 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b01/img-00fc1f5c65e5606df38cf0e9de77d807.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b01/img-2087cb0042509b098c6e853a94c1c33d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b01/img-49cd73b6381ee1a2801732bdb267ace0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b01/img-0745a6a9c2fa61c30ea0669058e5bc5e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b01/img-90f2291c62871d937080245fea922713.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b01/img-4138d135f88f9a68c53cafc2e455dfa6.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b01/img-2087cb0042509b098c6e853a94c1c33d.jpg",
+          "url": "https://athlonsports.com/.image/MjY6MDAwMDAwMDAxMTI0NTYy/cristiano-ronaldo-portugal.jpg?io=1&profile=w1536&ar=4-3"
+        },
+        {
+          "says": "In the last sixteen, Portugal faced Spain in Texas.",
+          "visual": "Portugal against Spain",
+          "images": [
+            "Portugal Spain World Cup 2026",
+            "Portugal vs Spain"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b02/img-06e6d6d4cf019ab2693d51bd04dfd5d0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b02/img-8a052bbbe8248d4787fd126ee2118f19.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b02/img-6c57d115e9b41f7a08c7f4de12fec7b2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b02/img-6dcc6ee8c70764336789a2f9de7298e5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b02/img-1989e73899c77e06025ea9f1adedf4bb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b02/img-06a663b4dafe8186ed8183abe7535fb9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b02/img-641ea3237477558b49fa42b4bda2de7b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b02/img-79f637d2cb5acb31238098dfdd69dbd6.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b02/img-6dcc6ee8c70764336789a2f9de7298e5.jpg",
+          "url": "https://ss-i.thgim.com/public/incoming/3tupnw/article69668532.ece/alternates/LANDSCAPE_1200/AFP__20250606__49GB4CP__v1__HighRes__FootballUefaNationsLeagueFinalPortugalVSpain.jpg"
+        },
+        {
+          "says": "In the ninety-first minute, Mikel Merino came off the bench and scored.",
+          "visual": "Mikel Merino celebrating for Spain",
+          "images": [
+            "Mikel Merino goal Portugal",
+            "Mikel Merino Spain celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b03/img-b80413a2c1529fcb73fd259c15de6271.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b03/img-52fdc258d9e10dd779698d28744c6610.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b03/img-247511854e8b92259ae67102a489df99.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b03/img-9aff014e984d682a23c14410b4b07588.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b03/img-1bc20df3367f8858a45fbdc1a252ad9e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b03/img-c588d7a2213dc9ed0d730ee453ab999f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b03/img-d2bc8885aa634cd3bf68a13deac5297a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b03/img-b99d6fa049c7e3277ddf65fc88fc1cb9.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b03/img-52fdc258d9e10dd779698d28744c6610.jpg",
+          "url": "https://dailycannon.com/static/uploads/1/2024/08/spain-v-germany-quarter-final-uefa-euro-2024-1-scaled-e1722677602415.jpg"
+        },
+        {
+          "says": "Spain won one-nil, and Ronaldo left in tears.",
+          "visual": "Cristiano Ronaldo crying",
+          "images": [
+            "Cristiano Ronaldo crying Portugal",
+            "Ronaldo tears World Cup"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b04/img-6ffb6277ec8684c2bc40956a27467ade.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b04/img-963140abe047d6f6eb510603aa39ccc8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b04/img-27874b7dc0dc35a341ccd09a9f7631ac.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b04/img-1f1e625c25fa68fb888f58fe0b1cc94a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b04/img-f75b8cdf1a203e3fa981ea30bdcb1009.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b04/img-ef5222315fe30ee8fab15b54764b3ce4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b04/img-e64affb058f2c9afb09fa3534732555b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b04/img-9a74e1539d13d56fe070597b9bc452e5.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b04/img-963140abe047d6f6eb510603aa39ccc8.jpg",
+          "url": "https://img-cdn.publive.online/fit-in/1200x675/stackumbrella/media/media_files/2026/07/07/cristiano-ronaldo-final-world-cup-2026-07-07-11-29-06.png"
+        },
+        {
+          "says": "He went to thank Portugal's fans,",
+          "visual": "Cristiano Ronaldo applauding fans",
+          "images": [
+            "Ronaldo applauds fans Portugal",
+            "Cristiano Ronaldo thanks fans"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b05/img-dcf10bb7f7c5c4afe1bef6af9301eee0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b05/img-03ffc3988164d57f61ee6dbe32b49cbf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b05/img-f082dc567411b1abcbdabe456d6dd7e4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b05/img-7f4a379693e33aa1fbbb981bc365057f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b05/img-2708e9eba8afcb95a4f388a45725334a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b05/img-b8c91e3eb7a3e24686dc682e5bda9a40.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b05/img-89287b2efe3c9bd879fbce298deb617e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b05/img-ca7ccaa89c355e2e9f72ff8416e6d217.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b05/img-7f4a379693e33aa1fbbb981bc365057f.jpg",
+          "url": "https://kuwaittimes.com/kuwaittimes/uploads/images/2026/06/24/407150.jpg"
+        },
+        {
+          "says": "and Spain's teenage star Lamine Yamal came over to comfort him.",
+          "visual": "Lamine Yamal hugging Cristiano Ronaldo",
+          "images": [
+            "Lamine Yamal Ronaldo hug",
+            "Yamal comforts Ronaldo"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b06/img-0a703329057a96b4c54d53f54f86b327.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b06/img-0518e6d94bb1914d60aba17ab8dabf4b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b06/img-6733a9f5e3e458f567ed3994b28a37d1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b06/img-680e156f20a28a0e7190d6355470b578.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b06/img-4144d926ff20784ca8a110d63f107ef3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b06/img-ae7cc100270d2e0a6ca88bf5f75fa7b8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b06/img-12b5a7b5898be0b2d60d1815e925afd8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b06/img-0a1b89831fad10cf0f550bcd652194b2.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b06/img-0a703329057a96b4c54d53f54f86b327.jpg",
+          "url": "https://images.timesnownews.com/thumb/msid-154953647,thumbsize-123622,width-1280,height-720,resizemode-75/154953647.jpg"
+        },
+        {
+          "says": "Two weeks later, Spain beat Messi's Argentina in the final too.",
+          "visual": "Spain players celebrating with the World Cup trophy",
+          "images": [
+            "Spain World Cup 2026 champions",
+            "Spain win World Cup 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b07/img-f6b9b326f18d9f99d95447a90ca53fbe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b07/img-4e38c81e3695da7d57948b239e082eda.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b07/img-eaea310d6a44f58609dcc44faf2b28d6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b07/img-3a43721c27298c97e1f56399415ff1b5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b07/img-fcb1fec314ab88c3ecc3491366918e2f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b07/img-bf8ada1f202fe095bd457ba76642cc08.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b07/img-c14ae170a5172f2cc93ca3f7f11c4956.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b07/img-b1f6e22fb2be35049d447e6d7b202f02.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b07/img-eaea310d6a44f58609dcc44faf2b28d6.jpg",
+          "url": "https://www.aljazeera.com/wp-content/uploads/2024/07/AP24196771442982-1721020636.jpg?resize=770,513&quality=80"
+        },
+        {
+          "says": "One generation ended, and another began.",
+          "visual": "Lamine Yamal in a Spain shirt",
+          "images": [
+            "Lamine Yamal Spain",
+            "Lamine Yamal Spain 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b08/img-c0eb03cc1c4bbfac3b9732ce113f8d19.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b08/img-5e4f1215a145364de54cca9cd65b3f88.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b08/img-8e3c28d23dc454412dc3a35799ab62e9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b08/img-2236a43a5a4a51939f1061b8de68764c.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b08/img-c0eb03cc1c4bbfac3b9732ce113f8d19.jpg",
+          "url": "https://assets.khelnow.com/news/uploads/2025/07/Lamine-Yamal-of-Spain-Getty-2048x1365.jpeg"
+        },
+        {
+          "says": "Was this the end of an era?",
+          "visual": "close up of Cristiano Ronaldo",
+          "images": [
+            "Cristiano Ronaldo close up",
+            "Cristiano Ronaldo face"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b09/img-bd24eecb0d8335840253b65342fae385.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b09/img-6266892056fdcbb68c93efe42cd108e7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b09/img-0c8a49828c868978d6a6afe745d6b5f5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b09/img-9d4f5ab07d16ae499d26cec6101cae62.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b09/img-08e7cc6234aa711077759cb06fec3810.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b09/img-a31d78e9feb6baff36b814e61444f679.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b09/img-d9e4aa2ae7e143579b4db4e942b9b7c8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b09/img-44767f966db33f7491df8d5b057fdc5d.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/cristiano_ronaldo_s_last_world_cup_ended/b09/img-0c8a49828c868978d6a6afe745d6b5f5.jpg",
+          "url": "https://wallpaperbat.com/img/139335454-cristiano-ronaldo-face-closeup.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

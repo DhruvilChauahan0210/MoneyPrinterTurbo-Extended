@@ -1,0 +1,444 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Mohamed Salah",
+      "a real photograph of Mohamed Salah playing football",
+      "a real photograph of Trabzonspor players"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "NOBODY SAW THIS COMING",
+    "hook_cover_term": "Mohamed Salah celebrating a goal",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "STILL WORLD CLASS? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Mohamed Salah",
+      "a real photograph of Mohamed Salah playing football",
+      "a real photograph of Trabzonspor players"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Mohamed Salah humiliated Turkey's champions. Weeks after joining Trabzonspor, he faced Galatasaray. He scored after four minutes, set up Noah Saviolo, and scored again just before half-time. Galatasaray's coach Okan Buruk was sent to the stands, and Salah completed his hat-trick in the eightieth minute. Trabzonspor won four-nil, Galatasaray's first defeat of the season. Is Salah still one of the best in the world?",
+    "video_subject": "Mohamed Salah scored a hat-trick and set up another as Trabzonspor beat champions Galatasaray 4-0 on 19 September 2026, Galatasaray's first defeat of the season",
+    "video_terms": "Salah hat-trick Trabzonspor Galatasaray 4-0 September 2026, Okan Buruk sent off",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Mohamed Salah humiliated Turkey's champions.",
+        "visual": "Mohamed Salah celebrating",
+        "images": [
+          "Mohamed Salah Trabzonspor",
+          "Mohamed Salah celebration"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Weeks after joining Trabzonspor, he faced Galatasaray.",
+        "visual": "Mohamed Salah in Trabzonspor kit",
+        "images": [
+          "Salah Trabzonspor",
+          "Mohamed Salah Trabzonspor 2026"
+        ],
+        "clips": []
+      },
+      {
+        "says": "He scored after four minutes,",
+        "visual": "Mohamed Salah scoring a goal",
+        "images": [
+          "Salah goal Galatasaray",
+          "Mohamed Salah goal"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b02/img-a2fd5cc40ddd6d7e2be1422ede5b3adb.jpg"
+      },
+      {
+        "says": "set up Noah Saviolo,",
+        "visual": "Trabzonspor players celebrating",
+        "images": [
+          "Trabzonspor celebration",
+          "Trabzonspor players"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and scored again just before half-time.",
+        "visual": "Mohamed Salah celebrating a goal",
+        "images": [
+          "Salah celebration Trabzonspor",
+          "Mohamed Salah celebrates"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Galatasaray's coach Okan Buruk was sent to the stands,",
+        "visual": "Okan Buruk Galatasaray coach",
+        "images": [
+          "Okan Buruk",
+          "Okan Buruk Galatasaray"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and Salah completed his hat-trick in the eightieth minute.",
+        "visual": "Mohamed Salah holding the match ball",
+        "images": [
+          "Mohamed Salah hat-trick",
+          "Salah hat-trick ball"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Trabzonspor won four-nil, Galatasaray's first defeat of the season.",
+        "visual": "Galatasaray players dejected",
+        "images": [
+          "Galatasaray players dejected",
+          "Galatasaray defeat"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Is Salah still one of the best in the world?",
+        "visual": "close up of Mohamed Salah",
+        "images": [
+          "Mohamed Salah close up",
+          "Mohamed Salah portrait"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b02/img-8a8cb2a2bdf803950b02071c9b6ee5c0.jpg"
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Mohamed Salah scored a hat-trick and set up another as Trabzonspor beat champions Galatasaray 4-0 on 19 September 2026, Galatasaray's first defeat of the season",
+      "video_script": "Mohamed Salah humiliated Turkey's champions. Weeks after joining Trabzonspor, he faced Galatasaray. He scored after four minutes, set up Noah Saviolo, and scored again just before half-time. Galatasaray's coach Okan Buruk was sent to the stands, and Salah completed his hat-trick in the eightieth minute. Trabzonspor won four-nil, Galatasaray's first defeat of the season. Is Salah still one of the best in the world?",
+      "video_terms": "Salah hat-trick Trabzonspor Galatasaray 4-0 September 2026, Okan Buruk sent off",
+      "hook_text": "NOBODY SAW THIS COMING",
+      "cta_text": "STILL WORLD CLASS? 👇",
+      "beat_plan": [
+        {
+          "says": "Mohamed Salah humiliated Turkey's champions.",
+          "visual": "Mohamed Salah celebrating",
+          "images": [
+            "Mohamed Salah Trabzonspor",
+            "Mohamed Salah celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b01/img-e75e5659ea120e42b4903948b732e095.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b01/img-d2d5f124925196a6f32f34b654e476e2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b01/img-33f3f08b0b801dbe5fef2f7215de5d78.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b01/img-41fb87010941af5998cc525ea35fbb8f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b01/img-0b5109a8e243ae4a9fe098374d68b7e6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b01/img-fcc32db7c39b94f11dbb295fc470ff4f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b01/img-25417adfbc2f9d48dc074c59e2d2850f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b01/img-d8c4516f669b15f9ae50c58a3a9e64ac.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b01/img-0b5109a8e243ae4a9fe098374d68b7e6.jpg",
+          "url": "https://images.bursadabugun.com/haber/2026/08/05/1940077-mohamed-salah-resmen-trabzonspor-da-6a72623fa5cd0.webp"
+        },
+        {
+          "says": "Weeks after joining Trabzonspor, he faced Galatasaray.",
+          "visual": "Mohamed Salah in Trabzonspor kit",
+          "images": [
+            "Salah Trabzonspor",
+            "Mohamed Salah Trabzonspor 2026"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b02/img-21033b47925d1b204db24471ba25c77c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b02/img-55ed00a1dd73ce53213b89f10b37bf38.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b02/img-15adffd23668580188068877a6527c08.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b02/img-a2fd5cc40ddd6d7e2be1422ede5b3adb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b02/img-8a8cb2a2bdf803950b02071c9b6ee5c0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b02/img-1399fffa424fd52ec30a50390502173e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b02/img-60a6b4821d280ed01ef2441317873912.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b02/img-6e6e8a8b56308f55ac893c63800dcd85.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b02/img-55ed00a1dd73ce53213b89f10b37bf38.jpg",
+          "url": "https://img.turkiyetoday.com/images/2026/8/5/trabzon-are-you-ready-mohamed-salah-appears-in-trabzonspor-shirt-3225435_20260805115742.jpg"
+        },
+        {
+          "says": "He scored after four minutes,",
+          "visual": "Mohamed Salah scoring a goal",
+          "images": [
+            "Salah goal Galatasaray",
+            "Mohamed Salah goal"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b03/img-9a9d5decea7c3acb13ab52c5a2e3b70a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b03/img-546955f088ed210f2022f31a7d29fd45.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b03/img-6ca31180c64cd398f7276a12fc01e113.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b03/img-ceaf2930447d7c0366730dd48f771caf.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b02/img-a2fd5cc40ddd6d7e2be1422ede5b3adb.jpg"
+        },
+        {
+          "says": "set up Noah Saviolo,",
+          "visual": "Trabzonspor players celebrating",
+          "images": [
+            "Trabzonspor celebration",
+            "Trabzonspor players"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b04/img-3e444948709ea9f29601364a3f169914.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b04/img-3cdc0361117e53cd6ced69cb0e801284.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b04/img-aba960711e2e32952790956bd6fb6638.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b04/img-19799c838dd8feeb348b7156a1cf71ff.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b04/img-300d5f1ac055c7d306b38142c7a02db3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b04/img-9a9ce00dfa34d78a047ddb023181b7b7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b04/img-e0b02a791d7a960628ad7066d41dbdf5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b04/img-7c81927fb9378c6516feab0d18fcbee5.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b04/img-3cdc0361117e53cd6ced69cb0e801284.jpg",
+          "url": "https://idsb.tmgrup.com.tr/ly/uploads/images/2022/04/24/201306.jpg"
+        },
+        {
+          "says": "and scored again just before half-time.",
+          "visual": "Mohamed Salah celebrating a goal",
+          "images": [
+            "Salah celebration Trabzonspor",
+            "Mohamed Salah celebrates"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b05/img-41fb87010941af5998cc525ea35fbb8f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b05/img-27da45cfda2bf616ebf766e6b9dc7c71.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b05/img-7faae77d5c0b6d90b66161f1a63582a9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b05/img-064122ca65ea695b09e8dfce72ceb03b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b05/img-3527d12764520439891cf7c868475787.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b05/img-9d452fd6fe75ef25ccefb5a7e0993d79.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b05/img-aacd871ace641c21ef5c5feb407ee34d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b05/img-110e68c760985eac0076dad92edc9735.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b05/img-27da45cfda2bf616ebf766e6b9dc7c71.jpg",
+          "url": "https://awsimages.detik.net.id/community/media/visual/2026/03/19/mohamed-salah-1773876127977_169.jpeg?w=1200&q=90"
+        },
+        {
+          "says": "Galatasaray's coach Okan Buruk was sent to the stands,",
+          "visual": "Okan Buruk Galatasaray coach",
+          "images": [
+            "Okan Buruk",
+            "Okan Buruk Galatasaray"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b06/img-15059dc15c170b264cd6d51d69460fd9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b06/img-903d384543b96464599ffc5b20c04482.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b06/img-1d890be6384861d4b80e8eada55c22b5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b06/img-c3b45468cf496f892e5f0c692036576a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b06/img-e0698e883e26731f59c090afdb7270f8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b06/img-23a59a3781169076cac2aaa0a02ac759.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b06/img-e480069e993521651e9ad467e01895b7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b06/img-feb618f5c345c91378ab28a5b9b26c55.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b06/img-903d384543b96464599ffc5b20c04482.jpg",
+          "url": "https://foto.sondakika.com/haber/2026/02/26/okan-buruk-tan-mac-sonu-olay-itiraf-oynamak-19602709_5928_amp.jpg"
+        },
+        {
+          "says": "and Salah completed his hat-trick in the eightieth minute.",
+          "visual": "Mohamed Salah holding the match ball",
+          "images": [
+            "Mohamed Salah hat-trick",
+            "Salah hat-trick ball"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b07/img-585f0adb5191e1bab6967b18e867ef2c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b07/img-76d55dc5db997dca18c4ae9328f7eac1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b07/img-52ec83e74c909fdc7e42bef8f330c90e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b07/img-46a11a85004ea812877fadd875f53fe6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b07/img-db5f577733f6c8b4794f515e042ac736.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b07/img-6db8b1087a8d5f58a3665c053e186932.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b07/img-8c92f3c68323ec07e0b2821cf6ccf2f3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b07/img-f6d32f9d0be84547b0451e928c49a337.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b07/img-585f0adb5191e1bab6967b18e867ef2c.jpg",
+          "url": "https://i.pinimg.com/736x/25/de/57/25de571fb821789ed4e6b8e5f0a4bde6.jpg"
+        },
+        {
+          "says": "Trabzonspor won four-nil, Galatasaray's first defeat of the season.",
+          "visual": "Galatasaray players dejected",
+          "images": [
+            "Galatasaray players dejected",
+            "Galatasaray defeat"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b08/img-ed39934ffed4c30b8e7431c6df9e821a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b08/img-e8bfa16ff9aebfc8a8af0d5d341c021a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b08/img-84541e463905ee4b3cd1004d056d5964.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b08/img-d4c00cbc38cc27063628cc7b73ed4972.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b08/img-9af89f7f5e8667410dbb4871e9cb0249.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b08/img-40fb5fcdfa57ed8a9c4094f668603538.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b08/img-300e53df583d0df398be1c5c1645ccfe.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b08/img-bdef7f12d9a3695a00a846cf8147e9af.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b08/img-e8bfa16ff9aebfc8a8af0d5d341c021a.jpg",
+          "url": "https://idsb.tmgrup.com.tr/ly/uploads/images/2025/03/30/375237.jpg"
+        },
+        {
+          "says": "Is Salah still one of the best in the world?",
+          "visual": "close up of Mohamed Salah",
+          "images": [
+            "Mohamed Salah close up",
+            "Mohamed Salah portrait"
+          ],
+          "clips": [],
+          "candidates": [],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/mohamed_salah_scored_a_hat_trick_and_set/b02/img-8a8cb2a2bdf803950b02071c9b6ee5c0.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+KEY yamal_england_lost | OUT NEWSCUT_yamal_still_lost.mp4 | loopTail "Lamine Yamal won a penalty."
+Sentences (chunks split by |; display = ALL CAPS of the words; spoken = the words):
+S0: Lamine Yamal | won a penalty, | made an assist, | was rated | the best player | on the pitch, | and Spain | still lost.
+S1: To England.
+S2: In Madrid, | Kane scored | a penalty | right on half-time, | then Konsa | and Ben White | made it 3-0.
+S3: Yamal | was pulled back | through on goal, | Elliot Anderson | was sent off, | and Oyarzabal | scored the penalty.
+S4: Then Yamal | set up | Nico Williams, | but Spain's run | of 12 straight wins | was over.
+S5: Six shots, | five key passes, | an 8.4 rating, | and everyone in Madrid | is asking | what more | they could want | from
+Display tweaks: "3-0", "12 STRAIGHT WINS", "8.4 RATING", "SIX SHOTS", "FIVE KEY PASSES".
+Source card (over S4/S5 "Six shots" .. "an 8.4 rating"): label STATS, title "Spain 2–3 England", lines ["15 Nov 2026 · Metropolitano", "Yamal: 1 assist, 6 shots, 8.4 (Sofascore)"]
+Cover text: "BEST PLAYER… STILL LOST 💔"
+Footage ideas: Yamal face close-up in Spain kit (shot 0, bright; ideally from this match), official highlights of Spain 2-3 England (15 Nov 2026: England FA channel, UEFA, SEFUTBOL, broadcasters): Kane penalty, Konsa header, Ben White goal, Anderson pulling Yamal back + red card, Oyarzabal penalty, Yamal pass to Nico Williams goal, England celebrating at full time, dejected Spain/Yamal, Metropolitano. End on Yamal.
+Facts (verified: England FA match report + Sofascore): Spain 2-3 England, Nations League League A Group 3, Sun 15 Nov 2026, Metropolitano, Madrid. HT 0-1. Kane pen 45' (Cubarsí foul), Konsa 53' (header from Rice), White 57' (Bellingham pass). Anderson sent off 63' for pulling back Yamal through on goal; Oyarzabal pen 65'. Nico Williams 75' from Yamal pass. Yamal: earned the penalty, 1 assist, 5 key passes, 6 shots, Sofascore 8.4 best player. Spain's run of 12 straight wins (all competitions) ended (England FA). England topped the group.

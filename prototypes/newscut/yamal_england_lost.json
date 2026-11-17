@@ -1,0 +1,378 @@
+{
+ "key": "yamal_england_lost",
+ "out": "NEWSCUT_yamal_still_lost.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_em106.wav",
+ "musicVol": 0.012,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Lamine Yamal won a penalty.",
+ "sentences": [
+  [
+   [
+    "LAMINE YAMAL",
+    "Lamine Yamal"
+   ],
+   [
+    "WON A PENALTY",
+    "won a penalty,"
+   ],
+   [
+    "MADE AN ASSIST",
+    "made an assist,"
+   ],
+   [
+    "WAS RATED",
+    "was rated"
+   ],
+   [
+    "THE BEST PLAYER",
+    "the best player"
+   ],
+   [
+    "ON THE PITCH",
+    "on the pitch,"
+   ],
+   [
+    "AND SPAIN",
+    "and Spain"
+   ],
+   [
+    "STILL LOST",
+    "still lost."
+   ]
+  ],
+  [
+   [
+    "TO ENGLAND",
+    "To England."
+   ]
+  ],
+  [
+   [
+    "IN MADRID",
+    "In Madrid,"
+   ],
+   [
+    "KANE SCORED",
+    "Kane scored"
+   ],
+   [
+    "A PENALTY",
+    "a penalty"
+   ],
+   [
+    "RIGHT ON HALF-TIME",
+    "right on half-time,"
+   ],
+   [
+    "THEN KONSA",
+    "then Konsa"
+   ],
+   [
+    "AND BEN WHITE",
+    "and Ben White"
+   ],
+   [
+    "MADE IT 3-0",
+    "made it three nil."
+   ]
+  ],
+  [
+   [
+    "YAMAL",
+    "Yamal"
+   ],
+   [
+    "WAS PULLED BACK",
+    "was pulled back"
+   ],
+   [
+    "THROUGH ON GOAL",
+    "through on goal,"
+   ],
+   [
+    "ELLIOT ANDERSON",
+    "Elliot Anderson"
+   ],
+   [
+    "WAS SENT OFF",
+    "was sent off,"
+   ],
+   [
+    "AND OYARZABAL",
+    "and Oyarzabal"
+   ],
+   [
+    "SCORED THE PENALTY",
+    "scored the penalty."
+   ]
+  ],
+  [
+   [
+    "THEN YAMAL",
+    "Then Yamal"
+   ],
+   [
+    "SET UP",
+    "set up"
+   ],
+   [
+    "NICO WILLIAMS",
+    "Nico Williams,"
+   ],
+   [
+    "BUT SPAIN'S RUN",
+    "but Spain's run"
+   ],
+   [
+    "OF 12 STRAIGHT WINS",
+    "of twelve straight wins"
+   ],
+   [
+    "WAS OVER",
+    "was over."
+   ]
+  ],
+  [
+   [
+    "SIX SHOTS",
+    "Six shots,"
+   ],
+   [
+    "FIVE KEY PASSES",
+    "five key passes,"
+   ],
+   [
+    "AN 8.4 RATING",
+    "an eight point four rating,"
+   ],
+   [
+    "AND EVERYONE IN MADRID",
+    "and everyone in Madrid"
+   ],
+   [
+    "IS ASKING",
+    "is asking"
+   ],
+   [
+    "WHAT MORE",
+    "what more"
+   ],
+   [
+    "THEY COULD WANT",
+    "they could want"
+   ],
+   [
+    "FROM",
+    "from"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "YFg5BmviW1U",
+   "start": 114.0,
+   "x": 700
+  },
+  {
+   "at": 2,
+   "vid": "YFg5BmviW1U",
+   "start": 76.6,
+   "x": 820
+  },
+  {
+   "at": 3,
+   "vid": "YFg5BmviW1U",
+   "start": 39.7,
+   "x": 560
+  },
+  {
+   "at": 5,
+   "vid": "2M5kNg9FTxI",
+   "start": 10.0,
+   "x": 450
+  },
+  {
+   "at": 6,
+   "vid": "ei5N1iLY_bQ",
+   "start": 168.2,
+   "x": 620,
+   "h": 1000,
+   "y": 80
+  },
+  {
+   "at": 8,
+   "vid": "2-5gkYbE-8c",
+   "start": 28.0,
+   "x": 520,
+   "h": 600,
+   "y": 480
+  },
+  {
+   "at": 10,
+   "vid": "ei5N1iLY_bQ",
+   "start": 42.75,
+   "x": 620,
+   "h": 1000,
+   "y": 80
+  },
+  {
+   "at": 12,
+   "vid": "ei5N1iLY_bQ",
+   "start": 46.0,
+   "x": 720,
+   "h": 1000,
+   "y": 80
+  },
+  {
+   "at": 13,
+   "vid": "ei5N1iLY_bQ",
+   "start": 63.5,
+   "x": 450,
+   "h": 1000,
+   "y": 80
+  },
+  {
+   "at": 14,
+   "vid": "ei5N1iLY_bQ",
+   "start": 74.2,
+   "x": 900,
+   "h": 800,
+   "y": 150
+  },
+  {
+   "at": 15,
+   "vid": "ei5N1iLY_bQ",
+   "start": 77.8,
+   "x": 850
+  },
+  {
+   "at": 16,
+   "vid": "YFg5BmviW1U",
+   "start": 100.6,
+   "x": 300
+  },
+  {
+   "at": 18,
+   "vid": "2M5kNg9FTxI",
+   "start": 108.9,
+   "x": 500
+  },
+  {
+   "at": 19,
+   "vid": "ei5N1iLY_bQ",
+   "start": 124.3,
+   "x": 720,
+   "h": 1000,
+   "y": 80
+  },
+  {
+   "at": 20,
+   "vid": "ei5N1iLY_bQ",
+   "start": 116.7,
+   "x": 850
+  },
+  {
+   "at": 21,
+   "vid": "ei5N1iLY_bQ",
+   "start": 133.8,
+   "x": 1100,
+   "h": 900,
+   "y": 100
+  },
+  {
+   "at": 22,
+   "vid": "ei5N1iLY_bQ",
+   "start": 137.5,
+   "x": 1250,
+   "h": 1000,
+   "y": 80
+  },
+  {
+   "at": 23,
+   "vid": "ei5N1iLY_bQ",
+   "start": 155.85,
+   "x": 520,
+   "h": 1000,
+   "y": 80
+  },
+  {
+   "at": 25,
+   "vid": "ei5N1iLY_bQ",
+   "start": 154.45,
+   "x": 950,
+   "h": 1000,
+   "y": 80
+  },
+  {
+   "at": 26,
+   "vid": "YFg5BmviW1U",
+   "start": 265.2,
+   "x": 580
+  },
+  {
+   "at": 28,
+   "vid": "YFg5BmviW1U",
+   "start": 101.42,
+   "x": 600
+  },
+  {
+   "at": 29,
+   "vid": "YFg5BmviW1U",
+   "start": 25.2,
+   "x": 200
+  },
+  {
+   "at": 30,
+   "vid": "YFg5BmviW1U",
+   "start": 75.0,
+   "x": 820
+  },
+  {
+   "at": 31,
+   "vid": "YFg5BmviW1U",
+   "start": 26.3,
+   "x": 200
+  },
+  {
+   "at": 32,
+   "vid": "YFg5BmviW1U",
+   "start": 12.2,
+   "x": 580
+  },
+  {
+   "at": 33,
+   "vid": "YFg5BmviW1U",
+   "start": 72.1,
+   "x": 450
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 29,
+   "toChunk": 31,
+   "label": "STATS",
+   "title": "Spain 2–3 England",
+   "lines": [
+    "15 Nov 2026 · Metropolitano",
+    "Yamal: 1 assist, 6 shots, 8.4 (Sofascore)"
+   ]
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 4,
+   "t": 0.6
+  },
+  "text": "BEST PLAYER… STILL LOST 💔"
+ }
+}

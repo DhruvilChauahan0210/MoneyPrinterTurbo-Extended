@@ -1,0 +1,457 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing football",
+      "a real photograph of Canelo Alvarez"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "A BOXER THREATENED HIM",
+    "hook_cover_term": "Canelo Alvarez angry",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "WHO WAS RIGHT? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Lionel Messi playing football",
+      "a real photograph of Canelo Alvarez"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Canelo Álvarez saw one video and exploded. At the twenty twenty-two World Cup, Messi scored as Argentina beat Mexico. Then a dressing room video went viral. Canelo accused Messi of cleaning the floor with Mexico's shirt and flag, and wrote that Messi had better pray he didn't find him. Days later, Canelo apologised to Messi and Argentina, but Messi said he didn't need to ask for forgiveness, because he never disrespected Mexico or its shirt. Who was right?",
+    "video_subject": "Boxer Canelo Alvarez threatened Lionel Messi over a dressing-room video after Argentina beat Mexico at the 2022 World Cup, then apologised, while Messi said he had nothing to apologise for",
+    "video_terms": "Canelo Alvarez threat Messi 2022 World Cup Mexico, Canelo apologises Messi",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "beat_plan": [
+      {
+        "says": "Canelo Álvarez saw one video and exploded.",
+        "visual": "Canelo Alvarez boxer angry",
+        "images": [
+          "Canelo Alvarez",
+          "Canelo Alvarez angry"
+        ],
+        "clips": []
+      },
+      {
+        "says": "At the twenty twenty-two World Cup, Messi scored as Argentina beat Mexico.",
+        "visual": "Lionel Messi celebrating a goal against Mexico",
+        "images": [
+          "Messi goal Mexico 2022",
+          "Messi Argentina Mexico World Cup"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Then a dressing room video went viral.",
+        "visual": "Lionel Messi celebrating in the dressing room",
+        "images": [
+          "Messi Argentina dressing room celebration 2022",
+          "Messi dressing room"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Canelo accused Messi of cleaning the floor with Mexico's shirt and flag,",
+        "visual": "Canelo Alvarez",
+        "images": [
+          "Canelo Alvarez Mexico",
+          "Canelo Alvarez press conference"
+        ],
+        "clips": []
+      },
+      {
+        "says": "and wrote that Messi had better pray he didn't find him.",
+        "visual": "Canelo Alvarez in the boxing ring",
+        "images": [
+          "Canelo Alvarez boxing ring",
+          "Canelo Alvarez fight"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Days later, Canelo apologised to Messi and Argentina,",
+        "visual": "Canelo Alvarez serious",
+        "images": [
+          "Canelo Alvarez serious",
+          "Canelo Alvarez portrait"
+        ],
+        "clips": []
+      },
+      {
+        "says": "but Messi said he didn't need to ask for forgiveness,",
+        "visual": "Lionel Messi in an Argentina shirt",
+        "images": [
+          "Lionel Messi Argentina 2022",
+          "Messi Argentina World Cup 2022"
+        ],
+        "clips": []
+      },
+      {
+        "says": "because he never disrespected Mexico or its shirt.",
+        "visual": "Lionel Messi looking serious",
+        "images": [
+          "Lionel Messi serious Argentina",
+          "Messi Argentina close up"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Who was right?",
+        "visual": "Lionel Messi and Canelo Alvarez",
+        "images": [
+          "Messi Canelo",
+          "Canelo Messi"
+        ],
+        "clips": []
+      }
+    ],
+    "intro_image_paths": [],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Boxer Canelo Alvarez threatened Lionel Messi over a dressing-room video after Argentina beat Mexico at the 2022 World Cup, then apologised, while Messi said he had nothing to apologise for",
+      "video_script": "Canelo Álvarez saw one video and exploded. At the twenty twenty-two World Cup, Messi scored as Argentina beat Mexico. Then a dressing room video went viral. Canelo accused Messi of cleaning the floor with Mexico's shirt and flag, and wrote that Messi had better pray he didn't find him. Days later, Canelo apologised to Messi and Argentina, but Messi said he didn't need to ask for forgiveness, because he never disrespected Mexico or its shirt. Who was right?",
+      "video_terms": "Canelo Alvarez threat Messi 2022 World Cup Mexico, Canelo apologises Messi",
+      "hook_text": "A BOXER THREATENED HIM",
+      "cta_text": "WHO WAS RIGHT? 👇",
+      "beat_plan": [
+        {
+          "says": "Canelo Álvarez saw one video and exploded.",
+          "visual": "Canelo Alvarez boxer angry",
+          "images": [
+            "Canelo Alvarez",
+            "Canelo Alvarez angry"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b01/img-b841d407f5feff0476d387d4617fe132.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b01/img-2b6dbc6f07343f81671d82f01f0bc3e7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b01/img-094b675db0047e2726f20874437fd9f2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b01/img-e4cf237125526c8a7b6d317dcc47a415.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b01/img-1747aafb3475d392587241343e812cd7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b01/img-2df0cbe024544cc08375eaac00c781c5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b01/img-01d466a71e819dcbc50519cbc1df1d2e.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b01/img-06cfb55255bb8080b7b8a5ef37a9a1fb.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b01/img-2b6dbc6f07343f81671d82f01f0bc3e7.jpg",
+          "url": "https://static0.thesportsterimages.com/wordpress/wp-content/uploads/2024/09/canelo-alvarez-pre-fight-weigh-in.jpg?w=1200&h=675&fit=crop"
+        },
+        {
+          "says": "At the twenty twenty-two World Cup, Messi scored as Argentina beat Mexico.",
+          "visual": "Lionel Messi celebrating a goal against Mexico",
+          "images": [
+            "Messi goal Mexico 2022",
+            "Messi Argentina Mexico World Cup"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b02/img-40cc537c53ec1bec40009676ea56b4ed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b02/img-5d5422761fac64d8c4b3962d836836fb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b02/img-f2a86285c7118de5f1bee78fcff96c5c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b02/img-8cd9c35d1c68937e570fd36250fbe9e9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b02/img-0b7d25d97967a2f8cecf2c36bd2ebc7f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b02/img-2a8826e08b32b6e1dfb8df81df6d2c10.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b02/img-314cd60ec0a03ddecc9ce92448b8965b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b02/img-065c05cd9998915ea0a3698385b713fd.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b02/img-0b7d25d97967a2f8cecf2c36bd2ebc7f.jpg",
+          "url": "https://cloudfront-us-east-2.images.arcpublishing.com/reuters/EMUTZEBDLJLDDKK74NT4K42POE.jpg"
+        },
+        {
+          "says": "Then a dressing room video went viral.",
+          "visual": "Lionel Messi celebrating in the dressing room",
+          "images": [
+            "Messi Argentina dressing room celebration 2022",
+            "Messi dressing room"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b03/img-68bc64c6587e77c2e25392a3c62922bb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b03/img-5b80ab419337cdb8aa3d0aa6b96a294f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b03/img-27390e4be6200320d2c391f7bbbb11d3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b03/img-b2013a2b37a8f7ab31d90c49e305d793.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b03/img-a9a8addfc243822db2abc77d2f15c89c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b03/img-f37b528f8a8212cb00ad7883f9303fc4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b03/img-0ac57a0a35774859df078311157b16a5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b03/img-dc8a1633bbbb1d25f35710536a93444b.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b03/img-a9a8addfc243822db2abc77d2f15c89c.jpg",
+          "url": "https://images.hindustantimes.com/img/2022/12/19/1600x900/wild_1671418869944_1671418877646_1671418877646.jpg"
+        },
+        {
+          "says": "Canelo accused Messi of cleaning the floor with Mexico's shirt and flag,",
+          "visual": "Canelo Alvarez",
+          "images": [
+            "Canelo Alvarez Mexico",
+            "Canelo Alvarez press conference"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b04/img-956888d260e6ee58f4c54c4aa045a213.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b04/img-ae97b03be61eb6a9a95262e2679a2fd8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b04/img-09c0c1ece4c2904da41c595bc80ef4e4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b04/img-f7132403b8536576432fbb50624d109b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b04/img-1193dbacbb96650b4feb9c5710b2ec95.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b04/img-40b3924a67aaaf035847eb1e42505230.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b04/img-1eb2249ee14d245e48dabc6b8f6276ed.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b04/img-abe013c57ad7bf9545ed5f23a0a4f5fe.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b04/img-956888d260e6ee58f4c54c4aa045a213.jpg",
+          "url": "https://www.fightmag.com/wp-content/uploads/2024/08/saul-canelo-alvarez-press-conference.jpg"
+        },
+        {
+          "says": "and wrote that Messi had better pray he didn't find him.",
+          "visual": "Canelo Alvarez in the boxing ring",
+          "images": [
+            "Canelo Alvarez boxing ring",
+            "Canelo Alvarez fight"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b05/img-64590708a831c6703825e475163330bc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b05/img-ef6ed946c757a315cba1efbb7ae68576.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b05/img-e2199b2f24d339a2dd3f38e064835e44.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b05/img-be96e97ce0b21548da2b46aa6641ae5b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b05/img-84d64cb33eddb57fb9d860322743d66a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b05/img-1747aafb3475d392587241343e812cd7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b05/img-f0b55e4d488f7401d0d894cfa33e43c4.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b05/img-2df0cbe024544cc08375eaac00c781c5.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b05/img-84d64cb33eddb57fb9d860322743d66a.jpg",
+          "url": "https://static.independent.co.uk/2021/05/09/17/AFP_99L2G2.jpg"
+        },
+        {
+          "says": "Days later, Canelo apologised to Messi and Argentina,",
+          "visual": "Canelo Alvarez serious",
+          "images": [
+            "Canelo Alvarez serious",
+            "Canelo Alvarez portrait"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b06/img-ee23afb5d945a80aa020df33b035f07a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b06/img-eef5c7e17eb9bd958fb8351bb6df1de9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b06/img-246498b4a6c53f8897ed04737b19c744.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b06/img-a5d84b2b7899c374670af28eb9428432.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b06/img-7d9c5c44d294f1399aaf93aeb892316a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b06/img-be96e97ce0b21548da2b46aa6641ae5b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b06/img-f9b4cf720ee1d7f942239803c0067ecd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b06/img-d6e7c69166c2a259a41ac395f786c1f8.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b06/img-a5d84b2b7899c374670af28eb9428432.jpg",
+          "url": "https://media.bolavip.com/wp-content/uploads/sites/10/2026/04/29114152/Canelo-Alvarez-2-1200x740.webp"
+        },
+        {
+          "says": "but Messi said he didn't need to ask for forgiveness,",
+          "visual": "Lionel Messi in an Argentina shirt",
+          "images": [
+            "Lionel Messi Argentina 2022",
+            "Messi Argentina World Cup 2022"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b07/img-69f54a6a381f733fafff730097513fca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b07/img-6be078f71e6c1476623aa6e2ef017192.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b07/img-94f670c7eee28ba16ff36f92926cace5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b07/img-2663e88cc7abeb24788e0dc88f189c12.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b07/img-a12a59de5af444da40f34b44d97df8ba.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b07/img-61df6bd136fb83aa88d7acf0331475bc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b07/img-c6074b49a7dcb53ec0f1e6855b117a53.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b07/img-0fda233c20805e65b1f178b9e3c6e212.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b07/img-61df6bd136fb83aa88d7acf0331475bc.jpg",
+          "url": "https://theluxurylifestylemagazine.com/wp-content/uploads/2022/12/53344CA1-AD10-4FC5-A7AB-F1072F580CB4-1050x1082.jpg"
+        },
+        {
+          "says": "because he never disrespected Mexico or its shirt.",
+          "visual": "Lionel Messi looking serious",
+          "images": [
+            "Lionel Messi serious Argentina",
+            "Messi Argentina close up"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b08/img-ad940b1d19f9ef6affefc14e1c1542d3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b08/img-aedf8dcb2ecf12409820951abe20fb4c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b08/img-ddb81c6b38eaca510876ae6a3c063571.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b08/img-0afca0838cb7408af1a6879ce2139121.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b08/img-80842adcde09a223ab1ccf0e08fa0dd3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b08/img-29b378a02d1c752104a8c39065d984b5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b08/img-f4172d7e2933eadda9c5ab78158efe05.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b08/img-b2c7a22add8cabb3b25e03d65ff45134.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b08/img-aedf8dcb2ecf12409820951abe20fb4c.jpg",
+          "url": "https://i.pinimg.com/736x/37/e6/69/37e669e980669e1f8e551ce1392a6ce8.jpg"
+        },
+        {
+          "says": "Who was right?",
+          "visual": "Lionel Messi and Canelo Alvarez",
+          "images": [
+            "Messi Canelo",
+            "Canelo Messi"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b09/img-3c8e75fc133d061096d01cf4350956a2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b09/img-a60712477794ae0f7ae1d21f780932e8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b09/img-1bc5f89b2a008fbf4be631995bdd8d17.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b09/img-e5691bd65ff72ddf2ff03d66cc091d85.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b09/img-10a9f4bed7f7997a72871545ab14f7c8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b09/img-ee595663eb0d18f99738bff950b07624.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b09/img-6c56c47e1a8a4d6a6e92373b41541ffb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b09/img-d4678a1109cea90207c1f634ac077f48.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/boxer_canelo_alvarez_threatened_lionel_m/b09/img-3c8e75fc133d061096d01cf4350956a2.jpg",
+          "url": "https://www.wfla.com/wp-content/uploads/sites/71/2022/11/Canelo-Messi.jpg?w=876&h=493&crop=1"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

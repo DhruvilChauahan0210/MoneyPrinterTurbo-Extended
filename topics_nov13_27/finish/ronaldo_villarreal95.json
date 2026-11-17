@@ -1,0 +1,17 @@
+{
+  "cfg": "batch_ronaldo_villarreal95.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 6,
+      "url": "https://www.youtube.com/watch?v=5YHBFGQENDo",
+      "start": 98.0
+    }
+  ],
+  "weak_beats": [
+    "2: match action only loosely Young Boys (not Villarreal) - generic United match photo",
+    "7: Ronaldo red kit 2021 photo, plain portrait"
+  ],
+  "beat1": "Clean portrait of Ronaldo in 2021 Man United home kit with UCL badge",
+  "notes": "Beat 6 = official Man United highlight replay of the winner (98-104s). Telles-goal clip not pursued."
+}

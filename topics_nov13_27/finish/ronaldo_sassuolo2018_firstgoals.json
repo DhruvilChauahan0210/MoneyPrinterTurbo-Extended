@@ -1,0 +1,23 @@
+{
+  "cfg": "batch_ronaldo_sassuolo2018_firstgoals.json",
+  "status": "ready",
+  "clip_beats": [
+    {
+      "beat": 4,
+      "url": "https://www.youtube.com/watch?v=1oM9RQa5SOQ",
+      "start": 149.0
+    },
+    {
+      "beat": 5,
+      "url": "https://www.youtube.com/watch?v=1oM9RQa5SOQ",
+      "start": 200.0
+    }
+  ],
+  "weak_beats": [
+    "3: generic Juventus match action photo for Allianz Stadium",
+    "9: Ronaldo arm-up crowd photo borrowed from beat 1 pool (no clean fan photo without cutouts/masks)",
+    "7: Ronaldo standing in empty-ish stadium, plain"
+  ],
+  "beat1": "Tight close-up portrait of Ronaldo in 2018-19 Juventus black and white Adidas kit",
+  "notes": "Clips from official Juventus highlights (no watermark): beat 4 = first goal and Ronaldo celebration; beat 5 = second goal and celebration."
+}

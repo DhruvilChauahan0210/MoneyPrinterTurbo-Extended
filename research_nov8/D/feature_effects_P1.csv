@@ -1,0 +1,26 @@
+feature,n_with,n_total,med_with,med_without,adj_pct,p
+money (million/billion/€/£/$),32,276,919.0,988.0,-10.8,0.255
+refusal/rejection (no/refused/rejected/turned down/banned),42,276,984.0,980.0,26.9,0.135
+emotion (cried/tears/dead/father/shaking),26,276,974.0,980.0,31.2,0.212
+conflict/insult (slammed/booed/angry/fight/mock/criticis),29,276,914.0,987.0,-24.2,0.022
+rivalry Messi-vs-Ronaldo both named,8,276,1046.0,972.0,8.6,0.705
+number in title,193,276,971.0,988.0,6.7,0.648
+question mark,9,276,1065.0,971.0,-26.9,0.21
+record/first/ever,116,276,996.0,966.0,20.9,0.045
+whatif/never left,3,276,,,,
+title_starts_name,73,276,1035.0,939.0,-6.4,0.479
+title_starts_number,13,276,912.0,988.0,-15.8,0.339
+title_has_number,74,276,966.0,989.0,-4.7,0.667
+title_q,4,276,,,,
+halo,164,276,,,,
+title_has_series,24,276,922.0,994.0,16.7,0.25
+>=2 all-caps words,17,276,899.0,987.0,-51.7,0.003
+title len>=30 chars,157,276,956.0,995.0,-14.1,0.167
+duration>=20s,141,276,962.0,990.0,9.6,0.828
+duration<15s,129,276,993.0,962.0,-4.5,0.817
+star Ronaldo,111,276,990.0,969.0,19.5,0.032
+star Messi,66,276,998.0,968.0,-10.8,0.23
+star other (not R/M),99,276,943.0,997.0,-9.0,0.265
+slot 13:00,76,276,1002.0,972.0,-14.4,0.1
+slot 17:00,78,276,946.0,992.0,-8.4,0.347
+slot 21:00,77,276,970.0,987.0,19.6,0.054

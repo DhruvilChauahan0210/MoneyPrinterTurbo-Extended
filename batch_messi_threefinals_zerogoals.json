@@ -1,0 +1,412 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Mario Gotze"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "WHICH LOSS HURT MOST?",
+    "hook_cover_term": "Lionel Messi dejected for Argentina after a final",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "WHICH FINAL LOSS HURT MESSI MOST? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Mario Gotze"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Three finals. Zero goals. Messi's Argentina played three hundred and sixty minutes without scoring. Two thousand fourteen: Germany won one-nil, Gotze scored in extra time. Two thousand fifteen Copa America final: nil-nil against Chile. Chile won four-one on penalties. Two thousand sixteen, the rematch: nil-nil again. Chile won four-two on penalties, and Messi missed. Messi had scored his own penalty in two thousand fifteen. Which of those three finals hurt Messi most?",
+    "video_subject": "Messi's Argentina lost the 2014 World Cup final 1-0 to Germany and the 2015 and 2016 Copa America finals to Chile on penalties after two 0-0 draws, playing 360 minutes across three finals without scoring.",
+    "video_terms": "messi, argentina, finals, world cup 2014, copa america 2015, copa america 2016, chile, germany, penalties",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Three finals. Zero goals. Messi's Argentina played three hundred and sixty minutes without scoring.",
+        "visual": "close up of Lionel Messi in Argentina kit looking dejected",
+        "images": [
+          "Messi dejected Argentina Copa America final",
+          "Messi head down Argentina 2016"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b08/img-4cb897781a86a264a4e7fa8ad74b0a12.jpg"
+      },
+      {
+        "says": "Two thousand fourteen: Germany won one-nil, Gotze scored in extra time.",
+        "visual": "Germany players celebrating Mario Gotze goal in the 2014 final",
+        "images": [
+          "Mario Gotze 2014 final",
+          "Germany Argentina 2014 final"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Two thousand fifteen Copa America final: nil-nil against Chile.",
+        "visual": "Argentina vs Chile 2015 Copa America final in Santiago",
+        "images": [
+          "Argentina Chile Copa America 2015 final",
+          "Messi Chile 2015 final Argentina"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Chile won four-one on penalties.",
+        "visual": "Chile players celebrating the 2015 Copa America title",
+        "images": [
+          "Chile Copa America 2015",
+          "Claudio Bravo Chile 2015"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Two thousand sixteen, the rematch: nil-nil again.",
+        "visual": "Argentina vs Chile 2016 Copa America Centenario final",
+        "images": [
+          "Argentina Chile 2016",
+          "Copa America Centenario final"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Chile won four-two on penalties, and Messi missed.",
+        "visual": "Lionel Messi after missing a penalty in 2016",
+        "images": [
+          "Messi penalty miss Copa America 2016",
+          "Messi sad Chile 2016 final"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Messi had scored his own penalty in two thousand fifteen.",
+        "visual": "Lionel Messi taking a penalty in the 2015 Copa America final",
+        "images": [
+          "Messi penalty Chile 2015 Copa America",
+          "Messi Argentina Chile 2015 final"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Which of those three finals hurt Messi most?",
+        "visual": "Lionel Messi alone on the pitch after a final",
+        "images": [
+          "Messi sad Argentina after final",
+          "Messi dejected 2014 World Cup final"
+        ],
+        "clips": [],
+        "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b01/img-5b7f0c2aba8d5b231905b768c6cd3cbd.jpg"
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Messi's Argentina lost the 2014 World Cup final 1-0 to Germany and the 2015 and 2016 Copa America finals to Chile on penalties after two 0-0 draws, playing 360 minutes across three finals without scoring.",
+      "video_script": "Three finals. Zero goals. Messi's Argentina played three hundred and sixty minutes without scoring. Two thousand fourteen: Germany won one-nil, Gotze scored in extra time. Two thousand fifteen Copa America final: nil-nil against Chile. Chile won four-one on penalties. Two thousand sixteen, the rematch: nil-nil again. Chile won four-two on penalties, and Messi missed. Messi had scored his own penalty in two thousand fifteen. Which of those three finals hurt Messi most?",
+      "video_terms": "messi, argentina, finals, world cup 2014, copa america 2015, copa america 2016, chile, germany, penalties",
+      "hook_text": "WHICH LOSS HURT MOST?",
+      "cta_text": "WHICH FINAL LOSS HURT MESSI MOST? 👇",
+      "beat_plan": [
+        {
+          "says": "Three finals. Zero goals. Messi's Argentina played three hundred and sixty minutes without scoring.",
+          "visual": "close up of Lionel Messi in Argentina kit looking dejected",
+          "images": [
+            "Messi dejected Argentina Copa America final",
+            "Messi head down Argentina 2016"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b01/img-5b7f0c2aba8d5b231905b768c6cd3cbd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b01/img-ee80f4a4f327ffbbb98f2fe127c9d9bf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b01/img-1e8c15a6a88c13d02b717296e531cc19.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b08/img-4cb897781a86a264a4e7fa8ad74b0a12.jpg"
+        },
+        {
+          "says": "Two thousand fourteen: Germany won one-nil, Gotze scored in extra time.",
+          "visual": "Germany players celebrating Mario Gotze goal in the 2014 final",
+          "images": [
+            "Mario Gotze 2014 final",
+            "Germany Argentina 2014 final"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b02/img-3168bf0cd9ef6a26f3e4dec9257f0ebc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b02/img-5941cf352a132ac552a03382da8b83cd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b02/img-d129940ea39c76eeb46f09207b61c7bf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b02/img-e7dcfc3893795d369b0f9e1fbcd50835.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b02/img-4379e5b7722b61b22367d439462f58e8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b02/img-ce4acd9bae28c28249aff2b4bae0c09b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b02/img-a792a7c1a6db39f3053c8e87b9d038bb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b02/img-9df10384e1a4d9edadcf370ebe7c8f7b.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b02/img-3168bf0cd9ef6a26f3e4dec9257f0ebc.jpg",
+          "url": "https://static01.nyt.com/images/2014/07/14/sports/14wcfinal20/14wcfinal20-master675.jpg"
+        },
+        {
+          "says": "Two thousand fifteen Copa America final: nil-nil against Chile.",
+          "visual": "Argentina vs Chile 2015 Copa America final in Santiago",
+          "images": [
+            "Argentina Chile Copa America 2015 final",
+            "Messi Chile 2015 final Argentina"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b03/img-4df95709175c59d23f4002af07aaaa88.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b03/img-349f680f0e359dc5def12733c256e8e3.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b03/img-e7d0c2653e4d1b6d75a0f46937e0685d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b03/img-0ec87fbb8799abecd73cc2e110c84003.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b03/img-8c2a6e376f300f9598f0a4eefe4a2801.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b03/img-4df95709175c59d23f4002af07aaaa88.jpg",
+          "url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/07/05/11/Messi1.jpg?width=1200&height=800&crop=1200:800"
+        },
+        {
+          "says": "Chile won four-one on penalties.",
+          "visual": "Chile players celebrating the 2015 Copa America title",
+          "images": [
+            "Chile Copa America 2015",
+            "Claudio Bravo Chile 2015"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b04/img-f48875b39c3ef1e82c3e0e6a1b8f0f90.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b04/img-63b3612da31b6f5dabf997c406719567.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b04/img-d2aaf38f86847e61403d6eaa7b9cc7c1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b04/img-e59a256c19774d89c186aa06a0aaae95.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b04/img-f6b6d151ebb68113ee60c1e3d54de243.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b04/img-96826da0b95c3e9d908553def9155607.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b04/img-cff9445f244613178c80a0f8bbc213ac.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b04/img-5d19c70bfc886335dcd8c717d8d08c82.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b04/img-63b3612da31b6f5dabf997c406719567.jpg",
+          "url": "http://1.bp.blogspot.com/-I8wJfzhXKdo/VZiIL1-964I/AAAAAAAAKic/6NtUWmPyFnM/s0/foto-festejos-chile-campeon-copa-america-2015.PNG"
+        },
+        {
+          "says": "Two thousand sixteen, the rematch: nil-nil again.",
+          "visual": "Argentina vs Chile 2016 Copa America Centenario final",
+          "images": [
+            "Argentina Chile 2016",
+            "Copa America Centenario final"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b05/img-64a8821aabe3997ab27c73531369a84c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b05/img-2e1a889621f71b79d61c1781fe20a30a.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b05/img-46517538a011a370f62b50d50b779bd9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b05/img-a39d19d84b6aa7dce486160d651d2718.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b05/img-f064a4b30d4d6df49c26a07f16a0155b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b05/img-414dc119146c9458b7bca612aefaaf8c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b05/img-f0259475e6e2cf4bc66a32714aaf80ab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b05/img-0ac5b26214db633a3f198fe4153d3c1f.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b05/img-2e1a889621f71b79d61c1781fe20a30a.jpg",
+          "url": "https://cdn.vox-cdn.com/thumbor/oJdDuEt4XmA8uKtHOclvfOkzsoM=/0x186:2976x2170/1200x800/filters:focal(0x186:2976x2170)/cdn.vox-cdn.com/uploads/chorus_image/image/49959049/usa-today-9357773.0.jpg"
+        },
+        {
+          "says": "Chile won four-two on penalties, and Messi missed.",
+          "visual": "Lionel Messi after missing a penalty in 2016",
+          "images": [
+            "Messi penalty miss Copa America 2016",
+            "Messi sad Chile 2016 final"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b06/img-e69b235ae2de845568d5f0f62e6ca736.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b06/img-66242a4f9c60e3818ec6b67e60e1e637.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b06/img-3b5e1a3dfc1771baa17df7c3e75d8810.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b06/img-8f84f41261a660e371811896c410ebef.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b06/img-9bfcbee51f3d3b94ef73cc93569d8c49.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b06/img-361348b14dad45c1fde388ecdbebf26d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b06/img-dbc02b1b71f290e8b194ccc000ed0377.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b06/img-e5a55596fd587b8556e2e9a20ad4e064.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b06/shot_385d5f8fd8.mp4",
+          "url": "https://www.youtube.com/watch?v=pk0mLY7eTnc",
+          "start": 74.0,
+          "len": 6.0
+        },
+        {
+          "says": "Messi had scored his own penalty in two thousand fifteen.",
+          "visual": "Lionel Messi taking a penalty in the 2015 Copa America final",
+          "images": [
+            "Messi penalty Chile 2015 Copa America",
+            "Messi Argentina Chile 2015 final"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b07/img-0ec87fbb8799abecd73cc2e110c84003.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b07/img-0ec87fbb8799abecd73cc2e110c84003.jpg",
+          "url": "https://www.blogmys.com/wp-content/uploads/2019/01/lionel-messi-argentina-chile-final-copa-america-2015_kmkf3r7yma81czl380i2i2hy.jpg"
+        },
+        {
+          "says": "Which of those three finals hurt Messi most?",
+          "visual": "Lionel Messi alone on the pitch after a final",
+          "images": [
+            "Messi sad Argentina after final",
+            "Messi dejected 2014 World Cup final"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b08/img-e8c969fe7420d4a21be1bf72be852f59.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b08/img-4cb897781a86a264a4e7fa8ad74b0a12.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b08/img-9bfcbee51f3d3b94ef73cc93569d8c49.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b08/img-52f7c85b3ad13a90f9048c05ee9426bf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b08/img-c166ee6157ca8bd1e4c2493264772180.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b08/img-bdeb238b2153401d5c6a2f3bdbb168ce.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b08/img-58d8fe8de93271be374f6ac65d094be5.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b08/img-2207a4f4dfb854c7d12ff80fdb6cf713.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_s_argentina_lost_the_2014_world_cu/b01/img-5b7f0c2aba8d5b231905b768c6cd3cbd.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

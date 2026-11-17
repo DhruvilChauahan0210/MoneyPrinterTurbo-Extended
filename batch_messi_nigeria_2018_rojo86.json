@@ -1,0 +1,423 @@
+{
+  "defaults": {
+    "video_aspect": "9:16",
+    "video_concat_mode": "semantic",
+    "video_transition_mode": "None",
+    "video_clip_duration": 7,
+    "video_count": 1,
+    "video_source": "image_search",
+    "video_language": "",
+    "voice_name": "en-US-EricNeural-Male",
+    "voice_volume": 1.2,
+    "voice_rate": 0.88,
+    "bgm_type": "random",
+    "bgm_volume": 0.1,
+    "subtitle_enabled": true,
+    "subtitle_position": "custom",
+    "custom_position": 74.0,
+    "font_name": "MicrosoftYaHeiBold.ttc",
+    "text_fore_color": "#FFFFFF",
+    "text_background_color": true,
+    "font_size": 56,
+    "stroke_color": "#000000",
+    "stroke_width": 1.5,
+    "enable_word_highlighting": true,
+    "word_highlight_color": "#FFD700",
+    "max_chars_per_line": 18,
+    "max_lines_per_subtitle": 2,
+    "max_words_per_subtitle": 2,
+    "segmentation_method": "sentences",
+    "min_segment_length": 18,
+    "enable_image_ranking": true,
+    "image_ranking_min_score": 0.2,
+    "enable_subject_gate": true,
+    "subject_positive_labels": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Victor Moses",
+      "a real photograph of Marcos Rojo",
+      "a real photograph of Kylian Mbappe"
+    ],
+    "subject_negative_labels": [
+      "a stats infographic full of text and numbers",
+      "a Sky Sports or broadcast graphic with a stats table",
+      "a poster or collage with player cutouts on a colored background",
+      "a thumbnail with a yellow or colored caption banner",
+      "a screenshot with large text overlay",
+      "a collage of small photos",
+      "a sports logo or graphic",
+      "a magazine cover with text",
+      "a cartoon or illustration",
+      "a video game or FIFA screenshot",
+      "a generic soccer player in an empty stadium",
+      "an empty landscape or scenery with no people",
+      "an overexposed washed out almost all white blank frame",
+      "a wide angle photo with the player small and off to one side of the frame",
+      "a wide shot of a football pitch where no single player is close to the camera",
+      "a TV studio with pundits sitting at a desk",
+      "a young child or boy playing youth football",
+      "a TikTok video with a username watermark and baked in caption text",
+      "a video clip with a large social media watermark across the frame",
+      "a video frame with a YouTube channel logo watermark in the corner",
+      "a video with large burned-in source subtitles or captions along the bottom",
+      "a still frame of a press conference with a player sitting behind a microphone and sponsor backdrop",
+      "a player being interviewed in front of a sponsor logo wall",
+      "a broadcast scoreline graphic in the corner of the frame",
+      "a giant stadium screen or scoreboard showing a match score",
+      "a rear view of a footballer showing another player's surname printed on his shirt",
+      "a footballer being hugged or embraced by teammates with his back to the camera",
+      "a group of players in a huddle seen from behind",
+      "a footballer in a suit and tie away from a football pitch",
+      "a close up of a footballer's torso or shoulder with no face visible",
+      "a distant wide shot of players training on an empty pitch",
+      "a footballer standing in front of a plain green screen studio backdrop",
+      "a football referee in a yellow or black referee shirt",
+      "a match official holding a whistle or a card on the pitch",
+      "a linesman or assistant referee holding a flag",
+      "a crowd of supporters in the stands with no player visible",
+      "a fan filmed view from the stands looking down at a distant pitch",
+      "a group of players lifting a trophy together with no single face close to the camera",
+      "a small child or toddler wearing a football kit standing on the pitch",
+      "a professional footballer's young son being carried or held on the pitch after a match",
+      "a childhood snapshot of a boy standing beside an adult woman",
+      "a blurry panning shot of a person's body with the face out of frame"
+    ],
+    "subject_gate_margin": 0.15,
+    "subject_gate_abs_floor": 0.35,
+    "segment_reuse_penalty": 0.9,
+    "max_video_reuse": 2,
+    "enable_timed_sync": true,
+    "enable_grayscale": false,
+    "video_clip_ratio": 1.0,
+    "cover_min_keep": 0.62,
+    "enable_youtube_footage": false,
+    "youtube_footage_queries": [],
+    "youtube_max_videos": 30,
+    "youtube_clip_len": 8.0,
+    "youtube_clips_per_video": 8,
+    "youtube_max_clips": 300,
+    "youtube_max_height": 1080,
+    "footage_video_bonus": 0.18,
+    "footage_min_fraction": 1.0,
+    "image_motion_style": "subtle",
+    "enable_color_grade": true,
+    "enable_hook_card": false,
+    "hook_text": "WHO SAVED ARGENTINA'S TOURNAMENT?",
+    "hook_cover_term": "Lionel Messi celebrating a goal against Nigeria in 2018",
+    "hook_min_similarity": 0.26,
+    "hook_require_video": false,
+    "hook_negative_labels": [
+      "a spectator in the crowd holding a cardboard cut out mask of a footballer's face",
+      "a paper or cardboard face mask held up by a fan in the stands",
+      "a fan in the crowd holding up a printed photograph or poster of a player",
+      "a crowd of supporters in the stands with no player visible",
+      "a blurry close up of footballers' legs and boots with no face in frame",
+      "a motion blurred tangle of players with no identifiable face",
+      "a motion blurred smeared unclear frame",
+      "a poster, billboard, sign, article, or screen containing printed words",
+      "a wide football match with tiny players",
+      "the back of a player's head",
+      "a rear view of a player showing the name and number on his shirt",
+      "a line of players standing with their backs to the camera",
+      "a close up of a torso or shoulder with the face out of frame",
+      "a referee holding a card",
+      "a goalkeeper diving for the ball",
+      "an empty patch of grass",
+      "a video frame with large burned in source subtitles or captions along the bottom",
+      "a video frame with a channel name or social media watermark across the frame"
+    ],
+    "hook_negative_margin": 0.08,
+    "hook_overlay_opacity": 0.25,
+    "hook_duration": 1.5,
+    "enable_sfx": true,
+    "sfx_volume": 0.5,
+    "enable_cta": true,
+    "cta_text": "WAS ROJO'S VOLLEY ARGENTINA'S BIGGEST GOAL OF 2018? 👇",
+    "enable_subscribe_button": true,
+    "loop_seamless": false,
+    "loop_follow_tag": false,
+    "loop_tight_trim": true,
+    "n_threads": 8,
+    "paragraph_number": 1,
+    "series_ledger_path": "",
+    "segment_max_media_reuse": 2,
+    "segment_max_source_reuse": 0,
+    "segment_source_reuse_penalty": 0.6,
+    "series_badge_text": "",
+    "visual_evidence_prompts": [
+      "a real photograph of Lionel Messi",
+      "a real photograph of Victor Moses",
+      "a real photograph of Marcos Rojo",
+      "a real photograph of Kylian Mbappe"
+    ],
+    "curated_image_paths": [],
+    "max_sentence_gap": 0.18,
+    "video_script": "Messi scored in the fourteenth minute against Nigeria, with Argentina needing a win to survive. Argentina had drawn with Iceland and lost three-nil to Croatia. Victor Moses equalised from a penalty in the fifty-first minute. Argentina looked set to go out. Marcos Rojo volleyed in the winner in the eighty-sixth minute. Argentina won two-one and went through to face France. Four days later, France beat them four-three. Was Rojo's volley the most important Argentina goal of that tournament?",
+    "video_subject": "Messi scored in the 14th minute against Nigeria at the 2018 World Cup, Victor Moses equalised from a penalty in the 51st, and Marcos Rojo's 86th-minute volley gave Argentina a 2-1 win after a draw with Iceland and a 3-0 loss to Croatia.",
+    "video_terms": "messi, rojo, argentina, nigeria, world cup 2018, moses, iceland, croatia",
+    "era_positive_labels": [
+      "a real photograph of Cristiano Ronaldo the footballer",
+      "a tight close up of Cristiano Ronaldo's face"
+    ],
+    "era_negative_labels": [],
+    "ambience_file": "resource/ambience/stadium_roomtone.mp3",
+    "ambience_volume": 0.07,
+    "jl_cut_offset": 0.12,
+    "target_distinct_media": 10,
+    "one_shot_max_script_words": 150,
+    "min_shot_seconds": 3.2,
+    "min_reuse_gap_seconds": 5.0,
+    "max_media_uses": 2,
+    "max_shots_per_source": 3,
+    "youtube_only_media": false,
+    "intro_image_paths": [],
+    "beat_plan": [
+      {
+        "says": "Messi scored in the fourteenth minute against Nigeria, with Argentina needing a win to survive.",
+        "visual": "close up of Lionel Messi in Argentina kit at the 2018 World Cup",
+        "images": [
+          "Lionel Messi Argentina 2018",
+          "Messi Nigeria 2018"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Argentina had drawn with Iceland and lost three-nil to Croatia.",
+        "visual": "Argentina players dejected after losing to Croatia in 2018",
+        "images": [
+          "Argentina Croatia 2018",
+          "Argentina Iceland 2018"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Victor Moses equalised from a penalty in the fifty-first minute.",
+        "visual": "Victor Moses celebrating for Nigeria in 2018",
+        "images": [
+          "Victor Moses Nigeria",
+          "Nigeria Argentina 2018"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Argentina looked set to go out.",
+        "visual": "Argentina bench anxious in Saint Petersburg 2018",
+        "images": [
+          "Argentina 2018 bench",
+          "Jorge Sampaoli Argentina"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Marcos Rojo volleyed in the winner in the eighty-sixth minute.",
+        "visual": "Marcos Rojo celebrating a goal for Argentina",
+        "images": [
+          "Marcos Rojo Argentina",
+          "Rojo goal Nigeria"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Argentina won two-one and went through to face France.",
+        "visual": "Lionel Messi pointing to the sky in relief in 2018",
+        "images": [
+          "Messi relief 2018",
+          "Argentina celebrate Nigeria"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Four days later, France beat them four-three.",
+        "visual": "France players celebrating in Kazan 2018",
+        "images": [
+          "France Argentina Kazan",
+          "Kylian Mbappe 2018"
+        ],
+        "clips": []
+      },
+      {
+        "says": "Was Rojo's volley the most important Argentina goal of that tournament?",
+        "visual": "Marcos Rojo and Lionel Messi celebrating together",
+        "images": [
+          "Rojo Messi 2018",
+          "Argentina 2018 celebration"
+        ],
+        "clips": []
+      }
+    ],
+    "beat_shared_clips": []
+  },
+  "videos": [
+    {
+      "video_subject": "Messi scored in the 14th minute against Nigeria at the 2018 World Cup, Victor Moses equalised from a penalty in the 51st, and Marcos Rojo's 86th-minute volley gave Argentina a 2-1 win after a draw with Iceland and a 3-0 loss to Croatia.",
+      "video_script": "Messi scored in the fourteenth minute against Nigeria, with Argentina needing a win to survive. Argentina had drawn with Iceland and lost three-nil to Croatia. Victor Moses equalised from a penalty in the fifty-first minute. Argentina looked set to go out. Marcos Rojo volleyed in the winner in the eighty-sixth minute. Argentina won two-one and went through to face France. Four days later, France beat them four-three. Was Rojo's volley the most important Argentina goal of that tournament?",
+      "video_terms": "messi, rojo, argentina, nigeria, world cup 2018, moses, iceland, croatia",
+      "hook_text": "WHO SAVED ARGENTINA'S TOURNAMENT?",
+      "cta_text": "WAS ROJO'S VOLLEY ARGENTINA'S BIGGEST GOAL OF 2018? 👇",
+      "beat_plan": [
+        {
+          "says": "Messi scored in the fourteenth minute against Nigeria, with Argentina needing a win to survive.",
+          "visual": "close up of Lionel Messi in Argentina kit at the 2018 World Cup",
+          "images": [
+            "Lionel Messi Argentina 2018",
+            "Messi Nigeria 2018"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b01/img-6333614e3cf48624677f66dd22f42027.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b01/img-4d332259d125368adef5ca05abb021ce.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b01/img-2394d359fe62e82fe44ed953d1277a85.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b01/img-0adf29d941f8a3fb359c8502c3b5070f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b01/img-12ad9ae686b5c19a18e93e69eab85688.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b01/img-4d332259d125368adef5ca05abb021ce.jpg",
+          "url": "https://www.10wallpaper.com/wallpaper/3840x2400/1806/Russia_2018_World_Cup_Argentina_Lionel_Messi_3840x2400.jpg"
+        },
+        {
+          "says": "Argentina had drawn with Iceland and lost three-nil to Croatia.",
+          "visual": "Argentina players dejected after losing to Croatia in 2018",
+          "images": [
+            "Argentina Croatia 2018",
+            "Argentina Iceland 2018"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b02/img-094c11cfce715a0496ac9c48e76dbcda.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b02/img-c7a54c9ed7d9930d6e936325b532b0c2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b02/img-d35ea9827a47b491bbefc1c0928e134c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b02/img-89814a425af5cc73d2beede3161038a0.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b02/img-3c2f1113fc1e9d3478c7fe8f7ec26662.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b02/img-10904169835602b7f335aca7fe10d3e8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b02/img-e060c334b160b436131591a28fd5e2bb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b02/img-2e207fcf42415ddf494b8db9e926addb.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b02/img-094c11cfce715a0496ac9c48e76dbcda.jpg",
+          "url": "https://imgk.timesnownews.com/24_1529609752__rend_1_1.jpg?tr=w-600"
+        },
+        {
+          "says": "Victor Moses equalised from a penalty in the fifty-first minute.",
+          "visual": "Victor Moses celebrating for Nigeria in 2018",
+          "images": [
+            "Victor Moses Nigeria",
+            "Nigeria Argentina 2018"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b03/img-c9270516afd249973a63fbb88e00d5ca.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b03/img-541043dc5424a838376e6efd3b6cb3fc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b03/img-e078a22206167c9f304a8213f10491f8.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b03/img-45ddc85df3588ea4c5d149af72f31eab.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b03/img-0e1717247d76b674ef9eb45f0c8633c6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b03/img-8657f56e765c3ba2e21a670efc4b9ddb.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b03/img-67eb1ed77451d3845a9ca7fc2e2d304f.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b03/img-3d56a6fa9e48ea588f6557f24095d814.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b03/img-e078a22206167c9f304a8213f10491f8.jpg",
+          "url": "https://www.riotimesonline.com/wp-content/uploads/2026/10/nigeria-national-football-team-cover.jpg"
+        },
+        {
+          "says": "Argentina looked set to go out.",
+          "visual": "Argentina bench anxious in Saint Petersburg 2018",
+          "images": [
+            "Argentina 2018 bench",
+            "Jorge Sampaoli Argentina"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b04/img-fe75ac8cda06ab866be6a4b185292b42.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b04/img-db13269738f1e66c5bbf2e33e307b2b9.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b04/img-3c6f70b40884341c0b14dc97f80383d1.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b04/img-11a5eb495627c307f0bf1049df2e4c76.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b04/img-d17c6c20a85b5b207d496f0c323409b8.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b04/img-db13269738f1e66c5bbf2e33e307b2b9.jpg",
+          "url": "https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2018/07/16/Pictures/files-fbl-wc-2018-arg-sampaoli_7561e216-88d1-11e8-a23e-bc16ac6b2c17.jpg"
+        },
+        {
+          "says": "Marcos Rojo volleyed in the winner in the eighty-sixth minute.",
+          "visual": "Marcos Rojo celebrating a goal for Argentina",
+          "images": [
+            "Marcos Rojo Argentina",
+            "Rojo goal Nigeria"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b05/img-8a995c7ca3a81e61d3d7c6006acebcec.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b05/img-97948e5f0e11999003f5196dcdc59efc.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b05/img-3393f9933ec947e09f30cb475252eebf.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b05/img-927ea9bbfe34e200e4dfe3d15e5fa907.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b05/img-c4857ff46277651f2febd77bb520fd75.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b05/img-3d698f5a43cb067b472b7d3044a82cf7.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b05/img-c67b77af176d79a193ef888e8a929cfd.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b05/img-ccd62fd460bf139c5f00ead5d596e1ee.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b05/shot_bb97ec5ead.mp4",
+          "url": "https://www.youtube.com/watch?v=emPnnGqhNvg",
+          "start": 431.0,
+          "len": 6.0
+        },
+        {
+          "says": "Argentina won two-one and went through to face France.",
+          "visual": "Lionel Messi pointing to the sky in relief in 2018",
+          "images": [
+            "Messi relief 2018",
+            "Argentina celebrate Nigeria"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b06/img-365dc3bc10bfdf1086552e72b0832830.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b06/img-9e0cb1d35db98b0efb9d60cd7ad98956.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b06/img-f077c1120e80638f0f1274bfe632c0b2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b06/img-b53c714b6a1cbabd3d6f949b085cda42.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b06/img-676320bd1f97b27b42bc16bf5366840c.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b06/img-6885623c48821c3ea2a21cdb502b8e4f.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b06/shot_43c018b9d8.mp4",
+          "url": "https://www.youtube.com/watch?v=emPnnGqhNvg",
+          "start": 102.0,
+          "len": 6.0
+        },
+        {
+          "says": "Four days later, France beat them four-three.",
+          "visual": "France players celebrating in Kazan 2018",
+          "images": [
+            "France Argentina Kazan",
+            "Kylian Mbappe 2018"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b07/img-297bc1972c2a533efdcbef48a3f41b3b.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b07/img-cad24f4ac27f6f276c3ec70cfde5792d.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b07/img-92f4b67aaa29cfcfecbf70c07a606f87.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b07/img-e8f5c2af22ee31243f53c7026cf18ed2.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b07/img-a4ba76976273b882b41d7fd61e57b5ef.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b07/img-954a8b02f333d1a2941e4e3afd63d29b.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b07/img-297bc1972c2a533efdcbef48a3f41b3b.jpg",
+          "url": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/06/30/16/Kylian-Mbappe-0.jpg"
+        },
+        {
+          "says": "Was Rojo's volley the most important Argentina goal of that tournament?",
+          "visual": "Marcos Rojo and Lionel Messi celebrating together",
+          "images": [
+            "Rojo Messi 2018",
+            "Argentina 2018 celebration"
+          ],
+          "clips": [],
+          "candidates": [
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b08/img-b38073b629d21c6bd407399be65353f6.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b08/img-29a638fd30c987fa94eb5a0725263170.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b08/img-31f598b7856c5eec54d2d5f7e7b27943.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b08/img-462f702b2bc0437f0091ebf6d8ed2120.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b08/img-3ca9bd1a92fc0cc930e0ceb515669bde.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b08/img-d218685d0c590e086add89d0d777d034.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b08/img-d94d794ed9a4086e395e0900904b6847.jpg",
+            "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b08/img-6cc79a4c0281ee82172e24fd9bff0662.jpg"
+          ],
+          "media": "/Users/dhruvilchauhan/Developer/CDH/MoneyPrinterTurbo-Extended/storage/beats/messi_scored_in_the_14th_minute_against_/b08/img-b38073b629d21c6bd407399be65353f6.jpg",
+          "url": "https://indianexpress.com/wp-content/uploads/2018/06/rojo-messi.jpg"
+        }
+      ],
+      "beat_shared_clips": []
+    }
+  ]
+}

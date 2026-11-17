@@ -1,0 +1,21 @@
+{
+  "cfg": "batch_messi_chelsea_2018_100goals.json",
+  "status": "ready",
+  "clip_beats": [],
+  "weak_beats": [
+    {
+      "beat": 4,
+      "why": "back view of Messi in Barca kit, not a goal celebration"
+    },
+    {
+      "beat": 2,
+      "why": "empty Camp Nou stadium wide"
+    },
+    {
+      "beat": 3,
+      "why": "Chelsea stand, not obviously match night"
+    }
+  ],
+  "beat1": "Messi arms out celebrating a goal vs Chelsea 2018 in Barca Rakuten kit (borrowed from beat 6)",
+  "notes": "No clip: only wide tactical-cam broadcast uploads found for the 3-0 match; Messi too small. Beats 1 and 6 use different photos."
+}

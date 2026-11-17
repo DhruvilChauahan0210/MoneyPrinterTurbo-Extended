@@ -1,0 +1,336 @@
+{
+ "key": "neymar_father_ceo",
+ "out": "NEWSCUT_neymar_father_ceo.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_em106.wav",
+ "musicVol": 0.012,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Neymar's father is also his agent.",
+ "sentences": [
+  [
+   [
+    "NEYMAR'S FATHER",
+    "Neymar's father"
+   ],
+   [
+    "IS ALSO HIS AGENT",
+    "is also his agent,"
+   ],
+   [
+    "AND NOW",
+    "and now"
+   ],
+   [
+    "HE'S THE CEO",
+    "he's the C E O"
+   ],
+   [
+    "OF THE CLUB",
+    "of the club"
+   ],
+   [
+    "NEYMAR PLAYS FOR",
+    "Neymar plays for."
+   ]
+  ],
+  [
+   [
+    "YES",
+    "Yes,"
+   ],
+   [
+    "REALLY",
+    "really."
+   ]
+  ],
+  [
+   [
+    "ON NOVEMBER 6",
+    "On November sixth,"
+   ],
+   [
+    "SANTOS NAMED",
+    "Santos named"
+   ],
+   [
+    "NEYMAR SENIOR",
+    "Neymar Senior"
+   ],
+   [
+    "CHIEF EXECUTIVE",
+    "chief executive,"
+   ],
+   [
+    "STANDING NEXT TO",
+    "standing next to"
+   ],
+   [
+    "PRESIDENT MARCELO TEIXEIRA",
+    "president Marcelo Tay-shay-ra."
+   ]
+  ],
+  [
+   [
+    "HIS AGENCY",
+    "His agency,"
+   ],
+   [
+    "NR SPORTS",
+    "N R Sports,"
+   ],
+   [
+    "HOLDS THE RIGHTS",
+    "holds the rights"
+   ],
+   [
+    "TO NEYMAR'S NAME",
+    "to Neymar's name"
+   ],
+   [
+    "AND IMAGE",
+    "and image,"
+   ],
+   [
+    "AND IT HAS ALREADY",
+    "and it has already"
+   ],
+   [
+    "LENT MONEY",
+    "lent money"
+   ],
+   [
+    "TO THE CLUB",
+    "to the club."
+   ]
+  ],
+  [
+   [
+    "NEYMAR'S CONTRACT",
+    "Neymar's contract"
+   ],
+   [
+    "REPORTEDLY RUNS OUT",
+    "reportedly runs out"
+   ],
+   [
+    "AT THE END OF 2026",
+    "at the end of twenty twenty-six,"
+   ],
+   [
+    "AND THE CLUB ELECTION",
+    "and the club election"
+   ],
+   [
+    "IS ON DECEMBER 12",
+    "is on December twelfth."
+   ]
+  ],
+  [
+   [
+    "IF TEIXEIRA",
+    "If Tay-shay-ra"
+   ],
+   [
+    "WINS AGAIN",
+    "wins again,"
+   ],
+   [
+    "HIS FATHER STAYS",
+    "his father stays,"
+   ],
+   [
+    "WHICH MEANS",
+    "which means"
+   ],
+   [
+    "THE MAN ON BOTH SIDES",
+    "the man on both sides"
+   ],
+   [
+    "OF NEYMAR'S NEXT CONTRACT",
+    "of Neymar's next contract"
+   ],
+   [
+    "COULD BE",
+    "could be"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "i0-3q95iUJA",
+   "start": 438.0,
+   "x": 680,
+   "h": 760,
+   "y": 60
+  },
+  {
+   "at": 1,
+   "vid": "PRGIQd5CKzs",
+   "start": 13.0,
+   "x": 720
+  },
+  {
+   "at": 2,
+   "vid": "PRGIQd5CKzs",
+   "start": 3.8,
+   "x": 500
+  },
+  {
+   "at": 4,
+   "vid": "QVfUk0fSW2Q",
+   "start": 590.0,
+   "x": 600
+  },
+  {
+   "at": 6,
+   "vid": "PRGIQd5CKzs",
+   "start": 170.0,
+   "x": 360,
+   "h": 960,
+   "y": 110
+  },
+  {
+   "at": 8,
+   "vid": "PRGIQd5CKzs",
+   "start": 0.2,
+   "x": 230,
+   "h": 960,
+   "y": 110
+  },
+  {
+   "at": 9,
+   "vid": "PRGIQd5CKzs",
+   "start": 41.0,
+   "x": 650
+  },
+  {
+   "at": 11,
+   "vid": "PRGIQd5CKzs",
+   "start": 8.0,
+   "x": 820
+  },
+  {
+   "at": 13,
+   "vid": "PRGIQd5CKzs",
+   "start": 118.0,
+   "x": 650
+  },
+  {
+   "at": 14,
+   "vid": "PRGIQd5CKzs",
+   "start": 112.0,
+   "x": 530
+  },
+  {
+   "at": 15,
+   "vid": "BFM8e7JvvH0",
+   "start": 100.0,
+   "x": 380,
+   "h": 900,
+   "y": 0
+  },
+  {
+   "at": 16,
+   "vid": "2umn9O6RMJg",
+   "start": 56.8,
+   "x": 650
+  },
+  {
+   "at": 18,
+   "vid": "2umn9O6RMJg",
+   "start": 81.0,
+   "x": 400
+  },
+  {
+   "at": 20,
+   "vid": "fyJL-SvMwMI",
+   "start": 86.0,
+   "x": 656
+  },
+  {
+   "at": 22,
+   "vid": "2umn9O6RMJg",
+   "start": 37.0,
+   "x": 700
+  },
+  {
+   "at": 23,
+   "vid": "2umn9O6RMJg",
+   "start": 66.5,
+   "x": 400
+  },
+  {
+   "at": 24,
+   "vid": "i0-3q95iUJA",
+   "start": 472.8,
+   "x": 720
+  },
+  {
+   "at": 25,
+   "vid": "PRGIQd5CKzs",
+   "start": 122.0,
+   "x": 650
+  },
+  {
+   "at": 26,
+   "vid": "fyJL-SvMwMI",
+   "start": 8.9,
+   "x": 656
+  },
+  {
+   "at": 27,
+   "vid": "PRGIQd5CKzs",
+   "start": 145.0,
+   "x": 650
+  },
+  {
+   "at": 29,
+   "vid": "PRGIQd5CKzs",
+   "start": 20.0,
+   "x": 400
+  },
+  {
+   "at": 30,
+   "vid": "PRGIQd5CKzs",
+   "start": 88.0,
+   "x": 240,
+   "h": 960,
+   "y": 110
+  },
+  {
+   "at": 32,
+   "vid": "QVfUk0fSW2Q",
+   "start": 343.1,
+   "x": 740
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 8,
+   "toChunk": 13,
+   "label": "SOURCE",
+   "title": "Santos FC / Reuters",
+   "lines": [
+    "6 Nov 2026",
+    "Neymar Sr named chief executive"
+   ]
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 1,
+   "t": 0.6
+  },
+  "text": "HIS DAD IS THE BOSS NOW 😳"
+ }
+}

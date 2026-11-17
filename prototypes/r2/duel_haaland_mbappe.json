@@ -1,0 +1,163 @@
+{
+ "mode": "duel",
+ "key": "duel_haaland_mbappe",
+ "out": "14NOV_1900_DUEL_haaland_mbappe",
+ "voice": "en-US-GuyNeural",
+ "rate": "+8%",
+ "music": "music2.mp3",
+ "musicVolume": 0.22,
+ "headline": "PICK ONE",
+ "countdownSeconds": 5,
+ "photos": {
+  "left": {
+   "src": "prototypes/r2/photos/haaland2_src.jpg",
+   "box": [
+    0,
+    0,
+    840,
+    922
+   ]
+  },
+  "right": {
+   "src": "prototypes/r2/photos/mbappe26_src.jpg",
+   "box": [
+    552,
+    0,
+    2261,
+    1876
+   ]
+  }
+ },
+ "left": {
+  "name": "HAALAND",
+  "sub": "MAN CITY",
+  "color": "#3fb6ff",
+  "posX": 40,
+  "posY": 20,
+  "zoom": 1
+ },
+ "right": {
+  "name": "MBAPPÉ",
+  "sub": "REAL MADRID",
+  "color": "#a35cff",
+  "posX": 50,
+  "posY": 25,
+  "zoom": 1
+ },
+ "rows": [
+  {
+   "label": "Champions League goals 24-25",
+   "a": 8,
+   "b": 7,
+   "win": "a"
+  },
+  {
+   "label": "Age today",
+   "a": 26,
+   "b": 27
+  },
+  {
+   "label": "League goals 24-25",
+   "a": 22,
+   "b": 31,
+   "win": "b"
+  },
+  {
+   "label": "Goals 24-25, all comps",
+   "a": 34,
+   "b": 44,
+   "win": "b"
+  },
+  {
+   "label": "Minutes per goal (lower wins)",
+   "a": 119,
+   "b": 108,
+   "win": "b"
+  }
+ ],
+ "reveal": {
+  "number": 31,
+  "label": "LA LIGA GOALS: EUROPEAN GOLDEN SHOE",
+  "detail": "Mbappé, 2024-25  |  Haaland: 22 in the Premier League",
+  "question": "WHO DID YOU PICK?"
+ },
+ "source": "Sources: Transfermarkt (2024-25, all club competitions)",
+ "segments": [
+  {
+   "id": "intro",
+   "text": "Pick one. Haaland, or Mbappé? Pick before the bar ends.",
+   "tts": "Pick one. Haaland, or Em-bap-ay? Pick before the bar ends."
+  },
+  {
+   "id": "row0",
+   "text": "Champions League goals: 8, to 7.",
+   "minStart": 4.8
+  },
+  {
+   "id": "row1",
+   "text": "Age today: 26, and 27."
+  },
+  {
+   "id": "row2",
+   "text": "League goals: 22, to 31."
+  },
+  {
+   "id": "row3",
+   "text": "All competitions: 34, to 44."
+  },
+  {
+   "id": "row4",
+   "text": "Minutes per goal: 119, to 108. Lower wins."
+  },
+  {
+   "id": "reveal",
+   "text": "Mbappé's 31 won the Golden Shoe. Who's your pick?",
+   "tts": "Em-bap-ay's 31 won the Golden Shoe. Who's your pick?"
+  }
+ ],
+ "tail": 0.6,
+ "leftClips": [
+  {
+   "url": "https://www.youtube.com/watch?v=EppU7FwAyEc",
+   "start": 108.0,
+   "len": 5.5
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=EppU7FwAyEc",
+   "start": 228.0,
+   "len": 5.5
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=EppU7FwAyEc",
+   "start": 368.0,
+   "len": 5.5
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=EppU7FwAyEc",
+   "start": 428.0,
+   "len": 5.5
+  }
+ ],
+ "rightClips": [
+  {
+   "url": "https://www.youtube.com/watch?v=6VC5VHn5EQM",
+   "start": 258.0,
+   "len": 5.5
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=6VC5VHn5EQM",
+   "start": 38.0,
+   "len": 5.5
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=6VC5VHn5EQM",
+   "start": 358.0,
+   "len": 5.5
+  },
+  {
+   "url": "https://www.youtube.com/watch?v=6VC5VHn5EQM",
+   "start": 218.0,
+   "len": 5.5
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+{"cfg":"batch_ronaldo_tottenham2022_hattrick.json","status":"ready","clip_beats":[],"weak_beats":[
+"2: Ronaldo celebrating with Spurs players behind (not a stadium wide shot; chosen for person count)",
+"7: team celebration at Old Trafford, wider than ideal; not clearly the Spurs match",
+"8: Ronaldo in older AIG-era United kit, intentional for the 14-year gap beat",
+"6: Telles close-up applauding in United kit, not a corner shot"],
+"beat1":"Close-up of Ronaldo celebrating, arms raised, red Man United kit",
+"notes":"Photos only, no clips (editorial gate needs >=60% person shots). Beats 6 and 8 re-sourced with plain-name queries. All 9 photos show a person. check_config green, all media exist."}

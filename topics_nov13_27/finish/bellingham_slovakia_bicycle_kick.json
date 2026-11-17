@@ -1,0 +1,22 @@
+{
+ "cfg": "batch_bellingham_slovakia_bicycle_kick.json",
+ "status": "ready",
+ "clip_beats": [
+  {
+   "beat": 5,
+   "url": "https://www.youtube.com/watch?v=-pmB7TZRfRQ",
+   "start": 266.0
+  },
+  {
+   "beat": 6,
+   "url": "https://www.youtube.com/watch?v=-pmB7TZRfRQ",
+   "start": 340.0
+  }
+ ],
+ "weak_beats": [
+  3,
+  4
+ ],
+ "beat1": "Bellingham #10 England white kit arms wide celebration (borrowed from beat 8 candidate 5)",
+ "notes": "Clips from official England channel highlights. Beat 5 = Walker throw wind-up and box scramble; beat 6 = Bellingham overhead kick and fall (start 340). The standard --replace failed with an ffmpeg output error; pinned via fetch_exact_clip directly (start 266 because 267 was rejected). Beat 3 is a Slovakia team photo (no Schranz goal photo). Beat 4 is Southgate reacting, not players dejected."
+}

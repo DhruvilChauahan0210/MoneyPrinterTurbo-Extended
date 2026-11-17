@@ -1,0 +1,446 @@
+{
+ "key": "ronaldo_tickets",
+ "out": "NEWSCUT_ronaldo_ticket_myth.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_em106.wav",
+ "musicVol": 0.012,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Ronaldo retired from Portugal.",
+ "sentences": [
+  [
+   [
+    "RONALDO RETIRED",
+    "Ronaldo retired"
+   ],
+   [
+    "FROM PORTUGAL",
+    "from Portugal,"
+   ],
+   [
+    "AND A VIRAL POST",
+    "and a viral post"
+   ],
+   [
+    "CLAIMS",
+    "claims"
+   ],
+   [
+    "TICKET PRICES",
+    "ticket prices"
+   ],
+   [
+    "CRASHED",
+    "crashed"
+   ],
+   [
+    "ALMOST 90%",
+    "almost ninety percent."
+   ]
+  ],
+  [
+   [
+    "BUT THE TRUTH",
+    "But the truth"
+   ],
+   [
+    "IS A COMPLETELY",
+    "is a completely"
+   ],
+   [
+    "DIFFERENT STORY",
+    "different story."
+   ]
+  ],
+  [
+   [
+    "ON NOVEMBER 5",
+    "On November fifth,"
+   ],
+   [
+    "RONALDO",
+    "Ronaldo"
+   ],
+   [
+    "HANDED BACK",
+    "handed back"
+   ],
+   [
+    "THE NUMBER 7",
+    "the number seven"
+   ],
+   [
+    "SHIRT",
+    "shirt"
+   ],
+   [
+    "AFTER",
+    "after"
+   ],
+   [
+    "234 CAPS",
+    "two hundred thirty-four caps"
+   ],
+   [
+    "AND 146 GOALS",
+    "and one hundred forty-six goals,"
+   ],
+   [
+    "BOTH ALL-TIME",
+    "both all-time"
+   ],
+   [
+    "MEN'S RECORDS",
+    "men's records."
+   ]
+  ],
+  [
+   [
+    "DAYS LATER",
+    "Days later,"
+   ],
+   [
+    "THE POST CLAIMED",
+    "the post claimed"
+   ],
+   [
+    "TICKETS FELL",
+    "tickets fell"
+   ],
+   [
+    "FROM €120",
+    "from one hundred twenty euros"
+   ],
+   [
+    "TO JUST €17",
+    "to just seventeen."
+   ]
+  ],
+  [
+   [
+    "BUT PORTUGUESE",
+    "But Portuguese"
+   ],
+   [
+    "NEWSPAPER RECORD",
+    "newspaper Record"
+   ],
+   [
+    "FOUND OFFICIAL",
+    "found official"
+   ],
+   [
+    "HOME TICKETS",
+    "home tickets"
+   ],
+   [
+    "GENERALLY COST",
+    "generally cost"
+   ],
+   [
+    "€15 TO €40",
+    "fifteen to forty euros,"
+   ],
+   [
+    "AND NO EVIDENCE",
+    "and no evidence"
+   ],
+   [
+    "OF THAT PRICE",
+    "of that price."
+   ]
+  ],
+  [
+   [
+    "AND IN BRAGA",
+    "And in Braga"
+   ],
+   [
+    "AGAINST DENMARK",
+    "against Denmark,"
+   ],
+   [
+    "EVERY PORTUGAL",
+    "every Portugal"
+   ],
+   [
+    "PLAYER",
+    "player"
+   ],
+   [
+    "IS EXPECTED",
+    "is expected"
+   ],
+   [
+    "TO WALK OUT",
+    "to walk out"
+   ],
+   [
+    "WEARING NUMBER 7",
+    "wearing number seven,"
+   ],
+   [
+    "IN THEIR FIRST",
+    "in their first"
+   ],
+   [
+    "MATCH SINCE",
+    "match since"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "a_-JGb7asE0",
+   "start": 6.6,
+   "x": 636,
+   "h": 960
+  },
+  {
+   "at": 1,
+   "vid": "BUtBWVaq9gU",
+   "start": 35.95,
+   "x": 797,
+   "h": 960
+  },
+  {
+   "at": 2,
+   "vid": "EPm_yBbPxZk",
+   "start": 2.0,
+   "x": 656,
+   "gfx": "post",
+   "tag": "VIRAL POST",
+   "lines": [
+    "Portugal tickets after Ronaldo:",
+    "€120 → €17"
+   ],
+   "note": "UNVERIFIED CLAIM"
+  },
+  {
+   "at": 4,
+   "vid": "EPm_yBbPxZk",
+   "start": 0.4,
+   "x": 656
+  },
+  {
+   "at": 5,
+   "vid": "EPm_yBbPxZk",
+   "start": 4.2,
+   "x": 656,
+   "gfx": "crash",
+   "tag": "VIRAL CLAIM · UNVERIFIED",
+   "label": "−90%?",
+   "marksAt": [
+    6
+   ]
+  },
+  {
+   "at": 7,
+   "vid": "BUtBWVaq9gU",
+   "start": 225.45,
+   "x": 750,
+   "h": 960
+  },
+  {
+   "at": 9,
+   "vid": "BUtBWVaq9gU",
+   "start": 52.2,
+   "x": 690,
+   "h": 960
+  },
+  {
+   "at": 10,
+   "vid": "BUtBWVaq9gU",
+   "start": 22.0,
+   "x": 705,
+   "h": 960
+  },
+  {
+   "at": 12,
+   "vid": "BUtBWVaq9gU",
+   "start": 19.0,
+   "x": 400,
+   "h": 960
+  },
+  {
+   "at": 13,
+   "vid": "BUtBWVaq9gU",
+   "start": 63.45,
+   "x": 550,
+   "h": 960
+  },
+  {
+   "at": 15,
+   "vid": "BUtBWVaq9gU",
+   "start": 161.2,
+   "x": 310,
+   "h": 960
+  },
+  {
+   "at": 17,
+   "vid": "is8JWdOeinI",
+   "start": 215.0,
+   "x": 730
+  },
+  {
+   "at": 18,
+   "vid": "a_-JGb7asE0",
+   "start": 71.5,
+   "x": 1006
+  },
+  {
+   "at": 19,
+   "vid": "BUtBWVaq9gU",
+   "start": 42.3,
+   "x": 690,
+   "h": 960
+  },
+  {
+   "at": 20,
+   "vid": "Mypnw0UBfGo",
+   "start": 31.0,
+   "x": 672,
+   "srcH": 1024,
+   "gfx": "post",
+   "tag": "VIRAL POST",
+   "lines": [
+    "Portugal tickets after Ronaldo:",
+    "€120 → €17"
+   ],
+   "note": "UNVERIFIED CLAIM"
+  },
+  {
+   "at": 22,
+   "vid": "EPm_yBbPxZk",
+   "start": 7.2,
+   "x": 656
+  },
+  {
+   "at": 23,
+   "vid": "Mypnw0UBfGo",
+   "start": 37.2,
+   "x": 672,
+   "srcH": 1024,
+   "gfx": "price",
+   "tag": "THE VIRAL CLAIM",
+   "a": "€120",
+   "b": "€17",
+   "marksAt": [
+    24
+   ]
+  },
+  {
+   "at": 25,
+   "vid": "BUtBWVaq9gU",
+   "start": 60.85,
+   "x": 656,
+   "h": 960
+  },
+  {
+   "at": 27,
+   "vid": "BUtBWVaq9gU",
+   "start": 218.15,
+   "x": 690,
+   "h": 960
+  },
+  {
+   "at": 28,
+   "vid": "BUtBWVaq9gU",
+   "start": 120.6,
+   "x": 690,
+   "h": 960
+  },
+  {
+   "at": 30,
+   "vid": "BUtBWVaq9gU",
+   "start": 205.9,
+   "x": 690,
+   "h": 960
+  },
+  {
+   "at": 31,
+   "vid": "BUtBWVaq9gU",
+   "start": 239.2,
+   "x": 690,
+   "h": 960
+  },
+  {
+   "at": 32,
+   "vid": "BUtBWVaq9gU",
+   "start": 234.0,
+   "x": 690,
+   "h": 960
+  },
+  {
+   "at": 33,
+   "vid": "Mypnw0UBfGo",
+   "start": 26.0,
+   "x": 672,
+   "srcH": 1024
+  },
+  {
+   "at": 34,
+   "vid": "otKqvOapZwI",
+   "start": 17.48,
+   "x": 656
+  },
+  {
+   "at": 35,
+   "vid": "otKqvOapZwI",
+   "start": 240.3,
+   "x": 656
+  },
+  {
+   "at": 37,
+   "vid": "otKqvOapZwI",
+   "start": 244.0,
+   "x": 656
+  },
+  {
+   "at": 38,
+   "vid": "BUtBWVaq9gU",
+   "start": 163.9,
+   "x": 570,
+   "h": 960
+  },
+  {
+   "at": 39,
+   "vid": "is8JWdOeinI",
+   "start": 218.35,
+   "x": 590
+  },
+  {
+   "at": 40,
+   "vid": "a_-JGb7asE0",
+   "start": 1.0,
+   "x": 361
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 25,
+   "toChunk": 33,
+   "label": "SOURCE",
+   "title": "Record (Portugal)",
+   "lines": [
+    "via World Soccer Talk · 10 Nov 2026",
+    "Official home tickets: €15–€40"
+   ]
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 3,
+   "t": 0.3
+  },
+  "text": "€120 → €17?"
+ }
+}

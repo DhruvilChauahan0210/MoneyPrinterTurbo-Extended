@@ -1,0 +1,374 @@
+{
+ "key": "yamal_england",
+ "out": "NEWSCUT_yamal_england.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_em106.wav",
+ "musicVol": 0.012,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Lamine Yamal.",
+ "sentences": [
+  [
+   [
+    "LAMINE YAMAL",
+    "Lamine Yamal"
+   ],
+   [
+    "WAS RULED OUT",
+    "was ruled out"
+   ],
+   [
+    "OF SPAIN'S LAST GAME",
+    "of Spain's last game"
+   ],
+   [
+    "WITH A KNEE PROBLEM",
+    "with a knee problem,"
+   ],
+   [
+    "AND ENGLAND",
+    "and England"
+   ],
+   [
+    "STARTED TO DREAM",
+    "started to dream."
+   ]
+  ],
+  [
+   [
+    "BUT THAT DREAM",
+    "But that dream"
+   ],
+   [
+    "MAY BE OVER",
+    "may be over."
+   ]
+  ],
+  [
+   [
+    "AFTER BARCELONA",
+    "After Barcelona"
+   ],
+   [
+    "BEAT ATLÉTICO",
+    "beat Atlético,"
+   ],
+   [
+    "A SCAN FOUND",
+    "a scan found"
+   ],
+   [
+    "INFLAMMATION",
+    "inflammation"
+   ],
+   [
+    "AND FLUID",
+    "and fluid"
+   ],
+   [
+    "IN HIS RIGHT KNEE",
+    "in his right knee,"
+   ],
+   [
+    "AND HE MISSED",
+    "and he missed"
+   ],
+   [
+    "THURSDAY'S TRIP",
+    "Thursday's trip"
+   ],
+   [
+    "TO CZECHIA",
+    "to Czechia."
+   ]
+  ],
+  [
+   [
+    "EVEN CZECHIA'S COACH",
+    "Even Czechia's coach"
+   ],
+   [
+    "ADMITTED",
+    "admitted"
+   ],
+   [
+    "THEY WANTED LAMINE",
+    "they wanted Lamine"
+   ],
+   [
+    "TO BE THERE",
+    "to be there."
+   ]
+  ],
+  [
+   [
+    "AND THIS WEEK",
+    "And this week"
+   ],
+   [
+    "HE BECAME",
+    "he became"
+   ],
+   [
+    "THE FIRST PLAYER",
+    "the first player"
+   ],
+   [
+    "TO MAKE",
+    "to make"
+   ],
+   [
+    "THE FIFPRO WORLD ELEVEN",
+    "the FIFPRO World Eleven"
+   ],
+   [
+    "TWICE",
+    "twice"
+   ],
+   [
+    "BEFORE TURNING 20",
+    "before turning twenty."
+   ]
+  ],
+  [
+   [
+    "NOW REPORTS SAY",
+    "Now reports say"
+   ],
+   [
+    "YAMAL",
+    "Yamal"
+   ],
+   [
+    "HAS BEEN CLEARED",
+    "has been cleared"
+   ],
+   [
+    "TO PLAY",
+    "to play"
+   ],
+   [
+    "THE FULL 90 MINUTES",
+    "the full ninety minutes"
+   ],
+   [
+    "ON SUNDAY",
+    "on Sunday"
+   ],
+   [
+    "AT THE METROPOLITANO",
+    "at the Metropolitano,"
+   ],
+   [
+    "WHERE ENGLAND",
+    "where England"
+   ],
+   [
+    "WERE HOPING",
+    "were hoping"
+   ],
+   [
+    "TO FACE SPAIN",
+    "to face Spain"
+   ],
+   [
+    "WITHOUT",
+    "without"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "cQQsgMpy2cA",
+   "start": 54.3,
+   "x": 1016
+  },
+  {
+   "at": 2,
+   "vid": "xvqijQjiO8I",
+   "start": 53.8,
+   "x": 608,
+   "h": 860,
+   "y": 100
+  },
+  {
+   "at": 3,
+   "vid": "rCEL1gLvHZo",
+   "start": 30.5,
+   "x": 560,
+   "h": 880,
+   "y": 40
+  },
+  {
+   "at": 4,
+   "vid": "rBfmW2-jj-4",
+   "start": 8.5,
+   "x": 656
+  },
+  {
+   "at": 6,
+   "vid": "cQQsgMpy2cA",
+   "start": 56.3,
+   "x": 1016
+  },
+  {
+   "at": 7,
+   "vid": "cQQsgMpy2cA",
+   "start": 263.0,
+   "x": 1096
+  },
+  {
+   "at": 8,
+   "vid": "wdtYGRqHv-M",
+   "start": 2.0,
+   "x": 1100
+  },
+  {
+   "at": 9,
+   "vid": "wdtYGRqHv-M",
+   "start": 176.0,
+   "x": 1136
+  },
+  {
+   "at": 10,
+   "vid": "OHW5svCCms4",
+   "start": 436.0,
+   "x": 880
+  },
+  {
+   "at": 12,
+   "vid": "OHW5svCCms4",
+   "start": 442.0,
+   "x": 560
+  },
+  {
+   "at": 14,
+   "vid": "xvqijQjiO8I",
+   "start": 9.8,
+   "x": 1008,
+   "h": 860,
+   "y": 100
+  },
+  {
+   "at": 16,
+   "vid": "xvqijQjiO8I",
+   "start": 45.5,
+   "x": 900,
+   "h": 860,
+   "y": 100
+  },
+  {
+   "at": 17,
+   "vid": "CyJBp-bdH4I",
+   "start": 24.7,
+   "x": 656
+  },
+  {
+   "at": 18,
+   "vid": "LV5Ju20KVJk",
+   "start": 90.0,
+   "x": 656
+  },
+  {
+   "at": 20,
+   "vid": "cQQsgMpy2cA",
+   "start": 441.3,
+   "x": 696
+  },
+  {
+   "at": 21,
+   "vid": "cQQsgMpy2cA",
+   "start": 338.0,
+   "x": 896
+  },
+  {
+   "at": 24,
+   "vid": "cQQsgMpy2cA",
+   "start": 506.6,
+   "x": 1056
+  },
+  {
+   "at": 26,
+   "vid": "cQQsgMpy2cA",
+   "start": 594.0,
+   "x": 796
+  },
+  {
+   "at": 27,
+   "vid": "cQQsgMpy2cA",
+   "start": 675.2,
+   "x": 671
+  },
+  {
+   "at": 28,
+   "vid": "7481XLk11EA",
+   "start": 12.0,
+   "x": 686
+  },
+  {
+   "at": 29,
+   "vid": "7481XLk11EA",
+   "start": 17.0,
+   "x": 656
+  },
+  {
+   "at": 31,
+   "vid": "7481XLk11EA",
+   "start": 39.0,
+   "x": 596
+  },
+  {
+   "at": 33,
+   "vid": "7481XLk11EA",
+   "start": 29.0,
+   "x": 596
+  },
+  {
+   "at": 34,
+   "vid": "FzUPoY0cFYc",
+   "start": 2.0,
+   "x": 656
+  },
+  {
+   "at": 35,
+   "vid": "rBfmW2-jj-4",
+   "start": 118.0,
+   "x": 656
+  },
+  {
+   "at": 37,
+   "vid": "xvqijQjiO8I",
+   "start": 98.65,
+   "x": 900,
+   "h": 860,
+   "y": 100
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 28,
+   "toChunk": 32,
+   "label": "SOURCE",
+   "title": "Spanish FA / Tribuna",
+   "lines": [
+    "13 Nov 2026",
+    "Cleared for Spain v England"
+   ]
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 15,
+   "t": 0.3
+  },
+  "text": "YAMAL IS BACK 😳"
+ }
+}
