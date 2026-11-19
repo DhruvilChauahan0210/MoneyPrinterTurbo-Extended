@@ -1,0 +1,182 @@
+{
+ "key": "messi_golden_boot_playoffs",
+ "out": "NEWSCUT_messi_golden_boot_playoffs.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_em106.wav",
+ "musicVol": 0.012,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Lionel Messi.",
+ "sentences": [
+  [
+   [
+    "LIONEL MESSI",
+    "Lionel Messi"
+   ],
+   [
+    "IS 39",
+    "is thirty-nine,"
+   ],
+   [
+    "AND HE JUST WON",
+    "and he just won"
+   ],
+   [
+    "THE GOLDEN BOOT",
+    "the Golden Boot"
+   ],
+   [
+    "AGAIN",
+    "again."
+   ]
+  ],
+  [
+   [
+    "26 GOALS",
+    "Twenty-six goals"
+   ],
+   [
+    "THIS SEASON",
+    "this season,"
+   ],
+   [
+    "THE FIRST PLAYER",
+    "the first player"
+   ],
+   [
+    "IN MLS HISTORY",
+    "in MLS history"
+   ],
+   [
+    "TO WIN IT",
+    "to win it"
+   ],
+   [
+    "TWO YEARS IN A ROW",
+    "two years in a row."
+   ]
+  ],
+  [
+   [
+    "BUT NOW",
+    "But now"
+   ],
+   [
+    "COMES THE HARD PART",
+    "comes the hard part."
+   ]
+  ],
+  [
+   [
+    "INTER MIAMI",
+    "Inter Miami"
+   ],
+   [
+    "ARE THE DEFENDING CHAMPIONS",
+    "are the defending champions,"
+   ],
+   [
+    "AND NO TEAM",
+    "and no team"
+   ],
+   [
+    "HAS WON",
+    "has won"
+   ],
+   [
+    "BACK-TO-BACK MLS CUPS",
+    "back-to-back MLS Cups"
+   ],
+   [
+    "SINCE LA GALAXY",
+    "since LA Galaxy"
+   ],
+   [
+    "IN 2012",
+    "in twenty twelve."
+   ]
+  ],
+  [
+   [
+    "ON SATURDAY",
+    "On Saturday"
+   ],
+   [
+    "IN MIAMI",
+    "in Miami,"
+   ],
+   [
+    "THE DEFENCE STARTS",
+    "the defence starts"
+   ],
+   [
+    "AGAINST COLUMBUS",
+    "against Columbus,"
+   ],
+   [
+    "BEST OF THREE",
+    "best of three."
+   ]
+  ],
+  [
+   [
+    "LOSE TWICE",
+    "Lose twice,"
+   ],
+   [
+    "AND THE TITLE",
+    "and the title"
+   ],
+   [
+    "IS GONE",
+    "is gone."
+   ]
+  ],
+  [
+   [
+    "AND THE MAN",
+    "And the man"
+   ],
+   [
+    "COLUMBUS",
+    "Columbus"
+   ],
+   [
+    "HAVE TO STOP",
+    "have to stop"
+   ],
+   [
+    "IS",
+    "is"
+   ]
+  ]
+ ],
+ "shots": [],
+ "cards": [
+  {
+   "fromChunk": 0,
+   "toChunk": 0,
+   "label": "SOURCE",
+   "title": "MLS / theScore",
+   "lines": [
+    "Nov 2026",
+    "26 goals, 2nd Golden Boot"
+   ]
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 1,
+   "t": 0.3
+  },
+  "text": "CAN HE DO IT? 😳"
+ },
+ "hook": "39 AND STILL THE BEST?"
+}

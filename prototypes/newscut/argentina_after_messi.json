@@ -1,0 +1,182 @@
+{
+ "key": "argentina_after_messi",
+ "out": "NEWSCUT_argentina_after_messi.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_em106.wav",
+ "musicVol": 0.012,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Lionel Messi.",
+ "sentences": [
+  [
+   [
+    "LIONEL MESSI",
+    "Lionel Messi"
+   ],
+   [
+    "SAID GOODBYE",
+    "said goodbye"
+   ],
+   [
+    "TO ARGENTINA",
+    "to Argentina"
+   ],
+   [
+    "IN OCTOBER",
+    "in October."
+   ]
+  ],
+  [
+   [
+    "85,000 FANS",
+    "Eighty-five thousand fans,"
+   ],
+   [
+    "A GOAL",
+    "a goal,"
+   ],
+   [
+    "TWO ASSISTS",
+    "two assists,"
+   ],
+   [
+    "AND TEARS",
+    "and tears."
+   ]
+  ],
+  [
+   [
+    "THEN CAME",
+    "Then came"
+   ],
+   [
+    "NOVEMBER",
+    "November."
+   ]
+  ],
+  [
+   [
+    "ARGENTINA",
+    "Argentina"
+   ],
+   [
+    "LOST AT HOME",
+    "lost at home"
+   ],
+   [
+    "TO URUGUAY",
+    "to Uruguay,"
+   ],
+   [
+    "2-1",
+    "two one."
+   ]
+  ],
+  [
+   [
+    "FOUR DAYS LATER",
+    "Four days later,"
+   ],
+   [
+    "COSTA RICA",
+    "Costa Rica."
+   ]
+  ],
+  [
+   [
+    "7-0",
+    "Seven nil."
+   ],
+   [
+    "4-0",
+    "Four nil"
+   ],
+   [
+    "BEFORE HALF-TIME",
+    "before half-time."
+   ]
+  ],
+  [
+   [
+    "NICO PAZ",
+    "Nico Paz"
+   ],
+   [
+    "SCORED TWICE",
+    "scored twice,"
+   ],
+   [
+    "JULIÁN ÁLVAREZ",
+    "Julian Alvarez"
+   ],
+   [
+    "SCORED TWICE",
+    "scored twice,"
+   ],
+   [
+    "AND FRANCO MASTANTUONO",
+    "and Franco Mastantuono,"
+   ],
+   [
+    "JUST 19",
+    "just nineteen,"
+   ],
+   [
+    "SCORED TWICE",
+    "scored twice."
+   ]
+  ],
+  [
+   [
+    "THREE PLAYERS",
+    "Three players,"
+   ],
+   [
+    "TWO GOALS EACH",
+    "two goals each."
+   ]
+  ],
+  [
+   [
+    "MAYBE ARGENTINA",
+    "Maybe Argentina"
+   ],
+   [
+    "ALREADY FOUND",
+    "already found"
+   ],
+   [
+    "THE NEXT",
+    "the next"
+   ]
+  ]
+ ],
+ "shots": [],
+ "cards": [
+  {
+   "fromChunk": 0,
+   "toChunk": 0,
+   "label": "SOURCE",
+   "title": "AP / IANS",
+   "lines": [
+    "17 Nov 2026",
+    "Argentina 7-0 Costa Rica"
+   ]
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 1,
+   "t": 0.3
+  },
+  "text": "THE NEXT ONE? 😳"
+ },
+ "hook": "LIFE AFTER MESSI?"
+}

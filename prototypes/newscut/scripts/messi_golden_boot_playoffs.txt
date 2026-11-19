@@ -1,0 +1,13 @@
+KEY messi_golden_boot_playoffs | OUT NEWSCUT_messi_golden_boot_playoffs.mp4 | loopTail "Lionel Messi."
+Hook (frame 0): 39 AND STILL THE BEST?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Lionel Messi | is 39 => is thirty-nine, | and he just won | the Golden Boot | again.
+S1: 26 goals => Twenty-six goals | this season, | the first player | in MLS history | to win it | two years in a row.
+S2: But now | comes the hard part.
+S3: Inter Miami | are the defending champions, | and no team | has won | back-to-back MLS Cups | since LA Galaxy | in 2012 => in twenty twelve.
+S4: On Saturday | in Miami, | the defence starts | against Columbus, | best of three.
+S5: Lose twice, | and the title | is gone.
+S6: And the man | Columbus | have to stop | is
+Source card (over S1/S3): SOURCE | MLS / theScore | Nov 2026 | 26 goals, 2nd Golden Boot
+Cover text: CAN HE DO IT? 😳
+Facts (verified 19 Nov 2026): Messi, 39; 26 regular-season goals in 2026; first player to win back-to-back MLS Golden Boots (Heavy; theScore said "almost certain" before the final day; MLS.com preview: first to win in consecutive seasons). Inter Miami 2nd in East (60 pts), defending MLS Cup champions (won 2025 v Vancouver). Round One best-of-three v Columbus Crew: Game 1 Sat 21 Nov 2026, 6 p.m. ET, Nu Stadium Miami; Game 2 27 Nov in Columbus; Game 3 2 Dec if needed. No repeat MLS Cup champion since LA Galaxy 2011-12.

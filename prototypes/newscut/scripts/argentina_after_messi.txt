@@ -1,0 +1,15 @@
+KEY argentina_after_messi | OUT NEWSCUT_argentina_after_messi.mp4 | loopTail "Lionel Messi."
+Hook (frame 0): LIFE AFTER MESSI?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Lionel Messi | said goodbye | to Argentina | in October.
+S1: 85,000 fans => Eighty-five thousand fans, | a goal, | two assists, | and tears.
+S2: Then came | November.
+S3: Argentina | lost at home | to Uruguay, | 2-1 => two one.
+S4: Four days later, | Costa Rica.
+S5: 7-0 => Seven nil. | 4-0 => Four nil | before half-time.
+S6: Nico Paz | scored twice, | Julián Álvarez => Julian Alvarez | scored twice, | and Franco Mastantuono, | just 19 => just nineteen, | scored twice.
+S7: Three players, | two goals each.
+S8: Maybe Argentina | already found | the next
+Source card (over S5/S6): SOURCE | AP / IANS | 17 Nov 2026 | Argentina 7-0 Costa Rica
+Cover text: THE NEXT ONE? 😳
+Facts (verified 19 Nov 2026): Messi's last Argentina game 3-0 v Benin, Monumental, 6 Oct 2026, scored 1 + 2 assists, 85,000+ crowd, wept (Al Jazeera, Daily Sabah). Argentina lost 2-1 at home to Uruguay, Fri 13 Nov 2026; beat Costa Rica 7-0 on 17 Nov 2026 in Cordoba (Kempes): Paz 2, Alvarez 2, Mastantuono 2, Mac Allister 1 (IANS via Nagaland Post; ESPN 7-0). Mastantuono born 14 Aug 2007 (19).
