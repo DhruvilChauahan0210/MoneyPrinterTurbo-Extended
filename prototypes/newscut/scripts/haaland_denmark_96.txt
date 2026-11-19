@@ -1,0 +1,16 @@
+KEY haaland_denmark_96 | OUT NEWSCUT_haaland_denmark_96.mp4 | loopTail "Erling Haaland."
+Hook (frame 0): HE COULDN'T GET MOTIVATED?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Erling Haaland | said he couldn't | quite motivate himself | for Denmark.
+S1: Denmark | only needed | a draw.
+S2: 14 minutes in => Fourteen minutes in, | they were | 2-0 up => two nil up.
+S3: Haaland | pulled one back | before half-time, | and Ødegaard => and Odegaard | equalised late.
+S4: Then, | in the 96th minute => in the ninety-sixth minute, | a Norway free kick | hit a Danish hand.
+S5: VAR => V A R. | Penalty. | Haaland. | 3-2 => Three two.
+S6: Norway | go through | on head-to-head, | Denmark | are out, | and that's 68 goals => and that's sixty-eight goals | in 61 games => in sixty-one games | for Norway, | and 25 => and twenty-five | in the Nations League, | more than anyone ever.
+S7: So much | for no motivation. | Denmark | just got | 96 minutes => ninety-six minutes | of
+Source card (over S6): SOURCE | UEFA / AP | 17 Nov 2026 | Denmark 2-3 Norway
+Cover text: 96TH MINUTE 😳
+Facts (verified 19 Nov 2026): Denmark 2-3 Norway, Nations League A Group 4, Parken, Copenhagen, Tue 17 Nov 2026. Denmark 2-0 inside 14 min (Hojlund, Hojbjerg); Haaland before HT; Odegaard 83'/84' (sources differ, script says "late"); 96' penalty after VAR handball (Joachim Andersen) on a Norway free kick; Norway through on head-to-head, both on 9 pts; Denmark needed a draw. Haaland 68 goals in 61 for Norway; 25 Nations League goals, competition record. Pre-match (TV 2): "Right now, I can't quite motivate myself for Denmark at Parken."
+Sources: football360.com.au match report; AP via ksl.com / usnews.com (17 Nov 2026).
+Footage: Sony LIV official highlights y2Y5vln4SZI.

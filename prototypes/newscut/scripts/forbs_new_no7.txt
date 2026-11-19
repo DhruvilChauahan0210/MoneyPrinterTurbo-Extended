@@ -1,0 +1,16 @@
+KEY forbs_new_no7 | OUT NEWSCUT_forbs_new_no7.mp4 | loopTail "Cristiano Ronaldo."
+Hook (frame 0): WHO WEARS THE 7 NOW?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Cristiano Ronaldo's | number 7 => number seven | has a new owner.
+S1: Ronaldo | retired from Portugal | on November 5th => on the fifth of November, | after 146 goals => after a hundred and forty-six goals | in 234 games => in two hundred and thirty-four games.
+S2: Portugal | didn't retire the shirt. | They put a line | across the 7 => across the seven, | and handed it, | for now, | to a 22-year-old winger => to a twenty-two-year-old winger | from Club Brugge.
+S3: His name | is Carlos Forbs.
+S4: Their first game | since Ronaldo left, | in Braga, | ended 4-1 => ended four one | to Denmark.
+S5: Then, Cardiff. | 2-2 with Wales => Two all with Wales, | Forbs | comes off the bench, | and in the 70th minute => and in the seventieth minute | he runs | straight into the box. | Bottom corner.
+S6: His first goal | for Portugal, | and they finish | top of the group.
+S7: Now | the only question | is whether he can | ever replace
+Source card (over S5/S6): SOURCE | FPF / AP | 17 Nov 2026 | Wales 2-3 Portugal
+Cover text: THE NEW 7 😳
+Facts (verified 19 Nov 2026): Ronaldo announced international retirement 5 Nov 2026 (146 goals, 234 caps per Goal.com). FPF kept the 7 but changed its design (a line/dash across the number; "Time to debut a new 7. Because one will be eternal."). Carlos Forbs, 22, Club Brugge winger, wears it this window as an interim solution (Leao injured). Portugal 1-4 Denmark, Braga, Sat 14 Nov 2026 (AP: "Saturday's 4-1 loss to Denmark"). Wales 2-3 Portugal, Cardiff, Tue 17 Nov: Fernandes 11', Brooks 13', Thomas 40', Neto 43', Forbs 70' (off the bench, ran in from the wing after Cabango's loose header, shot into the bottom corner); Neto later sent off; Portugal top the group (5 wins from 6). First Portugal goal: Canal 11 (FPF) video "A reacao de Carlos Forbs apos a estreia a marcar por Portugal".
+Sources: AP via ksl.com; goal.com; vavel.com; Canal 11 rm8N-w6-sFQ.
+Footage: FA Wales LStoYhX0z5k, Sony LIV jhMvG9OaQF8, Canal 11 rm8N-w6-sFQ + acd4AfkPsGg, BBC News rbmrF70Udvc.

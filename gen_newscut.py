@@ -251,6 +251,9 @@ def main():
     props = {"shots": shots, "caps": chunks, "cards": cards, "cover": cover, "coverFrames": COVER_FRAMES,
              "watermark": spec.get("watermark", "CD PHANTOM"), "audioFile": audio_name, "voiceEnd": round(t, 3),
              "durationInSeconds": total}
+    if spec.get("hook"):
+        props["hook"] = spec["hook"]
+        props["hookDur"] = float(spec.get("hookDur", shots[1]["from"] if len(shots) > 1 and shots[1]["from"] > 0 else 0.7))
     props_path = os.path.join(work, "props.json")
     json.dump(props, open(props_path, "w"), indent=1)
     if "--no-render" in flags:
@@ -260,7 +263,7 @@ def main():
     # 5. one render
     out = os.path.join(work, spec["out"])
     port = random.randint(3400, 3900)
-    run(["npx", "remotion", "render", "src/index.ts", "NewsCut", out, f"--props={props_path}", f"--port={port}",
+    run([shutil.which("npx") or "npx", "remotion", "render", "src/index.ts", "NewsCut", out, f"--props={props_path}", f"--port={port}",
          "--codec=h264", "--crf=17", "--concurrency=4", "--log=error"], cwd=REMO)
     desk = os.path.expanduser(f"~/Desktop/{spec['out']}")
     shutil.copy2(out, desk)

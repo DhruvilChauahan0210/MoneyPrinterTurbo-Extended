@@ -1,0 +1,412 @@
+{
+ "key": "haaland_denmark_96",
+ "out": "NEWSCUT_haaland_denmark_96.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_em106.wav",
+ "musicVol": 0.012,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Erling Haaland.",
+ "sentences": [
+  [
+   [
+    "ERLING HAALAND",
+    "Erling Haaland"
+   ],
+   [
+    "SAID HE COULDN'T",
+    "said he couldn't"
+   ],
+   [
+    "QUITE MOTIVATE HIMSELF",
+    "quite motivate himself"
+   ],
+   [
+    "FOR DENMARK",
+    "for Denmark."
+   ]
+  ],
+  [
+   [
+    "DENMARK",
+    "Denmark"
+   ],
+   [
+    "ONLY NEEDED",
+    "only needed"
+   ],
+   [
+    "A DRAW",
+    "a draw."
+   ]
+  ],
+  [
+   [
+    "14 MINUTES IN",
+    "Fourteen minutes in,"
+   ],
+   [
+    "THEY WERE",
+    "they were"
+   ],
+   [
+    "2-0 UP",
+    "two nil up."
+   ]
+  ],
+  [
+   [
+    "HAALAND",
+    "Haaland"
+   ],
+   [
+    "PULLED ONE BACK",
+    "pulled one back"
+   ],
+   [
+    "BEFORE HALF-TIME",
+    "before half-time,"
+   ],
+   [
+    "AND ØDEGAARD",
+    "and Odegaard"
+   ],
+   [
+    "EQUALISED LATE",
+    "equalised late."
+   ]
+  ],
+  [
+   [
+    "THEN",
+    "Then,"
+   ],
+   [
+    "IN THE 96TH MINUTE",
+    "in the ninety-sixth minute,"
+   ],
+   [
+    "A NORWAY FREE KICK",
+    "a Norway free kick"
+   ],
+   [
+    "HIT A DANISH HAND",
+    "hit a Danish hand."
+   ]
+  ],
+  [
+   [
+    "VAR",
+    "V A R."
+   ],
+   [
+    "PENALTY",
+    "Penalty."
+   ],
+   [
+    "HAALAND",
+    "Haaland."
+   ],
+   [
+    "3-2",
+    "Three two."
+   ]
+  ],
+  [
+   [
+    "NORWAY",
+    "Norway"
+   ],
+   [
+    "GO THROUGH",
+    "go through"
+   ],
+   [
+    "ON HEAD-TO-HEAD",
+    "on head-to-head,"
+   ],
+   [
+    "DENMARK",
+    "Denmark"
+   ],
+   [
+    "ARE OUT",
+    "are out,"
+   ],
+   [
+    "AND THAT'S 68 GOALS",
+    "and that's sixty-eight goals"
+   ],
+   [
+    "IN 61 GAMES",
+    "in sixty-one games"
+   ],
+   [
+    "FOR NORWAY",
+    "for Norway,"
+   ],
+   [
+    "AND 25",
+    "and twenty-five"
+   ],
+   [
+    "IN THE NATIONS LEAGUE",
+    "in the Nations League,"
+   ],
+   [
+    "MORE THAN ANYONE EVER",
+    "more than anyone ever."
+   ]
+  ],
+  [
+   [
+    "SO MUCH",
+    "So much"
+   ],
+   [
+    "FOR NO MOTIVATION",
+    "for no motivation."
+   ],
+   [
+    "DENMARK",
+    "Denmark"
+   ],
+   [
+    "JUST GOT",
+    "just got"
+   ],
+   [
+    "96 MINUTES",
+    "ninety-six minutes"
+   ],
+   [
+    "OF",
+    "of"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "kwyUMHe2lCw",
+   "start": 39.0,
+   "x": 806
+  },
+  {
+   "at": 0,
+   "vid": "sd6xDiuJ8Ys",
+   "start": 12.0,
+   "x": 980,
+   "shift": 0.7,
+   "h": 860,
+   "y": 0
+  },
+  {
+   "at": 2,
+   "vid": "sd6xDiuJ8Ys",
+   "start": 13.5,
+   "x": 1018,
+   "h": 860,
+   "y": 0
+  },
+  {
+   "at": 3,
+   "vid": "FgZrMOwJ-9c",
+   "start": 20.0,
+   "x": 656
+  },
+  {
+   "at": 4,
+   "vid": "FgZrMOwJ-9c",
+   "start": 56.0,
+   "x": 656
+  },
+  {
+   "at": 6,
+   "vid": "FgZrMOwJ-9c",
+   "start": 60.5,
+   "x": 656
+  },
+  {
+   "at": 7,
+   "vid": "FgZrMOwJ-9c",
+   "start": 63.0,
+   "x": 700
+  },
+  {
+   "at": 9,
+   "vid": "FgZrMOwJ-9c",
+   "start": 64.0,
+   "x": 550
+  },
+  {
+   "at": 10,
+   "vid": "sd6xDiuJ8Ys",
+   "start": 0.4,
+   "x": 1138,
+   "h": 860,
+   "y": 0
+  },
+  {
+   "at": 12,
+   "vid": "FgZrMOwJ-9c",
+   "start": 99.0,
+   "x": 700
+  },
+  {
+   "at": 13,
+   "vid": "FgZrMOwJ-9c",
+   "start": 102.0,
+   "x": 656
+  },
+  {
+   "at": 14,
+   "vid": "FgZrMOwJ-9c",
+   "start": 106.0,
+   "x": 656
+  },
+  {
+   "at": 15,
+   "vid": "FgZrMOwJ-9c",
+   "start": 120.5,
+   "x": 656
+  },
+  {
+   "at": 17,
+   "vid": "FgZrMOwJ-9c",
+   "start": 110.0,
+   "x": 850
+  },
+  {
+   "at": 18,
+   "vid": "FgZrMOwJ-9c",
+   "start": 114.0,
+   "x": 300
+  },
+  {
+   "at": 19,
+   "vid": "FgZrMOwJ-9c",
+   "start": 117.0,
+   "x": 900
+  },
+  {
+   "at": 20,
+   "vid": "FgZrMOwJ-9c",
+   "start": 122.5,
+   "x": 496
+  },
+  {
+   "at": 21,
+   "vid": "FgZrMOwJ-9c",
+   "start": 125.0,
+   "x": 516
+  },
+  {
+   "at": 22,
+   "vid": "FgZrMOwJ-9c",
+   "start": 127.3,
+   "x": 1312
+  },
+  {
+   "at": 23,
+   "vid": "kwyUMHe2lCw",
+   "start": 8.0,
+   "x": 1000
+  },
+  {
+   "at": 25,
+   "vid": "kwyUMHe2lCw",
+   "start": 12.0,
+   "x": 1232
+  },
+  {
+   "at": 26,
+   "vid": "FgZrMOwJ-9c",
+   "start": 158.0,
+   "x": 656
+  },
+  {
+   "at": 28,
+   "vid": "kwyUMHe2lCw",
+   "start": 40.0,
+   "x": 720
+  },
+  {
+   "at": 29,
+   "vid": "kwyUMHe2lCw",
+   "start": 47.0,
+   "x": 1106
+  },
+  {
+   "at": 30,
+   "vid": "kwyUMHe2lCw",
+   "start": 46.0,
+   "x": 1106
+  },
+  {
+   "at": 31,
+   "vid": "kwyUMHe2lCw",
+   "start": 50.0,
+   "x": 600
+  },
+  {
+   "at": 32,
+   "vid": "kwyUMHe2lCw",
+   "start": 52.0,
+   "x": 1312
+  },
+  {
+   "at": 33,
+   "vid": "kwyUMHe2lCw",
+   "start": 62.0,
+   "x": 466
+  },
+  {
+   "at": 34,
+   "vid": "sd6xDiuJ8Ys",
+   "start": 14.5,
+   "x": 1018,
+   "h": 860,
+   "y": 0
+  },
+  {
+   "at": 36,
+   "vid": "FgZrMOwJ-9c",
+   "start": 136.0,
+   "x": 200
+  },
+  {
+   "at": 38,
+   "vid": "kwyUMHe2lCw",
+   "start": 66.0,
+   "x": 1312
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 28,
+   "toChunk": 34,
+   "label": "SOURCE",
+   "title": "UEFA / AP",
+   "lines": [
+    "17 Nov 2026",
+    "Denmark 2-3 Norway"
+   ]
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 18,
+   "t": 0.3
+  },
+  "text": "96TH MINUTE 😳"
+ },
+ "hook": "HE COULDN'T GET MOTIVATED?"
+}

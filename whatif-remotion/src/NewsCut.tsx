@@ -38,6 +38,8 @@ export type NewsCutProps = {
   cover?: { top?: string; bottom?: string; text?: string };
   coverFrames?: number;
   watermark?: string;
+  hook?: string; // headline on the opening frames (frame 0 is the feed thumbnail)
+  hookDur?: number; // seconds the hook stays up
   audioFile: string;
   voiceEnd?: number;
   durationInSeconds?: number;
@@ -304,6 +306,11 @@ export const NewsCut: React.FC<NewsCutProps> = (p) => {
         <SourceCard key={i} c={c} />
       ))}
       <Caption caps={p.caps} />
+      {p.hook && frame < Math.round((p.hookDur ?? 0.7) * fps) ? (
+        <div style={{ position: "absolute", left: 50, right: 50, top: 250, textAlign: "center", fontFamily: FONT_BIG, fontSize: 132, lineHeight: 1.02, color: YELLOW, textTransform: "uppercase", textShadow: outline(12, "0 16px 30px rgba(0,0,0,0.75)") }}>
+          {p.hook}
+        </div>
+      ) : null}
       {hasCover && frame >= bodyEnd ? <Cover cover={p.cover!} /> : null}
       <Audio src={staticFile(p.audioFile)} volume={1} />
     </AbsoluteFill>
