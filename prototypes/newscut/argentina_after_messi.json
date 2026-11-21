@@ -3,8 +3,8 @@
  "out": "NEWSCUT_argentina_after_messi.mp4",
  "voice": "en-US-AndrewMultilingualNeural",
  "rate": "+14%",
- "music": "nc_bed_em106.wav",
- "musicVol": 0.012,
+ "music": "nc_bed_tension.wav",
+ "musicVol": 0.095,
  "duck": 1,
  "musicFadeIn": 0.01,
  "musicFadeOut": 0,
@@ -154,11 +154,219 @@
    ]
   ]
  ],
- "shots": [],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "2LwW-_qVev8",
+   "start": 80.0,
+   "x": 656
+  },
+  {
+   "at": 0,
+   "vid": "zZHDqiFNuYM",
+   "start": 20.0,
+   "x": 176,
+   "shift": 0.7
+  },
+  {
+   "at": 2,
+   "vid": "2LwW-_qVev8",
+   "start": 0.5,
+   "x": 656
+  },
+  {
+   "at": 3,
+   "vid": "2LwW-_qVev8",
+   "start": 40.0,
+   "x": 656
+  },
+  {
+   "at": 4,
+   "vid": "2LwW-_qVev8",
+   "start": 208.0,
+   "x": 656
+  },
+  {
+   "at": 5,
+   "vid": "2LwW-_qVev8",
+   "start": 344.0,
+   "x": 592
+  },
+  {
+   "at": 6,
+   "vid": "2LwW-_qVev8",
+   "start": 200.0,
+   "x": 272
+  },
+  {
+   "at": 7,
+   "vid": "zZHDqiFNuYM",
+   "start": 32.0,
+   "x": 900
+  },
+  {
+   "at": 8,
+   "vid": "P0oPqvH-PNU",
+   "start": 22.0,
+   "x": 437,
+   "h": 720,
+   "y": 0
+  },
+  {
+   "at": 10,
+   "vid": "P0oPqvH-PNU",
+   "start": 74.0,
+   "x": 437,
+   "h": 720,
+   "y": 0
+  },
+  {
+   "at": 11,
+   "vid": "P0oPqvH-PNU",
+   "start": 91.0,
+   "x": 437,
+   "h": 720,
+   "y": 0
+  },
+  {
+   "at": 12,
+   "vid": "P0oPqvH-PNU",
+   "start": 120.0,
+   "x": 437,
+   "h": 720,
+   "y": 0
+  },
+  {
+   "at": 13,
+   "vid": "P0oPqvH-PNU",
+   "start": 125.0,
+   "x": 700,
+   "h": 720,
+   "y": 0
+  },
+  {
+   "at": 14,
+   "vid": "Rh34AQUglqU",
+   "start": 0.0,
+   "x": 592,
+   "h": 940,
+   "y": 0
+  },
+  {
+   "at": 15,
+   "vid": "Rh34AQUglqU",
+   "start": 8.0,
+   "x": 656,
+   "h": 940,
+   "y": 0
+  },
+  {
+   "at": 16,
+   "vid": "Rh34AQUglqU",
+   "start": 22.0,
+   "x": 150,
+   "h": 940,
+   "y": 0
+  },
+  {
+   "at": 17,
+   "vid": "Rh34AQUglqU",
+   "start": 89.0,
+   "x": 1312,
+   "h": 940,
+   "y": 0
+  },
+  {
+   "at": 19,
+   "vid": "lo7MAKaZ7rQ",
+   "start": 44.0,
+   "x": 656
+  },
+  {
+   "at": 20,
+   "vid": "lo7MAKaZ7rQ",
+   "start": 30.0,
+   "x": 1046
+  },
+  {
+   "at": 21,
+   "vid": "Rh34AQUglqU",
+   "start": 98.0,
+   "x": 464,
+   "h": 940,
+   "y": 0
+  },
+  {
+   "at": 22,
+   "vid": "Rh34AQUglqU",
+   "start": 54.0,
+   "x": 656,
+   "h": 940,
+   "y": 0
+  },
+  {
+   "at": 23,
+   "vid": "Rh34AQUglqU",
+   "start": 106.0,
+   "x": 656,
+   "h": 940,
+   "y": 0
+  },
+  {
+   "at": 24,
+   "vid": "Rh34AQUglqU",
+   "start": 114.0,
+   "x": 480,
+   "h": 940,
+   "y": 0
+  },
+  {
+   "at": 25,
+   "vid": "Rh34AQUglqU",
+   "start": 136.0,
+   "x": 100,
+   "h": 940,
+   "y": 0
+  },
+  {
+   "at": 26,
+   "vid": "Rh34AQUglqU",
+   "start": 102.0,
+   "x": 656,
+   "h": 940,
+   "y": 0
+  },
+  {
+   "at": 27,
+   "vid": "lo7MAKaZ7rQ",
+   "start": 78.0,
+   "x": 656,
+   "h": 860,
+   "y": 0
+  },
+  {
+   "at": 28,
+   "vid": "zZHDqiFNuYM",
+   "start": 64.0,
+   "x": 656
+  },
+  {
+   "at": 29,
+   "vid": "lo7MAKaZ7rQ",
+   "start": 10.0,
+   "x": 592
+  },
+  {
+   "at": 30,
+   "vid": "2LwW-_qVev8",
+   "start": 272.0,
+   "x": 600
+  }
+ ],
  "cards": [
   {
-   "fromChunk": 0,
-   "toChunk": 0,
+   "fromChunk": 16,
+   "toChunk": 22,
    "label": "SOURCE",
    "title": "AP / IANS",
    "lines": [
@@ -173,7 +381,7 @@
    "t": 0.3
   },
   "bottom": {
-   "shot": 1,
+   "shot": 17,
    "t": 0.3
   },
   "text": "THE NEXT ONE? 😳"

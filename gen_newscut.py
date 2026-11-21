@@ -10,7 +10,10 @@ into its own first line.
 
 Spec: see prototypes/newscut/*.json. "sentences" is a list of sentences, each a list of [display, spoken] chunks.
 "loopTail" is the spoken text that completes the last sentence for natural intonation and is cut off in the audio.
-Music: "music" (file in public/; nc_bed.py makes the string bed), "musicVol", "duck" (sidechain ratio, 1 = off),
+Music: "music" (file in public/), "musicVol", "duck" (sidechain ratio, 1 = off). Default since 20 Nov 2026:
+"music": "nc_bed_tension.wav", "musicVol": 0.095, "duck": 1 (dark E minor tension bed from nc_bed_tension.py, music ~20 dB
+under the voice; public/ is not in git, so run `python nc_bed_tension.py` once per machine). Older specs use
+nc_bed_em106.wav from nc_bed.py at 0.012, which sits ~36 dB under the voice.
 "musicFadeIn" / "musicFadeOut" (s; 0 = the bed runs to the last frame so the loop back to the start is seamless). --audio-only re-mixes and puts the new audio on the existing render (video copied) as <out>_v2.
 "shots": [{"at": chunk index, "vid": YouTube id, "start": sec, "x"?: crop x in source px, "fill"?: "contain"} |
           {"at": chunk index, "gfx": "crash"}], sorted by "at". Each shot runs until the next one starts.

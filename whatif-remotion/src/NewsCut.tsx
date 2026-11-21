@@ -34,7 +34,7 @@ export type NewsCutShot = {
 export type NewsCutProps = {
   shots: NewsCutShot[];
   caps: { t: number; text: string }[];
-  cards?: { from: number; to: number; label?: string; title: string; lines?: string[] }[];
+  cards?: { from: number; to: number; label?: string; title?: string; lines?: string[]; image?: string; site?: string }[];
   cover?: { top?: string; bottom?: string; text?: string };
   coverFrames?: number;
   watermark?: string;
@@ -250,10 +250,36 @@ const Caption: React.FC<{ caps: { t: number; text: string }[] }> = ({ caps }) =>
   );
 };
 
-const SourceCard: React.FC<{ c: { from: number; to: number; label?: string; title: string; lines?: string[] } }> = ({ c }) => {
+type Card = { from: number; to: number; label?: string; title?: string; lines?: string[]; image?: string; site?: string };
+
+// A real news cut: a screenshot of the actual article / X post (grabbed with nc_newsgrab.py), shown as a tilted
+// paper card in the upper frame with the outlet's name on a red chip. Clear of the captions (centre) and of the
+// Shorts UI (bottom fifth, right-hand buttons).
+const NewsImageCard: React.FC<{ c: Card }> = ({ c }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
+  if (t < c.from || t >= c.to) return null;
+  const sp = spring({ frame: frame - Math.round(c.from * fps), fps, config: { damping: 13, mass: 0.6, stiffness: 180 } });
+  const out = interpolate(t, [c.to - 0.2, c.to], [1, 0], CLAMP);
+  const zoom = interpolate(t, [c.from, c.to], [1, 1.035], CLAMP);
+  return (
+    <div style={{ position: "absolute", left: 70, width: 840, top: 235, opacity: Math.min(1, sp * 1.4) * out, transform: `scale(${interpolate(sp, [0, 1], [0.82, 1]) * zoom}) rotate(${interpolate(sp, [0, 1], [-5, -1.5])}deg)`, transformOrigin: "50% 0%" }}>
+      {c.site ? (
+        <div style={{ position: "absolute", top: -30, left: 18, zIndex: 2, fontFamily: FONT, fontSize: 30, letterSpacing: 1, color: "#fff", background: RED, padding: "8px 22px", borderRadius: 10, boxShadow: "0 8px 20px rgba(0,0,0,0.5)", textTransform: "uppercase" }}>{c.site}</div>
+      ) : null}
+      <div style={{ background: "#fff", padding: 10, borderRadius: 18, boxShadow: "0 24px 60px rgba(0,0,0,0.7)" }}>
+        <Img src={staticFile(c.image!)} style={{ display: "block", width: 820, maxHeight: 500, objectFit: "cover", objectPosition: "50% 0%", borderRadius: 10 }} />
+      </div>
+    </div>
+  );
+};
+
+const SourceCard: React.FC<{ c: Card }> = ({ c }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const t = frame / fps;
+  if (c.image) return <NewsImageCard c={c} />;
   if (t < c.from || t >= c.to) return null;
   const a = interpolate(t, [c.from, c.from + 0.25], [0, 1], { ...CLAMP, easing: Easing.out(Easing.cubic) });
   const b = interpolate(t, [c.to - 0.2, c.to], [1, 0], CLAMP);
