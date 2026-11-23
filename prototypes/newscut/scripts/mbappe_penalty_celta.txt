@@ -1,0 +1,13 @@
+KEY mbappe_penalty_celta | OUT NEWSCUT_mbappe_penalty_celta.mp4 | loopTail "Kylian Mbappé."
+Hook (frame 0): HE MISSED THIS?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Kylian Mbappé => Kylian Mbappe | had the chance | to save Real Madrid, | and he sent it | over the bar.
+S1: Celta Vigo | scored | after six minutes | at the Bernabéu => at the Bernabeu.
+S2: Then the penalty. | Mbappé steps up => Mbappe steps up, | and Rafael Nadal | had his head | in his hands.
+S3: But Mbappé => But Mbappe | didn't hide.
+S4: Vinícius => Vinicius | found Mbappé => found Mbappe, | Mbappé => Mbappe | found Bellingham, | 1-1 => one all.
+S5: And with five minutes left, | Carlos Espí => Carlos Espi, | on the pitch | for six minutes, | scored the winner.
+S6: Nine wins | in a row, | level with Barcelona, | and it all started | with a miss from
+News cuts: (ESPN report + another outlet)
+Cover text: WHAT A COMEBACK 😳
+Facts (verified 22 Nov 2026): Real Madrid 2-1 Celta Vigo, Bernabeu, Sat 21 Nov 2026. Duran 6'; Mbappe penalty over the bar (36' ANI / 39' ESPN - script says no minute); Nadal (newly elected to Madrid's board) head-in-hands in the stands (ESPN); Vinicius (sub, 57') ran down the left, set up Mbappe, who laid it off for Bellingham 66'; Espi, on for six minutes, header saved by Radu, scored the rebound 85' from Vinicius' cross; ninth straight win; level on points with Barcelona at the top (ESPN; Barca play Villarreal Sunday). Sources: ESPN report 401882798; ANI via Republic World.

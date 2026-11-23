@@ -1,0 +1,14 @@
+KEY messi_miami_brink | OUT NEWSCUT_messi_miami_brink.mp4 | loopTail "Lionel Messi."
+Hook (frame 0): IS MESSI OUT?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Lionel Messi | and Inter Miami | are one game | from going out.
+S1: Game one | against Columbus, | at home, | and it went wrong | in nine minutes.
+S2: A penalty, | 1-0 => one nil.
+S3: Then | in the 36th minute => in the thirty-sixth minute, | Gonzalo Luján => Gonzalo Lujan | was sent off, | and the champions | were down to ten.
+S4: 2-0 => Two nil. | 3-0 => Three nil. | Gonzalo Tapia | with two.
+S5: Two years ago, | Atlanta | knocked them out | in round one.
+S6: Friday | in Columbus, | lose again | and the title | is gone.
+S7: Win, | or it's over | for
+News cuts: (MLS report + another outlet)
+Cover text: ONE GAME LEFT 😳
+Facts (verified 22 Nov 2026, MLSsoccer.com match reaction): Columbus Crew (7) 3-0 10-man Inter Miami (2), Game 1, Round One best-of-3, Sat 21 Nov 2026 at Nu Stadium (Miami home). Tapia pen 9', Lujan red 36', Habroune 52', Tapia 58'. Columbus can eliminate Miami, the reigning MLS Cup champions, in Game 2 at ScottsMiracle-Gro Field, Fri 27 Nov 8 pm ET. Best of three: a Game 2 loss ends it.

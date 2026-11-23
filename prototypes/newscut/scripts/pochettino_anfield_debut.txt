@@ -1,0 +1,13 @@
+KEY pochettino_anfield_debut | OUT NEWSCUT_pochettino_anfield_debut.mp4 | loopTail "Mauricio Pochettino."
+Hook (frame 0): 10 MEN AFTER 8 MINUTES?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Mauricio Pochettino's | first game | as Manchester United manager | fell apart | in eight minutes.
+S1: Leny Yoro | brought down Isak | as the last man. | Straight red.
+S2: Szoboszlai | scored | the free kick.
+S3: Three minutes later, | Wirtz | volleyed it in | off the bar. | Two-nil.
+S4: Ngumoha | made it three, | Muñoz => Munoz | made it four.
+S5: No Premier League manager | had ever conceded twice | and lost a man | in the first half | of his debut.
+S6: Four-nil, | ten men, | at Anfield. | That was the welcome | waiting for
+News cuts: (NBC Sports report + another outlet)
+Cover text: WORST DEBUT EVER? 😳
+Facts (verified 23 Nov 2026): Liverpool 4-0 Manchester United, Anfield, Sun 22 Nov 2026 (NBC Sports live report). Pochettino's first game in charge. Yoro sent off for DOGSO on Isak, last man, just outside the box (8th minute; Sky, ENHD). Szoboszlai direct free kick 10'; Wirtz volley off the bar 13'; Ngumoha 66' (Barcola); Munoz 82' (Wirtz). ESPN via Fox News: first PL manager to concede two goals and see a red card in the first half of his debut. Sky: United in the relegation zone.

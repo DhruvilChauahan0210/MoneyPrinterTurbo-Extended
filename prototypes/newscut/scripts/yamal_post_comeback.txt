@@ -1,0 +1,15 @@
+KEY yamal_post_comeback | OUT NEWSCUT_yamal_post_comeback.mp4 | loopTail "Lamine Yamal."
+Hook (frame 0): HE HIT THE POST?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Lamine Yamal | hit the post | from the penalty spot, | and Barcelona | were two-nil down.
+S1: Villarreal | scored twice | in the first seven minutes | at the Camp Nou.
+S2: Buchanan, | then Oluwaseyi.
+S3: Then Yamal | won a penalty, | and hit the post.
+S4: But Barcelona | kept coming.
+S5: Gerard Martín => Gerard Martin | headed in | Pedri's cross.
+S6: Four minutes later, | Yamal | set up Fermín => set up Fermin. | Two-all.
+S7: Then Pau Navarro | turned a cross | into his own net. | Three-two.
+S8: Barcelona | three points clear | at the top, | and the fans | still voted | man of the match:
+News cuts: (Sofascore + VAVEL)
+Cover text: FROM 2-0 DOWN 😳
+Facts (verified 23 Nov 2026): Barcelona 3-2 Villarreal, Camp Nou, Sun 22 Nov 2026 (Sofascore news; VAVEL live). Buchanan 5', Oluwaseyi 7'; penalty for foul on Yamal, Yamal hit the post 23'; Gerard Martin header 57' (Pedri cross); Fermin Lopez 61' (Yamal assist); Pau Navarro own goal 67' (Eric Garcia cross); Navarro 2nd yellow 90+3'. fcbarcelona.com: three points clear at the top. Sofascore fan vote: Yamal 11,893 of 22,575 votes, Match MVP.

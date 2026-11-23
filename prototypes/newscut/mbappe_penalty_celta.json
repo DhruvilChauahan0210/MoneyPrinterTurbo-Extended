@@ -1,0 +1,350 @@
+{
+ "key": "mbappe_penalty_celta",
+ "out": "NEWSCUT_mbappe_penalty_celta.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_tension.wav",
+ "musicVol": 0.095,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Kylian Mbappé.",
+ "sentences": [
+  [
+   [
+    "KYLIAN MBAPPÉ",
+    "Kylian Mbappe"
+   ],
+   [
+    "HAD THE CHANCE",
+    "had the chance"
+   ],
+   [
+    "TO SAVE REAL MADRID",
+    "to save Real Madrid,"
+   ],
+   [
+    "AND HE SENT IT",
+    "and he sent it"
+   ],
+   [
+    "OVER THE BAR",
+    "over the bar."
+   ]
+  ],
+  [
+   [
+    "CELTA VIGO",
+    "Celta Vigo"
+   ],
+   [
+    "SCORED",
+    "scored"
+   ],
+   [
+    "AFTER SIX MINUTES",
+    "after six minutes"
+   ],
+   [
+    "AT THE BERNABÉU",
+    "at the Bernabeu."
+   ]
+  ],
+  [
+   [
+    "THEN THE PENALTY",
+    "Then the penalty."
+   ],
+   [
+    "MBAPPÉ STEPS UP",
+    "Mbappe steps up,"
+   ],
+   [
+    "AND RAFAEL NADAL",
+    "and Rafael Nadal"
+   ],
+   [
+    "HAD HIS HEAD",
+    "had his head"
+   ],
+   [
+    "IN HIS HANDS",
+    "in his hands."
+   ]
+  ],
+  [
+   [
+    "BUT MBAPPÉ",
+    "But Mbappe"
+   ],
+   [
+    "DIDN'T HIDE",
+    "didn't hide."
+   ]
+  ],
+  [
+   [
+    "VINÍCIUS",
+    "Vinicius"
+   ],
+   [
+    "FOUND MBAPPÉ",
+    "found Mbappe,"
+   ],
+   [
+    "MBAPPÉ",
+    "Mbappe"
+   ],
+   [
+    "FOUND BELLINGHAM",
+    "found Bellingham,"
+   ],
+   [
+    "1-1",
+    "one all."
+   ]
+  ],
+  [
+   [
+    "AND WITH FIVE MINUTES LEFT",
+    "And with five minutes left,"
+   ],
+   [
+    "CARLOS ESPÍ",
+    "Carlos Espi,"
+   ],
+   [
+    "ON THE PITCH",
+    "on the pitch"
+   ],
+   [
+    "FOR SIX MINUTES",
+    "for six minutes,"
+   ],
+   [
+    "SCORED THE WINNER",
+    "scored the winner."
+   ]
+  ],
+  [
+   [
+    "NINE WINS",
+    "Nine wins"
+   ],
+   [
+    "IN A ROW",
+    "in a row,"
+   ],
+   [
+    "LEVEL WITH BARCELONA",
+    "level with Barcelona,"
+   ],
+   [
+    "AND IT ALL STARTED",
+    "and it all started"
+   ],
+   [
+    "WITH A MISS FROM",
+    "with a miss from"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "H0faRr5JoQg",
+   "start": 41.0,
+   "x": 500
+  },
+  {
+   "at": 0,
+   "vid": "aa0bKQQiJRk",
+   "start": 69.0,
+   "x": 656,
+   "shift": 0.7,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 2,
+   "vid": "aa0bKQQiJRk",
+   "start": 51.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 3,
+   "vid": "aa0bKQQiJRk",
+   "start": 66.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 5,
+   "vid": "0lBdPkcWwGs",
+   "start": 27.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 7,
+   "vid": "0lBdPkcWwGs",
+   "start": 33.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 8,
+   "vid": "0lBdPkcWwGs",
+   "start": 0.5,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 9,
+   "vid": "aa0bKQQiJRk",
+   "start": 48.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 10,
+   "vid": "H0faRr5JoQg",
+   "start": 40.5,
+   "x": 500
+  },
+  {
+   "at": 11,
+   "vid": "aa0bKQQiJRk",
+   "start": 70.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 12,
+   "vid": "aa0bKQQiJRk",
+   "start": 60.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 14,
+   "vid": "H0faRr5JoQg",
+   "start": 16.0,
+   "x": 846
+  },
+  {
+   "at": 16,
+   "vid": "0lBdPkcWwGs",
+   "start": 63.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 18,
+   "vid": "wj5udtn9FVU",
+   "start": 39.0,
+   "x": 470
+  },
+  {
+   "at": 20,
+   "vid": "0lBdPkcWwGs",
+   "start": 81.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 21,
+   "vid": "0lBdPkcWwGs",
+   "start": 90.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 22,
+   "vid": "0lBdPkcWwGs",
+   "start": 105.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 23,
+   "vid": "0lBdPkcWwGs",
+   "start": 108.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 25,
+   "vid": "0lBdPkcWwGs",
+   "start": 9.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 26,
+   "vid": "0lBdPkcWwGs",
+   "start": 114.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 28,
+   "vid": "0lBdPkcWwGs",
+   "start": 138.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 29,
+   "vid": "aa0bKQQiJRk",
+   "start": 69.5,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 14,
+   "toChunk": 20,
+   "image": "nc_mbappe_penalty_celta_news2.png",
+   "site": "ANI"
+  },
+  {
+   "fromChunk": 26,
+   "toChunk": 99,
+   "image": "nc_mbappe_penalty_celta_news1.png",
+   "site": "espn.com"
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 18,
+   "t": 0.3
+  },
+  "text": "WHAT A COMEBACK 😳"
+ },
+ "hook": "HE MISSED THIS?"
+}

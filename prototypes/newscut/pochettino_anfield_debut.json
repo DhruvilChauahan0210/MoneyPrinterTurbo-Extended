@@ -1,0 +1,430 @@
+{
+ "key": "pochettino_anfield_debut",
+ "out": "NEWSCUT_pochettino_anfield_debut.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_tension.wav",
+ "musicVol": 0.095,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Mauricio Pochettino.",
+ "sentences": [
+  [
+   [
+    "MAURICIO POCHETTINO'S",
+    "Mauricio Pochettino's"
+   ],
+   [
+    "FIRST GAME",
+    "first game"
+   ],
+   [
+    "AS MANCHESTER UNITED MANAGER",
+    "as Manchester United manager"
+   ],
+   [
+    "FELL APART",
+    "fell apart"
+   ],
+   [
+    "IN EIGHT MINUTES",
+    "in eight minutes."
+   ]
+  ],
+  [
+   [
+    "LENY YORO",
+    "Leny Yoro"
+   ],
+   [
+    "BROUGHT DOWN ISAK",
+    "brought down Isak"
+   ],
+   [
+    "AS THE LAST MAN",
+    "as the last man."
+   ],
+   [
+    "STRAIGHT RED",
+    "Straight red."
+   ]
+  ],
+  [
+   [
+    "SZOBOSZLAI",
+    "Szoboszlai"
+   ],
+   [
+    "SCORED",
+    "scored"
+   ],
+   [
+    "THE FREE KICK",
+    "the free kick."
+   ]
+  ],
+  [
+   [
+    "THREE MINUTES LATER",
+    "Three minutes later,"
+   ],
+   [
+    "WIRTZ",
+    "Wirtz"
+   ],
+   [
+    "VOLLEYED IT IN",
+    "volleyed it in"
+   ],
+   [
+    "OFF THE BAR",
+    "off the bar."
+   ],
+   [
+    "TWO-NIL",
+    "Two-nil."
+   ]
+  ],
+  [
+   [
+    "NGUMOHA",
+    "Ngumoha"
+   ],
+   [
+    "MADE IT THREE",
+    "made it three,"
+   ],
+   [
+    "MUÑOZ",
+    "Munoz"
+   ],
+   [
+    "MADE IT FOUR",
+    "made it four."
+   ]
+  ],
+  [
+   [
+    "NO PREMIER LEAGUE MANAGER",
+    "No Premier League manager"
+   ],
+   [
+    "HAD EVER CONCEDED TWICE",
+    "had ever conceded twice"
+   ],
+   [
+    "AND LOST A MAN",
+    "and lost a man"
+   ],
+   [
+    "IN THE FIRST HALF",
+    "in the first half"
+   ],
+   [
+    "OF HIS DEBUT",
+    "of his debut."
+   ]
+  ],
+  [
+   [
+    "FOUR-NIL",
+    "Four-nil,"
+   ],
+   [
+    "TEN MEN",
+    "ten men,"
+   ],
+   [
+    "AT ANFIELD",
+    "at Anfield."
+   ],
+   [
+    "THAT WAS THE WELCOME",
+    "That was the welcome"
+   ],
+   [
+    "WAITING FOR",
+    "waiting for"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "gOdQ7khlcCM",
+   "start": 190.0,
+   "x": 400,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 0,
+   "vid": "gOdQ7khlcCM",
+   "start": 195.2,
+   "x": 690,
+   "shift": 0.7,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 2,
+   "vid": "CDXrbVtZzHs",
+   "start": 1.0,
+   "x": 1000,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 3,
+   "vid": "gOdQ7khlcCM",
+   "start": 82.0,
+   "x": 900,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 4,
+   "vid": "gOdQ7khlcCM",
+   "start": 196.0,
+   "x": 240,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 5,
+   "vid": "gOdQ7khlcCM",
+   "start": 188.0,
+   "x": 370,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 6,
+   "vid": "gOdQ7khlcCM",
+   "start": 199.0,
+   "x": 690,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 7,
+   "vid": "gOdQ7khlcCM",
+   "start": 201.0,
+   "x": 820,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 8,
+   "vid": "gOdQ7khlcCM",
+   "start": 195.8,
+   "x": 1350,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 9,
+   "vid": "eJShdUmAqMc",
+   "start": 36.0,
+   "x": 750,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 10,
+   "vid": "gOdQ7khlcCM",
+   "start": 102.5,
+   "x": 760,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 11,
+   "vid": "gOdQ7khlcCM",
+   "start": 110.0,
+   "x": 500,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 12,
+   "vid": "gOdQ7khlcCM",
+   "start": 210.0,
+   "x": 690,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 13,
+   "vid": "gOdQ7khlcCM",
+   "start": 212.0,
+   "x": 690,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 14,
+   "vid": "gOdQ7khlcCM",
+   "start": 214.0,
+   "x": 400,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 15,
+   "vid": "eJShdUmAqMc",
+   "start": 117.0,
+   "x": 690,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 16,
+   "vid": "gOdQ7khlcCM",
+   "start": 220.0,
+   "x": 370,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 17,
+   "vid": "CDXrbVtZzHs",
+   "start": 175.0,
+   "x": 630,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 18,
+   "vid": "CDXrbVtZzHs",
+   "start": 160.0,
+   "x": 400,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 19,
+   "vid": "gOdQ7khlcCM",
+   "start": 301.0,
+   "x": 500,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 20,
+   "vid": "gOdQ7khlcCM",
+   "start": 308.0,
+   "x": 600,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 21,
+   "vid": "gOdQ7khlcCM",
+   "start": 207.0,
+   "x": 500,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 22,
+   "vid": "eJShdUmAqMc",
+   "start": 99.0,
+   "x": 0,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 23,
+   "vid": "gOdQ7khlcCM",
+   "start": 200.0,
+   "x": 820,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 24,
+   "vid": "gOdQ7khlcCM",
+   "start": 206.0,
+   "x": 690,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 25,
+   "vid": "gOdQ7khlcCM",
+   "start": 207.5,
+   "x": 900,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 26,
+   "vid": "gOdQ7khlcCM",
+   "start": 315.0,
+   "x": 600,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 27,
+   "vid": "CDXrbVtZzHs",
+   "start": 10.0,
+   "x": 370,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 28,
+   "vid": "CDXrbVtZzHs",
+   "start": 2.0,
+   "x": 700,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 29,
+   "vid": "gOdQ7khlcCM",
+   "start": 84.0,
+   "x": 500,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 30,
+   "vid": "gOdQ7khlcCM",
+   "start": 189.5,
+   "x": 400,
+   "h": 960,
+   "y": 0
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 5,
+   "toChunk": 9,
+   "image": "nc_pochettino_anfield_debut_news2.png",
+   "site": "skysports.com"
+  },
+  {
+   "fromChunk": 21,
+   "toChunk": 26,
+   "image": "nc_pochettino_anfield_debut_news3.png",
+   "site": "foxnews.com"
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 5,
+   "t": 0.3
+  },
+  "text": "WORST DEBUT EVER? 😳"
+ },
+ "hook": "10 MEN AFTER 8 MINUTES?"
+}

@@ -1,0 +1,380 @@
+{
+ "key": "messi_miami_brink",
+ "out": "NEWSCUT_messi_miami_brink.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_tension.wav",
+ "musicVol": 0.095,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Lionel Messi.",
+ "sentences": [
+  [
+   [
+    "LIONEL MESSI",
+    "Lionel Messi"
+   ],
+   [
+    "AND INTER MIAMI",
+    "and Inter Miami"
+   ],
+   [
+    "ARE ONE GAME",
+    "are one game"
+   ],
+   [
+    "FROM GOING OUT",
+    "from going out."
+   ]
+  ],
+  [
+   [
+    "GAME ONE",
+    "Game one"
+   ],
+   [
+    "AGAINST COLUMBUS",
+    "against Columbus,"
+   ],
+   [
+    "AT HOME",
+    "at home,"
+   ],
+   [
+    "AND IT WENT WRONG",
+    "and it went wrong"
+   ],
+   [
+    "IN NINE MINUTES",
+    "in nine minutes."
+   ]
+  ],
+  [
+   [
+    "A PENALTY",
+    "A penalty,"
+   ],
+   [
+    "1-0",
+    "one nil."
+   ]
+  ],
+  [
+   [
+    "THEN",
+    "Then"
+   ],
+   [
+    "IN THE 36TH MINUTE",
+    "in the thirty-sixth minute,"
+   ],
+   [
+    "GONZALO LUJÁN",
+    "Gonzalo Lujan"
+   ],
+   [
+    "WAS SENT OFF",
+    "was sent off,"
+   ],
+   [
+    "AND THE CHAMPIONS",
+    "and the champions"
+   ],
+   [
+    "WERE DOWN TO TEN",
+    "were down to ten."
+   ]
+  ],
+  [
+   [
+    "2-0",
+    "Two nil."
+   ],
+   [
+    "3-0",
+    "Three nil."
+   ],
+   [
+    "GONZALO TAPIA",
+    "Gonzalo Tapia"
+   ],
+   [
+    "WITH TWO",
+    "with two."
+   ]
+  ],
+  [
+   [
+    "TWO YEARS AGO",
+    "Two years ago,"
+   ],
+   [
+    "ATLANTA",
+    "Atlanta"
+   ],
+   [
+    "KNOCKED THEM OUT",
+    "knocked them out"
+   ],
+   [
+    "IN ROUND ONE",
+    "in round one."
+   ]
+  ],
+  [
+   [
+    "FRIDAY",
+    "Friday"
+   ],
+   [
+    "IN COLUMBUS",
+    "in Columbus,"
+   ],
+   [
+    "LOSE AGAIN",
+    "lose again"
+   ],
+   [
+    "AND THE TITLE",
+    "and the title"
+   ],
+   [
+    "IS GONE",
+    "is gone."
+   ]
+  ],
+  [
+   [
+    "WIN",
+    "Win,"
+   ],
+   [
+    "OR IT'S OVER",
+    "or it's over"
+   ],
+   [
+    "FOR",
+    "for"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "Qh9YTHI6NAw",
+   "start": 16.0,
+   "x": 800,
+   "h": 760,
+   "y": 0
+  },
+  {
+   "at": 0,
+   "vid": "ccMapKF8iiY",
+   "start": 93.0,
+   "x": 656,
+   "shift": 0.7,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 2,
+   "vid": "oO0J9mBC6DY",
+   "start": 57.0,
+   "x": 336
+  },
+  {
+   "at": 3,
+   "vid": "oO0J9mBC6DY",
+   "start": 60.0,
+   "x": 208
+  },
+  {
+   "at": 4,
+   "vid": "oO0J9mBC6DY",
+   "start": 0.5,
+   "x": 0
+  },
+  {
+   "at": 6,
+   "vid": "oO0J9mBC6DY",
+   "start": 6.0,
+   "x": 656
+  },
+  {
+   "at": 7,
+   "vid": "ccMapKF8iiY",
+   "start": 21.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 8,
+   "vid": "oO0J9mBC6DY",
+   "start": 108.0,
+   "x": 656
+  },
+  {
+   "at": 9,
+   "vid": "oO0J9mBC6DY",
+   "start": 109.0,
+   "x": 656
+  },
+  {
+   "at": 10,
+   "vid": "oO0J9mBC6DY",
+   "start": 123.0,
+   "x": 656
+  },
+  {
+   "at": 11,
+   "vid": "oO0J9mBC6DY",
+   "start": 84.0,
+   "x": 656
+  },
+  {
+   "at": 13,
+   "vid": "oO0J9mBC6DY",
+   "start": 96.0,
+   "x": 400
+  },
+  {
+   "at": 14,
+   "vid": "oO0J9mBC6DY",
+   "start": 90.0,
+   "x": 400
+  },
+  {
+   "at": 15,
+   "vid": "oO0J9mBC6DY",
+   "start": 12.0,
+   "x": 656
+  },
+  {
+   "at": 16,
+   "vid": "ccMapKF8iiY",
+   "start": 99.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 17,
+   "vid": "ccMapKF8iiY",
+   "start": 42.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 18,
+   "vid": "oO0J9mBC6DY",
+   "start": 126.0,
+   "x": 656
+  },
+  {
+   "at": 19,
+   "vid": "oO0J9mBC6DY",
+   "start": 102.0,
+   "x": 720
+  },
+  {
+   "at": 20,
+   "vid": "oO0J9mBC6DY",
+   "start": 103.5,
+   "x": 720
+  },
+  {
+   "at": 21,
+   "vid": "oO0J9mBC6DY",
+   "start": 141.0,
+   "x": 656
+  },
+  {
+   "at": 22,
+   "vid": "oO0J9mBC6DY",
+   "start": 135.0,
+   "x": 656
+  },
+  {
+   "at": 23,
+   "vid": "ccMapKF8iiY",
+   "start": 60.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 24,
+   "vid": "ccMapKF8iiY",
+   "start": 63.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 25,
+   "vid": "ccMapKF8iiY",
+   "start": 72.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 27,
+   "vid": "ccMapKF8iiY",
+   "start": 108.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  },
+  {
+   "at": 28,
+   "vid": "oO0J9mBC6DY",
+   "start": 33.0,
+   "x": 592
+  },
+  {
+   "at": 30,
+   "vid": "oO0J9mBC6DY",
+   "start": 54.0,
+   "x": 400
+  },
+  {
+   "at": 31,
+   "vid": "ccMapKF8iiY",
+   "start": 96.0,
+   "x": 656,
+   "h": 960,
+   "y": 0
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 17,
+   "toChunk": 25,
+   "image": "nc_messi_miami_brink_news1.png",
+   "site": "mlssoccer.com"
+  },
+  {
+   "fromChunk": 25,
+   "toChunk": 31,
+   "image": "nc_messi_miami_brink_news2.png",
+   "site": "worldsoccertalk.com"
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 1,
+   "t": 0.3
+  },
+  "text": "ONE GAME LEFT 😳"
+ },
+ "hook": "IS MESSI OUT?"
+}
