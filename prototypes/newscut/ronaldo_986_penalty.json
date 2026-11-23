@@ -1,0 +1,344 @@
+{
+ "key": "ronaldo_986_penalty",
+ "out": "NEWSCUT_ronaldo_986_penalty.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_tension.wav",
+ "musicVol": 0.095,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Cristiano Ronaldo.",
+ "sentences": [
+  [
+   [
+    "CRISTIANO RONALDO",
+    "Cristiano Ronaldo"
+   ],
+   [
+    "IS FOURTEEN GOALS",
+    "is fourteen goals"
+   ],
+   [
+    "AWAY FROM",
+    "away from"
+   ],
+   [
+    "ONE THOUSAND",
+    "one thousand."
+   ]
+  ],
+  [
+   [
+    "GOAL 986",
+    "Goal nine hundred and eighty-six,"
+   ],
+   [
+    "A VOLLEY",
+    "a volley"
+   ],
+   [
+    "INTO THE FAR CORNER",
+    "into the far corner."
+   ]
+  ],
+  [
+   [
+    "FOUR MINUTES LATER",
+    "Four minutes later,"
+   ],
+   [
+    "A PENALTY",
+    "a penalty."
+   ],
+   [
+    "RONALDO STEPS UP",
+    "Ronaldo steps up,"
+   ],
+   [
+    "AND HITS THE WOODWORK",
+    "and hits the woodwork."
+   ]
+  ],
+  [
+   [
+    "HIS SECOND PENALTY",
+    "His second penalty"
+   ],
+   [
+    "THIS SEASON",
+    "this season."
+   ],
+   [
+    "HIS SECOND MISS",
+    "His second miss."
+   ]
+  ],
+  [
+   [
+    "AL AHLI'S COACH SAID",
+    "Al Ahli's coach said"
+   ],
+   [
+    "THE MATCH ONLY STARTED",
+    "the match only started"
+   ],
+   [
+    "AFTER RONALDO MISSED",
+    "after Ronaldo missed."
+   ]
+  ],
+  [
+   [
+    "AL AHLI",
+    "Al Ahli"
+   ],
+   [
+    "SCORED THREE",
+    "scored three,"
+   ],
+   [
+    "AL NASSR",
+    "Al Nassr"
+   ],
+   [
+    "LOST THREE-ONE",
+    "lost three-one,"
+   ]
+  ],
+  [
+   [
+    "AND AT FULL TIME",
+    "and at full time"
+   ],
+   [
+    "RONALDO",
+    "Ronaldo"
+   ],
+   [
+    "WENT STRAIGHT",
+    "went straight"
+   ],
+   [
+    "DOWN THE TUNNEL",
+    "down the tunnel."
+   ]
+  ],
+  [
+   [
+    "FOURTEEN TO GO",
+    "Fourteen to go,"
+   ],
+   [
+    "AND THE WHOLE WORLD",
+    "and the whole world"
+   ],
+   [
+    "IS COUNTING WITH",
+    "is counting with"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "jYZt5kttLNs",
+   "start": 411.0,
+   "x": 912
+  },
+  {
+   "at": 0,
+   "vid": "jYZt5kttLNs",
+   "start": 457.0,
+   "x": 700,
+   "shift": 0.7
+  },
+  {
+   "at": 2,
+   "vid": "jYZt5kttLNs",
+   "start": 434.5,
+   "x": 336
+  },
+  {
+   "at": 3,
+   "vid": "jYZt5kttLNs",
+   "start": 412.5,
+   "x": 1000
+  },
+  {
+   "at": 4,
+   "vid": "jYZt5kttLNs",
+   "start": 301.0,
+   "x": 784
+  },
+  {
+   "at": 5,
+   "vid": "jYZt5kttLNs",
+   "start": 309.0,
+   "x": 144
+  },
+  {
+   "at": 6,
+   "vid": "jYZt5kttLNs",
+   "start": 305.5,
+   "x": 848
+  },
+  {
+   "at": 7,
+   "vid": "jYZt5kttLNs",
+   "start": 324.0,
+   "x": 566
+  },
+  {
+   "at": 8,
+   "vid": "jYZt5kttLNs",
+   "start": 408.0,
+   "x": 464
+  },
+  {
+   "at": 9,
+   "vid": "jYZt5kttLNs",
+   "start": 466.0,
+   "x": 528
+  },
+  {
+   "at": 10,
+   "vid": "jYZt5kttLNs",
+   "start": 474.5,
+   "x": 592
+  },
+  {
+   "at": 11,
+   "vid": "jYZt5kttLNs",
+   "start": 477.0,
+   "x": 336
+  },
+  {
+   "at": 12,
+   "vid": "jYZt5kttLNs",
+   "start": 464.0,
+   "x": 656
+  },
+  {
+   "at": 13,
+   "vid": "jYZt5kttLNs",
+   "start": 481.0,
+   "x": 528
+  },
+  {
+   "at": 14,
+   "vid": "jYZt5kttLNs",
+   "start": 690.0,
+   "x": 656
+  },
+  {
+   "at": 15,
+   "vid": "jYZt5kttLNs",
+   "start": 566.0,
+   "x": 656
+  },
+  {
+   "at": 16,
+   "vid": "jYZt5kttLNs",
+   "start": 480.0,
+   "x": 656
+  },
+  {
+   "at": 17,
+   "vid": "jYZt5kttLNs",
+   "start": 695.0,
+   "x": 656
+  },
+  {
+   "at": 18,
+   "vid": "jYZt5kttLNs",
+   "start": 1010.0,
+   "x": 656
+  },
+  {
+   "at": 19,
+   "vid": "jYZt5kttLNs",
+   "start": 1135.0,
+   "x": 656
+  },
+  {
+   "at": 20,
+   "vid": "jYZt5kttLNs",
+   "start": 745.0,
+   "x": 656
+  },
+  {
+   "at": 21,
+   "vid": "jYZt5kttLNs",
+   "start": 1250.0,
+   "x": 656
+  },
+  {
+   "at": 22,
+   "vid": "jYZt5kttLNs",
+   "start": 1135.5,
+   "x": 656
+  },
+  {
+   "at": 23,
+   "vid": "FlBpU1C7uvU",
+   "start": 72.0,
+   "x": 650,
+   "h": 900,
+   "y": 0
+  },
+  {
+   "at": 24,
+   "vid": "FlBpU1C7uvU",
+   "start": 75.0,
+   "x": 650,
+   "h": 900,
+   "y": 0
+  },
+  {
+   "at": 25,
+   "vid": "jYZt5kttLNs",
+   "start": 463.0,
+   "x": 656
+  },
+  {
+   "at": 26,
+   "vid": "jYZt5kttLNs",
+   "start": 316.0,
+   "x": 656
+  },
+  {
+   "at": 27,
+   "vid": "jYZt5kttLNs",
+   "start": 410.0,
+   "x": 912
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 11,
+   "toChunk": 14,
+   "image": "nc_ronaldo_986_penalty_news1.png",
+   "site": "espn.com"
+  },
+  {
+   "fromChunk": 19,
+   "toChunk": 22,
+   "image": "nc_ronaldo_986_penalty_news2.png",
+   "site": "thenationalnews.com"
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 7,
+   "t": 0.3
+  },
+  "text": "14 MORE TO GO 😳"
+ },
+ "hook": "14 GOALS FROM 1,000?"
+}

@@ -1,0 +1,14 @@
+KEY ronaldo_986_penalty | OUT NEWSCUT_ronaldo_986_penalty.mp4 | loopTail "Cristiano Ronaldo."
+Hook (frame 0): 14 GOALS FROM 1,000?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Cristiano Ronaldo | is fourteen goals | away from | one thousand.
+S1: Goal 986 => Goal nine hundred and eighty-six, | a volley | into the far corner.
+S2: Four minutes later, | a penalty. | Ronaldo steps up, | and hits the woodwork.
+S3: His second penalty | this season. | His second miss.
+S4: Al Ahli's coach said | the match only started | after Ronaldo missed.
+S5: Al Ahli | scored three, | Al Nassr | lost three-one,
+S6: and at full time | Ronaldo | went straight | down the tunnel.
+S7: Fourteen to go, | and the whole world | is counting with
+News cuts: (ESPN + Goal.com)
+Cover text: 14 MORE TO GO 😳
+Facts (verified 23 Nov 2026): Al Ahli 3-1 Al Nassr, Saudi Pro League, Fri 20 Nov 2026 (ESPN, 20 Nov). Ronaldo volleyed into the far corner 15' from a Joao Felix assist, his 986th career goal; four minutes later his penalty struck the woodwork (ESPN: post; ESPN India: bar), his second miss from two penalties for Al Nassr this season, first time missing consecutive penalties in the Saudi league. Al Ahli coach Marino Pusic: "For me, the match started after Ronaldo missed the penalty." He stormed straight down the tunnel at full time (ESPN India 23 Nov).

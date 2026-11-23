@@ -1,0 +1,13 @@
+KEY messi_throw_yellow | OUT NEWSCUT_messi_throw_yellow.mp4 | loopTail "Lionel Messi."
+Hook (frame 0): RED CARD FOR MESSI?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Lionel Messi's throw-in | went straight | into a player's face | from two yards away.
+S1: Columbus' Gonzalo Tapia, | who went on | to score twice.
+S2: The referee | showed both players | a yellow card.
+S3: Columbus' coach said | everyone knows | that was more | than a yellow.
+S4: Miami's coach said | the referee saw a yellow, | and that is it.
+S5: Miami lost | three-nil, | and now | they must win | in Columbus,
+S6: or the season is over | for
+News cuts: (ESPN India + another outlet)
+Cover text: ONLY A YELLOW? 😳
+Facts (verified 23 Nov 2026): Inter Miami 0-3 Columbus Crew, MLS playoffs Game 1 (22 Nov IST). Messi aimed a throw-in into Gonzalo Tapia's face from a couple of yards; referee Allen Chapman booked both (ESPN India 23 Nov). Columbus coach Laurent Courtois: "Everyone knows that was more than a yellow card." Miami coach Kily Gonzalez: "The referee saw a yellow and that is it." Tapia scored twice in the 3-0 (22 Nov build). Miami must win Game 2 at Columbus (28 Nov IST) or go out.
