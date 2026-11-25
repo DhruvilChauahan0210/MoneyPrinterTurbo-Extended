@@ -1,0 +1,23 @@
+KEY madrid_psv_comeback | OUT NEWSCUT_madrid_psv_comeback.mp4 | loopTail "Real Madrid."
+Hook (frame 0): 0-1 AT HALF-TIME… THEN 5-1?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Real Madrid | were losing | at half-time, | at home, | to PSV.
+S1: Ivan Perišić => Ivan Perisic, | thirty-seven years old, | scored a penalty, | the oldest player ever | to score against Madrid | in the Champions League.
+S2: So José Mourinho => So Jose Mourinho | made the call | of the night.
+S3: At half-time, | he took off | both centre-backs, | Militão => Militao | and Rüdiger => Rudiger,
+S4: and Tchouaméni => and Tchouameni too. | Three changes, | one message.
+S5: In came Huijsen, | Konaté => Konate, | and Jude Bellingham.
+S6: Fifty minutes. | Arda Güler => Arda Guler, | backheel, | Valverde finishes. | One-one.
+S7: Sixty minutes. | Bellingham, | a volley | in off the post. | Two-one.
+S8: Four minutes later, | Mbappé => Mbappe. | Three-one.
+S9: Then Mbappé again => Then Mbappe again, | around the keeper. | Four-one.
+S10: Seven Champions League games | in a row | with a goal.
+S11: And Vinícius => And Vinicius, | from Bellingham, | through the keeper's legs. | Five-one.
+S12: Five goals | in one half.
+S13: And Bellingham, | off the bench, | a goal | and an assist.
+S14: Six comebacks | after conceding first | in two seasons, | more than any team | in the Champions League.
+S15: Valverde said | the second half | was spectacular.
+S16: Fifteen points | from fifteen, | and it all changed | at half-time for
+News cuts: (FotMob + beIN Sports)
+Cover text: 0-1 → 5-1 😳
+Facts (verified 25 Nov 2026): Real Madrid 5-1 PSV, Champions League league phase MD5, Bernabeu, Tue 24 Nov 2026. Perisic pen 32' (VAR, Tchouameni foul on Mijnans), aged 37y295d, oldest scorer v Madrid in UCL (FotMob). Half-time: Militao, Rudiger, Tchouameni off; Huijsen, Konate, Bellingham on (beIN, AfricaSoccer). Valverde ~50' from Guler backheel/flick; Bellingham 60' volley in off the right post; Mbappe 64' and ~84' (rounded Kovar); Vinicius ~87' from Bellingham through the keeper's legs (FotMob). Mbappe scored in 7 straight UCL apps (FotMob). Six UCL wins after conceding first in the last two seasons, more than any side (FotMob). 15 pts from 5 games (beIN). Valverde: "Our second half was spectacular" (beIN).

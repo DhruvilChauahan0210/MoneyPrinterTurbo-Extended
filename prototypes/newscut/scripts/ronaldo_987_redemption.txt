@@ -1,0 +1,15 @@
+KEY ronaldo_987_redemption | OUT NEWSCUT_ronaldo_987_redemption.mp4 | loopTail "Cristiano Ronaldo."
+Hook (frame 0): MISSED TWO… THEN THIS?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Cristiano Ronaldo | had missed | his last two penalties.
+S1: Four days later, | Asian Champions League, | another penalty.
+S2: Thirteen minutes in, | Ronaldo | steps up again,
+S3: and this time, | no mistake.
+S4: Goal 987 => Goal nine hundred and eighty-seven. | Thirteen | from one thousand.
+S5: And a new record: | seventeen goals, | Al Nassr's top scorer ever | in Asia.
+S6: Then he thought | he had 988 => he had nine hundred and eighty-eight, | but VAR | took it away.
+S7: Al Nassr | still won | two-one.
+S8: Thirteen to go, | and the whole world | is counting with
+News cuts: (The National + World Soccer Talk)
+Cover text: 13 MORE 😳
+Facts (verified 25 Nov 2026): Al Nassr 2-1 Al Sadd, AFC Champions League Elite, Al Awwal Park, Tue 24 Nov 2026. Ronaldo 13' penalty (WST, TSE), 987th career goal (The National, Sofascore), 13 from 1,000. WST: Al Nassr's all-time top scorer in continental competitions with 17, one more than Hamdallah. TSE: Ronaldo goal disallowed after VAR review 35'; Waad equalised 22', sent off 45+2'; Joao Felix winner 52'. Missed both penalties for Al Nassr this season incl. v Al Ahli Fri 20 Nov (ESPN).

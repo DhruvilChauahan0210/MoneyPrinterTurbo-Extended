@@ -1,0 +1,338 @@
+{
+ "key": "ronaldo_987_redemption",
+ "out": "NEWSCUT_ronaldo_987_redemption.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_tension.wav",
+ "musicVol": 0.095,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Cristiano Ronaldo.",
+ "sentences": [
+  [
+   [
+    "CRISTIANO RONALDO",
+    "Cristiano Ronaldo"
+   ],
+   [
+    "HAD MISSED",
+    "had missed"
+   ],
+   [
+    "HIS LAST TWO PENALTIES",
+    "his last two penalties."
+   ]
+  ],
+  [
+   [
+    "FOUR DAYS LATER",
+    "Four days later,"
+   ],
+   [
+    "ASIAN CHAMPIONS LEAGUE",
+    "Asian Champions League,"
+   ],
+   [
+    "ANOTHER PENALTY",
+    "another penalty."
+   ]
+  ],
+  [
+   [
+    "THIRTEEN MINUTES IN",
+    "Thirteen minutes in,"
+   ],
+   [
+    "RONALDO",
+    "Ronaldo"
+   ],
+   [
+    "STEPS UP AGAIN",
+    "steps up again,"
+   ]
+  ],
+  [
+   [
+    "AND THIS TIME",
+    "and this time,"
+   ],
+   [
+    "NO MISTAKE",
+    "no mistake."
+   ]
+  ],
+  [
+   [
+    "GOAL 987",
+    "Goal nine hundred and eighty-seven."
+   ],
+   [
+    "THIRTEEN",
+    "Thirteen"
+   ],
+   [
+    "FROM ONE THOUSAND",
+    "from one thousand."
+   ]
+  ],
+  [
+   [
+    "AND A NEW RECORD:",
+    "And a new record:"
+   ],
+   [
+    "SEVENTEEN GOALS",
+    "seventeen goals,"
+   ],
+   [
+    "AL NASSR'S TOP SCORER EVER",
+    "Al Nassr's top scorer ever"
+   ],
+   [
+    "IN ASIA",
+    "in Asia."
+   ]
+  ],
+  [
+   [
+    "THEN HE THOUGHT",
+    "Then he thought"
+   ],
+   [
+    "HE HAD 988",
+    "he had nine hundred and eighty-eight,"
+   ],
+   [
+    "BUT VAR",
+    "but VAR"
+   ],
+   [
+    "TOOK IT AWAY",
+    "took it away."
+   ]
+  ],
+  [
+   [
+    "AL NASSR",
+    "Al Nassr"
+   ],
+   [
+    "STILL WON",
+    "still won"
+   ],
+   [
+    "TWO-ONE",
+    "two-one."
+   ]
+  ],
+  [
+   [
+    "THIRTEEN TO GO",
+    "Thirteen to go,"
+   ],
+   [
+    "AND THE WHOLE WORLD",
+    "and the whole world"
+   ],
+   [
+    "IS COUNTING WITH",
+    "is counting with"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "GXxA1gtzNjo",
+   "start": 68.0,
+   "x": 528
+  },
+  {
+   "at": 0,
+   "vid": "Vd1kjxZdUEs",
+   "start": 52.0,
+   "x": 656,
+   "shift": 0.7
+  },
+  {
+   "at": 1,
+   "vid": "jYZt5kttLNs",
+   "start": 474.5,
+   "x": 592
+  },
+  {
+   "at": 2,
+   "vid": "jYZt5kttLNs",
+   "start": 477.0,
+   "x": 336
+  },
+  {
+   "at": 3,
+   "vid": "jYZt5kttLNs",
+   "start": 464.0,
+   "x": 656
+  },
+  {
+   "at": 4,
+   "vid": "GXxA1gtzNjo",
+   "start": 52.0,
+   "x": 656
+  },
+  {
+   "at": 5,
+   "vid": "Vd1kjxZdUEs",
+   "start": 31.5,
+   "x": 800
+  },
+  {
+   "at": 6,
+   "vid": "Vd1kjxZdUEs",
+   "start": 33.0,
+   "x": 800
+  },
+  {
+   "at": 7,
+   "vid": "Vd1kjxZdUEs",
+   "start": 43.4,
+   "fill": "contain"
+  },
+  {
+   "at": 11,
+   "vid": "Vd1kjxZdUEs",
+   "start": 120.5,
+   "x": 600
+  },
+  {
+   "at": 12,
+   "vid": "Vd1kjxZdUEs",
+   "start": 52.5,
+   "x": 656
+  },
+  {
+   "at": 13,
+   "vid": "GXxA1gtzNjo",
+   "start": 72.0,
+   "x": 656
+  },
+  {
+   "at": 14,
+   "vid": "Vd1kjxZdUEs",
+   "start": 56.0,
+   "x": 976
+  },
+  {
+   "at": 15,
+   "vid": "GXxA1gtzNjo",
+   "start": 66.0,
+   "x": 528
+  },
+  {
+   "at": 16,
+   "vid": "Vd1kjxZdUEs",
+   "start": 137.0,
+   "x": 1000
+  },
+  {
+   "at": 17,
+   "vid": "Vd1kjxZdUEs",
+   "start": 142.0,
+   "x": 600
+  },
+  {
+   "at": 18,
+   "vid": "OmX6KpQnwgg",
+   "start": 3.0,
+   "x": 707,
+   "h": 900,
+   "y": 0
+  },
+  {
+   "at": 19,
+   "vid": "OmX6KpQnwgg",
+   "start": 4.0,
+   "x": 707,
+   "h": 900,
+   "y": 0
+  },
+  {
+   "at": 20,
+   "vid": "OmX6KpQnwgg",
+   "start": 6.5,
+   "x": 450,
+   "h": 900,
+   "y": 0
+  },
+  {
+   "at": 21,
+   "vid": "OmX6KpQnwgg",
+   "start": 13.5,
+   "x": 707,
+   "h": 900,
+   "y": 0
+  },
+  {
+   "at": 22,
+   "vid": "Vd1kjxZdUEs",
+   "start": 96.0,
+   "x": 656
+  },
+  {
+   "at": 23,
+   "vid": "Vd1kjxZdUEs",
+   "start": 100.0,
+   "x": 656
+  },
+  {
+   "at": 24,
+   "vid": "GXxA1gtzNjo",
+   "start": 136.0,
+   "x": 656
+  },
+  {
+   "at": 25,
+   "vid": "GXxA1gtzNjo",
+   "start": 72.5,
+   "x": 656
+  },
+  {
+   "at": 26,
+   "vid": "Vd1kjxZdUEs",
+   "start": 53.5,
+   "x": 656
+  },
+  {
+   "at": 27,
+   "vid": "GXxA1gtzNjo",
+   "start": 67.6,
+   "x": 528
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 14,
+   "toChunk": 18,
+   "image": "nc_ronaldo_987_redemption_news2.png",
+   "site": "worldsoccertalk.com"
+  },
+  {
+   "fromChunk": 22,
+   "toChunk": 25,
+   "image": "nc_ronaldo_987_redemption_news1.png",
+   "site": "thenationalnews.com"
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 9,
+   "t": 0.3
+  },
+  "text": "13 MORE 😳"
+ },
+ "hook": "MISSED TWO… THEN THIS?"
+}

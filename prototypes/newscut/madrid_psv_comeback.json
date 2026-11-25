@@ -1,0 +1,706 @@
+{
+ "key": "madrid_psv_comeback",
+ "out": "NEWSCUT_madrid_psv_comeback.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_tension.wav",
+ "musicVol": 0.095,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Real Madrid.",
+ "sentences": [
+  [
+   [
+    "REAL MADRID",
+    "Real Madrid"
+   ],
+   [
+    "WERE LOSING",
+    "were losing"
+   ],
+   [
+    "AT HALF-TIME",
+    "at half-time,"
+   ],
+   [
+    "AT HOME",
+    "at home,"
+   ],
+   [
+    "TO PSV",
+    "to PSV."
+   ]
+  ],
+  [
+   [
+    "IVAN PERIŠIĆ",
+    "Ivan Perisic,"
+   ],
+   [
+    "THIRTY-SEVEN YEARS OLD",
+    "thirty-seven years old,"
+   ],
+   [
+    "SCORED A PENALTY",
+    "scored a penalty,"
+   ],
+   [
+    "THE OLDEST PLAYER EVER",
+    "the oldest player ever"
+   ],
+   [
+    "TO SCORE AGAINST MADRID",
+    "to score against Madrid"
+   ],
+   [
+    "IN THE CHAMPIONS LEAGUE",
+    "in the Champions League."
+   ]
+  ],
+  [
+   [
+    "SO JOSÉ MOURINHO",
+    "So Jose Mourinho"
+   ],
+   [
+    "MADE THE CALL",
+    "made the call"
+   ],
+   [
+    "OF THE NIGHT",
+    "of the night."
+   ]
+  ],
+  [
+   [
+    "AT HALF-TIME",
+    "At half-time,"
+   ],
+   [
+    "HE TOOK OFF",
+    "he took off"
+   ],
+   [
+    "BOTH CENTRE-BACKS",
+    "both centre-backs,"
+   ],
+   [
+    "MILITÃO",
+    "Militao"
+   ],
+   [
+    "AND RÜDIGER",
+    "Rudiger,"
+   ]
+  ],
+  [
+   [
+    "AND TCHOUAMÉNI",
+    "and Tchouameni too."
+   ],
+   [
+    "THREE CHANGES",
+    "Three changes,"
+   ],
+   [
+    "ONE MESSAGE",
+    "one message."
+   ]
+  ],
+  [
+   [
+    "IN CAME HUIJSEN",
+    "In came Huijsen,"
+   ],
+   [
+    "KONATÉ",
+    "Konate,"
+   ],
+   [
+    "AND JUDE BELLINGHAM",
+    "and Jude Bellingham."
+   ]
+  ],
+  [
+   [
+    "FIFTY MINUTES",
+    "Fifty minutes."
+   ],
+   [
+    "ARDA GÜLER",
+    "Arda Guler,"
+   ],
+   [
+    "BACKHEEL",
+    "backheel,"
+   ],
+   [
+    "VALVERDE FINISHES",
+    "Valverde finishes."
+   ],
+   [
+    "ONE-ONE",
+    "One-one."
+   ]
+  ],
+  [
+   [
+    "SIXTY MINUTES",
+    "Sixty minutes."
+   ],
+   [
+    "BELLINGHAM",
+    "Bellingham,"
+   ],
+   [
+    "A VOLLEY",
+    "a volley"
+   ],
+   [
+    "IN OFF THE POST",
+    "in off the post."
+   ],
+   [
+    "TWO-ONE",
+    "Two-one."
+   ]
+  ],
+  [
+   [
+    "FOUR MINUTES LATER",
+    "Four minutes later,"
+   ],
+   [
+    "MBAPPÉ",
+    "Mbappe."
+   ],
+   [
+    "THREE-ONE",
+    "Three-one."
+   ]
+  ],
+  [
+   [
+    "THEN MBAPPÉ AGAIN",
+    "Then Mbappe again,"
+   ],
+   [
+    "AROUND THE KEEPER",
+    "around the keeper."
+   ],
+   [
+    "FOUR-ONE",
+    "Four-one."
+   ]
+  ],
+  [
+   [
+    "SEVEN CHAMPIONS LEAGUE GAMES",
+    "Seven Champions League games"
+   ],
+   [
+    "IN A ROW",
+    "in a row"
+   ],
+   [
+    "WITH A GOAL",
+    "with a goal."
+   ]
+  ],
+  [
+   [
+    "AND VINÍCIUS",
+    "And Vinicius,"
+   ],
+   [
+    "FROM BELLINGHAM",
+    "from Bellingham,"
+   ],
+   [
+    "THROUGH THE KEEPER'S LEGS",
+    "through the keeper's legs."
+   ],
+   [
+    "FIVE-ONE",
+    "Five-one."
+   ]
+  ],
+  [
+   [
+    "FIVE GOALS",
+    "Five goals"
+   ],
+   [
+    "IN ONE HALF",
+    "in one half."
+   ]
+  ],
+  [
+   [
+    "AND BELLINGHAM",
+    "And Bellingham,"
+   ],
+   [
+    "OFF THE BENCH",
+    "off the bench,"
+   ],
+   [
+    "A GOAL",
+    "a goal"
+   ],
+   [
+    "AND AN ASSIST",
+    "and an assist."
+   ]
+  ],
+  [
+   [
+    "SIX COMEBACKS",
+    "Six comebacks"
+   ],
+   [
+    "AFTER CONCEDING FIRST",
+    "after conceding first"
+   ],
+   [
+    "IN TWO SEASONS",
+    "in two seasons,"
+   ],
+   [
+    "MORE THAN ANY TEAM",
+    "more than any team"
+   ],
+   [
+    "IN THE CHAMPIONS LEAGUE",
+    "in the Champions League."
+   ]
+  ],
+  [
+   [
+    "VALVERDE SAID",
+    "Valverde said"
+   ],
+   [
+    "THE SECOND HALF",
+    "the second half"
+   ],
+   [
+    "WAS SPECTACULAR",
+    "was spectacular."
+   ]
+  ],
+  [
+   [
+    "FIFTEEN POINTS",
+    "Fifteen points"
+   ],
+   [
+    "FROM FIFTEEN",
+    "from fifteen,"
+   ],
+   [
+    "AND IT ALL CHANGED",
+    "and it all changed"
+   ],
+   [
+    "AT HALF-TIME FOR",
+    "at half-time for"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "KkiNDhS-qNo",
+   "start": 176.0,
+   "x": 464
+  },
+  {
+   "at": 0,
+   "vid": "KkiNDhS-qNo",
+   "start": 72.0,
+   "x": 336,
+   "shift": 0.7
+  },
+  {
+   "at": 1,
+   "vid": "KkiNDhS-qNo",
+   "start": 74.0,
+   "x": 400
+  },
+  {
+   "at": 2,
+   "vid": "l65SPK33DDg",
+   "start": 15.0,
+   "x": 80
+  },
+  {
+   "at": 3,
+   "vid": "KkiNDhS-qNo",
+   "start": 96.0,
+   "x": 656
+  },
+  {
+   "at": 4,
+   "vid": "l65SPK33DDg",
+   "start": 30.0,
+   "x": 656
+  },
+  {
+   "at": 5,
+   "vid": "KkiNDhS-qNo",
+   "start": 64.0,
+   "x": 1000
+  },
+  {
+   "at": 6,
+   "vid": "KkiNDhS-qNo",
+   "start": 76.0,
+   "x": 600
+  },
+  {
+   "at": 7,
+   "vid": "l65SPK33DDg",
+   "start": 24.2,
+   "fill": "contain"
+  },
+  {
+   "at": 9,
+   "vid": "l65SPK33DDg",
+   "start": 29.0,
+   "x": 656
+  },
+  {
+   "at": 10,
+   "vid": "KkiNDhS-qNo",
+   "start": 74.0,
+   "x": 400
+  },
+  {
+   "at": 11,
+   "vid": "4w4vCE4lbMY",
+   "start": 24.0,
+   "x": 991,
+   "h": 800,
+   "y": 260
+  },
+  {
+   "at": 12,
+   "vid": "4w4vCE4lbMY",
+   "start": 64.0,
+   "x": 991,
+   "h": 800,
+   "y": 260
+  },
+  {
+   "at": 13,
+   "vid": "4w4vCE4lbMY",
+   "start": 104.0,
+   "x": 991,
+   "h": 800,
+   "y": 260
+  },
+  {
+   "at": 14,
+   "vid": "4w4vCE4lbMY",
+   "start": 144.0,
+   "x": 991,
+   "h": 800,
+   "y": 260
+  },
+  {
+   "at": 15,
+   "vid": "4w4vCE4lbMY",
+   "start": 184.0,
+   "x": 991,
+   "h": 800,
+   "y": 260
+  },
+  {
+   "at": 16,
+   "vid": "KkiNDhS-qNo",
+   "start": 16.0,
+   "x": 900
+  },
+  {
+   "at": 17,
+   "vid": "4w4vCE4lbMY",
+   "start": 200.0,
+   "x": 991,
+   "h": 800,
+   "y": 260
+  },
+  {
+   "at": 18,
+   "vid": "l65SPK33DDg",
+   "start": 16.0,
+   "x": 80
+  },
+  {
+   "at": 19,
+   "vid": "4w4vCE4lbMY",
+   "start": 208.0,
+   "x": 991,
+   "h": 800,
+   "y": 260
+  },
+  {
+   "at": 20,
+   "vid": "4w4vCE4lbMY",
+   "start": 224.0,
+   "x": 991,
+   "h": 800,
+   "y": 260
+  },
+  {
+   "at": 21,
+   "vid": "4w4vCE4lbMY",
+   "start": 264.0,
+   "x": 991,
+   "h": 800,
+   "y": 260
+  },
+  {
+   "at": 22,
+   "vid": "KkiNDhS-qNo",
+   "start": 170.0,
+   "x": 600
+  },
+  {
+   "at": 23,
+   "vid": "KkiNDhS-qNo",
+   "start": 164.0,
+   "x": 900
+  },
+  {
+   "at": 24,
+   "vid": "KkiNDhS-qNo",
+   "start": 180.0,
+   "x": 656
+  },
+  {
+   "at": 25,
+   "vid": "l65SPK33DDg",
+   "start": 35.5,
+   "x": 656
+  },
+  {
+   "at": 26,
+   "vid": "l65SPK33DDg",
+   "start": 38.3,
+   "fill": "contain"
+  },
+  {
+   "at": 30,
+   "vid": "KkiNDhS-qNo",
+   "start": 112.0,
+   "x": 1100
+  },
+  {
+   "at": 31,
+   "vid": "l65SPK33DDg",
+   "start": 72.3,
+   "fill": "contain"
+  },
+  {
+   "at": 34,
+   "vid": "KkiNDhS-qNo",
+   "start": 178.0,
+   "x": 464
+  },
+  {
+   "at": 35,
+   "vid": "l65SPK33DDg",
+   "start": 86.6,
+   "fill": "contain"
+  },
+  {
+   "at": 38,
+   "vid": "l65SPK33DDg",
+   "start": 100.2,
+   "fill": "contain"
+  },
+  {
+   "at": 40,
+   "vid": "KkiNDhS-qNo",
+   "start": 210.0,
+   "x": 528
+  },
+  {
+   "at": 41,
+   "vid": "KkiNDhS-qNo",
+   "start": 216.0,
+   "x": 656
+  },
+  {
+   "at": 42,
+   "vid": "KkiNDhS-qNo",
+   "start": 220.0,
+   "x": 656
+  },
+  {
+   "at": 43,
+   "vid": "KkiNDhS-qNo",
+   "start": 224.0,
+   "x": 700
+  },
+  {
+   "at": 44,
+   "vid": "l65SPK33DDg",
+   "start": 117.0,
+   "x": 600
+  },
+  {
+   "at": 45,
+   "vid": "l65SPK33DDg",
+   "start": 118.8,
+   "fill": "contain"
+  },
+  {
+   "at": 47,
+   "vid": "l65SPK33DDg",
+   "start": 124.0,
+   "x": 800
+  },
+  {
+   "at": 48,
+   "vid": "KkiNDhS-qNo",
+   "start": 296.0,
+   "x": 656
+  },
+  {
+   "at": 49,
+   "vid": "KkiNDhS-qNo",
+   "start": 304.0,
+   "x": 656
+  },
+  {
+   "at": 50,
+   "vid": "KkiNDhS-qNo",
+   "start": 182.0,
+   "x": 700
+  },
+  {
+   "at": 51,
+   "vid": "KkiNDhS-qNo",
+   "start": 176.5,
+   "x": 464
+  },
+  {
+   "at": 52,
+   "vid": "l65SPK33DDg",
+   "start": 72.5,
+   "fill": "contain"
+  },
+  {
+   "at": 53,
+   "vid": "l65SPK33DDg",
+   "start": 120.0,
+   "fill": "contain"
+  },
+  {
+   "at": 54,
+   "vid": "KkiNDhS-qNo",
+   "start": 288.0,
+   "x": 656
+  },
+  {
+   "at": 55,
+   "vid": "KkiNDhS-qNo",
+   "start": 312.0,
+   "x": 656
+  },
+  {
+   "at": 56,
+   "vid": "KkiNDhS-qNo",
+   "start": 320.0,
+   "x": 400
+  },
+  {
+   "at": 57,
+   "vid": "KkiNDhS-qNo",
+   "start": 136.0,
+   "x": 656
+  },
+  {
+   "at": 58,
+   "vid": "KkiNDhS-qNo",
+   "start": 152.0,
+   "x": 656
+  },
+  {
+   "at": 59,
+   "vid": "KkiNDhS-qNo",
+   "start": 120.0,
+   "x": 1168
+  },
+  {
+   "at": 60,
+   "vid": "KkiNDhS-qNo",
+   "start": 124.0,
+   "x": 1100
+  },
+  {
+   "at": 61,
+   "vid": "KkiNDhS-qNo",
+   "start": 122.0,
+   "x": 1100
+  },
+  {
+   "at": 62,
+   "vid": "4w4vCE4lbMY",
+   "start": 320.0,
+   "x": 991,
+   "h": 800,
+   "y": 260
+  },
+  {
+   "at": 63,
+   "vid": "KkiNDhS-qNo",
+   "start": 160.0,
+   "x": 656
+  },
+  {
+   "at": 64,
+   "vid": "4w4vCE4lbMY",
+   "start": 344.0,
+   "x": 991,
+   "h": 800,
+   "y": 260
+  },
+  {
+   "at": 65,
+   "vid": "KkiNDhS-qNo",
+   "start": 175.6,
+   "x": 464
+  }
+ ],
+ "cards": [
+  {
+   "fromChunk": 48,
+   "toChunk": 53,
+   "image": "nc_madrid_psv_comeback_news1.png",
+   "site": "fotmob.com"
+  },
+  {
+   "fromChunk": 59,
+   "toChunk": 63,
+   "image": "nc_madrid_psv_comeback_news2.png",
+   "site": "beinsports.com"
+  }
+ ],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 34,
+   "t": 0.3
+  },
+  "text": "0-1 → 5-1 😳"
+ },
+ "hook": "0-1 AT HALF-TIME… THEN 5-1?"
+}
