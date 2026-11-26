@@ -1,0 +1,274 @@
+{
+ "key": "lammens_new_onana",
+ "out": "NEWSCUT_lammens_new_onana.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_tension.wav",
+ "musicVol": 0.095,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Senne Lammens.",
+ "sentences": [
+  [
+   [
+    "SENNE LAMMENS",
+    "Senne Lammens"
+   ],
+   [
+    "SAVED A PENALTY",
+    "saved a penalty"
+   ],
+   [
+    "IN LISBON",
+    "in Lisbon."
+   ]
+  ],
+  [
+   [
+    "THREE MINUTES LATER",
+    "Three minutes later,"
+   ],
+   [
+    "HE RUSHED OUT",
+    "he rushed out,"
+   ],
+   [
+    "FOULED ARAUJO",
+    "fouled Araujo,"
+   ],
+   [
+    "AND GAVE AWAY ANOTHER",
+    "and gave away another."
+   ]
+  ],
+  [
+   [
+    "SUÁREZ",
+    "Suárez"
+   ],
+   [
+    "SCORED THAT ONE",
+    "scored that one."
+   ]
+  ],
+  [
+   [
+    "THEN, TEN MINUTES FROM TIME",
+    "Then, ten minutes from time,"
+   ],
+   [
+    "A CROSS INTO THE BOX",
+    "a cross into the box."
+   ]
+  ],
+  [
+   [
+    "LAMMENS COMES OUT",
+    "Lammens comes out,"
+   ],
+   [
+    "DROPS IT",
+    "drops it,"
+   ]
+  ],
+  [
+   [
+    "AND SUÁREZ",
+    "and Suárez"
+   ],
+   [
+    "SCORES WITH AN OVERHEAD KICK",
+    "scores with an overhead kick."
+   ]
+  ],
+  [
+   [
+    "TWO-TWO",
+    "Two-two."
+   ],
+   [
+    "CARRAGHER WANTS HIM DROPPED",
+    "Carragher wants him dropped."
+   ]
+  ],
+  [
+   [
+    "POCHETTINO",
+    "Pochettino"
+   ],
+   [
+    "STILL BACKS HIM",
+    "still backs him,"
+   ],
+   [
+    "BUT THE FANS",
+    "but the fans"
+   ],
+   [
+    "ARE ALREADY CALLING HIM",
+    "are already calling him"
+   ],
+   [
+    "THE NEW ONANA",
+    "the new Onana."
+   ]
+  ],
+  [
+   [
+    "ASHLEY YOUNG SAYS",
+    "Ashley Young says"
+   ],
+   [
+    "ONE MORE MISTAKE",
+    "one more mistake"
+   ],
+   [
+    "COULD COST THE PLACE OF",
+    "could cost the place of"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "nhiXh2Zi4_w",
+   "start": 18.9,
+   "x": 600,
+   "h": 860,
+   "y": 0
+  },
+  {
+   "at": 1,
+   "vid": "8MzM4bTUmjs",
+   "start": 86.0,
+   "x": 400
+  },
+  {
+   "at": 2,
+   "vid": "oWBVUsBmV78",
+   "start": 39.0,
+   "x": 656
+  },
+  {
+   "at": 3,
+   "vid": "oWBVUsBmV78",
+   "start": 96.0,
+   "x": 656
+  },
+  {
+   "at": 4,
+   "vid": "nhiXh2Zi4_w",
+   "start": 7.0,
+   "x": 1150,
+   "h": 860,
+   "y": 0
+  },
+  {
+   "at": 5,
+   "vid": "nhiXh2Zi4_w",
+   "start": 7.9,
+   "x": 1150,
+   "h": 860,
+   "y": 0
+  },
+  {
+   "at": 6,
+   "vid": "nhiXh2Zi4_w",
+   "start": 11.95,
+   "fill": "contain"
+  },
+  {
+   "at": 9,
+   "vid": "oWBVUsBmV78",
+   "start": 120.0,
+   "x": 656
+  },
+  {
+   "at": 10,
+   "vid": "nhiXh2Zi4_w",
+   "start": 15.4,
+   "fill": "contain"
+  },
+  {
+   "at": 15,
+   "vid": "8MzM4bTUmjs",
+   "start": 116.0,
+   "x": 560
+  },
+  {
+   "at": 16,
+   "vid": "8MzM4bTUmjs",
+   "start": 88.0,
+   "x": 650
+  },
+  {
+   "at": 17,
+   "vid": "oWBVUsBmV78",
+   "start": 48.0,
+   "x": 656
+  },
+  {
+   "at": 18,
+   "vid": "uzm96WfKLBY",
+   "start": 6.0,
+   "x": 400,
+   "h": 900,
+   "y": 0
+  },
+  {
+   "at": 19,
+   "vid": "oWBVUsBmV78",
+   "start": 54.0,
+   "x": 656
+  },
+  {
+   "at": 20,
+   "vid": "oWBVUsBmV78",
+   "start": 45.0,
+   "x": 656
+  },
+  {
+   "at": 21,
+   "vid": "8MzM4bTUmjs",
+   "start": 88.6,
+   "x": 650
+  },
+  {
+   "at": 22,
+   "vid": "8MzM4bTUmjs",
+   "start": 86.8,
+   "x": 400
+  },
+  {
+   "at": 23,
+   "vid": "nhiXh2Zi4_w",
+   "start": 19.4,
+   "x": 600,
+   "h": 860,
+   "y": 0
+  },
+  {
+   "at": 24,
+   "vid": "nhiXh2Zi4_w",
+   "start": 1.2,
+   "x": 700,
+   "h": 860,
+   "y": 0
+  }
+ ],
+ "cards": [],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 10,
+   "t": 0.3
+  },
+  "text": "THE NEW ONANA? 😳"
+ },
+ "hook": "THE NEW ONANA?"
+}

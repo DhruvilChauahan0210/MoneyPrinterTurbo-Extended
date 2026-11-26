@@ -1,0 +1,15 @@
+KEY lammens_new_onana | OUT NEWSCUT_lammens_new_onana.mp4 | loopTail "Senne Lammens."
+Hook (frame 0): THE NEW ONANA?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Senne Lammens | saved a penalty | in Lisbon.
+S1: Three minutes later, | he rushed out, | fouled Araujo, | and gave away another.
+S2: Suárez | scored that one.
+S3: Then, ten minutes from time, | a cross into the box.
+S4: Lammens comes out, | drops it,
+S5: and Suárez | scores with an overhead kick.
+S6: Two-two. | Carragher wants him dropped.
+S7: Pochettino | still backs him, | but the fans | are already calling him | the new Onana.
+S8: Ashley Young says | one more mistake | could cost the place of
+News cuts: none (clips only, CD 26 Nov)
+Cover text: THE NEW ONANA? 😳
+Facts (verified 26 Nov 2026): Sporting 2-2 Man United, UCL, 25 Nov. Lammens saved Suarez's 30' penalty, then rushed out and fouled Maximiliano Araujo for a second penalty, Suarez scored 33' (ESPN). 80': Lammens came for a cross and dropped it, Suarez scored with an overhead kick, VAR confirmed (Yahoo/Sky, ESPN key events). Jamie Carragher criticised him and urged Pochettino to drop him (Sky Sports). Pochettino backed him after the game (Yahoo, SportBible). Ashley Young said Lammens may be one mistake from being dropped (Yahoo). Fans comparing him to Onana: trending on X UK (Lammens 41K, Onana) and YouTube fan Shorts ("Lammens is the new Onana").
