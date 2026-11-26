@@ -1,0 +1,280 @@
+{
+ "key": "liverpool_isak_wirtz",
+ "out": "NEWSCUT_liverpool_isak_wirtz.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_tension.wav",
+ "musicVol": 0.095,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Isak and Wirtz.",
+ "sentences": [
+  [
+   [
+    "ISAK AND WIRTZ",
+    "Isak and Wirtz"
+   ],
+   [
+    "COST LIVERPOOL",
+    "cost Liverpool"
+   ],
+   [
+    "OVER £200 MILLION",
+    "over two hundred million pounds."
+   ]
+  ],
+  [
+   [
+    "SOME CALLED IT",
+    "Some called it"
+   ],
+   [
+    "A WASTE",
+    "a waste."
+   ]
+  ],
+  [
+   [
+    "LAST NIGHT",
+    "Last night,"
+   ],
+   [
+    "IN BRUGES",
+    "in Bruges,"
+   ],
+   [
+    "THEY ANSWERED",
+    "they answered."
+   ]
+  ],
+  [
+   [
+    "THIRTEEN MINUTES IN",
+    "Thirteen minutes in,"
+   ],
+   [
+    "ISAK",
+    "Isak"
+   ],
+   [
+    "FINDS THE CORNER",
+    "finds the corner."
+   ]
+  ],
+  [
+   [
+    "SEVENTY-NINE MINUTES",
+    "Seventy-nine minutes,"
+   ],
+   [
+    "WIRTZ",
+    "Wirtz"
+   ],
+   [
+    "FROM OUTSIDE THE BOX",
+    "from outside the box."
+   ]
+  ],
+  [
+   [
+    "THREE MINUTES LATER",
+    "Three minutes later,"
+   ],
+   [
+    "ISAK",
+    "Isak"
+   ],
+   [
+    "SHRUGS OFF A GIANT DEFENDER",
+    "shrugs off a giant defender"
+   ],
+   [
+    "AND CHIPS THE KEEPER",
+    "and chips the keeper."
+   ]
+  ],
+  [
+   [
+    "THREE-NIL AWAY",
+    "Three-nil away"
+   ],
+   [
+    "AT THE TEAM",
+    "at the team"
+   ],
+   [
+    "THAT BEAT INTER",
+    "that beat Inter"
+   ],
+   [
+    "AND PSV",
+    "and PSV."
+   ]
+  ],
+  [
+   [
+    "ISAK NOW HAS TEN",
+    "Isak now has ten"
+   ],
+   [
+    "THIS SEASON",
+    "this season,"
+   ],
+   [
+    "AND THAT IS WHY",
+    "and that is why"
+   ],
+   [
+    "LIVERPOOL PAID",
+    "Liverpool paid"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "zPAp7yjpv-I",
+   "start": 40.0,
+   "x": 660
+  },
+  {
+   "at": 0,
+   "vid": "zPAp7yjpv-I",
+   "start": 48.0,
+   "x": 1200,
+   "shift": 0.5
+  },
+  {
+   "at": 1,
+   "vid": "GA0E44G6tow",
+   "start": 112.0,
+   "x": 380
+  },
+  {
+   "at": 2,
+   "vid": "GA0E44G6tow",
+   "start": 104.0,
+   "x": 1000
+  },
+  {
+   "at": 2,
+   "vid": "zPAp7yjpv-I",
+   "start": 38.0,
+   "x": 680,
+   "shift": 0.8
+  },
+  {
+   "at": 3,
+   "vid": "3PHpPBfrNLk",
+   "start": 150.0,
+   "x": 640
+  },
+  {
+   "at": 4,
+   "vid": "3PHpPBfrNLk",
+   "start": 138.0,
+   "x": 620
+  },
+  {
+   "at": 5,
+   "vid": "GA0E44G6tow",
+   "start": 18.0,
+   "x": 656
+  },
+  {
+   "at": 6,
+   "vid": "3PHpPBfrNLk",
+   "start": 38.0,
+   "x": 656
+  },
+  {
+   "at": 7,
+   "vid": "3PHpPBfrNLk",
+   "start": 62.0,
+   "x": 656
+  },
+  {
+   "at": 8,
+   "vid": "GA0E44G6tow",
+   "start": 59.9,
+   "fill": "contain"
+  },
+  {
+   "at": 11,
+   "vid": "GA0E44G6tow",
+   "start": 98.9,
+   "fill": "contain"
+  },
+  {
+   "at": 14,
+   "vid": "zPAp7yjpv-I",
+   "start": 27.1,
+   "fill": "contain"
+  },
+  {
+   "at": 18,
+   "vid": "zPAp7yjpv-I",
+   "start": 36.0,
+   "x": 420
+  },
+  {
+   "at": 19,
+   "vid": "i9DXd-a0ZGs",
+   "start": 293.0,
+   "x": 440,
+   "h": 720,
+   "y": 0
+  },
+  {
+   "at": 20,
+   "vid": "GA0E44G6tow",
+   "start": 120.0,
+   "x": 640
+  },
+  {
+   "at": 21,
+   "vid": "zPAp7yjpv-I",
+   "start": 48.0,
+   "x": 100
+  },
+  {
+   "at": 22,
+   "vid": "GA0E44G6tow",
+   "start": 146.0,
+   "x": 650
+  },
+  {
+   "at": 23,
+   "vid": "zPAp7yjpv-I",
+   "start": 44.0,
+   "x": 420
+  },
+  {
+   "at": 24,
+   "vid": "iMQLBF927qw",
+   "start": 146.0,
+   "x": 380
+  },
+  {
+   "at": 25,
+   "vid": "zPAp7yjpv-I",
+   "start": 46.0,
+   "x": 260
+  }
+ ],
+ "cards": [],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 3,
+   "t": 0.3
+  },
+  "text": "WORTH IT? 😳"
+ },
+ "hook": "£200M+… WORTH IT?"
+}

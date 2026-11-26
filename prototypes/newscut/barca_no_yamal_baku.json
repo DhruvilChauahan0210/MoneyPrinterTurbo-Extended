@@ -1,0 +1,270 @@
+{
+ "key": "barca_no_yamal_baku",
+ "out": "NEWSCUT_barca_no_yamal_baku.mp4",
+ "voice": "en-US-AndrewMultilingualNeural",
+ "rate": "+14%",
+ "music": "nc_bed_tension.wav",
+ "musicVol": 0.095,
+ "duck": 1,
+ "musicFadeIn": 0.01,
+ "musicFadeOut": 0,
+ "watermark": "CD PHANTOM",
+ "loopTail": "Lamine Yamal.",
+ "sentences": [
+  [
+   [
+    "LAMINE YAMAL",
+    "Lamine Yamal"
+   ],
+   [
+    "WAS OUT",
+    "was out,"
+   ],
+   [
+    "RAPHINHA",
+    "Raphinha"
+   ],
+   [
+    "ON THE BENCH",
+    "on the bench."
+   ]
+  ],
+  [
+   [
+    "SO BARCELONA",
+    "So Barcelona"
+   ],
+   [
+    "WENT TO BAKU",
+    "went to Baku"
+   ],
+   [
+    "WITH A BRAND-NEW ATTACK",
+    "with a brand-new attack."
+   ]
+  ],
+  [
+   [
+    "THIRTY-ONE MINUTES",
+    "Thirty-one minutes,"
+   ],
+   [
+    "ANTHONY GORDON",
+    "Anthony Gordon."
+   ]
+  ],
+  [
+   [
+    "SIX MINUTES AFTER HALF-TIME",
+    "Six minutes after half-time,"
+   ],
+   [
+    "GORDON AGAIN",
+    "Gordon again."
+   ]
+  ],
+  [
+   [
+    "FOUR MINUTES LATER",
+    "Four minutes later,"
+   ],
+   [
+    "ADEYEMI",
+    "Adeyemi."
+   ]
+  ],
+  [
+   [
+    "FIVE MINUTES AFTER THAT",
+    "Five minutes after that,"
+   ],
+   [
+    "GABRIEL JESUS",
+    "Gabriel Jesus."
+   ]
+  ],
+  [
+   [
+    "THREE GOALS",
+    "Three goals"
+   ],
+   [
+    "IN NINE MINUTES",
+    "in nine minutes."
+   ]
+  ],
+  [
+   [
+    "GORDON HAS NOW SCORED",
+    "Gordon has now scored"
+   ],
+   [
+    "SIX TIMES",
+    "six times"
+   ],
+   [
+    "IN TWO TRIPS",
+    "in two trips"
+   ],
+   [
+    "TO BAKU",
+    "to Baku."
+   ]
+  ],
+  [
+   [
+    "FOUR-ONE",
+    "Four-one,"
+   ],
+   [
+    "FOURTH IN THE TABLE",
+    "fourth in the table,"
+   ],
+   [
+    "AND THEY DID IT ALL WITHOUT",
+    "and they did it all without"
+   ]
+  ]
+ ],
+ "shots": [
+  {
+   "at": 0,
+   "vid": "KfPpFbCotss",
+   "start": 36.0,
+   "x": 900
+  },
+  {
+   "at": 1,
+   "vid": "KfPpFbCotss",
+   "start": 18.0,
+   "x": 1000
+  },
+  {
+   "at": 2,
+   "vid": "KfPpFbCotss",
+   "start": 48.0,
+   "x": 656
+  },
+  {
+   "at": 3,
+   "vid": "KfPpFbCotss",
+   "start": 198.0,
+   "x": 800
+  },
+  {
+   "at": 4,
+   "vid": "KfPpFbCotss",
+   "start": 30.0,
+   "x": 656
+  },
+  {
+   "at": 5,
+   "vid": "KfPpFbCotss",
+   "start": 0.5,
+   "x": 656
+  },
+  {
+   "at": 6,
+   "vid": "KfPpFbCotss",
+   "start": 222.0,
+   "x": 700
+  },
+  {
+   "at": 7,
+   "vid": "KfPpFbCotss",
+   "start": 118.9,
+   "fill": "contain"
+  },
+  {
+   "at": 9,
+   "vid": "KfPpFbCotss",
+   "start": 173.5,
+   "fill": "contain"
+  },
+  {
+   "at": 11,
+   "vid": "KfPpFbCotss",
+   "start": 204.0,
+   "x": 600
+  },
+  {
+   "at": 12,
+   "vid": "KfPpFbCotss",
+   "start": 268.0,
+   "x": 700
+  },
+  {
+   "at": 13,
+   "vid": "KfPpFbCotss",
+   "start": 285.8,
+   "fill": "contain"
+  },
+  {
+   "at": 15,
+   "vid": "KfPpFbCotss",
+   "start": 270.0,
+   "x": 700
+  },
+  {
+   "at": 16,
+   "vid": "KfPpFbCotss",
+   "start": 266.0,
+   "x": 800
+  },
+  {
+   "at": 17,
+   "vid": "KfPpFbCotss",
+   "start": 224.0,
+   "x": 700
+  },
+  {
+   "at": 18,
+   "vid": "KfPpFbCotss",
+   "start": 138.0,
+   "x": 900
+  },
+  {
+   "at": 19,
+   "vid": "KfPpFbCotss",
+   "start": 293.0,
+   "x": 900
+  },
+  {
+   "at": 20,
+   "vid": "KfPpFbCotss",
+   "start": 6.0,
+   "x": 656
+  },
+  {
+   "at": 21,
+   "vid": "KfPpFbCotss",
+   "start": 216.0,
+   "x": 700
+  },
+  {
+   "at": 22,
+   "vid": "KfPpFbCotss",
+   "start": 264.0,
+   "x": 600
+  },
+  {
+   "at": 23,
+   "vid": "KfPpFbCotss",
+   "start": 219.0,
+   "x": 700
+  }
+ ],
+ "cards": [],
+ "cover": {
+  "top": {
+   "shot": 0,
+   "t": 0.3
+  },
+  "bottom": {
+   "shot": 12,
+   "t": 0.3
+  },
+  "text": "NO YAMAL 😳"
+ },
+ "hook": "NO YAMAL… THEN THIS?"
+}

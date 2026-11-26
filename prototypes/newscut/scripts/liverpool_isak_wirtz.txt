@@ -1,0 +1,14 @@
+KEY liverpool_isak_wirtz | OUT NEWSCUT_liverpool_isak_wirtz.mp4 | loopTail "Isak and Wirtz."
+Hook (frame 0): £200M+… WORTH IT?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Isak and Wirtz | cost Liverpool | over £200 million => over two hundred million pounds.
+S1: Some called it | a waste.
+S2: Last night, | in Bruges, | they answered.
+S3: Thirteen minutes in, | Isak | finds the corner.
+S4: Seventy-nine minutes, | Wirtz | from outside the box.
+S5: Three minutes later, | Isak | shrugs off a giant defender | and chips the keeper.
+S6: Three-nil away | at the team | that beat Inter | and PSV.
+S7: Isak now has ten | this season, | and that is why | Liverpool paid
+News cuts: none (clips only, CD 26 Nov)
+Cover text: WORTH IT? 😳
+Facts (verified 26 Nov 2026): Club Brugge 0-3 Liverpool, UCL league phase, Wed 25 Nov 2026 (ESPN). Isak 13' (Szoboszlai assist, right foot from centre of box to bottom left), Wirtz 79' right foot from outside the box (Ngumoha assist, fast break), Isak 82' solo effort shrugging off centre-back Brandon Mechele and chipping the keeper (Alisson assist, fast break). Isak 10 goals this season. Both are £100m-plus signings (ESPN). Brugge had already beaten Inter and PSV (ESPN). Win lifts Liverpool to fifth.

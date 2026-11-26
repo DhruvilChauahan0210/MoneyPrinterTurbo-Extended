@@ -1,0 +1,15 @@
+KEY barca_no_yamal_baku | OUT NEWSCUT_barca_no_yamal_baku.mp4 | loopTail "Lamine Yamal."
+Hook (frame 0): NO YAMAL… THEN THIS?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Lamine Yamal | was out, | Raphinha | on the bench.
+S1: So Barcelona | went to Baku | with a brand-new attack.
+S2: Thirty-one minutes, | Anthony Gordon.
+S3: Six minutes after half-time, | Gordon again.
+S4: Four minutes later, | Adeyemi.
+S5: Five minutes after that, | Gabriel Jesus.
+S6: Three goals | in nine minutes.
+S7: Gordon has now scored | six times | in two trips | to Baku.
+S8: Four-one, | fourth in the table, | and they did it all without
+News cuts: none (clips only, CD 26 Nov)
+Cover text: NO YAMAL 😳
+Facts (verified 26 Nov 2026, ESPN report + key events): Sabah 1-4 Barcelona, UCL league phase, Baku, Wed 25 Nov 2026. Yamal absent with an ankle injury; Raphinha dropped to the bench (came on 76'). Gordon 31' and 51', Adeyemi 55', Gabriel Jesus 60' (three in nine minutes per ESPN), Mickels 63' for Sabah. Gordon scored four on his last visit to Baku with Newcastle in February v Qarabag (ESPN) -> six in two visits. Win lifted Barcelona to fourth with 12 points.
