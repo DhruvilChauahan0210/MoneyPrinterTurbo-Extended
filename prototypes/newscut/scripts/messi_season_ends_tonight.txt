@@ -1,0 +1,13 @@
+KEY messi_season_ends_tonight | OUT NEWSCUT_messi_season_ends_tonight.mp4 | loopTail "Lionel Messi."
+Hook (frame 0): MESSI'S SEASON ENDS TONIGHT?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Lionel Messi | and Inter Miami | are the MLS champions.
+S1: But in Game 1 => But in game one | of the playoffs, | Columbus beat them | three-nil | in Miami.
+S2: Miami had ten men, | Tapia scored twice, | and Messi | was booked.
+S3: Tonight, | Game 2 => game two, | in Columbus.
+S4: Lose, | and the champions | are out | in round one.
+S5: Win, | and it goes | to a Game 3 => to a game three.
+S6: He is thirty-nine, | and the whole world | is watching
+News cuts: none (clips only)
+Cover text: LAST GAME? 😳
+Facts (verified 22 Nov 2026, MLSsoccer.com): Columbus Crew 3-0 10-man Inter Miami, Game 1, Round One best-of-3, Sat 21 Nov at Miami. Miami are the reigning MLS Cup champions. Game 2 at Columbus Fri 27 Nov 8 pm ET (ESPN: 28 Nov 01:00 UTC). A Game 2 loss ends their season; a win forces Game 3. Lujan red card 36', Tapia pen 9' and 58', Messi booked 45+4' (ESPN key events). Messi is 39 (born 24 Jun 1987).

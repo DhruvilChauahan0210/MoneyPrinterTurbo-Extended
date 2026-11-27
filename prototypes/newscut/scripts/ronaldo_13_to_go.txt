@@ -1,0 +1,14 @@
+KEY ronaldo_13_to_go | OUT NEWSCUT_ronaldo_13_to_go.mp4 | loopTail "Cristiano Ronaldo."
+Hook (frame 0): 13 MORE… STARTING TOMORROW?
+Sentences (chunks split by |; display => spoken where they differ):
+S0: Cristiano Ronaldo | is thirteen goals | from one thousand.
+S1: Goal 986 => Goal nine hundred and eighty-six, | a volley | into the far corner.
+S2: Goal 987 => Goal nine hundred and eighty-seven, | a penalty, | after two misses.
+S3: Seventeen goals, | Al Nassr's top scorer ever | in Asia.
+S4: He is forty-one, | he has retired | from Portugal,
+S5: so every goal now | has to come | for Al Nassr.
+S6: Tomorrow, | Al Hazem away.
+S7: Thirteen to go, | and the whole world | is counting with
+News cuts: none (clips only)
+Cover text: 13 MORE 😳
+Facts (verified): 987 career goals after the Al Sadd penalty 24 Nov (The National), 13 from 1,000. 986 = volley into the far corner v Al Ahli 20 Nov (ESPN). 987 penalty came after two straight penalty misses (ESPN). Ronaldo is 41 (born 5 Feb 1985). Retired from Portugal duty, announced 5 Nov 2026. 17 continental goals = Al Nassr's top scorer ever in Asian competition (World Soccer Talk 24 Nov). Next match: Al Hazem v Al Nassr, Sat 28 Nov 2026 12:15 UTC (ESPN schedule).
